@@ -172,7 +172,7 @@ The sites/ folder is the permanent archive. The output/ folder is temporary
 working space that gets overwritten on each pipeline run.
 
 ## GitHub Pages Deployment
-The repo is published at https://MCarter-Ulu.github.io/youtube-visualiser/
+The repo is published at https://TheUlukai.github.io/youtube-visualiser/
 Built static files live in docs/ and are served directly by GitHub Pages.
 
 **For each new site**, vite.config.js must include:
