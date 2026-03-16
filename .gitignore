@@ -1,0 +1,22 @@
+# Pipeline working directory — regenerated on every run
+output/
+
+# Node
+node_modules/
+devserver/dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment / secrets
+.env
+*.env
+
+# Claude personal memory (project instructions CLAUDE.md is committed separately)
+.claude/
+
+# OS
+.DS_Store
