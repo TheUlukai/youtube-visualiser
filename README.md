@@ -56,37 +56,51 @@ claude
 # Then: "Package the current visualization as a standalone site under sites/"
 ```
 
-This creates a self-contained project under `sites/` that you can relaunch anytime:
+This creates a self-contained project under `sites/<site-slug>/` that you can relaunch anytime:
 
 ```bash
-cd sites/your-video-name
+cd sites/<site-slug>
 npm install    # only needed once
 npm run dev    # launches at localhost:5173
 ```
 
-To build a static version you can host or share without Node.js:
+## Deploying to GitHub Pages
+
+The repo is published at https://TheUlukai.github.io/youtube-visualiser/
+
+Each packaged site builds directly into `docs/<site-slug>/`, which GitHub Pages serves. After packaging:
 
 ```bash
-cd sites/your-video-name
-npm run build  # creates dist/ folder — open index.html or deploy anywhere
+cd sites/<site-slug>
+npm install    # only needed once
+npm run build  # outputs to docs/<site-slug>/
 ```
+
+Then add a link for the new site to `docs/index.html` and commit both the `sites/<site-slug>/` source and the `docs/<site-slug>/` build output.
 
 ## Project Structure
 
 ```
 youtube-visualizer/
-├── scripts/                    # The pipeline (reusable)
+├── scripts/                    # The pipeline
 │   ├── fetch_transcript.py     # Downloads transcript from YouTube
 │   ├── parse_sections.py       # Splits into sections via Claude API
 │   ├── generate_viz.py         # Generates React components via Claude API
 │   └── assemble.py             # Combines into a single navigable app
-├── output/                     # Temporary working directory
+├── output/                     # Temporary working directory (overwritten each run)
 │   ├── transcript.txt          # Raw transcript
 │   ├── sections.json           # Parsed section data
-│   ├── components/             # Individual generated components
-│   └── visualizations.jsx      # Assembled app
-├── sites/                      # Finalized sites (permanent archive)
-│   └── your-video-name/        # Self-contained Vite + React project
+│   ├── components/             # Individual generated .jsx components
+│   └── visualizations.jsx      # Assembled app (input to devserver)
+├── devserver/                  # Vite+React dev server for previewing output/
+├── sites/                      # Permanent archive of packaged visualizations
+│   └── <site-slug>/            # Self-contained Vite + React project per video
+│       ├── src/App.jsx         # Finalized visualization component
+│       ├── vite.config.js      # Sets base path and build output → docs/<site-slug>/
+│       └── README.md           # Video title, URL, date, launch instructions
+├── docs/                       # GitHub Pages root (built output from all sites)
+│   ├── index.html              # Index page linking to all published visualizations
+│   └── <site-slug>/            # Built static files for each site
 ├── run.sh                      # End-to-end pipeline script
 ├── CLAUDE.md                   # Claude Code project context
 └── README.md                   # This file
