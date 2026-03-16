@@ -312,6 +312,15 @@ function OntologyIntroduction() {
   const [hoveredPanel, setHoveredPanel] = useState(null);
   const [pulsePhase, setPulsePhase] = useState(0);
   const animRef = useRef(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "ontology", label: "Ontology", desc: "The branch of philosophy asking what kinds of things exist and what it means for anything to be real. Every discipline silently presupposes ontological answers — physics assumes particles are real, law assumes persons can have rights." },
+    { id: "kinds", label: "Kinds of Things", desc: "Reality is not just a heap of individual things — it divides into types: physical objects, properties, numbers, events, relations. The question of which kinds are genuinely real (not mere fictions or useful shorthand) is the central ontological question." },
+    { id: "hidden", label: "Hidden Assumptions", desc: "Every discipline operates on ontological assumptions it never explicitly states. A court that assigns blame assumes that agents are a distinct kind of thing; a physicist who quantifies over fields is committed to their existence. Ontology makes these commitments visible." },
+    { id: "existence", label: "Existence", desc: "What does it mean to say something exists? Quine's answer: to be is to be the value of a bound variable. But this begs questions — do numbers, fictional characters, or possible people exist in the same sense as tables?" },
+    { id: "categories", label: "Categories", desc: "The highest genera into which everything falls — substance, property, relation, event, number. Aristotle had 10; contemporary ontologists debate whether any classification is fundamental or all are interest-relative." },
+  ];
 
   const domains = [
     {
@@ -717,6 +726,48 @@ function OntologyIntroduction() {
               Ontology is not merely academic speculation but the hidden framework every discipline silently depends on. When courts rule on corporate liability, when physicists model particles, or when software architects define objects, they are implicitly answering ontological questions. The question of what kinds of things exist is a practical emergency as much as a philosophical one. Each age must answer it with the tools and pressures it actually faces.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2E5F8A", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#2E5F8A" : "rgba(46, 95, 138, 0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#5a8fba" : "#1a3d5c"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#5a8fba",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(46, 95, 138, 0.06)",
+              border: "1px solid #1a3d5c",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#5a8fba", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -1699,7 +1750,10 @@ function HeraclitusFlux() {
           </div>
         </div>
 
-        {/* Concept Buttons */}
+        {/* Key Concepts */}
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#0D7377", marginBottom: 14 }}>
+          Key Concepts — Click to Explore
+        </div>
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "16px" }}>
           {concepts.map((c) => (
             <button
@@ -1871,6 +1925,15 @@ function PlatosForms() {
   const [participationPulse, setParticipationPulse] = useState(false);
   const animRef = useRef(null);
   const [pulsePhase, setPulsePhase] = useState(0);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: 'forms', label: 'Theory of Forms', desc: 'Plato\'s core doctrine: eternal, perfect, non-physical Forms constitute genuine reality, while physical things are imperfect, transient copies that merely approximate the Form. The Form of Beauty is the real thing; any beautiful object is beautiful only by participation in it.' },
+    { id: 'participation', label: 'Participation', desc: 'The puzzling relation whereby physical things \'share in\' or \'participate in\' their corresponding Form without being identical to it. A circle drawn in sand participates in the Form of the Circle — it has circularity — but it is not the Form itself. How this relation works was never fully resolved by Plato.' },
+    { id: 'two_worlds', label: 'Two-tiered Reality', desc: 'Reality is split into two radically different layers: the intelligible realm of Forms, eternal and knowable by reason alone, and the sensible world of changing particulars, known by perception. The physical world is a shadow or image of the real world of Forms.' },
+    { id: 'universals', label: 'Universals', desc: 'Abstract properties or kinds — Redness, Justice, Triangle — that are instanced by many different particulars. Plato\'s Forms are his answer to what universals are: they are real, mind-independent entities that exist in their own realm, not just words or concepts we apply to similar things.' },
+    { id: 'third_man', label: 'Third Man Problem', desc: 'Aristotle\'s devastating regress objection: if the Form of Large explains why large things are large, there must be a further Form explaining why the original large things and the Form of Large are all large — generating an infinite regress. Plato himself raised the problem in Parmenides but never resolved it.' },
+  ];
 
   useEffect(() => {
     let frame;
@@ -2232,21 +2295,46 @@ function PlatosForms() {
           )}
         </div>
 
-        {/* Key Concepts Row */}
-        <div style={{ marginTop: '24px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-          {['Theory of Forms', 'Participation', 'Two-tiered Reality', 'Universals', 'Third Man Problem'].map(concept => (
-            <span key={concept} style={{
-              background: 'rgba(107, 63, 160, 0.15)',
-              border: `1px solid ${accentDim}`,
-              borderRadius: '20px',
-              padding: '5px 14px',
-              fontSize: '12px',
-              color: '#9880c8',
-              letterSpacing: '0.5px',
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: '#6B3FA0', marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: '6px 14px',
+                  background: hoveredConcept === c.id ? '#6B3FA0' : 'rgba(107, 63, 160, 0.08)',
+                  border: `1px solid ${hoveredConcept === c.id ? '#9B6FD0' : '#3D1F6B'}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: 'pointer',
+                  color: hoveredConcept === c.id ? '#f0ead8' : '#9B6FD0',
+                  transition: 'all 0.2s',
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: 'rgba(107, 63, 160, 0.08)',
+              border: '1px solid #3D1F6B',
+              borderRadius: 6,
+              padding: '16px 20px',
             }}>
-              {concept}
-            </span>
-          ))}
+              <div style={{ fontSize: 13, fontWeight: 'bold', color: '#9B6FD0', marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -2386,6 +2474,15 @@ function AristotleSubstance() {
   const canvasRef = useRef(null);
   const animRef = useRef(null);
   const splitRef = useRef(0);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "substance", label: "Substance", desc: "For Aristotle, the primary category of being — individual things like this horse, this bronze statue. Substance is what underlies properties and persists through change; it is what there fundamentally is." },
+    { id: "hylomorphism", label: "Hylomorphism", desc: "Aristotle's theory that every physical thing is a compound of matter (hyle) and form (morphe). The matter is what a thing is made of; the form is what makes it the kind of thing it is. Neither exists independently in the physical world." },
+    { id: "form", label: "Form", desc: "The principle of organization that makes a thing what it is — not its shape but its essence. The form of a human is the capacity for rational life. Forms are immanent in things, not separate Platonic entities." },
+    { id: "categories", label: "The Ten Categories", desc: "Aristotle's list of the highest kinds of predication: substance, quantity, quality, relation, place, time, position, state, action, passion. Every true statement either says what something is (substance) or says something about it under one of the nine remaining categories." },
+    { id: "essence", label: "Essence", desc: "What a thing is in itself — its 'what-it-is-to-be-that-thing.' The essence of a human is to be a rational animal. Essence is what a thing cannot lose without ceasing to be that kind of thing entirely." },
+  ];
 
   const categories = [
     { id: "substance", label: "Substance", angle: 270, description: "The statue itself — a bronze figure, the primary reality that underlies all other properties.", example: "This individual bronze statue" },
@@ -3071,6 +3168,48 @@ function AristotleSubstance() {
         </div>
       </div>
 
+      {/* Key Concepts */}
+      <div style={{ padding: "0 40px 28px 40px", maxWidth: "900px", margin: "0 auto" }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#B5651D", marginBottom: 14 }}>
+          Key Concepts — Click to Explore
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+          {concepts.map(c => (
+            <div
+              key={c.id}
+              onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+              style={{
+                padding: "6px 14px",
+                background: hoveredConcept === c.id ? "#B5651D" : "rgba(181, 101, 29, 0.08)",
+                border: `1px solid ${hoveredConcept === c.id ? "#d4854d" : "#7a3d10"}`,
+                borderRadius: 20,
+                fontSize: 12,
+                cursor: "pointer",
+                color: hoveredConcept === c.id ? "#f0ead8" : "#d4854d",
+                transition: "all 0.2s",
+              }}
+            >
+              {c.label}
+            </div>
+          ))}
+        </div>
+        {hoveredConcept && (
+          <div style={{
+            background: "rgba(181, 101, 29, 0.06)",
+            border: "1px solid #7a3d10",
+            borderRadius: 6,
+            padding: "16px 20px",
+          }}>
+            <div style={{ fontSize: 13, fontWeight: "bold", color: "#d4854d", marginBottom: 8 }}>
+              {concepts.find(c => c.id === hoveredConcept)?.label}
+            </div>
+            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+              {concepts.find(c => c.id === hoveredConcept)?.desc}
+            </p>
+          </div>
+        )}
+      </div>
+
       {/* THE DIFFICULTY PANEL */}
       <div style={{ padding: "0 40px 32px 40px", maxWidth: "900px", margin: "0 auto" }}>
         <div style={{
@@ -3172,6 +3311,15 @@ function MedievalUniversals() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [showStakes, setShowStakes] = useState(false);
   const svgRef = useRef(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "universals", label: "Universals", desc: "Properties or kinds shared by many particular things — redness, humanity, triangularity. The question is whether these exist independently, exist only in things, or are merely names we apply to collections of similar particulars." },
+    { id: "realism", label: "Realism", desc: "The view that universals exist independently of particulars and of minds. On Platonic realism, redness exists as an abstract entity even if all red things were destroyed. On Aristotelian realism, universals exist but only within the particulars that instantiate them." },
+    { id: "nominalism", label: "Nominalism", desc: "The view that only particular things exist — universals are merely names (nomina) we apply to groups of similar things. William of Ockham's strict nominalism: reality contains no shared natures, only resembling individuals." },
+    { id: "conceptualism", label: "Conceptualism", desc: "A middle position: universals exist, but only as concepts in minds. When all minds capable of thinking 'horse' are gone, so is the universal. Universals are real mental representations, not free-floating abstractions or mere word-labels." },
+    { id: "ockham", label: "Ockham's Razor", desc: "The methodological principle: do not multiply entities beyond necessity. Ockham wielded it against realism — if particular things can explain all the facts, positing universals as additional entities is unjustified. The razor cuts entities, not explanations." },
+  ];
 
   const positions = {
     realism: {
@@ -3603,6 +3751,48 @@ function MedievalUniversals() {
         )}
       </div>
 
+      {/* Key Concepts */}
+      <div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#8B4513", marginBottom: 14 }}>
+          Key Concepts — Click to Explore
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+          {concepts.map(c => (
+            <div
+              key={c.id}
+              onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+              style={{
+                padding: "6px 14px",
+                background: hoveredConcept === c.id ? "#8B4513" : "rgba(139, 69, 19, 0.08)",
+                border: `1px solid ${hoveredConcept === c.id ? "#b5703a" : "#5a2d0c"}`,
+                borderRadius: 20,
+                fontSize: 12,
+                cursor: "pointer",
+                color: hoveredConcept === c.id ? "#f0ead8" : "#b5703a",
+                transition: "all 0.2s",
+              }}
+            >
+              {c.label}
+            </div>
+          ))}
+        </div>
+        {hoveredConcept && (
+          <div style={{
+            background: "rgba(139, 69, 19, 0.06)",
+            border: "1px solid #5a2d0c",
+            borderRadius: 6,
+            padding: "16px 20px",
+          }}>
+            <div style={{ fontSize: 13, fontWeight: "bold", color: "#b5703a", marginBottom: 8 }}>
+              {concepts.find(c => c.id === hoveredConcept)?.label}
+            </div>
+            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+              {concepts.find(c => c.id === hoveredConcept)?.desc}
+            </p>
+          </div>
+        )}
+      </div>
+
       {/* THE DIFFICULTY PANEL */}
       <div
         style={{
@@ -3686,6 +3876,7 @@ function MedievalUniversals() {
 // ─── Part 7: Aquinas and the Gap Between Essence and Existence ───
 function AquinasEssenceExistence() {
   const [echosOpen, setEchosOpen] = useState(false);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [draggedItem, setDraggedItem] = useState(null);
   const [animatingItem, setAnimatingItem] = useState(null);
   const [animationType, setAnimationType] = useState(null);
@@ -3740,6 +3931,14 @@ function AquinasEssenceExistence() {
       canExist: "necessary",
       detail: "Essence = Existence. Passes through necessarily."
     }
+  ];
+
+  const aquinasConcepts = [
+    { id: 'essence', label: 'Essence', desc: 'What a thing is — its defining nature, completely specifiable without reference to whether it exists. The essence of a triangle is three-sidedness; the essence of a unicorn is one-hornedness. Essence answers the question "what?" independently of the question "does it exist?".' },
+    { id: 'existence', label: 'Existence', desc: 'The sheer fact that a thing is — its actuality. For Aquinas, existence (esse) is not a property within a thing\'s nature but the act by which any essence is made actual. It is the most fundamental of all acts, the "actuality of all acts."' },
+    { id: 'real_distinction', label: 'Real Distinction', desc: 'The claim that essence and existence are genuinely distinct in every created thing — not merely conceptually different but really separable. An oak\'s essence (what it is) does not by itself generate its existence (that it is). They are two different ontological components.' },
+    { id: 'contingency', label: 'Contingency', desc: 'A being is contingent if its existence is not guaranteed by its essence — it could fail to exist. All created things are contingent: they depend on something outside themselves for their continued existence. Contingency is the hallmark of creatures as opposed to God.' },
+    { id: 'ipsum_esse', label: 'Ipsum Esse Subsistens', desc: 'Aquinas\'s term for God: "subsistent being itself." This is the unique being whose essence just is existence — where essence and existence are identical. Unlike all created things, God cannot fail to exist, because his very nature is to be.' },
   ];
 
   const handleDragStart = (e, item) => {
@@ -4127,21 +4326,46 @@ function AquinasEssenceExistence() {
             </p>
           </div>
 
-          {/* Key Concepts Row */}
-          <div style={{ display: "flex", gap: 10, marginTop: 18, flexWrap: "wrap" }}>
-            {["essence", "existence", "real distinction", "necessary being", "contingency", "God as pure existence"].map(concept => (
-              <span key={concept} style={{
-                background: "rgba(46,91,138,0.15)",
-                border: "1px solid rgba(46,91,138,0.3)",
-                borderRadius: 20,
-                padding: "4px 12px",
-                fontSize: 11,
-                color: "#7a98c8",
-                letterSpacing: 0.5
+          {/* Key Concepts */}
+          <div style={{ marginTop: 24 }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: '#2E5B8A', marginBottom: 14 }}>
+              Key Concepts — Click to Explore
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+              {aquinasConcepts.map(c => (
+                <div
+                  key={c.id}
+                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                  style={{
+                    padding: '6px 14px',
+                    background: hoveredConcept === c.id ? '#2E5B8A' : 'rgba(46, 91, 138, 0.08)',
+                    border: `1px solid ${hoveredConcept === c.id ? '#5a8fba' : '#1a3d5c'}`,
+                    borderRadius: 20,
+                    fontSize: 12,
+                    cursor: 'pointer',
+                    color: hoveredConcept === c.id ? '#f0ead8' : '#5a8fba',
+                    transition: 'all 0.2s',
+                  }}
+                >
+                  {c.label}
+                </div>
+              ))}
+            </div>
+            {hoveredConcept && (
+              <div style={{
+                background: 'rgba(46, 91, 138, 0.08)',
+                border: '1px solid #1a3d5c',
+                borderRadius: 6,
+                padding: '16px 20px',
               }}>
-                {concept}
-              </span>
-            ))}
+                <div style={{ fontSize: 13, fontWeight: 'bold', color: '#5a8fba', marginBottom: 8 }}>
+                  {aquinasConcepts.find(c => c.id === hoveredConcept)?.label}
+                </div>
+                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+                  {aquinasConcepts.find(c => c.id === hoveredConcept)?.desc}
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
@@ -5076,14 +5300,13 @@ function SpinozaOneSubstance() {
           {/* Key Concepts */}
           <div style={{ marginTop: 32, borderTop: "1px solid #1e3828", paddingTop: 24 }}>
             <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#2C6E49", marginBottom: 16, fontWeight: "bold" }}>
-              Key Concepts
+              Key Concepts — Click to Explore
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {concepts.map(c => (
                 <div
                   key={c.id}
-                  onMouseEnter={() => setHoveredConcept(c.id)}
-                  onMouseLeave={() => setHoveredConcept(null)}
+                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
                   style={{
                     padding: "7px 16px",
                     borderRadius: 20,
@@ -5232,8 +5455,17 @@ function LeibnizMonads() {
   const [selectedWorld, setSelectedWorld] = useState('actual');
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredMonad, setHoveredMonad] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const animRef = useRef(null);
   const [tick, setTick] = useState(0);
+
+  const leibnizConcepts = [
+    { id: 'monad', label: 'Monad', desc: 'A simple, unextended, indivisible substance — the true atom of nature, but metaphysical rather than physical. Monads have no parts, no windows through which anything enters or leaves. All their states unfold from within, as expressions of their own inner nature.' },
+    { id: 'windowless', label: 'Windowless', desc: 'Leibniz\'s striking term: monads have no windows through which anything may enter or depart. They do not causally interact. Each unfolds its perceptions entirely from its own inner principle, sealed off from all direct causal contact with other monads.' },
+    { id: 'harmony', label: 'Pre-Established Harmony', desc: 'The coordination of all monads without any causal interaction between them. God synchronized all monads at creation — like an infinite set of clocks wound and started at the same moment — so that their independent unfoldings perfectly correspond in every detail, forever.' },
+    { id: 'possible_worlds', label: 'Possible Worlds', desc: 'For Leibniz, any internally consistent set of co-possible substances constitutes a possible world. God surveys all possible worlds and actualizes the best — the one containing the greatest variety and order. This idea became the foundation of modern modal logic.' },
+    { id: 'sufficient_reason', label: 'Principle of Sufficient Reason', desc: 'Nothing happens without a sufficient reason why it is so and not otherwise. For Leibniz, this principle governs all of reality. It explains why God chose this world over others and why every fact about a monad is contained in its complete individual concept.' },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -5299,9 +5531,10 @@ function LeibnizMonads() {
         minHeight: '100vh',
         fontFamily: 'Georgia, serif',
         color: '#e8e0f0',
-        padding: '0',
+        padding: '0 24px',
       }}
     >
+      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
       {/* PROBLEM PANEL */}
       <div style={{
         margin: '0 0 0 0',
@@ -5373,7 +5606,7 @@ function LeibnizMonads() {
           }}>
             <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
               {/* SVG Monad Field */}
-              <div style={{ position: 'relative', flex: '0 0 auto' }}>
+              <div style={{ position: 'relative', flex: '0 0 auto', width: '560px' }}>
                 <svg width="560" height="460" style={{ display: 'block' }}>
                   <defs>
                     <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
@@ -5586,22 +5819,11 @@ function LeibnizMonads() {
                     borderRadius: '12px',
                     padding: '20px',
                   }}>
-                    <div style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: '#7B5EA7', marginBottom: '14px' }}>
-                      Key Concepts
-                    </div>
-                    {[
-                      { term: 'Monads', def: 'Simple, unextended, indivisible substances — the true atoms of nature, but metaphysical rather than material.' },
-                      { term: 'Windowless', def: 'Monads have no windows through which anything may enter or depart. All change comes from within.' },
-                      { term: 'Pre-Established Harmony', def: 'God synchronized all monads at creation so their independent unfoldings perfectly correspond — like clocks set in advance.' },
-                      { term: 'Infinite Divisibility', def: 'Extended matter is infinitely divisible and therefore cannot be ultimately real. Only unextended monads are genuine substances.' },
-                    ].map(k => (
-                      <div key={k.term} style={{ marginBottom: '14px', paddingBottom: '14px', borderBottom: '1px solid #1a0f2e' }}>
-                        <div style={{ fontSize: '13px', color: '#C09EE0', marginBottom: '4px', fontWeight: 'bold' }}>{k.term}</div>
-                        <div style={{ fontSize: '12px', color: '#8070a0', lineHeight: '1.55' }}>{k.def}</div>
-                      </div>
-                    ))}
+                    <p style={{ fontSize: '13px', color: '#7B5EA7', margin: '0 0 8px 0', lineHeight: '1.6', fontStyle: 'italic' }}>
+                      Click any monad to inspect its inner nature and current perceptual state.
+                    </p>
                     <p style={{ fontSize: '12px', color: '#5a4870', margin: 0, lineHeight: '1.5' }}>
-                      Click any monad to inspect its internal nature and current perceptual state.
+                      Try dragging a causal arrow from one monad to another to discover why no windows exist.
                     </p>
                   </div>
                 )}
@@ -5830,6 +6052,49 @@ function LeibnizMonads() {
         )}
       </div>
 
+      {/* Key Concepts */}
+      <div style={{ padding: '28px 40px 0 40px' }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: '#7B5EA7', marginBottom: 14 }}>
+          Key Concepts — Click to Explore
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+          {leibnizConcepts.map(c => (
+            <div
+              key={c.id}
+              onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+              style={{
+                padding: '6px 14px',
+                background: hoveredConcept === c.id ? '#7B5EA7' : 'rgba(123, 94, 167, 0.08)',
+                border: `1px solid ${hoveredConcept === c.id ? '#C09EE0' : '#2a1a3e'}`,
+                borderRadius: 20,
+                fontSize: 12,
+                cursor: 'pointer',
+                color: hoveredConcept === c.id ? '#f0ead8' : '#C09EE0',
+                transition: 'all 0.2s',
+              }}
+            >
+              {c.label}
+            </div>
+          ))}
+        </div>
+        {hoveredConcept && (
+          <div style={{
+            background: 'rgba(123, 94, 167, 0.08)',
+            border: '1px solid #2a1a3e',
+            borderRadius: 6,
+            padding: '16px 20px',
+            marginBottom: 4,
+          }}>
+            <div style={{ fontSize: 13, fontWeight: 'bold', color: '#C09EE0', marginBottom: 8 }}>
+              {leibnizConcepts.find(c => c.id === hoveredConcept)?.label}
+            </div>
+            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+              {leibnizConcepts.find(c => c.id === hoveredConcept)?.desc}
+            </p>
+          </div>
+        )}
+      </div>
+
       {/* DIFFICULTY PANEL */}
       <div style={{
         margin: '0 0 0 0',
@@ -5926,6 +6191,7 @@ function LeibnizMonads() {
           )}
         </div>
       </div>
+      </div>
     </div>
   );
 }
@@ -5940,6 +6206,15 @@ function EmpiricistDemolition() {
   const [rebuilding, setRebuilding] = useState(false);
   const [dissolveProgress, setDissolveProgress] = useState(0);
   const dissolveRef = useRef(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "bundle", label: "Bundle Theory", desc: "Hume's view: what we call a 'substance' or 'self' is just a bundle of perceptions — qualities clustered together. There is no hidden bearer or substance beneath the bundle holding the qualities together; the bundle is all there is." },
+    { id: "impression", label: "Impression", desc: "For Hume, raw sensory data — the immediate, vivid deliverances of experience (seeing red, feeling heat). All legitimate ideas trace back to impressions. The idea of 'substance' cannot be grounded in any impression, so it is empty." },
+    { id: "conjunction", label: "Constant Conjunction", desc: "Hume's analysis of causation: all we observe is that events of type A are regularly followed by events of type B. There is no observable necessary connection — we infer it by habit, not by perceiving it. Causation is a projection of the mind." },
+    { id: "identity", label: "Personal Identity", desc: "On Hume's bundle theory, the self is not a persisting substance but a rapid succession of perceptions. What we call 'I' is a fiction — a narrative we impose on a stream of experiences that have no single owner." },
+    { id: "induction", label: "Problem of Induction", desc: "Hume noticed we cannot justify inferring future regularities from past ones without presupposing the very regularity we are trying to prove. This circle cannot be broken by reason or experience — it exposes a gap at the heart of empirical knowledge." },
+  ];
 
   const qualities = [
     { id: "redness", label: "Redness", color: "#C0392B", shape: "circle", desc: "The vivid scarlet hue we see — a sensory impression of color." },
@@ -6374,6 +6649,48 @@ function EmpiricistDemolition() {
           </div>
         </div>
 
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#D4A017", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#D4A017" : "rgba(212, 160, 23, 0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#e8c050" : "#8a6010"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#e8c050",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(212, 160, 23, 0.06)",
+              border: "1px solid #8a6010",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#e8c050", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
+        </div>
+
         {/* THE DIFFICULTY PANEL */}
         <div style={{
           background: "rgba(20, 12, 0, 0.75)",
@@ -6795,8 +7112,6 @@ function KantCopernican() {
               {concepts.map((c) => (
                 <div
                   key={c.id}
-                  onMouseEnter={() => setHoveredConcept(c.id)}
-                  onMouseLeave={() => setHoveredConcept(null)}
                   onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
                   style={{
                     padding: "6px 12px",
@@ -7206,13 +7521,15 @@ function HegelBecoming() {
         }}>
           <div style={{ fontSize: 10, letterSpacing: 3, color: '#8B1A1A', textTransform: 'uppercase', marginBottom: 18, fontWeight: 'bold' }}>Main Visualization</div>
 
-          {/* Concept chips */}
+          {/* Key Concepts */}
+          <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: '#8B1A1A', marginBottom: 12 }}>
+            Key Concepts — Click to Explore
+          </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 22 }}>
             {concepts.map(c => (
               <div
                 key={c.id}
-                onMouseEnter={() => setHoveredConcept(c.id)}
-                onMouseLeave={() => setHoveredConcept(null)}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
                 style={{
                   padding: '5px 12px',
                   borderRadius: 20,
@@ -7247,7 +7564,7 @@ function HegelBecoming() {
           }}>
             {hoveredConcept
               ? concepts.find(c => c.id === hoveredConcept)?.desc
-              : 'Hover a concept above to explore it...'}
+              : 'Click a concept above to explore it...'}
           </div>
 
           {/* Section 1: Being/Nothing/Becoming Canvas */}
@@ -7551,6 +7868,15 @@ function HusserlPhenomenology() {
   const [hoveredLaw, setHoveredLaw] = useState(null);
   const [echoesOpen, setEchoesOpen] = useState(false);
   const [cupVisible, setCupVisible] = useState(true);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "intentionality", label: "Intentionality", desc: "The fundamental structure of consciousness: every mental act is directed toward something — perceiving something, remembering something, fearing something. Brentano called this 'aboutness' the mark of the mental. Husserl made it the core of phenomenology." },
+    { id: "epoche", label: "Epoché (Bracketing)", desc: "Husserl's method: suspend the 'natural attitude' — our habitual assumption that the world simply exists as we perceive it — and attend only to the structures of experience itself. We bracket existence claims to study the pure phenomena." },
+    { id: "eidos", label: "Eidos (Essence)", desc: "Through 'eidetic variation' — imaginatively varying a thing to see what stays constant — we can grasp its essence. The essence of a melody is its structure of rising and falling, not the particular pitches. Essences are given in intuition, not constructed by thought." },
+    { id: "horizon", label: "Horizon", desc: "Every perception has a horizon: implicit background expectations about unseen sides of the object, its context, and the entire field of possible experience. When I see a cup, I implicitly anticipate the back I cannot see. Reality is always experienced with more than what is directly given." },
+    { id: "lifeworld", label: "Lifeworld", desc: "The pre-theoretical, taken-for-granted world of ordinary experience — the ground beneath all scientific theorizing. Husserl argued that the natural sciences abstract from the lifeworld but can never replace it; the lived, first-person world is the ultimate foundation." },
+  ];
 
   const horizonSegments = [
     {
@@ -7954,6 +8280,48 @@ function HusserlPhenomenology() {
               Husserl's method was not skepticism but suspension: bracket the question of whether there really is a cup, whether it really causes your experience, what its atoms are made of — none of that. Simply attend to what appears, exactly as it appears, and describe its invariant structures rigorously. This "bracketing" (epoché) is what allows phenomenology to be a science: not a science of the world, but a science of the necessary conditions under which any world can appear at all.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#4E8B8B", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#4E8B8B" : "rgba(78, 139, 139, 0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#7ababa" : "#2a5858"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#7ababa",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(78, 139, 139, 0.06)",
+              border: "1px solid #2a5858",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#7ababa", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -9481,7 +9849,7 @@ function WhiteheadProcess() {
         {/* Concept Buttons */}
         <div style={{ marginTop: "24px" }}>
           <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#E87D0D99", textTransform: "uppercase", marginBottom: "12px" }}>
-            Explore Key Concepts
+            Key Concepts — Click to Explore
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
             {concepts.map(c => {
@@ -9491,8 +9859,6 @@ function WhiteheadProcess() {
                 <button
                   key={c.id}
                   onClick={() => setSelectedConcept(isSelected ? null : c.id)}
-                  onMouseEnter={() => setHoveredConcept(c.id)}
-                  onMouseLeave={() => setHoveredConcept(null)}
                   style={{
                     padding: "8px 16px",
                     background: isSelected ? "#E87D0D" : (isHovered ? "#2a1400" : "#12080044"),
@@ -9771,13 +10137,12 @@ function MeinongNonexistent() {
 
         {/* Concept Pills */}
         <div style={{ marginBottom: "28px" }}>
-          <div style={{ fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", color: "#7D3C98", marginBottom: "12px" }}>Key Concepts — hover to explore</div>
+          <div style={{ fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", color: "#7D3C98", marginBottom: "12px" }}>Key Concepts — Click to Explore</div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
             {concepts.map(c => (
               <div
                 key={c.id}
-                onMouseEnter={() => setHoveredConcept(c.id)}
-                onMouseLeave={() => setHoveredConcept(null)}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
                 style={{
                   padding: "6px 14px",
                   borderRadius: "20px",
@@ -10175,6 +10540,15 @@ function QuineAnalyticOntology() {
   const [predictionCollapsed, setPredictionCollapsed] = useState(false);
   const [quineResponseShown, setQuineResponseShown] = useState(false);
   const [animating, setAnimating] = useState(false);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "commitment", label: "Ontological Commitment", desc: "Quine's criterion: a theory is committed to the existence of whatever its variables must range over for the theory to be true. 'There are prime numbers between 10 and 20' commits us to prime numbers. To be is to be the value of a bound variable." },
+    { id: "indispensability", label: "Indispensability Argument", desc: "We ought to believe in the existence of mathematical objects because mathematics is indispensable to our best scientific theories. If physics cannot be done without quantifying over real numbers, then real numbers exist by the same standard as electrons." },
+    { id: "paraphrase", label: "Paraphrase Strategy", desc: "One way to avoid ontological commitments: show that apparent reference to suspect entities can be paraphrased away. Quine paraphrased away mental states, abstract objects, and modalities — but the question is whether any paraphrase is available or adequate." },
+    { id: "naturalism", label: "Naturalism", desc: "Quine's view that philosophy is continuous with natural science — there is no first philosophy above or behind science. Ontological questions are answered by asking what science is committed to, not by a priori intuition or conceptual analysis." },
+    { id: "dogmas", label: "Two Dogmas", desc: "Quine attacked the analytic-synthetic distinction (the idea that some truths hold by meaning alone) and the reductionism of logical positivism. If no statement is immune to revision in light of experience, then ontology is an integral part of our revisable web of belief." },
+  ];
 
   const nodes = [
     { id: "electron", x: 200, y: 120, label: "Electrons", type: "physical", color: "#2E86AB", desc: "Quantified over in quantum field theory. The theory says '∃x, x is an electron' — committing us to electrons." },
@@ -10601,6 +10975,48 @@ function QuineAnalyticOntology() {
           </div>
         </div>
 
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2E86AB", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#2E86AB" : "rgba(46, 134, 171, 0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#5aaed4" : "#1a4f6a"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#5aaed4",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(46, 134, 171, 0.06)",
+              border: "1px solid #1a4f6a",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#5aaed4", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
+        </div>
+
         {/* THE DIFFICULTY PANEL */}
         <div style={{
           background: "rgba(10, 20, 30, 0.85)",
@@ -10691,6 +11107,15 @@ function PropertiesUniversalsTropes() {
   const [animFrame, setAnimFrame] = useState(0);
   const animRef = useRef(null);
   const canvasRef = useRef(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "universals", label: "Universals", desc: "Properties or relations that can be shared by multiple distinct particulars simultaneously — redness in two different apples, triangularity in two shapes. The question is whether universals are real mind-independent entities or reducible to something else." },
+    { id: "tropes", label: "Tropes", desc: "Particular property-instances rather than shared universals. The redness of this apple is a numerically distinct trope from the redness of that apple. Trope theory avoids abstract universals while explaining similarity: two tropes resemble each other." },
+    { id: "immanent", label: "Immanent Realism", desc: "Armstrong's view: universals exist, but only in the things that instantiate them — not in a Platonic realm. A universal without any instances would not exist at all. This 'in re' realism tries to capture sharing without transcendence." },
+    { id: "resemblance", label: "Resemblance Nominalism", desc: "Instead of positing shared universals, explain similarity by primitive resemblance relations between particulars. Things are red because they sufficiently resemble each other. The challenge: resemblance itself looks like a universal relation." },
+    { id: "class", label: "Class Nominalism", desc: "A property is just the set of all its instances: redness = the set of all red things. This avoids universals and tropes, but struggles with coextension (two properties shared by exactly the same things would be identical) and with modal questions about possible instances." },
+  ];
 
   useEffect(() => {
     let frame = 0;
@@ -11000,19 +11425,46 @@ function PropertiesUniversalsTropes() {
           )}
         </div>
 
-        {/* Concept Pills */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28, justifyContent: "center" }}>
-          {["Universals Realism", "Resemblance Nominalism", "Trope Theory", "Property Instantiation", "Scientific Regularities"].map((c) => (
-            <span key={c} style={{
-              background: "#1a0808",
-              border: "1px solid #3a1010",
-              borderRadius: 20,
-              padding: "5px 14px",
-              fontSize: 11,
-              color: "#b08080",
-              letterSpacing: 0.5,
-            }}>{c}</span>
-          ))}
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#C0392B", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#C0392B" : "rgba(192, 57, 43, 0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#e06050" : "#7a1f1f"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#e06050",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(192, 57, 43, 0.06)",
+              border: "1px solid #7a1f1f",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#e06050", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* 3. THE DIFFICULTY PANEL */}
@@ -12225,6 +12677,15 @@ function PossibleWorlds() {
   const [necessityMode, setNecessityMode] = useState(false);
   const canvasRef = useRef(null);
   const animRef = useRef(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "possibleworlds", label: "Possible Worlds", desc: "Systematically, a possible world is a way reality could have been — a maximal consistent description of how things might have stood. They are used to analyze necessity (true in all worlds), possibility (true in some world), and counterfactuals (what would have been true if...)." },
+    { id: "modal_realism", label: "Modal Realism", desc: "David Lewis's position: possible worlds are just as real and concrete as the actual world. 'Actual' is an indexical like 'here' — from any world's perspective, it is actual. This gives a powerful, uniform account of modality at the cost of ontological extravagance." },
+    { id: "ersatz", label: "Ersatz Worlds", desc: "Anti-realist alternatives to Lewis: possible worlds as abstract objects — maximal consistent sets of propositions, or maximal states of affairs. These are cheaper ontologically but face challenges about how abstract entities can explain modal truth." },
+    { id: "counterparts", label: "Counterpart Theory", desc: "Lewis's account of trans-world identity: you do not literally exist in other worlds, but you have counterparts — individuals in other worlds who resemble you in relevant ways. Modal claims about you are really claims about your counterparts." },
+    { id: "accessibility", label: "Accessibility", desc: "In modal logic, a world W2 is accessible from W1 if what is possible in W1 includes what is actual in W2. Different accessibility relations give different modal logics. The philosophical question: what makes one world accessible from another?" },
+  ];
 
   const worlds = [
     { id: 0, label: "Actual World", x: 250, y: 220, r: 38, similarity: 5, actual: true, truths: ["You exist here", "Paris is the capital of France", "Water is H₂O", "The laws of physics hold as we know them"], color: "#4FC3F7" },
@@ -12614,6 +13075,48 @@ function PossibleWorlds() {
           </div>
         </div>
 
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#4FC3F7", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#4FC3F7" : "rgba(79, 195, 247, 0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#8ddeff" : "#1a607a"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#8ddeff",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(79, 195, 247, 0.06)",
+              border: "1px solid #1a607a",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#8ddeff", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
+        </div>
+
         {/* THE DIFFICULTY PANEL */}
         <div style={{
           background: "#0a0f18",
@@ -12695,8 +13198,18 @@ function OntologyOfTime() {
   const [echoesOpen, setEchoesOpen] = useState(false);
   const [hoveredEchoes, setHoveredEchoes] = useState(false);
   const [relativityProgress, setRelativityProgress] = useState(0);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const animRef = useRef(null);
   const [tick, setTick] = useState(0);
+
+  const timeConcepts = [
+    { id: 'presentism', label: 'Presentism', desc: 'Only the present moment exists. Past events and future events are nothing — they have no being. On this view, dinosaurs do not exist anywhere; the year 2100 does not exist anywhere. Reality is entirely confined to the razor-thin now.' },
+    { id: 'eternalism', label: 'Eternalism', desc: 'All times — past, present, and future — are equally real, spread across a four-dimensional spacetime block. The past does not cease to exist when we leave it; it remains just as real as the present, located at its own temporal coordinates. Death is distance, not annihilation.' },
+    { id: 'growing_block', label: 'Growing Block', desc: 'The past and present are real but the future is not yet actual. Time "grows" as new events are added to the block. This preserves the irreversibility of the past while leaving the future genuinely open — neither already existing nor simply nothing.' },
+    { id: 'relativity', label: 'Relativity of Simultaneity', desc: 'Special relativity shows there is no observer-independent "now." Events that are simultaneous in one inertial frame are not simultaneous in another moving frame. This makes presentism deeply problematic: whose present should be the privileged "real" present?' },
+    { id: 'flow', label: 'Flow of Time', desc: 'The subjective sense that time passes, that the present moment moves forward through a sequence of nows. Whether this flow is a genuine feature of reality or a construct of conscious experience is one of the deepest questions in philosophy of time.' },
+    { id: 'temporal_ontology', label: 'Temporal Ontology', desc: 'The branch of ontology that asks what kinds of temporal entities exist: moments, intervals, instants, events, processes. It intersects with questions about persistence, identity, and whether the past and future are real — all turning on what we say exists when.' },
+  ];
 
   useEffect(() => {
     let frame;
@@ -13144,25 +13657,46 @@ function OntologyOfTime() {
           )}
         </div>
 
-        {/* Key Concepts grid */}
-        <div style={{
-          borderTop: "1px solid #1a3d2a",
-          paddingTop: "24px",
-          marginTop: "24px",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-          gap: "12px",
-        }}>
-          {[
-            { term: "Presentism", def: "Only the present exists; past and future are nothing." },
-            { term: "Eternalism", def: "All times equally real in a 4D spacetime block." },
-            { term: "Growing Block", def: "Past + present real; future not yet crystallized." },
-            { term: "Relativity of Simultaneity", def: "No observer-independent 'now' in special relativity." },
-            { term: "Flow of Time", def: "The felt passage of time is perspectival, not a fact about reality." },
-            { term: "Temporal Ontology", def: "The study of what kinds of things and times genuinely exist." },
-          ].map((c, i) => (
-            <ConceptCard key={i} term={c.term} def={c.def} accent="#2D6A4F" />
-          ))}
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2D6A4F", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {timeConcepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#2D6A4F" : "rgba(45, 106, 79, 0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#52B788" : "#1a3d2a"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#52B788",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(45, 106, 79, 0.08)",
+              border: "1px solid #1a3d2a",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#52B788", marginBottom: 8 }}>
+                {timeConcepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {timeConcepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -13767,36 +14301,43 @@ function PersistenceIdentity() {
           {/* Key Concepts */}
           <div style={{ marginBottom: 28 }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#9B4F0F", marginBottom: 12 }}>
-              Key Concepts
+              Key Concepts — Click to Explore
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: hoveredConcept ? 12 : 0 }}>
               {concepts.map(c => (
                 <div
                   key={c.id}
-                  onMouseEnter={() => setHoveredConcept(c.id)}
-                  onMouseLeave={() => setHoveredConcept(null)}
+                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
                   style={{
-                    background: hoveredConcept === c.id ? "#2a1205" : "#14090488",
-                    border: `1px solid ${hoveredConcept === c.id ? accentLight : "#3a1a08"}`,
-                    borderRadius: 6,
-                    padding: "8px 14px",
+                    padding: "6px 14px",
+                    background: hoveredConcept === c.id ? accent : "rgba(155,79,15,0.1)",
+                    border: `1px solid ${hoveredConcept === c.id ? accentLight : "rgba(155,79,15,0.3)"}`,
+                    borderRadius: 20,
+                    fontSize: 12,
                     cursor: "pointer",
+                    color: hoveredConcept === c.id ? "#f0ead8" : "#c4a07a",
                     transition: "all 0.2s",
-                    boxShadow: hoveredConcept === c.id ? `0 0 12px ${accent}44` : "none",
-                    minWidth: 120,
                   }}
                 >
-                  <div style={{ fontSize: 13, fontWeight: "bold", color: hoveredConcept === c.id ? "#FFD09A" : "#c4a07a" }}>
-                    {c.label}
-                  </div>
-                  {hoveredConcept === c.id && (
-                    <div style={{ fontSize: 11, color: "#a08060", marginTop: 4, fontStyle: "italic" }}>
-                      {c.short}
-                    </div>
-                  )}
+                  {c.label}
                 </div>
               ))}
             </div>
+            {hoveredConcept && (
+              <div style={{
+                background: "rgba(155,79,15,0.08)",
+                border: `1px solid rgba(155,79,15,0.3)`,
+                borderRadius: 6,
+                padding: "16px 20px",
+              }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: accentLight, marginBottom: 8 }}>
+                  {concepts.find(c => c.id === hoveredConcept)?.label}
+                </div>
+                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                  {concepts.find(c => c.id === hoveredConcept)?.short}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Legal Case Explorer */}
@@ -14382,30 +14923,40 @@ function EventsFacts() {
 
           {/* Key Concepts */}
           <div style={{ marginTop: 8 }}>
-            <div style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "#aaa", marginBottom: 12 }}>Key Concepts — click to expand</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            <div style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: ACCENT, marginBottom: 12 }}>Key Concepts — Click to Explore</div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: hoveredConcept ? 12 : 0 }}>
               {concepts.map(c => (
                 <div key={c.id}
                   onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  onMouseEnter={() => {}}
                   style={{
-                    background: hoveredConcept === c.id ? "rgba(40,18,22,0.95)" : "rgba(25,12,15,0.8)",
+                    padding: "6px 14px",
+                    background: hoveredConcept === c.id ? ACCENT : "rgba(232,72,85,0.08)",
                     border: `1px solid ${hoveredConcept === c.id ? ACCENT : "rgba(232,72,85,0.25)"}`,
-                    borderRadius: 6,
-                    padding: hoveredConcept === c.id ? "14px 16px" : "10px 14px",
+                    borderRadius: 20,
+                    fontSize: 12,
                     cursor: "pointer",
-                    transition: "all 0.25s",
-                    flex: hoveredConcept === c.id ? "1 1 100%" : "0 1 auto",
-                    boxShadow: hoveredConcept === c.id ? `0 0 16px rgba(232,72,85,0.2)` : "none",
+                    color: hoveredConcept === c.id ? "#f0ead8" : ACCENT,
+                    transition: "all 0.2s",
                   }}>
-                  <div style={{ fontSize: 13, color: hoveredConcept === c.id ? "#fff" : ACCENT, fontWeight: "bold", marginBottom: hoveredConcept === c.id ? 6 : 0 }}>{c.label}</div>
-                  {hoveredConcept !== c.id && <div style={{ fontSize: 11, color: "#888", fontStyle: "italic" }}>{c.short}</div>}
-                  {hoveredConcept === c.id && (
-                    <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#ddd" }}>{c.detail}</p>
-                  )}
+                  {c.label}
                 </div>
               ))}
             </div>
+            {hoveredConcept && (
+              <div style={{
+                background: "rgba(232,72,85,0.06)",
+                border: `1px solid rgba(232,72,85,0.25)`,
+                borderRadius: 6,
+                padding: "16px 20px",
+              }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: ACCENT, marginBottom: 8 }}>
+                  {concepts.find(c => c.id === hoveredConcept)?.label}
+                </div>
+                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                  {concepts.find(c => c.id === hoveredConcept)?.detail}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Davidson's Core Argument */}
@@ -14503,6 +15054,7 @@ function CompositionMereology() {
   const [hoveredComposite, setHoveredComposite] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
   const [particleFrame, setParticleFrame] = useState(0);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const canvasRef = useRef(null);
   const animRef = useRef(null);
   const particlesRef = useRef([]);
@@ -14510,6 +15062,14 @@ function CompositionMereology() {
   const accentColor = "#5C6BC0";
   const accentLight = "#7986CB";
   const accentDark = "#3949AB";
+
+  const concepts = [
+    { id: "universalism", label: "Universalism", desc: "Any collection whatsoever composes a whole, regardless of how scattered or arbitrary. Endorsed by David Lewis — no special criterion is needed; every plurality of things automatically has a mereological sum." },
+    { id: "vaninwagen", label: "Van Inwagen's Restriction", desc: "Composition occurs only when parts form a life — biological organisms are the only genuine composite objects. Chairs and tables are not real composites; they are simples arranged in useful patterns, nothing more." },
+    { id: "nihilism", label: "Mereological Nihilism", desc: "No composition ever occurs. Only fundamental simples exist. A 'chair' is just simples arranged chair-wise — a useful description, not a genuinely existing composite entity." },
+    { id: "parsimony", label: "Parsimony", desc: "The drive to minimize ontological commitments — to posit as few entities as needed to explain the world. Nihilism maximizes parsimony; universalism sacrifices it for the simplicity of having no composition criterion." },
+    { id: "spe", label: "Special Composition Question", desc: "Peter van Inwagen's challenge: under exactly what conditions do parts compose a whole? Any non-trivial answer must explain why some arrangements yield composites and others don't — without drawing an arbitrary line." },
+  ];
 
   // Particle animation for nihilism mode
   useEffect(() => {
@@ -14885,35 +15445,46 @@ function CompositionMereology() {
           );
         })()}
 
-        {/* Key concepts row */}
-        <div style={{ display: "flex", gap: "10px", marginTop: "22px", flexWrap: "wrap" }}>
-          {[
-            { term: "Universalism", def: "Any collection whatsoever composes a whole. Endorsed by David Lewis. Avoids arbitrary line-drawing." },
-            { term: "Van Inwagen", def: "Composition occurs only when parts form a life — biological organisms only. All else is simples." },
-            { term: "Nihilism", def: "No composition ever occurs. Only fundamental simples exist, arranged in patterns we describe as 'chair-wise'." },
-            { term: "Parsimony", def: "The drive to minimize ontological commitments — to posit as few entities as needed to explain the world." },
-          ].map(k => {
-            const [hov, setHov] = useState(false);
-            return (
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: accentColor, marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
               <div
-                key={k.term}
-                onMouseEnter={() => setHov(true)}
-                onMouseLeave={() => setHov(false)}
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
                 style={{
-                  flex: "1 1 160px",
-                  background: hov ? "rgba(92,107,192,0.14)" : "rgba(255,255,255,0.03)",
-                  border: `1px solid ${hov ? accentColor : "#2a2a4a"}`,
-                  borderRadius: "6px",
-                  padding: "12px 14px",
-                  cursor: "default",
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? accentColor : "rgba(92,107,192,0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? accentLight : accentDark}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : accentLight,
                   transition: "all 0.2s",
                 }}
               >
-                <div style={{ fontSize: "12px", color: accentLight, marginBottom: "5px", letterSpacing: "0.3px" }}>{k.term}</div>
-                <div style={{ fontSize: "12px", color: "#8a88a8", lineHeight: "1.5" }}>{k.def}</div>
+                {c.label}
               </div>
-            );
-          })}
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(92,107,192,0.08)",
+              border: `1px solid ${accentDark}`,
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: accentLight, marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -15006,9 +15577,18 @@ function PowersDispositions() {
   const [counterfactual, setCounterfactual] = useState(false);
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredPower, setHoveredPower] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [hammerPos, setHammerPos] = useState(0);
   const animRef = useRef(null);
   const [phase, setPhase] = useState("idle"); // idle, swinging, broken, reset
+
+  const keyConcepts = [
+    { id: "disposition", label: "Disposition", desc: "A property that is a tendency toward a certain behavior — fragility disposes toward breaking when struck. Dispositions can exist even when never manifested: a fragile glass that is never dropped is still fragile." },
+    { id: "powers", label: "Powers Ontology", desc: "The view that fundamental properties are active capacities constitutive of what things are. An electron repels because repulsion is part of its intrinsic nature — the regularity flows necessarily from what it is." },
+    { id: "mosaic", label: "Humean Mosaic", desc: "David Lewis's view: reality is a mosaic of particular events with no hidden necessities. Laws and dispositions are merely supervenient patterns over this mosaic — useful summaries, not real features of things." },
+    { id: "laws", label: "Laws of Nature", desc: "For powers ontologists, laws flow from intrinsic natures and could not have been otherwise. For Humeans, laws are the 'best system' — the most compact, strong summary of the actual pattern of events." },
+    { id: "intrinsic", label: "Intrinsic Property", desc: "A property a thing has in virtue of itself alone, regardless of what else exists or what relations it stands in. Powers ontologists hold that dispositions are intrinsic; Humeans deny any property is truly intrinsic in this robust sense." },
+  ];
 
   const powers = [
     { id: "fragility", label: "Fragility", desc: "Intrinsic capacity to shatter under sufficient force", color: "#A8DADC" },
@@ -15387,36 +15967,44 @@ function PowersDispositions() {
 
           {/* Key Concepts */}
           <div style={{ marginTop: 28, borderTop: "1px solid #1a2e30", paddingTop: 20 }}>
-            <div style={{ fontSize: 11, letterSpacing: 2, color: "#A8DADC", marginBottom: 14, textTransform: "uppercase" }}>Core Concepts</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-              {[
-                { term: "Disposition", def: "A property that is a tendency toward a certain behavior — fragility disposes toward breaking." },
-                { term: "Powers Ontology", def: "The view that fundamental properties are active capacities constitutive of what things are." },
-                { term: "Humean Mosaic", def: "Lewis's view: reality is a mosaic of particular events; laws and dispositions are supervenient patterns." },
-                { term: "Laws of Nature", def: "For powers ontologists, laws flow from intrinsic natures. For Humeans, they are the best system of the mosaic." },
-                { term: "Intrinsic Property", def: "A property a thing has in virtue of itself alone, regardless of what else exists." },
-              ].map((c, i) => {
-                const [open, setOpen] = useState(false);
-                return (
-                  <div
-                    key={i}
-                    onClick={() => setOpen(o => !o)}
-                    style={{
-                      background: open ? "#0e2a2c" : "#080f10",
-                      border: `1px solid ${open ? "#A8DADC" : "#1e3a3c"}`,
-                      borderRadius: 6,
-                      padding: "8px 14px",
-                      cursor: "pointer",
-                      transition: "all 0.2s",
-                      maxWidth: 220,
-                    }}
-                  >
-                    <div style={{ fontSize: 12, color: open ? "#A8DADC" : "#7a9a9c", fontWeight: open ? "bold" : "normal" }}>{c.term}</div>
-                    {open && <div style={{ fontSize: 11, color: "#8a9aac", marginTop: 6, lineHeight: 1.6 }}>{c.def}</div>}
-                  </div>
-                );
-              })}
+            <div style={{ fontSize: 11, letterSpacing: 2, color: "#A8DADC", marginBottom: 14, textTransform: "uppercase" }}>
+              Key Concepts — Click to Explore
             </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+              {keyConcepts.map(c => (
+                <div
+                  key={c.id}
+                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                  style={{
+                    padding: "6px 14px",
+                    background: hoveredConcept === c.id ? "#A8DADC" : "rgba(168,218,220,0.08)",
+                    border: `1px solid ${hoveredConcept === c.id ? "#A8DADC" : "#1e3a3c"}`,
+                    borderRadius: 20,
+                    fontSize: 12,
+                    cursor: "pointer",
+                    color: hoveredConcept === c.id ? "#0a1618" : "#7a9a9c",
+                    transition: "all 0.2s",
+                  }}
+                >
+                  {c.label}
+                </div>
+              ))}
+            </div>
+            {hoveredConcept && (
+              <div style={{
+                background: "rgba(168,218,220,0.06)",
+                border: "1px solid #1e3a3c",
+                borderRadius: 6,
+                padding: "16px 20px",
+              }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: "#A8DADC", marginBottom: 8 }}>
+                  {keyConcepts.find(c => c.id === hoveredConcept)?.label}
+                </div>
+                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                  {keyConcepts.find(c => c.id === hoveredConcept)?.desc}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Comparison summary */}
@@ -15524,6 +16112,7 @@ function NaturalKinds() {
   const [hoveredEcho, setHoveredEcho] = useState(null);
   const [rigidHovered, setRigidHovered] = useState(null);
   const [moleculeZoomed, setMoleculeZoomed] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
 
   const accent = '#17A589';
   const accentDark = '#0e7a65';
@@ -16006,6 +16595,59 @@ function NaturalKinds() {
             </div>
           )}
         </div>
+
+        {/* Key Concepts */}
+        {(() => {
+          const keyConcepts = [
+            { id: "natural_kinds", label: "Natural Kinds", desc: "Categories that carve nature 'at its joints' — groupings determined by the structure of reality itself rather than human convention. Gold, water, and tigers are candidate natural kinds; furniture and games are not. Whether any natural kinds exist is the central question of this debate." },
+            { id: "rigid_designator", label: "Rigid Designator", desc: "A term that picks out the same object or substance in every possible world. Kripke argued that 'water' is a rigid designator for H₂O — even in worlds where water behaves strangely or is rare, the word still refers to that same underlying substance, not to whatever-plays-the-water-role." },
+            { id: "essentialism", label: "Essentialism", desc: "The view that natural kinds have essential properties — features that members must have in every possible world to belong to the kind. For Kripke and Putnam, H₂O is the essence of water: XYZ cannot be water no matter how much it resembles water in ordinary life." },
+            { id: "nominalism", label: "Nominalism", desc: "The view that only individuals exist; kinds are names or concepts we project onto continuous variation in nature. For the nominalist, there is no natural joint between wolf and coyote — the boundary is always drawn by us, for our purposes." },
+            { id: "twin_earth", label: "Twin Earth", desc: "Putnam's thought experiment: on a distant planet, a substance that looks and tastes like water is actually XYZ, not H₂O. Inhabitants call it 'water'. Putnam's conclusion: the word means something different on Twin Earth, showing that meaning depends on external facts, not just what is in speakers' heads." },
+          ];
+          return (
+            <div style={{ marginTop: 28, marginBottom: 28 }}>
+              <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#17A589", marginBottom: 14 }}>
+                Key Concepts — Click to Explore
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+                {keyConcepts.map(c => (
+                  <div
+                    key={c.id}
+                    onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                    style={{
+                      padding: "6px 14px",
+                      background: hoveredConcept === c.id ? "#17A589" : "rgba(23,165,137,0.1)",
+                      border: `1px solid ${hoveredConcept === c.id ? "#20c9a7" : "rgba(23,165,137,0.3)"}`,
+                      borderRadius: 20,
+                      fontSize: 12,
+                      cursor: "pointer",
+                      color: hoveredConcept === c.id ? "#f0ead8" : "#17A589",
+                      transition: "all 0.2s",
+                    }}
+                  >
+                    {c.label}
+                  </div>
+                ))}
+              </div>
+              {hoveredConcept && (
+                <div style={{
+                  background: "rgba(23,165,137,0.08)",
+                  border: "1px solid rgba(23,165,137,0.25)",
+                  borderRadius: 6,
+                  padding: "16px 20px",
+                }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#17A589", marginBottom: 8 }}>
+                    {keyConcepts.find(c => c.id === hoveredConcept)?.label}
+                  </div>
+                  <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                    {keyConcepts.find(c => c.id === hoveredConcept)?.desc}
+                  </p>
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {/* THE DIFFICULTY PANEL */}
         <div style={{
@@ -16653,6 +17295,15 @@ function GroundingArchitecture() {
   const [arrowMode, setArrowMode] = useState('grounding');
   const [echoesOpen, setEchoesOpen] = useState(false);
   const [hoveredFact, setHoveredFact] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
+
+  const concepts = [
+    { id: "grounding", label: "Grounding", desc: "A non-causal metaphysical dependence relation: the fact that {Socrates} exists is grounded in Socrates existing; the fact that an act is wrong is grounded in its consequences. Grounding is supposed to be more fine-grained than supervenience." },
+    { id: "fundamentality", label: "Fundamentality", desc: "The question of what is at the base of the grounding hierarchy — what exists without being grounded in anything else. Candidates include fundamental physical facts, simple particulars, or a single whole (priority monism). Fundamental entities are ontologically basic." },
+    { id: "truthmakers", label: "Truthmakers", desc: "The entities in the world that make true propositions true. The proposition 'there is a cat on the mat' is made true by a certain state of affairs. Truthmaker theory connects the ontology of the world to the truth of sentences about it." },
+    { id: "priority", label: "Priority Monism", desc: "Jonathan Schaffer's view: the whole cosmos is the only fundamental entity; all parts and facts are grounded in it. This inverts the usual picture where wholes are grounded in parts. The world is prior to its elements." },
+    { id: "supervenience", label: "Supervenience vs Grounding", desc: "Supervenience says there can be no A-difference without a B-difference — it is a covariation claim without explaining why. Grounding is stronger: it says A-facts hold because of B-facts. Two views can agree on which facts supervene on which while disagreeing about the direction of grounding." },
+  ];
 
   const layers = [
     {
@@ -17115,6 +17766,48 @@ function GroundingArchitecture() {
                   Facts at the bottom layer are fundamental — they do not hold in virtue of anything else. Everything above is derivative, real but not basic (Kit Fine, Schaffer).
                 </p>
               </div>
+            </div>
+          )}
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#7F5AF0", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#7F5AF0" : "rgba(127, 90, 240, 0.08)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#a888ff" : "#3d2a80"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#a888ff",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(127, 90, 240, 0.06)",
+              border: "1px solid #3d2a80",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#a888ff", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
             </div>
           )}
         </div>
@@ -17631,8 +18324,7 @@ function OntologyBeyondWest() {
                   const isHov = hoveredConcept === concept.id;
                   return (
                     <div key={concept.id}
-                      onMouseEnter={() => setHoveredConcept(concept.id)}
-                      onMouseLeave={() => setHoveredConcept(null)}
+                      onClick={() => setHoveredConcept(hoveredConcept === concept.id ? null : concept.id)}
                       style={{
                         background: isHov ? `${traditions[selectedTradition].color}22` : "rgba(30,15,50,0.8)",
                         border: `1px solid ${isHov ? traditions[selectedTradition].color : traditions[selectedTradition].color + "40"}`,
@@ -17701,6 +18393,60 @@ function OntologyBeyondWest() {
             </div>
           )}
         </div>
+
+        {/* Key Concepts */}
+        {(() => {
+          const keyConcepts = [
+            { id: "ontological_relativity", label: "Ontological Relativity", desc: "Quine's thesis that what exists is always relative to a conceptual scheme or language — there is no view from nowhere. Different conceptual frameworks may carve up reality in incommensurable ways, each internally coherent, with no neutral court of appeal." },
+            { id: "dependent_origination", label: "Dependent Origination", desc: "The Buddhist principle (pratītyasamutpāda) that all phenomena arise in dependence on conditions — nothing has independent self-existence (svabhāva). This dissolves substance ontology: what appears to be a fixed object is really a nexus of relations and processes." },
+            { id: "ubuntu", label: "Ubuntu Ontology", desc: "The Bantu philosophical principle 'umuntu ngumuntu ngabantu' — a person is a person through other persons. Persons and things are constituted by their relations; isolated individuality is an abstraction, not the primary ontological category." },
+            { id: "qi_li", label: "Qi and Li", desc: "In Chinese metaphysics, qi is the dynamic material-energetic substrate of all things; li is the principle or pattern that organises qi. Neither is prior — li without qi is empty abstraction, qi without li is undifferentiated flux. Reality is their inseparable activity." },
+            { id: "incommensurability", label: "Incommensurability", desc: "Kuhn and Feyerabend's thesis that competing conceptual schemes may lack a common measure — one cannot fully translate between them. Applied cross-culturally, this raises the question whether Western substance ontology and Buddhist process ontology are genuine rivals or simply different descriptions of the same world." },
+          ];
+          const [localHovered, setLocalHovered] = [hoveredConcept, setHoveredConcept];
+          return (
+            <div style={{ marginBottom: 28 }}>
+              <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#7F5AF0", marginBottom: 14 }}>
+                Key Concepts — Click to Explore
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: localHovered ? 16 : 0 }}>
+                {keyConcepts.map(c => (
+                  <div
+                    key={c.id}
+                    onClick={() => setLocalHovered(localHovered === c.id ? null : c.id)}
+                    style={{
+                      padding: "6px 14px",
+                      background: localHovered === c.id ? "#7F5AF0" : "rgba(127,90,240,0.1)",
+                      border: `1px solid ${localHovered === c.id ? "#a07af0" : "rgba(127,90,240,0.3)"}`,
+                      borderRadius: 20,
+                      fontSize: 12,
+                      cursor: "pointer",
+                      color: localHovered === c.id ? "#f0ead8" : "#a07af0",
+                      transition: "all 0.2s",
+                    }}
+                  >
+                    {c.label}
+                  </div>
+                ))}
+              </div>
+              {localHovered && (
+                <div style={{
+                  background: "rgba(127,90,240,0.08)",
+                  border: "1px solid rgba(127,90,240,0.25)",
+                  borderRadius: 6,
+                  padding: "16px 20px",
+                }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#7F5AF0", marginBottom: 8 }}>
+                    {keyConcepts.find(c => c.id === localHovered)?.label}
+                  </div>
+                  <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                    {keyConcepts.find(c => c.id === localHovered)?.desc}
+                  </p>
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {/* THE DIFFICULTY PANEL */}
         <div style={{
@@ -17913,7 +18659,7 @@ function StructuralRealism() {
       padding: '40px 24px',
       boxSizing: 'border-box',
     }}>
-      <div style={{ maxWidth: 780, margin: '0 auto' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto' }}>
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 36 }}>
@@ -18166,7 +18912,7 @@ function StructuralRealism() {
                     boxShadow: activeConceptIdx === i ? `0 0 8px ${accent}44` : 'none',
                   }}
                 >
-                  {c.short}
+                  {c.term}
                 </button>
               ))}
             </div>
@@ -18381,6 +19127,7 @@ function Metaontology() {
   const [hoveredMode, setHoveredMode] = useState(null);
   const [animating, setAnimating] = useState(false);
   const [pulsePhase, setPulsePhase] = useState(0);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
 
@@ -18403,6 +19150,14 @@ function Metaontology() {
       setAnimating(false);
     }, 300);
   };
+
+  const metaConcepts = [
+    { id: 'quantifier_variance', label: 'Quantifier Variance', desc: 'Eli Hirsch\'s view that there are multiple equally correct interpretations of the existential quantifier ("there exists"). Apparent ontological disagreements — like whether tables exist — are merely verbal: each party uses "exists" with a slightly different meaning. Neither is wrong.' },
+    { id: 'verbal_dispute', label: 'Verbal Dispute', desc: 'A dispute that appears to be substantive but actually dissolves when the parties clarify what they mean by key terms. Hirsch argues most of ontology consists of verbal disputes — philosophers fighting over word usage rather than genuine facts about the world.' },
+    { id: 'joint_carving', label: 'Joint-Carving', desc: 'Ted Sider\'s claim that some concepts correspond to real divisions in nature ("carve at the joints") while others are merely useful conventions. Sider argues the existential quantifier used in fundamental physics genuinely carves nature at its joints — making ontology a real, non-verbal enterprise.' },
+    { id: 'easy_ontology', label: 'Easy Ontology', desc: 'Amie Thomasson\'s deflationary position: existence questions are answered by examining the application conditions of our concepts, not by deep metaphysical inquiry. "Do numbers exist?" reduces to: do the application conditions for "number" get satisfied? The answer is yes, and it\'s not a hard question.' },
+    { id: 'deflationism', label: 'Deflationism', desc: 'The view that ontological questions lack the deep, substantive character philosophers have traditionally attributed to them. Rather than revealing mind-independent facts about what exists, ontological debates are either verbal, conceptual, or pragmatic. The traditional "existential abyss" turns out to be shallow.' },
+  ];
 
   const modes = [
     { id: "hirsch", label: "Hirsch Mode", subtitle: "Verbal Dispute Lens", color: "#E07A5F" },
@@ -18848,38 +19603,46 @@ function Metaontology() {
             <p style={{ margin: 0, fontSize: 13, color: "#c8c5bc", lineHeight: 1.7 }}>{current.verdict}</p>
           </div>
 
-          {/* Key Concepts Bar */}
-          <div style={{ marginTop: 18, display: "flex", gap: 8, flexWrap: "wrap" }}>
-            {[
-              { term: "Quantifier Variance", mode: "hirsch", desc: "Multiple equally valid existential quantifiers — none privileged" },
-              { term: "Verbal Disputes", mode: "hirsch", desc: "Apparent disagreements that dissolve into terminological differences" },
-              { term: "Joint Carving", mode: "sider", desc: "Some concepts track reality's natural divisions better than others" },
-              { term: "Easy Ontology", mode: "thomasson", desc: "Existence questions settled by examining conceptual application conditions" },
-              { term: "Deflationism", mode: "thomasson", desc: "Ontological questions lack the depth philosophers traditionally attributed to them" },
-            ].map(c => {
-              const modeColor = c.mode === "hirsch" ? "#E07A5F" : c.mode === "sider" ? "#81B29A" : "#F2CC8F";
-              const isActive = c.mode === activeMode;
-              return (
+          {/* Key Concepts */}
+          <div style={{ marginTop: 24 }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#9B7EC7", marginBottom: 14 }}>
+              Key Concepts — Click to Explore
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+              {metaConcepts.map(c => (
                 <div
-                  key={c.term}
-                  title={c.desc}
+                  key={c.id}
+                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
                   style={{
-                    padding: "5px 10px",
-                    fontSize: 10,
-                    background: isActive ? `${modeColor}20` : "rgba(30,28,48,0.5)",
-                    border: `1px solid ${isActive ? modeColor : "#333"}`,
-                    borderRadius: 4,
-                    color: isActive ? modeColor : "#666",
+                    padding: "6px 14px",
+                    background: hoveredConcept === c.id ? "#6B3FA0" : "rgba(107, 63, 160, 0.08)",
+                    border: `1px solid ${hoveredConcept === c.id ? "#9B7EC7" : "#3d2a80"}`,
+                    borderRadius: 20,
+                    fontSize: 12,
                     cursor: "pointer",
+                    color: hoveredConcept === c.id ? "#f0ead8" : "#9B7EC7",
                     transition: "all 0.2s",
-                    letterSpacing: 0.5,
                   }}
-                  onClick={() => handleModeChange(c.mode)}
                 >
-                  {c.term}
+                  {c.label}
                 </div>
-              );
-            })}
+              ))}
+            </div>
+            {hoveredConcept && (
+              <div style={{
+                background: "rgba(107, 63, 160, 0.08)",
+                border: "1px solid #3d2a80",
+                borderRadius: 6,
+                padding: "16px 20px",
+              }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: "#9B7EC7", marginBottom: 8 }}>
+                  {metaConcepts.find(c => c.id === hoveredConcept)?.label}
+                </div>
+                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                  {metaConcepts.find(c => c.id === hoveredConcept)?.desc}
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
