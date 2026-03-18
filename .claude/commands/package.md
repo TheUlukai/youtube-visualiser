@@ -23,9 +23,12 @@ Create `sites/<slug>/` with this structure:
 ```
 sites/<slug>/
   src/
-    App.jsx      — copy of output/visualizations.jsx
-    main.jsx     — React entry point
-    index.css    — global CSS reset (eliminates browser default body margin)
+    App.jsx           — copy of output/visualizations.jsx
+    main.jsx          — React entry point
+    index.css         — global CSS reset
+    components/       — archive of per-section source files
+      <id>.jsx        — one file per section (copied from output/components/)
+    sections.json     — copy of output/sections.json (for future reassembly)
   index.html
   package.json
   vite.config.js
@@ -33,6 +36,16 @@ sites/<slug>/
 ```
 
 **`src/App.jsx`** — copy `output/visualizations.jsx` verbatim (use bash `cp`).
+
+**`src/components/`** — copy all files from `output/components/` into `sites/<slug>/src/components/`. These are the individual per-section source files; they are not imported by the build but are preserved so any future fix or retrofit can be done on focused ~400-line files and then reassembled:
+```bash
+cp -r output/components/. sites/<slug>/src/components/
+```
+
+**`src/sections.json`** — copy `output/sections.json` so the site is self-contained for future reassembly:
+```bash
+cp output/sections.json sites/<slug>/src/sections.json
+```
 
 **`src/index.css`**:
 ```css
@@ -173,3 +186,10 @@ Confirm to the user:
 - Build succeeded (or show any errors)
 - docs/index.html updated
 - Remind them to commit and push to deploy to GitHub Pages
+- Show the reassembly command for future use:
+  ```bash
+  python scripts/assemble.py \
+    --components-dir sites/<slug>/src/components \
+    --sections-file  sites/<slug>/src/sections.json \
+    --output         sites/<slug>/src/App.jsx
+  ```

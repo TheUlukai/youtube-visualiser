@@ -2,14 +2,26 @@
 """
 assemble.py — Combines generated section components into a single navigable React app.
 
+Default usage (fresh pipeline output):
+  python scripts/assemble.py
+
+Reassemble a packaged site from its archived components:
+  python scripts/assemble.py \\
+    --components-dir sites/<slug>/src/components \\
+    --sections-file  sites/<slug>/src/sections.json \\
+    --output         sites/<slug>/src/App.jsx
+
 Reads:
-  output/components/*.jsx      — one component per section
-  output/sections.json         — metadata (titles, colors, part numbers, etc.)
+  <components-dir>/*.jsx       — one component per section (default: output/components/)
+  <sections-file>              — metadata (titles, colors, part numbers, etc.)
+                                 (default: output/sections.json)
 
 Writes:
-  output/visualizations.jsx    — single self-contained React app
+  <output>                     — single self-contained React app
+                                 (default: output/visualizations.jsx)
 """
 
+import argparse
 import json
 import os
 import re
@@ -305,6 +317,20 @@ export default function App() {
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Assemble section components into a single React app")
+    parser.add_argument("--components-dir", type=Path, default=ROOT / "output" / "components",
+                        help="Directory containing per-section .jsx files (default: output/components/)")
+    parser.add_argument("--sections-file", type=Path, default=ROOT / "output" / "sections.json",
+                        help="Path to sections.json (default: output/sections.json)")
+    parser.add_argument("--output", type=Path, default=ROOT / "output" / "visualizations.jsx",
+                        help="Output file path (default: output/visualizations.jsx)")
+    args = parser.parse_args()
+
+    global COMPONENTS_DIR, SECTIONS_FILE, OUTPUT_FILE
+    COMPONENTS_DIR = args.components_dir
+    SECTIONS_FILE = args.sections_file
+    OUTPUT_FILE = args.output
+
     if not SECTIONS_FILE.exists():
         print(f"Error: {SECTIONS_FILE} not found. Run parse_sections.py first.", file=sys.stderr)
         sys.exit(1)

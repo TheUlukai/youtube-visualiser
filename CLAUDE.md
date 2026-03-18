@@ -171,8 +171,12 @@ devserver/                — Vite+React dev server for previewing output/visual
 sites/                    — permanent archive; one subdirectory per packaged visualization
   <site-slug>/
     src/
-      App.jsx             — finalized visualization (default export)
+      App.jsx             — assembled visualization (default export); built by Vite
       main.jsx
+      index.css
+      components/         — per-section source files (archived from output/components/)
+        <section-id>.jsx  — one file per section; not imported by build, kept for editing
+      sections.json       — copy of output/sections.json; used for reassembly
     index.html
     package.json
     vite.config.js        — sets base and build.outDir pointing to docs/<site-slug>/
@@ -261,7 +265,15 @@ visualization under `sites/`, build it to `docs/`, and update the site index.
 
 **`assemble.py` is safe to re-run** — it only reads `output/components/` and does not re-run generation. However, running `generate_viz.py` *will* overwrite components, so complete any fixes and reassemble before re-running generation.
 
-**Already-packaged sites** have no component files — only `sites/<slug>/src/App.jsx` exists. Edit it directly.
+**Already-packaged sites** (packaged after 2026-03-18) have individual component files in `sites/<slug>/src/components/`. Edit the relevant component file, then reassemble:
+```bash
+python scripts/assemble.py \
+  --components-dir sites/<slug>/src/components \
+  --sections-file  sites/<slug>/src/sections.json \
+  --output         sites/<slug>/src/App.jsx
+cd sites/<slug> && npm run build
+```
+Legacy sites (packaged before 2026-03-18) have only `sites/<slug>/src/App.jsx` — edit it directly.
 
 **For multi-section fixes**, run `/static-check` — it handles the full scan → triage → fix-by-issue-type → verify cycle automatically.
 
