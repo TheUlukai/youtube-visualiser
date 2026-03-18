@@ -1,0 +1,91 @@
+Perform a full static code inspection of all component files in `output/components/` following the CLAUDE.md Fix Workflow. Work through all four phases:
+
+---
+
+## Phase 1 — Scan
+
+Run all of the following grep checks across `output/components/*.jsx` and record every finding (filename + line number + issue type). Do not fix anything yet.
+
+**Check 1 — Escaped unicode**
+```
+grep -n "\\u[0-9A-Fa-f]{4}" output/components/*.jsx
+```
+
+**Check 2 — Unescaped apostrophes in single-quoted JS strings**
+```
+grep -n "[:=(,]\s*'[^']*'s " output/components/*.jsx | grep -v "\\\\'"
+```
+
+**Check 3 — useState (or other hooks) in .map() or .forEach() callbacks**
+```
+grep -n "useState" output/components/*.jsx | grep "\.map\|\.forEach"
+```
+
+**Check 4 — Missing hoveredConcept (interactive Key Concepts panel absent)**
+For each file, check whether `hoveredConcept` is present. List any files where it is missing.
+
+**Check 5 — Static concept pills (onClick missing)**
+Look for concept/pill rendering blocks that display labels but have no `onClick` handler.
+
+**Check 6 — Bare font sizes without clamp()**
+```
+grep -n 'fontSize: "[0-9]' output/components/*.jsx | grep -v clamp
+```
+Note: `fontSize: "0.65em"` and other relative units are acceptable — only flag bare `px` values.
+
+**Check 7 — SVG without viewBox**
+```
+grep -n "<svg" output/components/*.jsx | grep -v viewBox
+```
+
+**Check 8 — Canvas with fixed JSX width/height props**
+```
+grep -n "<canvas" output/components/*.jsx | grep -E 'width=["{][0-9]|height=["{][0-9]'
+```
+
+**Check 9 — maxWidth bare numbers wider than 340 without min(90vw**
+```
+grep -n "maxWidth:" output/components/*.jsx | grep -v "min(90vw" | grep -E "maxWidth:\s*['\"]?[0-9]{3,}"
+```
+Flag values greater than 340 that lack the `min(90vw, ...)` wrapper.
+
+**Check 10 — Key Concepts nested inside main viz card (not a top-level sibling)**
+For any file containing `hoveredConcept`, check whether the Key Concepts block is inside another card container rather than being a top-level sibling before The Difficulty panel.
+
+---
+
+## Phase 2 — Triage
+
+Use `TaskCreate` to create one task per issue type that has findings, listing the affected files in the description. If an issue type has no findings, skip it.
+
+---
+
+## Phase 3 — Fix
+
+Work issue type by issue type (not file by file). For each issue type:
+- Re-grep to confirm every affected instance
+- Fix all instances in one pass following the patterns in CLAUDE.md
+- Always fix in `output/components/` source files, never in `output/visualizations.jsx` directly
+- Mark the task complete
+
+Key fixes reference:
+- **Escaped unicode**: replace `\uNNNN` with the literal character
+- **Unescaped apostrophes**: escape as `\'` or switch to double-quoted string
+- **Hooks in loops**: hoist state to component top level, key into it by item id or index
+- **Missing Key Concepts**: add `hoveredConcept` state + `keyConcepts` array + card-wrapped panel before The Difficulty
+- **Bare font sizes**: wrap in `clamp()` e.g. `clamp(12px, 1.8vw, 15px)`
+- **SVG without viewBox**: add `viewBox="0 0 W H"` and `width="100%"` with `style={{ maxWidth: W }}`
+- **Fixed canvas props**: remove JSX width/height, set via ResizeObserver in useEffect
+- **Bare maxWidth**: wrap as `maxWidth: "min(90vw, Npx)"`
+- **Key Concepts nested**: extract from enclosing card, place as top-level sibling with card wrapper `background: rgba(0,0,0,0.25), border: accent33, borderRadius: 8, padding: clamp(16px,3vw,24px), marginBottom: 16`
+
+---
+
+## Phase 4 — Verify
+
+```bash
+python scripts/assemble.py
+cd devserver && npm run build
+```
+
+Report the final line count and confirm the build is clean. If the build fails, diagnose and fix before reporting done.

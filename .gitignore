@@ -17,6 +17,7 @@ venv/
 
 # Claude personal memory (project instructions CLAUDE.md is committed separately)
 .claude/
+!.claude/commands/
 
 # OS
 .DS_Store

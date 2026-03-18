@@ -84,9 +84,9 @@ def build_sections_array(sections: list[dict]) -> str:
     for s in sections:
         entry = (
             f"  {{\n"
-            f"    id: {json.dumps(s['id'])},\n"
-            f"    name: {json.dumps(s['title'])},\n"
-            f"    subtitle: {json.dumps(s.get('subtitle', ''))},\n"
+            f"    id: {json.dumps(s['id'], ensure_ascii=False)},\n"
+            f"    name: {json.dumps(s['title'], ensure_ascii=False)},\n"
+            f"    subtitle: {json.dumps(s.get('subtitle', ''), ensure_ascii=False)},\n"
             f"    part: {s['part_number']},\n"
             f"  }}"
         )
@@ -95,12 +95,12 @@ def build_sections_array(sections: list[dict]) -> str:
 
 
 def build_accent_map(sections: list[dict]) -> str:
-    pairs = [f"  {json.dumps(s['id'])}: {json.dumps(s.get('accent_color', '#334155'))}" for s in sections]
+    pairs = [f"  {json.dumps(s['id'], ensure_ascii=False)}: {json.dumps(s.get('accent_color', '#334155'), ensure_ascii=False)}" for s in sections]
     return "const accentMap = {\n" + ",\n".join(pairs) + "\n};"
 
 
 def build_bg_map(sections: list[dict]) -> str:
-    pairs = [f"  {json.dumps(s['id'])}: {json.dumps(s.get('background_mood', ''))}" for s in sections]
+    pairs = [f"  {json.dumps(s['id'], ensure_ascii=False)}: {json.dumps(s.get('background_mood', ''), ensure_ascii=False)}" for s in sections]
     return "const bgMap = {\n" + ",\n".join(pairs) + "\n};"
 
 

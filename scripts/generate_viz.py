@@ -33,7 +33,19 @@ STRICT OUTPUT RULES — violate any of these and the output is unusable:
 - Use hex colors only — never rgb(), rgba(), or named colors.
 - Use Georgia serif font throughout (fontFamily: "Georgia, serif").
 - Unicode characters must be typed directly — never \\uNNNN escape sequences.
-- No placeholder comments like "// add visualization here". Every section must be fully implemented."""
+- No placeholder comments like "// add visualization here". Every section must be fully implemented.
+
+RESPONSIVE LAYOUT RULES — components must look correct on screens as narrow as 375px (iPhone):
+- Font sizes: always use clamp() — e.g. clamp(12px, 1.8vw, 15px) for body text,
+  clamp(18px, 3vw, 28px) for headings. Never use a bare px font size.
+- SVG diagrams: always set viewBox="0 0 W H" and width="100%" with a maxWidth style.
+  Never use a fixed pixel width or height attribute on an <svg> element.
+- Canvas elements: derive width and height from the container in a useEffect via
+  ResizeObserver (or container.offsetWidth). Never pass fixed pixel values as JSX
+  width/height props on a <canvas> element.
+- Content wrappers: the inner centering div must use maxWidth: "min(90vw, 860px)"
+  (not a bare pixel value like maxWidth: 860). This has no effect on wide desktops.
+- No hardcoded widths wider than 340px except inside a maxWidth-constrained container."""
 
 VIZ_PROMPT_TEMPLATE = """Generate a self-contained interactive React visualization component for this section of an educational series on {series_topic}.
 
@@ -65,14 +77,29 @@ The component MUST contain these four layers in order:
    animated transitions. Use SVG for diagrams and structural visuals. Use Canvas (via useRef +
    useEffect) for animations or particle effects. Use recharts for any data that benefits from
    charts. The visualization must illuminate the core_argument — not just decorate it.
-   Show the key_concepts as interactive elements the user can explore.
 
-3. THE DIFFICULTY PANEL (below main viz)
+3. KEY CONCEPTS PANEL (below main viz, above The Difficulty)
+   MANDATORY — this panel must always be present. No exceptions.
+   PLACEMENT: This must be a TOP-LEVEL SIBLING element — rendered at the same JSX level as the
+   main viz card and The Difficulty card. Never nest it inside the main visualization card.
+   WRAPPER: wrap the entire Key Concepts section in its own card div:
+     <div style={{ background: "rgba(0,0,0,0.25)", border: `1px solid ${'{accent_color}'}33`,
+       borderRadius: 8, padding: "clamp(16px, 3vw, 24px)", marginBottom: 16 }}>
+   State: const [hoveredConcept, setHoveredConcept] = useState(null);
+   Data: a `keyConcepts` array of 4–6 objects with shape {{ id, label, desc }} where desc is
+   a substantive 2–3 sentence explanation of the concept in context (not just a definition).
+   Render a row of pill buttons. Clicking a pill toggles a description panel below the row.
+   Use onClick to toggle (NOT onMouseEnter — hover causes layout jitter).
+   The description panel renders as a <div> below the pills, never inside SVG.
+   Active pill background: {accent_color}; active pill text: "#f0ead8".
+   Label the section "Key Concepts — Click to Explore" in small caps using the accent color.
+
+4. THE DIFFICULTY PANEL (below Key Concepts)
    Show problem_created — the new tension this idea generates.
    Style: dark card with a subtle left border in a slightly different shade. Label "The Difficulty" in small caps.
    End with a forward-looking sentence: "This pressure forces the next development..."
 
-4. REAL-WORLD ECHOES PANEL (collapsible, bottom)
+5. REAL-WORLD ECHOES PANEL (collapsible, bottom)
    A collapsible section (use ChevronDown/ChevronUp icons from lucide-react).
    Shows the real_world_examples as a list of concrete modern parallels.
    Label "Real-World Echoes" in small caps. Collapsed by default.
@@ -86,6 +113,8 @@ The component MUST contain these four layers in order:
 - Interactive elements: cursor pointer, hover glow or color shift using onMouseEnter/onMouseLeave state.
 - No bullet lists in descriptive text — use prose paragraphs or flowing layout.
 - The component should feel like a polished interactive essay, not a dashboard.
+- Responsive: clamp() for all font sizes; SVG always viewBox + width="100%"; canvas
+  dimensions set via ResizeObserver in useEffect; content wrapper maxWidth "min(90vw, 860px)".
 
 === COMPONENT NAMING ===
 Name the function: {component_name}
@@ -153,6 +182,10 @@ def validate_jsx(code: str, component_name: str) -> tuple[bool, str]:
     # Must have a return with JSX (look for return ()
     if "return (" not in code and "return(" not in code:
         return False, "No JSX return statement found"
+
+    # Must have interactive Key Concepts panel
+    if "hoveredConcept" not in code:
+        return False, "Missing interactive Key Concepts panel (no hoveredConcept state found)"
 
     # Check for banned patterns
     if "\\u" in code:

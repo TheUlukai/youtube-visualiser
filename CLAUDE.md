@@ -153,19 +153,10 @@ npm run dev        # starts at http://localhost:5173
 ## Post-Generation Verification
 After any run of `assemble.py` (or `generate_viz.py`), verify the output with these checks:
 
-**Step 1 — Code inspection (static, before opening the browser):**
-1. **Escaped unicode** — grep for `\\u[0-9A-Fa-f]{4}` in the output file; all unicode must be literal characters, not escape sequences
-2. **Hooks in loops** — grep for `useState` (or any hook) inside `.map(` or `.forEach(`; hooks called inside callbacks violate React's Rules of Hooks and will crash the component (blank page, no error until interaction)
-3. **Interactive Key Concepts present** — verify every section component has a `hoveredConcept` state variable and a rendered "Key Concepts — Click to Explore" block before "The Difficulty" panel
-4. **Static concept pills** — grep for `<span` or concept-rendering divs with no `onClick` handler; static pills are not acceptable
-5. **In-place expansion** — check for concept card/tag components that expand their own size on click rather than rendering the description in a stable panel below the pill row
+**Step 1 — Static inspection + build check:**
+Run `/static-check` — this performs all grep-based checks, creates tasks for each issue type found, fixes them by type across all components, then reassembles and runs `npm run build` to confirm no syntax errors. See `.claude/commands/static-check.md` for the full check list.
 
-**Step 2 — Build check** — confirms no syntax errors before opening the browser:
-```bash
-cd devserver && npm run build
-```
-
-**Step 3 — In-browser checks** — start the dev server and visit http://localhost:5173:
+**Step 2 — In-browser checks** — start the dev server and visit http://localhost:5173:
 1. **Escaped unicode** — scan for literal `\uNNNN` appearing as text; all unicode should render as real characters
 2. **Color readability** — check text visibility on dark backgrounds, especially for active/selected button states where accent color becomes the background
 3. **Layout overlaps** — scroll each section; watch for SVG elements or absolutely-positioned boxes clipping outside their containers
@@ -199,6 +190,22 @@ cd devserver && npm run build
 - **SVG annotation labels colliding with node circles** — stream labels, axis labels, or region labels positioned relative to the start/end point of a curve or line will collide with any node circle anchored at the same point. The label x/y is often set to match the curve's origin (e.g. `x = W * 0.08`) while the first node is also placed at that origin. Fix by moving the label to the canvas edge (`x = 6`) or otherwise offsetting it well clear of the node radius, and adjusting y so it clears the node's year/title text above or below.
 
 - **Missing centred content wrapper** — every section component should wrap its content in an inner div with `maxWidth` (typically 820–900px) and `margin: '0 auto'`. Without this wrapper the content anchors to the left edge of the viewport on wide screens, making the section look left-justified compared to all others. Check that the root `<div>` of each section contains an inner wrapper with these two properties; if it relies purely on `padding` without a `maxWidth` container, add the wrapper.
+
+- **Fixed canvas dimensions breaking mobile** — `<canvas width={760} height={400} />` as a JSX prop sets a fixed physical size regardless of the viewport. On mobile this either clips or forces horizontal scroll. The correct pattern is to omit width/height from the JSX, then in a `useEffect` with a `ResizeObserver` on the container ref, set `canvas.width = container.offsetWidth` and compute height from an aspect ratio. Redraw whenever the observer fires. This produces identical output on desktop and scales correctly on narrow screens.
+
+- **Fixed SVG width breaking mobile** — `<svg width={800} height={400}>` ignores the viewport. Use `<svg viewBox="0 0 800 400" width="100%" style={{ maxWidth: 800 }}>` instead. The coordinate system is unchanged, so internal positions need no adjustment, but the SVG scales down proportionally on narrow screens.
+
+- **Bare px font sizes not scaling on mobile** — `fontSize: 14` is fine on desktop but becomes illegible on high-DPI phones. Use `clamp(12px, 1.8vw, 15px)` for body text and `clamp(18px, 3vw, 28px)` for headings. On a 1440px desktop `1.8vw ≈ 26px` which clamp caps to `15px` — identical to the hardcoded value. The mobile benefit is that it scales to the viewport rather than rendering tiny.
+
+## Fix Workflow
+
+**Always fix in `output/components/` source files, never in `output/visualizations.jsx` directly** — the assembled file is overwritten by `assemble.py` and edits will be lost. After fixing components, run `python scripts/assemble.py` to regenerate.
+
+**`assemble.py` is safe to re-run** — it only reads `output/components/` and does not re-run generation. However, running `generate_viz.py` *will* overwrite components, so complete any fixes and reassemble before re-running generation.
+
+**Already-packaged sites** have no component files — only `sites/<slug>/src/App.jsx` exists. Edit it directly.
+
+**For multi-section fixes**, run `/static-check` — it handles the full scan → triage → fix-by-issue-type → verify cycle automatically.
 
 ## Site Packaging
 When the user is happy with a visualization, package it under sites/.
