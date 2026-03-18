@@ -35,28 +35,31 @@ This will:
 4. Assemble them into a single React app
 5. Launch a local dev server at `http://localhost:5173`
 
-## Visual Verification (Optional)
+## Post-Generation Workflow (with Claude Code)
 
-If you have [Claude Code](https://code.claude.com) with Chrome integration, you can have it visually inspect and fix issues automatically:
+After `run.sh` completes, open Claude Code in this directory and run these three skills in order:
 
-```bash
-# In a separate terminal:
-claude --chrome
-# Then: "Open localhost:5173, click through every section,
-#  check for visual bugs, and fix anything you find."
+### Step 1 — Static check
 ```
-
-## Saving a Finished Site
-
-Once you're happy with a visualization, package it as a standalone site:
-
-```bash
-# Using Claude Code:
-claude
-# Then: "Package the current visualization as a standalone site under sites/"
+/static-check
 ```
+Scans all generated components for common bugs (escaped unicode, hooks inside loops, SVG overflow, etc.), fixes them across all files, reassembles the app, and runs a build to confirm no syntax errors.
 
-This creates a self-contained project under `sites/<site-slug>/` that you can relaunch anytime:
+### Step 2 — Browser check
+```
+/browser-check
+```
+Opens the dev server in Chrome and visually inspects every section: color readability, interactive elements, layout overlaps, navigation, and more.
+
+### Step 3 — Package
+```
+/package
+```
+Once satisfied, this archives the visualization as a standalone site under `sites/<slug>/`, builds it into `docs/<slug>/` for GitHub Pages, and updates the site index. Then commit and push to deploy.
+
+---
+
+Each packaged site can be relaunched anytime independently:
 
 ```bash
 cd sites/<site-slug>
@@ -68,15 +71,7 @@ npm run dev    # launches at localhost:5173
 
 The repo is published at https://TheUlukai.github.io/youtube-visualiser/
 
-Each packaged site builds directly into `docs/<site-slug>/`, which GitHub Pages serves. After packaging:
-
-```bash
-cd sites/<site-slug>
-npm install    # only needed once
-npm run build  # outputs to docs/<site-slug>/
-```
-
-Then add a link for the new site to `docs/index.html` and commit both the `sites/<site-slug>/` source and the `docs/<site-slug>/` build output.
+`/package` handles the full build and index update automatically. After running it, commit both the `sites/<site-slug>/` source and the `docs/<site-slug>/` build output.
 
 ## Project Structure
 

@@ -165,6 +165,9 @@ Run `/static-check` — this performs all grep-based checks, creates tasks for e
 
 See `.claude/commands/browser-check.md` for the full check list.
 
+**Step 3 — Package** — once satisfied with the result, run `/package` to archive the
+visualization under `sites/`, build it to `docs/`, and update the site index.
+
 **Recurring bug patterns** — these have appeared in generated components and should be checked explicitly:
 
 - **`useState` or other hooks called inside `.map()` or loops** — React requires hooks to be called at the top level of a component, never inside loops, conditions, or nested functions. A `const [x, setX] = useState(...)` inside a `.map()` callback will cause a silent crash (blank page or broken render) when the section is interacted with. This is the hardest bug to spot visually. Grep for `useState` appearing inside arrow functions passed to `.map(` and fix by hoisting the state to the top of the component, then using the item's id or index to key into it.
@@ -210,16 +213,21 @@ See `.claude/commands/browser-check.md` for the full check list.
 **For multi-section fixes**, run `/static-check` — it handles the full scan → triage → fix-by-issue-type → verify cycle automatically.
 
 ## Site Packaging
-When the user is happy with a visualization, package it under sites/.
+When the user is happy with a visualization, run `/package` — this skill automates
+the full packaging workflow: reads metadata from `output/sections.json`, scaffolds
+`sites/<slug>/`, copies `output/visualizations.jsx` as `src/App.jsx`, runs
+`npm install && npm run build`, and updates `docs/index.html`.
+
+The sites/ folder is the permanent archive. The output/ folder is temporary
+working space that gets overwritten on each pipeline run.
+
+### Manual packaging (if needed)
 Each site is a minimal Vite + React project with:
 - package.json (dependencies: react, react-dom, vite, @vitejs/plugin-react)
 - vite.config.js (must set `base` and `build.outDir` — see below)
 - index.html (with root div and script tag)
 - src/App.jsx (the finalized visualization, default export)
 - README.md (video title, YouTube URL, date generated, launch instructions)
-
-The sites/ folder is the permanent archive. The output/ folder is temporary
-working space that gets overwritten on each pipeline run.
 
 ## GitHub Pages Deployment
 The repo is published at https://TheUlukai.github.io/youtube-visualiser/
