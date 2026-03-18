@@ -16,7 +16,7 @@ venv/
 *.env
 
 # Claude personal memory (project instructions CLAUDE.md is committed separately)
-.claude/
+.claude/*
 !.claude/commands/
 
 # OS
