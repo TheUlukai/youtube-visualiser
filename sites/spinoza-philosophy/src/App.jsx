@@ -805,68 +805,64 @@ function SpinozaIntroduction() {
             )}
           </div>
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: 24 }}>
-            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#7B68EE", marginBottom: 14 }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
-              {[
-                { id: "systematic_philosophy", label: "Systematic Philosophy", desc: "Spinoza's philosophy forms a single deductive system where every claim follows necessarily from first principles, making each part inseparable from the whole. To remove one element is to alter all the others — philosophy as architecture, not anthology." },
-                { id: "substance_monism", label: "Substance Monism", desc: "The doctrine that exactly one substance — God or Nature — underlies all of reality. Every finite thing is a modification of this single infinite being, not a separate substance in its own right. This dissolves the gulf between creator and creation." },
-                { id: "naturalism", label: "Naturalism", desc: "Everything that exists, including minds, values, and human institutions, must be explained through natural causes rather than supernatural intervention. For Spinoza, this was not atheism but a more rigorous form of theology." },
-                { id: "excommunication", label: "Excommunication", desc: "The cherem issued against Spinoza in 1656 was the harshest ever issued by the Amsterdam community. Rather than silencing him, it cut him free from communal obligations and social constraints, liberating him to pursue philosophy wherever reason led." },
-                { id: "intellectual_liberation", label: "Intellectual Liberation", desc: "The act of reasoning from evidence and internal logic alone, unconstrained by inherited authority. For Spinoza this was not rebellion but the highest form of devotion — thinking God's own thoughts, expressed in the language of geometry and necessity." },
-                { id: "philosophical_architecture", label: "Philosophical Architecture", desc: "A philosophical system must cohere like a building, where every claim supports and is supported by every other. The Euclidean form of the Ethics — definitions, axioms, propositions, proofs — embodies this ideal: the structure is the argument." },
-              ].map(c => (
-                <div
-                  key={c.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  style={{
-                    padding: "6px 14px",
-                    background: hoveredConcept === c.id ? "#7B68EE" : "rgba(123,104,238,0.1)",
-                    border: `1px solid ${hoveredConcept === c.id ? "#9d8ef5" : "rgba(123,104,238,0.3)"}`,
-                    borderRadius: 20,
-                    fontSize: 12,
-                    cursor: "pointer",
-                    color: hoveredConcept === c.id ? "#f0ead8" : "#9080c0",
-                    transition: "all 0.2s",
-                  }}
-                >
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {hoveredConcept && (
-              <div style={{
-                background: "rgba(123,104,238,0.08)",
-                border: "1px solid rgba(123,104,238,0.2)",
-                borderRadius: 6,
-                padding: "16px 20px",
-              }}>
-                <div style={{ fontSize: 13, fontWeight: "bold", color: "#7B68EE", marginBottom: 8 }}>
-                  {[
-                    { id: "systematic_philosophy", label: "Systematic Philosophy" },
-                    { id: "substance_monism", label: "Substance Monism" },
-                    { id: "naturalism", label: "Naturalism" },
-                    { id: "excommunication", label: "Excommunication" },
-                    { id: "intellectual_liberation", label: "Intellectual Liberation" },
-                    { id: "philosophical_architecture", label: "Philosophical Architecture" },
-                  ].find(c => c.id === hoveredConcept)?.label}
-                </div>
-                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
-                  {[
-                    { id: "systematic_philosophy", desc: "Spinoza's philosophy forms a single deductive system where every claim follows necessarily from first principles, making each part inseparable from the whole. To remove one element is to alter all the others — philosophy as architecture, not anthology." },
-                    { id: "substance_monism", desc: "The doctrine that exactly one substance — God or Nature — underlies all of reality. Every finite thing is a modification of this single infinite being, not a separate substance in its own right. This dissolves the gulf between creator and creation." },
-                    { id: "naturalism", desc: "Everything that exists, including minds, values, and human institutions, must be explained through natural causes rather than supernatural intervention. For Spinoza, this was not atheism but a more rigorous form of theology." },
-                    { id: "excommunication", desc: "The cherem issued against Spinoza in 1656 was the harshest ever issued by the Amsterdam community. Rather than silencing him, it cut him free from communal obligations and social constraints, liberating him to pursue philosophy wherever reason led." },
-                    { id: "intellectual_liberation", desc: "The act of reasoning from evidence and internal logic alone, unconstrained by inherited authority. For Spinoza this was not rebellion but the highest form of devotion — thinking God's own thoughts, expressed in the language of geometry and necessity." },
-                    { id: "philosophical_architecture", desc: "A philosophical system must cohere like a building, where every claim supports and is supported by every other. The Euclidean form of the Ethics — definitions, axioms, propositions, proofs — embodies this ideal: the structure is the argument." },
-                  ].find(c => c.id === hoveredConcept)?.desc}
-                </p>
-              </div>
-            )}
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(123,104,238,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 16 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#7B68EE", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
           </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {[
+              { id: "systematic_philosophy", label: "Systematic Philosophy", desc: "Spinoza's philosophy forms a single deductive system where every claim follows necessarily from first principles, making each part inseparable from the whole. To remove one element is to alter all the others — philosophy as architecture, not anthology." },
+              { id: "substance_monism", label: "Substance Monism", desc: "The doctrine that exactly one substance — God or Nature — underlies all of reality. Every finite thing is a modification of this single infinite being, not a separate substance in its own right. This dissolves the gulf between creator and creation." },
+              { id: "naturalism", label: "Naturalism", desc: "Everything that exists, including minds, values, and human institutions, must be explained through natural causes rather than supernatural intervention. For Spinoza, this was not atheism but a more rigorous form of theology." },
+              { id: "excommunication", label: "Excommunication", desc: "The cherem issued against Spinoza in 1656 was the harshest ever issued by the Amsterdam community. Rather than silencing him, it cut him free from communal obligations and social constraints, liberating him to pursue philosophy wherever reason led." },
+              { id: "intellectual_liberation", label: "Intellectual Liberation", desc: "The act of reasoning from evidence and internal logic alone, unconstrained by inherited authority. For Spinoza this was not rebellion but the highest form of devotion — thinking God's own thoughts, expressed in the language of geometry and necessity." },
+              { id: "philosophical_architecture", label: "Philosophical Architecture", desc: "A philosophical system must cohere like a building, where every claim supports and is supported by every other. The Euclidean form of the Ethics — definitions, axioms, propositions, proofs — embodies this ideal: the structure is the argument." },
+            ].map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#7B68EE" : "rgba(123,104,238,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#9d8ef5" : "rgba(123,104,238,0.3)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#9080c0",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(123,104,238,0.08)", border: "1px solid rgba(123,104,238,0.2)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#7B68EE", marginBottom: 8 }}>
+                {[
+                  { id: "systematic_philosophy", label: "Systematic Philosophy" },
+                  { id: "substance_monism", label: "Substance Monism" },
+                  { id: "naturalism", label: "Naturalism" },
+                  { id: "excommunication", label: "Excommunication" },
+                  { id: "intellectual_liberation", label: "Intellectual Liberation" },
+                  { id: "philosophical_architecture", label: "Philosophical Architecture" },
+                ].find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {[
+                  { id: "systematic_philosophy", desc: "Spinoza's philosophy forms a single deductive system where every claim follows necessarily from first principles, making each part inseparable from the whole. To remove one element is to alter all the others — philosophy as architecture, not anthology." },
+                  { id: "substance_monism", desc: "The doctrine that exactly one substance — God or Nature — underlies all of reality. Every finite thing is a modification of this single infinite being, not a separate substance in its own right. This dissolves the gulf between creator and creation." },
+                  { id: "naturalism", desc: "Everything that exists, including minds, values, and human institutions, must be explained through natural causes rather than supernatural intervention. For Spinoza, this was not atheism but a more rigorous form of theology." },
+                  { id: "excommunication", desc: "The cherem issued against Spinoza in 1656 was the harshest ever issued by the Amsterdam community. Rather than silencing him, it cut him free from communal obligations and social constraints, liberating him to pursue philosophy wherever reason led." },
+                  { id: "intellectual_liberation", desc: "The act of reasoning from evidence and internal logic alone, unconstrained by inherited authority. For Spinoza this was not rebellion but the highest form of devotion — thinking God's own thoughts, expressed in the language of geometry and necessity." },
+                  { id: "philosophical_architecture", desc: "A philosophical system must cohere like a building, where every claim supports and is supported by every other. The Euclidean form of the Ethics — definitions, axioms, propositions, proofs — embodies this ideal: the structure is the argument." },
+                ].find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* The Difficulty Panel */}
@@ -1425,13 +1421,25 @@ function MakingOfRevolutionaryMind() {
       padding: "0"
     }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
+      {/* Title Block */}
+      <div style={{ padding: "36px 40px 10px 40px", textAlign: "center" }}>
+        <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#2D4A6E", marginBottom: "8px", textTransform: "uppercase" }}>Part 2 of 21</div>
+        <h1 style={{ fontSize: "32px", fontWeight: "normal", color: "#e8dcc8", margin: "0 0 8px 0", letterSpacing: "0.5px" }}>
+          The Making of a Revolutionary Mind
+        </h1>
+        <p style={{ fontSize: "15px", color: "#8a9db5", margin: 0, fontStyle: "italic" }}>
+          Spinoza's journey from star Talmudic pupil to excommunicated outcast forged the intellectual independence necessary for his philosophical revolution.
+        </p>
+      </div>
+
       {/* Problem Panel */}
       <div style={{
-        margin: "0 0 0 0",
-        padding: "32px 40px 28px 40px",
+        margin: "16px 40px",
+        padding: "24px 28px",
         background: "rgba(10,12,20,0.85)",
+        border: "1px solid rgba(45,74,110,0.3)",
         borderLeft: "4px solid #2D4A6E",
-        borderBottom: "1px solid #2D4A6E33"
+        borderRadius: 8,
       }}>
         <div style={{
           fontSize: "10px",
@@ -1446,21 +1454,9 @@ function MakingOfRevolutionaryMind() {
           lineHeight: "1.75",
           color: "#c8bca8",
           margin: 0,
-          maxWidth: "820px",
           fontStyle: "italic"
         }}>
           The introduction established that Spinoza's system is radically unified — but how did a single person come to develop such a sweeping challenge to all received wisdom? What confluence of forces produced a thinker willing to dismantle the entire framework of Western theology and replace it with something no one had yet imagined?
-        </p>
-      </div>
-
-      {/* Title Block */}
-      <div style={{ padding: "36px 40px 10px 40px" }}>
-        <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#2D4A6E", marginBottom: "8px", textTransform: "uppercase" }}>Part 2 of 21</div>
-        <h1 style={{ fontSize: "32px", fontWeight: "normal", color: "#e8dcc8", margin: "0 0 8px 0", letterSpacing: "0.5px" }}>
-          The Making of a Revolutionary Mind
-        </h1>
-        <p style={{ fontSize: "15px", color: "#8a9db5", margin: 0, fontStyle: "italic" }}>
-          Spinoza's journey from star Talmudic pupil to excommunicated outcast forged the intellectual independence necessary for his philosophical revolution.
         </p>
       </div>
 
@@ -1615,41 +1611,6 @@ function MakingOfRevolutionaryMind() {
         </div>
       </div>
 
-      {/* Key Concepts */}
-      <div style={{ padding: "8px 40px 24px 40px" }}>
-        <div style={{ fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", color: "#2D4A6E", marginBottom: "16px" }}>Key Concepts — Click to Explore</div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: hoveredConcept ? 12 : 0 }}>
-          {concepts.map(concept => (
-            <div
-              key={concept.id}
-              onClick={() => setHoveredConcept(hoveredConcept === concept.id ? null : concept.id)}
-              style={{
-                padding: "10px 16px",
-                background: hoveredConcept === concept.id ? `${concept.color}22` : "rgba(15,22,35,0.8)",
-                border: `1px solid ${hoveredConcept === concept.id ? concept.color : "#2D4A6E44"}`,
-                borderRadius: "3px",
-                cursor: "pointer",
-                transition: "all 0.25s",
-                maxWidth: "260px"
-              }}
-            >
-              <div style={{ fontSize: "12px", color: concept.color, fontWeight: "bold" }}>
-                {concept.label}
-              </div>
-            </div>
-          ))}
-        </div>
-        {hoveredConcept && (() => {
-          const c = concepts.find(x => x.id === hoveredConcept);
-          return c ? (
-            <div style={{ background: `${c.color}11`, border: `1px solid ${c.color}44`, borderRadius: "3px", padding: "14px 16px" }}>
-              <div style={{ fontSize: "12px", color: c.color, fontWeight: "bold", marginBottom: "6px" }}>{c.label}</div>
-              <div style={{ fontSize: "12px", color: "#a09585", lineHeight: "1.6" }}>{c.desc}</div>
-            </div>
-          ) : null;
-        })()}
-      </div>
-
       {/* Core Argument */}
       <div style={{ padding: "0 40px 28px 40px" }}>
         <div style={{
@@ -1664,13 +1625,53 @@ function MakingOfRevolutionaryMind() {
         </div>
       </div>
 
+      {/* Key Concepts */}
+      <div style={{ padding: "0 40px 16px 40px" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(45,74,110,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2D4A6E", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#2D4A6E" : "rgba(45,74,110,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#4a7aae" : "rgba(45,74,110,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#7a9ab8",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(45,74,110,0.08)", border: "1px solid rgba(45,74,110,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#2D4A6E", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Difficulty Panel */}
       <div style={{
-        margin: "0",
-        padding: "28px 40px",
+        margin: "0 40px 16px 40px",
+        padding: "24px 28px",
         background: "rgba(10,12,20,0.85)",
+        border: "1px solid rgba(74,110,90,0.3)",
         borderLeft: "4px solid #4A6E5A",
-        borderTop: "1px solid #2D4A6E33"
+        borderRadius: 8,
       }}>
         <div style={{
           fontSize: "10px",
@@ -2118,42 +2119,44 @@ function RevolutionaryMetaphysicsGodOrNature() {
               </p>
             </div>
 
-            {/* Key Concepts */}
-            <div style={{ marginTop: 24 }}>
-              <div style={{ fontSize: 11, letterSpacing: 3, color: '#4B0082', textTransform: 'uppercase', marginBottom: 14, fontWeight: 'bold' }}>
-                Key Concepts — Click to Explore
-              </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: hoveredConcept ? 14 : 0 }}>
-                {concepts.map(c => (
-                  <div
-                    key={c.id}
-                    onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                    style={{
-                      background: hoveredConcept === c.id ? '#7B2FBE' : '#100228',
-                      border: `1px solid ${hoveredConcept === c.id ? '#9d50e0' : '#2a1040'}`,
-                      borderRadius: 6,
-                      padding: '6px 14px',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s',
-                      fontSize: 12,
-                      color: hoveredConcept === c.id ? '#f0ead8' : '#c084fc',
-                    }}
-                  >
-                    {c.label}
-                  </div>
-                ))}
-              </div>
-              {hoveredConcept && (() => {
-                const c = concepts.find(x => x.id === hoveredConcept);
-                return c ? (
-                  <div style={{ background: 'rgba(75,0,130,0.08)', border: '1px solid #2a1040', borderRadius: 6, padding: '16px 20px' }}>
-                    <div style={{ fontSize: 13, fontWeight: 'bold', color: '#c084fc', marginBottom: 8 }}>{c.label}</div>
-                    <p style={{ margin: 0, fontSize: 13, color: '#b89fd4', lineHeight: 1.75 }}>{c.desc}</p>
-                  </div>
-                ) : null;
-              })()}
-            </div>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(75,0,130,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: '#7B2FBE', marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: '6px 14px',
+                  background: hoveredConcept === c.id ? '#7B2FBE' : 'rgba(75,0,130,0.1)',
+                  border: `1px solid ${hoveredConcept === c.id ? '#9d50e0' : 'rgba(75,0,130,0.35)'}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: 'pointer',
+                  color: hoveredConcept === c.id ? '#f0ead8' : '#c084fc',
+                  transition: 'all 0.2s',
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: 'rgba(75,0,130,0.08)', border: '1px solid rgba(75,0,130,0.3)', borderRadius: 6, padding: '16px 20px' }}>
+              <div style={{ fontSize: 13, fontWeight: 'bold', color: '#c084fc', marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* 3. THE DIFFICULTY PANEL */}
@@ -2439,15 +2442,17 @@ function ArchitectureOfRealityAttributesModes() {
       <div style={{ maxWidth: 960, margin: "0 auto" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: 8, opacity: 0.6, fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: accentLight }}>
-          Part 4 of 21 — Spinoza's System
+        <div style={{ textAlign: "center", marginBottom: 32 }}>
+          <div style={{ marginBottom: 8, opacity: 0.6, fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: accentLight }}>
+            Part 4 of 21 — Spinoza's System
+          </div>
+          <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#E8F8F8", margin: "0 0 6px 0", letterSpacing: 0.5 }}>
+            Attributes and Modes: The Architecture of Reality
+          </h1>
+          <p style={{ fontSize: 15, color: "#88BBBB", margin: 0, lineHeight: 1.6 }}>
+            Spinoza explains how the absolute unity of one infinite substance manifests in the rich diversity of finite things through a hierarchy of attributes and modes.
+          </p>
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#E8F8F8", margin: "0 0 6px 0", letterSpacing: 0.5 }}>
-          Attributes and Modes: The Architecture of Reality
-        </h1>
-        <p style={{ fontSize: 15, color: "#88BBBB", margin: "0 0 32px 0", lineHeight: 1.6 }}>
-          Spinoza explains how the absolute unity of one infinite substance manifests in the rich diversity of finite things through a hierarchy of attributes and modes.
-        </p>
 
         {/* THE PROBLEM PANEL */}
         <div style={{
@@ -2676,48 +2681,6 @@ function ArchitectureOfRealityAttributesModes() {
               </div>
             )}
 
-            {/* Key Concepts — Click to Explore */}
-            <div style={{ marginTop: 24 }}>
-              <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: accentLight, marginBottom: 14 }}>
-                Key Concepts — Click to Explore
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
-                {sec4Concepts.map(c => (
-                  <div
-                    key={c.id}
-                    onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                    style={{
-                      padding: "6px 14px",
-                      background: hoveredConcept === c.id ? accentLight : "rgba(0,160,160,0.1)",
-                      border: `1px solid ${hoveredConcept === c.id ? "#00C8C8" : accentDim}`,
-                      borderRadius: 20,
-                      fontSize: 12,
-                      cursor: "pointer",
-                      color: hoveredConcept === c.id ? "#f0ead8" : "#70B0B0",
-                      transition: "all 0.2s",
-                    }}
-                  >
-                    {c.label}
-                  </div>
-                ))}
-              </div>
-              {hoveredConcept && (
-                <div style={{
-                  background: "rgba(0,160,160,0.08)",
-                  border: `1px solid ${accentDim}`,
-                  borderRadius: 6,
-                  padding: "16px 20px",
-                }}>
-                  <div style={{ fontSize: 13, fontWeight: "bold", color: accentLight, marginBottom: 8 }}>
-                    {sec4Concepts.find(c => c.id === hoveredConcept)?.label}
-                  </div>
-                  <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
-                    {sec4Concepts.find(c => c.id === hoveredConcept)?.desc}
-                  </p>
-                </div>
-              )}
-            </div>
-
             {/* Prose explanation */}
             <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
               <div style={{
@@ -2748,6 +2711,43 @@ function ArchitectureOfRealityAttributesModes() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(0,107,107,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: accentLight, marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {sec4Concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? accentLight : "rgba(0,160,160,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#00C8C8" : accentDim}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#70B0B0",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(0,160,160,0.08)", border: `1px solid ${accentDim}`, borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: accentLight, marginBottom: 8 }}>
+                {sec4Concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {sec4Concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -2861,8 +2861,17 @@ function UnityOfMindAndBody() {
   const [echoesOpen, setEchoesOpen] = useState(false);
   const [animating, setAnimating] = useState(false);
   const [pulsePhase, setPulsePhase] = useState(0);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const animRef = useRef(null);
   const canvasRef = useRef(null);
+
+  const mindBodyConcepts = [
+    { id: "dualism", label: "Cartesian Dualism", desc: "Descartes' untenable division of reality into unextended mind and unthinking body, leaving their interaction inexplicable." },
+    { id: "parallelism", label: "Mind-Body Parallelism", desc: "Every mental event corresponds to a physical event not through causation but through attributive identity — same order, same connection." },
+    { id: "unity", label: "Psychosomatic Unity", desc: "Mind and body are one individual mode of substance, not two entities joined together." },
+    { id: "adequate", label: "Adequate Ideas", desc: "Knowledge that fully grasps its object — possible only when the body is well-disposed and the mind active rather than passive." },
+    { id: "embodied", label: "Embodied Cognition", desc: "The quality of knowing is inseparable from the quality of bodily engagement with the world." },
+  ];
 
   const events = [
     {
@@ -3027,6 +3036,17 @@ function UnityOfMindAndBody() {
       maxWidth: "860px",
       margin: "0 auto"
     }}>
+
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: 32 }}>
+        <div style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "#66bb6a", marginBottom: 8 }}>Part 5 of 21</div>
+        <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#e8f5e9", margin: "0 0 8px 0" }}>
+          Solving the Cartesian Problem: The Unity of Mind and Body
+        </h1>
+        <p style={{ fontSize: 15, color: "#a5d6a7", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
+          Mind and body are not two substances that mysteriously interact — they are two complete descriptions of one and the same mode of infinite substance.
+        </p>
+      </div>
 
       {/* PROBLEM PANEL */}
       <div style={{
@@ -3384,21 +3404,43 @@ function UnityOfMindAndBody() {
           </p>
         </div>
 
-        {/* Key concepts */}
-        <div style={{ marginTop: "24px" }}>
-          <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#66bb6a", marginBottom: "12px", textTransform: "uppercase" }}>Key Concepts</div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-            {[
-              { label: "Cartesian Dualism", desc: "Descartes' untenable division of reality into unextended mind and unthinking body, leaving their interaction inexplicable." },
-              { label: "Mind-Body Parallelism", desc: "Every mental event corresponds to a physical event not through causation but through attributive identity — same order, same connection." },
-              { label: "Psychosomatic Unity", desc: "Mind and body are one individual mode of substance, not two entities joined together." },
-              { label: "Adequate Ideas", desc: "Knowledge that fully grasps its object — possible only when the body is well-disposed and the mind active rather than passive." },
-              { label: "Embodied Cognition", desc: "The quality of knowing is inseparable from the quality of bodily engagement with the world." }
-            ].map((concept, i) => (
-              <ConceptChip key={i} label={concept.label} desc={concept.desc} accentColor="#2E7D32" />
-            ))}
-          </div>
+      </div>
+
+      {/* Key Concepts */}
+      <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(46,125,50,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 28 }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2E7D32", marginBottom: 14 }}>
+          Key Concepts — Click to Explore
         </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+          {mindBodyConcepts.map(c => (
+            <div
+              key={c.id}
+              onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+              style={{
+                padding: "6px 14px",
+                background: hoveredConcept === c.id ? "#2E7D32" : "rgba(46,125,50,0.1)",
+                border: `1px solid ${hoveredConcept === c.id ? "#66bb6a" : "rgba(46,125,50,0.35)"}`,
+                borderRadius: 20,
+                fontSize: 12,
+                cursor: "pointer",
+                color: hoveredConcept === c.id ? "#f0ead8" : "#81c784",
+                transition: "all 0.2s",
+              }}
+            >
+              {c.label}
+            </div>
+          ))}
+        </div>
+        {hoveredConcept && (
+          <div style={{ background: "rgba(46,125,50,0.08)", border: "1px solid rgba(46,125,50,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+            <div style={{ fontSize: 13, fontWeight: "bold", color: "#2E7D32", marginBottom: 8 }}>
+              {mindBodyConcepts.find(c => c.id === hoveredConcept)?.label}
+            </div>
+            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+              {mindBodyConcepts.find(c => c.id === hoveredConcept)?.desc}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* DIFFICULTY PANEL */}
@@ -4025,59 +4067,43 @@ function LadderOfKnowledge() {
             </svg>
           </div>
 
-          {/* Key concepts explorer */}
-          <div>
-            <div style={{ fontSize: 11, letterSpacing: 2, color: "#B45309", textTransform: "uppercase", marginBottom: 12 }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: hoveredConcept ? 14 : 0 }}>
-              {concepts.map(c => {
-                const rungData = rungs[c.rung - 1];
-                const isActive = hoveredConcept === c.id;
-                return (
-                  <div
-                    key={c.id}
-                    onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                    style={{
-                      padding: "6px 12px",
-                      background: isActive ? `${rungData.color}cc` : `${rungData.color}33`,
-                      border: `1px solid ${rungData.glowColor}${isActive ? "cc" : "44"}`,
-                      borderRadius: 16,
-                      fontSize: 13,
-                      color: isActive ? rungData.textColor : "#c4956a",
-                      transition: "all 0.2s",
-                      boxShadow: isActive ? `0 0 12px ${rungData.glowColor}33` : "none",
-                      cursor: "pointer",
-                    }}
-                  >
-                    {c.label}
-                  </div>
-                );
-              })}
-            </div>
-            {hoveredConcept && (() => {
-              const c = concepts.find(x => x.id === hoveredConcept);
-              if (!c) return null;
-              const rungData = rungs[c.rung - 1];
-              return (
-                <div style={{
-                  background: "#1a0a02ee",
-                  border: `1px solid ${rungData.glowColor}66`,
-                  borderRadius: 8,
-                  padding: "14px 18px",
-                  fontSize: 13,
-                  color: "#d4a96a",
-                  lineHeight: 1.6,
-                }}>
-                  <div style={{ fontSize: 10, letterSpacing: 1, color: rungData.glowColor, textTransform: "uppercase", marginBottom: 6 }}>
-                    {rungData.label}
-                  </div>
-                  <div style={{ fontWeight: "bold", color: rungData.textColor, marginBottom: 4 }}>{c.label}</div>
-                  {c.desc}
-                </div>
-              );
-            })()}
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(180,83,9,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, color: "#B45309", textTransform: "uppercase", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
           </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: hoveredConcept ? 14 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#B45309" : "rgba(180,83,9,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#d97706" : "rgba(180,83,9,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#c4956a",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(180,83,9,0.08)", border: "1px solid rgba(180,83,9,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#B45309", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -4549,55 +4575,6 @@ function ConatusEssentialDrive() {
             </div>
           </div>
 
-          {/* Key Concepts Grid */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-              gap: "14px",
-              marginBottom: "8px",
-            }}
-          >
-            {concepts.map((c) => (
-              <div
-                key={c.id}
-                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                style={{
-                  background: hoveredConcept === c.id ? "#1a100866" : "#12080433",
-                  border: `1px solid ${hoveredConcept === c.id ? c.color : "#2a1a10"}`,
-                  borderRadius: "8px",
-                  padding: "14px 16px",
-                  cursor: "pointer",
-                  transition: "all 0.25s",
-                  boxShadow: hoveredConcept === c.id ? `0 0 16px ${c.color}44` : "none",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "11px",
-                    letterSpacing: "2px",
-                    textTransform: "uppercase",
-                    color: c.color,
-                    marginBottom: "6px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {c.label}
-                </div>
-                <div
-                  style={{
-                    fontSize: "12px",
-                    color: hoveredConcept === c.id ? "#e8e0d8" : "#8a7a6a",
-                    lineHeight: "1.6",
-                    transition: "color 0.2s",
-                  }}
-                >
-                  {c.desc}
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Core argument prose */}
           <div
             style={{
@@ -4615,6 +4592,43 @@ function ConatusEssentialDrive() {
               The crucial fork appears in how conatus expresses itself. When our ideas are adequate — when we genuinely understand the causes of our affects — conatus operates as an active power, generating what Spinoza calls <span style={{ color: "#F59E0B" }}>active affects</span>: joy, strength, and expanding capability that spiral upward into greater understanding. When ideas are inadequate, we are buffeted by external causes we don't comprehend, producing <span style={{ color: "#A78BFA" }}>passive affects</span> that contract our power and leave us at the mercy of fortune.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(180,83,9,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#B45309", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#B45309" : "rgba(180,83,9,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#d97706" : "rgba(180,83,9,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#d97706",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(180,83,9,0.08)", border: "1px solid rgba(180,83,9,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#B45309", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Difficulty Panel */}
@@ -5207,7 +5221,7 @@ function EmotionalLifePassionToAction() {
         </div>
 
         {/* KEY CONCEPTS — Click to Explore */}
-        <div style={{ marginBottom: "28px" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(157,23,77,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 28 }}>
           <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#9D174D", marginBottom: 14 }}>
             Key Concepts — Click to Explore
           </div>
@@ -5690,49 +5704,6 @@ function FreedomWithinNecessity() {
             </div>
           </div>
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: 28 }}>
-            <div style={{ fontSize: 11, letterSpacing: 3, color: "#4a5a8a", textTransform: "uppercase", marginBottom: 14 }}>Key Concepts</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-              {concepts.map(c => (
-                <div key={c.id}
-                  onMouseEnter={() => setHoveredConcept(c.id)}
-                  onMouseLeave={() => setHoveredConcept(null)}
-                  style={{
-                    background: hoveredConcept === c.id ? "rgba(30,64,175,0.35)" : "rgba(30,64,175,0.12)",
-                    border: `1px solid ${hoveredConcept === c.id ? "#3b82f6" : "#1E40AF"}`,
-                    borderRadius: 20,
-                    padding: "6px 16px",
-                    cursor: "pointer",
-                    transition: "all 0.25s",
-                    fontSize: 13,
-                    color: hoveredConcept === c.id ? "#c8d8ff" : "#8898c8",
-                    boxShadow: hoveredConcept === c.id ? "0 0 12px rgba(59,130,246,0.3)" : "none",
-                  }}>
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {hoveredConcept && (
-              <div style={{
-                marginTop: 14,
-                background: "rgba(30,64,175,0.12)",
-                border: "1px solid #1E40AF",
-                borderRadius: 8,
-                padding: "14px 18px",
-                fontSize: 14,
-                color: "#b8cce8",
-                lineHeight: 1.75,
-                transition: "all 0.2s",
-              }}>
-                <strong style={{ color: "#c8d8ff" }}>
-                  {concepts.find(c => c.id === hoveredConcept)?.label}:
-                </strong>{" "}
-                {concepts.find(c => c.id === hoveredConcept)?.desc}
-              </div>
-            )}
-          </div>
-
           {/* Core argument prose */}
           <div style={{
             marginTop: 24,
@@ -5745,6 +5716,43 @@ function FreedomWithinNecessity() {
               Everything follows necessarily from prior causes — including all human actions. But not all forms of causal determination are equivalent. When our actions flow from external forces that distort our essential nature, we are in bondage even if physically unconstrained. When our actions flow from internal causes expressing our own deepest nature, we are genuinely free even though equally determined. This reconceptualization shifts moral evaluation from retributive blame for past acts to an educative concern for developing the character and understanding that leads to authentic action.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(30,64,175,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1E40AF", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#1E40AF" : "rgba(30,64,175,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#3b82f6" : "rgba(30,64,175,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#8898c8",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(30,64,175,0.08)", border: "1px solid rgba(30,64,175,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#1E40AF", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* 3. THE DIFFICULTY PANEL */}
@@ -6295,54 +6303,40 @@ function ArtOfLivingEthicsFlourishing() {
             </div>
           </div>
 
-          {/* Key Concepts — Click to Explore */}
-          <div style={{ marginTop: 22, borderTop: "1px solid #3d1a0060", paddingTop: 18 }}>
-            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#D97706", marginBottom: 14 }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
-              {sec10Concepts.map(c => (
-                <div
-                  key={c.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  style={{
-                    padding: "6px 14px",
-                    background: hoveredConcept === c.id ? "#D97706" : "rgba(217,119,6,0.1)",
-                    border: `1px solid ${hoveredConcept === c.id ? "#FFC107" : "#3d1a00"}`,
-                    borderRadius: 20,
-                    fontSize: 12,
-                    cursor: "pointer",
-                    color: hoveredConcept === c.id ? "#f0ead8" : "#C4A97A",
-                    transition: "all 0.2s",
-                  }}
-                >
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {hoveredConcept && (
-              <div style={{
-                background: "rgba(217,119,6,0.08)",
-                border: "1px solid #3d1a00",
-                borderRadius: 6,
-                padding: "16px 20px",
-              }}>
-                <div style={{ fontSize: 13, fontWeight: "bold", color: "#D97706", marginBottom: 8 }}>
-                  {sec10Concepts.find(c => c.id === hoveredConcept)?.label}
-                </div>
-                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
-                  {sec10Concepts.find(c => c.id === hoveredConcept)?.desc}
-                </p>
-              </div>
-            )}
-          </div>
-
           {/* Core Argument prose */}
           <div style={{ marginTop: 22, padding: "16px 20px", background: "#1a0a0050", borderRadius: 8, border: "1px solid #3d1a0060" }}>
             <p style={{ margin: 0, fontSize: 13.5, lineHeight: 1.85, color: "#E8D5B0" }}>
               Rather than grounding ethics in divine command or social convention, Spinoza roots it in careful analysis of what actually promotes human well-being as finite modes of infinite substance. The convergence is not accidental: properly understood self-interest <em>necessarily</em> involves concern for others because our deepest interests can be fulfilled only in social contexts of mutual understanding and cooperation. The person who exploits others undermines the very conditions of their own flourishing. When the golden threads of mutual recognition multiply in the simulation above, all nodes rise together — this is the geometry of ethics made visible.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(217,119,6,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 16 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#D97706", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {sec10Concepts.map(c => (
+              <div key={c.id} onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{ padding: "6px 14px", background: hoveredConcept === c.id ? "#D97706" : "rgba(217,119,6,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#FFC107" : "rgba(217,119,6,0.35)"}`,
+                  borderRadius: 20, fontSize: 12, cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#C4A97A", transition: "all 0.2s" }}>
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(217,119,6,0.08)", border: "1px solid rgba(217,119,6,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#D97706", marginBottom: 8 }}>
+                {sec10Concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {sec10Concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -6450,7 +6444,7 @@ function PoliticalVisionDemocracyLiberation() {
   const [echosOpen, setEchosOpen] = useState(false);
   const [crisisTriggered, setCrisisTriggered] = useState(false);
   const [phase, setPhase] = useState('idle'); // idle, deliberating, resolved
-  const [selectedConcept, setSelectedConcept] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [hoveredSystem, setHoveredSystem] = useState(null);
   const animRef = useRef(null);
   const timerRef = useRef(null);
@@ -6916,55 +6910,6 @@ function PoliticalVisionDemocracyLiberation() {
             </div>
           )}
 
-          {/* Key Concepts */}
-          <div>
-            <div style={{ fontSize: '11px', color: '#556', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '14px', textAlign: 'center' }}>
-              Core Concepts — click to explore
-            </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center', marginBottom: '16px' }}>
-              {concepts.map(c => {
-                const isSelected = selectedConcept === c.id;
-                return (
-                  <button
-                    key={c.id}
-                    onClick={() => setSelectedConcept(isSelected ? null : c.id)}
-                    style={{
-                      background: isSelected ? accent : 'rgba(15, 118, 110, 0.1)',
-                      color: isSelected ? '#fff' : accentLight,
-                      border: `1px solid ${isSelected ? accentLight : accent}`,
-                      borderRadius: '20px',
-                      padding: '6px 16px',
-                      fontSize: '12px',
-                      fontFamily: 'Georgia, serif',
-                      cursor: 'pointer',
-                      letterSpacing: '0.5px',
-                      transition: 'all 0.2s ease',
-                    }}
-                  >
-                    {c.label}
-                  </button>
-                );
-              })}
-            </div>
-            {selectedConcept && (
-              <div style={{
-                background: 'rgba(15, 118, 110, 0.08)',
-                border: `1px solid ${accent}`,
-                borderRadius: '8px',
-                padding: '18px 24px',
-                maxWidth: '600px',
-                margin: '0 auto',
-              }}>
-                <div style={{ fontSize: '13px', fontWeight: 'bold', color: accentLight, marginBottom: '8px' }}>
-                  {concepts.find(c => c.id === selectedConcept)?.label}
-                </div>
-                <p style={{ margin: 0, fontSize: '14px', color: '#c8c0b0', lineHeight: '1.75' }}>
-                  {concepts.find(c => c.id === selectedConcept)?.desc}
-                </p>
-              </div>
-            )}
-          </div>
-
           {/* Core Argument Prose */}
           <div style={{
             marginTop: '28px',
@@ -6980,6 +6925,43 @@ function PoliticalVisionDemocracyLiberation() {
               Governments that maintain themselves through censorship and propaganda are self-defeating — they undermine the rational deliberation that would enable citizens to recognize legitimacy in the first place. Freedom of thought is therefore not a luxury afforded by stable governance; it is the precondition for governance that can remain stable at all.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(15,118,110,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: accent, marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: '6px 14px',
+                  background: hoveredConcept === c.id ? accent : 'rgba(15,118,110,0.1)',
+                  border: `1px solid ${hoveredConcept === c.id ? accentLight : 'rgba(15,118,110,0.35)'}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: 'pointer',
+                  color: hoveredConcept === c.id ? '#f0ead8' : accentLight,
+                  transition: 'all 0.2s',
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: 'rgba(15,118,110,0.08)', border: `1px solid rgba(15,118,110,0.3)`, borderRadius: 6, padding: '16px 20px' }}>
+              <div style={{ fontSize: 13, fontWeight: 'bold', color: accentLight, marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -7087,7 +7069,7 @@ function PoliticalVisionDemocracyLiberation() {
 function CritiqueOfReligionScripture() {
   const [sliderValue, setSliderValue] = useState(0);
   const [hoveredLayer, setHoveredLayer] = useState(null);
-  const [expandedConcept, setExpandedConcept] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [echoesOpen, setEchoesOpen] = useState(false);
   const [hoveredEcho, setHoveredEcho] = useState(null);
 
@@ -7148,26 +7130,22 @@ function CritiqueOfReligionScripture() {
     {
       id: "biblical_criticism",
       label: "Biblical Criticism",
-      short: "Reading texts as historical documents",
-      detail: "Spinoza insists the Bible must be read like any other ancient text — with attention to its linguistic patterns, historical circumstances, internal contradictions, and the interests of those who preserved it. This is not impiety but intellectual honesty.",
+      desc: "Spinoza insists the Bible must be read like any other ancient text — with attention to its linguistic patterns, historical circumstances, internal contradictions, and the interests of those who preserved it. This is not impiety but intellectual honesty.",
     },
     {
       id: "natural_prophecy",
       label: "Natural Prophecy",
-      short: "Exceptional moral imagination, not supernatural channel",
-      detail: "Prophets were individuals of extraordinary moral sensitivity and imaginative vividness. Their 'visions' were psychologically genuine experiences, but they were shaped by the prophets' own temperaments, cultural contexts, and limited scientific knowledge — not literal transmissions from an infinite God.",
+      desc: "Prophets were individuals of extraordinary moral sensitivity and imaginative vividness. Their 'visions' were psychologically genuine experiences, but they were shaped by the prophets' own temperaments, cultural contexts, and limited scientific knowledge — not literal transmissions from an infinite God.",
     },
     {
       id: "moral_core",
       label: "Moral Core",
-      short: "Justice and compassion survive the excavation",
-      detail: "Strip away the supernatural packaging and what remains is genuinely valuable: teachings about treating others with justice, caring for the vulnerable, building communities of mutual aid. This ethical wisdom needs no miracles to be true.",
+      desc: "Strip away the supernatural packaging and what remains is genuinely valuable: teachings about treating others with justice, caring for the vulnerable, building communities of mutual aid. This ethical wisdom needs no miracles to be true.",
     },
     {
       id: "human_documents",
       label: "Human Documents",
-      short: "Compiled by editors with agendas",
-      detail: "The Pentateuch shows signs of multiple authorial hands, post-Mosaic historical references, and systematic theological programs. Ezra and the Great Assembly likely assembled and edited much of what became canonical — a human, political, spiritual project.",
+      desc: "The Pentateuch shows signs of multiple authorial hands, post-Mosaic historical references, and systematic theological programs. Ezra and the Great Assembly likely assembled and edited much of what became canonical — a human, political, spiritual project.",
     },
   ];
 
@@ -7186,15 +7164,17 @@ function CritiqueOfReligionScripture() {
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: "12px", opacity: 0.6, fontSize: "13px", letterSpacing: "2px", textTransform: "uppercase" }}>
-          Part 12 of 21 — Spinoza's System
+        <div style={{ textAlign: "center", marginBottom: 36 }}>
+          <div style={{ marginBottom: "12px", opacity: 0.6, fontSize: "13px", letterSpacing: "2px", textTransform: "uppercase" }}>
+            Part 12 of 21 — Spinoza's System
+          </div>
+          <h1 style={{ fontSize: "clamp(24px, 4vw, 38px)", fontWeight: "normal", margin: "0 0 8px", color: "#F5E6D3", letterSpacing: "0.5px" }}>
+            Critique of Religion and Scripture
+          </h1>
+          <p style={{ fontSize: "16px", color: "#C9A882", margin: 0, lineHeight: "1.6", fontStyle: "italic" }}>
+            Spinoza applies rigorous rational analysis to biblical texts and religious institutions, separating genuine moral and spiritual insight from accumulated superstition and political manipulation.
+          </p>
         </div>
-        <h1 style={{ fontSize: "clamp(24px, 4vw, 38px)", fontWeight: "normal", margin: "0 0 8px", color: "#F5E6D3", letterSpacing: "0.5px" }}>
-          Critique of Religion and Scripture
-        </h1>
-        <p style={{ fontSize: "16px", color: "#C9A882", margin: "0 0 36px", lineHeight: "1.6", fontStyle: "italic" }}>
-          Spinoza applies rigorous rational analysis to biblical texts and religious institutions, separating genuine moral and spiritual insight from accumulated superstition and political manipulation.
-        </p>
 
         {/* THE PROBLEM PANEL */}
         <div style={{
@@ -7444,57 +7424,6 @@ function CritiqueOfReligionScripture() {
             )}
           </div>
 
-          {/* Key Concepts Grid */}
-          <div style={{ marginTop: "8px" }}>
-            <div style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "#7C4020", marginBottom: "16px" }}>
-              Key Concepts — click to explore
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "12px" }}>
-              {concepts.map(concept => {
-                const isExpanded = expandedConcept === concept.id;
-                return (
-                  <div
-                    key={concept.id}
-                    onClick={() => setExpandedConcept(isExpanded ? null : concept.id)}
-                    style={{
-                      background: isExpanded ? "rgba(124, 45, 18, 0.25)" : "rgba(30, 10, 4, 0.7)",
-                      border: `1px solid ${isExpanded ? "#7C2D12" : "rgba(124, 45, 18, 0.25)"}`,
-                      borderRadius: "8px",
-                      padding: "14px 16px",
-                      cursor: "pointer",
-                      transition: "all 0.2s ease",
-                      gridColumn: isExpanded ? "1 / -1" : "auto",
-                    }}
-                    onMouseEnter={e => {
-                      if (!isExpanded) {
-                        e.currentTarget.style.background = "rgba(124, 45, 18, 0.15)";
-                        e.currentTarget.style.borderColor = "rgba(124, 45, 18, 0.5)";
-                      }
-                    }}
-                    onMouseLeave={e => {
-                      if (!isExpanded) {
-                        e.currentTarget.style.background = "rgba(30, 10, 4, 0.7)";
-                        e.currentTarget.style.borderColor = "rgba(124, 45, 18, 0.25)";
-                      }
-                    }}
-                  >
-                    <div style={{ fontSize: "13px", color: "#E8A87C", marginBottom: "5px", fontWeight: "bold" }}>
-                      {concept.label}
-                    </div>
-                    <div style={{ fontSize: "12px", color: "#9A7050", fontStyle: "italic", lineHeight: "1.4" }}>
-                      {concept.short}
-                    </div>
-                    {isExpanded && (
-                      <p style={{ margin: "12px 0 0", fontSize: "13px", color: "#C4956A", lineHeight: "1.8" }}>
-                        {concept.detail}
-                      </p>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
           {/* Core argument prose */}
           <div style={{
             marginTop: "28px",
@@ -7507,6 +7436,43 @@ function CritiqueOfReligionScripture() {
               Through linguistic, historical, and internal-consistency analysis, Spinoza demonstrates that the Hebrew scriptures are human documents compiled by later editors combining multiple sources according to theological and political agendas — not direct divine revelation. Prophetic experience is explained as a natural psychological phenomenon involving exceptional moral sensitivity and imaginative power rather than supernatural communication. The genuine value of religious tradition lies in its ethical core — teachings about justice and compassion — which can be appreciated and developed without belief in miracles or divine commands.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(124,45,18,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#7C2D12", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#7C2D12" : "rgba(124,45,18,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#b45309" : "rgba(124,45,18,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#E8A87C",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(124,45,18,0.08)", border: "1px solid rgba(124,45,18,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#7C2D12", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -8066,33 +8032,43 @@ function MiraclesProphecyNaturalOrder() {
           </div>
         )}
 
-        {/* Concepts Section */}
-        <div style={{ marginTop: '8px' }}>
-          <div style={{ fontSize: '11px', letterSpacing: '0.15em', color: '#7c3aed', textTransform: 'uppercase', marginBottom: '12px' }}>
-            Key Concepts — click to explore
-          </div>
+      </div>
+
+      {/* Key Concepts */}
+      <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(124,58,237,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 20 }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: '#7c3aed', marginBottom: 14 }}>
+          Key Concepts — Click to Explore
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
           {concepts.map(c => (
             <div
               key={c.id}
-              style={conceptPanelStyle(c.id)}
-              onMouseEnter={() => setHoveredConcept(c.id)}
-              onMouseLeave={() => setHoveredConcept(null)}
               onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+              style={{
+                padding: '6px 14px',
+                background: hoveredConcept === c.id ? '#7c3aed' : 'rgba(124,58,237,0.1)',
+                border: `1px solid ${hoveredConcept === c.id ? '#a78bfa' : 'rgba(124,58,237,0.35)'}`,
+                borderRadius: 20,
+                fontSize: 12,
+                cursor: 'pointer',
+                color: hoveredConcept === c.id ? '#f0ead8' : '#b090d8',
+                transition: 'all 0.2s',
+              }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontSize: '13px', color: hoveredConcept === c.id ? '#d4b8f5' : '#b090d8', fontWeight: 'bold', letterSpacing: '0.02em' }}>
-                  {c.label}
-                </div>
-                <div style={{ fontSize: '10px', color: '#6040a0' }}>{hoveredConcept === c.id ? '▲' : '▼'}</div>
-              </div>
-              {hoveredConcept === c.id && (
-                <div style={{ marginTop: '8px', fontSize: '13px', color: '#a890cc', lineHeight: '1.65', borderTop: '1px solid #2d1a4a', paddingTop: '8px' }}>
-                  {c.desc}
-                </div>
-              )}
+              {c.label}
             </div>
           ))}
         </div>
+        {hoveredConcept && (
+          <div style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.3)', borderRadius: 6, padding: '16px 20px' }}>
+            <div style={{ fontSize: 13, fontWeight: 'bold', color: '#7c3aed', marginBottom: 8 }}>
+              {concepts.find(c => c.id === hoveredConcept)?.label}
+            </div>
+            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+              {concepts.find(c => c.id === hoveredConcept)?.desc}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* THE DIFFICULTY PANEL */}
@@ -8212,12 +8188,12 @@ function SocialContractNaturalRight() {
   };
 
   const concepts = [
-    { id: "natural_right", label: "Natural Right as Power", short: "Rights are empirical facts: you have the right to whatever you have the power to do.", detail: "Spinoza radically equates right with actual capacity. A stone has the right to fall; a predator has the right to hunt. Rights are not moral abstractions but descriptions of real power in the world. This makes rights measurable and grounded in nature itself." },
-    { id: "state_of_nature", label: "State of Nature", short: "Without cooperation, individual power is minimal and precarious.", detail: "In Spinoza's state of nature, individuals are largely powerless alone. Unlike Hobbes's war of all against all focused on fear, Spinoza's account emphasizes the positive gain from cooperation — you do not escape nature's violence so much as you harness nature's social logic." },
-    { id: "collective_enhancement", label: "Collective Enhancement", short: "Political society is legitimate when it genuinely increases individual and collective power.", detail: "The social contract for Spinoza is not a moment of consent but an ongoing demonstration. Legitimate authority continuously proves itself through observable outcomes: do citizens think more freely, create more, and live more fully under this government?" },
-    { id: "legitimacy", label: "Political Legitimacy", short: "Legitimacy is earned through consequences, not origins.", detail: "No government is legitimate by virtue of being elected or divinely appointed. Legitimacy is a property of results. A democracy that fails to enhance citizens' rational capacities loses its claim; a benevolent monarchy that succeeds gains one — though structurally, democracy has systematic advantages." },
-    { id: "sovereignty", label: "Popular Sovereignty", short: "Power ultimately resides in the people, and any regime must account for this fact.", detail: "Even authoritarian regimes must manage popular power — they cannot simply ignore it. Spinoza's realism acknowledges that no state can survive sustained active resistance from its population. The question is always how power is distributed and managed, not whether the people have it." },
-    { id: "democratic", label: "Democratic Deliberation", short: "Democracy uniquely transforms participants, building the capacities needed for self-governance.", detail: "Democracy is not just instrumentally better at distributing power — it has a developmental quality. Participation in democratic deliberation itself cultivates the rational and civic capacities that make democracy work. The process is part of the product." }
+    { id: "natural_right", label: "Natural Right as Power", desc: "Spinoza radically equates right with actual capacity. A stone has the right to fall; a predator has the right to hunt. Rights are not moral abstractions but descriptions of real power in the world. This makes rights measurable and grounded in nature itself." },
+    { id: "state_of_nature", label: "State of Nature", desc: "In Spinoza's state of nature, individuals are largely powerless alone. Unlike Hobbes's war of all against all focused on fear, Spinoza's account emphasizes the positive gain from cooperation — you do not escape nature's violence so much as you harness nature's social logic." },
+    { id: "collective_enhancement", label: "Collective Enhancement", desc: "The social contract for Spinoza is not a moment of consent but an ongoing demonstration. Legitimate authority continuously proves itself through observable outcomes: do citizens think more freely, create more, and live more fully under this government?" },
+    { id: "legitimacy", label: "Political Legitimacy", desc: "No government is legitimate by virtue of being elected or divinely appointed. Legitimacy is a property of results. A democracy that fails to enhance citizens' rational capacities loses its claim; a benevolent monarchy that succeeds gains one — though structurally, democracy has systematic advantages." },
+    { id: "sovereignty", label: "Popular Sovereignty", desc: "Even authoritarian regimes must manage popular power — they cannot simply ignore it. Spinoza's realism acknowledges that no state can survive sustained active resistance from its population. The question is always how power is distributed and managed, not whether the people have it." },
+    { id: "democratic", label: "Democratic Deliberation", desc: "Democracy is not just instrumentally better at distributing power — it has a developmental quality. Participation in democratic deliberation itself cultivates the rational and civic capacities that make democracy work. The process is part of the product." }
   ];
 
   function computeRegimeStep(regime, step, cv, ia) {
@@ -8432,45 +8408,6 @@ function SocialContractNaturalRight() {
             Spinoza's theory is empirically testable: legitimate government is the kind that actually increases citizens' power. Run the simulation to see how three regimes perform over 50 policy steps. Adjust civic virtue and information access to explore when democracy's structural advantage grows or shrinks.
           </p>
 
-          {/* Key Concepts */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>
-            {concepts.map(c => (
-              <div
-                key={c.id}
-                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                style={{
-                  background: hoveredConcept === c.id ? ACCENT + "55" : "#0d2018",
-                  border: `1px solid ${hoveredConcept === c.id ? ACCENT_LIGHT : "#1e3328"}`,
-                  borderRadius: 20,
-                  padding: "6px 14px",
-                  fontSize: 12,
-                  color: hoveredConcept === c.id ? "#e8e8e0" : "#7a9e8a",
-                  cursor: "pointer",
-                  transition: "all 0.2s"
-                }}
-              >
-                {c.label}
-              </div>
-            ))}
-          </div>
-
-          {hoveredConcept && (() => {
-            const c = concepts.find(x => x.id === hoveredConcept);
-            return (
-              <div style={{
-                background: "#0a2018",
-                border: `1px solid ${ACCENT}`,
-                borderRadius: 8,
-                padding: "16px 20px",
-                marginBottom: 20,
-                transition: "all 0.3s"
-              }}>
-                <div style={{ fontSize: 13, fontWeight: "bold", color: ACCENT_LIGHT, marginBottom: 6 }}>{c.label}</div>
-                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: "#c8c4b4" }}>{c.detail}</p>
-              </div>
-            );
-          })()}
-
           {/* Canvas Agent Simulation */}
           <div style={{ position: "relative", marginBottom: 20 }}>
             <canvas
@@ -8642,6 +8579,43 @@ function SocialContractNaturalRight() {
                 {civicVirtue > 0.6 ? " High civic virtue dramatically amplifies democracy's structural advantage, confirming Spinoza's view that participation itself builds the capacities needed for self-governance." : ""}
                 {infoAccess > 0.6 ? " Information access multiplies democratic outcomes because rational deliberation requires shared knowledge." : ""}
                 {" "}Legitimacy is not declared — it is demonstrated through these observable consequences.
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(6,95,70,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 28 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: ACCENT, marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? ACCENT : "rgba(6,95,70,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? ACCENT_LIGHT : "rgba(6,95,70,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : ACCENT_LIGHT,
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(6,95,70,0.08)", border: "1px solid rgba(6,95,70,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: ACCENT_LIGHT, marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
               </p>
             </div>
           )}
@@ -8823,47 +8797,6 @@ function EducationTransformationSociety() {
 
       {/* MAIN VISUALIZATION */}
       <div style={{ maxWidth: 860, margin: "0 auto 28px auto" }}>
-
-        {/* KEY CONCEPTS ROW */}
-        <div style={{ display: "flex", gap: 8, marginBottom: 20, flexWrap: "wrap" }}>
-          {concepts.map(c => (
-            <div
-              key={c.id}
-              onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-              onMouseEnter={() => {}}
-              style={{
-                cursor: "pointer",
-                padding: "6px 12px",
-                borderRadius: 20,
-                border: `1px solid ${hoveredConcept === c.id ? "#1D4ED8" : "#2a2a40"}`,
-                background: hoveredConcept === c.id ? "#0d1a3a" : "#0f0f1f",
-                color: hoveredConcept === c.id ? "#7aafff" : "#8888aa",
-                fontSize: 12,
-                transition: "all 0.2s",
-              }}
-            >
-              {c.label}
-            </div>
-          ))}
-        </div>
-
-        {/* CONCEPT DETAIL */}
-        {hoveredConcept && (
-          <div style={{
-            background: "#0d1428",
-            border: "1px solid #1D4ED8",
-            borderRadius: 8,
-            padding: "16px 20px",
-            marginBottom: 20,
-          }}>
-            <div style={{ fontSize: 13, fontWeight: "bold", color: "#7aafff", marginBottom: 6 }}>
-              {concepts.find(c => c.id === hoveredConcept)?.label}
-            </div>
-            <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: "#b0b0cc" }}>
-              {concepts.find(c => c.id === hoveredConcept)?.desc}
-            </p>
-          </div>
-        )}
 
         {/* CLASSROOM COMPARISON */}
         <div style={{
@@ -9130,6 +9063,45 @@ function EducationTransformationSociety() {
         </div>
       </div>
 
+      {/* Key Concepts */}
+      <div style={{ maxWidth: 860, margin: "0 auto 28px auto" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(29,78,216,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1D4ED8", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#1D4ED8" : "rgba(29,78,216,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#60a5fa" : "rgba(29,78,216,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#7aafff",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(29,78,216,0.08)", border: "1px solid rgba(29,78,216,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#1D4ED8", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* DIFFICULTY PANEL */}
       <div style={{
         maxWidth: 860, margin: "0 auto 28px auto",
@@ -9235,17 +9207,17 @@ function ProblemOfEvilSuffering() {
   const [wisdom, setWisdom] = useState(0);
   const [institutions, setInstitutions] = useState(0);
   const [echosOpen, setEchosOpen] = useState(false);
-  const [activeConceptIndex, setActiveConceptIndex] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [stats, setStats] = useState({ collisions: 0, harmony: 0 });
   const statsRef = useRef({ collisions: 0, harmony: 0 });
 
   const concepts = [
-    { label: "Relational Evil", desc: "Nothing is evil in itself — evil exists only in relation to a being whose nature it contradicts. The predator is not evil; only from the prey's perspective does 'evil' arise." },
-    { label: "Passive Desires", desc: "Suffering emerges when we are driven by passions we do not understand. We become enslaved to desires for things outside our control, generating inevitable disappointment." },
-    { label: "Finite Existence", desc: "Because all finite beings strive to persevere, collisions are structurally inevitable. Complete elimination of suffering is impossible — but its reduction is the work of wisdom." },
-    { label: "Social Conditions", desc: "Economic inequality and structural injustice generate incentives for mutual exploitation, amplifying the suffering that inadequate understanding already produces." },
-    { label: "Structural Reform", desc: "Better institutions channel individual strivings toward mutual benefit. They do not eliminate conatus — they redirect it so trajectories align rather than collide." },
-    { label: "Wisdom as Remedy", desc: "Adequate understanding of how our striving affects others transforms passive affects into active ones. The wise person reduces harmful collisions not by suppressing desire, but by seeing truly." },
+    { id: "relational_evil", label: "Relational Evil", desc: "Nothing is evil in itself — evil exists only in relation to a being whose nature it contradicts. The predator is not evil; only from the prey's perspective does 'evil' arise." },
+    { id: "passive_desires", label: "Passive Desires", desc: "Suffering emerges when we are driven by passions we do not understand. We become enslaved to desires for things outside our control, generating inevitable disappointment." },
+    { id: "finite_existence", label: "Finite Existence", desc: "Because all finite beings strive to persevere, collisions are structurally inevitable. Complete elimination of suffering is impossible — but its reduction is the work of wisdom." },
+    { id: "social_conditions", label: "Social Conditions", desc: "Economic inequality and structural injustice generate incentives for mutual exploitation, amplifying the suffering that inadequate understanding already produces." },
+    { id: "structural_reform", label: "Structural Reform", desc: "Better institutions channel individual strivings toward mutual benefit. They do not eliminate conatus — they redirect it so trajectories align rather than collide." },
+    { id: "wisdom_remedy", label: "Wisdom as Remedy", desc: "Adequate understanding of how our striving affects others transforms passive affects into active ones. The wise person reduces harmful collisions not by suppressing desire, but by seeing truly." },
   ];
 
   wisdomRef.current = wisdom;
@@ -9540,8 +9512,6 @@ function ProblemOfEvilSuffering() {
     return () => cancelAnimationFrame(animFrameRef.current);
   }, []);
 
-  const [hoveredConcept, setHoveredConcept] = useState(null);
-
   return (
     <div style={{
       fontFamily: "Georgia, serif",
@@ -9658,48 +9628,6 @@ function ProblemOfEvilSuffering() {
           </div>
         </div>
 
-        {/* KEY CONCEPTS INTERACTIVE GRID */}
-        <div style={{
-          background: "rgba(8, 4, 2, 0.75)",
-          border: "1px solid rgba(120, 53, 15, 0.2)",
-          borderRadius: 8,
-          padding: "24px",
-          marginBottom: 24,
-        }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#78350F", marginBottom: 14 }}>Key Concepts</div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
-            {concepts.map((c, i) => {
-              const isActive = activeConceptIndex === i;
-              const isHovered = hoveredConcept === i;
-              return (
-                <div
-                  key={i}
-                  onClick={() => setActiveConceptIndex(isActive ? null : i)}
-                  onMouseEnter={() => setHoveredConcept(i)}
-                  onMouseLeave={() => setHoveredConcept(null)}
-                  style={{
-                    padding: "14px 16px",
-                    background: isActive ? "rgba(120, 53, 15, 0.25)" : isHovered ? "rgba(120, 53, 15, 0.12)" : "rgba(20, 10, 4, 0.6)",
-                    border: `1px solid ${isActive ? "#78350F" : isHovered ? "rgba(120, 53, 15, 0.5)" : "rgba(120, 53, 15, 0.15)"}`,
-                    borderRadius: 5,
-                    cursor: "pointer",
-                    transition: "all 0.2s",
-                    boxShadow: isActive ? "0 0 12px rgba(120, 53, 15, 0.3)" : "none",
-                  }}
-                >
-                  <div style={{ fontSize: 12, color: "#e0a050", marginBottom: isActive ? 8 : 0, fontStyle: "italic" }}>{c.label}</div>
-                  {isActive && (
-                    <p style={{ fontSize: 12, color: "#c09060", lineHeight: 1.65, margin: 0 }}>{c.desc}</p>
-                  )}
-                  {!isActive && (
-                    <div style={{ fontSize: 10, color: "#604030", marginTop: 3 }}>click to expand</div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
         {/* Evil as Relational: SVG diagram */}
         <div style={{
           background: "rgba(8, 4, 2, 0.75)",
@@ -9745,6 +9673,32 @@ function ProblemOfEvilSuffering() {
 
             <text x={350} y={170} textAnchor="middle" fill="#604030" fontSize={11} fontFamily="Georgia, serif" fontStyle="italic">"Evil" names a relational asymmetry, not an intrinsic property of nature.</text>
           </svg>
+        </div>
+
+        {/* KEY CONCEPTS */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(120,53,15,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#78350F", marginBottom: 14 }}>Key Concepts — Click to Explore</div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div key={c.id} onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{ padding: "6px 14px", background: hoveredConcept === c.id ? "#78350F" : "rgba(120,53,15,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#b45309" : "rgba(120,53,15,0.35)"}`,
+                  borderRadius: 20, fontSize: 12, cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#e0a050", transition: "all 0.2s" }}>
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(120,53,15,0.08)", border: "1px solid rgba(120,53,15,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#78350F", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -9833,7 +9787,7 @@ function EternityMindsImmortality() {
   const [isEchoesOpen, setIsEchoesOpen] = useState(false);
   const [animationPhase, setAnimationPhase] = useState('living'); // 'living', 'death', 'afterdeath'
   const [hoveredNode, setHoveredNode] = useState(null);
-  const [selectedConcept, setSelectedConcept] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [timePosition, setTimePosition] = useState(0); // 0 to 1
   const [isAnimating, setIsAnimating] = useState(false);
   const [latticeNodes, setLatticeNodes] = useState([]);
@@ -9963,12 +9917,26 @@ function EternityMindsImmortality() {
       padding: '0',
     }}>
 
-      {/* Problem Panel */}
+      {/* Header + Problem */}
       <div style={{
         maxWidth: '860px',
         margin: '0 auto',
         padding: '40px 32px 0 32px',
       }}>
+        {/* Title */}
+        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <div style={{ fontSize: '11px', letterSpacing: '4px', color: '#7c3aed', textTransform: 'uppercase', marginBottom: '10px' }}>
+            Part 17 of 21
+          </div>
+          <h1 style={{ margin: '0 0 10px 0', fontSize: '28px', fontWeight: 'normal', color: '#f5f0ff', letterSpacing: '0.5px' }}>
+            Eternity and the Mind's Immortality
+          </h1>
+          <p style={{ margin: '0 auto', fontSize: '15px', color: '#9d85c4', lineHeight: '1.6', maxWidth: '600px' }}>
+            Spinoza offers a naturalistic account of mental eternity — not personal survival after death but the mind's progressive participation in eternal truths.
+          </p>
+        </div>
+
+        {/* Problem Panel */}
         <div style={{
           background: 'rgba(15,10,30,0.85)',
           border: '1px solid #2a1a5e',
@@ -9996,19 +9964,6 @@ function EternityMindsImmortality() {
             The account of evil and finite suffering raised the question of whether something in human beings can transcend temporal dissolution — particularly for those who have cultivated the highest forms of knowledge. Can minds that have glimpsed eternal truth simply vanish into nothing? The problem presses with urgency: if everything finite perishes, does understanding itself perish with it?
           </p>
         </div>
-
-        {/* Title */}
-        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <div style={{ fontSize: '11px', letterSpacing: '4px', color: '#7c3aed', textTransform: 'uppercase', marginBottom: '10px' }}>
-            Part 17 of 21
-          </div>
-          <h1 style={{ margin: '0 0 10px 0', fontSize: '28px', fontWeight: 'normal', color: '#f5f0ff', letterSpacing: '0.5px' }}>
-            Eternity and the Mind's Immortality
-          </h1>
-          <p style={{ margin: 0, fontSize: '15px', color: '#9d85c4', lineHeight: '1.6', maxWidth: '600px', margin: '0 auto' }}>
-            Spinoza offers a naturalistic account of mental eternity — not personal survival after death but the mind's progressive participation in eternal truths.
-          </p>
-        </div>
       </div>
 
       {/* Main Visualization */}
@@ -10020,50 +9975,6 @@ function EternityMindsImmortality() {
           padding: '28px',
           marginBottom: '24px',
         }}>
-
-          {/* Concept Pills */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px', justifyContent: 'center' }}>
-            {concepts.map(c => (
-              <button
-                key={c.id}
-                onClick={() => setSelectedConcept(selectedConcept?.id === c.id ? null : c)}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = `0 4px 16px ${c.color}44`; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
-                style={{
-                  background: selectedConcept?.id === c.id ? `${c.color}22` : 'rgba(20,12,45,0.8)',
-                  border: `1px solid ${c.color}`,
-                  borderRadius: '20px',
-                  padding: '6px 14px',
-                  fontSize: '12px',
-                  color: c.color,
-                  cursor: 'pointer',
-                  fontFamily: 'Georgia, serif',
-                  transition: 'all 0.2s',
-                  letterSpacing: '0.3px',
-                }}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Selected concept explanation */}
-          {selectedConcept && (
-            <div style={{
-              background: `${selectedConcept.color}11`,
-              border: `1px solid ${selectedConcept.color}44`,
-              borderRadius: '8px',
-              padding: '16px 20px',
-              marginBottom: '20px',
-              fontSize: '14px',
-              color: '#d4c9f0',
-              lineHeight: '1.7',
-              transition: 'all 0.3s',
-            }}>
-              <span style={{ color: selectedConcept.color, fontWeight: 'bold' }}>{selectedConcept.label}: </span>
-              {selectedConcept.desc}
-            </div>
-          )}
 
           {/* SVG Visualization */}
           <div style={{ position: 'relative', textAlign: 'center' }}>
@@ -10494,6 +10405,45 @@ function EternityMindsImmortality() {
         </div>
       </div>
 
+      {/* Key Concepts */}
+      <div style={{ maxWidth: '860px', margin: '0 auto 24px auto', padding: '0 32px' }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(91,33,182,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: '#5B21B6', marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: '6px 14px',
+                  background: hoveredConcept === c.id ? '#5B21B6' : 'rgba(91,33,182,0.1)',
+                  border: `1px solid ${hoveredConcept === c.id ? '#a78bfa' : 'rgba(91,33,182,0.35)'}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: 'pointer',
+                  color: hoveredConcept === c.id ? '#f0ead8' : '#a78bfa',
+                  transition: 'all 0.2s',
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: 'rgba(91,33,182,0.08)', border: '1px solid rgba(91,33,182,0.3)', borderRadius: 6, padding: '16px 20px' }}>
+              <div style={{ fontSize: 13, fontWeight: 'bold', color: '#5B21B6', marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Difficulty Panel */}
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 32px' }}>
         <div style={{
@@ -10718,6 +10668,19 @@ function GeometricMethodDemonstration() {
       maxWidth: '900px',
       margin: '0 auto',
     }}>
+
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: 36 }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, color: '#6b7280', textTransform: 'uppercase', marginBottom: 8 }}>
+          Part 18 of 21 — Spinoza's System
+        </div>
+        <h1 style={{ fontSize: 28, fontWeight: 'normal', color: '#f0ece4', margin: '0 0 8px 0' }}>
+          The Geometric Method and Philosophical Demonstration
+        </h1>
+        <p style={{ fontSize: 15, color: '#9ca3af', margin: 0, lineHeight: 1.6 }}>
+          Spinoza writes philosophy as Euclid wrote geometry — in definitions, axioms, propositions, and demonstrations — making the form of argument itself carry philosophical weight.
+        </p>
+      </div>
 
       {/* Problem Panel */}
       <div style={{
@@ -11059,47 +11022,34 @@ function GeometricMethodDemonstration() {
           </div>
         )}
 
-        {/* Key Concepts — Click to Explore */}
-        <div style={{ marginTop: '28px' }}>
-          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: '#9ca3af', marginBottom: 14 }}>
-            Key Concepts — Click to Explore
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: hoveredConcept ? 16 : 0 }}>
-            {sec18Concepts.map(c => (
-              <div
-                key={c.id}
-                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                style={{
-                  padding: '6px 14px',
-                  background: hoveredConcept === c.id ? '#4b5563' : 'rgba(75,85,99,0.15)',
-                  border: `1px solid ${hoveredConcept === c.id ? '#9ca3af' : '#374151'}`,
-                  borderRadius: '20px',
-                  fontSize: '12px',
-                  cursor: 'pointer',
-                  color: hoveredConcept === c.id ? '#f0ead8' : '#9ca3af',
-                  transition: 'all 0.2s',
-                }}
-              >
-                {c.label}
-              </div>
-            ))}
-          </div>
-          {hoveredConcept && (
-            <div style={{
-              background: 'rgba(75,85,99,0.12)',
-              border: '1px solid #374151',
-              borderRadius: 6,
-              padding: '16px 20px',
-            }}>
-              <div style={{ fontSize: 13, fontWeight: 'bold', color: '#d1cfc9', marginBottom: 8 }}>
-                {sec18Concepts.find(c => c.id === hoveredConcept)?.label}
-              </div>
-              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#9ca3af' }}>
-                {sec18Concepts.find(c => c.id === hoveredConcept)?.desc}
-              </p>
-            </div>
-          )}
+      </div>
+
+      {/* Key Concepts */}
+      <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(75,85,99,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: '#9ca3af', marginBottom: 14 }}>
+          Key Concepts — Click to Explore
         </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: hoveredConcept ? 16 : 0 }}>
+          {sec18Concepts.map(c => (
+            <div key={c.id} onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+              style={{ padding: '6px 14px', background: hoveredConcept === c.id ? '#4b5563' : 'rgba(75,85,99,0.15)',
+                border: `1px solid ${hoveredConcept === c.id ? '#9ca3af' : '#374151'}`,
+                borderRadius: 20, fontSize: '12px', cursor: 'pointer',
+                color: hoveredConcept === c.id ? '#f0ead8' : '#9ca3af', transition: 'all 0.2s' }}>
+              {c.label}
+            </div>
+          ))}
+        </div>
+        {hoveredConcept && (
+          <div style={{ background: 'rgba(75,85,99,0.12)', border: '1px solid #374151', borderRadius: 6, padding: '16px 20px' }}>
+            <div style={{ fontSize: 13, fontWeight: 'bold', color: '#d1cfc9', marginBottom: 8 }}>
+              {sec18Concepts.find(c => c.id === hoveredConcept)?.label}
+            </div>
+            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#9ca3af' }}>
+              {sec18Concepts.find(c => c.id === hoveredConcept)?.desc}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Difficulty Panel */}
@@ -11218,7 +11168,7 @@ function SpinozaInfluenceLaterPhilosophy() {
   const [selectedEdge, setSelectedEdge] = useState(null);
   const [timeFilter, setTimeFilter] = useState(3);
   const [echoesOpen, setEchoesOpen] = useState(false);
-  const [activeConcept, setActiveConcept] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const canvasRef = useRef(null);
   const animRef = useRef(null);
 
@@ -11918,24 +11868,57 @@ function SpinozaInfluenceLaterPhilosophy() {
             )}
           </div>
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: "28px", borderTop: "1px solid rgba(14,116,144,0.15)", paddingTop: "24px" }}>
-            <div style={{ fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", color: "#0E7490", marginBottom: "16px" }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
-              {[
-                { concept: "German Idealism", desc: "Fichte, Schelling, and Hegel transformed Spinoza's static substance into a dynamic Absolute that becomes what it is through self-differentiation — preserving monism while adding history." },
-                { concept: "Hegel's Dialectic", desc: "Hegel's 'determinate negation' is the logic Spinoza lacked: how the Absolute moves through contradiction without losing its unity. Substance becomes Subject." },
-                { concept: "Marx & Materialism", desc: "Marx inherited Spinoza's equation of imagination with ideology — the mind's tendency to mistake its own projections for natural necessities — and grounded it in class relations." },
-                { concept: "Nietzsche's Naturalism", desc: "Nietzsche found in Spinoza's conatus and rejection of guilt a precursor to will-to-power. He radicalized the naturalism by rejecting even Spinoza's rational beatitude." },
-                { concept: "Freud & the Unconscious", desc: "Spinoza's claim that we do not know the causes of our desires directly anticipates Freud's therapeutic insight: self-knowledge requires making the unconscious determination conscious." },
-                { concept: "Property Dualism", desc: "Contemporary philosophy of mind uses Spinoza's mind-body parallelism to articulate property dualism: one substance, multiple irreducible descriptive frameworks." },
-              ].map(({ concept, desc }) => (
-                <ConceptCard key={concept} concept={concept} desc={desc} isActive={activeConcept === concept} onClick={() => setActiveConcept(activeConcept === concept ? null : concept)} />
-              ))}
-            </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(14,116,144,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#0E7490", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
           </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {[
+              { concept: "German Idealism", desc: "Fichte, Schelling, and Hegel transformed Spinoza's static substance into a dynamic Absolute that becomes what it is through self-differentiation — preserving monism while adding history." },
+              { concept: "Hegel's Dialectic", desc: "Hegel's 'determinate negation' is the logic Spinoza lacked: how the Absolute moves through contradiction without losing its unity. Substance becomes Subject." },
+              { concept: "Marx & Materialism", desc: "Marx inherited Spinoza's equation of imagination with ideology — the mind's tendency to mistake its own projections for natural necessities — and grounded it in class relations." },
+              { concept: "Nietzsche's Naturalism", desc: "Nietzsche found in Spinoza's conatus and rejection of guilt a precursor to will-to-power. He radicalized the naturalism by rejecting even Spinoza's rational beatitude." },
+              { concept: "Freud & the Unconscious", desc: "Spinoza's claim that we do not know the causes of our desires directly anticipates Freud's therapeutic insight: self-knowledge requires making the unconscious determination conscious." },
+              { concept: "Property Dualism", desc: "Contemporary philosophy of mind uses Spinoza's mind-body parallelism to articulate property dualism: one substance, multiple irreducible descriptive frameworks." },
+            ].map(({ concept, desc }) => (
+              <div
+                key={concept}
+                onClick={() => setHoveredConcept(hoveredConcept === concept ? null : concept)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === concept ? "#0E7490" : "rgba(14,116,144,0.1)",
+                  border: `1px solid ${hoveredConcept === concept ? "#22d3ee" : "rgba(14,116,144,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === concept ? "#f0ead8" : "#67e8f9",
+                  transition: "all 0.2s",
+                }}
+              >
+                {concept}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(14,116,144,0.08)", border: "1px solid rgba(14,116,144,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#0E7490", marginBottom: 8 }}>
+                {hoveredConcept}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {[
+                  { concept: "German Idealism", desc: "Fichte, Schelling, and Hegel transformed Spinoza's static substance into a dynamic Absolute that becomes what it is through self-differentiation — preserving monism while adding history." },
+                  { concept: "Hegel's Dialectic", desc: "Hegel's 'determinate negation' is the logic Spinoza lacked: how the Absolute moves through contradiction without losing its unity. Substance becomes Subject." },
+                  { concept: "Marx & Materialism", desc: "Marx inherited Spinoza's equation of imagination with ideology — the mind's tendency to mistake its own projections for natural necessities — and grounded it in class relations." },
+                  { concept: "Nietzsche's Naturalism", desc: "Nietzsche found in Spinoza's conatus and rejection of guilt a precursor to will-to-power. He radicalized the naturalism by rejecting even Spinoza's rational beatitude." },
+                  { concept: "Freud & the Unconscious", desc: "Spinoza's claim that we do not know the causes of our desires directly anticipates Freud's therapeutic insight: self-knowledge requires making the unconscious determination conscious." },
+                  { concept: "Property Dualism", desc: "Contemporary philosophy of mind uses Spinoza's mind-body parallelism to articulate property dualism: one substance, multiple irreducible descriptive frameworks." },
+                ].find(c => c.concept === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* 3. DIFFICULTY PANEL */}
@@ -12439,49 +12422,50 @@ function ContemporaryRelevanceModernApplications() {
             })}
           </div>
 
-          {/* Key Concepts Row */}
-          <div
-            style={{
-              marginTop: "24px",
-              background: "#080f0a",
-              border: "1px solid #1a2e1f",
-              borderRadius: "10px",
-              padding: "20px 24px",
-            }}
-          >
-            <div style={{ fontSize: "10px", letterSpacing: "2px", color: accent, marginBottom: "14px", textTransform: "uppercase" }}>
-              Key Concepts — Click to Explore Above
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-              {[
-                { label: "Embodied Cognition", panel: "neuroscience" },
-                { label: "Ecological Interdependence", panel: "environment" },
-                { label: "Deliberative Democracy", panel: "democracy" },
-                { label: "Consumer Individualism", panel: "flourishing" },
-                { label: "Self-Determination Theory", panel: "education" },
-                { label: "Political Polarization", panel: "democracy" },
-              ].map((kc) => {
-                const isActive = expandedPanel === kc.panel;
-                return (
-                  <div
-                    key={kc.label}
-                    onClick={() => handlePanelClick(kc.panel)}
-                    style={{
-                      padding: "6px 14px",
-                      border: `1px solid ${isActive ? accentLight : "#2d4a35"}`,
-                      borderRadius: "20px",
-                      fontSize: "12px",
-                      color: isActive ? "#f0fdf4" : "#6ee7b7",
-                      cursor: "pointer",
-                      background: isActive ? "#052e16" : "transparent",
-                      transition: "all 0.2s ease",
-                    }}
-                  >
-                    {kc.label}
-                  </div>
-                );
-              })}
-            </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div
+          style={{
+            background: "#080f0a",
+            border: "1px solid #1a2e1f",
+            borderRadius: "10px",
+            padding: "20px 24px",
+            marginBottom: "28px",
+          }}
+        >
+          <div style={{ fontSize: 11, letterSpacing: 2, color: accent, marginBottom: 14, textTransform: "uppercase" }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+            {[
+              { label: "Embodied Cognition", panel: "neuroscience" },
+              { label: "Ecological Interdependence", panel: "environment" },
+              { label: "Deliberative Democracy", panel: "democracy" },
+              { label: "Consumer Individualism", panel: "flourishing" },
+              { label: "Self-Determination Theory", panel: "education" },
+              { label: "Political Polarization", panel: "democracy" },
+            ].map((kc) => {
+              const isActive = expandedPanel === kc.panel;
+              return (
+                <div
+                  key={kc.label}
+                  onClick={() => handlePanelClick(kc.panel)}
+                  style={{
+                    padding: "6px 14px",
+                    border: `1px solid ${isActive ? accentLight : "#2d4a35"}`,
+                    borderRadius: "20px",
+                    fontSize: "12px",
+                    color: isActive ? "#f0ead8" : "#6ee7b7",
+                    cursor: "pointer",
+                    background: isActive ? accent : "transparent",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  {kc.label}
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -13087,29 +13071,48 @@ function UnityOfSpinozasSystemFinalIntegration() {
             </p>
           </div>
 
-          {/* Key concepts */}
-          <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {["systematic unity", "substance monism", "conatus", "adequate knowledge", "active freedom", "intellectual love"].map((kc) => (
-              <span
-                key={kc}
-                onMouseEnter={() => setHoveredKc(kc)}
-                onMouseLeave={() => setHoveredKc(null)}
-                style={{
-                  background: hoveredKc === kc ? "rgba(109,40,217,0.3)" : "rgba(109,40,217,0.1)",
-                  border: "1px solid rgba(109,40,217,0.35)",
-                  borderRadius: 4,
-                  padding: "4px 10px",
-                  fontSize: 11,
-                  color: hoveredKc === kc ? "#f3e8ff" : "#c4b5fd",
-                  cursor: "default",
-                  transition: "all 0.2s",
-                  fontStyle: "italic"
-                }}
-              >
-                {kc}
-              </span>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(109,40,217,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 20 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#a78bfa", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredKc ? 16 : 0 }}>
+            {[
+              { id: "systematic_unity", label: "Systematic Unity", desc: "Every part of Spinoza's system entails every other. Metaphysics grounds psychology, which grounds ethics, which grounds politics. The system does not merely avoid contradiction — it uses each domain to illuminate the others, so that understanding one element deepens understanding of all." },
+              { id: "substance_monism", label: "Substance Monism", desc: "There is one infinite substance, God/Nature, of which minds and bodies are two complete descriptive frameworks. This dissolves the mind-body problem by denying that two substances ever needed to interact — they are the same reality described in different but equally complete ways." },
+              { id: "conatus", label: "Conatus", desc: "The striving to persist and increase power of acting is the essential nature of every finite mode. The same drive that generates passive bondage becomes, when understood through reason, the source of active virtue, political cooperation, and intellectual joy." },
+              { id: "adequate_knowledge", label: "Adequate Knowledge", desc: "Knowledge that grasps its own causes generates active affects — emotions that flow from within rather than being imposed from without. Adequate knowledge is simultaneously an epistemic and ethical achievement: to understand truly is already to be partly free." },
+              { id: "active_freedom", label: "Active Freedom", desc: "Freedom is not contra-causal escape from determination but self-determination through one's deepest nature. The free person is maximally expressive of what they essentially are — not maximally unconstrained but maximally self-authored within the necessities of their own nature." },
+              { id: "intellectual_love", label: "Intellectual Love", desc: "The mind's highest blessedness: understanding one's place in the whole of God/Nature, recognizing the eternal necessity of all things, and finding in that recognition not resignation but the deepest possible joy — amor intellectualis Dei, love of the infinite through understanding." },
+            ].map(c => (
+              <div key={c.id} onClick={() => setHoveredKc(hoveredKc === c.id ? null : c.id)}
+                style={{ padding: "6px 14px", background: hoveredKc === c.id ? "#6D28D9" : "rgba(109,40,217,0.1)",
+                  border: `1px solid ${hoveredKc === c.id ? "#a78bfa" : "rgba(109,40,217,0.35)"}`,
+                  borderRadius: 20, fontSize: 12, cursor: "pointer",
+                  color: hoveredKc === c.id ? "#f0ead8" : "#c4b5fd", transition: "all 0.2s" }}>
+                {c.label}
+              </div>
             ))}
           </div>
+          {hoveredKc && (
+            <div style={{ background: "rgba(109,40,217,0.08)", border: "1px solid rgba(109,40,217,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#a78bfa", marginBottom: 8 }}>
+                {[{ id: "systematic_unity", label: "Systematic Unity" }, { id: "substance_monism", label: "Substance Monism" }, { id: "conatus", label: "Conatus" }, { id: "adequate_knowledge", label: "Adequate Knowledge" }, { id: "active_freedom", label: "Active Freedom" }, { id: "intellectual_love", label: "Intellectual Love" }].find(c => c.id === hoveredKc)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {[
+                  { id: "systematic_unity", desc: "Every part of Spinoza's system entails every other. Metaphysics grounds psychology, which grounds ethics, which grounds politics. The system does not merely avoid contradiction — it uses each domain to illuminate the others, so that understanding one element deepens understanding of all." },
+                  { id: "substance_monism", desc: "There is one infinite substance, God/Nature, of which minds and bodies are two complete descriptive frameworks. This dissolves the mind-body problem by denying that two substances ever needed to interact — they are the same reality described in different but equally complete ways." },
+                  { id: "conatus", desc: "The striving to persist and increase power of acting is the essential nature of every finite mode. The same drive that generates passive bondage becomes, when understood through reason, the source of active virtue, political cooperation, and intellectual joy." },
+                  { id: "adequate_knowledge", desc: "Knowledge that grasps its own causes generates active affects — emotions that flow from within rather than being imposed from without. Adequate knowledge is simultaneously an epistemic and ethical achievement: to understand truly is already to be partly free." },
+                  { id: "active_freedom", desc: "Freedom is not contra-causal escape from determination but self-determination through one's deepest nature. The free person is maximally expressive of what they essentially are — not maximally unconstrained but maximally self-authored within the necessities of their own nature." },
+                  { id: "intellectual_love", desc: "The mind's highest blessedness: understanding one's place in the whole of God/Nature, recognizing the eternal necessity of all things, and finding in that recognition not resignation but the deepest possible joy — amor intellectualis Dei, love of the infinite through understanding." },
+                ].find(c => c.id === hoveredKc)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}

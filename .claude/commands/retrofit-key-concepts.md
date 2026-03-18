@@ -102,6 +102,16 @@ For each Key Concepts block, verify the active pill uses the full accent hex (no
 **Check 9 — Viz-internal pill rows accidentally outside their card**
 Look for pill-like `.map()` blocks at the top level of the return (outside any card div) that clearly belong to the main visualization rather than being a Key Concepts section. These have no `onClick` toggling `hoveredConcept` — they are hover-tooltip pills or concept summary rows that escaped the main viz card closing div.
 
+**Check 10 — KC wrapper missing card styling**
+A KC block may be correctly positioned (passing Check 6) but wrapped in a plain positioning div rather than a styled card. For each KC block found, read 1–2 lines ahead and verify the outer `<div style=` includes all three: `background`, `border`, and `borderRadius`. A wrapper with only `marginTop`/`maxWidth`/`margin` (e.g. `<div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>`) is missing card styling and must be replaced with the standard card pattern.
+
+**Check 11 — KC card width inconsistency with surrounding panels**
+After confirming KC placement, check whether the surrounding Problem and Difficulty panels use explicit `maxWidth` constraints on their card divs directly (e.g. `maxWidth: "860px", margin: "0 auto"`). If they do, and the KC card div lacks matching `maxWidth`/`margin`, the KC card will render full-width while all other panels are constrained — a visible mismatch.
+```
+grep -n "maxWidth.*860\|maxWidth.*820\|maxWidth.*900" sites/<slug>/src/App.jsx
+```
+Cross-reference the line numbers against the KC block positions to identify any KC card that is missing a matching constraint.
+
 ---
 
 ## Phase 2 — Triage
@@ -116,6 +126,8 @@ Suggested task titles:
 - `Key Concepts placement` (Check 6)
 - `Pill styling` (Checks 7–8)
 - `Viz-internal pills outside card` (Check 9)
+- `KC wrapper missing card styling` (Check 10)
+- `KC card width inconsistency` (Check 11)
 
 ---
 
@@ -186,6 +198,20 @@ If a pill row (with hover tooltips or concept summaries, no `hoveredConcept` tog
 1. Remove it from its current position
 2. Fix any hooks-in-map on it (Fix C above)
 3. Re-insert it inside the main viz card, just before the card's closing `</div>`, typically with a `borderTop` separator
+
+**Fix H — KC wrapper missing card styling**
+
+Replace the plain positioning wrapper with the standard card div:
+- Old: `<div style={{ marginTop: 28, maxWidth: "860px", margin: "28px auto 0 auto" }}>`
+- New: `<div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(R,G,B,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 16 }}>`
+
+Use the section's accent colour RGB values for the border. Remove the now-redundant inner wrapper if present.
+
+**Fix I — KC card width inconsistency**
+
+If the surrounding Problem/Difficulty panels use `maxWidth: "860px", margin: "0 auto ..."` on their card divs directly, add matching constraints to the KC card div:
+- Add `maxWidth: "860px", margin: "0 auto 16px auto"` to the KC card's style object
+- Remove any separate `marginBottom` property since `margin` shorthand replaces it
 
 ---
 

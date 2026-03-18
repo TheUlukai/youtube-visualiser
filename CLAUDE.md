@@ -42,6 +42,53 @@ not just a static description of the idea itself.
 - All in a single .jsx file with Tailwind-compatible inline styles
 - Available libraries: React hooks, recharts, lucide-react, d3
 
+## Required: Section Header Block
+**Every section MUST open with a centred header block** placed before The Problem panel. This is non-negotiable.
+
+### Structure
+```jsx
+<div style={{ textAlign: "center", marginBottom: 32 }}>
+  <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: ACCENT, marginBottom: 8 }}>
+    Part N of M — Series Title
+  </div>
+  <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: TITLE_COLOR, margin: "0 0 8px 0" }}>
+    Section Title
+  </h1>
+  <p style={{ fontSize: 15, color: SUBTITLE_COLOR, margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+    One-sentence framing of what this section is about.
+  </p>
+</div>
+```
+
+### Rules
+- `textAlign: "center"` on the outer wrapper — never left-justified
+- Order is always: **Header → The Problem → Main Visualization → Key Concepts → The Difficulty → Real-World Echoes**
+- The Problem panel must come **after** the header, never before it
+- `h1` uses `fontWeight: "normal"` and `clamp()` font size for mobile scaling
+
+## Required: Consistent Panel Width
+**Every panel in a section must appear the same visual width.** The Problem, Main Visualization, Key Concepts, The Difficulty, and Real-World Echoes panels must all line up at the same left and right edges.
+
+### Pattern
+The standard approach is a single inner wrapper around the entire section content:
+```jsx
+<div style={{ maxWidth: 860, margin: "0 auto" }}>
+  {/* Header */}
+  {/* The Problem */}
+  {/* Main Visualization */}
+  {/* Key Concepts */}
+  {/* The Difficulty */}
+  {/* Real-World Echoes */}
+</div>
+```
+
+All card divs inside this wrapper use no horizontal margin (they stretch edge-to-edge within the wrapper). If individual panels need side padding, apply it inside the card div's `padding` style, not via `margin`.
+
+### What to avoid
+- Full-width Problem/Difficulty bands (background spanning the viewport) while other panels are constrained — always apply `borderRadius` and keep panels inside the `maxWidth` wrapper
+- Mixing `margin: "0 40px"` on some panels with `maxWidth` wrappers on others — pick one approach and apply it consistently within the section
+- KC card a different width than the surrounding Problem/Difficulty cards — all three must share the same `maxWidth` constraint
+
 ## Required: Interactive Key Concepts Section
 **Every section MUST include an interactive "Key Concepts — Click to Explore" panel.**
 This is non-negotiable — static concept tags (plain `<span>` pills with no handler) are not acceptable.
@@ -193,6 +240,12 @@ visualization under `sites/`, build it to `docs/`, and update the site index.
 - **Layer sublabels placed at the same y-coordinate as node centres** — if a band of nodes (ellipses, circles) and a sublabel share the same `y` value for their centre / baseline, the sublabel will sit inside the node geometry and be hidden or obscured. Position sublabels either above the layer label (`y = layer.y - N`) or below the node bottom (`y = layer.y + ry + lineHeight`), so they clear the node silhouette entirely.
 
 - **SVG annotation labels colliding with node circles** — stream labels, axis labels, or region labels positioned relative to the start/end point of a curve or line will collide with any node circle anchored at the same point. The label x/y is often set to match the curve's origin (e.g. `x = W * 0.08`) while the first node is also placed at that origin. Fix by moving the label to the canvas edge (`x = 6`) or otherwise offsetting it well clear of the node radius, and adjusting y so it clears the node's year/title text above or below.
+
+- **Missing or misplaced section header** — every section must open with a centred `Part N of M` / `<h1>` / subtitle block placed *before* The Problem panel. Two failure modes to check: (1) the header block is absent entirely — the section jumps straight into The Problem or the main visualization; (2) The Problem panel renders above the `<h1>`, making the heading appear mid-page. Fix by inserting the standard header block (see "Required: Section Header Block") as the very first element inside the section's root div, and moving any misplaced Problem panel to after it.
+
+- **Left-justified section header** — a header block exists but its outer `<div>` lacks `textAlign: "center"`, so the Part label, `<h1>`, and subtitle all anchor to the left edge of the content area. On wide viewports this is immediately visible as misalignment compared to centred sections. Fix by wrapping the three header elements in `<div style={{ textAlign: "center", marginBottom: 32 }}>`.
+
+- **Inconsistent panel widths within a section** — The Problem, Main Visualization, Key Concepts, and The Difficulty panels must all appear the same width. Common failure modes: (1) Problem/Difficulty panels use full-viewport-width background bands while other panels sit in a `maxWidth` container; (2) some panels use `margin: "0 40px"` while others use a `maxWidth` wrapper, producing mismatched edges; (3) the KC card is narrower or wider than the adjacent Problem/Difficulty cards. Fix by ensuring all panels share the same `maxWidth` constraint inside a single inner wrapper (see "Required: Consistent Panel Width").
 
 - **Missing centred content wrapper** — every section component should wrap its content in an inner div with `maxWidth` (typically 820–900px) and `margin: '0 auto'`. Without this wrapper the content anchors to the left edge of the viewport on wide screens, making the section look left-justified compared to all others. Check that the root `<div>` of each section contains an inner wrapper with these two properties; if it relies purely on `padding` without a `maxWidth` container, add the wrapper.
 

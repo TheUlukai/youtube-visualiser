@@ -65,9 +65,24 @@ Accent Color: {accent_color}
 Background Mood: {background_mood}
 
 === REQUIRED STRUCTURE ===
-The component MUST contain these four layers in order:
+The component MUST contain these layers in order:
 
-1. THE PROBLEM PANEL (top){problem_panel_instruction}
+0. SECTION HEADER (very first element, before everything else)
+   A centred title block:
+     <div style={{ textAlign: "center", marginBottom: 32 }}>
+       <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "{accent_color}", marginBottom: 8 }}>
+         Part {part_number} of {total_sections} — [Series Name]
+       </div>
+       <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: TITLE_COLOR, margin: "0 0 8px 0" }}>
+         [Section Title]
+       </h1>
+       <p style={{ fontSize: 15, color: SUBTITLE_COLOR, margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+         [One-sentence framing]
+       </p>
+     </div>
+   This block is MANDATORY — never omit it, never move it below The Problem panel.
+
+1. THE PROBLEM PANEL (immediately after the header){problem_panel_instruction}
    Style: dark card with a subtle left border in the accent color. Label "The Problem" in small caps.
    The text should convey urgency — this is the pressure that forced this idea into existence.
 
@@ -115,6 +130,11 @@ The component MUST contain these four layers in order:
 - The component should feel like a polished interactive essay, not a dashboard.
 - Responsive: clamp() for all font sizes; SVG always viewBox + width="100%"; canvas
   dimensions set via ResizeObserver in useEffect; content wrapper maxWidth "min(90vw, 860px)".
+- CONSISTENT PANEL WIDTH: every panel (Header, Problem, Main Viz, Key Concepts, Difficulty,
+  Real-World Echoes) must appear the same visual width. Achieve this by placing all panels inside
+  a single inner wrapper: <div style={{{{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}}}>
+  Never let Problem or Difficulty cards span full viewport width while other panels are constrained.
+  Never mix margin-based side offsets on some panels with maxWidth wrappers on others.
 
 === COMPONENT NAMING ===
 Name the function: {component_name}
@@ -186,6 +206,12 @@ def validate_jsx(code: str, component_name: str) -> tuple[bool, str]:
     # Must have interactive Key Concepts panel
     if "hoveredConcept" not in code:
         return False, "Missing interactive Key Concepts panel (no hoveredConcept state found)"
+
+    # Must have a centred section header
+    if "textAlign" not in code or ("center" not in code and '"center"' not in code):
+        return False, "Missing centred section header (no textAlign: 'center' found)"
+    if "Part " not in code:
+        return False, "Missing section header — no 'Part N of M' label found"
 
     # Check for banned patterns
     if "\\u" in code:
