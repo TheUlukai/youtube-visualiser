@@ -519,54 +519,6 @@ function KantRevolutionaryIntroduction() {
             )}
           </div>
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: 28 }}>
-            <div style={{ fontSize: 10, letterSpacing: 2.5, color: "#1A6B8A", textTransform: "uppercase", marginBottom: 14 }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              {concepts.map((c) => (
-                <div
-                  key={c.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  style={{
-                    background: hoveredConcept === c.id ? `rgba(26, 107, 138, 0.35)` : "rgba(26, 107, 138, 0.1)",
-                    border: `1px solid ${hoveredConcept === c.id ? c.color : "rgba(26, 107, 138, 0.35)"}`,
-                    borderRadius: 6,
-                    padding: "7px 14px",
-                    cursor: "pointer",
-                    fontSize: 12,
-                    color: hoveredConcept === c.id ? "#E8F4F8" : "#7AAABB",
-                    transition: "all 0.25s ease",
-                    boxShadow: hoveredConcept === c.id ? `0 0 12px rgba(26, 107, 138, 0.4)` : "none",
-                    letterSpacing: 0.3,
-                  }}
-                >
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {hoveredConcept && (
-              <div style={{
-                marginTop: 14,
-                padding: "14px 18px",
-                background: "rgba(13, 28, 40, 0.85)",
-                border: `1px solid ${concepts.find(c => c.id === hoveredConcept)?.color || "#1A6B8A"}`,
-                borderRadius: 8,
-                fontSize: 13.5,
-                color: "#C0DCE8",
-                lineHeight: 1.75,
-                transition: "all 0.2s ease",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
-              }}>
-                <strong style={{ color: "#E8F4F8", display: "block", marginBottom: 6 }}>
-                  {concepts.find(c => c.id === hoveredConcept)?.label}
-                </strong>
-                {concepts.find(c => c.id === hoveredConcept)?.desc}
-              </div>
-            )}
-          </div>
-
           {/* Core Argument Prose */}
           <div style={{
             marginTop: 28,
@@ -588,6 +540,50 @@ function KantRevolutionaryIntroduction() {
               And it revealed something profound about human beings specifically: we uniquely exist in two worlds. As bodies, we are subject to physical laws we cannot override. As rational agents, we govern ourselves by principles we author through reason — which is the philosophical root of dignity, rights, and Kant's prescient vision of perpetual peace through international law.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Key Concepts */}
+      <div style={{ maxWidth: 860, margin: "0 auto 24px auto" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(26,107,138,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1A6B8A", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map((c) => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#1A6B8A" : "rgba(26,107,138,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#3a9abc" : "rgba(26,107,138,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#7AAABB",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(26,107,138,0.08)",
+              border: "1px solid rgba(26,107,138,0.3)",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#1A6B8A", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -1136,7 +1132,7 @@ function MakingOfRevolutionaryMind() {
         </div>
 
         {/* Key Concepts */}
-        <div style={{ marginBottom: "24px" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(196,120,58,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 16 }}>
           <div style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "#C4783A", marginBottom: "14px" }}>
             Key Concepts — Click to Explore
           </div>
@@ -1732,48 +1728,51 @@ function CriticalTurnFirstCritique() {
             )}
           </div>
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: 28 }}>
-            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2D6A4F", marginBottom: 14 }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
-              {keyConcepts.map(c => (
-                <div
-                  key={c.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  style={{
-                    padding: "6px 14px",
-                    background: hoveredConcept === c.id ? "#2D6A4F" : "rgba(45,106,79,0.1)",
-                    border: `1px solid ${hoveredConcept === c.id ? "#4a9a6a" : "rgba(45,106,79,0.35)"}`,
-                    borderRadius: 20,
-                    fontSize: 12,
-                    cursor: "pointer",
-                    color: hoveredConcept === c.id ? "#f0ead8" : "#6aaa8a",
-                    transition: "all 0.2s",
-                    fontFamily: "Georgia, serif",
-                  }}
-                >
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {hoveredConcept && (
-              <div style={{
-                background: "rgba(45,106,79,0.08)",
-                border: "1px solid rgba(45,106,79,0.3)",
-                borderRadius: 6,
-                padding: "16px 20px",
-              }}>
-                <div style={{ fontSize: 13, fontWeight: "bold", color: "#2D6A4F", marginBottom: 8 }}>
-                  {keyConcepts.find(c => c.id === hoveredConcept)?.label}
-                </div>
-                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
-                  {keyConcepts.find(c => c.id === hoveredConcept)?.desc}
-                </p>
-              </div>
-            )}
+        </div>
+      </div>
+
+      {/* Key Concepts */}
+      <div style={{ maxWidth: 900, margin: "24px auto 0 auto", padding: "0 40px" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(45,106,79,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2D6A4F", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
           </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {keyConcepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#2D6A4F" : "rgba(45,106,79,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#4a9a6a" : "rgba(45,106,79,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#6aaa8a",
+                  transition: "all 0.2s",
+                  fontFamily: "Georgia, serif",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(45,106,79,0.08)",
+              border: "1px solid rgba(45,106,79,0.3)",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#2D6A4F", marginBottom: 8 }}>
+                {keyConcepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {keyConcepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -1919,7 +1918,7 @@ function SpaceTimeFormsOfIntuition() {
   const [spaceOn, setSpaceOn] = useState(true);
   const [timeOn, setTimeOn] = useState(true);
   const [echosOpen, setEchosOpen] = useState(false);
-  const [activeConcept, setActiveConcept] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [mathMode, setMathMode] = useState('intuition');
   const [hoverSpace, setHoverSpace] = useState(false);
   const [hoverTime, setHoverTime] = useState(false);
@@ -2228,45 +2227,6 @@ function SpaceTimeFormsOfIntuition() {
           </div>
         </div>
 
-        {/* Key Concepts */}
-        <div style={{
-          background: '#0f0c1a',
-          border: '1px solid #2e1f4a',
-          borderRadius: '8px',
-          padding: '24px',
-          marginBottom: '20px',
-        }}>
-          <div style={{ fontSize: '11px', letterSpacing: '2px', color: '#7B5EA7', marginBottom: '16px', textTransform: 'uppercase' }}>
-            Key Concepts — Click to Explore
-          </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '18px' }}>
-            {concepts.map(c => (
-              <ConceptChip
-                key={c.id}
-                concept={c}
-                active={activeConcept === c.id}
-                onClick={() => setActiveConcept(activeConcept === c.id ? null : c.id)}
-              />
-            ))}
-          </div>
-          {activeConcept && (
-            <div style={{
-              background: '#1a1028',
-              border: '1px solid #3d2a5e',
-              borderRadius: '5px',
-              padding: '18px 20px',
-              animation: 'none',
-            }}>
-              <div style={{ fontSize: '13px', fontWeight: 'bold', color: '#c8b4e8', marginBottom: '8px' }}>
-                {concepts.find(c => c.id === activeConcept)?.label}
-              </div>
-              <p style={{ margin: 0, fontSize: '13px', lineHeight: '1.75', color: '#c4b8da' }}>
-                {concepts.find(c => c.id === activeConcept)?.desc}
-              </p>
-            </div>
-          )}
-        </div>
-
         {/* Core Argument Diagram */}
         <div style={{
           background: '#0f0c1a',
@@ -2335,6 +2295,50 @@ function SpaceTimeFormsOfIntuition() {
           {mathMode === 'intuition' && (
             <div style={{ marginTop: '16px' }}>
               <GeometrySketch />
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Key Concepts */}
+      <div style={{ padding: '0 40px', maxWidth: '900px', margin: '0 auto 24px auto' }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(123,94,167,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#7B5EA7", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#7B5EA7" : "rgba(123,94,167,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#a080d0" : "rgba(123,94,167,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#9a78cc",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(123,94,167,0.08)",
+              border: "1px solid rgba(123,94,167,0.3)",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#7B5EA7", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
             </div>
           )}
         </div>
@@ -3082,7 +3086,7 @@ function CategoriesLogicOfExperience() {
         </div>
 
         {/* Key Concepts */}
-        <div style={{ marginBottom: 24 }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(36,113,163,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 16 }}>
           <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2471A3", marginBottom: 14 }}>
             Key Concepts — Click to Explore
           </div>
@@ -3687,6 +3691,7 @@ function TranscendentalDeductionUnity() {
 
       {/* KEY CONCEPTS */}
       <div style={{ maxWidth: 860, margin: "0 auto 28px auto" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(26,90,64,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
         <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1a5a40", marginBottom: 14 }}>
           Key Concepts — Click to Explore
         </div>
@@ -3726,6 +3731,7 @@ function TranscendentalDeductionUnity() {
             </p>
           </div>
         )}
+        </div>
       </div>
 
       {/* THE DIFFICULTY PANEL */}
@@ -3919,18 +3925,11 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
   }, [onDrag, endDrag]);
 
   const concepts = [
-    { id: "phenomena", label: "Phenomena", x: 60, y: 90, color: "#b06ab3" },
-    { id: "noumena", label: "Noumena", x: 300, y: 330, color: "#4A1942" },
-    { id: "cognitive", label: "Cognitive Framework", x: 170, y: 200, color: "#7a3b7a" },
-    { id: "affection", label: "Problem of Affection", x: 430, y: 210, color: "#8B0000" },
+    { id: "phenomena", label: "Phenomena", x: 60, y: 90, color: "#b06ab3", desc: "Phenomena are appearances — the objects we perceive through space, time, and the categories. Kant insists they are not illusions. The tree you see is perfectly real as a phenomenon. Empirical realism is secured." },
+    { id: "noumena", label: "Noumena", x: 300, y: 330, color: "#4A1942", desc: "Noumena are things-in-themselves — reality as it exists independently of any mind. We are compelled to think this concept, but we can know nothing positive about it. It serves a purely negative, limiting function." },
+    { id: "cognitive", label: "Cognitive Framework", x: 170, y: 200, color: "#7a3b7a", desc: "Space and time as pure forms of intuition, plus the twelve categories of the understanding, form the transcendental framework. These conditions make experience possible — but they also mark its absolute limits." },
+    { id: "affection", label: "Problem of Affection", x: 430, y: 210, color: "#8B0000", desc: "The deepest paradox: things-in-themselves must somehow 'affect' our sensibility to produce appearances. But affection implies causality — a temporal relation that applies only to phenomena. How can the non-temporal cause anything?" },
   ];
-
-  const conceptDetails = {
-    phenomena: "Phenomena are appearances — the objects we perceive through space, time, and the categories. Kant insists they are not illusions. The tree you see is perfectly real as a phenomenon. Empirical realism is secured.",
-    noumena: "Noumena are things-in-themselves — reality as it exists independently of any mind. We are compelled to think this concept, but we can know nothing positive about it. It serves a purely negative, limiting function.",
-    cognitive: "Space and time as pure forms of intuition, plus the twelve categories of the understanding, form the transcendental framework. These conditions make experience possible — but they also mark its absolute limits.",
-    affection: "The deepest paradox: things-in-themselves must somehow 'affect' our sensibility to produce appearances. But affection implies causality — a temporal relation that applies only to phenomena. How can the non-temporal cause anything?",
-  };
 
   const currentLayer = probeInfo ? probeInfo.layer : "phenomena";
 
@@ -4236,48 +4235,6 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
             </div>
           )}
 
-          {/* Concept Buttons */}
-          <div style={{ marginTop: 20, display: "flex", flexWrap: "wrap", gap: 10 }}>
-            {concepts.map(c => (
-              <button
-                key={c.id}
-                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                style={{
-                  background: hoveredConcept === c.id ? c.color : "#150a20",
-                  border: `1px solid ${c.color}`,
-                  color: hoveredConcept === c.id ? "#f0e0f0" : c.color,
-                  borderRadius: 20,
-                  padding: "6px 14px",
-                  fontSize: 12,
-                  cursor: "pointer",
-                  fontFamily: "Georgia, serif",
-                  transition: "all 0.2s",
-                  boxShadow: hoveredConcept === c.id ? `0 0 12px ${c.color}88` : "none",
-                }}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-
-          {hoveredConcept && (
-            <div style={{
-              marginTop: 14,
-              padding: "14px 18px",
-              background: "#0e0518",
-              border: `1px solid ${concepts.find(c => c.id === hoveredConcept)?.color || "#4A1942"}`,
-              borderRadius: 6,
-              transition: "all 0.3s",
-            }}>
-              <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#7a5a8a", marginBottom: 8 }}>
-                {concepts.find(c => c.id === hoveredConcept)?.label}
-              </div>
-              <p style={{ margin: 0, fontSize: 13, color: "#c0a8c0", lineHeight: 1.75 }}>
-                {conceptDetails[hoveredConcept]}
-              </p>
-            </div>
-          )}
-
           {/* Two-Aspect vs Two-Object note */}
           <div style={{ marginTop: 18, padding: "12px 16px", background: "#0a0514", border: "1px solid #1e0e2e", borderRadius: 6 }}>
             <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", color: "#5a3a6a", marginBottom: 8 }}>Interpretive Debate</div>
@@ -4285,6 +4242,50 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
               <strong style={{ color: "#b090c0" }}>Two-Object Reading:</strong> Phenomena and noumena are literally two different entities — one we access, one we cannot. <span style={{ color: "#5a4a6a" }}>|</span> <strong style={{ color: "#b090c0" }}>Two-Aspect Reading:</strong> They are the same entity described in two ways — as it appears to us vs. as it is independently. The two-aspect reading dissolves some paradoxes but sharpens others.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Key Concepts */}
+      <div style={{ maxWidth: 820, margin: "0 auto 24px auto" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(122,59,122,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#7a3b7a", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#7a3b7a" : "rgba(122,59,122,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#b06ab3" : "rgba(122,59,122,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#b06ab3",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(122,59,122,0.08)",
+              border: "1px solid rgba(122,59,122,0.3)",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#7a3b7a", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -5061,6 +5062,7 @@ function AntinomiesIllusionsPureReason() {
 
       {/* Key Concepts */}
       <div style={{ maxWidth: 900, margin: '0 auto 28px auto' }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(139,26,26,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
         <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: '#8B1A1A', marginBottom: 14 }}>
           Key Concepts — Click to Explore
         </div>
@@ -5100,6 +5102,7 @@ function AntinomiesIllusionsPureReason() {
             </p>
           </div>
         )}
+        </div>
       </div>
 
       {/* Difficulty Panel */}
@@ -5605,38 +5608,6 @@ function TransitionToPracticalPhilosophy() {
             </div>
           )}
 
-          {/* Key Concepts Grid */}
-          <div style={{ marginTop: '24px' }}>
-            <div style={{ fontSize: '10px', letterSpacing: '3px', color: '#B5651D', textTransform: 'uppercase', marginBottom: '14px' }}>Key Concepts — click to explore</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '10px' }}>
-              {concepts.map(c => (
-                <div
-                  key={c.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  style={{
-                    background: hoveredConcept === c.id ? '#2a1808' : '#16100866',
-                    border: `1px solid ${hoveredConcept === c.id ? '#B5651D' : '#3a2010'}`,
-                    borderRadius: '5px',
-                    padding: '12px 14px',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                  }}
-                  onMouseEnter={e => {
-                    if (hoveredConcept !== c.id) e.currentTarget.style.borderColor = '#7a4020';
-                  }}
-                  onMouseLeave={e => {
-                    if (hoveredConcept !== c.id) e.currentTarget.style.borderColor = '#3a2010';
-                  }}
-                >
-                  <div style={{ color: hoveredConcept === c.id ? '#e8b870' : '#c4a882', fontSize: '12px', fontWeight: 'bold', marginBottom: hoveredConcept === c.id ? '8px' : '0', lineHeight: '1.4' }}>{c.label}</div>
-                  {hoveredConcept === c.id && (
-                    <div style={{ color: '#a89070', fontSize: '12px', lineHeight: '1.7' }}>{c.desc}</div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Core argument prose */}
           <div style={{ marginTop: '24px', borderTop: '1px solid #2a1808', paddingTop: '20px' }}>
             <p style={{ margin: '0 0 12px', fontSize: '14px', lineHeight: '1.8', color: '#c4a882' }}>
@@ -5646,6 +5617,43 @@ function TransitionToPracticalPhilosophy() {
               Freedom is the keystone of the entire arch. The Third Antinomy showed that freedom is not contradictory — it is noumenally possible. But possibility is not reality. Practical reason crosses the chasm that theoretical reason could only survey: it shows that freedom is actual, because it is the very precondition of moral agency itself.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(181,101,29,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 20 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#B5651D", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#B5651D" : "rgba(181,101,29,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#d4801a" : "rgba(181,101,29,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#c4a882",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(181,101,29,0.08)", border: "1px solid rgba(181,101,29,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#B5651D", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* ── 3. THE DIFFICULTY PANEL ── */}
@@ -5981,47 +5989,6 @@ function CategoricalImperativeFoundationMorality() {
           <p style={{ fontSize: 14, lineHeight: 1.8, color: "#c8bfaf", margin: 0 }}>
             Practical reason must provide a moral principle that is universal and necessary for all rational beings regardless of desires or circumstances. Every previous attempt had stumbled: grounding morality in happiness collapses when the virtuous suffer; grounding it in social convention makes it contingent and parochial; grounding it in human nature makes it descriptive, not prescriptive. <strong style={{ color: "#e0d4c0" }}>How can we derive a principle that binds all rational beings unconditionally, without appealing to any empirical fact about what beings happen to want?</strong> This is not merely an academic puzzle — it is the question of whether morality is real or merely a useful fiction.
           </p>
-        </div>
-
-        {/* Key Concepts Strip */}
-        <div style={{ marginBottom: 28 }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#6a8aaa", textTransform: "uppercase", marginBottom: 12 }}>
-            Key Concepts — Click to Explore
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {concepts.map((c) => (
-              <div
-                key={c.id}
-                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                style={{
-                  background: hoveredConcept === c.id ? "#1D5C8A" : "#131c28",
-                  border: `1px solid ${hoveredConcept === c.id ? "#3a7ab0" : "#1e2e40"}`,
-                  borderRadius: 6,
-                  padding: "6px 14px",
-                  fontSize: 12,
-                  color: hoveredConcept === c.id ? "#ffffff" : "#8aaac8",
-                  cursor: "pointer",
-                  transition: "all 0.2s",
-                }}
-              >
-                {c.label}
-              </div>
-            ))}
-          </div>
-          {hoveredConcept && (
-            <div style={{
-              background: "#0e1a26",
-              border: "1px solid #1D5C8A",
-              borderRadius: 6,
-              padding: "12px 16px",
-              marginTop: 10,
-              fontSize: 13,
-              color: "#c0d4e8",
-              lineHeight: 1.7,
-            }}>
-              {concepts.find(c => c.id === hoveredConcept)?.desc}
-            </div>
-          )}
         </div>
 
         {/* Main Visualization */}
@@ -6364,6 +6331,43 @@ function CategoricalImperativeFoundationMorality() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(29,92,138,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 20 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1D5C8A", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map((c) => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#1D5C8A" : "rgba(29,92,138,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#3a7ab0" : "rgba(29,92,138,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#6a9ab8",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(29,92,138,0.08)", border: "1px solid rgba(29,92,138,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#1D5C8A", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Difficulty Panel */}
@@ -6818,8 +6822,9 @@ function FreedomAutonomyGoodwill() {
       color: "#c8d8b8",
       padding: "0 0 60px 0",
     }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 20px" }}>
       {/* Header */}
-      <div style={{ padding: "40px 40px 0 40px" }}>
+      <div style={{ padding: "40px 0 0 0" }}>
         <div style={{ fontSize: "11px", color: "#3D5A2E", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "8px" }}>
           Part 11 of 21 — Kant's Moral Philosophy
         </div>
@@ -6832,7 +6837,7 @@ function FreedomAutonomyGoodwill() {
       </div>
 
       {/* Problem Panel */}
-      <div style={{ margin: "32px 40px 0 40px", background: "#0d1a08cc", border: "1px solid #1a2a10", borderLeft: "3px solid #3D5A2E", borderRadius: "6px", padding: "24px 28px" }}>
+      <div style={{ margin: "32px 0 0 0", background: "#0d1a08cc", border: "1px solid #1a2a10", borderLeft: "3px solid #3D5A2E", borderRadius: "6px", padding: "24px 28px" }}>
         <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#3D5A2E", marginBottom: "12px" }}>The Problem</div>
         <p style={{ margin: 0, lineHeight: "1.75", fontSize: "14px", color: "#b0c898" }}>
           The categorical imperative demands free rational agency — but human beings are also phenomenal creatures embedded in natural causality, subject to the same deterministic laws that govern falling stones. Kant's theoretical philosophy demonstrated only that freedom is <em>possible</em>, that it does not contradict natural science — not that it is <em>actual</em>. The pressure is acute: how can we affirm genuine moral freedom, the very foundation of moral responsibility, without contradicting the scientific account of a deterministic nature that leaves no room for uncaused causes?
@@ -6840,7 +6845,7 @@ function FreedomAutonomyGoodwill() {
       </div>
 
       {/* Main Visualization */}
-      <div style={{ margin: "32px 40px 0 40px" }}>
+      <div style={{ margin: "32px 0 0 0" }}>
         <div style={{ background: "#0a120800", border: "1px solid #1e2e14", borderRadius: "8px", padding: "28px", backdropFilter: "blur(4px)" }}>
           <div style={{ fontSize: "13px", color: "#8aaa70", marginBottom: "20px", letterSpacing: "1px" }}>
             The Dual Nature — Phenomenal & Noumenal
@@ -6951,50 +6956,6 @@ function FreedomAutonomyGoodwill() {
             </div>
           </div>
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: "28px" }}>
-            <div style={{ fontSize: "12px", color: "#5a7a44", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "14px" }}>Key Concepts</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-              {concepts.map((c) => (
-                <div
-                  key={c.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  style={{
-                    background: hoveredConcept === c.id ? "#1a2a10" : "#0d1508",
-                    border: `1px solid ${c.color}`,
-                    borderRadius: "4px",
-                    padding: "7px 13px",
-                    cursor: "pointer",
-                    fontSize: "12px",
-                    color: c.color,
-                    transition: "background 0.2s",
-                    userSelect: "none",
-                  }}
-                >
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {hoveredConcept && (
-              <div style={{
-                marginTop: "14px",
-                background: "#0a1208",
-                border: `1px solid ${concepts.find(c => c.id === hoveredConcept)?.color || "#3D5A2E"}`,
-                borderRadius: "5px",
-                padding: "14px 18px",
-                fontSize: "13px",
-                color: "#b8d098",
-                lineHeight: "1.7",
-                maxWidth: "600px",
-              }}>
-                <span style={{ color: concepts.find(c => c.id === hoveredConcept)?.color, fontStyle: "italic" }}>
-                  {concepts.find(c => c.id === hoveredConcept)?.label}:
-                </span>{" "}
-                {concepts.find(c => c.id === hoveredConcept)?.desc}
-              </div>
-            )}
-          </div>
-
           {/* Core Argument prose */}
           <div style={{ marginTop: "28px", borderTop: "1px solid #1a2a10", paddingTop: "22px" }}>
             <div style={{ fontSize: "12px", color: "#5a7a44", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "14px" }}>The Argument</div>
@@ -7016,8 +6977,52 @@ function FreedomAutonomyGoodwill() {
         </div>
       </div>
 
+      {/* Key Concepts */}
+      <div style={{ margin: "28px 0 0 0" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(61,90,46,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#3D5A2E", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map((c) => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#3D5A2E" : "rgba(61,90,46,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#6aaa50" : "rgba(61,90,46,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#7aaa60",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{
+              background: "rgba(61,90,46,0.08)",
+              border: "1px solid rgba(61,90,46,0.3)",
+              borderRadius: 6,
+              padding: "16px 20px",
+            }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#3D5A2E", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Difficulty Panel */}
-      <div style={{ margin: "28px 40px 0 40px", background: "#0f0f0acc", border: "1px solid #1e1a10", borderLeft: "3px solid #7a6a2e", borderRadius: "6px", padding: "24px 28px" }}>
+      <div style={{ margin: "28px 0 0 0", background: "#0f0f0acc", border: "1px solid #1e1a10", borderLeft: "3px solid #7a6a2e", borderRadius: "6px", padding: "24px 28px" }}>
         <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#7a6a2e", marginBottom: "12px" }}>The Difficulty</div>
         <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "14px", color: "#b0a880" }}>
           Grounding morality in autonomous rational self-legislation raises a deep problem in moral psychology: how does pure reason actually <em>motivate</em> action in finite beings who are also creatures of desire, emotion, and habit? The rational moral law, by its very purity, seems suspended above the sensible world — remote from the appetites and feelings that actually move us to act. A merely rational imperative seems unable to reach beings who hunger, fear, and love.
@@ -7028,7 +7033,7 @@ function FreedomAutonomyGoodwill() {
       </div>
 
       {/* Real-World Echoes */}
-      <div style={{ margin: "20px 40px 0 40px", background: "#0a0f0acc", border: "1px solid #1a1e12", borderRadius: "6px", overflow: "hidden" }}>
+      <div style={{ margin: "20px 0 0 0", background: "#0a0f0acc", border: "1px solid #1a1e12", borderRadius: "6px", overflow: "hidden" }}>
         <button
           onClick={() => setEchoesOpen(!echoesOpen)}
           style={{
@@ -7060,6 +7065,7 @@ function FreedomAutonomyGoodwill() {
           </div>
         )}
       </div>
+      </div>
     </div>
   );
 }
@@ -7071,9 +7077,10 @@ function CritiquePracticalReasonMoralPsychology() {
   const [showResult, setShowResult] = useState(false);
   const [respectLevel, setRespectLevel] = useState(0);
   const [echoesOpen, setEchoesOpen] = useState(false);
-  const [activeConceptIndex, setActiveConceptIndex] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [showQuote, setShowQuote] = useState(false);
   const [scaleAngle, setScaleAngle] = useState(0);
+  const [hoveredMotivation, setHoveredMotivation] = useState(null);
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
   const starsRef = useRef([]);
@@ -7121,11 +7128,11 @@ function CritiquePracticalReasonMoralPsychology() {
   ];
 
   const concepts = [
-    { label: "Respect as Moral Feeling", color: "#2C3E7A", description: "Respect (Achtung) is unique: produced a priori by reason's recognition of the moral law, not by sensible experience. It is simultaneously rational — generated by reason — and sensible — felt as genuine motivation. It humbles inclination while elevating the rational self." },
-    { label: "Duty vs. Inclination Taxonomy", color: "#3A6B8A", description: "Kant distinguishes three types: actions contrary to duty (morally wrong), actions in accordance with duty from inclination (admirable but lacking moral worth), and actions from duty (genuinely morally worthy). Only the third type produces moral worth." },
-    { label: "Moral Worth of Actions", color: "#4A7A6A", description: "The moral worth of an action does not depend on its outcome or its alignment with natural inclination, but solely on the motivation: whether reason's recognition of the moral law drives the will. Even virtuous outcomes achieved by inclination have no special moral credit." },
-    { label: "Virtue as Ongoing Struggle", color: "#5A5A8A", description: "For Kant, virtue is not a static perfection but a dynamic disposition — the ongoing commitment to choose duty over inclination whenever they conflict. Because finite beings always have inclinations, virtue is always under pressure, always demanding, and always achievable." },
-    { label: "Starry Heavens & Moral Law", color: "#2C3E7A", description: "The closing image of the second Critique: 'Two things fill the mind with ever-increasing admiration and awe: the starry heavens above me and the moral law within me.' The cosmos reveals our smallness as natural beings; the moral law reveals our greatness as rational agents." },
+    { id: "respect", label: "Respect as Moral Feeling", color: "#2C3E7A", desc: "Respect (Achtung) is unique: produced a priori by reason's recognition of the moral law, not by sensible experience. It is simultaneously rational — generated by reason — and sensible — felt as genuine motivation. It humbles inclination while elevating the rational self." },
+    { id: "taxonomy", label: "Duty vs. Inclination Taxonomy", color: "#3A6B8A", desc: "Kant distinguishes three types: actions contrary to duty (morally wrong), actions in accordance with duty from inclination (admirable but lacking moral worth), and actions from duty (genuinely morally worthy). Only the third type produces moral worth." },
+    { id: "worth", label: "Moral Worth of Actions", color: "#4A7A6A", desc: "The moral worth of an action does not depend on its outcome or its alignment with natural inclination, but solely on the motivation: whether reason's recognition of the moral law drives the will. Even virtuous outcomes achieved by inclination have no special moral credit." },
+    { id: "virtue", label: "Virtue as Ongoing Struggle", color: "#5A5A8A", desc: "For Kant, virtue is not a static perfection but a dynamic disposition — the ongoing commitment to choose duty over inclination whenever they conflict. Because finite beings always have inclinations, virtue is always under pressure, always demanding, and always achievable." },
+    { id: "starry", label: "Starry Heavens & Moral Law", color: "#2C3E7A", desc: "The closing image of the second Critique: 'Two things fill the mind with ever-increasing admiration and awe: the starry heavens above me and the moral law within me.' The cosmos reveals our smallness as natural beings; the moral law reveals our greatness as rational agents." },
   ];
 
   useEffect(() => {
@@ -7192,8 +7199,6 @@ function CritiquePracticalReasonMoralPsychology() {
 
   const scaleLeft = choiceMade === "inclination" ? 18 : choiceMade === "duty" ? -18 : 0;
   const scaleRight = choiceMade === "duty" ? 18 : choiceMade === "inclination" ? -18 : 0;
-
-  const [hoveredConcept, setHoveredConcept] = useState(null);
 
   return (
     <div style={{
@@ -7355,33 +7360,30 @@ function CritiquePracticalReasonMoralPsychology() {
                   Which motivation gives this action moral worth?
                 </p>
                 <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
-                  {scenario.motivations.map(m => {
-                    const [hov, setHov] = useState(false);
-                    return (
-                      <button key={m.id}
-                        onClick={() => handleChoice(m.id)}
-                        onMouseEnter={() => setHov(true)}
-                        onMouseLeave={() => setHov(false)}
-                        style={{
-                          flex: 1, minWidth: "160px",
-                          background: hov ? `rgba(${m.id === "inclination" ? "180,100,10" : "30,70,130"},0.3)` : "rgba(20,28,60,0.6)",
-                          border: `1px solid ${m.color}`,
-                          borderRadius: "8px",
-                          padding: "16px",
-                          cursor: "pointer",
-                          textAlign: "left",
-                          transition: "all 0.2s ease",
-                          boxShadow: hov ? `0 0 16px ${m.color}40` : "none",
-                        }}>
-                        <div style={{ fontSize: "13px", fontWeight: "bold", color: m.color, marginBottom: "6px", fontFamily: "Georgia, serif" }}>
-                          {m.label}
-                        </div>
-                        <div style={{ fontSize: "12px", color: "#8090B8", lineHeight: 1.5, fontFamily: "Georgia, serif" }}>
-                          {m.description}
-                        </div>
-                      </button>
-                    );
-                  })}
+                  {scenario.motivations.map(m => (
+                    <button key={m.id}
+                      onClick={() => handleChoice(m.id)}
+                      onMouseEnter={() => setHoveredMotivation(m.id)}
+                      onMouseLeave={() => setHoveredMotivation(null)}
+                      style={{
+                        flex: 1, minWidth: "160px",
+                        background: hoveredMotivation === m.id ? `rgba(${m.id === "inclination" ? "180,100,10" : "30,70,130"},0.3)` : "rgba(20,28,60,0.6)",
+                        border: `1px solid ${m.color}`,
+                        borderRadius: "8px",
+                        padding: "16px",
+                        cursor: "pointer",
+                        textAlign: "left",
+                        transition: "all 0.2s ease",
+                        boxShadow: hoveredMotivation === m.id ? `0 0 16px ${m.color}40` : "none",
+                      }}>
+                      <div style={{ fontSize: "13px", fontWeight: "bold", color: m.color, marginBottom: "6px", fontFamily: "Georgia, serif" }}>
+                        {m.label}
+                      </div>
+                      <div style={{ fontSize: "12px", color: "#8090B8", lineHeight: 1.5, fontFamily: "Georgia, serif" }}>
+                        {m.description}
+                      </div>
+                    </button>
+                  ))}
                 </div>
               </div>
             ) : (
@@ -7433,108 +7435,89 @@ function CritiquePracticalReasonMoralPsychology() {
             )}
           </div>
 
-          {/* Key Concepts */}
-          <div>
-            <div style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "#5060A0", marginBottom: "14px" }}>
-              Key Concepts — Click to explore
-            </div>
-            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "16px" }}>
-              {concepts.map((c, i) => {
-                const active = activeConceptIndex === i;
-                const [hov, setHov] = useState(false);
-                return (
-                  <button key={i}
-                    onClick={() => setActiveConceptIndex(active ? null : i)}
-                    onMouseEnter={() => setHov(true)}
-                    onMouseLeave={() => setHov(false)}
-                    style={{
-                      background: active ? "rgba(44,62,122,0.4)" : hov ? "rgba(44,62,122,0.2)" : "rgba(20,28,60,0.5)",
-                      border: `1px solid ${active ? "#2C5F9A" : "rgba(44,62,122,0.4)"}`,
-                      borderRadius: "20px",
-                      padding: "7px 16px",
-                      color: active ? "#B0C0E8" : "#7080A8",
-                      fontSize: "12px",
-                      cursor: "pointer",
-                      fontFamily: "Georgia, serif",
-                      transition: "all 0.2s ease",
-                      letterSpacing: "0.5px",
-                    }}>
-                    {c.label}
-                  </button>
-                );
-              })}
-            </div>
-            {activeConceptIndex !== null && (
+          {/* Starry Heavens Quote */}
+          {showQuote && (
+            <div style={{
+              background: "rgba(10,15,35,0.95)",
+              border: "1px solid rgba(44,62,122,0.6)",
+              borderRadius: "12px",
+              padding: "32px",
+              marginTop: "20px",
+              textAlign: "center",
+              position: "relative",
+              overflow: "hidden",
+            }}>
               <div style={{
-                background: "rgba(25,32,70,0.7)",
-                border: `1px solid rgba(44,62,122,0.5)`,
-                borderLeft: `3px solid ${concepts[activeConceptIndex].color}`,
-                borderRadius: "8px",
-                padding: "18px 22px",
-                transition: "all 0.3s ease",
-              }}>
-                <div style={{ fontSize: "14px", fontWeight: "bold", color: "#C0CCEC", marginBottom: "8px", fontFamily: "Georgia, serif" }}>
-                  {concepts[activeConceptIndex].label}
-                </div>
-                <p style={{ margin: 0, fontSize: "14px", color: "#8090B8", lineHeight: 1.75, fontFamily: "Georgia, serif" }}>
-                  {concepts[activeConceptIndex].description}
-                </p>
+                position: "absolute", top: 0, left: 0, right: 0, bottom: 0,
+                background: "radial-gradient(ellipse at 50% 0%, rgba(44,62,122,0.15) 0%, transparent 70%)",
+                pointerEvents: "none",
+              }} />
+              <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#4A5A8A", marginBottom: "20px" }}>
+                The Closing Words of the Second Critique
               </div>
-            )}
-          </div>
+              <blockquote style={{ margin: "0", fontSize: "17px", color: "#C8D4F0", lineHeight: 1.9, fontStyle: "italic" }}>
+                "Two things fill the mind with ever-increasing admiration and awe, the more often and more steadily one reflects on them: the starry heavens above me and the moral law within me."
+              </blockquote>
+              <div style={{ marginTop: "16px", fontSize: "12px", color: "#4A5A8A" }}>
+                — Immanuel Kant, Critique of Practical Reason (1788)
+              </div>
+              <p style={{ fontSize: "13px", color: "#6070A0", margin: "16px 0 0", lineHeight: 1.7 }}>
+                The cosmos diminishes us as natural beings subject to physical law. Yet within each finite person, the moral law elevates us beyond nature — making us members of an intelligible moral order as vast as the universe itself.
+              </p>
+            </div>
+          )}
+          {!showQuote && (
+            <div style={{
+              background: "rgba(10,15,35,0.5)",
+              border: "1px dashed rgba(44,62,122,0.3)",
+              borderRadius: "12px",
+              padding: "18px 24px",
+              marginTop: "20px",
+              textAlign: "center",
+            }}>
+              <p style={{ margin: 0, fontSize: "13px", color: "#4A5A80", fontStyle: "italic" }}>
+                Choose duty in the scenarios above to unlock Kant's famous closing reflection on the starry heavens and the moral law...
+              </p>
+            </div>
+          )}
         </div>
 
-        {/* Starry Heavens Quote */}
-        {showQuote && (
-          <div style={{
-            background: "rgba(10,15,35,0.95)",
-            border: "1px solid rgba(44,62,122,0.6)",
-            borderRadius: "12px",
-            padding: "32px",
-            marginBottom: "32px",
-            textAlign: "center",
-            position: "relative",
-            overflow: "hidden",
-          }}>
-            <div style={{
-              position: "absolute", top: 0, left: 0, right: 0, bottom: 0,
-              background: "radial-gradient(ellipse at 50% 0%, rgba(44,62,122,0.15) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-            <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#4A5A8A", marginBottom: "20px" }}>
-              The Closing Words of the Second Critique
-            </div>
-            <blockquote style={{
-              margin: "0",
-              fontSize: "17px",
-              color: "#C8D4F0",
-              lineHeight: 1.9,
-              fontStyle: "italic",
-            }}>
-              "Two things fill the mind with ever-increasing admiration and awe, the more often and more steadily one reflects on them: the starry heavens above me and the moral law within me."
-            </blockquote>
-            <div style={{ marginTop: "16px", fontSize: "12px", color: "#4A5A8A" }}>
-              — Immanuel Kant, Critique of Practical Reason (1788)
-            </div>
-            <p style={{ fontSize: "13px", color: "#6070A0", margin: "16px 0 0", lineHeight: 1.7 }}>
-              The cosmos diminishes us as natural beings subject to physical law. Yet within each finite person, the moral law elevates us beyond nature — making us members of an intelligible moral order as vast as the universe itself.
-            </p>
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(44,95,154,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2C5F9A", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
           </div>
-        )}
-        {!showQuote && (
-          <div style={{
-            background: "rgba(10,15,35,0.5)",
-            border: "1px dashed rgba(44,62,122,0.3)",
-            borderRadius: "12px",
-            padding: "18px 24px",
-            marginBottom: "32px",
-            textAlign: "center",
-          }}>
-            <p style={{ margin: 0, fontSize: "13px", color: "#4A5A80", fontStyle: "italic" }}>
-              Choose duty in the scenarios above to unlock Kant's famous closing reflection on the starry heavens and the moral law...
-            </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#2C5F9A" : "rgba(44,95,154,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#4a80cc" : "rgba(44,95,154,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#7a9acc",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
           </div>
-        )}
+          {hoveredConcept && (
+            <div style={{ background: "rgba(44,95,154,0.08)", border: "1px solid rgba(44,95,154,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#2C5F9A", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
+        </div>
 
         {/* LAYER 3: THE DIFFICULTY PANEL */}
         <div style={{
@@ -8142,48 +8125,44 @@ function PostulatesGodFreedomImmortality() {
             </div>
           </div>
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: "24px" }}>
-            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#6B4C9A", marginBottom: "12px", textTransform: "uppercase" }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: hoveredConcept ? "16px" : "0" }}>
-              {keyConcepts.map(c => (
-                <div
-                  key={c.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  style={{
-                    padding: "6px 14px",
-                    background: hoveredConcept === c.id ? "#6B4C9A" : "rgba(107,76,154,0.1)",
-                    border: `1px solid ${hoveredConcept === c.id ? "#9B7BC7" : "rgba(107,76,154,0.35)"}`,
-                    borderRadius: "20px",
-                    fontSize: "12px",
-                    cursor: "pointer",
-                    color: hoveredConcept === c.id ? "#f0ead8" : "#9B7BC7",
-                    transition: "all 0.2s",
-                    fontFamily: "Georgia, serif",
-                  }}
-                >
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {hoveredConcept && (
-              <div style={{
-                background: "rgba(107,76,154,0.08)",
-                border: "1px solid rgba(107,76,154,0.3)",
-                borderRadius: "6px",
-                padding: "16px 20px",
-              }}>
-                <div style={{ fontSize: "13px", fontWeight: "bold", color: "#6B4C9A", marginBottom: "8px" }}>
-                  {keyConcepts.find(c => c.id === hoveredConcept)?.label}
-                </div>
-                <p style={{ margin: 0, fontSize: "13px", lineHeight: "1.75", color: "#c8c0b4" }}>
-                  {keyConcepts.find(c => c.id === hoveredConcept)?.desc}
-                </p>
-              </div>
-            )}
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(107,76,154,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 24, marginTop: 24 }}>
+          <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#6B4C9A", marginBottom: "14px", textTransform: "uppercase" }}>
+            Key Concepts — Click to Explore
           </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: hoveredConcept ? "16px" : "0" }}>
+            {keyConcepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#6B4C9A" : "rgba(107,76,154,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#9B7BC7" : "rgba(107,76,154,0.35)"}`,
+                  borderRadius: "20px",
+                  fontSize: "12px",
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#9B7BC7",
+                  transition: "all 0.2s",
+                  fontFamily: "Georgia, serif",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(107,76,154,0.08)", border: "1px solid rgba(107,76,154,0.3)", borderRadius: "6px", padding: "16px 20px" }}>
+              <div style={{ fontSize: "13px", fontWeight: "bold", color: "#6B4C9A", marginBottom: "8px" }}>
+                {keyConcepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: "13px", lineHeight: "1.75", color: "#c8c0b4" }}>
+                {keyConcepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* DIFFICULTY PANEL */}
@@ -8274,7 +8253,7 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
   const [hoveredBridge, setHoveredBridge] = useState(null);
   const [hoveredIsland, setHoveredIsland] = useState(null);
   const [zoomedOut, setZoomedOut] = useState(false);
-  const [selectedConcept, setSelectedConcept] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
   const [animating, setAnimating] = useState(false);
   const [islandY, setIslandY] = useState(120);
@@ -8283,12 +8262,12 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
   const timeRef = useRef(0);
 
   const concepts = [
-    { id: "reflective", label: "Reflective Judgment", short: "Moves from particular to universal", detail: "Unlike determinant judgment (which subsumes particulars under a given universal), reflective judgment must find or create the universal for a given particular. It operates freely, guided only by its own a priori principle of purposiveness." },
-    { id: "determinant", label: "Determinant Judgment", short: "Subsumes particular under universal", detail: "Determinant judgment applies a known universal rule to a particular case — the standard mode of cognition in the first Critique. Nature gives us the universal; we subsume particulars beneath it." },
-    { id: "purposiveness", label: "Purposiveness of Nature", short: "Nature treated as if designed", detail: "We cannot help but approach organisms and beautiful objects as if they were designed for a purpose. This is not a metaphysical claim about design, but a regulative principle of how our minds must approach certain phenomena." },
-    { id: "regulative", label: "Regulative Principle", short: "Guides inquiry without constituting reality", detail: "A regulative principle tells us how to investigate — not what things are (constitutive). We must act as if nature is purposive to study organisms and appreciate beauty, but this does not mean nature actually has purposes." },
-    { id: "aesthetic", label: "Aesthetic Judgment", short: "Beauty as purposiveness without purpose", detail: "When we find something beautiful, we experience a free harmonious play of imagination and understanding. The object seems purposively structured for our cognitive faculties, yet we cannot specify any particular purpose." },
-    { id: "teleological", label: "Teleological Judgment", short: "Organisms as self-organizing wholes", detail: "In a living organism, every part exists for the sake of every other part. This circular causality cannot be explained by mechanical science alone — we must think the organism teleologically, as a natural purpose." },
+    { id: "reflective", label: "Reflective Judgment", desc: "Unlike determinant judgment (which subsumes particulars under a given universal), reflective judgment must find or create the universal for a given particular. It operates freely, guided only by its own a priori principle of purposiveness." },
+    { id: "determinant", label: "Determinant Judgment", desc: "Determinant judgment applies a known universal rule to a particular case — the standard mode of cognition in the first Critique. Nature gives us the universal; we subsume particulars beneath it." },
+    { id: "purposiveness", label: "Purposiveness of Nature", desc: "We cannot help but approach organisms and beautiful objects as if they were designed for a purpose. This is not a metaphysical claim about design, but a regulative principle of how our minds must approach certain phenomena." },
+    { id: "regulative", label: "Regulative Principle", desc: "A regulative principle tells us how to investigate — not what things are (constitutive). We must act as if nature is purposive to study organisms and appreciate beauty, but this does not mean nature actually has purposes." },
+    { id: "aesthetic", label: "Aesthetic Judgment", desc: "When we find something beautiful, we experience a free harmonious play of imagination and understanding. The object seems purposively structured for our cognitive faculties, yet we cannot specify any particular purpose." },
+    { id: "teleological", label: "Teleological Judgment", desc: "In a living organism, every part exists for the sake of every other part. This circular causality cannot be explained by mechanical science alone — we must think the organism teleologically, as a natural purpose." },
   ];
 
   useEffect(() => {
@@ -8656,55 +8635,6 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
             </div>
           )}
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: 8 }}>
-            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#5a8a6a", marginBottom: 14 }}>Key Concepts — click to explore</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-              {concepts.map(c => (
-                <button
-                  key={c.id}
-                  onClick={() => setSelectedConcept(selectedConcept === c.id ? null : c.id)}
-                  style={{
-                    background: selectedConcept === c.id ? "#1a4028" : "#0f2018",
-                    border: `1px solid ${selectedConcept === c.id ? "#2A7D4F" : "#1e3a28"}`,
-                    borderRadius: 20,
-                    padding: "6px 14px",
-                    color: selectedConcept === c.id ? "#4fc38a" : "#8ab49a",
-                    fontFamily: "Georgia, serif",
-                    fontSize: 12,
-                    cursor: "pointer",
-                    transition: "all 0.2s",
-                  }}
-                  onMouseEnter={e => { if (selectedConcept !== c.id) { e.target.style.borderColor = "#2A7D4F88"; e.target.style.color = "#a8d4b8"; } }}
-                  onMouseLeave={e => { if (selectedConcept !== c.id) { e.target.style.borderColor = "#1e3a28"; e.target.style.color = "#8ab49a"; } }}
-                >
-                  {c.label}
-                </button>
-              ))}
-            </div>
-
-            {selectedConcept && (
-              <div style={{
-                marginTop: 16,
-                background: "#0c2016cc",
-                border: "1px solid #2A7D4F44",
-                borderRadius: 8,
-                padding: "18px 22px",
-              }}>
-                {(() => {
-                  const c = concepts.find(x => x.id === selectedConcept);
-                  return (
-                    <>
-                      <div style={{ fontSize: 11, color: "#2A7D4F", letterSpacing: 2, textTransform: "uppercase", marginBottom: 6 }}>{c.label}</div>
-                      <div style={{ fontSize: 13, color: "#7ab898", fontStyle: "italic", marginBottom: 10 }}>{c.short}</div>
-                      <p style={{ margin: 0, color: "#c0d4c8", fontSize: 14, lineHeight: 1.75 }}>{c.detail}</p>
-                    </>
-                  );
-                })()}
-              </div>
-            )}
-          </div>
-
           {/* Core Argument */}
           <div style={{
             marginTop: 24,
@@ -8718,6 +8648,43 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
               After two critiques, an enormous gap remained between nature (governed by mechanical causation) and freedom (governing moral action). Kant discovered that a third faculty — reflective judgment — bridges this gap by approaching certain natural phenomena as if they were purposive, without claiming they actually have purposes. This principle is not constitutive, telling us what things are, but regulative, guiding how we investigate and respond to them. The third Critique completes the system by showing that nature, properly understood, points beyond itself toward super-sensible ideas — and that being both a natural creature and a free moral agent need not be a contradiction.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(42,125,79,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 28, marginTop: 24 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2A7D4F", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#2A7D4F" : "rgba(42,125,79,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#4fc38a" : "rgba(42,125,79,0.35)"}`,
+                  borderRadius: 20,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#5a9a70",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(42,125,79,0.08)", border: "1px solid rgba(42,125,79,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#2A7D4F", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -9340,6 +9307,7 @@ function AestheticJudgmentBeautiful() {
 
       {/* Key Concepts */}
       <div style={{ maxWidth: 860, margin: "0 auto 24px auto" }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(212,160,23,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
         <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#D4A017", marginBottom: 14 }}>
           Key Concepts — Click to Explore
         </div>
@@ -9355,7 +9323,7 @@ function AestheticJudgmentBeautiful() {
                 borderRadius: 20,
                 fontSize: 12,
                 cursor: "pointer",
-                color: hoveredConcept === c.id ? "#0d0d15" : "#c4901a",
+                color: hoveredConcept === c.id ? "#f0ead8" : "#c4901a",
                 transition: "all 0.2s",
                 fontFamily: "Georgia, serif",
               }}
@@ -9379,6 +9347,7 @@ function AestheticJudgmentBeautiful() {
             </p>
           </div>
         )}
+        </div>
       </div>
 
       {/* Difficulty Panel */}
@@ -10044,44 +10013,6 @@ function SublimeLimitsOfImagination() {
             </div>
           </div>
 
-          {/* Key Concepts Grid */}
-          <div style={{ fontSize: 11, letterSpacing: 2, color: "#7B5EA7", marginBottom: 14, textTransform: "uppercase" }}>
-            Key Concepts — Click to Explore
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-            {concepts.map((c) => (
-              <div
-                key={c.id}
-                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                style={{
-                  flex: "1 1 200px",
-                  background: hoveredConcept === c.id ? `${c.color}22` : "rgba(15, 8, 25, 0.7)",
-                  border: `1px solid ${hoveredConcept === c.id ? c.color : '#2a1050'}`,
-                  borderRadius: 6,
-                  padding: "12px 14px",
-                  cursor: "pointer",
-                  transition: "all 0.2s",
-                  boxShadow: hoveredConcept === c.id ? `0 0 12px ${c.color}33` : "none",
-                }}
-              >
-                <div style={{ fontSize: 12, color: c.color, fontWeight: "bold", marginBottom: 6 }}>{c.label}</div>
-                <div style={{
-                  fontSize: 12,
-                  color: hoveredConcept === c.id ? "#c0a8d8" : "#7a5a9a",
-                  lineHeight: 1.6,
-                  maxHeight: hoveredConcept === c.id ? 200 : 0,
-                  overflow: "hidden",
-                  transition: "max-height 0.3s, color 0.2s",
-                }}>
-                  {c.desc}
-                </div>
-                {hoveredConcept !== c.id && (
-                  <div style={{ fontSize: 10, color: "#5a3a7a" }}>hover to reveal</div>
-                )}
-              </div>
-            ))}
-          </div>
-
           {/* Core Argument Prose */}
           <div style={{
             background: "rgba(10, 5, 20, 0.8)",
@@ -10103,6 +10034,27 @@ function SublimeLimitsOfImagination() {
               The complex emotional sequence — repulsion then attraction — makes sublime experience both more disturbing and more morally significant than beauty. We discover, in the very moment of being overwhelmed, that we are more than natural beings.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(123,94,167,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 20, marginTop: 20 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#7B5EA7", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map((c) => (
+              <div key={c.id} onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{ padding: "6px 14px", background: hoveredConcept === c.id ? "#7B5EA7" : "rgba(123,94,167,0.1)", border: `1px solid ${hoveredConcept === c.id ? "#a080d0" : "rgba(123,94,167,0.35)"}`, borderRadius: 20, fontSize: 12, cursor: "pointer", color: hoveredConcept === c.id ? "#f0ead8" : "#9a78cc", transition: "all 0.2s" }}>
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(123,94,167,0.08)", border: "1px solid rgba(123,94,167,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#7B5EA7", marginBottom: 8 }}>{concepts.find(c => c.id === hoveredConcept)?.label}</div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>{concepts.find(c => c.id === hoveredConcept)?.desc}</p>
+            </div>
+          )}
         </div>
 
         {/* 3. DIFFICULTY PANEL */}
@@ -10187,7 +10139,7 @@ function GeniusArtAestheticIdeas() {
   const [activeLayer, setActiveLayer] = useState({ intention: true, skill: true, aesthetic: true });
   const [hoveredLayer, setHoveredLayer] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
-  const [selectedConcept, setSelectedConcept] = useState(null);
+  const [hoveredConcept, setHoveredConcept] = useState(null);
   const [geniusMeter, setGeniusMeter] = useState(0);
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
@@ -10607,47 +10559,6 @@ function GeniusArtAestheticIdeas() {
             </div>
           </div>
 
-          {/* Key Concepts Section */}
-          <div style={{ marginTop: 32 }}>
-            <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: '#C0392B', marginBottom: 14 }}>Key Concepts — Click to Explore</div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-              {concepts.map(c => (
-                <div
-                  key={c.id}
-                  onClick={() => setSelectedConcept(selectedConcept === c.id ? null : c.id)}
-                  style={{
-                    padding: '8px 16px',
-                    borderRadius: 20,
-                    border: `1px solid ${selectedConcept === c.id ? '#C0392B' : '#3a1818'}`,
-                    background: selectedConcept === c.id ? '#C0392B22' : '#16080c',
-                    color: selectedConcept === c.id ? '#F5C6BE' : '#8a7060',
-                    fontSize: 13,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                  }}
-                >
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {selectedConcept && (
-              <div style={{
-                marginTop: 14,
-                padding: '16px 20px',
-                background: '#1a080c',
-                borderLeft: '3px solid #C0392B',
-                borderRadius: '0 8px 8px 0',
-              }}>
-                <div style={{ fontSize: 11, letterSpacing: 1, color: '#C0392B', marginBottom: 6, textTransform: 'uppercase' }}>
-                  {concepts.find(c => c.id === selectedConcept)?.label}
-                </div>
-                <p style={{ margin: 0, fontSize: 14, color: '#C9B8A8', lineHeight: 1.8 }}>
-                  {concepts.find(c => c.id === selectedConcept)?.desc}
-                </p>
-              </div>
-            )}
-          </div>
-
           {/* Core Argument */}
           <div style={{ marginTop: 28, padding: '20px 24px', background: '#160a0c', border: '1px solid #2a1010', borderRadius: 8 }}>
             <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: '#C0392B', marginBottom: 12 }}>Core Argument</div>
@@ -10655,6 +10566,27 @@ function GeniusArtAestheticIdeas() {
               Genius is the innate mental disposition through which nature gives the rule to art — enabling artists to create works that seem to follow their own internal laws, achieving natural purposiveness despite obvious human intention. Its four marks are originality, exemplary character (serving as models without providing formulas), inexplicability (the gift cannot be taught by rule), and restriction to fine art alone. Aesthetic ideas are representations of imagination that give much to think about without any concept being adequate — the intuitive counterpart to rational ideas, expressing through imagery what conceptual language cannot capture. Great artworks transform inherited materials into apparently inevitable yet unprecedented forms, making them at once historically rooted and transcendently original.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(192,57,43,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 28, marginTop: 20 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#C0392B", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div key={c.id} onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{ padding: "6px 14px", background: hoveredConcept === c.id ? "#C0392B" : "rgba(192,57,43,0.1)", border: `1px solid ${hoveredConcept === c.id ? "#e05040" : "rgba(192,57,43,0.35)"}`, borderRadius: 20, fontSize: 12, cursor: "pointer", color: hoveredConcept === c.id ? "#f0ead8" : "#cc7060", transition: "all 0.2s" }}>
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(192,57,43,0.08)", border: "1px solid rgba(192,57,43,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#C0392B", marginBottom: 8 }}>{concepts.find(c => c.id === hoveredConcept)?.label}</div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>{concepts.find(c => c.id === hoveredConcept)?.desc}</p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -10743,6 +10675,7 @@ function TeleologyPurposivenessOfNature() {
   const [hoveredButton, setHoveredButton] = useState(null);
   const [animFrame, setAnimFrame] = useState(0);
   const [hoveredConcept, setHoveredConcept] = useState(null);
+  const [hoveredPill, setHoveredPill] = useState(null);
   const animRef = useRef(null);
 
   const keyConcepts = [
@@ -11435,35 +11368,29 @@ function TeleologyPurposivenessOfNature() {
               </div>
             )}
           </div>
-        </div>
-      </div>
-
-      {/* KEY CONCEPTS ROW */}
-      <div style={{ maxWidth: '900px', margin: '0 auto 28px auto' }}>
-        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {[
-            { label: 'Natural Purpose', desc: 'Being simultaneously cause and effect of itself' },
-            { label: 'Circular Causality', desc: 'Parts produce whole; whole produces parts' },
-            { label: 'Regulative Teleology', desc: 'Judge as-if purposive without claiming metaphysical fact' },
-            { label: 'Antinomy Resolved', desc: 'Mechanism + teleology at different methodological levels' },
-            { label: 'Self-Organization', desc: 'Contemporary systems biology operationalizes this concept' },
-          ].map((concept) => {
-            const [hov, setHov] = useState(false);
-            return (
+          {/* Key Concepts Row */}
+          <div style={{ padding: '20px 28px', borderTop: '1px solid rgba(39,174,96,0.15)', display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            {[
+              { label: 'Natural Purpose', desc: 'Being simultaneously cause and effect of itself' },
+              { label: 'Circular Causality', desc: 'Parts produce whole; whole produces parts' },
+              { label: 'Regulative Teleology', desc: 'Judge as-if purposive without claiming metaphysical fact' },
+              { label: 'Antinomy Resolved', desc: 'Mechanism + teleology at different methodological levels' },
+              { label: 'Self-Organization', desc: 'Contemporary systems biology operationalizes this concept' },
+            ].map((concept) => (
               <div key={concept.label}
-                onMouseEnter={() => setHov(true)}
-                onMouseLeave={() => setHov(false)}
+                onMouseEnter={() => setHoveredPill(concept.label)}
+                onMouseLeave={() => setHoveredPill(null)}
                 style={{
                   padding: '8px 14px',
-                  background: hov ? 'rgba(39,174,96,0.2)' : 'rgba(39,174,96,0.07)',
-                  border: `1px solid ${hov ? '#27AE60' : 'rgba(39,174,96,0.3)'}`,
+                  background: hoveredPill === concept.label ? 'rgba(39,174,96,0.2)' : 'rgba(39,174,96,0.07)',
+                  border: `1px solid ${hoveredPill === concept.label ? '#27AE60' : 'rgba(39,174,96,0.3)'}`,
                   borderRadius: '20px',
                   cursor: 'default',
                   transition: 'all 0.2s',
                   position: 'relative',
                 }}>
                 <span style={{ color: '#c8e6c9', fontSize: '12px', fontFamily: 'Georgia, serif' }}>{concept.label}</span>
-                {hov && (
+                {hoveredPill === concept.label && (
                   <div style={{
                     position: 'absolute',
                     bottom: '110%',
@@ -11485,13 +11412,14 @@ function TeleologyPurposivenessOfNature() {
                   </div>
                 )}
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Key Concepts */}
       <div style={{ maxWidth: '900px', margin: '0 auto 24px auto' }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(39,174,96,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
         <div style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#27AE60', marginBottom: '14px' }}>
           Key Concepts — Click to Explore
         </div>
@@ -11531,6 +11459,7 @@ function TeleologyPurposivenessOfNature() {
             </p>
           </div>
         )}
+        </div>
       </div>
 
       {/* 3. THE DIFFICULTY PANEL */}
@@ -11747,8 +11676,9 @@ function PoliticalPhilosophyPerpetualPeace() {
       color: "#d4dde8",
       padding: "0 0 60px 0"
     }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 20px" }}>
       {/* Header */}
-      <div style={{ padding: "40px 40px 0 40px" }}>
+      <div style={{ padding: "40px 0 0 0" }}>
         <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#2980B9", textTransform: "uppercase", marginBottom: "8px" }}>
           Part 19 of 21 — Political Philosophy
         </div>
@@ -11761,7 +11691,7 @@ function PoliticalPhilosophyPerpetualPeace() {
       </div>
 
       {/* THE PROBLEM PANEL */}
-      <div style={{ margin: "32px 40px 0 40px" }}>
+      <div style={{ margin: "32px 0 0 0" }}>
         <div style={{
           background: "#0f1a26",
           border: "1px solid #1a3a5c",
@@ -11779,7 +11709,7 @@ function PoliticalPhilosophyPerpetualPeace() {
       </div>
 
       {/* MAIN VISUALIZATION */}
-      <div style={{ margin: "32px 40px 0 40px" }}>
+      <div style={{ margin: "32px 0 0 0" }}>
         <div style={{
           background: "#0a1520",
           border: "1px solid #1a3a5c",
@@ -12114,38 +12044,6 @@ function PoliticalPhilosophyPerpetualPeace() {
             </div>
           </div>
 
-          {/* Key Concepts Grid */}
-          <div>
-            <div style={{ fontSize: "12px", letterSpacing: "2px", color: "#4aa3df", textTransform: "uppercase", marginBottom: "14px" }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "10px" }}>
-              {concepts.map(concept => (
-                <div
-                  key={concept.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === concept.id ? null : concept.id)}
-                  style={{
-                    background: hoveredConcept === concept.id ? "#0d2030" : "#080f1a",
-                    border: `1px solid ${hoveredConcept === concept.id ? "#2980B9" : "#1a3a5c"}`,
-                    borderRadius: "6px",
-                    padding: "14px 16px",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease"
-                  }}
-                >
-                  <div style={{ fontSize: "12px", color: "#4aa3df", marginBottom: hoveredConcept === concept.id ? "8px" : "0", fontWeight: "bold" }}>
-                    {concept.label}
-                  </div>
-                  {hoveredConcept === concept.id && (
-                    <p style={{ margin: 0, fontSize: "12px", color: "#90b8d4", lineHeight: 1.7 }}>
-                      {concept.desc}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Three Forces Panel */}
           <div style={{ marginTop: "24px", background: "#060e18", border: "1px solid #1a3a5c", borderRadius: "6px", padding: "20px" }}>
             <div style={{ fontSize: "12px", letterSpacing: "2px", color: "#4aa3df", textTransform: "uppercase", marginBottom: "12px" }}>
@@ -12168,8 +12066,29 @@ function PoliticalPhilosophyPerpetualPeace() {
         </div>
       </div>
 
+      {/* Key Concepts */}
+      <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(41,128,185,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", margin: "24px 0" }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#2980B9", marginBottom: 14 }}>
+          Key Concepts — Click to Explore
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+          {concepts.map(concept => (
+            <div key={concept.id} onClick={() => setHoveredConcept(hoveredConcept === concept.id ? null : concept.id)}
+              style={{ padding: "6px 14px", background: hoveredConcept === concept.id ? "#2980B9" : "rgba(41,128,185,0.1)", border: `1px solid ${hoveredConcept === concept.id ? "#4aa3df" : "rgba(41,128,185,0.35)"}`, borderRadius: 20, fontSize: 12, cursor: "pointer", color: hoveredConcept === concept.id ? "#f0ead8" : "#6aa3cc", transition: "all 0.2s" }}>
+              {concept.label}
+            </div>
+          ))}
+        </div>
+        {hoveredConcept && (
+          <div style={{ background: "rgba(41,128,185,0.08)", border: "1px solid rgba(41,128,185,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+            <div style={{ fontSize: 13, fontWeight: "bold", color: "#2980B9", marginBottom: 8 }}>{concepts.find(c => c.id === hoveredConcept)?.label}</div>
+            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>{concepts.find(c => c.id === hoveredConcept)?.desc}</p>
+          </div>
+        )}
+      </div>
+
       {/* THE DIFFICULTY PANEL */}
-      <div style={{ margin: "24px 40px 0 40px" }}>
+      <div style={{ margin: "24px 0 0 0" }}>
         <div style={{
           background: "#0f1520",
           border: "1px solid #1a3050",
@@ -12190,7 +12109,7 @@ function PoliticalPhilosophyPerpetualPeace() {
       </div>
 
       {/* REAL-WORLD ECHOES PANEL */}
-      <div style={{ margin: "24px 40px 0 40px" }}>
+      <div style={{ margin: "24px 0 0 0" }}>
         <div style={{
           background: "#0a1520",
           border: "1px solid #1a3a5c",
@@ -12236,6 +12155,7 @@ function PoliticalPhilosophyPerpetualPeace() {
             </div>
           )}
         </div>
+      </div>
       </div>
     </div>
   );
@@ -12647,55 +12567,33 @@ function ReligionWithinBoundariesOfReason() {
             </div>
           )}
 
-          {/* Key Concepts */}
-          <div style={{ marginTop: 4 }}>
-            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#884EA0", marginBottom: 14 }}>
-              Key Concepts — Click to Explore
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
-              {keyConcepts.map(c => (
-                <div
-                  key={c.id}
-                  onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                  style={{
-                    padding: "6px 14px",
-                    background: hoveredConcept === c.id ? "#884EA0" : "rgba(136,78,160,0.1)",
-                    border: `1px solid ${hoveredConcept === c.id ? "#bb80d8" : "rgba(136,78,160,0.35)"}`,
-                    borderRadius: 20,
-                    fontSize: 12,
-                    cursor: "pointer",
-                    color: hoveredConcept === c.id ? "#f0ead8" : "#9a7fb8",
-                    transition: "all 0.2s",
-                    fontFamily: "Georgia, serif",
-                  }}
-                >
-                  {c.label}
-                </div>
-              ))}
-            </div>
-            {hoveredConcept && (
-              <div style={{
-                background: "rgba(136,78,160,0.08)",
-                border: "1px solid rgba(136,78,160,0.3)",
-                borderRadius: 6,
-                padding: "16px 20px",
-              }}>
-                <div style={{ fontSize: 13, fontWeight: "bold", color: "#884EA0", marginBottom: 8 }}>
-                  {keyConcepts.find(c => c.id === hoveredConcept)?.label}
-                </div>
-                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
-                  {keyConcepts.find(c => c.id === hoveredConcept)?.desc}
-                </p>
-              </div>
-            )}
-          </div>
-
           {/* Core Argument prose */}
           <div style={{ marginTop: 24, padding: "20px 0 0 0", borderTop: "1px solid #2a1040" }}>
             <p style={{ margin: 0, lineHeight: 1.85, fontSize: 14, color: "#c4a8e0" }}>
               Kant's philosophy of religion centers on whether human beings can become morally worthy of happiness despite their radical evil — the universal tendency to rationalize selfish behavior over moral duty. This is not a flaw in nature but a propensity affecting the very root of moral choice, requiring not gradual reform but a complete revolution in disposition. The traditional Christian doctrines of incarnation, atonement, and resurrection serve as powerful symbols of moral truths: the ideal of perfection, the possibility of genuine conversion, and the ultimate triumph of goodness. Religion addresses the practical need for hope that moral effort is meaningful, grounding faith not in supernatural proofs but in the moral postulates reason itself requires.
             </p>
           </div>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(136,78,160,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#884EA0", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {keyConcepts.map(c => (
+              <div key={c.id} onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{ padding: "6px 14px", background: hoveredConcept === c.id ? "#884EA0" : "rgba(136,78,160,0.1)", border: `1px solid ${hoveredConcept === c.id ? "#bb80d8" : "rgba(136,78,160,0.35)"}`, borderRadius: 20, fontSize: 12, cursor: "pointer", color: hoveredConcept === c.id ? "#f0ead8" : "#9a7fb8", transition: "all 0.2s", fontFamily: "Georgia, serif" }}>
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(136,78,160,0.08)", border: "1px solid rgba(136,78,160,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#884EA0", marginBottom: 8 }}>{keyConcepts.find(c => c.id === hoveredConcept)?.label}</div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>{keyConcepts.find(c => c.id === hoveredConcept)?.desc}</p>
+            </div>
+          )}
         </div>
 
         {/* THE DIFFICULTY PANEL */}
@@ -13398,7 +13296,7 @@ function UnityCriticalSystemKantsLegacy() {
         </div>
 
         {/* Key Concepts */}
-        <div style={{ marginBottom: 28 }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(122,58,144,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 28 }}>
           <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#b070d0", marginBottom: 14 }}>
             Key Concepts — Click to Explore
           </div>
