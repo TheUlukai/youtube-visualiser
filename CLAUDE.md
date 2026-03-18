@@ -156,12 +156,14 @@ After any run of `assemble.py` (or `generate_viz.py`), verify the output with th
 **Step 1 — Static inspection + build check:**
 Run `/static-check` — this performs all grep-based checks, creates tasks for each issue type found, fixes them by type across all components, then reassembles and runs `npm run build` to confirm no syntax errors. See `.claude/commands/static-check.md` for the full check list.
 
-**Step 2 — In-browser checks** — start the dev server and visit http://localhost:5173:
+**Step 2 — In-browser checks** — run `/browser-check` to perform all checks using the Chrome browser extension. This covers:
 1. **Escaped unicode** — scan for literal `\uNNNN` appearing as text; all unicode should render as real characters
 2. **Color readability** — check text visibility on dark backgrounds, especially for active/selected button states where accent color becomes the background
 3. **Layout overlaps** — scroll each section; watch for SVG elements or absolutely-positioned boxes clipping outside their containers
 4. **Interactive elements** — click toggles, expandable panels ("Real-World Echoes"), and draggable elements in at least a sample of sections
 5. **Navigation** — verify Prev/Next buttons step through all sections and the tab bar scrolls the active tab into view
+
+See `.claude/commands/browser-check.md` for the full check list.
 
 **Recurring bug patterns** — these have appeared in generated components and should be checked explicitly:
 
