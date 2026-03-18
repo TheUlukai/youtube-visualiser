@@ -25,6 +25,7 @@ sites/<slug>/
   src/
     App.jsx      — copy of output/visualizations.jsx
     main.jsx     — React entry point
+    index.css    — global CSS reset (eliminates browser default body margin)
   index.html
   package.json
   vite.config.js
@@ -33,10 +34,18 @@ sites/<slug>/
 
 **`src/App.jsx`** — copy `output/visualizations.jsx` verbatim (use bash `cp`).
 
+**`src/index.css`**:
+```css
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #050508; }
+#root { min-height: 100vh; }
+```
+
 **`src/main.jsx`**:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 import App from './App.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
