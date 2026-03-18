@@ -277,6 +277,8 @@ function SpinozaIntroduction() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     const ctx = canvas.getContext("2d");
     const W = canvas.width;
     const H = canvas.height;
@@ -373,8 +375,6 @@ function SpinozaIntroduction() {
     >
       <canvas
         ref={canvasRef}
-        width={800}
-        height={600}
         style={{
           position: "fixed",
           top: 0,
@@ -391,7 +391,7 @@ function SpinozaIntroduction() {
         style={{
           position: "relative",
           zIndex: 1,
-          maxWidth: "780px",
+          maxWidth: "min(90vw, 780px)",
           margin: "0 auto",
           padding: "40px 24px",
         }}
@@ -424,11 +424,11 @@ function SpinozaIntroduction() {
           </h1>
           <p
             style={{
-              fontSize: "16px",
+              fontSize: "clamp(14px, 1.8vw, 16px)",
               color: "#a0a0c0",
               lineHeight: 1.7,
               margin: "0 auto",
-              maxWidth: "580px",
+              maxWidth: "min(90vw, 580px)",
             }}
           >
             Spinoza's revolutionary systematic philosophy challenged every foundational assumption
@@ -468,10 +468,9 @@ function SpinozaIntroduction() {
           {/* SVG Architecture */}
           <div style={{ display: "flex", justifyContent: "center", overflowX: "auto" }}>
             <svg
-              width={svgWidth}
-              height={svgHeight}
-              style={{ display: "block", maxWidth: "100%" }}
               viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+              width="100%"
+              style={{ display: "block", maxWidth: svgWidth }}
             >
               {/* Background glow for selected */}
               {selectedPillar && (() => {
@@ -762,7 +761,7 @@ function SpinozaIntroduction() {
                     </div>
                     <p
                       style={{
-                        fontSize: "14px",
+                        fontSize: "clamp(13px, 1.6vw, 14px)",
                         lineHeight: 1.75,
                         color: "#c8c8e0",
                         margin: "0 0 12px 0",
@@ -789,7 +788,7 @@ function SpinozaIntroduction() {
             ) : (
               <p
                 style={{
-                  fontSize: "14px",
+                  fontSize: "clamp(13px, 1.6vw, 14px)",
                   color: "#5050780",
                   textAlign: "center",
                   lineHeight: 1.7,
@@ -891,7 +890,7 @@ function SpinozaIntroduction() {
           </div>
           <p
             style={{
-              fontSize: "15px",
+              fontSize: "clamp(13px, 1.8vw, 15px)",
               lineHeight: 1.8,
               color: "#b8b8d8",
               margin: "0 0 14px 0",
@@ -905,7 +904,7 @@ function SpinozaIntroduction() {
           </p>
           <p
             style={{
-              fontSize: "14px",
+              fontSize: "clamp(13px, 1.6vw, 14px)",
               lineHeight: 1.75,
               color: "#8070a8",
               margin: 0,
@@ -1171,6 +1170,8 @@ function MakingOfRevolutionaryMind() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = canvas.offsetWidth || canvasW;
+    canvas.height = Math.round(canvas.width * (canvasH / canvasW));
     const ctx = canvas.getContext("2d");
     const W = canvas.width;
     const H = canvas.height;
@@ -1420,14 +1421,14 @@ function MakingOfRevolutionaryMind() {
       color: "#d4c9b8",
       padding: "0"
     }}>
-      <div style={{ maxWidth: 860, margin: '0 auto' }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: '0 auto' }}>
       {/* Title Block */}
       <div style={{ padding: "36px 40px 10px 40px", textAlign: "center" }}>
         <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#2D4A6E", marginBottom: "8px", textTransform: "uppercase" }}>Part 2 of 21</div>
         <h1 style={{ fontSize: "32px", fontWeight: "normal", color: "#e8dcc8", margin: "0 0 8px 0", letterSpacing: "0.5px" }}>
           The Making of a Revolutionary Mind
         </h1>
-        <p style={{ fontSize: "15px", color: "#8a9db5", margin: 0, fontStyle: "italic" }}>
+        <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#8a9db5", margin: 0, fontStyle: "italic" }}>
           Spinoza's journey from star Talmudic pupil to excommunicated outcast forged the intellectual independence necessary for his philosophical revolution.
         </p>
       </div>
@@ -1450,7 +1451,7 @@ function MakingOfRevolutionaryMind() {
           fontFamily: "Georgia, serif"
         }}>The Problem</div>
         <p style={{
-          fontSize: "17px",
+          fontSize: "clamp(14px, 1.8vw, 17px)",
           lineHeight: "1.75",
           color: "#c8bca8",
           margin: 0,
@@ -1485,11 +1486,9 @@ function MakingOfRevolutionaryMind() {
           </div>
 
           {/* Canvas + SVG overlay */}
-          <div style={{ position: "relative", width: "100%", maxWidth: `${canvasW}px`, margin: "0 auto" }}>
+          <div style={{ position: "relative", width: "100%", margin: "0 auto" }}>
             <canvas
               ref={canvasRef}
-              width={canvasW}
-              height={canvasH}
               style={{ display: "block", width: "100%", borderRadius: "2px" }}
             />
 
@@ -1619,7 +1618,7 @@ function MakingOfRevolutionaryMind() {
           borderRadius: "3px",
           padding: "24px 28px"
         }}>
-          <p style={{ fontSize: "15px", lineHeight: "1.8", color: "#c0b49a", margin: 0 }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: "1.8", color: "#c0b49a", margin: 0 }}>
             Spinoza grew up at the intersection of rigorous religious tradition and the explosive new philosophy of Descartes and Hobbes, creating an unbearable contradiction between what reason demanded and what faith required. His excommunication at 23, rather than silencing him, liberated him to pursue philosophy wherever reason led. His manual craft of lens-grinding grounded him in practical reality while he constructed the most radical philosophical system in European history — one that would not compromise between the two streams that had formed him, but would dissolve them both into a wholly new foundation.
           </p>
         </div>
@@ -1680,10 +1679,10 @@ function MakingOfRevolutionaryMind() {
           color: "#4A6E5A",
           marginBottom: "14px"
         }}>The Difficulty</div>
-        <p style={{ fontSize: "16px", lineHeight: "1.75", color: "#b8c8b4", margin: "0 0 16px 0", maxWidth: "820px" }}>
+        <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", lineHeight: "1.75", color: "#b8c8b4", margin: "0 0 16px 0" }}>
           Having been freed from institutional constraints, Spinoza faced an urgent metaphysical demand: he could not merely reject the God-world dualism of his tradition — he needed to replace it. The excommunication cleared the path, but left a chasm. What is reality, fundamentally, if not a creator God standing apart from a created world? What can mind, matter, freedom, and morality mean without that scaffolding?
         </p>
-        <p style={{ fontSize: "14px", lineHeight: "1.7", color: "#7a9e8a", margin: 0, fontStyle: "italic" }}>
+        <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: "1.7", color: "#7a9e8a", margin: 0, fontStyle: "italic" }}>
           This pressure forces the next development: Spinoza must construct a new account of substance itself — the bedrock of all reality — that can support everything he wants to say about God, nature, mind, and human liberation without importing the old dualisms through the back door.
         </p>
       </div>
@@ -1787,6 +1786,8 @@ function RevolutionaryMetaphysicsGodOrNature() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = canvas.offsetWidth || 700;
+    canvas.height = canvas.offsetHeight || 420;
     const ctx = canvas.getContext('2d');
     let particles = [];
     const W = canvas.width;
@@ -1853,17 +1854,17 @@ function RevolutionaryMetaphysicsGodOrNature() {
       padding: '40px 24px',
       color: '#e8d5ff',
     }}>
-      <div style={{ maxWidth: 760, margin: '0 auto' }}>
+      <div style={{ maxWidth: "min(90vw, 760px)", margin: '0 auto' }}>
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 36 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: '#8B5CF6', textTransform: 'uppercase', marginBottom: 8 }}>
             Part 3 of 21
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: 'normal', color: '#f0e6ff', margin: '0 0 10px 0', lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: 'normal', color: '#f0e6ff', margin: '0 0 10px 0', lineHeight: 1.3 }}>
             God or Nature: Substance Monism
           </h1>
-          <p style={{ fontSize: 15, color: '#b89fd4', margin: 0, fontStyle: 'italic', lineHeight: 1.6 }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: '#b89fd4', margin: 0, fontStyle: 'italic', lineHeight: 1.6 }}>
             Spinoza's most radical claim — that reality consists of exactly one substance identical with both God and nature — demolishes the entire architecture of medieval and early modern philosophy.
           </p>
         </div>
@@ -1880,7 +1881,7 @@ function RevolutionaryMetaphysicsGodOrNature() {
           <div style={{ fontSize: 11, letterSpacing: 3, color: '#4B0082', textTransform: 'uppercase', marginBottom: 12, fontWeight: 'bold' }}>
             The Problem
           </div>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.8, color: '#cbb5e8' }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.8, color: '#cbb5e8' }}>
             For over a thousand years, European thought had divided reality into two irreconcilable realms: an infinite, perfect, transcendent God on one side, and a finite, contingent, created world on the other. God made nature; nature depended on God; and between them ran an unbridgeable ontological gap. Descartes had reinforced this architecture with his own dualisms — mind versus body, God versus extension. Spinoza saw that this framework was not merely philosophically unsatisfying. It was <em>logically incoherent</em>. A foundation for rational philosophy could not be built on a crack between two worlds that had no way of meeting.
           </p>
         </div>
@@ -1897,8 +1898,6 @@ function RevolutionaryMetaphysicsGodOrNature() {
         }}>
           <canvas
             ref={canvasRef}
-            width={700}
-            height={420}
             style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.4 }}
           />
           <div style={{ position: 'relative', zIndex: 2 }}>
@@ -2096,7 +2095,7 @@ function RevolutionaryMetaphysicsGodOrNature() {
                       <div style={{ fontSize: 13, color: '#c084fc', marginBottom: 6, fontStyle: 'italic' }}>
                         Studying {l.label} is studying God-Nature:
                       </div>
-                      <p style={{ margin: 0, fontSize: 14, color: '#cbb5e8', lineHeight: 1.7 }}>{l.desc}</p>
+                      <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", color: '#cbb5e8', lineHeight: 1.7 }}>{l.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -2111,10 +2110,10 @@ function RevolutionaryMetaphysicsGodOrNature() {
 
             {/* Core Argument Text */}
             <div style={{ marginTop: 24, borderTop: '1px solid #2a1040', paddingTop: 20 }}>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#b89fd4', margin: '0 0 12px 0' }}>
+              <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: '#b89fd4', margin: '0 0 12px 0' }}>
                 Spinoza's argument is surgical: a genuine substance is that which exists in itself and is conceived through itself. If two substances shared an attribute, one could be conceived through the other — violating the definition of substance. Therefore no two substances share attributes, and since the infinite substance has all attributes, no other substance can exist alongside it. The logic collapses the gap between creator and creation.
               </p>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#b89fd4', margin: 0 }}>
+              <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: '#b89fd4', margin: 0 }}>
                 What theology called God's acts of creation are simply the immanent self-expression of infinite nature. What scientists study as natural law is identical with divine causation. The triangle does not "choose" to have angles summing to 180° — it follows of necessity from what a triangle is. So too with everything in existence.
               </p>
             </div>
@@ -2171,10 +2170,10 @@ function RevolutionaryMetaphysicsGodOrNature() {
           <div style={{ fontSize: 11, letterSpacing: 3, color: '#6B21A8', textTransform: 'uppercase', marginBottom: 12, fontWeight: 'bold' }}>
             The Difficulty
           </div>
-          <p style={{ margin: '0 0 12px 0', fontSize: 15, lineHeight: 1.8, color: '#cbb5e8' }}>
+          <p style={{ margin: '0 0 12px 0', fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.8, color: '#cbb5e8' }}>
             Spinoza's monism creates a vertigo of its own. If there is only one infinite substance and all finite things are merely its modes — waves on a single ocean — then what exactly are we? What is a rock, a thought, a grief, a choice? The rich plurality of human experience seems to dissolve into a single undifferentiated field. Even more troubling: if everything follows from the divine-natural substance with the same necessity that geometric theorems follow from axioms, then nothing could ever be different from how it is. Your choices, your regrets, your moral striving — all necessary, all inevitable.
           </p>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.8, color: '#cbb5e8' }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.8, color: '#cbb5e8' }}>
             This pressure forces the next development: Spinoza must explain how an infinite, unified, necessary substance gives rise to finite, diverse, apparently contingent things — and he must do so in a way that salvages meaningful ethics and human freedom. The architecture of attributes and modes awaits.
           </p>
         </div>
@@ -2208,13 +2207,13 @@ function RevolutionaryMetaphysicsGodOrNature() {
           </div>
           {echoesOpen && (
             <div style={{ padding: '0 28px 28px 28px', borderTop: '1px solid #1a0a2e' }}>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#b89fd4', marginTop: 16 }}>
+              <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: '#b89fd4', marginTop: 16 }}>
                 When mathematicians investigate the properties of prime numbers, they do not "create" those properties — they discover necessities that were always there, just as Spinoza's God-Nature expresses its essence with geometric certainty. The boundary between discovery and revelation dissolves.
               </p>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#b89fd4' }}>
+              <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: '#b89fd4' }}>
                 Modern physics searching for a unified field theory — a single framework from which all forces and particles emerge — mirrors Spinoza's intuition. The aspiration to find one substrate beneath apparent multiplicity is his metaphysics reborn in mathematics.
               </p>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#b89fd4' }}>
+              <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: '#b89fd4' }}>
                 When someone prays for rain during a drought, Spinoza would not call the prayer superstitious — but he would note that its real effects are psychological clarity, community solidarity, and renewed attention to the environment. Nature does not bend; the pray-er changes. The same God is at work either way.
               </p>
               <p style={{ fontSize: 14, lineHeight: 1.8, color: '#b89fd4', margin: 0 }}>
@@ -2294,6 +2293,8 @@ function ArchitectureOfRealityAttributesModes() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = canvas.offsetWidth || 900;
+    canvas.height = canvas.offsetHeight || 500;
     const ctx = canvas.getContext("2d");
     let t = 0;
     const particles = Array.from({ length: 60 }, () => ({
@@ -2439,17 +2440,17 @@ function ArchitectureOfRealityAttributesModes() {
       padding: "32px 24px",
       boxSizing: "border-box",
     }}>
-      <div style={{ maxWidth: 960, margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 960px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ marginBottom: 8, opacity: 0.6, fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: accentLight }}>
             Part 4 of 21 — Spinoza's System
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#E8F8F8", margin: "0 0 6px 0", letterSpacing: 0.5 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", color: "#E8F8F8", margin: "0 0 6px 0", letterSpacing: 0.5 }}>
             Attributes and Modes: The Architecture of Reality
           </h1>
-          <p style={{ fontSize: 15, color: "#88BBBB", margin: 0, lineHeight: 1.6 }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#88BBBB", margin: 0, lineHeight: 1.6 }}>
             Spinoza explains how the absolute unity of one infinite substance manifests in the rich diversity of finite things through a hierarchy of attributes and modes.
           </p>
         </div>
@@ -2468,7 +2469,7 @@ function ArchitectureOfRealityAttributesModes() {
           <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: accent, marginBottom: 12, fontWeight: "bold" }}>
             The Problem
           </div>
-          <p style={{ margin: 0, lineHeight: 1.8, fontSize: 15, color: "#C8E8E8" }}>
+          <p style={{ margin: 0, lineHeight: 1.8, fontSize: "clamp(13px, 1.8vw, 15px)", color: "#C8E8E8" }}>
             Substance monism established one infinite substance — but this hard-won unity immediately generates a new crisis. If everything is one substance, what happens to difference? What happens to the particular — this rock, this thought, this person? The danger is collapse: an undifferentiated unity that swallows all diversity into a featureless whole, leaving us unable to account for the obvious fact that things are genuinely different from one another. How can finite, diverse, particular things exist within a single infinite substance without being dissolved into nothing?
           </p>
         </div>
@@ -2486,8 +2487,6 @@ function ArchitectureOfRealityAttributesModes() {
           {/* Canvas background particles */}
           <canvas
             ref={canvasRef}
-            width={900}
-            height={500}
             style={{
               position: "absolute",
               top: 0, left: 0,
@@ -2548,7 +2547,7 @@ function ArchitectureOfRealityAttributesModes() {
 
             {/* SVG Tree Diagram */}
             <div style={{ overflowX: "auto" }}>
-              <svg width={svgWidth} height={svgHeight} style={{ display: "block", margin: "0 auto", maxWidth: "100%" }}>
+              <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} width="100%" style={{ display: "block", margin: "0 auto", maxWidth: svgWidth }}>
                 <defs>
                   <radialGradient id="subGrad" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="#FFD700" stopOpacity="0.8" />
@@ -2640,7 +2639,7 @@ function ArchitectureOfRealityAttributesModes() {
                     <div style={{ fontSize: 18, color: "#E8F8F8", marginBottom: 8, fontWeight: "normal" }}>
                       {selectedNode.label}
                     </div>
-                    <p style={{ margin: 0, fontSize: 14, color: "#AAD0D0", lineHeight: 1.7 }}>
+                    <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", color: "#AAD0D0", lineHeight: 1.7 }}>
                       {selectedNode.desc}
                     </p>
                   </div>
@@ -2762,10 +2761,10 @@ function ArchitectureOfRealityAttributesModes() {
           <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#4A8B4A", marginBottom: 12, fontWeight: "bold" }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: 15, color: "#C0D8C0" }}>
+          <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: "clamp(13px, 1.8vw, 15px)", color: "#C0D8C0" }}>
             The parallelism doctrine is elegant, but it generates an acute new problem. If Extension and Thought are two complete and self-sufficient descriptions of the same reality — if every mental event has its full explanation in the mental register, and every physical event has its full explanation in the physical register — then there is no causal passage between them. The mind does not cause the body to move, nor the body cause the mind to feel. They run in perfect parallel, never intersecting.
           </p>
-          <p style={{ margin: 0, lineHeight: 1.8, fontSize: 15, color: "#C0D8C0" }}>
+          <p style={{ margin: 0, lineHeight: 1.8, fontSize: "clamp(13px, 1.8vw, 15px)", color: "#C0D8C0" }}>
             But then what is a human being? How does the knowledge we form in thought actually track the structure of extended matter? What unifies the two descriptions of one person, and how can we acquire genuine knowledge of physical reality through mental operations alone? This pressure forces the next development — Spinoza's account of the human mind as the idea of the human body, and his radical theory of adequate versus inadequate ideas.
           </p>
         </div>
@@ -2921,6 +2920,10 @@ function UnityOfMindAndBody() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    if (canvas.width !== canvas.offsetWidth || canvas.height !== canvas.offsetHeight) {
+      canvas.width = canvas.offsetWidth || 480;
+      canvas.height = canvas.offsetHeight || 400;
+    }
     const ctx = canvas.getContext("2d");
     const W = canvas.width;
     const H = canvas.height;
@@ -3033,17 +3036,17 @@ function UnityOfMindAndBody() {
       minHeight: "100vh",
       padding: "40px 24px",
       color: "#e8f5e9",
-      maxWidth: "860px",
+      maxWidth: "min(90vw, 860px)",
       margin: "0 auto"
     }}>
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: 32 }}>
         <div style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "#66bb6a", marginBottom: 8 }}>Part 5 of 21</div>
-        <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#e8f5e9", margin: "0 0 8px 0" }}>
+        <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", color: "#e8f5e9", margin: "0 0 8px 0" }}>
           Solving the Cartesian Problem: The Unity of Mind and Body
         </h1>
-        <p style={{ fontSize: 15, color: "#a5d6a7", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
+        <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#a5d6a7", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
           Mind and body are not two substances that mysteriously interact — they are two complete descriptions of one and the same mode of infinite substance.
         </p>
       </div>
@@ -3067,7 +3070,7 @@ function UnityOfMindAndBody() {
         }}>The Problem</div>
         <p style={{
           margin: 0,
-          fontSize: "15px",
+          fontSize: "clamp(13px, 1.8vw, 15px)",
           lineHeight: "1.8",
           color: "#c8e6c9",
           fontStyle: "italic"
@@ -3141,8 +3144,8 @@ function UnityOfMindAndBody() {
         </div>
 
         {/* SVG + Canvas */}
-        <div style={{ position: "relative", width: "100%", maxWidth: "480px", margin: "0 auto", height: "400px" }}>
-          <svg width="480" height="400" style={{ position: "absolute", top: 0, left: 0 }}>
+        <div style={{ position: "relative", width: "100%", maxWidth: "min(90vw, 480px)", margin: "0 auto", height: "400px" }}>
+          <svg viewBox="0 0 480 400" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style={{ position: "absolute", top: 0, left: 0 }}>
             <defs>
               <radialGradient id="bodyGrad" cx="50%" cy="40%" r="50%">
                 <stop offset="0%" stopColor="#1e88e5" stopOpacity="0.5" />
@@ -3257,9 +3260,7 @@ function UnityOfMindAndBody() {
 
           <canvas
             ref={canvasRef}
-            width={480}
-            height={400}
-            style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none" }}
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none" }}
           />
         </div>
 
@@ -3461,7 +3462,7 @@ function UnityOfMindAndBody() {
         }}>The Difficulty</div>
         <p style={{
           margin: "0 0 14px 0",
-          fontSize: "15px",
+          fontSize: "clamp(13px, 1.8vw, 15px)",
           lineHeight: "1.8",
           color: "#dcedc8"
         }}>
@@ -3475,7 +3476,7 @@ function UnityOfMindAndBody() {
         </p>
         <p style={{
           margin: 0,
-          fontSize: "14px",
+          fontSize: "clamp(13px, 1.6vw, 14px)",
           lineHeight: "1.7",
           color: "#c5e1a5",
           fontStyle: "italic"
@@ -3651,6 +3652,8 @@ function LadderOfKnowledge() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = 200;
+    canvas.height = 200;
     const ctx = canvas.getContext("2d");
     const W = canvas.width;
     const H = canvas.height;
@@ -3859,17 +3862,17 @@ function LadderOfKnowledge() {
       padding: "32px 24px",
       boxSizing: "border-box",
     }}>
-      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 800px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: "#B45309", textTransform: "uppercase", marginBottom: 8 }}>
             Part 6 of 21 — Spinoza's System
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: "normal", margin: "0 0 8px", color: "#fef3c7", lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", margin: "0 0 8px", color: "#fef3c7", lineHeight: 1.3 }}>
             The Ladder of Knowledge
           </h1>
-          <p style={{ fontSize: 15, color: "#d4a96a", margin: 0, fontStyle: "italic", lineHeight: 1.5 }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#d4a96a", margin: 0, fontStyle: "italic", lineHeight: 1.5 }}>
             From Imagination to Intuition — three ascending kinds of cognition, each a qualitative transformation of consciousness itself
           </p>
         </div>
@@ -3886,7 +3889,7 @@ function LadderOfKnowledge() {
           <div style={{ fontSize: 11, letterSpacing: 2, color: "#B45309", textTransform: "uppercase", marginBottom: 10 }}>
             The Problem
           </div>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.7, color: "#d4a96a", fontStyle: "italic" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.7, color: "#d4a96a", fontStyle: "italic" }}>
             If mind is the idea of the body and knowledge depends on embodied engagement, what distinguishes adequate from inadequate knowledge, and how can human beings progressively develop toward truth?
           </p>
         </div>
@@ -3942,9 +3945,9 @@ function LadderOfKnowledge() {
             <div style={{ position: "relative", flexShrink: 0 }}>
               <canvas
                 ref={canvasRef}
-                width={200}
-                height={200}
                 style={{
+                  width: "200px",
+                  height: "200px",
                   borderRadius: "50%",
                   border: `2px solid ${activeRungData.glowColor}55`,
                   boxShadow: `0 0 30px ${activeRungData.glowColor}33`,
@@ -3980,7 +3983,7 @@ function LadderOfKnowledge() {
               }}>
                 Mode of Cognition
               </div>
-              <p style={{ margin: "0 0 16px", fontSize: 14, lineHeight: 1.7, color: "#d4a96a" }}>
+              <p style={{ margin: "0 0 16px", fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.7, color: "#d4a96a" }}>
                 {activeRungData.cognitionDesc}
               </p>
               <div style={{
@@ -4118,10 +4121,10 @@ function LadderOfKnowledge() {
           <div style={{ fontSize: 11, letterSpacing: 2, color: "#92400e", textTransform: "uppercase", marginBottom: 10 }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 12px", fontSize: 15, lineHeight: 1.7, color: "#c4956a" }}>
+          <p style={{ margin: "0 0 12px", fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.7, color: "#c4956a" }}>
             If imagination generates fluctuating passive emotions while reason and intuition generate stable active ones, then cognitive development is inseparable from emotional transformation — but what exactly is the mechanism by which emotions are tied to knowledge levels, and how can we practically change our emotional lives?
           </p>
-          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "#8a6040", fontStyle: "italic" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.6, color: "#8a6040", fontStyle: "italic" }}>
             This pressure forces the next development — toward a systematic account of how understanding itself can transform the power of an emotion, dissolving bondage through insight rather than will.
           </p>
         </div>
@@ -4160,7 +4163,7 @@ function LadderOfKnowledge() {
 
           {echosOpen && (
             <div style={{ padding: "0 24px 20px", borderTop: "1px solid #3b1a0633" }}>
-              <p style={{ marginTop: 16, marginBottom: 14, fontSize: 14, lineHeight: 1.7, color: "#b08060" }}>
+              <p style={{ marginTop: 16, marginBottom: 14, fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.7, color: "#b08060" }}>
                 Spinoza's three levels of knowledge resonate across modern experience — wherever we notice the difference between raw impression, systematic understanding, and direct insight.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -4207,6 +4210,8 @@ function ConatusEssentialDrive() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = 500;
+    canvas.height = 320;
     const ctx = canvas.getContext("2d");
     const W = canvas.width;
     const H = canvas.height;
@@ -4471,17 +4476,17 @@ function ConatusEssentialDrive() {
         boxSizing: "border-box",
       }}
     >
-      <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ marginBottom: "32px", textAlign: "center" }}>
           <div style={{ fontSize: "12px", letterSpacing: "3px", color: "#C2410C", marginBottom: "8px", textTransform: "uppercase" }}>
             Part 7 of 21 — Spinoza's System
           </div>
-          <h1 style={{ fontSize: "30px", fontWeight: "bold", color: "#ffffff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 30px)", fontWeight: "bold", color: "#ffffff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             Conatus: The Essential Drive of All Things
           </h1>
-          <p style={{ fontSize: "15px", color: "#b8a99a", lineHeight: "1.7", maxWidth: "680px", margin: "0 auto" }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#b8a99a", lineHeight: "1.7", maxWidth: "min(100%, 680px)", margin: "0 auto" }}>
             Spinoza's concept of conatus — the universal striving of every thing to persevere and enhance its being — provides the metaphysical bridge between abstract substance theory and concrete human psychology.
           </p>
         </div>
@@ -4500,7 +4505,7 @@ function ConatusEssentialDrive() {
           <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#C2410C", marginBottom: "12px", textTransform: "uppercase", fontWeight: "bold" }}>
             The Problem
           </div>
-          <p style={{ margin: 0, fontSize: "15px", lineHeight: "1.8", color: "#d4c4b8" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: "1.8", color: "#d4c4b8" }}>
             The epistemological ladder revealed that our levels of knowledge correspond to different emotional states — but this leaves a pressing question unanswered. <span style={{ color: "#ffffff", fontStyle: "italic" }}>What is the underlying motivational force that ties cognition, emotion, and action together into a single dynamic?</span> Without such a unifying principle, the correspondence between knowing and feeling remains a mysterious coincidence rather than a necessary connection. Something must be driving the whole system.
           </p>
         </div>
@@ -4528,12 +4533,12 @@ function ConatusEssentialDrive() {
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "24px" }}>
             <canvas
               ref={canvasRef}
-              width={500}
-              height={320}
               style={{
                 borderRadius: "8px",
                 border: "1px solid #2a1a10",
                 maxWidth: "100%",
+                width: 500,
+                height: 320,
               }}
             />
           </div>
@@ -4585,10 +4590,10 @@ function ConatusEssentialDrive() {
               marginTop: "20px",
             }}
           >
-            <p style={{ margin: "0 0 12px 0", fontSize: "14px", lineHeight: "1.8", color: "#c8b8a8" }}>
+            <p style={{ margin: "0 0 12px 0", fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: "1.8", color: "#c8b8a8" }}>
               Conatus is not something things <em>have</em> in addition to their nature — it <em>is</em> their nature. To be a stone is to resist dissolution; to be a plant is to grow toward light; to be a human mind is to strive for understanding, connection, and meaning. The same principle governs all finite modes of substance, expressing itself at every level of complexity.
             </p>
-            <p style={{ margin: 0, fontSize: "14px", lineHeight: "1.8", color: "#c8b8a8" }}>
+            <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: "1.8", color: "#c8b8a8" }}>
               The crucial fork appears in how conatus expresses itself. When our ideas are adequate — when we genuinely understand the causes of our affects — conatus operates as an active power, generating what Spinoza calls <span style={{ color: "#F59E0B" }}>active affects</span>: joy, strength, and expanding capability that spiral upward into greater understanding. When ideas are inadequate, we are buffeted by external causes we don't comprehend, producing <span style={{ color: "#A78BFA" }}>passive affects</span> that contract our power and leave us at the mercy of fortune.
             </p>
           </div>
@@ -4645,10 +4650,10 @@ function ConatusEssentialDrive() {
           <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#9D4EDD", marginBottom: "12px", textTransform: "uppercase", fontWeight: "bold" }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 12px 0", fontSize: "15px", lineHeight: "1.8", color: "#c8b8b8" }}>
+          <p style={{ margin: "0 0 12px 0", fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: "1.8", color: "#c8b8b8" }}>
             Conatus resolves the motivational gap — but in doing so it sharpens an urgent practical question. If the same striving can spiral upward into active empowerment or downward into passive bondage depending on whether our ideas are adequate, then we need to understand precisely <em>how</em> this works. How do emotions arise mechanically from the interplay of mind and world? What is the systematic structure of the transition from passive to active emotional life?
           </p>
-          <p style={{ margin: 0, fontSize: "14px", lineHeight: "1.7", color: "#9a8898", fontStyle: "italic" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: "1.7", color: "#9a8898", fontStyle: "italic" }}>
             This pressure forces the next development: a rigorous account of the affects themselves — their origins, their dynamics, and the exact mechanism by which adequate ideas transform passive suffering into active power.
           </p>
         </div>
@@ -4902,17 +4907,17 @@ function EmotionalLifePassionToAction() {
       padding: "40px 24px",
       color: "#e8d5c4",
     }}>
-      <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}>
 
         {/* HEADER */}
         <div style={{ marginBottom: "12px", textAlign: "center" }}>
           <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#9D174D", textTransform: "uppercase", marginBottom: "8px" }}>
             Part 8 of 21
           </div>
-          <h1 style={{ fontSize: "28px", fontWeight: "normal", color: "#f0e0d0", margin: "0 0 8px 0", lineHeight: "1.3" }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", color: "#f0e0d0", margin: "0 0 8px 0", lineHeight: "1.3" }}>
             From Passion to Action: The Emotional Life
           </h1>
-          <p style={{ fontSize: "15px", color: "#c4a090", lineHeight: "1.7", margin: "0 auto", maxWidth: "620px" }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#c4a090", lineHeight: "1.7", margin: "0 auto", maxWidth: "min(100%, 620px)" }}>
             Spinoza treats emotions as natural phenomena — specific kinds of thoughts accompanied by bodily changes in power — that can be systematically understood and transformed rather than merely suppressed or indulged.
           </p>
         </div>
@@ -4935,7 +4940,7 @@ function EmotionalLifePassionToAction() {
           <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#9D174D", textTransform: "uppercase", marginBottom: "12px" }}>
             The Problem
           </div>
-          <p style={{ margin: 0, fontSize: "15px", lineHeight: "1.8", color: "#d4b0a0" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: "1.8", color: "#d4b0a0" }}>
             Conatus established the universal striving at the heart of human nature and showed it can take active or passive forms — but <em>what is the detailed mechanics of how emotions arise, function, and can be changed?</em> We know the engine, but not the gears. Without a systematic account of emotional causation, we are left with moral exhortations to "be less reactive" that have no purchase on the actual structure of feeling.
           </p>
         </div>
@@ -4992,7 +4997,7 @@ function EmotionalLifePassionToAction() {
           {/* SVG Network */}
           <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
             <div style={{ flex: "0 0 560px", maxWidth: "100%" }}>
-              <svg width="560" height="560" viewBox="0 0 560 560" style={{ display: "block", maxWidth: "100%" }}>
+              <svg viewBox="0 0 560 560" width="100%" style={{ display: "block", maxWidth: 560 }}>
                 {/* Background gradient */}
                 <defs>
                   <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
@@ -5425,17 +5430,17 @@ function FreedomWithinNecessity() {
       color: "#e8e8f0",
       padding: "40px 24px",
     }}>
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: "#6b80c4", textTransform: "uppercase", marginBottom: 8 }}>
             Part 9 of 21 · Spinoza's System
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: "bold", color: "#c8d8ff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "bold", color: "#c8d8ff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             Freedom Within Necessity
           </h1>
-          <p style={{ fontSize: 15, color: "#8896c8", maxWidth: 560, margin: "0 auto", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#8896c8", maxWidth: "min(100%, 560px)", margin: "0 auto", lineHeight: 1.7 }}>
             Spinoza reconceives freedom not as exemption from causal determination but as being determined by causes that express one's own essential nature rather than alien external forces.
           </p>
         </div>
@@ -5453,7 +5458,7 @@ function FreedomWithinNecessity() {
           <div style={{ fontSize: 10, letterSpacing: 3, color: "#1E40AF", textTransform: "uppercase", marginBottom: 12, fontWeight: "bold" }}>
             The Problem
           </div>
-          <p style={{ margin: 0, lineHeight: 1.85, fontSize: 15, color: "#c0cce8" }}>
+          <p style={{ margin: 0, lineHeight: 1.85, fontSize: "clamp(13px, 1.8vw, 15px)", color: "#c0cce8" }}>
             The analysis of passive and active emotions raised a pressing tension at the heart of Spinoza's system: the same framework that reveals how emotions enslave us also seems to leave no room for escape. If every mental state and every action follows necessarily from prior causes — if the person consumed by envy could not have been otherwise given their history and circumstances — then what could it mean to say that liberation is genuinely possible? Can human beings truly choose their path toward active affects, or is such language merely consoling fiction layered atop iron determinism?
           </p>
         </div>
@@ -5497,7 +5502,7 @@ function FreedomWithinNecessity() {
 
           {/* SVG Animation Canvas */}
           <div style={{ position: "relative", width: "100%", overflowX: "auto" }}>
-            <svg width="620" height="420" style={{ display: "block", margin: "0 auto", maxWidth: "100%" }} viewBox="0 0 620 420">
+            <svg viewBox="0 0 620 420" width="100%" style={{ display: "block", margin: "0 auto", maxWidth: 620 }}>
               {/* Background lane divider */}
               <line x1="310" y1="20" x2="310" y2="400" stroke="#1E40AF" strokeWidth="1" strokeDasharray="6 4" opacity="0.3" />
 
@@ -5768,10 +5773,10 @@ function FreedomWithinNecessity() {
           <div style={{ fontSize: 10, letterSpacing: 3, color: "#3b6fd4", textTransform: "uppercase", marginBottom: 12, fontWeight: "bold" }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: 15, color: "#b0bce0" }}>
+          <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: "clamp(13px, 1.8vw, 15px)", color: "#b0bce0" }}>
             Spinoza's solution is elegant — freedom is real, not illusory, because self-determination is genuinely different from alien compulsion, even within a deterministic framework. But this answer immediately raises a deeper question. If freedom consists in self-determination through adequate understanding, and if this capacity can be progressively cultivated, then what does a genuinely free and flourishing human life actually look like? The conceptual distinction between bondage and freedom needs to be filled in with concrete content: what virtues, what practices, what forms of understanding constitute genuine human flourishing rather than its semblance?
           </p>
-          <p style={{ margin: 0, fontSize: 14, color: "#8898c8", fontStyle: "italic", lineHeight: 1.7 }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", color: "#8898c8", fontStyle: "italic", lineHeight: 1.7 }}>
             This pressure forces the next development: an account of the virtues — courage, generosity, strength of character — that constitute the positive content of a life lived from one's own nature rather than from alien compulsion.
           </p>
         </div>
@@ -5914,6 +5919,8 @@ function ArtOfLivingEthicsFlourishing() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = W;
+    canvas.height = H;
     const ctx = canvas.getContext("2d");
     let t = 0;
 
@@ -6168,17 +6175,17 @@ function ArtOfLivingEthicsFlourishing() {
       padding: "32px 24px",
       boxSizing: "border-box",
     }}>
-      <div style={{ maxWidth: 760, margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 760px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ marginBottom: 8, textAlign: "center" }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#D97706", textTransform: "uppercase", marginBottom: 6 }}>
             Part 10 of 21 — Spinoza's System
           </div>
-          <h1 style={{ fontSize: 26, fontWeight: "bold", margin: "0 0 6px 0", color: "#FFF3E0" }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 26px)", fontWeight: "bold", margin: "0 0 6px 0", color: "#FFF3E0" }}>
             The Art of Living: Ethics and Human Flourishing
           </h1>
-          <p style={{ fontSize: 14, color: "#C4A97A", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
+          <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", color: "#C4A97A", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
             Spinoza's ethics asks not what external authorities command but what kinds of lives, virtues, and relationships actually promote genuine human flourishing as rational and social beings.
           </p>
         </div>
@@ -6196,7 +6203,7 @@ function ArtOfLivingEthicsFlourishing() {
           <div style={{ fontSize: 10, letterSpacing: 3, color: "#D97706", textTransform: "uppercase", marginBottom: 10, fontWeight: "bold" }}>
             The Problem
           </div>
-          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.8, color: "#E8D5B0" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: "#E8D5B0" }}>
             The analysis of freedom and self-determination showed that authentic living requires expressing one's essential nature — but a troubling gap remained. What <em>concretely</em> constitutes human flourishing? And more urgently: does living well for oneself necessarily conflict with living well with others? Every moral tradition before Spinoza had answered this by appeal to authority — divine command, social convention, legal sanction. But if authentic freedom means self-determination rather than external obedience, those answers collapse. The question becomes inescapable: can self-interest and genuine morality ever truly converge, or are we permanently torn between them?
           </p>
         </div>
@@ -6246,8 +6253,6 @@ function ArtOfLivingEthicsFlourishing() {
           <div style={{ position: "relative", width: "100%", maxWidth: W, margin: "0 auto" }}>
             <canvas
               ref={canvasRef}
-              width={W}
-              height={H}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
@@ -6351,7 +6356,7 @@ function ArtOfLivingEthicsFlourishing() {
           <div style={{ fontSize: 10, letterSpacing: 3, color: "#92400E", textTransform: "uppercase", marginBottom: 10, fontWeight: "bold" }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 12px 0", fontSize: 14, lineHeight: 1.8, color: "#E8D5B0" }}>
+          <p style={{ margin: "0 0 12px 0", fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: "#E8D5B0" }}>
             If individual flourishing and social flourishing are so deeply interdependent — if our power of acting genuinely rises and falls with the quality of our shared community — then a new and urgent question emerges that ethics alone cannot answer. The convergence of self-interest and morality depends on social conditions that may or may not actually obtain. What happens when political institutions are structured to pit people against each other, rewarding exploitation and punishing cooperation? Spinoza's ethics implies that the conditions for flourishing must be politically and institutionally created and defended.
           </p>
           <p style={{ margin: 0, fontSize: 13, color: "#C4A97A", fontStyle: "italic" }}>
@@ -6623,17 +6628,17 @@ function PoliticalVisionDemocracyLiberation() {
       color: '#e8e8e0',
       padding: '40px 24px',
     }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <div style={{ maxWidth: 'min(90vw, 900px)', margin: '0 auto' }}>
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <div style={{ fontSize: '12px', letterSpacing: '3px', color: accentLight, textTransform: 'uppercase', marginBottom: '8px' }}>
             Part 11 of 21
           </div>
-          <h1 style={{ fontSize: '28px', fontWeight: 'normal', color: '#f0ede6', margin: '0 0 12px 0', lineHeight: '1.3' }}>
+          <h1 style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', fontWeight: 'normal', color: '#f0ede6', margin: '0 0 12px 0', lineHeight: '1.3' }}>
             Democracy and Human Liberation
           </h1>
-          <p style={{ fontSize: '15px', color: '#9ecfcb', maxWidth: '620px', margin: '0 auto', lineHeight: '1.7' }}>
+          <p style={{ fontSize: 'clamp(13px, 1.8vw, 15px)', color: '#9ecfcb', maxWidth: 'min(100%, 620px)', margin: '0 auto', lineHeight: '1.7' }}>
             Spinoza grounds democratic governance and intellectual freedom in naturalistic analysis of what institutional arrangements actually enhance the collective capacity for rational and creative life.
           </p>
         </div>
@@ -6650,7 +6655,7 @@ function PoliticalVisionDemocracyLiberation() {
           <div style={{ fontSize: '11px', letterSpacing: '2.5px', color: accentLight, textTransform: 'uppercase', marginBottom: '14px', fontWeight: 'bold' }}>
             The Problem
           </div>
-          <p style={{ margin: 0, lineHeight: '1.85', fontSize: '15px', color: '#d4cfc5' }}>
+          <p style={{ margin: 0, lineHeight: '1.85', fontSize: 'clamp(13px, 1.8vw, 15px)', color: '#d4cfc5' }}>
             The convergence of individual and collective flourishing in ethics raised a sharp practical question — one that could not be answered by philosophy alone. If human beings genuinely thrive through rational engagement and creative cooperation, then the conditions for that flourishing cannot be treated as incidental. <em>Which political institutions actually produce those conditions?</em> What arrangement of power, deliberation, and authority would not merely permit rational life but actively cultivate it across an entire society? The philosophical argument demanded a political answer.
           </p>
         </div>
@@ -7161,7 +7166,7 @@ function CritiqueOfReligionScripture() {
       color: "#E8D5C4",
       padding: "40px 24px",
     }}>
-      <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 36 }}>
@@ -7171,7 +7176,7 @@ function CritiqueOfReligionScripture() {
           <h1 style={{ fontSize: "clamp(24px, 4vw, 38px)", fontWeight: "normal", margin: "0 0 8px", color: "#F5E6D3", letterSpacing: "0.5px" }}>
             Critique of Religion and Scripture
           </h1>
-          <p style={{ fontSize: "16px", color: "#C9A882", margin: 0, lineHeight: "1.6", fontStyle: "italic" }}>
+          <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#C9A882", margin: 0, lineHeight: "1.6", fontStyle: "italic" }}>
             Spinoza applies rigorous rational analysis to biblical texts and religious institutions, separating genuine moral and spiritual insight from accumulated superstition and political manipulation.
           </p>
         </div>
@@ -7188,7 +7193,7 @@ function CritiqueOfReligionScripture() {
           <div style={{ fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", color: "#7C2D12", marginBottom: "14px", fontWeight: "bold" }}>
             The Problem
           </div>
-          <p style={{ margin: 0, lineHeight: "1.8", fontSize: "15px", color: "#D4B896" }}>
+          <p style={{ margin: 0, lineHeight: "1.8", fontSize: "clamp(13px, 1.8vw, 15px)", color: "#D4B896" }}>
             The political vision required the subordination of traditional religious authority to rational criticism — but what justifies this subordination, and what happens to the genuine spiritual and moral insights religion carries? If you unmask the Bible as a human document, do you destroy everything of value within it, leaving only rubble where a cathedral stood?
           </p>
         </div>
@@ -7432,7 +7437,7 @@ function CritiqueOfReligionScripture() {
             borderRadius: "8px",
             border: "1px solid rgba(124, 45, 18, 0.2)",
           }}>
-            <p style={{ margin: 0, lineHeight: "1.9", fontSize: "14px", color: "#C4956A" }}>
+            <p style={{ margin: 0, lineHeight: "1.9", fontSize: "clamp(13px, 1.6vw, 14px)", color: "#C4956A" }}>
               Through linguistic, historical, and internal-consistency analysis, Spinoza demonstrates that the Hebrew scriptures are human documents compiled by later editors combining multiple sources according to theological and political agendas — not direct divine revelation. Prophetic experience is explained as a natural psychological phenomenon involving exceptional moral sensitivity and imaginative power rather than supernatural communication. The genuine value of religious tradition lies in its ethical core — teachings about justice and compassion — which can be appreciated and developed without belief in miracles or divine commands.
             </p>
           </div>
@@ -7596,6 +7601,8 @@ function MiraclesProphecyNaturalOrder() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = canvas.offsetWidth || 840;
+    canvas.height = canvas.offsetHeight || 180;
     const ctx = canvas.getContext('2d');
     const W = canvas.width;
     const H = canvas.height;
@@ -7706,19 +7713,17 @@ function MiraclesProphecyNaturalOrder() {
       fontFamily: 'Georgia, serif',
       color: '#e8e0f5',
       padding: '36px 24px',
-      maxWidth: '900px',
-      margin: '0 auto',
-    }}>
+    }}><div style={{ maxWidth: 'min(90vw, 900px)', margin: '0 auto' }}>
 
       {/* Header */}
       <div style={{ marginBottom: '12px', textAlign: 'center' }}>
         <div style={{ fontSize: '11px', letterSpacing: '0.2em', color: '#7c5cbf', textTransform: 'uppercase', marginBottom: '6px' }}>
           Part 13 of 21 — Spinoza's System
         </div>
-        <h1 style={{ fontSize: '28px', fontWeight: 'normal', color: '#f0e8ff', margin: '0 0 6px 0', letterSpacing: '0.02em' }}>
+        <h1 style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', fontWeight: 'normal', color: '#f0e8ff', margin: '0 0 6px 0', letterSpacing: '0.02em' }}>
           Miracles, Prophecy, and Natural Order
         </h1>
-        <p style={{ fontSize: '15px', color: '#a68fd4', fontStyle: 'italic', margin: 0, maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto', lineHeight: '1.6' }}>
+        <p style={{ fontSize: 'clamp(13px, 1.8vw, 15px)', color: '#a68fd4', fontStyle: 'italic', margin: 0, maxWidth: 'min(100%, 640px)', marginLeft: 'auto', marginRight: 'auto', lineHeight: '1.6' }}>
           Spinoza's consistent naturalism eliminates supernatural interventions as logically impossible given that natural law expresses the immutable divine nature itself.
         </p>
       </div>
@@ -7736,7 +7741,7 @@ function MiraclesProphecyNaturalOrder() {
         <div style={{ fontSize: '10px', letterSpacing: '0.18em', color: '#7c3aed', textTransform: 'uppercase', marginBottom: '10px', fontWeight: 'bold' }}>
           The Problem
         </div>
-        <p style={{ margin: 0, lineHeight: '1.75', fontSize: '15px', color: '#c9b8e8' }}>
+        <p style={{ margin: 0, lineHeight: '1.75', fontSize: 'clamp(13px, 1.8vw, 15px)', color: '#c9b8e8' }}>
           The critique of scripture had established that religious texts are human documents — shaped by historical circumstance, political pressure, and the imaginative faculty of their authors. But this left a gap at the center of the argument. If miracles and prophecy are the primary evidence for divine intervention in history, their status needed systematic grounding — not merely in textual criticism, but in the metaphysics of natural law itself. What exactly makes a miracle impossible, and why does prophetic vision, however vivid, not constitute privileged access to divine intention? These questions demanded an answer that reached deeper than philology.
         </p>
       </div>
@@ -7755,8 +7760,6 @@ function MiraclesProphecyNaturalOrder() {
         <div style={{ position: 'relative', marginBottom: '20px', borderRadius: '10px', overflow: 'hidden' }}>
           <canvas
             ref={canvasRef}
-            width={840}
-            height={180}
             style={{ display: 'block', width: '100%', height: '180px', borderRadius: '10px' }}
           />
           {eclipsePhase > 0.6 && (
@@ -8156,7 +8159,7 @@ function MiraclesProphecyNaturalOrder() {
       <div style={{ textAlign: 'center', marginTop: '28px', fontSize: '11px', color: '#4a306a', letterSpacing: '0.1em' }}>
         Spinoza's System — Part 13 of 21
       </div>
-    </div>
+    </div></div>
   );
 }
 
@@ -8267,6 +8270,8 @@ function SocialContractNaturalRight() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = canvas.offsetWidth || 860;
+    canvas.height = canvas.offsetHeight || 160;
     const ctx = canvas.getContext("2d");
     const W = canvas.width;
     const H = canvas.height;
@@ -8368,13 +8373,13 @@ function SocialContractNaturalRight() {
       color: "#e8e8e0",
       padding: "40px 24px"
     }}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 900px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ marginBottom: 12, textAlign: "center" }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: ACCENT_LIGHT, textTransform: "uppercase", marginBottom: 8 }}>Part 14 of 21 — Spinoza's System</div>
-          <h1 style={{ fontSize: 28, fontWeight: "bold", color: "#f0ede4", margin: "0 0 10px 0", lineHeight: 1.3 }}>Natural Right and Social Contract</h1>
-          <p style={{ fontSize: 15, color: "#aaa89a", maxWidth: 680, margin: "0 auto", lineHeight: 1.7 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "bold", color: "#f0ede4", margin: "0 0 10px 0", lineHeight: 1.3 }}>Natural Right and Social Contract</h1>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#aaa89a", maxWidth: "min(100%, 680px)", margin: "0 auto", lineHeight: 1.7 }}>
             Spinoza grounds political authority not in abstract consent or divine right but in the demonstrated enhancement of citizens' collective power to achieve their essential goals.
           </p>
         </div>
@@ -8389,7 +8394,7 @@ function SocialContractNaturalRight() {
           marginBottom: 28
         }}>
           <div style={{ fontSize: 10, letterSpacing: 3, color: ACCENT_LIGHT, textTransform: "uppercase", marginBottom: 12, fontWeight: "bold" }}>The Problem</div>
-          <p style={{ margin: 0, fontSize: 15, lineHeight: 1.8, color: "#d4d0c4" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.8, color: "#d4d0c4" }}>
             Eliminating supernatural political sanction demanded a purely naturalistic account of how and why political authority is legitimate. Once God no longer underwrites kingship and divine right no longer explains obedience, a vacuum appears at the heart of political philosophy: <em style={{ color: "#f0ede4" }}>on what basis can one person or institution claim authority over others?</em> This is not merely an academic puzzle — without an answer, every government is simply organized force, and every rebel has as much right as any king.
           </p>
         </div>
@@ -8412,8 +8417,6 @@ function SocialContractNaturalRight() {
           <div style={{ position: "relative", marginBottom: 20 }}>
             <canvas
               ref={canvasRef}
-              width={860}
-              height={160}
               style={{
                 width: "100%",
                 height: 160,
@@ -8766,21 +8769,21 @@ function EducationTransformationSociety() {
     }}>
 
       {/* HEADER */}
-      <div style={{ maxWidth: 860, margin: "0 auto 28px auto", textAlign: "center" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto 28px auto", textAlign: "center" }}>
         <div style={{ fontSize: 11, letterSpacing: 3, color: "#1D4ED8", textTransform: "uppercase", marginBottom: 8 }}>
           Part 15 of 21 — Spinoza's Philosophical System
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: "normal", margin: "0 0 8px 0", color: "#f0f0ff", lineHeight: 1.3 }}>
+        <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#f0f0ff", lineHeight: 1.3 }}>
           Education and the Transformation of Society
         </h1>
-        <p style={{ fontSize: 15, color: "#9090b8", margin: 0, lineHeight: 1.6 }}>
+        <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#9090b8", margin: 0, lineHeight: 1.6 }}>
           Genuine education is a fundamental transformation of consciousness — not information transfer — that cannot succeed without concurrent social reform.
         </p>
       </div>
 
       {/* PROBLEM PANEL */}
       <div style={{
-        maxWidth: 860, margin: "0 auto 28px auto",
+        maxWidth: "min(90vw, 860px)", margin: "0 auto 28px auto",
         background: "#0a0a1a",
         border: "1px solid #1a1a30",
         borderLeft: "4px solid #1D4ED8",
@@ -8790,13 +8793,13 @@ function EducationTransformationSociety() {
         <div style={{ fontSize: 10, letterSpacing: 3, color: "#1D4ED8", textTransform: "uppercase", marginBottom: 10 }}>
           The Problem
         </div>
-        <p style={{ margin: 0, fontSize: 15, lineHeight: 1.7, color: "#c8c8e8" }}>
+        <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.7, color: "#c8c8e8" }}>
           The analysis of democratic participation established that citizens need rational and moral capacities for effective governance — but how are these capacities developed, and what institutional forms support their cultivation? The democratic ideal presses urgently against this gap: we can articulate what citizens must become, but the mechanism of that becoming remains unspecified.
         </p>
       </div>
 
       {/* MAIN VISUALIZATION */}
-      <div style={{ maxWidth: 860, margin: "0 auto 28px auto" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto 28px auto" }}>
 
         {/* CLASSROOM COMPARISON */}
         <div style={{
@@ -9064,7 +9067,7 @@ function EducationTransformationSociety() {
       </div>
 
       {/* Key Concepts */}
-      <div style={{ maxWidth: 860, margin: "0 auto 28px auto" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto 28px auto" }}>
         <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(29,78,216,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
           <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1D4ED8", marginBottom: 14 }}>
             Key Concepts — Click to Explore
@@ -9104,7 +9107,7 @@ function EducationTransformationSociety() {
 
       {/* DIFFICULTY PANEL */}
       <div style={{
-        maxWidth: 860, margin: "0 auto 28px auto",
+        maxWidth: "min(90vw, 860px)", margin: "0 auto 28px auto",
         background: "#0a0a1a",
         border: "1px solid #1a1a30",
         borderLeft: "4px solid #2a3a7a",
@@ -9114,16 +9117,16 @@ function EducationTransformationSociety() {
         <div style={{ fontSize: 10, letterSpacing: 3, color: "#4a6aaa", textTransform: "uppercase", marginBottom: 10 }}>
           The Difficulty
         </div>
-        <p style={{ margin: "0 0 12px 0", fontSize: 15, lineHeight: 1.7, color: "#b0b0cc" }}>
+        <p style={{ margin: "0 0 12px 0", fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.7, color: "#b0b0cc" }}>
           Even with adequate education and social conditions — even with citizens capable of rational deliberation and institutions that nurture rather than suppress growth — human beings still face suffering, conflict, and harm from other finite beings. Education can transform consciousness, but it cannot abolish finitude or eliminate the ways in which limited beings collide with one another in a causally determined world.
         </p>
-        <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: "#7070a0", fontStyle: "italic" }}>
+        <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.7, color: "#7070a0", fontStyle: "italic" }}>
           This pressure forces the next development: Spinoza must account for the existence and meaning of evil and suffering within his rigorously naturalistic framework, confronting whether a world fully explained by necessary causes leaves room for genuine harm or whether "evil" is itself a perspectival category awaiting rational dissolution.
         </p>
       </div>
 
       {/* REAL-WORLD ECHOES */}
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}>
         <div
           onClick={() => setEchosOpen(!echosOpen)}
           style={{
@@ -9520,13 +9523,13 @@ function ProblemOfEvilSuffering() {
       padding: "40px 24px",
       color: "#d4b896",
     }}>
-      <div style={{ maxWidth: 860, margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ marginBottom: 12, textAlign: "center" }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#78350F", textTransform: "uppercase", marginBottom: 6 }}>Part 16 of 21</div>
-          <h1 style={{ fontSize: 26, fontWeight: "normal", color: "#e8c896", margin: "0 0 8px", letterSpacing: 0.5 }}>Evil, Suffering, and the Limits of Finite Existence</h1>
-          <p style={{ fontSize: 14, color: "#a08060", lineHeight: 1.6, margin: 0 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 26px)", fontWeight: "normal", color: "#e8c896", margin: "0 0 8px", letterSpacing: 0.5 }}>Evil, Suffering, and the Limits of Finite Existence</h1>
+          <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", color: "#a08060", lineHeight: 1.6, margin: 0 }}>
             Spinoza reframes evil not as an absolute metaphysical category but as the natural collision of finite beings with conflicting interests, reducible through greater wisdom and better social organization.
           </p>
         </div>
@@ -9541,7 +9544,7 @@ function ProblemOfEvilSuffering() {
           marginBottom: 24,
         }}>
           <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#78350F", marginBottom: 10 }}>The Problem</div>
-          <p style={{ margin: 0, lineHeight: 1.75, fontSize: 14, color: "#c4a07a" }}>
+          <p style={{ margin: 0, lineHeight: 1.75, fontSize: "clamp(13px, 1.6vw, 14px)", color: "#c4a07a" }}>
             The analysis of education and social conditions raised the question of whether, even with ideal institutions and education, the reality of suffering and harm can be adequately addressed within a naturalistic framework. Can a philosophy that denies a transcendent moral order — that sees no cosmic arbiter distinguishing good from evil — still take suffering seriously, and offer something more than resignation in the face of it? The urgency is real: if nature is indifferent and evil is everywhere, does philosophy merely teach us to endure?
           </p>
         </div>
@@ -9919,7 +9922,7 @@ function EternityMindsImmortality() {
 
       {/* Header + Problem */}
       <div style={{
-        maxWidth: '860px',
+        maxWidth: 'min(90vw, 860px)',
         margin: '0 auto',
         padding: '40px 32px 0 32px',
       }}>
@@ -9928,10 +9931,10 @@ function EternityMindsImmortality() {
           <div style={{ fontSize: '11px', letterSpacing: '4px', color: '#7c3aed', textTransform: 'uppercase', marginBottom: '10px' }}>
             Part 17 of 21
           </div>
-          <h1 style={{ margin: '0 0 10px 0', fontSize: '28px', fontWeight: 'normal', color: '#f5f0ff', letterSpacing: '0.5px' }}>
+          <h1 style={{ margin: '0 0 10px 0', fontSize: 'clamp(22px, 3.5vw, 28px)', fontWeight: 'normal', color: '#f5f0ff', letterSpacing: '0.5px' }}>
             Eternity and the Mind's Immortality
           </h1>
-          <p style={{ margin: '0 auto', fontSize: '15px', color: '#9d85c4', lineHeight: '1.6', maxWidth: '600px' }}>
+          <p style={{ margin: '0 auto', fontSize: 'clamp(13px, 1.8vw, 15px)', color: '#9d85c4', lineHeight: '1.6', maxWidth: 'min(100%, 600px)' }}>
             Spinoza offers a naturalistic account of mental eternity — not personal survival after death but the mind's progressive participation in eternal truths.
           </p>
         </div>
@@ -9957,7 +9960,7 @@ function EternityMindsImmortality() {
           <p style={{
             margin: 0,
             lineHeight: '1.75',
-            fontSize: '15px',
+            fontSize: 'clamp(13px, 1.8vw, 15px)',
             color: '#c4b5fd',
             fontStyle: 'italic',
           }}>
@@ -10406,7 +10409,7 @@ function EternityMindsImmortality() {
       </div>
 
       {/* Key Concepts */}
-      <div style={{ maxWidth: '860px', margin: '0 auto 24px auto', padding: '0 32px' }}>
+      <div style={{ maxWidth: 'min(90vw, 860px)', margin: '0 auto 24px auto', padding: '0 32px' }}>
         <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(91,33,182,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)" }}>
           <div style={{ fontSize: 11, letterSpacing: 2, textTransform: 'uppercase', color: '#5B21B6', marginBottom: 14 }}>
             Key Concepts — Click to Explore
@@ -10445,7 +10448,7 @@ function EternityMindsImmortality() {
       </div>
 
       {/* Difficulty Panel */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 32px' }}>
+      <div style={{ maxWidth: 'min(90vw, 860px)', margin: '0 auto', padding: '0 32px' }}>
         <div style={{
           background: 'rgba(15,10,30,0.85)',
           border: '1px solid #1e1255',
@@ -10462,17 +10465,17 @@ function EternityMindsImmortality() {
             marginBottom: '14px',
             fontWeight: 'bold',
           }}>The Difficulty</div>
-          <p style={{ margin: '0 0 14px 0', lineHeight: '1.75', fontSize: '15px', color: '#b8a8d8' }}>
+          <p style={{ margin: '0 0 14px 0', lineHeight: '1.75', fontSize: 'clamp(13px, 1.8vw, 15px)', color: '#b8a8d8' }}>
             If eternity is achieved through the development of adequate knowledge expressed in a geometric philosophical system, then what exactly justifies and explains the choice of geometric demonstration as the method of philosophy — and what does this method accomplish that other forms of philosophical presentation cannot?
           </p>
-          <p style={{ margin: 0, lineHeight: '1.75', fontSize: '14px', color: '#7c6a9e', fontStyle: 'italic' }}>
+          <p style={{ margin: 0, lineHeight: '1.75', fontSize: 'clamp(13px, 1.6vw, 14px)', color: '#7c6a9e', fontStyle: 'italic' }}>
             The achievement of mental eternity through adequate ideas raises an urgent methodological question: the geometric form of the Ethics is not merely decorative but essential — yet Spinoza has not yet fully explained why axiomatic demonstration uniquely captures eternal truth rather than obscuring it. This pressure forces the next development, where the method itself becomes the final subject of philosophical inquiry.
           </p>
         </div>
       </div>
 
       {/* Real-World Echoes */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '0 32px 40px 32px' }}>
+      <div style={{ maxWidth: 'min(90vw, 860px)', margin: '0 auto', padding: '0 32px 40px 32px' }}>
         <div style={{
           background: 'rgba(15,10,30,0.85)',
           border: '1px solid #1e1255',
@@ -10665,19 +10668,17 @@ function GeometricMethodDemonstration() {
       fontFamily: 'Georgia, serif',
       color: '#e8e4dc',
       padding: '40px 32px',
-      maxWidth: '900px',
-      margin: '0 auto',
-    }}>
+    }}><div style={{ maxWidth: 'min(90vw, 900px)', margin: '0 auto' }}>
 
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: 36 }}>
         <div style={{ fontSize: 11, letterSpacing: 3, color: '#6b7280', textTransform: 'uppercase', marginBottom: 8 }}>
           Part 18 of 21 — Spinoza's System
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: 'normal', color: '#f0ece4', margin: '0 0 8px 0' }}>
+        <h1 style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', fontWeight: 'normal', color: '#f0ece4', margin: '0 0 8px 0' }}>
           The Geometric Method and Philosophical Demonstration
         </h1>
-        <p style={{ fontSize: 15, color: '#9ca3af', margin: 0, lineHeight: 1.6 }}>
+        <p style={{ fontSize: 'clamp(13px, 1.8vw, 15px)', color: '#9ca3af', margin: 0, lineHeight: 1.6 }}>
           Spinoza writes philosophy as Euclid wrote geometry — in definitions, axioms, propositions, and demonstrations — making the form of argument itself carry philosophical weight.
         </p>
       </div>
@@ -10700,7 +10701,7 @@ function GeometricMethodDemonstration() {
           fontFamily: 'Georgia, serif',
         }}>The Problem</div>
         <p style={{
-          fontSize: '16px',
+          fontSize: 'clamp(14px, 1.8vw, 16px)',
           lineHeight: '1.75',
           color: '#d1cfc9',
           margin: 0,
@@ -10797,7 +10798,7 @@ function GeometricMethodDemonstration() {
 
             {/* SVG Diagram */}
             <div style={{ overflowX: 'auto' }}>
-              <svg width="660" height="580" style={{ display: 'block', margin: '0 auto' }}>
+              <svg viewBox="0 0 660 580" width="100%" style={{ display: 'block', margin: '0 auto', maxWidth: 660 }}>
                 {/* Edges */}
                 {allEdges.map((edge, i) => {
                   const fromNode = nodes[edge.from];
@@ -11156,7 +11157,7 @@ function GeometricMethodDemonstration() {
           </div>
         )}
       </div>
-    </div>
+    </div></div>
   );
 }
 
@@ -11470,6 +11471,8 @@ function SpinozaInfluenceLaterPhilosophy() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     const ctx = canvas.getContext("2d");
     let particles = [];
     const W = canvas.width;
@@ -11529,8 +11532,6 @@ function SpinozaInfluenceLaterPhilosophy() {
     >
       <canvas
         ref={canvasRef}
-        width={900}
-        height={600}
         style={{
           position: "fixed",
           top: 0,
@@ -11543,17 +11544,17 @@ function SpinozaInfluenceLaterPhilosophy() {
         }}
       />
 
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "920px", margin: "0 auto", padding: "40px 24px 60px" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: "min(90vw, 920px)", margin: "0 auto", padding: "40px 24px 60px" }}>
 
         {/* HEADER */}
         <div style={{ textAlign: "center", marginBottom: "36px" }}>
           <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#0E7490", textTransform: "uppercase", marginBottom: "8px" }}>
             Part 19 of 21 — Spinoza's Philosophical Legacy
           </div>
-          <h1 style={{ fontSize: "28px", fontWeight: "normal", margin: "0 0 10px", color: "#f0e8d8", lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", margin: "0 0 10px", color: "#f0e8d8", lineHeight: 1.3 }}>
             Spinoza's Influence on Later Philosophy
           </h1>
-          <p style={{ fontSize: "15px", color: "#a09880", maxWidth: "660px", margin: "0 auto", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#a09880", maxWidth: "min(100%, 660px)", margin: "0 auto", lineHeight: 1.7 }}>
             Suppressed as heretical, then rediscovered across three centuries — each generation finding new resources in a system that refused to stay buried.
           </p>
         </div>
@@ -11572,7 +11573,7 @@ function SpinozaInfluenceLaterPhilosophy() {
           <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#0E7490", marginBottom: "12px" }}>
             The Problem
           </div>
-          <p style={{ margin: 0, fontSize: "15px", lineHeight: 1.8, color: "#d4c8b8" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.8, color: "#d4c8b8" }}>
             Having established the geometric method and the systematic unity of Spinoza's system, the question becomes pressing: has this systematic vision actually influenced subsequent intellectual history, and if so, how? The Ethics was condemned as atheistic, Spinoza himself placed under herem — complete social excommunication — at twenty-three. A system so thoroughly rejected by its own moment seems an unlikely candidate for lasting philosophical legacy. And yet the history of European thought from Leibniz forward cannot be written without reckoning with his ghost.
           </p>
         </div>
@@ -11633,9 +11634,8 @@ function SpinozaInfluenceLaterPhilosophy() {
           {/* SVG Map */}
           <div style={{ overflowX: "auto", display: "flex", justifyContent: "center" }}>
             <svg
-              width={svgWidth}
-              height={svgHeight}
-              style={{ maxWidth: "100%", cursor: "default" }}
+              width="100%"
+              style={{ maxWidth: svgWidth, cursor: "default" }}
               viewBox={`0 0 ${svgWidth} ${svgHeight}`}
             >
               {/* Radial rings */}
@@ -12130,6 +12130,8 @@ function ContemporaryRelevanceModernApplications() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = canvas.offsetWidth || 900;
+    canvas.height = canvas.offsetHeight || 600;
     const ctx = canvas.getContext("2d");
     let particles = [];
     const W = canvas.width;
@@ -12181,17 +12183,17 @@ function ContemporaryRelevanceModernApplications() {
         boxSizing: "border-box",
       }}
     >
-      <div style={{ maxWidth: "960px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 960px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <div style={{ fontSize: "12px", letterSpacing: "3px", color: accentLight, marginBottom: "8px", textTransform: "uppercase" }}>
             Part 20 of 21
           </div>
-          <h1 style={{ fontSize: "28px", fontWeight: "normal", color: "#f0fdf4", marginBottom: "12px", lineHeight: "1.3" }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", color: "#f0fdf4", marginBottom: "12px", lineHeight: "1.3" }}>
             Contemporary Relevance: Spinoza for the Modern World
           </h1>
-          <p style={{ fontSize: "15px", color: "#a7f3d0", maxWidth: "700px", margin: "0 auto", lineHeight: "1.7", fontStyle: "italic" }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#a7f3d0", maxWidth: "min(100%, 700px)", margin: "0 auto", lineHeight: "1.7", fontStyle: "italic" }}>
             Spinoza's naturalistic framework continues to offer resources for contemporary challenges in neuroscience, environmental ethics, democratic theory, and the search for authentic human flourishing beyond consumer individualism.
           </p>
         </div>
@@ -12210,7 +12212,7 @@ function ContemporaryRelevanceModernApplications() {
           <div style={{ fontSize: "11px", letterSpacing: "2px", color: accent, marginBottom: "12px", textTransform: "uppercase", fontWeight: "bold" }}>
             The Problem
           </div>
-          <p style={{ fontSize: "15px", lineHeight: "1.8", color: "#cbd5e1", margin: 0 }}>
+          <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: "1.8", color: "#cbd5e1", margin: 0 }}>
             The survey of Spinoza's historical influence established the depth and breadth of his impact — but the question remains whether his 17th century system offers genuinely live resources for specifically contemporary intellectual and practical challenges. Can a philosopher who wrote in Latin, cited Euclid, and lived before Newton's Principia truly speak to neural networks, climate collapse, and algorithmic polarization? The urgency is not merely academic: if systematic philosophy cannot engage real problems, it becomes museum philosophy — admirable but inert.
           </p>
         </div>
@@ -12220,8 +12222,6 @@ function ContemporaryRelevanceModernApplications() {
           {/* Canvas background */}
           <canvas
             ref={canvasRef}
-            width={900}
-            height={600}
             style={{
               position: "absolute",
               top: 0,
@@ -12648,6 +12648,8 @@ function UnityOfSpinozasSystemFinalIntegration() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
     const ctx = canvas.getContext("2d");
 
     const draw = () => {
@@ -12883,6 +12885,7 @@ function UnityOfSpinozasSystemFinalIntegration() {
 
   const selectedSector = sectors.find((s) => s.id === selectedConcept);
   const [echoesBtnHover, setEchoesBtnHover] = useState(false);
+  const [hoveredEcho, setHoveredEcho] = useState(null);
 
   return (
     <div style={{
@@ -12892,17 +12895,17 @@ function UnityOfSpinozasSystemFinalIntegration() {
       padding: "40px 24px",
       color: "#e9d5ff"
     }}>
-      <div style={{ maxWidth: 760, margin: "0 auto" }}>
+      <div style={{ maxWidth: "min(90vw, 760px)", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#a78bfa", textTransform: "uppercase", marginBottom: 8 }}>
             Part 21 of 21 — Final Integration
           </div>
-          <h1 style={{ fontSize: 26, fontWeight: "bold", color: "#f3e8ff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(22px, 3.5vw, 26px)", fontWeight: "bold", color: "#f3e8ff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             The Unity of Spinoza's System
           </h1>
-          <p style={{ fontSize: 14, color: "#c4b5fd", lineHeight: 1.7, maxWidth: 580, margin: "0 auto" }}>
+          <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", color: "#c4b5fd", lineHeight: 1.7, maxWidth: "min(100%, 580px)", margin: "0 auto" }}>
             The true genius of Spinoza's achievement is the systematic unity that integrates metaphysics, epistemology, psychology, ethics, and politics into a single coherent vision where every element illuminates every other.
           </p>
         </div>
@@ -12919,7 +12922,7 @@ function UnityOfSpinozasSystemFinalIntegration() {
           <div style={{ fontSize: 10, letterSpacing: 3, color: "#a78bfa", textTransform: "uppercase", marginBottom: 10 }}>
             The Problem
           </div>
-          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.8, color: "#ddd6fe" }}>
+          <p style={{ margin: 0, fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: "#ddd6fe" }}>
             The survey of contemporary relevance raised the question of whether Spinoza's system truly coheres as a unified whole — and what is the ultimate significance of his philosophical achievement across four centuries. Does the edifice hold together, or does systematic ambition mask irresolvable fractures between its parts?
           </p>
         </div>
@@ -12944,15 +12947,15 @@ function UnityOfSpinozasSystemFinalIntegration() {
           <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
             <canvas
               ref={canvasRef}
-              width={canvasWidth}
-              height={canvasHeight}
               onClick={handleCanvasClick}
               onMouseMove={handleCanvasMouseMove}
               onMouseLeave={() => setHoveredConcept(null)}
               style={{
                 cursor: hoveredConcept ? "pointer" : "default",
                 maxWidth: "100%",
-                borderRadius: 8
+                borderRadius: 8,
+                width: canvasWidth,
+                height: canvasHeight,
               }}
             />
 
@@ -13184,12 +13187,12 @@ function UnityOfSpinozasSystemFinalIntegration() {
                     text: "Against the reduction of philosophy to technical puzzle-solving or cultural commentary, Spinoza's system embodies the ancient understanding of philosophy as a way of life — not merely a set of propositions to be believed, but a transformative engagement with the deepest questions of human existence that genuinely changes how one lives and acts in the world."
                   }
                 ].map((echo) => {
-                  const [eh, setEh] = useState(false);
+                  const eh = hoveredEcho === echo.title;
                   return (
                     <div
                       key={echo.title}
-                      onMouseEnter={() => setEh(true)}
-                      onMouseLeave={() => setEh(false)}
+                      onMouseEnter={() => setHoveredEcho(echo.title)}
+                      onMouseLeave={() => setHoveredEcho(null)}
                       style={{
                         background: eh ? "rgba(109,40,217,0.12)" : "rgba(109,40,217,0.06)",
                         border: "1px solid rgba(109,40,217,0.2)",
