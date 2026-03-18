@@ -549,49 +549,6 @@ function UnhappyConsciousness() {
           </div>
         </div>
 
-        {/* Key Concepts */}
-        <div style={{
-          background: "rgba(0,0,0,0.25)",
-          border: "1px solid #7C3AED33",
-          borderRadius: 8,
-          padding: "clamp(16px, 3vw, 24px)",
-          marginBottom: 16,
-        }}>
-          <div style={{ fontSize: "clamp(9px, 1.3vw, 11px)", letterSpacing: 2, textTransform: "uppercase", color: "#7C3AED", marginBottom: 14 }}>
-            Key Concepts — Click to Explore
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
-            {concepts.map(c => (
-              <div
-                key={c.id}
-                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                style={{
-                  padding: "6px 14px",
-                  background: hoveredConcept === c.id ? "#7C3AED" : "rgba(0,0,0,0.3)",
-                  border: `1px solid ${hoveredConcept === c.id ? "#7C3AED" : "#7C3AED55"}`,
-                  borderRadius: 20,
-                  fontSize: "clamp(10px, 1.5vw, 12px)",
-                  cursor: "pointer",
-                  color: hoveredConcept === c.id ? "#f0ead8" : "#c8c0b4",
-                  transition: "all 0.2s",
-                }}
-              >
-                {c.label}
-              </div>
-            ))}
-          </div>
-          {hoveredConcept && (
-            <div style={{ background: "rgba(0,0,0,0.3)", border: "1px solid #7C3AED44", borderRadius: 6, padding: "16px 20px", marginTop: 4 }}>
-              <div style={{ fontSize: "clamp(11px, 1.5vw, 13px)", fontWeight: "bold", color: "#7C3AED", marginBottom: 8 }}>
-                {concepts.find(c => c.id === hoveredConcept)?.label}
-              </div>
-              <p style={{ margin: 0, fontSize: "clamp(11px, 1.5vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
-                {concepts.find(c => c.id === hoveredConcept)?.desc}
-              </p>
-            </div>
-          )}
-        </div>
-
         {/* Core Argument */}
         <div style={{
           background: "#080614",
@@ -634,6 +591,49 @@ function UnhappyConsciousness() {
           }}>
             The deeper error, Hegel insists, is treating the infinite as entirely external to finite existence. The decisive insight is this: finite consciousness's very capacity to <em>aspire</em> toward the infinite — to feel the lack, to long across the gap — already demonstrates that infinity is not elsewhere. It is the power within finitude that drives the striving itself. Resolution comes not by escaping the finite but by recognizing that the infinite is realized precisely through finite institutions, relationships, and historical forms.
           </p>
+        </div>
+
+        {/* Key Concepts */}
+        <div style={{
+          background: "rgba(0,0,0,0.25)",
+          border: "1px solid #7C3AED33",
+          borderRadius: 8,
+          padding: "clamp(16px, 3vw, 24px)",
+          marginBottom: 16,
+        }}>
+          <div style={{ fontSize: "clamp(9px, 1.3vw, 11px)", letterSpacing: 2, textTransform: "uppercase", color: "#7C3AED", marginBottom: 14 }}>
+            Key Concepts — Click to Explore
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+            {concepts.map(c => (
+              <div
+                key={c.id}
+                onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+                style={{
+                  padding: "6px 14px",
+                  background: hoveredConcept === c.id ? "#7C3AED" : "rgba(0,0,0,0.3)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#7C3AED" : "#7C3AED55"}`,
+                  borderRadius: 20,
+                  fontSize: "clamp(10px, 1.5vw, 12px)",
+                  cursor: "pointer",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#c8c0b4",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c.label}
+              </div>
+            ))}
+          </div>
+          {hoveredConcept && (
+            <div style={{ background: "rgba(0,0,0,0.3)", border: "1px solid #7C3AED44", borderRadius: 6, padding: "16px 20px", marginTop: 4 }}>
+              <div style={{ fontSize: "clamp(11px, 1.5vw, 13px)", fontWeight: "bold", color: "#7C3AED", marginBottom: 8 }}>
+                {concepts.find(c => c.id === hoveredConcept)?.label}
+              </div>
+              <p style={{ margin: 0, fontSize: "clamp(11px, 1.5vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
+                {concepts.find(c => c.id === hoveredConcept)?.desc}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Difficulty Panel */}
