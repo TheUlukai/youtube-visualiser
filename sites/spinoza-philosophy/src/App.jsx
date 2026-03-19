@@ -1652,25 +1652,31 @@ function MakingOfRevolutionaryMind() {
 
       {/* Real-World Echoes */}
       <div style={{
-        padding: "0",
-        borderTop: "1px solid #2D4A6E22"
+        margin: "16px 40px 32px 40px",
+        background: "#2D4A6E08",
+        border: "1px solid #2D4A6E33",
+        borderRadius: 8,
+        overflow: "hidden",
       }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "20px 40px",
-            cursor: "pointer",
-            background: echosOpen ? "rgba(45,74,110,0.12)" : "transparent"
-          }}
+        <button
           onClick={() => setEchosOpen(!echosOpen)}
+          style={{
+            width: "100%",
+            background: "transparent",
+            border: "none",
+            padding: "18px 24px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            cursor: "pointer",
+            fontFamily: "Georgia, serif",
+          }}
         >
-          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#2D4A6E" }}>
+          <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#8ab0c8" }}>
             Real-World Echoes
-          </div>
-          {echosOpen ? <ChevronUp size={16} color="#2D4A6E" /> : <ChevronDown size={16} color="#2D4A6E" />}
-        </div>
+          </span>
+          {echosOpen ? <ChevronUp size={16} color="#8ab0c8" /> : <ChevronDown size={16} color="#8ab0c8" />}
+        </button>
 
         {echosOpen && (
           <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #2D4A6E33" }}>
