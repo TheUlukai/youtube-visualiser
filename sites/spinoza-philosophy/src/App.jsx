@@ -5217,7 +5217,7 @@ function EmotionalLifePassionToAction() {
         <div style={{
           background: "#0c0810",
           border: "1px solid #201428",
-          borderLeft: "4px solid #7B2D8B",
+          borderLeft: "4px solid #9D174D",
           borderRadius: "8px",
           padding: "24px 28px",
           marginBottom: "24px",
@@ -5226,9 +5226,9 @@ function EmotionalLifePassionToAction() {
         }}>
           <div style={{
             position: "absolute", top: 0, left: 0, right: 0, height: "1px",
-            background: "linear-gradient(90deg, #7B2D8B, transparent)"
+            background: "linear-gradient(90deg, #9D174D, transparent)"
           }} />
-          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#7B2D8B", textTransform: "uppercase", marginBottom: "12px" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#9D174D", textTransform: "uppercase", marginBottom: "12px" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 14px 0", fontSize: "15px", lineHeight: "1.8", color: "#c4a0c0" }}>
@@ -5255,7 +5255,7 @@ function EmotionalLifePassionToAction() {
               color: "#c4a090", fontFamily: "Georgia, serif",
             }}
           >
-            <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase" }}>
+            <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#9D174D" }}>
               Real-World Echoes
             </span>
             {echosOpen
@@ -5264,8 +5264,8 @@ function EmotionalLifePassionToAction() {
           </button>
 
           {echosOpen && (
-            <div style={{ padding: "0 28px 28px 28px" }}>
-              <div style={{ height: "1px", background: "#1e0a14", marginBottom: "20px" }} />
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #9D174D33" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
               {[
                 {
                   title: "Anger and Unmet Expectations",
@@ -5285,16 +5285,16 @@ function EmotionalLifePassionToAction() {
                 },
               ].map((echo, i) => (
                 <div key={i} style={{
-                  padding: "16px 20px",
-                  background: "#0e0612",
-                  border: "1px solid #1a0818",
-                  borderRadius: "6px",
-                  marginBottom: "12px",
+                  borderLeft: "3px solid #9D174D",
+                  borderRadius: "0 6px 6px 0",
+                  background: "#9D174D0a",
+                  padding: "14px 18px",
                 }}>
-                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#9D174D", marginBottom: "8px" }}>{echo.title}</div>
-                  <p style={{ margin: 0, fontSize: "13px", lineHeight: "1.75", color: "#9a7a70" }}>{echo.text}</p>
+                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#C2185B", marginBottom: "6px" }}>{echo.title}</div>
+                  <p style={{ margin: 0, fontSize: "13px", lineHeight: "1.7", color: "#b8b0a8" }}>{echo.text}</p>
                 </div>
               ))}
+              </div>
             </div>
           )}
         </div>
