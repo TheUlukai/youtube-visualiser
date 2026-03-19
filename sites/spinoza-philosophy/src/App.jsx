@@ -966,63 +966,26 @@ function SpinozaIntroduction() {
           </button>
 
           {echoesOpen && (
-            <div
-              style={{
-                padding: "0 28px 28px 28px",
-                borderTop: "1px solid rgba(80,70,140,0.2)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "13px",
-                  color: "#6060888",
-                  color: "#606088",
-                  lineHeight: 1.7,
-                  margin: "16px 0 20px 0",
-                }}
-              >
-                Spinoza's philosophical architecture did not remain an abstract system — it
-                propagated through centuries of thought and continues to shape living disciplines.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #7B68EE33" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
                 {realWorldEchoes.map((echo, i) => (
                   <div
                     key={i}
-                    onMouseEnter={() => setHoveredEcho(i)}
-                    onMouseLeave={() => setHoveredEcho(null)}
                     style={{
-                      padding: "16px 18px",
-                      background:
-                        hoveredEcho === i
-                          ? "rgba(123,104,238,0.1)"
-                          : "rgba(20,18,45,0.6)",
-                      border:
-                        hoveredEcho === i
-                          ? "1px solid rgba(123,104,238,0.35)"
-                          : "1px solid rgba(60,55,100,0.3)",
-                      borderRadius: "8px",
-                      transition: "all 0.25s ease",
-                      cursor: "default",
+                      borderLeft: "3px solid #7B68EE",
+                      borderRadius: "0 6px 6px 0",
+                      background: "#7B68EE0a",
+                      padding: "14px 18px",
                     }}
                   >
-                    <div
-                      style={{
-                        fontSize: "12px",
-                        color: hoveredEcho === i ? "#9080d0" : "#7065a8",
-                        letterSpacing: "1px",
-                        marginBottom: "8px",
-                        textTransform: "uppercase",
-                        fontSize: "10px",
-                        letterSpacing: "1.5px",
-                      }}
-                    >
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#9d8ef5", marginBottom: 6 }}>
                       {echo.title}
                     </div>
                     <p
                       style={{
-                        fontSize: "13px",
+                        fontSize: 13,
                         lineHeight: 1.7,
-                        color: hoveredEcho === i ? "#c0c0e0" : "#8888a8",
+                        color: "#b8b0a8",
                         margin: 0,
                       }}
                     >
@@ -1710,8 +1673,8 @@ function MakingOfRevolutionaryMind() {
         </div>
 
         {echosOpen && (
-          <div style={{ padding: "4px 40px 32px 40px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "16px" }}>
+          <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #2D4A6E33" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
               {[
                 {
                   title: "Spanish and Portuguese Inquisition Refugees",
@@ -1731,15 +1694,15 @@ function MakingOfRevolutionaryMind() {
                 }
               ].map(item => (
                 <div key={item.title} style={{
-                  background: "rgba(15,22,35,0.8)",
-                  border: "1px solid #2D4A6E33",
-                  borderRadius: "3px",
-                  padding: "18px 20px"
+                  borderLeft: "3px solid #2D4A6E",
+                  borderRadius: "0 6px 6px 0",
+                  background: "#2D4A6E0a",
+                  padding: "14px 18px",
                 }}>
-                  <div style={{ fontSize: "13px", color: "#8ab0c8", fontWeight: "bold", marginBottom: "10px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#8ab0c8", marginBottom: 6 }}>
                     {item.title}
                   </div>
-                  <p style={{ fontSize: "13px", color: "#9a9080", lineHeight: "1.7", margin: 0 }}>
+                  <p style={{ fontSize: 13, color: "#b8b0a8", lineHeight: 1.7, margin: 0 }}>
                     {item.body}
                   </p>
                 </div>
@@ -2206,19 +2169,37 @@ function RevolutionaryMetaphysicsGodOrNature() {
             }
           </div>
           {echoesOpen && (
-            <div style={{ padding: '0 28px 28px 28px', borderTop: '1px solid #1a0a2e' }}>
-              <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: '#b89fd4', marginTop: 16 }}>
-                When mathematicians investigate the properties of prime numbers, they do not "create" those properties — they discover necessities that were always there, just as Spinoza's God-Nature expresses its essence with geometric certainty. The boundary between discovery and revelation dissolves.
-              </p>
-              <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: '#b89fd4' }}>
-                Modern physics searching for a unified field theory — a single framework from which all forces and particles emerge — mirrors Spinoza's intuition. The aspiration to find one substrate beneath apparent multiplicity is his metaphysics reborn in mathematics.
-              </p>
-              <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", lineHeight: 1.8, color: '#b89fd4' }}>
-                When someone prays for rain during a drought, Spinoza would not call the prayer superstitious — but he would note that its real effects are psychological clarity, community solidarity, and renewed attention to the environment. Nature does not bend; the pray-er changes. The same God is at work either way.
-              </p>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#b89fd4', margin: 0 }}>
-                Einstein, famously, believed in "Spinoza's God" — not a personal deity who intervenes in history, but the rational harmony underlying natural law. When he said he wanted to know God's thoughts, he meant the equations that hold the universe in necessary form.
-              </p>
+            <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid #4B008233' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: "Mathematical Necessity and Discovery",
+                    body: "When mathematicians investigate the properties of prime numbers, they do not \"create\" those properties — they discover necessities that were always there, just as Spinoza's God-Nature expresses its essence with geometric certainty. The boundary between discovery and revelation dissolves.",
+                  },
+                  {
+                    title: "The Unified Field Theory Aspiration",
+                    body: "Modern physics searching for a unified field theory — a single framework from which all forces and particles emerge — mirrors Spinoza's intuition. The aspiration to find one substrate beneath apparent multiplicity is his metaphysics reborn in mathematics.",
+                  },
+                  {
+                    title: "Prayer and Natural Transformation",
+                    body: "When someone prays for rain during a drought, Spinoza would not call the prayer superstitious — but he would note that its real effects are psychological clarity, community solidarity, and renewed attention to the environment. Nature does not bend; the pray-er changes. The same God is at work either way.",
+                  },
+                  {
+                    title: "Einstein's God",
+                    body: "Einstein, famously, believed in \"Spinoza's God\" — not a personal deity who intervenes in history, but the rational harmony underlying natural law. When he said he wanted to know God's thoughts, he meant the equations that hold the universe in necessary form.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{
+                    borderLeft: '3px solid #4B0082',
+                    borderRadius: '0 6px 6px 0',
+                    background: '#4B00820a',
+                    padding: '14px 18px',
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: 'bold', color: '#9b72cf', marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: '#b8b0a8' }}>{item.body}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -3515,8 +3496,8 @@ function UnityOfMindAndBody() {
         </button>
 
         {echoesOpen && (
-          <div style={{ padding: "0 28px 28px 28px" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #2E7D3233" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
               <EchoItem
                 title="The Circle's Double Description"
                 text="A circle described as 'the locus of all points equidistant from a center' and as 'the figure generated by rotating a line segment around one endpoint' are not two circles connected by some mechanism — they are one geometric object described in two complete and non-reducible vocabularies. No one asks how the two descriptions interact; we understand they are perspectives on the same thing. Spinoza asks us to see body and mind the same way."
@@ -3576,10 +3557,12 @@ function EchoItem({ title, text, accent }) {
   return (
     <div style={{
       borderLeft: `3px solid ${accent}`,
-      paddingLeft: "16px"
+      borderRadius: "0 6px 6px 0",
+      background: `${accent}0a`,
+      padding: "14px 18px",
     }}>
-      <div style={{ fontSize: "13px", color: "#a5d6a7", marginBottom: "6px", fontWeight: "bold" }}>{title}</div>
-      <p style={{ margin: 0, fontSize: "13px", lineHeight: "1.75", color: "#c8e6c9" }}>{text}</p>
+      <div style={{ fontSize: 13, fontWeight: "bold", color: "#a5d6a7", marginBottom: 6 }}>{title}</div>
+      <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#b8b0a8" }}>{text}</p>
     </div>
   );
 }
@@ -4167,24 +4150,16 @@ function LadderOfKnowledge() {
                 Spinoza's three levels of knowledge resonate across modern experience — wherever we notice the difference between raw impression, systematic understanding, and direct insight.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                <div style={{ padding: "12px 16px", background: "#3b1a0622", borderRadius: 8, borderLeft: "2px solid #c2410c55" }}>
-                  <div style={{ fontSize: 13, color: "#fca67e", fontWeight: "bold", marginBottom: 4 }}>Opinion vs. Mathematical Proof</div>
-                  <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6, color: "#b08060" }}>
-                    Forming beliefs based on casual observation (someone seems untrustworthy because they were rude once) versus understanding a geometric theorem as necessarily true regardless of who encounters it — this is imagination versus reason made vivid.
-                  </p>
-                </div>
-                <div style={{ padding: "12px 16px", background: "#3b1a0622", borderRadius: 8, borderLeft: "2px solid #d9770655" }}>
-                  <div style={{ fontSize: 13, color: "#fde68a", fontWeight: "bold", marginBottom: 4 }}>Euclidean Geometry as Rational Knowledge</div>
-                  <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6, color: "#b08060" }}>
-                    Understanding why every triangle's angles sum to 180 degrees is not a fact you memorized but a necessity you grasp from first principles — the paradigm Spinoza had in mind when describing rational knowledge.
-                  </p>
-                </div>
-                <div style={{ padding: "12px 16px", background: "#3b1a0622", borderRadius: 8, borderLeft: "2px solid #f59e0b55" }}>
-                  <div style={{ fontSize: 13, color: "#fef3c7", fontWeight: "bold", marginBottom: 4 }}>Intellectual Love — Impersonal Joy</div>
-                  <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6, color: "#b08060" }}>
-                    Scientists describe moments of sudden comprehension — not just solving a problem but seeing how a singular phenomenon is an expression of deep universal law — as among the most profound human emotions. This is the closest modern parallel to Spinoza's amor intellectualis Dei.
-                  </p>
-                </div>
+                {[
+                  { title: "Opinion vs. Mathematical Proof", body: "Forming beliefs based on casual observation (someone seems untrustworthy because they were rude once) versus understanding a geometric theorem as necessarily true regardless of who encounters it — this is imagination versus reason made vivid." },
+                  { title: "Euclidean Geometry as Rational Knowledge", body: "Understanding why every triangle's angles sum to 180 degrees is not a fact you memorized but a necessity you grasp from first principles — the paradigm Spinoza had in mind when describing rational knowledge." },
+                  { title: "Intellectual Love — Impersonal Joy", body: "Scientists describe moments of sudden comprehension — not just solving a problem but seeing how a singular phenomenon is an expression of deep universal law — as among the most profound human emotions. This is the closest modern parallel to Spinoza's amor intellectualis Dei." },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: "3px solid #B45309", borderRadius: "0 6px 6px 0", background: "#B453090a", padding: "14px 18px" }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#d4844c", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: "#b8b0a8" }}>{item.body}</p>
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -4689,53 +4664,18 @@ function ConatusEssentialDrive() {
           </div>
 
           {echosOpen && (
-            <div style={{ padding: "0 24px 24px 24px" }}>
-              <div
-                style={{
-                  background: "#12080433",
-                  border: "1px solid #2a1a10",
-                  borderRadius: "8px",
-                  padding: "18px 22px",
-                  marginBottom: "12px",
-                }}
-              >
-                <div style={{ fontSize: "12px", color: "#C2410C", fontWeight: "bold", marginBottom: "6px", letterSpacing: "1px" }}>
-                  The Stone
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #C2410C33" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+              {[
+                { title: "The Stone", body: "A stone resisting forces that would break it apart expresses conatus in its most elementary form — not conscious, not striving in any felt sense, but exhibiting a structural tendency to maintain its physical integrity against dissolution. The stone's \"essence\" just is this resistance; take it away and there is no stone, only rubble." },
+                { title: "The Plant", body: "A plant growing toward light and adapting its root structure to preserve its organization shows conatus at a biological level. The plant doesn't merely resist destruction — it actively reorganizes itself in response to its environment to maintain and extend its pattern of living. This is the beginning of active feedback." },
+                { title: "Human Striving", body: "In humans, conatus takes its fullest expression — striving not just for survival but for understanding, creativity, and genuine social connection. When a person pursues knowledge that genuinely illuminates their situation, they experience the upward spiral: greater clarity enables more active responses, which generate the joy of increased power, which fuels further understanding. This is Spinoza's account of human flourishing." },
+              ].map((item, i) => (
+                <div key={i} style={{ borderLeft: "3px solid #C2410C", borderRadius: "0 6px 6px 0", background: "#C2410C0a", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#f97316", marginBottom: 6 }}>{item.title}</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
                 </div>
-                <p style={{ margin: 0, fontSize: "13px", color: "#a8988a", lineHeight: "1.7" }}>
-                  A stone resisting forces that would break it apart expresses conatus in its most elementary form — not conscious, not striving in any felt sense, but exhibiting a structural tendency to maintain its physical integrity against dissolution. The stone's "essence" just is this resistance; take it away and there is no stone, only rubble.
-                </p>
-              </div>
-              <div
-                style={{
-                  background: "#12080433",
-                  border: "1px solid #2a1a10",
-                  borderRadius: "8px",
-                  padding: "18px 22px",
-                  marginBottom: "12px",
-                }}
-              >
-                <div style={{ fontSize: "12px", color: "#F59E0B", fontWeight: "bold", marginBottom: "6px", letterSpacing: "1px" }}>
-                  The Plant
-                </div>
-                <p style={{ margin: 0, fontSize: "13px", color: "#a8988a", lineHeight: "1.7" }}>
-                  A plant growing toward light and adapting its root structure to preserve its organization shows conatus at a biological level. The plant doesn't merely resist destruction — it actively reorganizes itself in response to its environment to maintain and extend its pattern of living. This is the beginning of active feedback.
-                </p>
-              </div>
-              <div
-                style={{
-                  background: "#12080433",
-                  border: "1px solid #2a1a10",
-                  borderRadius: "8px",
-                  padding: "18px 22px",
-                }}
-              >
-                <div style={{ fontSize: "12px", color: "#34D399", fontWeight: "bold", marginBottom: "6px", letterSpacing: "1px" }}>
-                  Human Striving
-                </div>
-                <p style={{ margin: 0, fontSize: "13px", color: "#a8988a", lineHeight: "1.7" }}>
-                  In humans, conatus takes its fullest expression — striving not just for survival but for understanding, creativity, and genuine social connection. When a person pursues knowledge that genuinely illuminates their situation, they experience the upward spiral: greater clarity enables more active responses, which generate the joy of increased power, which fuels further understanding. This is Spinoza's account of human flourishing.
-                </p>
+              ))}
               </div>
             </div>
           )}
@@ -5345,7 +5285,7 @@ function EmotionalLifePassionToAction() {
                   borderRadius: "6px",
                   marginBottom: "12px",
                 }}>
-                  <div style={{ fontSize: "13px", color: "#9D174D", marginBottom: "8px" }}>{echo.title}</div>
+                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#9D174D", marginBottom: "8px" }}>{echo.title}</div>
                   <p style={{ margin: 0, fontSize: "13px", lineHeight: "1.75", color: "#9a7a70" }}>{echo.text}</p>
                 </div>
               ))}
@@ -6395,13 +6335,20 @@ function ArtOfLivingEthicsFlourishing() {
             {echosOpen ? <ChevronUp size={18} color="#D97706" /> : <ChevronDown size={18} color="#D97706" />}
           </button>
           {echosOpen && (
-            <div style={{ padding: "0 24px 20px 24px", borderTop: "1px solid #3d1a0040" }}>
-              <p style={{ fontSize: 13, color: "#C4A97A", margin: "14px 0 16px 0", fontStyle: "italic", lineHeight: 1.6 }}>
-                Spinoza's convergence thesis — that enlightened self-interest and genuine care for others are ultimately one — appears in recognizable form across human experience:
-              </p>
-              {echoItems.map((item, i) => (
-                <EchoItem2 key={i} title={item.title} body={item.body} accent="#D97706" last={i === echoItems.length - 1} />
-              ))}
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #D9770633" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {echoItems.map((item, i) => (
+                  <div key={i} style={{
+                    borderLeft: "3px solid #D97706",
+                    borderRadius: "0 6px 6px 0",
+                    background: "#D977060a",
+                    padding: "14px 18px",
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#f0a930", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: "#b8b0a8" }}>{item.body}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -7020,44 +6967,34 @@ function PoliticalVisionDemocracyLiberation() {
           </button>
 
           {echosOpen && (
-            <div style={{ padding: '0 28px 28px 28px' }}>
-              <div style={{ height: '1px', background: '#1a3a38', marginBottom: '20px' }} />
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ padding: '0 24px 24px 24px', borderTop: `1px solid ${accent}33` }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
                 {[
                   {
-                    icon: '📡',
-                    title: 'Censorship as systemic self-harm',
+                    title: 'Censorship as Systemic Self-Harm',
                     text: 'Authoritarian regimes that suppress dissent consistently discover that they lose the ability to accurately model their own populations. The Soviet politburo, late-Maoist China, and modern autocracies alike found that information suppression produces not loyalty but a dangerous epistemic blindness — exactly Spinoza\'s prediction that censorship defeats the rational deliberation needed for legitimate governance.',
                   },
                   {
-                    icon: '🗳️',
-                    title: 'Democratic epistemic advantage',
+                    title: 'Democratic Epistemic Advantage',
                     text: 'Contemporary research on "the wisdom of crowds" and deliberative mini-publics confirms that diverse groups consistently outperform expert committees on complex policy questions. Ireland\'s Citizens\' Assembly on abortion, climate, and constitutional reform demonstrated that ordinary citizens engaging in sustained deliberation arrive at nuanced, coherent positions — sometimes ahead of their elected representatives.',
                   },
                   {
-                    icon: '🤝',
-                    title: 'Voluntary cooperation as the true foundation',
+                    title: 'Voluntary Cooperation as the True Foundation',
                     text: 'Political scientists now widely recognize that compliance achieved through fear is fragile and expensive. Societies with high voluntary civic trust — the Nordic countries, for instance — outperform coercive states on virtually every governance metric. Spinoza\'s claim that genuine political stability rests on citizens recognizing their own interests in collective governance finds its most vivid modern vindication here.',
                   },
                 ].map((echo, i) => (
                   <div key={i} style={{
-                    background: 'rgba(15, 118, 110, 0.06)',
-                    border: '1px solid #1a3a38',
-                    borderRadius: '6px',
-                    padding: '18px 20px',
+                    borderLeft: `3px solid ${accent}`,
+                    borderRadius: '0 6px 6px 0',
+                    background: `${accent}0a`,
+                    padding: '14px 18px',
                   }}>
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <span style={{ fontSize: '22px', lineHeight: '1' }}>{echo.icon}</span>
-                      <div>
-                        <div style={{ fontSize: '13px', color: accentLight, marginBottom: '8px', fontWeight: 'bold' }}>
-                          {echo.title}
-                        </div>
-                        <p style={{ margin: 0, fontSize: '13px', color: '#a8a39a', lineHeight: '1.75' }}>
-                          {echo.text}
-                        </p>
-                      </div>
+                    <div style={{ fontSize: 13, fontWeight: 'bold', color: accentLight, marginBottom: 6 }}>
+                      {echo.title}
                     </div>
+                    <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.75 }}>
+                      {echo.text}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -7529,46 +7466,37 @@ function CritiqueOfReligionScripture() {
           </button>
 
           {echoesOpen && (
-            <div style={{ padding: "0 32px 28px" }}>
-              <p style={{ margin: "0 0 20px", fontSize: "13px", color: "#9A7050", fontStyle: "italic", lineHeight: "1.6" }}>
-                Spinoza's hermeneutical method continues to resonate wherever inherited authority confronts rigorous historical examination.
-              </p>
-              {[
-                {
-                  title: "The Authorship of the Pentateuch",
-                  body: "Spinoza noted that passages in the Torah describe events impossible for Moses to have written — including an account of his own death. Modern source criticism identifies at least four distinct documentary traditions (J, E, D, P) woven together, each with distinctive vocabulary, theology, and historical perspective.",
-                },
-                {
-                  title: "Prophets as Moral Voices",
-                  body: "The Hebrew prophets — Amos, Isaiah, Jeremiah — are better understood as extraordinary moral reformers addressing the social injustices of their time than as supernatural mouthpieces. Their power lay precisely in their sensitivity to exploitation and suffering, capacities that are recognizably human and deeply admirable.",
-                },
-                {
-                  title: "Religious Institutions and Secular Authority",
-                  body: "Throughout European history, churches claimed authority over economic contracts (usury laws), scientific investigation (Galileo's trial), and political succession. Spinoza's analysis provides the philosophical grounds for separating institutional religious authority from civil governance — a separation foundational to liberal democratic states.",
-                },
-              ].map((echo, idx) => (
-                <div
-                  key={idx}
-                  onMouseEnter={() => setHoveredEcho(idx)}
-                  onMouseLeave={() => setHoveredEcho(null)}
-                  style={{
-                    background: hoveredEcho === idx ? "rgba(124, 45, 18, 0.15)" : "rgba(20, 6, 2, 0.5)",
-                    border: "1px solid rgba(124, 45, 18, 0.2)",
-                    borderRadius: "6px",
-                    padding: "16px 20px",
-                    marginBottom: "10px",
-                    transition: "all 0.2s ease",
-                    cursor: "default",
-                  }}
-                >
-                  <div style={{ fontSize: "13px", color: "#E8A87C", marginBottom: "8px", fontWeight: "bold" }}>
-                    {echo.title}
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #7C2D1233" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: "The Authorship of the Pentateuch",
+                    body: "Spinoza noted that passages in the Torah describe events impossible for Moses to have written — including an account of his own death. Modern source criticism identifies at least four distinct documentary traditions (J, E, D, P) woven together, each with distinctive vocabulary, theology, and historical perspective.",
+                  },
+                  {
+                    title: "Prophets as Moral Voices",
+                    body: "The Hebrew prophets — Amos, Isaiah, Jeremiah — are better understood as extraordinary moral reformers addressing the social injustices of their time than as supernatural mouthpieces. Their power lay precisely in their sensitivity to exploitation and suffering, capacities that are recognizably human and deeply admirable.",
+                  },
+                  {
+                    title: "Religious Institutions and Secular Authority",
+                    body: "Throughout European history, churches claimed authority over economic contracts (usury laws), scientific investigation (Galileo's trial), and political succession. Spinoza's analysis provides the philosophical grounds for separating institutional religious authority from civil governance — a separation foundational to liberal democratic states.",
+                  },
+                ].map((echo, idx) => (
+                  <div key={idx} style={{
+                    borderLeft: "3px solid #7C2D12",
+                    borderRadius: "0 6px 6px 0",
+                    background: "#7C2D120a",
+                    padding: "14px 18px",
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#E8A87C", marginBottom: 6 }}>
+                      {echo.title}
+                    </div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                      {echo.body}
+                    </p>
                   </div>
-                  <p style={{ margin: 0, fontSize: "13px", color: "#B08060", lineHeight: "1.7" }}>
-                    {echo.body}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -8123,34 +8051,37 @@ function MiraclesProphecyNaturalOrder() {
             : <ChevronDown size={16} color="#7c3aed" />}
         </div>
         {echosOpen && (
-          <div style={{ padding: '8px 26px 26px 26px' }}>
-            {[
-              {
-                title: 'Eclipses, Earthquakes, and Plagues as Divine Messages',
-                body: 'Throughout antiquity and into the medieval period, sudden natural disasters were routinely read as divine communications — either punishment for social transgression or warning of impending judgment. The 1755 Lisbon earthquake triggered fierce theological debate: Voltaire and Rousseau clashed over whether God had sent it as punishment. Spinoza\'s naturalism dissolves this debate entirely: the tectonic forces involved express the same divine necessity as the orbits of planets.',
-              },
-              {
-                title: 'Military Victory and Divine Endorsement',
-                body: 'From the Roman practice of consulting augurs before battle to modern political leaders claiming God\'s blessing on military campaigns, the attribution of military success to divine favor has been a persistent legitimating strategy. Spinoza\'s argument strips this claim of metaphysical grounding: the outcome of a battle reflects the configuration of natural powers — numbers, terrain, morale, technology — not divine preference.',
-              },
-              {
-                title: 'Contemporary Scientific Investigation Expanding the Known',
-                body: 'Each advance in epidemiology, seismology, climatology, or neuroscience reclaims another domain from the formerly miraculous. When the mechanism of a seizure becomes understood as electrochemical rather than demonic possession, the domain of the \'miraculous\' contracts. This is precisely the positive feedback loop Spinoza described: scientific investigation and political rationalization reinforce each other in the project of human self-governance.',
-              },
-              {
-                title: 'The Persistence of Providential Politics',
-                body: 'Contemporary political discourse in many countries still invokes divine sanction — for national destiny, military action, or social policy. Spinoza\'s analysis predicts that such invocations will prove unstable: they require populations to defer to an authority that cannot be questioned, which generates resentment, and they cannot resolve disputes between competing divine mandates. The rational alternative he points toward remains unfinished political business.',
-              },
-            ].map((item, i) => (
-              <div key={i} style={{
-                marginBottom: i < 3 ? '16px' : 0,
-                paddingBottom: i < 3 ? '16px' : 0,
-                borderBottom: i < 3 ? '1px solid #1e1035' : 'none',
-              }}>
-                <div style={{ fontSize: '13px', color: '#b090d8', fontWeight: 'bold', marginBottom: '6px' }}>{item.title}</div>
-                <p style={{ margin: 0, fontSize: '13px', color: '#8870a8', lineHeight: '1.65' }}>{item.body}</p>
-              </div>
-            ))}
+          <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid #4C1D9533' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
+              {[
+                {
+                  title: 'Eclipses, Earthquakes, and Plagues as Divine Messages',
+                  body: 'Throughout antiquity and into the medieval period, sudden natural disasters were routinely read as divine communications — either punishment for social transgression or warning of impending judgment. The 1755 Lisbon earthquake triggered fierce theological debate: Voltaire and Rousseau clashed over whether God had sent it as punishment. Spinoza\'s naturalism dissolves this debate entirely: the tectonic forces involved express the same divine necessity as the orbits of planets.',
+                },
+                {
+                  title: 'Military Victory and Divine Endorsement',
+                  body: 'From the Roman practice of consulting augurs before battle to modern political leaders claiming God\'s blessing on military campaigns, the attribution of military success to divine favor has been a persistent legitimating strategy. Spinoza\'s argument strips this claim of metaphysical grounding: the outcome of a battle reflects the configuration of natural powers — numbers, terrain, morale, technology — not divine preference.',
+                },
+                {
+                  title: 'Contemporary Scientific Investigation Expanding the Known',
+                  body: 'Each advance in epidemiology, seismology, climatology, or neuroscience reclaims another domain from the formerly miraculous. When the mechanism of a seizure becomes understood as electrochemical rather than demonic possession, the domain of the \'miraculous\' contracts. This is precisely the positive feedback loop Spinoza described: scientific investigation and political rationalization reinforce each other in the project of human self-governance.',
+                },
+                {
+                  title: 'The Persistence of Providential Politics',
+                  body: 'Contemporary political discourse in many countries still invokes divine sanction — for national destiny, military action, or social policy. Spinoza\'s analysis predicts that such invocations will prove unstable: they require populations to defer to an authority that cannot be questioned, which generates resentment, and they cannot resolve disputes between competing divine mandates. The rational alternative he points toward remains unfinished political business.',
+                },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  borderLeft: '3px solid #4C1D95',
+                  borderRadius: '0 6px 6px 0',
+                  background: '#4C1D950a',
+                  padding: '14px 18px',
+                }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#b090d8', marginBottom: 6 }}>{item.title}</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -8684,13 +8615,13 @@ function SocialContractNaturalRight() {
                   }
                 ].map((item, i) => (
                   <div key={i} style={{
-                    background: "#0a1a12",
-                    border: "1px solid #1a2e24",
-                    borderRadius: 8,
-                    padding: "14px 18px"
+                    borderLeft: `3px solid ${ACCENT}`,
+                    borderRadius: "0 6px 6px 0",
+                    background: `${ACCENT}0a`,
+                    padding: "14px 18px",
                   }}>
                     <div style={{ fontSize: 13, fontWeight: "bold", color: ACCENT_LIGHT, marginBottom: 6 }}>{item.title}</div>
-                    <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: "#9a9888" }}>{item.text}</p>
+                    <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: "#b8b0a8" }}>{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -9151,18 +9082,8 @@ function EducationTransformationSociety() {
         </div>
 
         {echosOpen && (
-          <div style={{
-            background: "#060610",
-            border: "1px solid #1a1a2e",
-            borderTop: "none",
-            borderRadius: "0 0 8px 8px",
-            padding: "20px 24px",
-          }}>
-            <p style={{ fontSize: 13, color: "#9090b0", margin: "0 0 16px 0", lineHeight: 1.6, fontStyle: "italic" }}>
-              Spinoza wrote no treatise on pedagogy, yet his framework anticipates debates that would define educational thought for centuries to come.
-            </p>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #1D4ED833" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
               {[
                 {
                   title: "Teachers as Facilitators",
@@ -9178,13 +9099,15 @@ function EducationTransformationSociety() {
                 },
               ].map((item, i) => (
                 <div key={i} style={{
-                  borderLeft: "2px solid #1D4ED8",
-                  paddingLeft: 16,
+                  borderLeft: "3px solid #1D4ED8",
+                  borderRadius: "0 6px 6px 0",
+                  background: "#1D4ED80a",
+                  padding: "14px 18px",
                 }}>
-                  <div style={{ fontSize: 13, color: "#7aafff", marginBottom: 6, fontWeight: "bold" }}>
+                  <div style={{ fontSize: 13, color: "#7aafff", fontWeight: "bold", marginBottom: 6 }}>
                     {item.title}
                   </div>
-                  <p style={{ fontSize: 13, color: "#8080a8", margin: 0, lineHeight: 1.7 }}>
+                  <p style={{ fontSize: 13, color: "#b8b0a8", margin: 0, lineHeight: 1.7 }}>
                     {item.body}
                   </p>
                 </div>
@@ -9771,7 +9694,7 @@ function ProblemOfEvilSuffering() {
                     border: "1px solid rgba(120, 53, 15, 0.15)",
                     borderRadius: 5,
                   }}>
-                    <div style={{ fontSize: 13, color: "#e0a050", marginBottom: 8, fontStyle: "italic" }}>{ex.title}</div>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#e0a050", marginBottom: 8 }}>{ex.title}</div>
                     <p style={{ fontSize: 13, color: "#a08060", lineHeight: 1.7, margin: 0 }}>{ex.body}</p>
                   </div>
                 ))}
@@ -10512,35 +10435,32 @@ function EternityMindsImmortality() {
             }
           </button>
           {isEchoesOpen && (
-            <div style={{ padding: '0 28px 28px 28px', borderTop: '1px solid #1e1255' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '20px' }}>
+            <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid #5B21B633' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
                 {[
                   {
-                    title: 'Mathematical truths as timeless',
+                    title: 'Mathematical Truths as Timeless',
                     body: 'When Euler proved his identity e^(iπ) + 1 = 0, he did not create a truth that will expire. The thought, once genuinely understood, participates in something that was true before he lived and will remain true after all human civilization ends. This is the Spinozistic kernel of mental eternity: the thinking of eternal thoughts.',
-                    color: '#06b6d4',
                   },
                   {
-                    title: 'Personal memories and desires as durational',
+                    title: 'Personal Memories and Desires as Durational',
                     body: 'Our anxieties about legacy, our fears of being forgotten, our desires to be remembered — these are all durational. They belong to the outer ring. A person who dies peacefully, having spent their life in genuine understanding rather than the accumulation of reputation and memory, exemplifies Spinoza\'s ideal.',
-                    color: '#f59e0b',
                   },
                   {
-                    title: 'Intellectual love as unconditional satisfaction',
+                    title: 'Intellectual Love as Unconditional Satisfaction',
                     body: 'The mathematician or scientist who finds deep joy in understanding — not from external praise but from the act of comprehension itself — already lives the intellectual love of God. This satisfaction is independent of whether one is remembered, rewarded, or even whether one\'s work is known to others.',
-                    color: '#10b981',
                   },
                 ].map(item => (
                   <div key={item.title} style={{
-                    background: `${item.color}08`,
-                    border: `1px solid ${item.color}22`,
-                    borderRadius: '8px',
-                    padding: '16px 20px',
+                    borderLeft: '3px solid #5B21B6',
+                    borderRadius: '0 6px 6px 0',
+                    background: '#5B21B60a',
+                    padding: '14px 18px',
                   }}>
-                    <div style={{ fontSize: '12px', color: item.color, marginBottom: '8px', letterSpacing: '0.5px' }}>
+                    <div style={{ fontSize: 13, fontWeight: 'bold', color: '#a78bfa', marginBottom: 6 }}>
                       {item.title}
                     </div>
-                    <p style={{ margin: 0, fontSize: '13px', color: '#b8a8d8', lineHeight: '1.7' }}>
+                    <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>
                       {item.body}
                     </p>
                   </div>
@@ -11120,40 +11040,37 @@ function GeometricMethodDemonstration() {
         </button>
 
         {echosOpen && (
-          <div style={{ padding: '0 28px 28px 28px' }}>
-            {[
-              {
-                title: 'Euclidean Geometry',
-                text: 'Euclid\'s Elements — organizing all of plane geometry from five definitions, five common notions, and five postulates — was Spinoza\'s explicit model. When educated readers opened the Ethics, they immediately recognized the format: this was philosophy claiming the same kind of necessity that makes a triangle\'s angles sum to 180 degrees not a cultural preference but an unavoidable truth of reason.',
-              },
-              {
-                title: 'The Ethics\'s Dense Logical Fabric',
-                text: 'The Ethics\' five parts contain hundreds of propositions, proofs, and scholiums, each formally linked to earlier ones. Readers encounter arguments like: "PROP. XI. God, or substance, consisting of infinite attributes, each of which expresses eternal and infinite essentiality, necessarily exists. Proof: If this be denied, conceive, if possible, that God does not exist..." The density is not ornamental — it is the substance of the philosophical claim itself.',
-              },
-              {
-                title: 'Scientific Consensus as Spinoza\'s Ideal',
-                text: 'Spinoza\'s vision of universal agreement among rational investigators has its closest modern parallel in the scientific community. Mathematicians in Beijing and Buenos Aires reach identical conclusions about prime numbers; physicists worldwide converge on the same constants. Spinoza wanted philosophy to achieve exactly this: a domain where cultural background and personal temperament become irrelevant before the force of well-ordered reasoning.',
-              },
-            ].map((echo, i) => (
-              <div key={i} style={{
-                marginBottom: i < 2 ? '20px' : 0,
-                paddingBottom: i < 2 ? '20px' : 0,
-                borderBottom: i < 2 ? '1px solid #1f2937' : 'none',
-              }}>
-                <div style={{
-                  fontSize: '13px',
-                  color: '#d1cfc9',
-                  fontWeight: 'bold',
-                  marginBottom: '8px',
-                  letterSpacing: '0.03em',
+          <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid #37415133' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
+              {[
+                {
+                  title: 'Euclidean Geometry',
+                  text: 'Euclid\'s Elements — organizing all of plane geometry from five definitions, five common notions, and five postulates — was Spinoza\'s explicit model. When educated readers opened the Ethics, they immediately recognized the format: this was philosophy claiming the same kind of necessity that makes a triangle\'s angles sum to 180 degrees not a cultural preference but an unavoidable truth of reason.',
+                },
+                {
+                  title: 'The Ethics\'s Dense Logical Fabric',
+                  text: 'The Ethics\' five parts contain hundreds of propositions, proofs, and scholiums, each formally linked to earlier ones. Readers encounter arguments like: "PROP. XI. God, or substance, consisting of infinite attributes, each of which expresses eternal and infinite essentiality, necessarily exists. Proof: If this be denied, conceive, if possible, that God does not exist..." The density is not ornamental — it is the substance of the philosophical claim itself.',
+                },
+                {
+                  title: 'Scientific Consensus as Spinoza\'s Ideal',
+                  text: 'Spinoza\'s vision of universal agreement among rational investigators has its closest modern parallel in the scientific community. Mathematicians in Beijing and Buenos Aires reach identical conclusions about prime numbers; physicists worldwide converge on the same constants. Spinoza wanted philosophy to achieve exactly this: a domain where cultural background and personal temperament become irrelevant before the force of well-ordered reasoning.',
+                },
+              ].map((echo, i) => (
+                <div key={i} style={{
+                  borderLeft: '3px solid #374151',
+                  borderRadius: '0 6px 6px 0',
+                  background: '#3741510a',
+                  padding: '14px 18px',
                 }}>
-                  {echo.title}
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#d1cfc9', marginBottom: 6 }}>
+                    {echo.title}
+                  </div>
+                  <p style={{ fontSize: 13, color: '#b8b0a8', lineHeight: 1.75, margin: 0 }}>
+                    {echo.text}
+                  </p>
                 </div>
-                <p style={{ fontSize: '14px', color: '#9ca3af', lineHeight: '1.75', margin: 0 }}>
-                  {echo.text}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -11975,11 +11892,8 @@ function SpinozaInfluenceLaterPhilosophy() {
           </button>
 
           {echoesOpen && (
-            <div style={{ padding: "0 28px 28px" }}>
-              <p style={{ fontSize: "13px", color: "#7a6e60", fontStyle: "italic", marginBottom: "20px", marginTop: 0 }}>
-                Concrete moments where Spinoza's long shadow falls across intellectual and cultural history.
-              </p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #0E749033" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
                 {[
                   {
                     title: "Hegel's Tribute",
@@ -11998,17 +11912,14 @@ function SpinozaInfluenceLaterPhilosophy() {
                     text: "Contemporary philosophers like David Chalmers and Joseph Levine work with a framework directly descended from Spinoza's parallelism: physical and phenomenal descriptions are irreducibly different modes of access to the same underlying reality — solving the causal problem while acknowledging the explanatory gap.",
                   },
                 ].map(({ title, text }) => (
-                  <div
-                    key={title}
-                    style={{
-                      background: "rgba(14,116,144,0.06)",
-                      border: "1px solid rgba(14,116,144,0.18)",
-                      borderRadius: "6px",
-                      padding: "16px 20px",
-                    }}
-                  >
-                    <div style={{ fontSize: "12px", color: "#0E7490", marginBottom: "8px", fontWeight: "bold" }}>{title}</div>
-                    <p style={{ margin: 0, fontSize: "13px", color: "#a09880", lineHeight: 1.7 }}>{text}</p>
+                  <div key={title} style={{
+                    borderLeft: "3px solid #0E7490",
+                    borderRadius: "0 6px 6px 0",
+                    background: "#0E74900a",
+                    padding: "14px 18px",
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#38bcd4", marginBottom: 6 }}>{title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{text}</p>
                   </div>
                 ))}
               </div>
@@ -12522,8 +12433,8 @@ function ContemporaryRelevanceModernApplications() {
           </div>
 
           {echosOpen && (
-            <div style={{ padding: "0 28px 28px 28px", borderTop: `1px solid #1a2e1f` }}>
-              <div style={{ paddingTop: "20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: `1px solid ${accent}33` }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
                 {[
                   {
                     title: "Self-Determination Theory Research",
@@ -12542,19 +12453,16 @@ function ContemporaryRelevanceModernApplications() {
                     body: "The climate crisis, on Spinoza's analysis, arises from a systematic failure to understand human embeddedness in natural systems — treating nature as an external resource rather than as the substance of which we are finite modes. This is not merely an ethical failure but an epistemological one: inadequate ideas generating passive destructive affects at civilizational scale.",
                   },
                 ].map((echo) => (
-                  <div
-                    key={echo.title}
-                    style={{
-                      background: "#0d1810",
-                      border: "1px solid #1a2e1f",
-                      borderRadius: "6px",
-                      padding: "16px 18px",
-                    }}
-                  >
-                    <div style={{ fontSize: "13px", color: accentLight, marginBottom: "8px", fontWeight: "bold" }}>
+                  <div key={echo.title} style={{
+                    borderLeft: `3px solid ${accent}`,
+                    borderRadius: "0 6px 6px 0",
+                    background: `${accent}0a`,
+                    padding: "14px 18px",
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: accentLight, marginBottom: 6 }}>
                       {echo.title}
                     </div>
-                    <p style={{ fontSize: "13px", color: "#94a3b8", lineHeight: "1.7", margin: 0 }}>
+                    <p style={{ fontSize: 13, color: "#b8b0a8", lineHeight: 1.7, margin: 0 }}>
                       {echo.body}
                     </p>
                   </div>
@@ -13186,31 +13094,21 @@ function UnityOfSpinozasSystemFinalIntegration() {
                     title: "Philosophy as Transformative Practice",
                     text: "Against the reduction of philosophy to technical puzzle-solving or cultural commentary, Spinoza's system embodies the ancient understanding of philosophy as a way of life — not merely a set of propositions to be believed, but a transformative engagement with the deepest questions of human existence that genuinely changes how one lives and acts in the world."
                   }
-                ].map((echo) => {
-                  const eh = hoveredEcho === echo.title;
-                  return (
-                    <div
-                      key={echo.title}
-                      onMouseEnter={() => setHoveredEcho(echo.title)}
-                      onMouseLeave={() => setHoveredEcho(null)}
-                      style={{
-                        background: eh ? "rgba(109,40,217,0.12)" : "rgba(109,40,217,0.06)",
-                        border: "1px solid rgba(109,40,217,0.2)",
-                        borderRadius: 6,
-                        padding: "14px 18px",
-                        transition: "all 0.2s",
-                        cursor: "default"
-                      }}
-                    >
-                      <div style={{ fontSize: 12, fontWeight: "bold", color: "#c084fc", marginBottom: 6 }}>
-                        {echo.title}
-                      </div>
-                      <p style={{ margin: 0, fontSize: 13, color: "#ddd6fe", lineHeight: 1.75 }}>
-                        {echo.text}
-                      </p>
+                ].map((echo) => (
+                  <div key={echo.title} style={{
+                    borderLeft: "3px solid #6D28D9",
+                    borderRadius: "0 6px 6px 0",
+                    background: "#6D28D90a",
+                    padding: "14px 18px",
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#c084fc", marginBottom: 6 }}>
+                      {echo.title}
                     </div>
-                  );
-                })}
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.75 }}>
+                      {echo.text}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           )}
