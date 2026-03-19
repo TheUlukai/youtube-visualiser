@@ -326,6 +326,12 @@ visualization under `sites/`, build it to `docs/`, and update the site index.
 
 - **Bare px font sizes not scaling on mobile** — `fontSize: 14` is fine on desktop but becomes illegible on high-DPI phones. Use `clamp(12px, 1.8vw, 15px)` for body text and `clamp(18px, 3vw, 28px)` for headings. On a 1440px desktop `1.8vw ≈ 26px` which clamp caps to `15px` — identical to the hardcoded value. The mobile benefit is that it scales to the viewport rather than rendering tiny.
 
+- **Cross-section accent colour bleed** — a generated component may use a colour that belongs to an adjacent section rather than its own accent. Common failure modes: (1) the Key Concepts pills use a neighbour section's accent hex; (2) the Difficulty panel uses a completely different hue from the Problem panel in the same section. The fix is to ensure every structural element — Problem `borderLeft`, KC label, pill colours, Difficulty `borderLeft` and label, RWE label and card `borderLeft` — all derive from the single section `ACCENT` constant. Lighter/darker tints for readability are fine; a different hue is not.
+
+- **RWE button label with no explicit colour** — the "Real-World Echoes" `<span>` inside the toggle button inherits the button's general text colour instead of the accent. Always set `color: ACCENT` explicitly on the label span, matching the ChevronDown/ChevronUp icon colour beside it.
+
+- **Difficulty panel using a different hue from Problem panel** — the generation prompt previously said "a slightly different shade" for the Difficulty border, which models interpreted as licence to pick a different colour entirely. The Difficulty `borderLeft` must use the same `ACCENT` as the Problem panel. The label text can use a lighter tint of ACCENT for readability, but the left border stripe must be the exact accent hex.
+
 ## Fix Workflow
 
 **Always fix in `output/components/` source files, never in `output/visualizations.jsx` directly** — the assembled file is overwritten by `assemble.py` and edits will be lost. After fixing components, run `python scripts/assemble.py` to regenerate.

@@ -107,12 +107,15 @@ The component MUST contain these layers in order:
    Use onClick to toggle (NOT onMouseEnter — hover causes layout jitter).
    The description panel renders as a <div> below the pills, never inside SVG.
    Active pill background: {accent_color}; active pill text: "#f0ead8".
-   Label the section "Key Concepts — Click to Explore" in small caps using the accent color.
+   Label the section "Key Concepts — Click to Explore" in small caps using {accent_color}.
+   IMPORTANT: every color in this panel — label, pill borders, active pill background, hover
+   popup border — must derive from {accent_color}. Never use a color from a different section.
 
 4. THE DIFFICULTY PANEL (below Key Concepts)
    Show problem_created — the new tension this idea generates.
-   Style: dark card with a subtle left border in a slightly different shade. Label "The Difficulty" in small caps.
-   End with a forward-looking sentence: "This pressure forces the next development..."
+   Style: dark card with borderLeft: "4px solid {accent_color}" — the SAME accent color as The Problem
+   panel and the Key Concepts panel. Never use a different hue or shade here. Label "The Difficulty"
+   in small caps using the accent color. End with "This pressure forces the next development..."
 
 5. REAL-WORLD ECHOES PANEL (collapsible, bottom)
    A collapsible section using ChevronDown/ChevronUp from lucide-react. Collapsed by default.
@@ -142,6 +145,12 @@ The component MUST contain these layers in order:
 - The component should feel like a polished interactive essay, not a dashboard.
 - Responsive: clamp() for all font sizes; SVG always viewBox + width="100%"; canvas
   dimensions set via ResizeObserver in useEffect; content wrapper maxWidth "min(90vw, 860px)".
+- COLOR CONSISTENCY: {accent_color} is the ONE accent for this section. Every structural
+  element — Problem borderLeft, KC label and pill colors, Difficulty borderLeft and label,
+  RWE label and card borderLeft — must use {accent_color} (or a lighter/darker tint of it
+  for readability). Never introduce a different hue for any of these elements. Lighter tints
+  (e.g. {accent_color} + "99" for labels) are fine; a completely different color is not.
+  The RWE button label <span> must have an explicit color: {accent_color} — never inherit.
 - CONSISTENT PANEL WIDTH: every panel (Header, Problem, Main Viz, Key Concepts, Difficulty,
   Real-World Echoes) must appear the same visual width. Achieve this by placing all panels inside
   a single inner wrapper: <div style={{{{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}}}>
@@ -224,6 +233,15 @@ def validate_jsx(code: str, component_name: str) -> tuple[bool, str]:
         return False, "Missing centred section header (no textAlign: 'center' found)"
     if "Part " not in code:
         return False, "Missing section header — no 'Part N of M' label found"
+
+    # Must have Real-World Echoes panel with collapsible state
+    if "echoes" not in code.lower() and "echos" not in code.lower():
+        return False, "Missing Real-World Echoes panel"
+
+    # RWE cards must use borderLeft (not just border)
+    # Look for the pattern near "Real-World Echoes" — rough heuristic
+    if 'borderLeft: "3px solid' not in code and "borderLeft: `3px solid" not in code:
+        return False, "RWE cards missing borderLeft accent stripe (must use borderLeft: '3px solid ACCENT')"
 
     # Check for banned patterns
     if "\\u" in code:
