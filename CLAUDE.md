@@ -149,6 +149,73 @@ Each section component must have:
 - Color the active pill with the section's full accent color (text becomes `#f0ead8` for readability)
 - Concepts must be genuinely informative — not just vocabulary labels
 
+## Required: Real-World Echoes Panel
+**Every section MUST include a "Real-World Echoes" collapsible panel** as the last element, collapsed by default.
+
+### Implementation pattern
+```jsx
+{/* Real-World Echoes */}
+<div style={{
+  background: `${ACCENT}08`,
+  border: `1px solid ${ACCENT}33`,
+  borderRadius: 8,
+  overflow: "hidden",
+}}>
+  <button
+    onClick={() => setEchoesOpen(!echoesOpen)}
+    style={{
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      padding: "18px 24px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      cursor: "pointer",
+      fontFamily: "Georgia, serif",
+    }}
+  >
+    <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: ACCENT_LIGHT }}>
+      Real-World Echoes
+    </span>
+    {echoesOpen ? <ChevronUp size={16} color={ACCENT_LIGHT} /> : <ChevronDown size={16} color={ACCENT_LIGHT} />}
+  </button>
+  {echoesOpen && (
+    <div style={{ padding: "0 24px 24px 24px", borderTop: `1px solid ${ACCENT}33` }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+        {[
+          { title: "Echo Title", body: "Echo body text..." },
+        ].map((item, i) => (
+          <div key={i} style={{
+            borderLeft: `3px solid ${ACCENT}`,
+            borderRadius: "0 6px 6px 0",
+            background: `${ACCENT}0a`,
+            padding: "14px 18px",
+          }}>
+            <div style={{ fontSize: 13, fontWeight: "bold", color: ACCENT_LIGHT, marginBottom: 6 }}>
+              {item.title}
+            </div>
+            <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+              {item.body}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
+```
+
+### Rules
+- 3–4 items per section — concrete, specific modern parallels (not vague generalisations)
+- Each item must have a **bold title** and a substantive body paragraph
+- Use the section's accent color for `borderLeft` and title color; body text in `#b8b0a8`
+- `borderRadius: "0 6px 6px 0"` on each card (flat left edge where the border is, rounded right)
+- No hover effects on individual cards — static styling only
+- No emoji icons in titles or body text
+- No grid layouts — always a single column regardless of item count
+- No per-item accent colors — all cards use the same section accent
+
 ## File Structure
 ```
 scripts/

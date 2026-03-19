@@ -115,9 +115,21 @@ The component MUST contain these layers in order:
    End with a forward-looking sentence: "This pressure forces the next development..."
 
 5. REAL-WORLD ECHOES PANEL (collapsible, bottom)
-   A collapsible section (use ChevronDown/ChevronUp icons from lucide-react).
-   Shows the real_world_examples as a list of concrete modern parallels.
-   Label "Real-World Echoes" in small caps. Collapsed by default.
+   A collapsible section using ChevronDown/ChevronUp from lucide-react. Collapsed by default.
+   Label "Real-World Echoes" in small caps (fontSize 10, letterSpacing 3, textTransform uppercase).
+   Shows real_world_examples as 3–4 titled cards. Each card MUST have a bold title and a body paragraph.
+
+   Required card format — use this exactly:
+     borderLeft: "3px solid ACCENT"
+     borderRadius: "0 6px 6px 0"
+     background: ACCENT + "0a"   (i.e. hex accent color + "0a" for ~4% opacity)
+     padding: "14px 18px"
+     title: fontSize 13, fontWeight "bold", color ACCENT_LIGHT, marginBottom 6
+     body: fontSize 13, color "#b8b0a8", lineHeight 1.7, margin 0
+
+   Always use a single flex column (flexDirection "column", gap 14) — never a grid.
+   No hover effects on cards. No emoji icons. No per-card accent color variation.
+   The toggle button uses a plain <button> (width "100%", background transparent, border none).
 
 === STYLE GUIDELINES ===
 - Background: radial gradient from a dark version of the accent color to near-black (#0a0a0f)
