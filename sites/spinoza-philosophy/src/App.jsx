@@ -869,7 +869,7 @@ function SpinozaIntroduction() {
           style={{
             background: "rgba(12, 12, 28, 0.88)",
             border: "1px solid rgba(100, 80, 180, 0.3)",
-            borderLeft: "4px solid #4a3a8a",
+            borderLeft: "4px solid #7B68EE",
             borderRadius: "10px",
             padding: "28px 28px 24px 28px",
             marginBottom: "20px",
@@ -881,7 +881,7 @@ function SpinozaIntroduction() {
               fontSize: "10px",
               letterSpacing: "3px",
               textTransform: "uppercase",
-              color: "#8878c8",
+              color: "#7B68EE",
               marginBottom: "14px",
               fontFamily: "Georgia, serif",
             }}
@@ -1632,14 +1632,14 @@ function MakingOfRevolutionaryMind() {
         padding: "24px 28px",
         background: "rgba(10,12,20,0.85)",
         border: "1px solid rgba(74,110,90,0.3)",
-        borderLeft: "4px solid #4A6E5A",
+        borderLeft: "4px solid #2D4A6E",
         borderRadius: 8,
       }}>
         <div style={{
           fontSize: "10px",
           letterSpacing: "3px",
           textTransform: "uppercase",
-          color: "#4A6E5A",
+          color: "#2D4A6E",
           marginBottom: "14px"
         }}>The Difficulty</div>
         <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", lineHeight: "1.75", color: "#b8c8b4", margin: "0 0 16px 0" }}>
@@ -2131,12 +2131,12 @@ function RevolutionaryMetaphysicsGodOrNature() {
         <div style={{
           background: '#0f0518',
           border: '1px solid #2a1040',
-          borderLeft: '4px solid #6B21A8',
+          borderLeft: '4px solid #4B0082',
           borderRadius: 8,
           padding: '24px 28px',
           marginBottom: 24,
         }}>
-          <div style={{ fontSize: 11, letterSpacing: 3, color: '#6B21A8', textTransform: 'uppercase', marginBottom: 12, fontWeight: 'bold' }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, color: '#4B0082', textTransform: 'uppercase', marginBottom: 12, fontWeight: 'bold' }}>
             The Difficulty
           </div>
           <p style={{ margin: '0 0 12px 0', fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.8, color: '#cbb5e8' }}>
@@ -2740,12 +2740,12 @@ function ArchitectureOfRealityAttributesModes() {
         <div style={{
           background: "#0d1a0d",
           border: "1px solid #1a301a",
-          borderLeft: "4px solid #4A8B4A",
+          borderLeft: "4px solid #006B6B",
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 24,
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#4A8B4A", marginBottom: 12, fontWeight: "bold" }}>
+          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#006B6B", marginBottom: 12, fontWeight: "bold" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: "clamp(13px, 1.8vw, 15px)", color: "#C0D8C0" }}>
@@ -3435,7 +3435,7 @@ function UnityOfMindAndBody() {
       <div style={{
         background: "rgba(10, 20, 10, 0.85)",
         border: "1px solid #33691e",
-        borderLeft: "4px solid #558b2f",
+        borderLeft: "4px solid #2E7D32",
         borderRadius: "8px",
         padding: "28px 32px",
         marginBottom: "28px"
@@ -5710,13 +5710,13 @@ function FreedomWithinNecessity() {
         <div style={{
           background: "rgba(10, 12, 30, 0.85)",
           border: "1px solid #2d4a9a",
-          borderLeft: "4px solid #3b6fd4",
+          borderLeft: "4px solid #1E40AF",
           borderRadius: 10,
           padding: "24px 28px",
           marginBottom: 24,
-          boxShadow: "0 0 20px rgba(59,111,212,0.1)",
+          boxShadow: "0 0 20px rgba(30,64,175,0.1)",
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#3b6fd4", textTransform: "uppercase", marginBottom: 12, fontWeight: "bold" }}>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#1E40AF", textTransform: "uppercase", marginBottom: 12, fontWeight: "bold" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: "clamp(13px, 1.8vw, 15px)", color: "#b0bce0" }}>
@@ -5774,7 +5774,7 @@ function FreedomWithinNecessity() {
                   padding: "14px 18px",
                   background: "rgba(30,64,175,0.08)",
                   borderRadius: 8,
-                  borderLeft: "3px solid #2d5ab8",
+                  borderLeft: "3px solid #1E40AF",
                 }}>
                   <div style={{ fontSize: 13, color: "#a8b8e0", fontWeight: "bold", marginBottom: 6 }}>Advertising and Manufactured Desire</div>
                   <p style={{ margin: 0, fontSize: 13, color: "#7888b8", lineHeight: 1.7 }}>
@@ -5785,7 +5785,7 @@ function FreedomWithinNecessity() {
                   padding: "14px 18px",
                   background: "rgba(30,64,175,0.08)",
                   borderRadius: 8,
-                  borderLeft: "3px solid #3b6fd4",
+                  borderLeft: "3px solid #1E40AF",
                 }}>
                   <div style={{ fontSize: 13, color: "#a8b8e0", fontWeight: "bold", marginBottom: 6 }}>Moments of Authentic Action</div>
                   <p style={{ margin: 0, fontSize: 13, color: "#7888b8", lineHeight: 1.7 }}>
@@ -8012,11 +8012,11 @@ function MiraclesProphecyNaturalOrder() {
       <div style={{
         background: '#110a1e',
         border: '1px solid #2a1245',
-        borderLeft: '4px solid #7c3aed',
+        borderLeft: '4px solid #4C1D95',
         borderRadius: '8px',
         padding: '22px 26px',
         marginBottom: '20px',
-        boxShadow: '0 2px 24px #7c3aed18',
+        boxShadow: '0 2px 24px #4C1D9518',
       }}>
         <div style={{ fontSize: '10px', letterSpacing: '0.18em', color: '#9d5cdb', textTransform: 'uppercase', marginBottom: '10px', fontWeight: 'bold' }}>
           The Difficulty
@@ -8565,12 +8565,12 @@ function SocialContractNaturalRight() {
         <div style={{
           background: "#0c1820cc",
           border: "1px solid #1a2838",
-          borderLeft: `4px solid #0284C7`,
+          borderLeft: `4px solid #065F46`,
           borderRadius: 10,
           padding: "24px 28px",
           marginBottom: 28
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#38BDF8", textTransform: "uppercase", marginBottom: 12, fontWeight: "bold" }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#10B981", textTransform: "uppercase", marginBottom: 12, fontWeight: "bold" }}>The Difficulty</div>
           <p style={{ margin: "0 0 14px 0", fontSize: 15, lineHeight: 1.8, color: "#d4d0c4" }}>
             If democracy is the most legitimate form of government because it distributes power most broadly and transforms citizens through participation, then a new and urgent question arises: the simulation makes clear that democracy's advantage depends heavily on civic virtue and information access — but these are not naturally given. They must be cultivated. How do individuals develop the rational and moral capacities needed for effective democratic participation? What role does education play in producing the kind of citizens that democracy requires to produce its legitimacy-granting consequences?
           </p>
@@ -9047,11 +9047,11 @@ function EducationTransformationSociety() {
         maxWidth: "min(90vw, 860px)", margin: "0 auto 28px auto",
         background: "#0a0a1a",
         border: "1px solid #1a1a30",
-        borderLeft: "4px solid #2a3a7a",
+        borderLeft: "4px solid #1D4ED8",
         borderRadius: 8,
         padding: "20px 24px",
       }}>
-        <div style={{ fontSize: 10, letterSpacing: 3, color: "#4a6aaa", textTransform: "uppercase", marginBottom: 10 }}>
+        <div style={{ fontSize: 10, letterSpacing: 3, color: "#1D4ED8", textTransform: "uppercase", marginBottom: 10 }}>
           The Difficulty
         </div>
         <p style={{ margin: "0 0 12px 0", fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: 1.7, color: "#b0b0cc" }}>
@@ -9637,12 +9637,12 @@ function ProblemOfEvilSuffering() {
         <div style={{
           background: "rgba(10, 5, 2, 0.7)",
           border: "1px solid rgba(100, 40, 10, 0.3)",
-          borderLeft: "4px solid #5c2308",
+          borderLeft: "4px solid #78350F",
           borderRadius: 6,
           padding: "20px 24px",
           marginBottom: 24,
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#5c2308", marginBottom: 10 }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#78350F", marginBottom: 10 }}>The Difficulty</div>
           <p style={{ margin: "0 0 12px", lineHeight: 1.75, fontSize: 14, color: "#b09070" }}>
             If suffering arises partly from finite existence itself and partly from inadequate understanding, and if higher knowledge transforms our relationship to temporality and finitude, then what happens to the self at the highest levels of knowledge? Is there any sense in which something in human beings transcends temporal dissolution? Spinoza's solution converts the problem of evil from theology into practice — but it opens a new abyss: the question of whether the wise person, having seen sub specie aeternitatis, relates to their own death and dissolution in a fundamentally different way than the unwise.
           </p>
@@ -10381,7 +10381,7 @@ function EternityMindsImmortality() {
         <div style={{
           background: 'rgba(15,10,30,0.85)',
           border: '1px solid #1e1255',
-          borderLeft: '4px solid #7c3aed',
+          borderLeft: '4px solid #5B21B6',
           borderRadius: '8px',
           padding: '28px 32px',
           marginBottom: '24px',
@@ -11849,13 +11849,13 @@ function SpinozaInfluenceLaterPhilosophy() {
           style={{
             background: "rgba(5,8,16,0.6)",
             border: "1px solid rgba(14,116,144,0.15)",
-            borderLeft: "4px solid #065F46",
+            borderLeft: "4px solid #0E7490",
             borderRadius: "8px",
             padding: "28px 32px",
             marginBottom: "24px",
           }}
         >
-          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#065F46", marginBottom: "12px" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#0E7490", marginBottom: "12px" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 16px", fontSize: "15px", lineHeight: 1.8, color: "#d4c8b8" }}>
@@ -12391,13 +12391,13 @@ function ContemporaryRelevanceModernApplications() {
           style={{
             background: "#0f1219",
             border: "1px solid #1f2937",
-            borderLeft: `4px solid #4338ca`,
+            borderLeft: `4px solid #15803D`,
             borderRadius: "8px",
             padding: "28px 32px",
             marginBottom: "28px",
           }}
         >
-          <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#818cf8", marginBottom: "12px", textTransform: "uppercase", fontWeight: "bold" }}>
+          <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#22c55e", marginBottom: "12px", textTransform: "uppercase", fontWeight: "bold" }}>
             The Difficulty
           </div>
           <p style={{ fontSize: "15px", lineHeight: "1.8", color: "#cbd5e1", margin: "0 0 14px 0" }}>
