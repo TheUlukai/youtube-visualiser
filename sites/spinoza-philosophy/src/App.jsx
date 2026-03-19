@@ -4581,8 +4581,8 @@ function ConatusEssentialDrive() {
         </div>
 
         {/* Key Concepts */}
-        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(180,83,9,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 32 }}>
-          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#B45309", marginBottom: 14 }}>
+        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(194,65,12,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#C2410C", marginBottom: 14 }}>
             Key Concepts — Click to Explore
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
@@ -4592,12 +4592,12 @@ function ConatusEssentialDrive() {
                 onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
                 style={{
                   padding: "6px 14px",
-                  background: hoveredConcept === c.id ? "#B45309" : "rgba(180,83,9,0.1)",
-                  border: `1px solid ${hoveredConcept === c.id ? "#d97706" : "rgba(180,83,9,0.35)"}`,
+                  background: hoveredConcept === c.id ? "#C2410C" : "rgba(194,65,12,0.1)",
+                  border: `1px solid ${hoveredConcept === c.id ? "#f97316" : "rgba(194,65,12,0.35)"}`,
                   borderRadius: 20,
                   fontSize: 12,
                   cursor: "pointer",
-                  color: hoveredConcept === c.id ? "#f0ead8" : "#d97706",
+                  color: hoveredConcept === c.id ? "#f0ead8" : "#f97316",
                   transition: "all 0.2s",
                 }}
               >
@@ -4606,8 +4606,8 @@ function ConatusEssentialDrive() {
             ))}
           </div>
           {hoveredConcept && (
-            <div style={{ background: "rgba(180,83,9,0.08)", border: "1px solid rgba(180,83,9,0.3)", borderRadius: 6, padding: "16px 20px" }}>
-              <div style={{ fontSize: 13, fontWeight: "bold", color: "#B45309", marginBottom: 8 }}>
+            <div style={{ background: "rgba(194,65,12,0.08)", border: "1px solid rgba(194,65,12,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+              <div style={{ fontSize: 13, fontWeight: "bold", color: "#C2410C", marginBottom: 8 }}>
                 {concepts.find(c => c.id === hoveredConcept)?.label}
               </div>
               <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
@@ -4622,13 +4622,13 @@ function ConatusEssentialDrive() {
           style={{
             background: "#0e0a1266",
             border: "1px solid #2a1a2a",
-            borderLeft: "4px solid #7C3AED",
+            borderLeft: "4px solid #C2410C",
             borderRadius: "8px",
             padding: "24px 28px",
             marginBottom: "24px",
           }}
         >
-          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#9D4EDD", marginBottom: "12px", textTransform: "uppercase", fontWeight: "bold" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#C2410C", marginBottom: "12px", textTransform: "uppercase", fontWeight: "bold" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 12px 0", fontSize: "clamp(13px, 1.8vw, 15px)", lineHeight: "1.8", color: "#c8b8b8" }}>
@@ -9678,8 +9678,8 @@ function ProblemOfEvilSuffering() {
           </button>
 
           {echosOpen && (
-            <div style={{ padding: "0 24px 24px" }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #78350F33" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
                 {[
                   {
                     title: "Predator-Prey Relationships",
@@ -9695,13 +9695,13 @@ function ProblemOfEvilSuffering() {
                   }
                 ].map((ex, i) => (
                   <div key={i} style={{
-                    padding: "16px 18px",
-                    background: "rgba(20, 10, 4, 0.6)",
-                    border: "1px solid rgba(120, 53, 15, 0.15)",
-                    borderRadius: 5,
+                    borderLeft: "3px solid #78350F",
+                    borderRadius: "0 6px 6px 0",
+                    background: "#78350F0a",
+                    padding: "14px 18px",
                   }}>
-                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#e0a050", marginBottom: 8 }}>{ex.title}</div>
-                    <p style={{ fontSize: 13, color: "#a08060", lineHeight: 1.7, margin: 0 }}>{ex.body}</p>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#b45309", marginBottom: 6 }}>{ex.title}</div>
+                    <p style={{ fontSize: 13, color: "#b8b0a8", lineHeight: 1.7, margin: 0 }}>{ex.body}</p>
                   </div>
                 ))}
               </div>
