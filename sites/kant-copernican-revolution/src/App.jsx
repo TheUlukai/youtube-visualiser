@@ -5343,9 +5343,9 @@ function TransitionToPracticalPhilosophy() {
       <div style={{ position: 'relative', zIndex: 1, maxWidth: '820px', margin: '0 auto', padding: '40px 24px 60px' }}>
 
         {/* Header */}
-        <div style={{ marginBottom: '10px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#B5651D', textTransform: 'uppercase', marginBottom: '8px' }}>Part 9 of 21 — Kant's Critical Philosophy</div>
-          <h1 style={{ fontSize: '28px', fontWeight: 'normal', color: '#f0ddc8', margin: '0 0 6px', lineHeight: '1.3' }}>The Transition to Practical Philosophy</h1>
+          <h1 style={{ fontSize: 'clamp(22px,4vw,36px)', fontWeight: 'normal', color: '#f0ddc8', margin: '0 0 6px', lineHeight: '1.3' }}>The Transition to Practical Philosophy</h1>
           <p style={{ fontSize: '14px', color: '#c4a882', margin: 0, fontStyle: 'italic', lineHeight: '1.6' }}>
             The completion of theoretical philosophy left a profound gap between the natural world and the moral world that only a new investigation of practical reason could fill.
           </p>
@@ -5694,51 +5694,63 @@ function TransitionToPracticalPhilosophy() {
 
         {/* ── 4. REAL-WORLD ECHOES (collapsible) ── */}
         <div style={{
-          background: '#0e0c0aaa',
-          border: '1px solid #3a2808',
-          borderRadius: '6px',
+          background: 'rgba(181,101,29,0.05)',
+          border: '1px solid rgba(181,101,29,0.2)',
+          borderRadius: '8px',
           overflow: 'hidden',
         }}>
-          <div
+          <button
             onClick={() => setEchosOpen(!echosOpen)}
             style={{
+              width: '100%',
+              background: 'transparent',
+              border: 'none',
               padding: '18px 24px',
-              cursor: 'pointer',
               display: 'flex',
-              justifyContent: 'space-between',
               alignItems: 'center',
-              userSelect: 'none',
+              justifyContent: 'space-between',
+              cursor: 'pointer',
+              fontFamily: 'Georgia, serif',
             }}
-            onMouseEnter={e => e.currentTarget.style.background = '#1a1008aa'}
-            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
           >
-            <span style={{ fontSize: '10px', letterSpacing: '3px', color: '#B5651D', textTransform: 'uppercase' }}>Real-World Echoes</span>
-            {echosOpen ? <ChevronUp size={16} color="#B5651D" /> : <ChevronDown size={16} color="#B5651D" />}
-          </div>
+            <span style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: '#c4804a' }}>Real-World Echoes</span>
+            {echosOpen ? <ChevronUp size={16} color="#c4804a" /> : <ChevronDown size={16} color="#c4804a" />}
+          </button>
           {echosOpen && (
-            <div style={{ padding: '0 24px 24px' }}>
-              <div style={{ borderTop: '1px solid #2a1808', paddingTop: '18px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ background: '#160d0588', borderRadius: '4px', padding: '16px 18px', border: '1px solid #2e1a08' }}>
-                  <div style={{ color: '#e8b870', fontSize: '12px', fontWeight: 'bold', marginBottom: '6px', letterSpacing: '0.5px' }}>What is Enlightenment? (1784)</div>
-                  <p style={{ margin: 0, fontSize: '13px', lineHeight: '1.7', color: '#a89070' }}>
-                    Kant's essay defines rational maturity as the courage to use one's own understanding without another's guidance — Sapere aude. Written during the same period as the first Critique, it shows practical philosophy was never merely academic: it was a manifesto for intellectual autonomy against dogma, paternalism, and superstition.
-                  </p>
-                </div>
-                <div style={{ background: '#160d0588', borderRadius: '4px', padding: '16px 18px', border: '1px solid #2e1a08' }}>
-                  <div style={{ color: '#e8b870', fontSize: '12px', fontWeight: 'bold', marginBottom: '6px', letterSpacing: '0.5px' }}>American and French Revolutions (1776, 1789)</div>
-                  <p style={{ margin: 0, fontSize: '13px', lineHeight: '1.7', color: '#a89070' }}>
-                    Kant lived through both revolutions and wrote of them with cautious admiration. They were, for him, practical experiments in the very idea he was developing philosophically: that legitimate political order must be grounded not in tradition or force but in rational self-legislation. The gap between natural history and moral progress was not merely theoretical — it was being enacted in the streets of Paris and Philadelphia.
-                  </p>
-                </div>
-                <div style={{ background: '#160d0588', borderRadius: '4px', padding: '16px 18px', border: '1px solid #2e1a08' }}>
-                  <div style={{ color: '#e8b870', fontSize: '12px', fontWeight: 'bold', marginBottom: '6px', letterSpacing: '0.5px' }}>Cosmopolitan Federation of Republican States</div>
-                  <p style={{ margin: 0, fontSize: '13px', lineHeight: '1.7', color: '#a89070' }}>
-                    In "Perpetual Peace" (1795), Kant envisioned a world federation of republican states — not as a utopian fantasy but as what practical reason demands. Free, rational beings cannot stop legislating at national borders: the cosmopolitan scope of morality anticipates international law, the United Nations, and the very idea of universal human rights grounded not in culture but in the dignity of rational agency itself.
-                  </p>
-                </div>
+            <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid rgba(181,101,29,0.2)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: 'What is Enlightenment? (1784)',
+                    body: "Kant's essay defines rational maturity as the courage to use one's own understanding without another's guidance — Sapere aude. Written during the same period as the first Critique, it shows practical philosophy was never merely academic: it was a manifesto for intellectual autonomy against dogma, paternalism, and superstition.",
+                  },
+                  {
+                    title: 'American and French Revolutions (1776, 1789)',
+                    body: 'Kant lived through both revolutions and wrote of them with cautious admiration. They were, for him, practical experiments in the very idea he was developing philosophically: that legitimate political order must be grounded not in tradition or force but in rational self-legislation. The gap between natural history and moral progress was not merely theoretical — it was being enacted in the streets of Paris and Philadelphia.',
+                  },
+                  {
+                    title: 'Cosmopolitan Federation of Republican States',
+                    body: 'In "Perpetual Peace" (1795), Kant envisioned a world federation of republican states — not as a utopian fantasy but as what practical reason demands. Free, rational beings cannot stop legislating at national borders: the cosmopolitan scope of morality anticipates international law, the United Nations, and the very idea of universal human rights grounded not in culture but in the dignity of rational agency itself.',
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{
+                    borderLeft: '3px solid #B5651D',
+                    borderRadius: '0 6px 6px 0',
+                    background: 'rgba(181,101,29,0.07)',
+                    padding: '14px 18px',
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: 'bold', color: '#c4804a', marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>{item.body}</p>
+                  </div>
+                ))}
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#2a1005', letterSpacing: 1 }}>
+          Part 9 of 21 — Kant's Critical Philosophy
         </div>
 
       </div>
