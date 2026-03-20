@@ -145,7 +145,7 @@ const SECTIONS = [
 ];
 
 const accentMap = {
-  "spinoza_introduction": "#1A1A2E",
+  "spinoza_introduction": "#7B68EE",
   "making_of_revolutionary_mind": "#2D4A6E",
   "revolutionary_metaphysics_god_or_nature": "#4B0082",
   "architecture_of_reality_attributes_modes": "#006B6B",
