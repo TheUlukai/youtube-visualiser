@@ -3266,7 +3266,7 @@ function AristotleSubstance() {
       </div>
 
       {/* REAL-WORLD ECHOES */}
-      <div style={{ padding: "0 40px 48px 40px", maxWidth: "900px", margin: "0 auto" }}>
+      <div style={{ padding: "0 40px 0 40px", maxWidth: "900px", margin: "0 auto" }}>
         <div style={{
           background: "rgba(10,8,5,0.8)",
           border: "1px solid #2a1808",
