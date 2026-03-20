@@ -3960,9 +3960,9 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
       }}
     >
       {/* Header */}
-      <div style={{ maxWidth: 820, margin: "0 auto 32px auto" }}>
-        <div style={{ fontSize: 11, letterSpacing: 3, color: "#7a5a7a", marginBottom: 8, textTransform: "uppercase" }}>Part 7 of 21 · Kant's Critical Philosophy</div>
-        <h1 style={{ fontSize: 28, fontWeight: "bold", color: "#d4a8d4", margin: "0 0 8px 0", lineHeight: 1.2 }}>
+      <div style={{ textAlign: "center", maxWidth: 820, margin: "0 auto 32px auto" }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, color: "#7a5a7a", marginBottom: 8, textTransform: "uppercase" }}>Part 7 of 21 — Kant's Critical Philosophy</div>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#d4a8d4", margin: "0 0 8px 0", lineHeight: 1.3 }}>
           Phenomena, Noumena, and the Limits of Knowledge
         </h1>
         <p style={{ fontSize: 15, color: "#a07aa0", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
@@ -4305,14 +4305,14 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
       {/* Difficulty Panel */}
       <div style={{ maxWidth: 820, margin: "0 auto 28px auto" }}>
         <div style={{
-          background: "#12060a",
-          border: "1px solid #2e1020",
-          borderLeft: "4px solid #8B2020",
+          background: "#12081a",
+          border: "1px solid #2e1030",
+          borderLeft: "4px solid #4A1942",
           borderRadius: 8,
           padding: "20px 24px",
           boxShadow: "0 4px 24px #0006",
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#7a2a2a", textTransform: "uppercase", marginBottom: 10, fontWeight: "bold" }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#4A1942", textTransform: "uppercase", marginBottom: 10, fontWeight: "bold" }}>The Difficulty</div>
           <p style={{ margin: "0 0 14px 0", fontSize: 14, lineHeight: 1.75, color: "#c8a0a8" }}>
             The phenomena-noumena distinction generates an irresolvable internal tension. Kant requires things-in-themselves to <em>affect</em> our sensibility — for without this, appearances would be appearances of nothing, and empirical realism would collapse into pure idealism. Yet affection is a causal relation. Causality is one of the twelve categories of the understanding. And the categories, Kant insists, apply only to phenomena, only within the framework of time.
           </p>
@@ -4347,35 +4347,37 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
               fontFamily: "Georgia, serif",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ fontSize: 10, letterSpacing: 3, color: "#6a4a7a", textTransform: "uppercase", fontWeight: "bold" }}>Real-World Echoes</span>
-              <span style={{ fontSize: 11, color: "#4a3a5a", fontStyle: "italic" }}>— concrete parallels</span>
-            </div>
+            <span style={{ fontSize: 10, letterSpacing: 3, color: "#4A1942", textTransform: "uppercase" }}>Real-World Echoes</span>
             {echoesOpen
-              ? <ChevronUp size={16} color="#6a4a7a" />
-              : <ChevronDown size={16} color="#6a4a7a" />
+              ? <ChevronUp size={16} color="#4A1942" />
+              : <ChevronDown size={16} color="#4A1942" />
             }
           </button>
 
           {echoesOpen && (
-            <div style={{ padding: "4px 24px 24px 24px" }}>
-              <div style={{ borderTop: "1px solid #1e0e2e", paddingTop: 18 }}>
-                <div style={{ marginBottom: 18, padding: "14px 16px", background: "#0a0418", borderRadius: 6, borderLeft: "2px solid #4A1942" }}>
-                  <div style={{ fontSize: 11, color: "#9a7aaa", marginBottom: 6, fontWeight: "bold" }}>The Experienced Tree</div>
-                  <p style={{ margin: 0, fontSize: 13, color: "#8a708a", lineHeight: 1.7 }}>
-                    When you perceive the oak in the garden, you are perceiving a genuine phenomenon — not an illusion, but a real empirical object structured by your spatial, temporal, and categorical faculties. Its green color, its height, its causal powers (shade, oxygen, falling branches) are all perfectly real within the human cognitive framework. What the tree is apart from all possible perception — whether it has color, extension, or any knowable property at all — remains permanently inaccessible. The scientific tree of physics (mass, charge, particle fields) is still a phenomenon, just a more refined one.
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #1e0e2e" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: "3px solid #4A1942", borderRadius: "0 6px 6px 0", background: "rgba(74,25,66,0.07)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#a07aaa", marginBottom: 6 }}>The Experienced Tree</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    When you perceive the oak in the garden, you are perceiving a genuine phenomenon — not an illusion, but a real empirical object structured by your spatial, temporal, and categorical faculties. Its green color, its height, its causal powers are all perfectly real within the human cognitive framework. What the tree is apart from all possible perception — whether it has color, extension, or any knowable property at all — remains permanently inaccessible.
                   </p>
                 </div>
-                <div style={{ padding: "14px 16px", background: "#0a0418", borderRadius: 6, borderLeft: "2px solid #6a2a4a" }}>
-                  <div style={{ fontSize: 11, color: "#9a7aaa", marginBottom: 6, fontWeight: "bold" }}>The Dual Standpoint of the Self</div>
-                  <p style={{ margin: 0, fontSize: 13, color: "#8a708a", lineHeight: 1.7 }}>
-                    You can consider yourself in two ways. As a phenomenon — a body in space, a psychological subject in time, governed by the laws of nature and subject to empirical psychology — you are a link in the causal chain, predictable in principle. As a noumenon — a moral agent whose spontaneous rational will is not reducible to any causal story — you are free. This duality is not incoherence but the very condition of moral life. The same action that the neuroscientist may explain causally is the action for which you are held responsible. Kant needs both descriptions to be legitimate.
+                <div style={{ borderLeft: "3px solid #4A1942", borderRadius: "0 6px 6px 0", background: "rgba(74,25,66,0.07)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#a07aaa", marginBottom: 6 }}>The Dual Standpoint of the Self</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    You can consider yourself in two ways. As a phenomenon — a body in space governed by natural laws — you are a link in the causal chain. As a noumenon — a moral agent whose rational will is not reducible to any causal story — you are free. This duality is not incoherence but the very condition of moral life. The same action the neuroscientist may explain causally is the action for which you are held responsible.
                   </p>
                 </div>
               </div>
             </div>
           )}
         </div>
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#180810", letterSpacing: 1, maxWidth: 820, margin: "36px auto 0 auto" }}>
+        Part 7 of 21 — Kant's Critical Philosophy
       </div>
     </div>
   );
