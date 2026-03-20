@@ -11720,6 +11720,19 @@ function AbstractObjects() {
       margin: "0 auto",
     }}>
 
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: 32 }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#1A535C", marginBottom: 8 }}>
+          Part 21 of 35 — Ontology
+        </div>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#e8e8e8", margin: "0 0 8px 0", lineHeight: 1.3 }}>
+          Do Numbers Exist?
+        </h1>
+        <p style={{ fontSize: 15, color: "#7a9ba0", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          Mathematical Platonism holds that numbers exist in a non-physical, non-temporal realm — but this creates an acute epistemological problem.
+        </p>
+      </div>
+
       {/* THE PROBLEM PANEL */}
       <div style={{
         background: "linear-gradient(135deg, #0f1f22 0%, #0a1518 100%)",
@@ -11758,16 +11771,6 @@ function AbstractObjects() {
         position: "relative",
         overflow: "hidden",
       }}>
-        <div style={{ marginBottom: "8px" }}>
-          <span style={{ fontSize: "13px", color: "#1A535C", letterSpacing: "2px", textTransform: "uppercase" }}>Part 21 of 35</span>
-        </div>
-        <h2 style={{ fontSize: "24px", color: "#e8e8e8", margin: "0 0 6px 0", fontWeight: "normal" }}>
-          Do Numbers Exist?
-        </h2>
-        <p style={{ fontSize: "14px", color: "#7a9ba0", margin: "0 0 28px 0", lineHeight: "1.6" }}>
-          Mathematical Platonism holds that numbers exist in a non-physical, non-temporal realm — but this creates an acute epistemological problem.
-        </p>
-
         {/* View Toggle */}
         <div style={{ display: "flex", gap: "8px", marginBottom: "28px" }}>
           {["platonist", "fictionalist"].map(v => (
@@ -12018,34 +12021,6 @@ function AbstractObjects() {
           </div>
         )}
 
-        {/* Key Concepts */}
-        <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(26,83,92,0.2)", borderRadius: 8, padding: "clamp(16px,3vw,24px)", marginBottom: 16 }}>
-          <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1A535C", marginBottom: 14 }}>
-            Key Concepts — Click to Explore
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
-            {concepts.map(c => (
-              <div key={c.id} onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
-                style={{ padding: "6px 14px", background: hoveredConcept === c.id ? "#1A535C" : "rgba(26,83,92,0.1)",
-                  border: `1px solid ${hoveredConcept === c.id ? "#2a7a8c" : "rgba(26,83,92,0.35)"}`,
-                  borderRadius: 20, fontSize: 12, cursor: "pointer",
-                  color: hoveredConcept === c.id ? "#f0ead8" : "#3a8090", transition: "all 0.2s" }}>
-                {c.label}
-              </div>
-            ))}
-          </div>
-          {hoveredConcept && (
-            <div style={{ background: "rgba(26,83,92,0.08)", border: "1px solid rgba(26,83,92,0.3)", borderRadius: 6, padding: "16px 20px" }}>
-              <div style={{ fontSize: 13, fontWeight: "bold", color: "#1A535C", marginBottom: 8 }}>
-                {concepts.find(c => c.id === hoveredConcept)?.label}
-              </div>
-              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
-                {concepts.find(c => c.id === hoveredConcept)?.desc}
-              </p>
-            </div>
-          )}
-        </div>
-
         {/* Benacerraf's dilemma diagram */}
         <div style={{
           background: "#080f12",
@@ -12098,6 +12073,34 @@ function AbstractObjects() {
             </span>
           </div>
         </div>
+      </div>
+
+      {/* Key Concepts */}
+      <div style={{ marginBottom: 28 }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1A535C", marginBottom: 14 }}>
+          Key Concepts — Click to Explore
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: hoveredConcept ? 16 : 0 }}>
+          {concepts.map(c => (
+            <div key={c.id} onClick={() => setHoveredConcept(hoveredConcept === c.id ? null : c.id)}
+              style={{ padding: "6px 14px", background: hoveredConcept === c.id ? "#1A535C" : "rgba(26,83,92,0.1)",
+                border: `1px solid ${hoveredConcept === c.id ? "#2a7a8c" : "rgba(26,83,92,0.35)"}`,
+                borderRadius: 20, fontSize: 12, cursor: "pointer",
+                color: hoveredConcept === c.id ? "#f0ead8" : "#3a8090", transition: "all 0.2s" }}>
+              {c.label}
+            </div>
+          ))}
+        </div>
+        {hoveredConcept && (
+          <div style={{ background: "rgba(26,83,92,0.08)", border: "1px solid rgba(26,83,92,0.3)", borderRadius: 6, padding: "16px 20px" }}>
+            <div style={{ fontSize: 13, fontWeight: "bold", color: "#1A535C", marginBottom: 8 }}>
+              {concepts.find(c => c.id === hoveredConcept)?.label}
+            </div>
+            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+              {concepts.find(c => c.id === hoveredConcept)?.desc}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* THE DIFFICULTY PANEL */}
@@ -12156,47 +12159,28 @@ function AbstractObjects() {
             : <ChevronDown size={16} color="#1A535C" />}
         </button>
         {echosOpen && (
-          <div style={{ padding: "0 32px 28px" }}>
-            <div style={{
-              borderTop: "1px solid #1a3035",
-              paddingTop: "20px",
-              display: "flex",
-              gap: "16px",
-              flexWrap: "wrap",
-            }}>
-              <div style={{
-                flex: "1",
-                minWidth: "220px",
-                background: "#080f12",
-                border: "1px solid #1a3035",
-                borderLeft: "3px solid #1A535C",
-                borderRadius: "6px",
-                padding: "16px",
-              }}>
-                <div style={{ fontSize: "22px", marginBottom: "10px" }}>💰</div>
-                <div style={{ fontSize: "12px", color: "#1A535C", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "8px" }}>Money</div>
-                <p style={{ fontSize: "13px", color: "#7a9ba0", margin: 0, lineHeight: "1.7" }}>
-                  Does the number in your bank account exist the way a coffee cup does? There is no physical object corresponding to your balance — it is pure number. Yet it causally organizes real behavior: labor, exchange, survival. Is money a useful fiction that coordinates reality, or does it reveal that numbers can be causally potent after all?
+          <div style={{ padding: "0 32px 28px", borderTop: "1px solid #1a3035" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+              <div style={{ borderLeft: "3px solid #1A535C", borderRadius: "0 6px 6px 0", background: "rgba(26,83,92,0.06)", padding: "14px 18px" }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: "#4ECDC4", marginBottom: 6 }}>Bank Balances and Pure Number</div>
+                <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                  The number in your bank account does not exist the way a coffee cup does — there is no physical object corresponding to your balance, only pure number. Yet it causally organizes real behavior: labor, exchange, survival. Is money a useful fiction that coordinates reality, or does it reveal that numbers can be causally potent after all?
                 </p>
               </div>
-              <div style={{
-                flex: "1",
-                minWidth: "220px",
-                background: "#080f12",
-                border: "1px solid #1a3035",
-                borderLeft: "3px solid #1A535C",
-                borderRadius: "6px",
-                padding: "16px",
-              }}>
-                <div style={{ fontSize: "22px", marginBottom: "10px" }}>∞</div>
-                <div style={{ fontSize: "12px", color: "#1A535C", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "8px" }}>Infinitely Many Primes</div>
-                <p style={{ fontSize: "13px", color: "#7a9ba0", margin: 0, lineHeight: "1.7" }}>
-                  Euclid proved there are infinitely many prime numbers around 300 BCE. No human will ever perceive this infinity. Yet the proof seems to establish a fact that was true before humans existed and will be true after we are gone. Did Euclid discover something, or merely construct a very compelling useful story?
+              <div style={{ borderLeft: "3px solid #1A535C", borderRadius: "0 6px 6px 0", background: "rgba(26,83,92,0.06)", padding: "14px 18px" }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: "#4ECDC4", marginBottom: 6 }}>Euclid's Proof and Eternal Truth</div>
+                <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                  Euclid proved there are infinitely many prime numbers around 300 BCE. No human will ever perceive this infinity. Yet the proof seems to establish a fact that was true before humans existed and will be true after we are gone. Did Euclid discover something real, or merely construct a very compelling useful story?
                 </p>
               </div>
             </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1f22", letterSpacing: 1 }}>
+        Part 21 of 35 — Ontology
       </div>
 
     </div>
