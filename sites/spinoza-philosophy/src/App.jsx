@@ -1014,7 +1014,7 @@ function SpinozaIntroduction() {
               letterSpacing: "1px",
             }}
           >
-            Spinoza's Philosophical System — Part 1 of 21
+            Part 1 of 21 — Spinoza's Philosophical System
           </p>
         </div>
       </div>
@@ -1387,7 +1387,7 @@ function MakingOfRevolutionaryMind() {
       <div style={{ maxWidth: "min(90vw, 860px)", margin: '0 auto' }}>
       {/* Title Block */}
       <div style={{ padding: "36px 40px 10px 40px", textAlign: "center" }}>
-        <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#2D4A6E", marginBottom: "8px", textTransform: "uppercase" }}>Part 2 of 21</div>
+        <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#2D4A6E", marginBottom: "8px", textTransform: "uppercase" }}>Part 2 of 21 — Spinoza's Philosophical System</div>
         <h1 style={{ fontSize: "32px", fontWeight: "normal", color: "#e8dcc8", margin: "0 0 8px 0", letterSpacing: "0.5px" }}>
           The Making of a Revolutionary Mind
         </h1>
@@ -1828,7 +1828,7 @@ function RevolutionaryMetaphysicsGodOrNature() {
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 36 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: '#8B5CF6', textTransform: 'uppercase', marginBottom: 8 }}>
-            Part 3 of 21
+            Part 3 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: 'normal', color: '#f0e6ff', margin: '0 0 10px 0', lineHeight: 1.3 }}>
             God or Nature: Substance Monism
@@ -2211,7 +2211,7 @@ function RevolutionaryMetaphysicsGodOrNature() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#3d1a5c', letterSpacing: 1 }}>
-          Part 3 of 21 — Spinoza's Ethics
+          Part 3 of 21 — Spinoza's Philosophical System
         </div>
       </div>
     </div>
@@ -2432,7 +2432,7 @@ function ArchitectureOfRealityAttributesModes() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ marginBottom: 8, opacity: 0.6, fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: accentLight }}>
-            Part 4 of 21 — Spinoza's System
+            Part 4 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", color: "#E8F8F8", margin: "0 0 6px 0", letterSpacing: 0.5 }}>
             Attributes and Modes: The Architecture of Reality
@@ -3029,7 +3029,7 @@ function UnityOfMindAndBody() {
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: 32 }}>
-        <div style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "#66bb6a", marginBottom: 8 }}>Part 5 of 21</div>
+        <div style={{ fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "#66bb6a", marginBottom: 8 }}>Part 5 of 21 — Spinoza's Philosophical System</div>
         <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", color: "#e8f5e9", margin: "0 0 8px 0" }}>
           Solving the Cartesian Problem: The Unity of Mind and Body
         </h1>
@@ -3856,7 +3856,7 @@ function LadderOfKnowledge() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: "#B45309", textTransform: "uppercase", marginBottom: 8 }}>
-            Part 6 of 21 — Spinoza's System
+            Part 6 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", margin: "0 0 8px", color: "#fef3c7", lineHeight: 1.3 }}>
             The Ladder of Knowledge
@@ -4462,7 +4462,7 @@ function ConatusEssentialDrive() {
         {/* Header */}
         <div style={{ marginBottom: "32px", textAlign: "center" }}>
           <div style={{ fontSize: "12px", letterSpacing: "3px", color: "#C2410C", marginBottom: "8px", textTransform: "uppercase" }}>
-            Part 7 of 21 — Spinoza's System
+            Part 7 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 30px)", fontWeight: "bold", color: "#ffffff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             Conatus: The Essential Drive of All Things
@@ -4858,7 +4858,7 @@ function EmotionalLifePassionToAction() {
         {/* HEADER */}
         <div style={{ marginBottom: "12px", textAlign: "center" }}>
           <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#9D174D", textTransform: "uppercase", marginBottom: "8px" }}>
-            Part 8 of 21
+            Part 8 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", color: "#f0e0d0", margin: "0 0 8px 0", lineHeight: "1.3" }}>
             From Passion to Action: The Emotional Life
@@ -5381,7 +5381,7 @@ function FreedomWithinNecessity() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: "#6b80c4", textTransform: "uppercase", marginBottom: 8 }}>
-            Part 9 of 21 · Spinoza's System
+            Part 9 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "bold", color: "#c8d8ff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             Freedom Within Necessity
@@ -6126,7 +6126,7 @@ function ArtOfLivingEthicsFlourishing() {
         {/* Header */}
         <div style={{ marginBottom: 8, textAlign: "center" }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#D97706", textTransform: "uppercase", marginBottom: 6 }}>
-            Part 10 of 21 — Spinoza's System
+            Part 10 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 26px)", fontWeight: "bold", margin: "0 0 6px 0", color: "#FFF3E0" }}>
             The Art of Living: Ethics and Human Flourishing
@@ -6586,7 +6586,7 @@ function PoliticalVisionDemocracyLiberation() {
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <div style={{ fontSize: '12px', letterSpacing: '3px', color: accentLight, textTransform: 'uppercase', marginBottom: '8px' }}>
-            Part 11 of 21
+            Part 11 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', fontWeight: 'normal', color: '#f0ede6', margin: '0 0 12px 0', lineHeight: '1.3' }}>
             Democracy and Human Liberation
@@ -7114,7 +7114,7 @@ function CritiqueOfReligionScripture() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ marginBottom: "12px", opacity: 0.6, fontSize: "13px", letterSpacing: "2px", textTransform: "uppercase" }}>
-            Part 12 of 21 — Spinoza's System
+            Part 12 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(24px, 4vw, 38px)", fontWeight: "normal", margin: "0 0 8px", color: "#F5E6D3", letterSpacing: "0.5px" }}>
             Critique of Religion and Scripture
@@ -7652,7 +7652,7 @@ function MiraclesProphecyNaturalOrder() {
       {/* Header */}
       <div style={{ marginBottom: '12px', textAlign: 'center' }}>
         <div style={{ fontSize: '11px', letterSpacing: '0.2em', color: '#7c5cbf', textTransform: 'uppercase', marginBottom: '6px' }}>
-          Part 13 of 21 — Spinoza's System
+          Part 13 of 21 — Spinoza's Philosophical System
         </div>
         <h1 style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', fontWeight: 'normal', color: '#f0e8ff', margin: '0 0 6px 0', letterSpacing: '0.02em' }}>
           Miracles, Prophecy, and Natural Order
@@ -8094,7 +8094,7 @@ function MiraclesProphecyNaturalOrder() {
 
       {/* Footer */}
       <div style={{ textAlign: 'center', marginTop: '28px', fontSize: '11px', color: '#4a306a', letterSpacing: '0.1em' }}>
-        Spinoza's System — Part 13 of 21
+        Part 13 of 21 — Spinoza's Philosophical System
       </div>
     </div></div>
   );
@@ -8314,7 +8314,7 @@ function SocialContractNaturalRight() {
 
         {/* Header */}
         <div style={{ marginBottom: 12, textAlign: "center" }}>
-          <div style={{ fontSize: 11, letterSpacing: 3, color: ACCENT_LIGHT, textTransform: "uppercase", marginBottom: 8 }}>Part 14 of 21 — Spinoza's System</div>
+          <div style={{ fontSize: 11, letterSpacing: 3, color: ACCENT_LIGHT, textTransform: "uppercase", marginBottom: 8 }}>Part 14 of 21 — Spinoza's Philosophical System</div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "bold", color: "#f0ede4", margin: "0 0 10px 0", lineHeight: 1.3 }}>Natural Right and Social Contract</h1>
           <p style={{ fontSize: "clamp(13px, 1.8vw, 15px)", color: "#aaa89a", maxWidth: "min(100%, 680px)", margin: "0 auto", lineHeight: 1.7 }}>
             Spinoza grounds political authority not in abstract consent or divine right but in the demonstrated enhancement of citizens' collective power to achieve their essential goals.
@@ -8637,7 +8637,7 @@ function SocialContractNaturalRight() {
 
         {/* Footer */}
         <div style={{ textAlign: "center", marginTop: 32, fontSize: 12, color: "#3a4a40" }}>
-          Part 14 of 21 — Spinoza's Comprehensive Philosophical System
+          Part 14 of 21 — Spinoza's Philosophical System
         </div>
       </div>
     </div>
@@ -9456,7 +9456,7 @@ function ProblemOfEvilSuffering() {
 
         {/* Header */}
         <div style={{ marginBottom: 12, textAlign: "center" }}>
-          <div style={{ fontSize: 11, letterSpacing: 3, color: "#78350F", textTransform: "uppercase", marginBottom: 6 }}>Part 16 of 21</div>
+          <div style={{ fontSize: 11, letterSpacing: 3, color: "#78350F", textTransform: "uppercase", marginBottom: 6 }}>Part 16 of 21 — Spinoza's Philosophical System</div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 26px)", fontWeight: "normal", color: "#e8c896", margin: "0 0 8px", letterSpacing: 0.5 }}>Evil, Suffering, and the Limits of Finite Existence</h1>
           <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", color: "#a08060", lineHeight: 1.6, margin: 0 }}>
             Spinoza reframes evil not as an absolute metaphysical category but as the natural collision of finite beings with conflicting interests, reducible through greater wisdom and better social organization.
@@ -9858,7 +9858,7 @@ function EternityMindsImmortality() {
         {/* Title */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <div style={{ fontSize: '11px', letterSpacing: '4px', color: '#7c3aed', textTransform: 'uppercase', marginBottom: '10px' }}>
-            Part 17 of 21
+            Part 17 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ margin: '0 0 10px 0', fontSize: 'clamp(22px, 3.5vw, 28px)', fontWeight: 'normal', color: '#f5f0ff', letterSpacing: '0.5px' }}>
             Eternity and the Mind's Immortality
@@ -10599,7 +10599,7 @@ function GeometricMethodDemonstration() {
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: 36 }}>
         <div style={{ fontSize: 11, letterSpacing: 3, color: '#6b7280', textTransform: 'uppercase', marginBottom: 8 }}>
-          Part 18 of 21 — Spinoza's System
+          Part 18 of 21 — Spinoza's Philosophical System
         </div>
         <h1 style={{ fontSize: 'clamp(22px, 3.5vw, 28px)', fontWeight: 'normal', color: '#f0ece4', margin: '0 0 8px 0' }}>
           The Geometric Method and Philosophical Demonstration
@@ -11472,7 +11472,7 @@ function SpinozaInfluenceLaterPhilosophy() {
         {/* HEADER */}
         <div style={{ textAlign: "center", marginBottom: "36px" }}>
           <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#0E7490", textTransform: "uppercase", marginBottom: "8px" }}>
-            Part 19 of 21 — Spinoza's Philosophical Legacy
+            Part 19 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", margin: "0 0 10px", color: "#f0e8d8", lineHeight: 1.3 }}>
             Spinoza's Influence on Later Philosophy
@@ -11935,7 +11935,7 @@ function SpinozaInfluenceLaterPhilosophy() {
 
         {/* Footer */}
         <div style={{ textAlign: "center", marginTop: "40px", color: "#3a4e50", fontSize: "12px" }}>
-          Part 19 of 21 — The legacy reverberates forward
+          Part 19 of 21 — Spinoza's Philosophical System
         </div>
       </div>
     </div>
@@ -12105,7 +12105,7 @@ function ContemporaryRelevanceModernApplications() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <div style={{ fontSize: "12px", letterSpacing: "3px", color: accentLight, marginBottom: "8px", textTransform: "uppercase" }}>
-            Part 20 of 21
+            Part 20 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 28px)", fontWeight: "normal", color: "#f0fdf4", marginBottom: "12px", lineHeight: "1.3" }}>
             Contemporary Relevance: Spinoza for the Modern World
@@ -12814,7 +12814,7 @@ function UnityOfSpinozasSystemFinalIntegration() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#a78bfa", textTransform: "uppercase", marginBottom: 8 }}>
-            Part 21 of 21 — Final Integration
+            Part 21 of 21 — Spinoza's Philosophical System
           </div>
           <h1 style={{ fontSize: "clamp(22px, 3.5vw, 26px)", fontWeight: "bold", color: "#f3e8ff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             The Unity of Spinoza's System
