@@ -229,8 +229,8 @@ const SECTIONS = [
 ];
 
 const accentMap = {
-  "ontology_introduction": "#1E3A5F",
-  "parmenides_being": "#4A1942",
+  "ontology_introduction": "#4a9fd4",
+  "parmenides_being": "#9b3d94",
   "heraclitus_flux": "#0D7377",
   "platos_forms": "#6B3FA0",
   "aristotle_substance": "#B5651D",
@@ -244,14 +244,14 @@ const accentMap = {
   "hegel_becoming": "#8B1A1A",
   "husserl_phenomenology": "#4E8B8B",
   "heidegger_being_dasein": "#5A4E3A",
-  "sartre_existence_essence": "#1C1C2E",
+  "sartre_existence_essence": "#5a4fcf",
   "whitehead_process": "#E87D0D",
   "meinong_nonexistent": "#7D3C98",
   "quine_analytic_ontology": "#2E86AB",
   "properties_universals_tropes": "#C0392B",
   "abstract_objects": "#1A535C",
   "fictionalism": "#6D6875",
-  "possible_worlds": "#0B3954",
+  "possible_worlds": "#4FC3F7",
   "ontology_of_time": "#2D6A4F",
   "persistence_identity": "#9B4F0F",
   "events_facts": "#E84855",
@@ -423,7 +423,7 @@ function OntologyIntroduction() {
             Ontology — Part 1 of 35
           </div>
           <h1 style={{
-            fontSize: 32,
+            fontSize: "clamp(22px, 4vw, 36px)",
             fontWeight: "normal",
             color: "#e8f0f8",
             margin: "0 0 10px 0",
@@ -774,7 +774,7 @@ function OntologyIntroduction() {
         <div style={{
           background: "rgba(8, 18, 30, 0.82)",
           border: "1px solid #152d47",
-          borderLeft: "3px solid #2a6090",
+          borderLeft: "3px solid #4a9fd4",
           borderRadius: 10,
           padding: "24px 28px",
           marginBottom: 20,
@@ -837,12 +837,13 @@ function OntologyIntroduction() {
               letterSpacing: 3,
               textTransform: "uppercase",
               fontFamily: "Georgia, serif",
+              color: "#4a9fd4",
             }}>
               Real-World Echoes
             </span>
             {echoesOpen
-              ? <ChevronUp size={16} color="#3a7aaa" />
-              : <ChevronDown size={16} color="#3a7aaa" />
+              ? <ChevronUp size={16} color="#4a9fd4" />
+              : <ChevronDown size={16} color="#4a9fd4" />
             }
           </button>
 
@@ -863,8 +864,11 @@ function OntologyIntroduction() {
                 },
               ].map((item, i) => (
                 <div key={i} style={{
-                  borderLeft: "2px solid #1E3A5F",
+                  borderLeft: "3px solid #4a9fd4",
+                  borderRadius: "0 6px 6px 0",
+                  background: "rgba(30,58,95,0.08)",
                   paddingLeft: 16,
+                  padding: "14px 18px",
                   marginBottom: i < 2 ? 18 : 0,
                 }}>
                   <div style={{
@@ -1029,7 +1033,7 @@ function ParmenidesBeing() {
           <div style={{ fontSize: 11, letterSpacing: 3, color: accentGlow, textTransform: "uppercase", marginBottom: 8 }}>
             Part 2 of 35 — Ontology
           </div>
-          <h1 style={{ fontSize: 32, fontWeight: "normal", margin: "0 0 10px", color: "#f0e8ef", letterSpacing: 0.5 }}>
+          <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 10px", color: "#f0e8ef", letterSpacing: 0.5 }}>
             Parmenides and the Shock of Being
           </h1>
           <p style={{ fontSize: 15, color: "#b89eb6", margin: 0, lineHeight: 1.7, maxWidth: 640 }}>
@@ -1041,7 +1045,7 @@ function ParmenidesBeing() {
         <div style={{
           background: "#12060f",
           border: "1px solid #2a0a26",
-          borderLeft: `4px solid ${accent}`,
+          borderLeft: `4px solid ${accentGlow}`,
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 32
@@ -1330,7 +1334,7 @@ function ParmenidesBeing() {
         <div style={{
           background: "#0d070d",
           border: "1px solid #220a20",
-          borderLeft: `4px solid ${accentLight}`,
+          borderLeft: `4px solid ${accentGlow}`,
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 24
@@ -1652,7 +1656,7 @@ function HeraclitusFlux() {
         <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#0D7377", textTransform: "uppercase", marginBottom: "8px" }}>
           Part 3 of 35 — Ontology
         </div>
-        <h1 style={{ fontSize: "28px", fontWeight: "bold", color: "#e8f4f4", margin: "0 0 8px 0", letterSpacing: "1px" }}>
+        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", color: "#e8f4f4", margin: "0 0 8px 0", letterSpacing: "1px" }}>
           Heraclitus and the Crisis of Change
         </h1>
         <p style={{ fontSize: "15px", color: "#8ab8bc", margin: 0, maxWidth: "580px", marginLeft: "auto", marginRight: "auto", lineHeight: "1.6" }}>
@@ -1805,7 +1809,7 @@ function HeraclitusFlux() {
       <div style={{
         background: "#0a1a18",
         border: "1px solid #1a3830",
-        borderLeft: "4px solid #3a9e7a",
+        borderLeft: "4px solid #0D7377",
         borderRadius: "8px",
         padding: "24px 28px",
         marginBottom: "28px",
@@ -1813,7 +1817,7 @@ function HeraclitusFlux() {
         marginLeft: "auto",
         marginRight: "auto",
       }}>
-        <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#3a9e7a", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#0D7377", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
           The Difficulty
         </div>
         <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "15px", color: "#b8d4d8" }}>
@@ -2331,7 +2335,7 @@ function PlatosForms() {
       <div style={{
         background: 'rgba(20, 8, 35, 0.85)',
         border: '1px solid #251040',
-        borderLeft: `4px solid #8B5FC0`,
+        borderLeft: `4px solid ${accent}`,
         borderRadius: '8px',
         padding: '24px 28px',
         marginBottom: '24px',
@@ -2341,7 +2345,7 @@ function PlatosForms() {
           fontSize: '10px',
           letterSpacing: '3px',
           textTransform: 'uppercase',
-          color: '#8B5FC0',
+          color: accentLight,
           marginBottom: '12px',
           fontFamily: 'Georgia, serif',
         }}>The Difficulty</div>
@@ -2404,12 +2408,12 @@ function PlatosForms() {
             fontSize: '10px',
             letterSpacing: '3px',
             textTransform: 'uppercase',
-            color: '#7B5FB0',
+            color: accent,
             fontFamily: 'Georgia, serif',
           }}>Real-World Echoes</span>
           {echosOpen
-            ? <ChevronUp size={16} color="#7B5FB0" />
-            : <ChevronDown size={16} color="#7B5FB0" />
+            ? <ChevronUp size={16} color={accent} />
+            : <ChevronDown size={16} color={accent} />
           }
         </div>
 
@@ -2419,7 +2423,7 @@ function PlatosForms() {
               padding: '16px 20px',
               background: 'rgba(107, 63, 160, 0.08)',
               borderRadius: '6px',
-              borderLeft: `3px solid ${accentDim}`,
+              borderLeft: `3px solid ${accent}`,
             }}>
               <p style={{ margin: '0 0 14px', color: '#a090c8', fontSize: '15px', lineHeight: '1.7' }}>
                 <strong style={{ color: accentLight }}>Scientific Laws vs. Instances.</strong> The law of 
@@ -2618,7 +2622,7 @@ function AristotleSubstance() {
         <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#B5651D", textTransform: "uppercase", marginBottom: "8px" }}>
           Part 5 of 35 — Aristotelian Ontology
         </div>
-        <h1 style={{ fontSize: "32px", fontWeight: "normal", margin: "0 0 8px 0", color: "#f0e0c0" }}>
+        <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#f0e0c0" }}>
           Aristotle Brings Ontology Down to Earth
         </h1>
         <p style={{ fontSize: "16px", color: "#b09070", margin: "0 0 32px 0", fontStyle: "italic" }}>
@@ -2869,7 +2873,7 @@ function AristotleSubstance() {
               <div style={{ display: "flex", gap: "24px", alignItems: "flex-start", flexWrap: "wrap" }}>
                 {/* Category Wheel SVG */}
                 <div style={{ flex: "0 0 320px" }}>
-                  <svg width="320" height="320" viewBox="0 0 320 320">
+                  <svg viewBox="0 0 320 320" width="100%" style={{ maxWidth: 320 }}>
                     <defs>
                       <radialGradient id="centerGrad">
                         <stop offset="0%" stopColor="#B5651D" stopOpacity="0.3" />
@@ -3206,11 +3210,11 @@ function AristotleSubstance() {
         <div style={{
           background: "rgba(10,8,5,0.85)",
           border: "1px solid #2a1a0a",
-          borderLeft: "4px solid #c07030",
+          borderLeft: "4px solid #B5651D",
           borderRadius: "8px",
           padding: "28px 32px",
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#c07030", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#B5651D", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 16px 0", lineHeight: "1.8", fontSize: "15px", color: "#c8b090" }}>
@@ -3254,29 +3258,24 @@ function AristotleSubstance() {
           </button>
           {echosOpen && (
             <div style={{ padding: "0 28px 28px 28px", borderTop: "1px solid #2a1808" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "20px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginTop: "20px" }}>
                 {[
                   {
                     title: "Relational Databases",
-                    icon: "⬡",
                     body: "A database table embeds Aristotelian ontology directly. The Customer entity is the substance — the primary thing that exists. Its columns (name, age, address, email) are accidents: properties that inhere in the customer and have no existence apart from some actual customer record. You cannot store a name in the database without it being attached to something. Foreign key relations correspond to the category of Relation. Even the primary key — the unique identifier — is a modern answer to the individuation problem: pure arbitrary identity assigned to give featureless data-matter its 'thisness.'"
                   },
                   {
                     title: "Object-Oriented Programming",
-                    icon: "◈",
                     body: "A class definition is a form: it specifies the structure and behavior of all instances. An instantiated object is a substance: a particular chunk of memory organized by that class-form. Attributes are accidents — properties the object has but that don't define what type it is. Inheritance hierarchies echo Aristotle's genus-species relations, where a lower species has all the essential form of the higher genus plus a differentiating property. The instance identity problem — what makes this object distinct from a copy with identical data — is the individuation problem replayed in silicon."
                   },
                 ].map(echo => (
                   <div key={echo.title} style={{
-                    background: "rgba(181,101,29,0.05)",
-                    border: "1px solid #3a2010",
-                    borderRadius: "8px",
-                    padding: "20px",
+                    background: "rgba(181,101,29,0.08)",
+                    borderLeft: "3px solid #B5651D",
+                    borderRadius: "0 6px 6px 0",
+                    padding: "14px 18px",
                   }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                      <span style={{ fontSize: "20px", color: "#B5651D" }}>{echo.icon}</span>
-                      <span style={{ fontSize: "14px", color: "#e0c090", fontWeight: "bold" }}>{echo.title}</span>
-                    </div>
+                    <div style={{ fontSize: "13px", fontWeight: "bold", color: "#e0c090", marginBottom: "8px" }}>{echo.title}</div>
                     <p style={{ fontSize: "13px", color: "#907060", lineHeight: "1.75", margin: 0 }}>
                       {echo.body}
                     </p>
@@ -3446,7 +3445,7 @@ function MedievalUniversals() {
       {/* PART HEADER */}
       <div style={{ maxWidth: "860px", margin: "0 auto 20px auto", textAlign: "center" }}>
         <div style={{ fontSize: "12px", letterSpacing: "2px", color: "#8B7355", marginBottom: "6px" }}>Part 6 of 35 — Ontology</div>
-        <h1 style={{ fontSize: "26px", margin: "0 0 6px 0", color: "#e8d5b0", letterSpacing: "0.5px" }}>The Medieval War Over Universals</h1>
+        <h1 style={{ fontSize: "clamp(18px, 3vw, 30px)", margin: "0 0 6px 0", color: "#e8d5b0", letterSpacing: "0.5px" }}>The Medieval War Over Universals</h1>
         <p style={{ fontSize: "14px", color: "#9a8a6e", margin: 0, lineHeight: "1.6" }}>
           Do concepts like 'horse' name real entities in the world, or are they merely useful words for grouping similar individuals?
         </p>
@@ -3789,14 +3788,14 @@ function MedievalUniversals() {
         style={{
           background: "rgba(20, 14, 6, 0.85)",
           border: "1px solid #2a1f0f",
-          borderLeft: "4px solid #6B5B3E",
+          borderLeft: "4px solid #8B7355",
           borderRadius: "6px",
           padding: "24px 28px",
           maxWidth: "860px",
           margin: "0 auto 24px auto"
         }}
       >
-        <div style={{ fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", color: "#6B5B3E", marginBottom: "10px" }}>The Difficulty</div>
+        <div style={{ fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", color: "#8B7355", marginBottom: "10px" }}>The Difficulty</div>
         <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "15px", color: "#c9b48a" }}>
           No position resolves all pressures cleanly. Nominalism gains ontological economy — no mysterious shared natures cluttering the world — but faces a devastating counter: what <em>makes</em> two horses resemble each other? If the answer is that they share certain features, we appear to have smuggled universals back in through the side door. Resemblance itself seems to require a common property.
         </p>
@@ -3837,21 +3836,21 @@ function MedievalUniversals() {
             fontFamily: "Georgia, serif"
           }}
         >
-          <span style={{ fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase" }}>Real-World Echoes</span>
+          <span style={{ fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", color: "#8B7355" }}>Real-World Echoes</span>
           {echosOpen ? <ChevronUp size={16} color="#8B7355" /> : <ChevronDown size={16} color="#8B7355" />}
         </button>
 
         {echosOpen && (
           <div style={{ padding: "24px 28px" }}>
-            <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
-              <div style={{ flex: "1 1 300px", padding: "18px", background: "rgba(25,18,8,0.7)", border: "1px solid #3a2d1a", borderRadius: "6px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px", paddingTop: "4px" }}>
+              <div style={{ borderLeft: "3px solid #8B7355", borderRadius: "0 6px 6px 0", background: "rgba(139,115,85,0.08)", padding: "14px 18px" }}>
                 <div style={{ fontSize: "13px", color: "#C9A96E", marginBottom: "8px", fontWeight: "bold" }}>Biological Taxonomy</div>
                 <p style={{ margin: 0, fontSize: "13px", color: "#9a8a6e", lineHeight: "1.7" }}>
                   Whether a 'species' is a real natural kind or a convenient grouping of genetic variation is an active dispute in philosophy of biology. The species problem — with over 20 competing species concepts — is the nominalism debate in modern dress. Realists argue that phylogenetic species are real; nominalists treat taxonomy as a useful fiction imposed on continuous variation.
                 </p>
               </div>
-              <div style={{ flex: "1 1 300px", padding: "18px", background: "rgba(25,18,8,0.7)", border: "1px solid #3a2d1a", borderRadius: "6px" }}>
-                <div style={{ fontSize: "13px", color: "#7A8B6E", marginBottom: "8px", fontWeight: "bold" }}>Conservation & Legal Status</div>
+              <div style={{ borderLeft: "3px solid #8B7355", borderRadius: "0 6px 6px 0", background: "rgba(139,115,85,0.08)", padding: "14px 18px" }}>
+                <div style={{ fontSize: "13px", color: "#C9A96E", marginBottom: "8px", fontWeight: "bold" }}>Conservation & Legal Status</div>
                 <p style={{ margin: 0, fontSize: "13px", color: "#9a8a6e", lineHeight: "1.7" }}>
                   Whether a population counts as a distinct species determines whether it receives legal protection under conservation law. Courts must make ontological decisions: is this group a real kind or an administrative convenience? The answer carries material consequences — funding, habitat protection, criminal penalties for harm.
                 </p>
@@ -4028,7 +4027,7 @@ function AquinasEssenceExistence() {
           <div style={{ fontSize: 12, letterSpacing: 3, color: "#2E5B8A", textTransform: "uppercase", marginBottom: 8 }}>
             Part 7 of 35 · Ontology
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#e8eef8", margin: "0 0 10px 0", lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", color: "#e8eef8", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             Aquinas and the Gap Between Essence and Existence
           </h1>
           <p style={{ fontSize: 15, color: "#8a9ab8", margin: 0, fontStyle: "italic", maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
@@ -4351,12 +4350,12 @@ function AquinasEssenceExistence() {
         <div style={{
           background: "rgba(10,10,20,0.75)",
           border: "1px solid rgba(80,50,100,0.3)",
-          borderLeft: "4px solid #5a3878",
+          borderLeft: "4px solid #2E5B8A",
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 20
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#9060b8", textTransform: "uppercase", marginBottom: 12 }}>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#2E5B8A", textTransform: "uppercase", marginBottom: 12 }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: 15, color: "#b8b0d0" }}>
@@ -4403,13 +4402,13 @@ function AquinasEssenceExistence() {
           {echosOpen && (
             <div style={{ padding: "4px 24px 24px 24px" }}>
               <div style={{
-                background: "rgba(46,91,138,0.07)",
-                borderRadius: 6,
-                padding: "16px 18px",
+                background: "rgba(46,91,138,0.08)",
+                borderLeft: "3px solid #2E5B8A",
+                borderRadius: "0 6px 6px 0",
+                padding: "14px 18px",
                 marginBottom: 14,
-                border: "1px solid rgba(46,91,138,0.15)"
               }}>
-                <div style={{ fontSize: 13, color: "#d4af37", marginBottom: 8, fontWeight: "bold" }}>
+                <div style={{ fontSize: 13, color: "#7aaad8", marginBottom: 8, fontWeight: "bold" }}>
                   Mathematics: Russell's Paradox
                 </div>
                 <p style={{ margin: 0, lineHeight: 1.75, fontSize: 14, color: "#8a9ab8" }}>
@@ -4417,12 +4416,12 @@ function AquinasEssenceExistence() {
                 </p>
               </div>
               <div style={{
-                background: "rgba(46,91,138,0.07)",
-                borderRadius: 6,
-                padding: "16px 18px",
-                border: "1px solid rgba(46,91,138,0.15)"
+                background: "rgba(46,91,138,0.08)",
+                borderLeft: "3px solid #2E5B8A",
+                borderRadius: "0 6px 6px 0",
+                padding: "14px 18px",
               }}>
-                <div style={{ fontSize: 13, color: "#4a9e6b", marginBottom: 8, fontWeight: "bold" }}>
+                <div style={{ fontSize: 13, color: "#7aaad8", marginBottom: 8, fontWeight: "bold" }}>
                   Engineering: Specification vs. Prototype
                 </div>
                 <p style={{ margin: 0, lineHeight: 1.75, fontSize: 14, color: "#8a9ab8" }}>
@@ -4617,7 +4616,7 @@ function DescartesDualism() {
       <div style={{ marginBottom: '8px', opacity: 0.6, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: '#C0392B' }}>
         Part 8 of 35 — Ontology
       </div>
-      <h1 style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '6px', color: '#f0e6e0', lineHeight: 1.2 }}>
+      <h1 style={{ fontSize: 'clamp(20px, 3.5vw, 32px)', fontWeight: 'bold', marginBottom: '6px', color: '#f0e6e0', lineHeight: 1.2 }}>
         Descartes Splits Reality in Two
       </h1>
       <p style={{ fontSize: '15px', color: '#b8a8a0', marginBottom: '32px', fontStyle: 'italic' }}>
@@ -4829,13 +4828,13 @@ function DescartesDualism() {
       <div style={{
         backgroundColor: '#0f1a0f80',
         border: '1px solid #1a2a1a',
-        borderLeft: '4px solid #8e1a1a',
+        borderLeft: '4px solid #C0392B',
         borderRadius: '8px',
         padding: '24px 28px',
         marginBottom: '28px',
         boxShadow: '0 0 30px #00000040',
       }}>
-        <div style={{ fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: '#a04040', marginBottom: '12px', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: '#C0392B', marginBottom: '12px', fontWeight: 'bold' }}>
           The Difficulty
         </div>
         <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#c0b8b0', margin: '0 0 16px 0' }}>
@@ -4899,10 +4898,10 @@ function DescartesDualism() {
                 },
               ].map((echo, i) => (
                 <div key={i} style={{
-                  background: '#1a1020',
-                  border: '1px solid #2a2030',
-                  borderRadius: '8px',
-                  padding: '16px 20px',
+                  background: 'rgba(192,57,43,0.08)',
+                  borderLeft: '3px solid #C0392B',
+                  borderRadius: '0 6px 6px 0',
+                  padding: '14px 18px',
                 }}>
                   <div style={{ fontSize: '13px', fontWeight: 'bold', color: '#C0392B', marginBottom: '8px' }}>{echo.title}</div>
                   <p style={{ fontSize: '14px', lineHeight: 1.75, color: '#b8a8b0', margin: 0 }}>{echo.body}</p>
@@ -5006,7 +5005,7 @@ function SpinozaOneSubstance() {
         <div style={{ marginBottom: 12, opacity: 0.6, fontSize: 13, letterSpacing: 2, textTransform: "uppercase" }}>
           Part 9 of 35 — Ontology
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: "normal", margin: "0 0 6px 0", color: "#a8d5b5", letterSpacing: 0.5 }}>
+        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", margin: "0 0 6px 0", color: "#a8d5b5", letterSpacing: 0.5 }}>
           Spinoza's Radical Answer: One Substance
         </h1>
         <p style={{ fontSize: 15, color: "#7aab8a", margin: "0 0 36px 0", lineHeight: 1.6, maxWidth: 680 }}>
@@ -5334,12 +5333,12 @@ function SpinozaOneSubstance() {
         <div style={{
           background: "rgba(10,10,20,0.75)",
           border: "1px solid #1a2a1f",
-          borderLeft: "4px solid #1a5c38",
+          borderLeft: "4px solid #2C6E49",
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 20,
         }}>
-          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#1a8a55", marginBottom: 12, fontWeight: "bold" }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#2C6E49", marginBottom: 12, fontWeight: "bold" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: 15, color: "#c8ddd0" }}>
@@ -5515,7 +5514,7 @@ function LeibnizMonads() {
         <div style={{ marginBottom: 10, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#9B7EC7', opacity: 0.7 }}>
           Part 10 of 35 — Ontology
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: 'normal', margin: '0 0 8px 0', color: '#C09EE0', letterSpacing: 0.5 }}>
+        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: 'normal', margin: '0 0 8px 0', color: '#C09EE0', letterSpacing: 0.5 }}>
           Leibniz, Monads, and the Seeds of Possible Worlds
         </h1>
         <p style={{ fontSize: 15, color: '#9080a8', margin: '0 0 32px 0', lineHeight: 1.6, maxWidth: 680 }}>
@@ -5593,7 +5592,7 @@ function LeibnizMonads() {
             <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
               {/* SVG Monad Field */}
               <div style={{ position: 'relative', flex: '0 0 auto', width: '560px' }}>
-                <svg width="560" height="460" style={{ display: 'block' }}>
+                <svg viewBox="0 0 560 460" width="100%" style={{ maxWidth: 560, display: 'block' }}>
                   <defs>
                     <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
                       <stop offset="0%" stopColor="#1a0f2e" />
@@ -5932,7 +5931,7 @@ function LeibnizMonads() {
 
             <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
               {/* World Tree SVG */}
-              <svg width="340" height="360" style={{ flex: '0 0 auto' }}>
+              <svg viewBox="0 0 340 360" width="100%" style={{ maxWidth: 340, flex: '0 0 auto' }}>
                 <defs>
                   <radialGradient id="godNode" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="#C09EE0" />
@@ -6088,7 +6087,7 @@ function LeibnizMonads() {
         margin: '0 40px',
         padding: '32px 40px',
         background: 'linear-gradient(135deg, #1a0f2e 0%, #0f0818 100%)',
-        borderLeft: '4px solid #5a3e87',
+        borderLeft: '4px solid #7B5EA7',
         borderTop: '1px solid #2a1a3e',
         borderBottom: '1px solid #2a1a3e',
         borderRadius: 8,
@@ -6146,7 +6145,7 @@ function LeibnizMonads() {
               <p style={{ fontSize: '13px', color: '#6a5880', marginTop: '16px', marginBottom: '20px', lineHeight: '1.6' }}>
                 Leibniz's seemingly arcane metaphysics left deep marks on modern thought, logic, and science.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {[
                   {
                     title: 'Modal Logic and Possible Worlds Semantics',
@@ -6166,10 +6165,10 @@ function LeibnizMonads() {
                   },
                 ].map(echo => (
                   <div key={echo.title} style={{
-                    background: '#1a0f2e',
-                    border: '1px solid #2a1a3e',
-                    borderRadius: '8px',
-                    padding: '16px',
+                    background: 'rgba(123,94,167,0.08)',
+                    borderLeft: '3px solid #7B5EA7',
+                    borderRadius: '0 6px 6px 0',
+                    padding: '14px 18px',
                   }}>
                     <div style={{ fontSize: '13px', color: '#C09EE0', marginBottom: '8px', fontWeight: 'bold', lineHeight: '1.4' }}>{echo.title}</div>
                     <p style={{ fontSize: '12px', color: '#8070a0', lineHeight: '1.6', margin: 0 }}>{echo.body}</p>
@@ -6310,7 +6309,7 @@ function EmpiricistDemolition() {
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#D4A017", textTransform: "uppercase", marginBottom: 8 }}>
             Part 11 of 35 · Ontology
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: "normal", margin: "0 0 10px 0", color: "#f5e6c0", lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", margin: "0 0 10px 0", color: "#f5e6c0", lineHeight: 1.3 }}>
             The Empiricist Demolition of Substance
           </h1>
           <p style={{ fontSize: 14, color: "#b09060", margin: 0, maxWidth: 560, marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
@@ -6684,12 +6683,12 @@ function EmpiricistDemolition() {
         <div style={{
           background: "rgba(20, 12, 0, 0.75)",
           border: "1px solid #1e1a2a",
-          borderLeft: "4px solid #7B68EE",
+          borderLeft: "4px solid #D4A017",
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 20
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#9B8EBE", textTransform: "uppercase", marginBottom: 12 }}>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#D4A017", textTransform: "uppercase", marginBottom: 12 }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 12px 0", fontSize: 15, lineHeight: 1.8, color: "#d4c090" }}>
@@ -6740,23 +6739,23 @@ function EmpiricistDemolition() {
                 gap: 16
               }}>
                 <div style={{
-                  padding: "16px 20px",
-                  background: "rgba(0,0,0,0.35)",
-                  borderRadius: 8,
-                  border: "1px solid #2a1e00"
+                  background: "rgba(212,160,23,0.08)",
+                  borderLeft: "3px solid #D4A017",
+                  borderRadius: "0 6px 6px 0",
+                  padding: "14px 18px",
                 }}>
-                  <div style={{ fontSize: 13, color: "#D4A017", marginBottom: 8 }}>User Profiles as Pure Bundles</div>
+                  <div style={{ fontSize: 13, color: "#D4A017", marginBottom: 8, fontWeight: "bold" }}>User Profiles as Pure Bundles</div>
                   <p style={{ margin: 0, fontSize: 14, color: "#b09060", lineHeight: 1.7 }}>
                     A user profile in software is exactly the kind of bundle Hume describes. There is no hidden "user substance" beneath the fields — name, email, preferences, history. Delete all attributes and nothing remains; there is no residual entity. The profile just is its collection of data qualities. This is bundle theory implemented as engineering: Berkeley and Hume would recognize it immediately as the correct ontology.
                   </p>
                 </div>
                 <div style={{
-                  padding: "16px 20px",
-                  background: "rgba(0,0,0,0.35)",
-                  borderRadius: 8,
-                  border: "1px solid #2a1e00"
+                  background: "rgba(212,160,23,0.08)",
+                  borderLeft: "3px solid #D4A017",
+                  borderRadius: "0 6px 6px 0",
+                  padding: "14px 18px",
                 }}>
-                  <div style={{ fontSize: 13, color: "#D4A017", marginBottom: 8 }}>Billiard Balls and the Invisible Cause</div>
+                  <div style={{ fontSize: 13, color: "#D4A017", marginBottom: 8, fontWeight: "bold" }}>Billiard Balls and the Invisible Cause</div>
                   <p style={{ margin: 0, fontSize: 14, color: "#b09060", lineHeight: 1.7 }}>
                     High-speed footage of billiard ball collisions shows exactly what Hume describes: contact, deformation, motion — but no visible causal power, no "necessary connection" leaping between the balls. Physics describes the pattern with elegant equations, but Hume's challenge stands: the equations model regularities in what we observe, not a metaphysical bond we have detected. Modern physics has largely followed Hume, treating causation as lawful regularity rather than ontological force.
                   </p>
@@ -6973,7 +6972,7 @@ function KantCopernican() {
         <div style={{ marginBottom: "10px" }}>
           <span style={{ fontSize: "11px", color: "#3A6186", letterSpacing: "0.15em", textTransform: "uppercase" }}>Part 12 of 35 · Ontology</span>
         </div>
-        <h1 style={{ fontFamily: "Georgia, serif", fontSize: "28px", fontWeight: "normal", color: "#e8f0f8", margin: "0 0 8px 0", lineHeight: "1.3" }}>
+        <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", color: "#e8f0f8", margin: "0 0 8px 0", lineHeight: "1.3" }}>
           Kant Turns Ontology Inside Out
         </h1>
         <p style={{ fontSize: "14px", color: "#8aa4bc", margin: "0 0 32px 0", fontStyle: "italic", lineHeight: "1.6" }}>
@@ -7183,12 +7182,12 @@ function KantCopernican() {
         <div style={{
           background: "#0d1218cc",
           border: "1px solid #2a2020",
-          borderLeft: "4px solid #5a3a3a",
+          borderLeft: "4px solid #3A6186",
           borderRadius: "6px",
           padding: "24px 28px",
           marginBottom: "28px",
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#8a5a5a", marginBottom: "12px", fontFamily: "Georgia, serif" }}>The Difficulty</div>
+          <div style={{ fontSize: "10px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#3A6186", marginBottom: "12px", fontFamily: "Georgia, serif" }}>The Difficulty</div>
           <p style={{ margin: "0 0 16px 0", lineHeight: "1.8", fontSize: "15px", color: "#c8c0c0" }}>
             Kant's move has a hidden crack. He insists things-in-themselves must exist — something must be sending the raw signals that the mind then organizes. But the only framework Kant allows us to use to understand cause-and-effect is the category of causation, which belongs to the cognitive apparatus, not to things-in-themselves. In positing that the thing-in-itself causes our sensory input, Kant applies causation precisely where his own system says causation cannot reach.
           </p>
@@ -7230,10 +7229,10 @@ function KantCopernican() {
           {echosOpen && (
             <div style={{ padding: "24px 28px" }}>
               <div style={{
-                padding: "16px 20px",
-                background: "#0d1520",
-                border: "1px solid #1e2e3e",
-                borderRadius: "6px",
+                background: "rgba(58,97,134,0.08)",
+                borderLeft: "3px solid #3A6186",
+                borderRadius: "0 6px 6px 0",
+                padding: "14px 18px",
                 marginBottom: "14px",
               }}>
                 <div style={{ fontSize: "12px", color: "#7aafd4", marginBottom: "8px", fontWeight: "bold" }}>Color Vision and the Constructed Visible World</div>
@@ -7242,10 +7241,10 @@ function KantCopernican() {
                 </p>
               </div>
               <div style={{
-                padding: "16px 20px",
-                background: "#0d1520",
-                border: "1px solid #1e2e3e",
-                borderRadius: "6px",
+                background: "rgba(58,97,134,0.08)",
+                borderLeft: "3px solid #3A6186",
+                borderRadius: "0 6px 6px 0",
+                padding: "14px 18px",
               }}>
                 <div style={{ fontSize: "12px", color: "#7aafd4", marginBottom: "8px", fontWeight: "bold" }}>Perceptual Worlds Differ Across Species</div>
                 <p style={{ margin: 0, fontSize: "13px", color: "#9ab8cc", lineHeight: "1.7" }}>
@@ -7478,7 +7477,7 @@ function HegelBecoming() {
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: '#8B1A1A', textTransform: 'uppercase', marginBottom: 8 }}>Part 13 of 35 — Ontology</div>
-          <h1 style={{ fontSize: 28, fontWeight: 'normal', color: '#f5ddb0', margin: '0 0 8px', letterSpacing: 0.5 }}>Hegel and the Ontology of Becoming</h1>
+          <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: 'normal', color: '#f5ddb0', margin: '0 0 8px', letterSpacing: 0.5 }}>Hegel and the Ontology of Becoming</h1>
           <p style={{ fontSize: 14, color: '#b09070', fontStyle: 'italic', margin: 0, lineHeight: 1.6, maxWidth: 620, display: 'inline-block' }}>
             Hegel argued that the structure of thought and the structure of reality are the same self-developing process — with being, nothing, and becoming as the first dialectical movement of ontology itself.
           </p>
@@ -7767,13 +7766,13 @@ function HegelBecoming() {
         <div style={{
           background: 'rgba(15, 8, 20, 0.88)',
           border: '1px solid #1a0a2a',
-          borderLeft: '4px solid #4a1a6a',
+          borderLeft: '4px solid #8B1A1A',
           borderRadius: 8,
           padding: '20px 24px',
           marginBottom: 20,
-          boxShadow: '0 2px 20px rgba(74,26,106,0.15)',
+          boxShadow: '0 2px 20px rgba(139,26,26,0.15)',
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: '#7a4a9a', textTransform: 'uppercase', marginBottom: 10, fontWeight: 'bold' }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: '#8B1A1A', textTransform: 'uppercase', marginBottom: 10, fontWeight: 'bold' }}>The Difficulty</div>
           <p style={{ margin: '0 0 10px', fontSize: 14, lineHeight: 1.75, color: '#c0a8d8' }}>
             Hegel's system devours its own critics. Any objection can be reinterpreted as a dialectical moment — a necessary antithesis awaiting synthesis. The framework appears unfalsifiable: nothing stands outside it, no contradiction can refute it, because contradiction is precisely the mechanism by which it advances. Critics — from Marx to Schopenhauer to Kierkegaard — charged that this is idealism masquerading as ontology, that Hegel smuggled the concrete back in through abstract categories while claiming to derive it.
           </p>
@@ -7804,36 +7803,34 @@ function HegelBecoming() {
               transition: 'background 0.2s',
             }}
           >
-            <div style={{ fontSize: 10, letterSpacing: 3, color: '#a07040', textTransform: 'uppercase', fontWeight: 'bold' }}>Real-World Echoes</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, color: '#8B1A1A', textTransform: 'uppercase', fontWeight: 'bold' }}>Real-World Echoes</div>
             {echosOpen
-              ? <ChevronUp size={16} color="#a07040" />
-              : <ChevronDown size={16} color="#a07040" />}
+              ? <ChevronUp size={16} color="#8B1A1A" />
+              : <ChevronDown size={16} color="#8B1A1A" />}
           </div>
 
           {echosOpen && (
             <div style={{ padding: '0 24px 20px' }}>
               <div style={{ borderTop: '1px solid #2a1a08', marginBottom: 16 }} />
               <div style={{
-                background: 'rgba(30,15,5,0.7)',
-                border: '1px solid #2a1808',
-                borderLeft: '3px solid #8B4513',
-                borderRadius: 6,
+                background: 'rgba(139,26,26,0.08)',
+                borderLeft: '3px solid #8B1A1A',
+                borderRadius: '0 6px 6px 0',
                 padding: '14px 16px',
                 marginBottom: 12,
               }}>
-                <div style={{ fontSize: 12, color: '#c08040', fontWeight: 'bold', marginBottom: 6 }}>Scientific Theory Development</div>
+                <div style={{ fontSize: 12, color: '#c06060', fontWeight: 'bold', marginBottom: 6 }}>Scientific Theory Development</div>
                 <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: '#b09070' }}>
                   Newtonian mechanics was internally complete — until velocities approaching light exposed its contradictions. The framework could not solve them from within itself. This crisis forced thought forward to Special Relativity, which preserved Newton as a limiting case (low velocities) while transcending his absolute time and mass. The Hegelian pattern is precise: thesis (Newton), antithesis (the contradiction at high velocity), synthesis (Einstein's sublation). Quantum mechanics provides a second example: classical determinism encounters the double-slit paradox and the uncertainty principle — contradictions that drove the development of a richer, more encompassing theory.
                 </p>
               </div>
               <div style={{
-                background: 'rgba(30,15,5,0.7)',
-                border: '1px solid #2a1808',
-                borderLeft: '3px solid #6B3410',
-                borderRadius: 6,
+                background: 'rgba(139,26,26,0.08)',
+                borderLeft: '3px solid #8B1A1A',
+                borderRadius: '0 6px 6px 0',
                 padding: '14px 16px',
               }}>
-                <div style={{ fontSize: 12, color: '#c08040', fontWeight: 'bold', marginBottom: 6 }}>Political and Historical Movements</div>
+                <div style={{ fontSize: 12, color: '#c06060', fontWeight: 'bold', marginBottom: 6 }}>Political and Historical Movements</div>
                 <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: '#b09070' }}>
                   Hegel himself saw the French Revolution as a dialectical moment: the Enlightenment's ideal of pure rational freedom (thesis) generated the Terror — freedom devouring itself (antithesis) — which forced political thought toward constitutional liberty that preserves freedom within institutional structure (synthesis). Marx would later appropriate this same schema for material history, replacing Geist with economic forces. In both cases, the Hegelian insight holds: systems do not fail by accident; they generate their own supersession from within.
                 </p>
@@ -7982,7 +7979,7 @@ function HusserlPhenomenology() {
           <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#4E8B8B", textTransform: "uppercase", marginBottom: "8px" }}>
             Part 14 of 35 — Ontology
           </div>
-          <h1 style={{ fontSize: "28px", fontWeight: "normal", margin: "0 0 10px 0", color: "#e8f4f4", letterSpacing: "0.5px" }}>
+          <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", margin: "0 0 10px 0", color: "#e8f4f4", letterSpacing: "0.5px" }}>
             Husserl and the Structures of What Appears
           </h1>
           <p style={{ fontSize: "15px", color: "#8ababa", maxWidth: "620px", margin: "0 auto", lineHeight: "1.7", fontStyle: "italic" }}>
@@ -8029,7 +8026,7 @@ function HusserlPhenomenology() {
 
             {/* SVG Cup + Horizon */}
             <div style={{ position: "relative", flexShrink: 0 }}>
-              <svg width="400" height="400" viewBox="0 0 400 400">
+              <svg viewBox="0 0 400 400" width="100%" style={{ maxWidth: 400 }}>
                 <defs>
                   <radialGradient id="cupGrad" cx="40%" cy="35%" r="60%">
                     <stop offset="0%" stopColor="#e8d8c0" />
@@ -8314,12 +8311,12 @@ function HusserlPhenomenology() {
         <div style={{
           background: "rgba(10, 18, 18, 0.8)",
           border: "1px solid #1a3030",
-          borderLeft: "4px solid #2a7070",
+          borderLeft: "4px solid #4E8B8B",
           borderRadius: "8px",
           padding: "28px 32px",
           marginBottom: "24px"
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#2a9090", marginBottom: "14px" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#4E8B8B", marginBottom: "14px" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 14px 0", fontSize: "15px", lineHeight: "1.8", color: "#b0cccc" }}>
@@ -8364,7 +8361,8 @@ function HusserlPhenomenology() {
                 <div style={{
                   background: "rgba(78,139,139,0.08)",
                   border: "1px solid #2a5555",
-                  borderRadius: "6px",
+                  borderLeft: "3px solid #4E8B8B",
+                  borderRadius: "0 6px 6px 0",
                   padding: "20px 24px",
                   marginBottom: "16px"
                 }}>
@@ -8379,7 +8377,8 @@ function HusserlPhenomenology() {
                 <div style={{
                   background: "rgba(78,139,139,0.06)",
                   border: "1px solid #2a5555",
-                  borderRadius: "6px",
+                  borderLeft: "3px solid #4E8B8B",
+                  borderRadius: "0 6px 6px 0",
                   padding: "20px 24px",
                   marginBottom: "16px"
                 }}>
@@ -8394,7 +8393,8 @@ function HusserlPhenomenology() {
                 <div style={{
                   background: "rgba(78,139,139,0.06)",
                   border: "1px solid #2a5555",
-                  borderRadius: "6px",
+                  borderLeft: "3px solid #4E8B8B",
+                  borderRadius: "0 6px 6px 0",
                   padding: "20px 24px"
                 }}>
                   <div style={{ fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase", color: "#4E8B8B", marginBottom: "10px" }}>
@@ -8531,7 +8531,7 @@ function HeideggerBeingDasein() {
       <div style={{ marginBottom: '12px', opacity: 0.6, fontSize: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
         Part 15 of 35 — Ontology Series
       </div>
-      <h1 style={{ fontSize: '28px', fontWeight: 'normal', color: '#e8d5b7', marginBottom: '6px', letterSpacing: '0.5px' }}>
+      <h1 style={{ fontSize: 'clamp(20px, 3.5vw, 32px)', fontWeight: 'normal', color: '#e8d5b7', marginBottom: '6px', letterSpacing: '0.5px' }}>
         Heidegger and the Forgotten Question
       </h1>
       <p style={{ fontSize: '15px', color: '#9a8a6a', marginBottom: '32px', fontStyle: 'italic', lineHeight: '1.6' }}>
@@ -8852,12 +8852,12 @@ function HeideggerBeingDasein() {
       <div style={{
         background: '#0e0b08',
         border: '1px solid #1a1510',
-        borderLeft: '4px solid #3a2e1e',
+        borderLeft: '4px solid #5A4E3A',
         borderRadius: '8px',
         padding: '24px 28px',
         marginBottom: '24px',
       }}>
-        <div style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#3a2e1e', marginBottom: '12px', fontWeight: 'bold' }}>
+        <div style={{ fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', color: '#5A4E3A', marginBottom: '12px', fontWeight: 'bold' }}>
           The Difficulty
         </div>
         <p style={{ fontSize: '15px', lineHeight: '1.75', color: '#b0a080', margin: '0 0 14px 0' }}>
@@ -8872,7 +8872,6 @@ function HeideggerBeingDasein() {
       <div style={{
         background: '#0e0b08',
         border: '1px solid #1a1510',
-        borderLeft: '4px solid #2a2010',
         borderRadius: '8px',
         overflow: 'hidden',
       }}>
@@ -8897,7 +8896,8 @@ function HeideggerBeingDasein() {
             <div style={{
               background: '#0d0b08',
               border: '1px solid #2a2010',
-              borderRadius: '6px',
+              borderLeft: '3px solid #5A4E3A',
+              borderRadius: '0 6px 6px 0',
               padding: '16px 18px',
               marginBottom: '12px',
             }}>
@@ -8909,7 +8909,8 @@ function HeideggerBeingDasein() {
             <div style={{
               background: '#0d0b08',
               border: '1px solid #2a2010',
-              borderRadius: '6px',
+              borderLeft: '3px solid #5A4E3A',
+              borderRadius: '0 6px 6px 0',
               padding: '16px 18px',
             }}>
               <div style={{ fontSize: '13px', color: '#c4a882', marginBottom: '6px' }}>Malfunctioning Technology</div>
@@ -8978,7 +8979,7 @@ function SartreExistenceEssence() {
         <div style={{ marginBottom: '12px', opacity: 0.5, fontSize: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
           Part 16 of 35 — Ontology
         </div>
-        <h1 style={{ fontSize: '26px', fontWeight: 'normal', color: '#e8e4f5', marginBottom: '8px', lineHeight: '1.3' }}>
+        <h1 style={{ fontSize: 'clamp(18px, 3vw, 30px)', fontWeight: 'normal', color: '#e8e4f5', marginBottom: '8px', lineHeight: '1.3' }}>
           Existence Before Essence: Sartre's Ontological Reversal
         </h1>
         <p style={{ fontSize: '14px', color: '#9992b8', marginBottom: '36px', lineHeight: '1.7', maxWidth: '720px' }}>
@@ -9349,13 +9350,13 @@ function SartreExistenceEssence() {
         {/* 3. THE DIFFICULTY PANEL */}
         <div style={{
           background: 'rgba(28, 18, 18, 0.6)',
-          borderLeft: '3px solid #7a3a3a',
+          borderLeft: '3px solid #5a4fcf',
           borderRadius: '4px',
           padding: '24px 28px',
           marginBottom: '24px',
           backdropFilter: 'blur(4px)',
         }}>
-          <div style={{ fontSize: '10px', letterSpacing: '3px', textTransform: 'uppercase', color: '#aa5555', marginBottom: '12px', fontWeight: 'bold' }}>
+          <div style={{ fontSize: '10px', letterSpacing: '3px', textTransform: 'uppercase', color: '#5a4fcf', marginBottom: '12px', fontWeight: 'bold' }}>
             The Difficulty
           </div>
           <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#bdb0b0', margin: '0 0 14px 0' }}>
@@ -9400,7 +9401,7 @@ function SartreExistenceEssence() {
 
           {echoesOpen && (
             <div style={{ padding: '8px 28px 28px' }}>
-              <div style={{ marginBottom: '18px', padding: '16px 20px', background: 'rgba(28,28,46,0.5)', borderRadius: '4px', border: '1px solid rgba(90,79,207,0.15)' }}>
+              <div style={{ marginBottom: '18px', padding: '16px 20px', background: 'rgba(28,28,46,0.5)', borderLeft: '3px solid #5a4fcf', borderRadius: '0 6px 6px 0', border: '1px solid rgba(90,79,207,0.15)' }}>
                 <div style={{ fontSize: '13px', color: '#9090dd', marginBottom: '8px', fontWeight: 'bold' }}>
                   The Search for a "True Self"
                 </div>
@@ -9408,7 +9409,7 @@ function SartreExistenceEssence() {
                   When someone retreats to find out "who they really are" — through therapy, travel, meditation — Sartre's analysis offers an uncomfortable correction. There is no hidden essential self to excavate. There is only the self you are in the process of making, through each choice, each commitment, each refusal. The search itself is a choice, and what you find is what you project.
                 </p>
               </div>
-              <div style={{ padding: '16px 20px', background: 'rgba(28,28,46,0.5)', borderRadius: '4px', border: '1px solid rgba(90,79,207,0.15)' }}>
+              <div style={{ padding: '16px 20px', background: 'rgba(28,28,46,0.5)', borderLeft: '3px solid #5a4fcf', borderRadius: '0 6px 6px 0', border: '1px solid rgba(90,79,207,0.15)' }}>
                 <div style={{ fontSize: '13px', color: '#9090dd', marginBottom: '8px', fontWeight: 'bold' }}>
                   The Professional Role
                 </div>
@@ -9652,7 +9653,7 @@ function WhiteheadProcess() {
         <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#E87D0D", textTransform: "uppercase", marginBottom: "6px" }}>
           Part 17 of 35 — Process Ontology
         </div>
-        <h1 style={{ fontSize: "26px", fontWeight: "bold", color: "#F4C87A", margin: "0 0 8px 0", letterSpacing: "0.5px" }}>
+        <h1 style={{ fontSize: "clamp(18px, 3vw, 30px)", fontWeight: "bold", color: "#F4C87A", margin: "0 0 8px 0", letterSpacing: "0.5px" }}>
           Whitehead and the Ontology of Process
         </h1>
         <p style={{ fontSize: "14px", color: "#c8a870", maxWidth: "600px", margin: "0 auto", lineHeight: "1.6", fontStyle: "italic" }}>
@@ -9752,7 +9753,7 @@ function WhiteheadProcess() {
                 Occasion Timeline →
               </div>
               <div style={{ overflowX: "hidden", position: "relative", height: "60px" }}>
-                <svg width="640" height="60" style={{ display: "block" }}>
+                <svg viewBox="0 0 640 60" width="100%" style={{ maxWidth: 640, display: "block" }}>
                   {timelineOccasions.map((occ, i) => {
                     const cx = occ.x;
                     const cy = 30;
@@ -9882,14 +9883,14 @@ function WhiteheadProcess() {
         style={{
           background: difficultyHover ? "#1a0a0088" : "#0e060244",
           border: "1px solid #2a1200",
-          borderLeft: "4px solid #A0440A",
+          borderLeft: "4px solid #E87D0D",
           borderRadius: "6px",
           padding: "20px 24px",
           marginBottom: "24px",
           transition: "background 0.3s",
         }}
       >
-        <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#A0440A", textTransform: "uppercase", marginBottom: "8px" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#E87D0D", textTransform: "uppercase", marginBottom: "8px" }}>
           The Difficulty
         </div>
         <p style={{ fontSize: "14px", lineHeight: "1.75", margin: "0 0 10px 0", color: "#d4b896" }}>
@@ -9931,13 +9932,13 @@ function WhiteheadProcess() {
         {echosOpen && (
           <div style={{ padding: "4px 24px 24px" }}>
             <div style={{ borderTop: "1px solid #2a1800", paddingTop: "18px", display: "flex", flexDirection: "column", gap: "16px" }}>
-              <div style={{ padding: "14px 18px", background: "#1a0e0066", borderRadius: "6px", borderLeft: "3px solid #E87D0D66" }}>
+              <div style={{ padding: "14px 18px", background: "#1a0e0066", borderRadius: "0 6px 6px 0", borderLeft: "3px solid #E87D0D" }}>
                 <div style={{ fontWeight: "bold", color: "#F4A235", marginBottom: "6px", fontSize: "13.5px" }}>The Forest</div>
                 <p style={{ fontSize: "13px", lineHeight: "1.7", color: "#c8a870", margin: 0 }}>
                   A forest has no single substance underlying it. It is an ongoing web of processes — photosynthesis, decomposition, predation, symbiosis — that continuously produce and reproduce each other. The trees are societies of cellular occasions; the soil is a society of chemical and microbial processes. The forest is not a thing that has these processes; it is these processes organized into stable, self-sustaining patterns.
                 </p>
               </div>
-              <div style={{ padding: "14px 18px", background: "#1a0e0066", borderRadius: "6px", borderLeft: "3px solid #E87D0D66" }}>
+              <div style={{ padding: "14px 18px", background: "#1a0e0066", borderRadius: "0 6px 6px 0", borderLeft: "3px solid #E87D0D" }}>
                 <div style={{ fontWeight: "bold", color: "#F4A235", marginBottom: "6px", fontSize: "13.5px" }}>The Candle Flame</div>
                 <p style={{ fontSize: "13px", lineHeight: "1.7", color: "#c8a870", margin: 0 }}>
                   We speak of "the flame" as though it is one object persisting through time, but no molecule of it endures more than a fraction of a second. The flame is a continuously renewed event: fuel vaporizes, combustion occurs, heat and light are released, and the process immediately begins again. Strip away the society of occasions and there is no flame-substance to be found — only process.
@@ -10066,7 +10067,7 @@ function MeinongNonexistent() {
       {/* Title Block */}
       <div style={{ maxWidth: "860px", margin: "0 auto 32px auto", textAlign: "center" }}>
         <div style={{ fontSize: "11px", color: "#9b6bb5", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "8px" }}>Part 18 of 35 — Ontology</div>
-        <h1 style={{ fontSize: "28px", fontWeight: "bold", margin: "0 0 8px 0", color: "#e8d8f8" }}>Meinong and the Things That Do Not Exist</h1>
+        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", margin: "0 0 8px 0", color: "#e8d8f8" }}>Meinong and the Things That Do Not Exist</h1>
         <p style={{ fontSize: "14px", color: "#a08abf", margin: 0, lineHeight: "1.6" }}>
           Meinong argued that thought can be directed at objects that do not exist — like golden mountains or round squares — forcing the domain of objects to be far wider than the domain of existing things.
         </p>
@@ -10398,13 +10399,13 @@ function MeinongNonexistent() {
       <div style={{
         background: "#0e0a18",
         border: "1px solid #4a1a2a",
-        borderLeft: "4px solid #c0392b",
+        borderLeft: "4px solid #7D3C98",
         borderRadius: "8px",
         padding: "28px 32px",
         maxWidth: "860px",
         margin: "0 auto 24px auto",
       }}>
-        <div style={{ fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", color: "#c0392b", marginBottom: "12px", fontWeight: "bold" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", color: "#7D3C98", marginBottom: "12px", fontWeight: "bold" }}>
           The Difficulty
         </div>
         <p style={{ margin: "0 0 14px 0", lineHeight: "1.8", color: "#c8b0b0", fontSize: "15px" }}>
@@ -10447,18 +10448,18 @@ function MeinongNonexistent() {
         </button>
         {echoesOpen && (
           <div style={{ padding: "0 28px 24px 28px", borderTop: "1px solid #2a1a3a" }}>
-            <div style={{ marginTop: "20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
-              <div style={{ padding: "18px", background: "#130820", border: "1px solid #3a1a4a", borderRadius: "8px" }}>
+            <div style={{ marginTop: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ padding: "18px", background: "#130820", border: "1px solid #3a1a4a", borderLeft: "3px solid #7D3C98", borderRadius: "0 8px 8px 0" }}>
                 <div style={{ fontSize: "13px", fontWeight: "bold", color: "#c39bd3", marginBottom: "10px" }}>
-                  ⚖️ Legal Counterfactuals
+                  Legal Counterfactuals
                 </div>
                 <p style={{ margin: 0, fontSize: "13px", color: "#9b7ab0", lineHeight: "1.7" }}>
                   Tort law asks: what would have happened if the defendant had not been negligent? Courts reason carefully about non-actual scenarios — a world that never existed but has determinate properties. The "but-for" test is Meinongian reasoning applied to justice.
                 </p>
               </div>
-              <div style={{ padding: "18px", background: "#130820", border: "1px solid #3a1a4a", borderRadius: "8px" }}>
+              <div style={{ padding: "18px", background: "#130820", border: "1px solid #3a1a4a", borderLeft: "3px solid #7D3C98", borderRadius: "0 8px 8px 0" }}>
                 <div style={{ fontSize: "13px", fontWeight: "bold", color: "#c39bd3", marginBottom: "10px" }}>
-                  🌉 Engineering Simulations
+                  Engineering Simulations
                 </div>
                 <p style={{ margin: 0, fontSize: "13px", color: "#9b7ab0", lineHeight: "1.7" }}>
                   Structural engineers simulate failure conditions — bridge collapses, load failures — that never occur and must never occur. These "objects of simulation" have precise mathematical properties despite having no real-world instantiation, much like Meinong's golden mountain.
@@ -10582,7 +10583,7 @@ function QuineAnalyticOntology() {
         <div style={{ marginBottom: "12px" }}>
           <span style={{ fontSize: "11px", letterSpacing: "3px", color: "#2E86AB", textTransform: "uppercase" }}>Part 19 of 35 — Ontology</span>
         </div>
-        <h1 style={{ fontSize: "28px", fontWeight: "bold", margin: "0 0 8px 0", lineHeight: 1.3, color: "#f0f0e8" }}>
+        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", margin: "0 0 8px 0", lineHeight: 1.3, color: "#f0f0e8" }}>
           Quine and the Analytic Revival of Ontology
         </h1>
         <p style={{ fontSize: "15px", color: "#a0b8c8", margin: "0 0 36px 0", fontStyle: "italic", lineHeight: 1.6 }}>
@@ -10968,12 +10969,12 @@ function QuineAnalyticOntology() {
         <div style={{
           background: "rgba(10, 20, 30, 0.85)",
           border: "1px solid rgba(80,134,100,0.25)",
-          borderLeft: "4px solid #4a9b6f",
+          borderLeft: "4px solid #2E86AB",
           borderRadius: "8px",
           padding: "24px 28px",
           marginBottom: "32px",
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#4a9b6f", textTransform: "uppercase", marginBottom: "12px" }}>The Difficulty</div>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#2E86AB", textTransform: "uppercase", marginBottom: "12px" }}>The Difficulty</div>
           <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: "15px", color: "#c8d8e0" }}>
             Tying ontology entirely to current best theories introduces a troubling instability. If what exists is just whatever our best science quantifies over today, then ontology shifts with theoretical fashions. Phlogiston existed for the chemists of 1750. Luminiferous ether was real until Michelson and Morley. Are we willing to say those things simply existed, then stopped existing, when the theories changed? Quine's naturalized ontology seems to give us answers that are only as stable as the theories grounding them.
           </p>
@@ -11018,16 +11019,19 @@ function QuineAnalyticOntology() {
               <div style={{
                 borderTop: "1px solid rgba(46,134,171,0.15)",
                 paddingTop: "20px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
               }}>
-                <div style={{ marginBottom: "20px" }}>
-                  <strong style={{ color: "#7ecbe8", fontSize: "14px" }}>Weather Prediction Software and Pressure Fronts</strong>
-                  <p style={{ margin: "8px 0 0 0", fontSize: "14px", color: "#a8bcc8", lineHeight: 1.75 }}>
+                <div style={{ padding: "14px 18px", background: "rgba(46,134,171,0.06)", borderLeft: "3px solid #2E86AB", borderRadius: "0 6px 6px 0" }}>
+                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#7ecbe8", marginBottom: "8px" }}>Weather Prediction and Pressure Fronts</div>
+                  <p style={{ margin: 0, fontSize: "13px", color: "#a8bcc8", lineHeight: 1.75 }}>
                     Modern meteorological models quantify explicitly over pressure fronts, wind vectors, and humidity gradients as entities with measurable properties. When the model correctly predicts tomorrow's storm, Quine's criterion is met: the theory works, it quantifies over pressure fronts, therefore we have pragmatic-scientific grounds to say pressure fronts exist. The ontology is read from the theory's success, not from philosophical intuition.
                   </p>
                 </div>
-                <div>
-                  <strong style={{ color: "#7ecbe8", fontSize: "14px" }}>Mathematics Indispensable to Physics: The Building and Its Foundations</strong>
-                  <p style={{ margin: "8px 0 0 0", fontSize: "14px", color: "#a8bcc8", lineHeight: 1.75 }}>
+                <div style={{ padding: "14px 18px", background: "rgba(46,134,171,0.06)", borderLeft: "3px solid #2E86AB", borderRadius: "0 6px 6px 0" }}>
+                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#7ecbe8", marginBottom: "8px" }}>Mathematics Indispensable to Physics</div>
+                  <p style={{ margin: 0, fontSize: "13px", color: "#a8bcc8", lineHeight: 1.75 }}>
                     Every equation in quantum mechanics, general relativity, and thermodynamics quantifies over mathematical objects — differential operators, tensors, Hilbert spaces, real-valued functions. To accept the physics as true is to accept that these mathematical entities are values of bound variables in true theories. Rejecting mathematical existence while trusting the physics is like marveling at a skyscraper while denying the existence of its steel frame. You cannot coherently separate the predictive success from the ontological load.
                   </p>
                 </div>
@@ -11139,7 +11143,7 @@ function PropertiesUniversalsTropes() {
     const roseY = 230;
 
     return (
-      <svg width="540" height="330" style={{ overflow: "visible" }}>
+      <svg viewBox="0 0 540 330" width="100%" style={{ maxWidth: 540, overflow: "visible" }}>
         {/* Universal entity */}
         <g transform={`translate(270, ${universalY}) scale(${pressureActive ? 0.92 : pulseScale})`}>
           <circle cx={0} cy={0} r={44} fill="#1a0505" stroke="#C0392B" strokeWidth={2.2}
@@ -11166,7 +11170,7 @@ function PropertiesUniversalsTropes() {
     const rose1X = 130, rose2X = 400;
     const roseY = 190;
     return (
-      <svg width="540" height="310" style={{ overflow: "visible" }}>
+      <svg viewBox="0 0 540 310" width="100%" style={{ maxWidth: 540, overflow: "visible" }}>
         <text x={270} y={40} textAnchor="middle" fill="#b0a0a0" fontSize={12} fontFamily="Georgia, serif" fontStyle="italic">Only individual things exist</text>
         {/* Resemblance arrow */}
         <defs>
@@ -11196,7 +11200,7 @@ function PropertiesUniversalsTropes() {
     const rose1X = 140, rose2X = 390;
     const roseY = 200;
     return (
-      <svg width="540" height="330" style={{ overflow: "visible" }}>
+      <svg viewBox="0 0 540 330" width="100%" style={{ maxWidth: 540, overflow: "visible" }}>
         <text x={270} y={36} textAnchor="middle" fill="#b0a0a0" fontSize={12} fontFamily="Georgia, serif" fontStyle="italic">Each rose has its own individual redness-instance</text>
         {/* Trope resemblance arrow */}
         <defs>
@@ -11241,7 +11245,7 @@ function PropertiesUniversalsTropes() {
         {/* Header */}
         <div style={{ marginBottom: 28, textAlign: "center" }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#C0392B", textTransform: "uppercase", marginBottom: 8 }}>Part 20 of 35 — Ontology</div>
-          <h1 style={{ fontSize: 26, fontWeight: "normal", margin: "0 0 8px", color: "#f5e8e8", letterSpacing: 0.5 }}>Properties, Universals, and Tropes</h1>
+          <h1 style={{ fontSize: "clamp(18px, 3vw, 30px)", fontWeight: "normal", margin: "0 0 8px", color: "#f5e8e8", letterSpacing: 0.5 }}>Properties, Universals, and Tropes</h1>
           <p style={{ fontSize: 13, color: "#a09090", margin: 0, lineHeight: 1.7, fontStyle: "italic" }}>Contemporary philosophers debate whether shared properties are single universal entities present in multiple locations, mere resemblance relations among particulars, or individual tropes — particular instances of properties.</p>
         </div>
 
@@ -11418,12 +11422,12 @@ function PropertiesUniversalsTropes() {
         <div style={{
           background: "#0d0d14cc",
           border: "1px solid #2a1a2a",
-          borderLeft: "4px solid #8a2be2",
+          borderLeft: "4px solid #C0392B",
           borderRadius: 10,
           padding: "22px 28px",
           marginBottom: 28,
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#9a6bc0", textTransform: "uppercase", marginBottom: 10 }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#C0392B", textTransform: "uppercase", marginBottom: 10 }}>The Difficulty</div>
           <p style={{ margin: "0 0 14px", lineHeight: 1.75, fontSize: 14, color: "#c0b0d4" }}>
             Each position preserves some intuitions while generating its own residual problem. Realism must explain how a single entity can be wholly present in multiple locations without being divided — a puzzle that strains our ordinary understanding of what it means to be in a place. Resemblance nominalism must ground the resemblance relation itself without covertly appealing to a shared property, at risk of circular regress. Trope theory must explain why resemblance groupings carve nature at its joints — without a universal to do that work, the groupings seem to depend on facts that cannot be stated without invoking the very universals the theory was meant to eliminate.
           </p>
@@ -11455,10 +11459,10 @@ function PropertiesUniversalsTropes() {
               transition: "background 0.18s",
             }}
           >
-            <span style={{ fontSize: 10, letterSpacing: 3, color: "#9a6bc0", textTransform: "uppercase", fontFamily: "Georgia, serif" }}>Real-World Echoes</span>
+            <span style={{ fontSize: 10, letterSpacing: 3, color: "#C0392B", textTransform: "uppercase", fontFamily: "Georgia, serif" }}>Real-World Echoes</span>
             {echosOpen
-              ? <ChevronUp size={16} color="#9a6bc0" />
-              : <ChevronDown size={16} color="#9a6bc0" />}
+              ? <ChevronUp size={16} color="#C0392B" />
+              : <ChevronDown size={16} color="#C0392B" />}
           </button>
           {echosOpen && (
             <div style={{ padding: "0 28px 24px", borderTop: "1px solid #2a1a2a" }}>
@@ -11994,7 +11998,7 @@ function AbstractObjects() {
       <div style={{
         background: "linear-gradient(135deg, #0f1a1f 0%, #0a0f12 100%)",
         border: "1px solid #1a2830",
-        borderLeft: "4px solid #0e7490",
+        borderLeft: "4px solid #1A535C",
         borderRadius: "8px",
         padding: "28px 32px",
         marginBottom: "20px",
@@ -12003,7 +12007,7 @@ function AbstractObjects() {
           fontSize: "10px",
           letterSpacing: "3px",
           textTransform: "uppercase",
-          color: "#0e7490",
+          color: "#1A535C",
           marginBottom: "14px",
           fontFamily: "Georgia, serif",
         }}>The Difficulty</div>
@@ -12059,6 +12063,7 @@ function AbstractObjects() {
                 minWidth: "220px",
                 background: "#080f12",
                 border: "1px solid #1a3035",
+                borderLeft: "3px solid #1A535C",
                 borderRadius: "6px",
                 padding: "16px",
               }}>
@@ -12073,6 +12078,7 @@ function AbstractObjects() {
                 minWidth: "220px",
                 background: "#080f12",
                 border: "1px solid #1a3035",
+                borderLeft: "3px solid #1A535C",
                 borderRadius: "6px",
                 padding: "16px",
               }}>
@@ -12168,7 +12174,7 @@ function Fictionalism() {
           <div style={{ fontSize: "12px", letterSpacing: "2px", color: accentColor, textTransform: "uppercase", marginBottom: "6px" }}>
             Part 22 of 35 · Ontology
           </div>
-          <h1 style={{ fontSize: "32px", fontWeight: "bold", color: "#ece8f0", margin: "0 0 8px 0", lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "bold", color: "#ece8f0", margin: "0 0 8px 0", lineHeight: 1.2 }}>
             Fictionalism: Ontology Without Belief
           </h1>
           <p style={{ fontSize: "15px", color: "#9d93a5", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
@@ -12481,7 +12487,7 @@ function Fictionalism() {
         <div style={{
           background: "rgba(20, 16, 26, 0.85)",
           border: "1px solid rgba(109, 104, 117, 0.25)",
-          borderLeft: "4px solid #4A3F52",
+          borderLeft: "4px solid #6D6875",
           borderRadius: "8px",
           padding: "24px 28px",
           marginBottom: "20px",
@@ -12535,6 +12541,7 @@ function Fictionalism() {
                 background: "rgba(109, 104, 117, 0.08)",
                 borderRadius: "6px",
                 border: "1px solid rgba(109, 104, 117, 0.15)",
+                borderLeft: "3px solid #6D6875",
                 marginBottom: "14px",
               }}>
                 <div style={{ fontSize: "13px", fontWeight: "bold", color: "#ece8f0", marginBottom: "8px" }}>
@@ -12549,6 +12556,7 @@ function Fictionalism() {
                 background: "rgba(109, 104, 117, 0.08)",
                 borderRadius: "6px",
                 border: "1px solid rgba(109, 104, 117, 0.15)",
+                borderLeft: "3px solid #6D6875",
               }}>
                 <div style={{ fontSize: "13px", fontWeight: "bold", color: "#ece8f0", marginBottom: "8px" }}>
                   Money and the daily enactment of fictionalist ambivalence
@@ -12680,7 +12688,7 @@ function PossibleWorlds() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "32px" }}>
           <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#4FC3F7", textTransform: "uppercase", marginBottom: "8px" }}>Part 23 of 35 — Ontology</div>
-          <h1 style={{ fontSize: "26px", fontWeight: "bold", margin: "0 0 8px 0", color: "#f0ece0", lineHeight: "1.3" }}>Possible Worlds and the Cost of Taking Them Seriously</h1>
+          <h1 style={{ fontSize: "clamp(18px, 3vw, 30px)", fontWeight: "bold", margin: "0 0 8px 0", color: "#f0ece0", lineHeight: "1.3" }}>Possible Worlds and the Cost of Taking Them Seriously</h1>
           <p style={{ fontSize: "14px", color: "#a09888", margin: 0, fontStyle: "italic" }}>David Lewis argued that possible worlds are not abstractions but concrete universes as real as our own</p>
         </div>
 
@@ -12688,7 +12696,7 @@ function PossibleWorlds() {
         <div style={{
           background: "#0a1520",
           border: "1px solid #1a2a3a",
-          borderLeft: "4px solid #0B3954",
+          borderLeft: "4px solid #4FC3F7",
           borderRadius: "6px",
           padding: "24px 28px",
           marginBottom: "28px",
@@ -13021,12 +13029,12 @@ function PossibleWorlds() {
         <div style={{
           background: "#0a0f18",
           border: "1px solid #1a2030",
-          borderLeft: "4px solid #1a3a5a",
+          borderLeft: "4px solid #4FC3F7",
           borderRadius: "6px",
           padding: "24px 28px",
           marginBottom: "24px",
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#7aa8c8", marginBottom: "12px", fontWeight: "bold" }}>The Difficulty</div>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#4FC3F7", marginBottom: "12px", fontWeight: "bold" }}>The Difficulty</div>
           <p style={{ margin: "0 0 14px 0", lineHeight: "1.75", fontSize: "15px", color: "#c8c4b8" }}>
             If every possible outcome is actualized in some concrete universe, the ethical stakes of our choices appear to collapse. You prevent a disaster here — but in another equally real universe, the disaster occurs anyway. Lewis's response was disarmingly direct: we care about our world as we care about our city, not because it is metaphysically special, but because it is <em>ours</em>. Our concern for those near us in logical space is no more irrational than caring more for those near us in physical space. Many philosophers accept this response. Many others find it a troubling trivialization of moral urgency.
           </p>
@@ -13055,26 +13063,26 @@ function PossibleWorlds() {
             onMouseEnter={e => e.currentTarget.style.background = "#0f1a28"}
             onMouseLeave={e => e.currentTarget.style.background = "transparent"}
           >
-            <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#7aa8c8", fontWeight: "bold" }}>Real-World Echoes</span>
-            {echoesOpen ? <ChevronUp size={16} color="#7aa8c8" /> : <ChevronDown size={16} color="#7aa8c8" />}
+            <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#4FC3F7", fontWeight: "bold" }}>Real-World Echoes</span>
+            {echoesOpen ? <ChevronUp size={16} color="#4FC3F7" /> : <ChevronDown size={16} color="#4FC3F7" />}
           </div>
 
           {echoesOpen && (
             <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #1a2030" }}>
               <div style={{ marginTop: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div style={{ background: "#060e18", border: "1px solid #1a2a3a", borderRadius: "6px", padding: "16px" }}>
+                <div style={{ background: "#060e18", border: "1px solid #1a2a3a", borderLeft: "3px solid #4FC3F7", borderRadius: "6px", padding: "16px" }}>
                   <div style={{ fontSize: "12px", color: "#4FC3F7", marginBottom: "8px", fontWeight: "bold" }}>Medical Counterfactuals and Legal Causation</div>
                   <p style={{ margin: 0, fontSize: "13px", color: "#9a9888", lineHeight: "1.65" }}>
                     When a court asks "would the patient have survived with earlier treatment?" it implicitly invokes possible-worlds reasoning: we consider the closest possible world in which treatment was administered promptly and ask what happens there. Lewis's framework makes this precise. The standard of care in negligence law is essentially a counterfactual standard — asking what a reasonable person would have done in a near-identical possible world.
                   </p>
                 </div>
-                <div style={{ background: "#060e18", border: "1px solid #1a2a3a", borderRadius: "6px", padding: "16px" }}>
+                <div style={{ background: "#060e18", border: "1px solid #1a2a3a", borderLeft: "3px solid #4FC3F7", borderRadius: "6px", padding: "16px" }}>
                   <div style={{ fontSize: "12px", color: "#81C784", marginBottom: "8px", fontWeight: "bold" }}>Engineering Risk Assessment</div>
                   <p style={{ margin: 0, fontSize: "13px", color: "#9a9888", lineHeight: "1.65" }}>
                     Safety engineers who ask "what would happen if this valve failed?" are explicitly reasoning about possible worlds — close ones where a single component behaves differently. Formal methods in engineering (fault trees, FMEA) are essentially systematic explorations of nearby possible worlds, checking which ones contain catastrophic outcomes.
                   </p>
                 </div>
-                <div style={{ background: "#060e18", border: "1px solid #1a2a3a", borderRadius: "6px", padding: "16px" }}>
+                <div style={{ background: "#060e18", border: "1px solid #1a2a3a", borderLeft: "3px solid #4FC3F7", borderRadius: "6px", padding: "16px" }}>
                   <div style={{ fontSize: "12px", color: "#FFD54F", marginBottom: "8px", fontWeight: "bold" }}>Quantum Mechanics and the Many-Worlds Interpretation</div>
                   <p style={{ margin: 0, fontSize: "13px", color: "#9a9888", lineHeight: "1.65" }}>
                     Everett's many-worlds interpretation of quantum mechanics is sometimes taken as empirical vindication of something like Lewisian modal realism — every quantum branch is an equally real universe. Lewis himself was cautious about the connection, noting that quantum branches share an origin in a way his worlds do not. But the resonance is remarkable: the physics suggests something deeply congenial to his philosophical framework.
@@ -13605,7 +13613,7 @@ function OntologyOfTime() {
       <div style={{
         background: "rgba(10, 20, 14, 0.85)",
         border: "1px solid #1a3d2a",
-        borderLeft: "4px solid #1a4d35",
+        borderLeft: "4px solid #2D6A4F",
         borderRadius: "8px",
         padding: "24px 28px",
         marginBottom: "20px",
@@ -14086,7 +14094,7 @@ function PersistenceIdentity() {
           <div style={{ fontSize: 12, color: "#9B4F0F", letterSpacing: 3, textTransform: "uppercase", marginBottom: 8 }}>
             Part 25 of 35 · Ontology
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: "bold", color: "#FFD09A", margin: "0 0 8px" }}>
+          <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", color: "#FFD09A", margin: "0 0 8px" }}>
             Persistence and Identity Through Time
           </h1>
           <p style={{ fontSize: 15, color: "#c4a07a", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
@@ -14360,7 +14368,7 @@ function PersistenceIdentity() {
         <div style={{
           background: "#10090388",
           border: "1px solid #2a1a10",
-          borderLeft: `4px solid #7a3a0a`,
+          borderLeft: `4px solid #9B4F0F`,
           borderRadius: 8,
           padding: "20px 24px",
           marginBottom: 20,
@@ -14413,7 +14421,7 @@ function PersistenceIdentity() {
                   borderRadius: 8,
                   padding: "16px 18px",
                   marginBottom: 14,
-                  borderLeft: `3px solid ${accentDim}`,
+                  borderLeft: `3px solid ${accent}`,
                 }}>
                   <div style={{ fontWeight: "bold", color: "#FFD09A", fontSize: 14, marginBottom: 8 }}>
                     Criminal Punishment and Retributive Justice
@@ -14428,7 +14436,7 @@ function PersistenceIdentity() {
                   borderRadius: 8,
                   padding: "16px 18px",
                   marginBottom: 14,
-                  borderLeft: `3px solid ${accentDim}`,
+                  borderLeft: `3px solid ${accent}`,
                 }}>
                   <div style={{ fontWeight: "bold", color: "#FFD09A", fontSize: 14, marginBottom: 8 }}>
                     Advance Medical Directives and Dementia
@@ -14442,7 +14450,7 @@ function PersistenceIdentity() {
                   background: "#1a0d0688",
                   borderRadius: 8,
                   padding: "16px 18px",
-                  borderLeft: `3px solid ${accentDim}`,
+                  borderLeft: `3px solid ${accent}`,
                 }}>
                   <div style={{ fontWeight: "bold", color: "#FFD09A", fontSize: 14, marginBottom: 8 }}>
                     Contracts, Promises, and the Passage of Time
@@ -14553,7 +14561,7 @@ function EventsFacts() {
 
         {/* Header */}
         <div style={{ marginBottom: 12, opacity: 0.6, fontSize: 13, letterSpacing: 2, textTransform: "uppercase" }}>Part 26 of 35 — Ontology</div>
-        <h1 style={{ fontSize: 28, fontWeight: "bold", color: "#fff", margin: "0 0 8px 0", lineHeight: 1.2 }}>Events, Facts, and States of Affairs</h1>
+        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", color: "#fff", margin: "0 0 8px 0", lineHeight: 1.2 }}>Events, Facts, and States of Affairs</h1>
         <p style={{ fontSize: 15, color: "#c4a8aa", marginBottom: 32, lineHeight: 1.6 }}>Events are not reducible to objects or properties but are irreducible particulars with their own identity conditions — a distinction with direct consequences for how we understand causation and legal responsibility.</p>
 
         {/* THE PROBLEM PANEL */}
@@ -14884,13 +14892,13 @@ function EventsFacts() {
         <div style={{
           background: "rgba(10,6,8,0.92)",
           border: "1px solid rgba(180,60,70,0.25)",
-          borderLeft: "4px solid rgba(180,60,70,0.7)",
+          borderLeft: "4px solid #E84855",
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 20,
           boxShadow: "0 4px 32px rgba(0,0,0,0.3)",
         }}>
-          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "rgba(220,100,110,0.9)", marginBottom: 12, fontWeight: "bold" }}>The Difficulty</div>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#E84855", marginBottom: 12, fontWeight: "bold" }}>The Difficulty</div>
           <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: 15, color: "#ddd0cc" }}>
             How we individuate events — where one ends and another begins — determines what causal claims are available, which matters enormously for legal liability and moral responsibility. If the short circuit and the fire are one event, there is no causal relation between them for liability to attach to. If they are distinct, we can ask whether the causal link was foreseeable. Davidson's own criterion (same causes, same effects) is circular, and alternative criteria generate different event-inventories with different ontological commitments.
           </p>
@@ -15391,13 +15399,13 @@ function CompositionMereology() {
       <div style={{
         background: "rgba(15,14,30,0.85)",
         border: "1px solid #222",
-        borderLeft: `4px solid #7C4DFF`,
+        borderLeft: `4px solid #5C6BC0`,
         borderRadius: "8px",
         padding: "24px 28px",
         maxWidth: "860px",
         margin: "0 auto 24px auto",
       }}>
-        <div style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "#9575CD", marginBottom: "10px" }}>The Difficulty</div>
+        <div style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "#5C6BC0", marginBottom: "10px" }}>The Difficulty</div>
         <p style={{ margin: "0 0 12px 0", fontSize: "15px", lineHeight: "1.75", color: "#c9c6e0" }}>
           The pressure is unrelieved. Universalism populates reality with trillions of bizarre, arbitrary composites — the mereological sum of your left shoe and the Eiffel Tower is, on this view, a perfectly real object. Van Inwagen's restriction saves organisms but struggles to say why <em>life</em> is the magic criterion; other candidates (causal integration, structural unity, functional cohesion) either over-include or under-include in equally troubling ways. Nihilism achieves maximum parsimony, but at the cost of denying that the chair you're sitting on exists as a single thing at all.
         </p>
@@ -15544,7 +15552,7 @@ function PowersDispositions() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#A8DADC", marginBottom: 8, textTransform: "uppercase" }}>Part 28 of 35 — Ontology</div>
-          <h1 style={{ fontSize: 28, fontWeight: "normal", margin: "0 0 10px 0", color: "#f0f0f0", lineHeight: 1.3 }}>Powers, Dispositions, and What Things Can Do</h1>
+          <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", margin: "0 0 10px 0", color: "#f0f0f0", lineHeight: 1.3 }}>Powers, Dispositions, and What Things Can Do</h1>
           <p style={{ fontSize: 14, color: "#a0a8b0", maxWidth: 600, margin: "0 auto", lineHeight: 1.7 }}>
             Powers ontologists argue that the fundamental properties of nature are active capacities that explain natural laws, while Humeans treat laws as mere summaries of regularities.
           </p>
@@ -15941,12 +15949,12 @@ function PowersDispositions() {
         <div style={{
           background: "#0f1a1b",
           border: "1px solid #1e3a3c",
-          borderLeft: "4px solid #6a9a9c",
+          borderLeft: "4px solid #A8DADC",
           borderRadius: 8,
           padding: "22px 28px",
           marginBottom: 28,
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#6a9a9c", marginBottom: 10, textTransform: "uppercase" }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#A8DADC", marginBottom: 10, textTransform: "uppercase" }}>The Difficulty</div>
           <p style={{ margin: 0, lineHeight: 1.8, color: "#b0bec5", fontSize: 15 }}>
             Powers face what philosophers call the 'always packing, never traveling' objection: a power that never manifests — a fragility that never breaks, a solubility that never dissolves — seems to contribute nothing observable to the world. If an electron existed in a universe entirely devoid of other electrons, its repulsive power would never fire. Is such a power real, or is it a metaphysical fiction we are tempted to project onto what is really just a regularity? More broadly, the question of whether nature contains genuine necessities or merely regularities reaches into the deepest problems of causation: is there really a 'making-happen' in nature, or only a 'happening after'? The same question shadows the unity of science — do the special sciences reduce to physics because nature is built of powers that compose, or merely because we choose to organize our summaries hierarchically?
           </p>
@@ -16055,7 +16063,7 @@ function NaturalKinds() {
           <div style={{ color: accent, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '12px' }}>
             Part 29 of 35 — Ontology
           </div>
-          <h1 style={{ fontSize: '32px', fontWeight: 'normal', margin: '0 0 16px', lineHeight: '1.3', color: '#f0f0e8' }}>
+          <h1 style={{ fontSize: 'clamp(22px, 4vw, 36px)', fontWeight: 'normal', margin: '0 0 16px', lineHeight: '1.3', color: '#f0f0e8' }}>
             Natural Kinds: Are the Categories in Nature or in Us?
           </h1>
           <p style={{ fontSize: '15px', color: '#a0a89a', lineHeight: '1.7', maxWidth: '680px', margin: '0 auto' }}>
@@ -16552,12 +16560,12 @@ function NaturalKinds() {
         <div style={{
           background: 'rgba(10,25,20,0.85)',
           border: '1px solid rgba(23,165,137,0.2)',
-          borderLeft: `4px solid #0e7a65`,
+          borderLeft: `4px solid #17A589`,
           borderRadius: '8px',
           padding: '28px 32px',
           marginBottom: '24px',
         }}>
-          <div style={{ fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: '#0e9a78', marginBottom: '14px', fontVariant: 'small-caps' }}>
+          <div style={{ fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: '#17A589', marginBottom: '14px', fontVariant: 'small-caps' }}>
             The Difficulty
           </div>
           <p style={{ margin: '0 0 16px', lineHeight: '1.8', fontSize: '15px', color: '#ccd4c0' }}>
@@ -16759,7 +16767,7 @@ function SocialOntology() {
         <div style={{ fontSize: "12px", letterSpacing: "3px", color: accent, marginBottom: "8px", textTransform: "uppercase" }}>
           Part 30 of 35 — Social Ontology
         </div>
-        <h1 style={{ fontSize: "28px", fontWeight: "bold", color: "#fff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
+        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", color: "#fff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
           What Makes Money Real?
         </h1>
         <p style={{ fontSize: "15px", color: "#c4a882", maxWidth: "620px", margin: "0 auto", lineHeight: 1.7 }}>
@@ -17092,12 +17100,12 @@ function SocialOntology() {
       <div style={{
         background: "rgba(15, 8, 2, 0.85)",
         border: "1px solid #2a1a0a",
-        borderLeft: `4px solid #c77dff`,
+        borderLeft: `4px solid #F4A261`,
         borderRadius: "8px",
         padding: "24px 28px",
         marginBottom: "24px"
       }}>
-        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#c77dff", marginBottom: "10px", textTransform: "uppercase", fontWeight: "bold" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#F4A261", marginBottom: "10px", textTransform: "uppercase", fontWeight: "bold" }}>
           The Difficulty
         </div>
         <p style={{ margin: "0 0 12px 0", lineHeight: 1.8, color: "#d4b896", fontSize: "15px" }}>
@@ -17317,7 +17325,7 @@ function GroundingArchitecture() {
           <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#7F5AF0', textTransform: 'uppercase', marginBottom: '8px' }}>
             Part 31 of 35 — Ontology
           </div>
-          <h1 style={{ fontSize: '28px', fontWeight: 'normal', margin: '0 0 8px 0', color: '#f0ebff', lineHeight: '1.3' }}>
+          <h1 style={{ fontSize: 'clamp(20px, 3.5vw, 32px)', fontWeight: 'normal', margin: '0 0 8px 0', color: '#f0ebff', lineHeight: '1.3' }}>
             Grounding and the New Architecture of Reality
           </h1>
           <p style={{ fontSize: '14px', color: '#a099c8', margin: 0, lineHeight: '1.7' }}>
@@ -17388,7 +17396,7 @@ function GroundingArchitecture() {
 
           {/* SVG Diagram */}
           <div style={{ overflowX: 'auto' }}>
-            <svg width="800" height="620" style={{ display: 'block', margin: '0 auto' }}>
+            <svg viewBox="0 0 800 620" width="100%" style={{ maxWidth: 800, display: 'block', margin: '0 auto' }}>
               <defs>
                 {layers.map(layer => (
                   <filter key={layer.id} id={`glow-${layer.id}`}>
@@ -17715,12 +17723,12 @@ function GroundingArchitecture() {
         <div style={{
           background: '#13111e',
           border: '1px solid #2a2040',
-          borderLeft: '4px solid #4a3f8a',
+          borderLeft: '4px solid #7F5AF0',
           borderRadius: '8px',
           padding: '24px 28px',
           marginBottom: '24px',
         }}>
-          <div style={{ fontSize: '10px', letterSpacing: '3px', color: '#9a8fd0', textTransform: 'uppercase', marginBottom: '12px' }}>
+          <div style={{ fontSize: '10px', letterSpacing: '3px', color: '#7F5AF0', textTransform: 'uppercase', marginBottom: '12px' }}>
             The Difficulty
           </div>
           <p style={{ margin: '0 0 14px 0', fontSize: '15px', lineHeight: '1.8', color: '#ccc5e8' }}>
@@ -17995,7 +18003,7 @@ function OntologyBeyondWest() {
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#C77DFF", textTransform: "uppercase", marginBottom: 8 }}>
             Part 32 of 35 — Ontology
           </div>
-          <h1 style={{ fontSize: 32, fontWeight: "normal", margin: "0 0 10px 0", color: "#f0e8ff", lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 10px 0", color: "#f0e8ff", lineHeight: 1.2 }}>
             Ontology Beyond the West
           </h1>
           <p style={{ fontSize: 15, color: "#b8a8cc", lineHeight: 1.7, maxWidth: 620, margin: "0 auto" }}>
@@ -18345,12 +18353,12 @@ function OntologyBeyondWest() {
         <div style={{
           background: "rgba(20, 10, 35, 0.85)",
           border: "1px solid rgba(180,100,255,0.2)",
-          borderLeft: "4px solid #9B5DE5",
+          borderLeft: "4px solid #C77DFF",
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 24
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#9B5DE5", textTransform: "uppercase", marginBottom: 12 }}>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#C77DFF", textTransform: "uppercase", marginBottom: 12 }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 14px 0", fontSize: 15, lineHeight: 1.8, color: "#d8cce8" }}>
@@ -18559,7 +18567,7 @@ function StructuralRealism() {
           <div style={{ fontSize: 12, color: dimAccent, letterSpacing: 3, textTransform: 'uppercase', marginBottom: 8 }}>
             Part 33 of 35 · Ontology
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: 'bold', color: '#e8f4f8', margin: '0 0 10px 0', lineHeight: 1.3 }}>
+          <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: 'bold', color: '#e8f4f8', margin: '0 0 10px 0', lineHeight: 1.3 }}>
             Structural Realism: When Physics Dissolves Objects
           </h1>
           <p style={{ fontSize: 15, color: '#88b4c4', margin: 0, lineHeight: 1.7, fontStyle: 'italic' }}>
@@ -18908,12 +18916,12 @@ function StructuralRealism() {
         <div style={{
           background: 'rgba(0,20,30,0.75)',
           border: '1px solid rgba(0,100,130,0.25)',
-          borderLeft: '4px solid #0077A0',
+          borderLeft: '4px solid #00B4D8',
           borderRadius: 10,
           padding: '24px 28px',
           marginBottom: 24,
         }}>
-          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: '#0077A0', marginBottom: 12, fontWeight: 'bold' }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: '#00B4D8', marginBottom: 12, fontWeight: 'bold' }}>
             The Difficulty
           </div>
           <p style={{ margin: '0 0 14px 0', lineHeight: 1.85, fontSize: 15, color: '#c8dfe8' }}>
@@ -19127,7 +19135,7 @@ function Metaontology() {
         {/* Header */}
         <div style={{ marginBottom: 12, textAlign: "center" }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: "#3D405B", textTransform: "uppercase", marginBottom: 8 }}>Part 34 of 35</div>
-          <h1 style={{ fontSize: 26, fontWeight: "normal", color: "#e8e6e0", margin: "0 0 6px 0", letterSpacing: 0.5 }}>Metaontology: Can These Questions Even Be Answered?</h1>
+          <h1 style={{ fontSize: "clamp(18px, 3vw, 30px)", fontWeight: "normal", color: "#e8e6e0", margin: "0 0 6px 0", letterSpacing: 0.5 }}>Metaontology: Can These Questions Even Be Answered?</h1>
           <p style={{ fontSize: 13, color: "#9a9898", maxWidth: 680, margin: "0 auto", lineHeight: 1.6, fontStyle: "italic" }}>
             Metaontology asks whether ontological disputes are genuine questions about reality or merely verbal disagreements about which language to use.
           </p>
@@ -19526,12 +19534,12 @@ function Metaontology() {
         <div style={{
           background: "rgba(20,18,32,0.85)",
           border: "1px solid #2a2840",
-          borderLeft: "4px solid #5c4f7c",
+          borderLeft: "4px solid #3D405B",
           borderRadius: 8,
           padding: "22px 28px",
           marginBottom: 20,
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#5c4f7c", textTransform: "uppercase", marginBottom: 10, fontWeight: "bold" }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#3D405B", textTransform: "uppercase", marginBottom: 10, fontWeight: "bold" }}>The Difficulty</div>
           <p style={{ margin: "0 0 14px 0", lineHeight: 1.75, fontSize: 14, color: "#ccc9c0" }}>
             Sider's appeal to joint-carving seems to rescue ontology from deflationary dissolution — but it conceals a troubling circularity. To identify which quantifier carves reality at its joints, we need some independent grip on what reality's joints are. Yet that grip just is what ontological inquiry is supposed to provide. We cannot use joint-carving to vindicate ontology without already possessing ontological knowledge of where the joints lie.
           </p>
@@ -20076,8 +20084,8 @@ function OntologyFrontier() {
       })()}
 
       {/* DIFFICULTY PANEL */}
-      <div style={{ background: "#0d0d14", border: "1px solid #1a1a2a", borderLeft: "4px solid #cc4466", borderRadius: "8px", padding: "24px 28px", maxWidth: "860px", margin: "0 auto 28px auto" }}>
-        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#cc4466", textTransform: "uppercase", marginBottom: "10px" }}>The Difficulty</div>
+      <div style={{ background: "#0d0d14", border: "1px solid #1a1a2a", borderLeft: "4px solid #FF6B6B", borderRadius: "8px", padding: "24px 28px", maxWidth: "860px", margin: "0 auto 28px auto" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#FF6B6B", textTransform: "uppercase", marginBottom: "10px" }}>The Difficulty</div>
         <p style={{ color: "#c0b8c8", lineHeight: "1.75", margin: "0 0 14px 0", fontSize: "15px" }}>
           The frontier is permanently open. Each answer reveals new assumptions and generates new questions. Ontology is not converging on a final answer but deepening as it proceeds — the distance between Parmenides and a physicist staring at quantum gravity equations is a measure of how far the question has taken us and how far it still has to go.
         </p>
