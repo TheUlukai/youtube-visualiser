@@ -12076,7 +12076,7 @@ function AbstractObjects() {
       </div>
 
       {/* Key Concepts */}
-      <div style={{ marginBottom: 28 }}>
+      <div style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(26,83,92,0.2)", borderRadius: 8, padding: "20px 24px", marginBottom: 28 }}>
         <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: "#1A535C", marginBottom: 14 }}>
           Key Concepts — Click to Explore
         </div>
