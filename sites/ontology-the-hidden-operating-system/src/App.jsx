@@ -432,7 +432,7 @@ function OntologyIntroduction() {
             The Hidden Operating System
           </h1>
           <p style={{
-            fontSize: 15,
+            fontSize: "clamp(13px, 2vw, 15px)",
             color: "#7a9ab8",
             maxWidth: 580,
             margin: "0 auto",
@@ -461,7 +461,7 @@ function OntologyIntroduction() {
             The Architecture
           </div>
           <p style={{
-            fontSize: 14,
+            fontSize: "clamp(12px, 1.8vw, 14px)",
             color: "#8aabbf",
             marginBottom: 28,
             lineHeight: 1.65,
@@ -471,10 +471,11 @@ function OntologyIntroduction() {
           </p>
 
           {/* SVG Diagram */}
-          <div style={{ position: "relative", width: "100%", overflowX: "auto" }}>
+          <div style={{ position: "relative", width: "100%" }}>
             <svg
               viewBox="0 0 780 420"
-              style={{ width: "100%", minWidth: 480, display: "block" }}
+              width="100%"
+              style={{ maxWidth: 780, display: "block" }}
             >
               <defs>
                 <radialGradient id="foundGrad" cx="50%" cy="50%" r="50%">
@@ -699,7 +700,7 @@ function OntologyIntroduction() {
                     {d.label} — Ontological Assumption
                   </div>
                   <p style={{
-                    fontSize: 14,
+                    fontSize: "clamp(12px, 1.8vw, 14px)",
                     lineHeight: 1.75,
                     color: "#b8d4ea",
                     margin: 0,
@@ -718,7 +719,7 @@ function OntologyIntroduction() {
             paddingTop: 22,
           }}>
             <p style={{
-              fontSize: 14.5,
+              fontSize: "clamp(13px, 1.8vw, 15px)",
               lineHeight: 1.8,
               color: "#9ab8cc",
               margin: 0,
@@ -790,7 +791,7 @@ function OntologyIntroduction() {
             The Difficulty
           </div>
           <p style={{
-            fontSize: 14.5,
+            fontSize: "clamp(13px, 1.8vw, 15px)",
             lineHeight: 1.8,
             color: "#8aacbf",
             margin: "0 0 14px 0",
@@ -881,7 +882,7 @@ function OntologyIntroduction() {
                     {item.title}
                   </div>
                   <p style={{
-                    fontSize: 13.5,
+                    fontSize: "clamp(12px, 1.6vw, 14px)",
                     lineHeight: 1.72,
                     color: "#7a9ab0",
                     margin: 0,
