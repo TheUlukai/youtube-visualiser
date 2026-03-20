@@ -16723,46 +16723,26 @@ function NaturalKinds() {
           </div>
 
           {echoesOpen && (
-            <div style={{ padding: '0 28px 28px' }}>
-              {[
-                {
-                  title: 'Twin Earth and water chemistry',
-                  body: 'Before Lavoisier\'s analysis in 1783, \'water\' was used as if it named a simple element. Putnam\'s point is that even then, speakers were referring to H₂O — the chemistry was waiting to be discovered, not invented. The reference relation tracked the structure of the world across the epistemic gap.',
-                },
-                {
-                  title: 'Conservation law and the Endangered Species Act',
-                  body: 'The U.S. Endangered Species Act protects distinct population segments — but \'distinct\' requires a boundary decision. Whether the red wolf is a species or a wolf-coyote hybrid determines whether it receives full protection. The ontology of species has direct legal weight: getting it wrong redirects millions of dollars of conservation funding.',
-                },
-                {
-                  title: 'Psychiatric classification and the DSM',
-                  body: 'The Diagnostic and Statistical Manual defines depression, ADHD, and autism by symptom clusters rather than underlying biology. If these are not natural kinds, drug trials searching for a single mechanism are methodologically compromised. The Research Domain Criteria (RDoC) initiative attempts to re-anchor psychiatric classification in biology — a practical bet on natural kinds realism.',
-                },
-              ].map((echo, i) => (
-                <div
-                  key={i}
-                  onMouseEnter={() => setHoveredEcho(i)}
-                  onMouseLeave={() => setHoveredEcho(null)}
-                  style={{
-                    background: hoveredEcho === i ? 'rgba(23,165,137,0.1)' : 'rgba(10,40,30,0.4)',
-                    border: `1px solid ${hoveredEcho === i ? 'rgba(23,165,137,0.5)' : 'rgba(23,165,137,0.15)'}`,
-                    borderRadius: '8px',
-                    padding: '20px 24px',
-                    marginBottom: '12px',
-                    transition: 'all 0.2s',
-                    cursor: 'default',
-                  }}
-                >
-                  <div style={{ color: accentLight, fontSize: '14px', marginBottom: '10px' }}>{echo.title}</div>
-                  <p style={{ margin: 0, color: '#a0b8a0', fontSize: '14px', lineHeight: '1.7' }}>{echo.body}</p>
-                </div>
-              ))}
+            <div style={{ padding: '0 28px 24px', borderTop: `1px solid rgba(23,165,137,0.2)` }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
+                {[
+                  { title: 'Twin Earth and water chemistry', body: "Before Lavoisier's analysis in 1783, 'water' was used as if it named a simple element. Putnam's point is that even then, speakers were referring to H₂O — the chemistry was waiting to be discovered, not invented. The reference relation tracked the structure of the world across the epistemic gap." },
+                  { title: 'Conservation Law and the Endangered Species Act', body: "The U.S. Endangered Species Act protects distinct population segments — but 'distinct' requires a boundary decision. Whether the red wolf is a species or a wolf-coyote hybrid determines whether it receives full protection. The ontology of species has direct legal weight: getting it wrong redirects millions of dollars of conservation funding." },
+                  { title: 'Psychiatric Classification and the DSM', body: 'The Diagnostic and Statistical Manual defines depression, ADHD, and autism by symptom clusters rather than underlying biology. If these are not natural kinds, drug trials searching for a single mechanism are methodologically compromised. The RDoC initiative attempts to re-anchor psychiatric classification in biology — a practical bet on natural kinds realism.' },
+                ].map((echo, i) => (
+                  <div key={i} style={{ borderLeft: `3px solid ${accent}`, borderRadius: '0 6px 6px 0', background: 'rgba(23,165,137,0.06)', padding: '14px 18px' }}>
+                    <div style={{ fontSize: 13, fontWeight: 'bold', color: accentLight, marginBottom: 6 }}>{echo.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>{echo.body}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: 'center', color: '#405040', fontSize: '13px', paddingTop: '16px' }}>
-          Part 29 of 35 — Natural Kinds · Ontology Series
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#0a2018', letterSpacing: 1 }}>
+          Part 29 of 35 — Ontology
         </div>
 
       </div>
