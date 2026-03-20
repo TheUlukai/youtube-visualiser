@@ -174,7 +174,7 @@ const SECTIONS = [
   },
   {
     id: "composition_mereology",
-    name: "Parts, Holes, and the Puzzle of Composition",
+    name: "Parts, Wholes, and the Puzzle of Composition",
     subtitle: "When does a collection of parts compose a further whole? Universalism says always, Van Inwagen says only when parts form a life, and nihilism says never \u2014 and each position pays a steep ontological price.",
     part: 27,
   },
@@ -15054,7 +15054,7 @@ function EventsFacts() {
   );
 }
 
-// ─── Part 27: Parts, Holes, and the Puzzle of Composition ───
+// ─── Part 27: Parts, Wholes, and the Puzzle of Composition ───
 function CompositionMereology() {
   const [mode, setMode] = useState("universalism");
   const [hoveredComposite, setHoveredComposite] = useState(null);
@@ -15190,6 +15190,19 @@ function CompositionMereology() {
       padding: "32px 24px",
       color: "#e8e6f0",
     }}>
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: 32, maxWidth: 860, margin: "0 auto 32px auto" }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: accentColor, marginBottom: 8 }}>
+          Part 27 of 35 — Ontology
+        </div>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#e8e6f0", margin: "0 0 8px 0", lineHeight: 1.3 }}>
+          Parts, Wholes, and the Puzzle of Composition
+        </h1>
+        <p style={{ fontSize: 15, color: "#9fa8da", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          When does a collection of parts compose a further whole? Universalism says always, Van Inwagen says only when parts form a life, and nihilism says never — each paying a steep ontological price.
+        </p>
+      </div>
+
       {/* Problem Panel */}
       <div style={{
         background: "rgba(15,14,30,0.85)",
@@ -15216,9 +15229,6 @@ function CompositionMereology() {
         maxWidth: "860px",
         margin: "0 auto 28px auto",
       }}>
-        <h2 style={{ margin: "0 0 6px 0", fontSize: "21px", color: "#e8e6f0", fontWeight: "normal" }}>Parts, Holes, and the Puzzle of Composition</h2>
-        <p style={{ margin: "0 0 22px 0", fontSize: "13px", color: "#7986CB", letterSpacing: "0.5px" }}>When does a collection of parts compose a further whole?</p>
-
         {/* Mode Selector */}
         <div style={{ display: "flex", gap: "10px", marginBottom: "24px", flexWrap: "wrap" }}>
           {["universalism", "vaninwagen", "nihilism"].map(m => (
@@ -15536,37 +15546,29 @@ function CompositionMereology() {
           {echosOpen ? <ChevronUp size={18} color={accentLight} /> : <ChevronDown size={18} color={accentLight} />}
         </button>
         {echosOpen && (
-          <div style={{ padding: "4px 28px 24px 28px" }}>
-            {[
-              {
-                title: "Teams and their players",
-                text: "When a basketball team wins a championship, did the team win or did the players win? Universalism says the team is a real composite over and above its members. Van Inwagen's view implies there is no team — only players arranged team-wise. Nihilism denies even the players are unified objects. Which view we hold shapes how we assign blame, credit, and moral responsibility in collective action."
-              },
-              {
-                title: "Corporations as persons",
-                text: "Legal personhood grants corporations rights and obligations as if they were unified agents. But what composes a corporation? Its employees, its charter, its assets, its reputation? If composition requires biological life, corporations are fictions. If universalism is true, corporations are real but so is every random collection of shareholders. The mereological question is not merely academic — it underlies centuries of commercial law."
-              },
-              {
-                title: "Nations and citizenship",
-                text: "Do nations exist as genuine wholes over and above their citizens? A nationalist might say yes — the nation has a will, a destiny, a character that transcends any individual. A nihilist-leaning political philosopher would say there are only individual people, and 'the nation' is a useful fiction. The stakes are enormous: wars are fought, borders drawn, and people sacrificed in the name of entities whose ontological status remains philosophically unresolved."
-              },
-              {
-                title: "The Ship of Theseus in engineering",
-                text: "When engineers progressively replace components in a bridge or aircraft, at what point (if any) does a new object come into existence? Aviation safety regulations treat airframes as continuous identities tracked by serial numbers — a pragmatic universalism. But the underlying mereological question about when parts compose a persistent whole is what makes this more than a paperwork convention."
-              }
-            ].map((echo, i) => (
-              <div key={i} style={{
-                marginBottom: i < 3 ? "20px" : "0",
-                paddingBottom: i < 3 ? "20px" : "0",
-                borderBottom: i < 3 ? "1px solid #1e1e3a" : "none",
-              }}>
-                <div style={{ fontSize: "14px", color: accentLight, marginBottom: "7px" }}>{echo.title}</div>
-                <p style={{ margin: 0, fontSize: "13px", color: "#8a88a8", lineHeight: "1.65" }}>{echo.text}</p>
-              </div>
-            ))}
+          <div style={{ padding: "0 28px 24px 28px", borderTop: `1px solid #2a2a4a` }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+              {[
+                { title: "Teams and their players", text: "When a basketball team wins a championship, did the team win or did the players win? Universalism says the team is a real composite over and above its members. Van Inwagen's view implies there is no team — only players arranged team-wise. Nihilism denies even the players are unified objects. Which view shapes how we assign blame, credit, and moral responsibility in collective action." },
+                { title: "Corporations as persons", text: "Legal personhood grants corporations rights and obligations as if they were unified agents. But what composes a corporation? Its employees, its charter, its assets, its reputation? If composition requires biological life, corporations are fictions. If universalism is true, corporations are real but so is every random collection of shareholders. The mereological question underlies centuries of commercial law." },
+                { title: "Nations and citizenship", text: "Do nations exist as genuine wholes over and above their citizens? A nationalist might say yes — the nation has a will and a character that transcends any individual. A nihilist-leaning political philosopher would say there are only individual people, and 'the nation' is a useful fiction. Wars are fought and borders drawn in the name of entities whose ontological status remains unresolved." },
+                { title: "The Ship of Theseus in engineering", text: "When engineers progressively replace components in a bridge or aircraft, at what point does a new object come into existence? Aviation safety regulations treat airframes as continuous identities tracked by serial numbers — a pragmatic universalism. The underlying mereological question about when parts compose a persistent whole is what makes this more than a paperwork convention." },
+              ].map((echo, i) => (
+                <div key={i} style={{ borderLeft: `3px solid ${accentColor}`, borderRadius: "0 6px 6px 0", background: "rgba(92,107,192,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: accentLight, marginBottom: 6 }}>{echo.title}</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{echo.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#14163a", letterSpacing: 1, maxWidth: 860, margin: "36px auto 0 auto" }}>
+        Part 27 of 35 — Ontology
+      </div>
+
     </div>
   );
 }
