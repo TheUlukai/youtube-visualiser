@@ -2657,9 +2657,9 @@ function AristotleSubstance() {
       }}
     >
       {/* Header */}
-      <div style={{ padding: "40px 40px 0 40px", maxWidth: "900px", margin: "0 auto" }}>
+      <div style={{ padding: "40px 40px 0 40px", maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
         <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#B5651D", textTransform: "uppercase", marginBottom: "8px" }}>
-          Part 5 of 35 — Aristotelian Ontology
+          Part 5 of 35 — Ontology
         </div>
         <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#f0e0c0" }}>
           Aristotle Brings Ontology Down to Earth
@@ -3325,6 +3325,10 @@ function AristotleSubstance() {
           )}
         </div>
       </div>
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3a1a06", letterSpacing: 1 }}>
+        Part 5 of 35 — Ontology
+      </div>
     </div>
   );
 }
@@ -3460,6 +3464,19 @@ function MedievalUniversals() {
         boxSizing: "border-box"
       }}
     >
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: 32, maxWidth: "860px", margin: "0 auto 32px auto" }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#8B7355", marginBottom: 8 }}>
+          Part 6 of 35 — Ontology
+        </div>
+        <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", color: "#e8d5b0", margin: "0 0 8px 0" }}>
+          The Medieval War Over Universals
+        </h1>
+        <p style={{ fontSize: 15, color: "#9a8a6e", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          Do concepts like 'horse' name real entities in the world, or are they merely useful words for grouping similar individuals?
+        </p>
+      </div>
+
       {/* THE PROBLEM PANEL */}
       <div
         style={{
@@ -3478,15 +3495,6 @@ function MedievalUniversals() {
         </div>
         <p style={{ margin: 0, lineHeight: "1.75", fontSize: "15px", color: "#c9b48a" }}>
           Aristotle's hylomorphism placed universal forms inside individual substances — 'horseness' in each horse, not floating in a Platonic heaven. But this left a sharp thorn: if two horses share the very same universal form, <em>what makes them two</em>? What principle of individuation keeps Bucephalus and Rocinante distinct rather than collapsing into a single horse-thing? Medieval philosophers inherited this unresolved pressure and fought over it for centuries.
-        </p>
-      </div>
-
-      {/* PART HEADER */}
-      <div style={{ maxWidth: "860px", margin: "0 auto 20px auto", textAlign: "center" }}>
-        <div style={{ fontSize: "12px", letterSpacing: "2px", color: "#8B7355", marginBottom: "6px" }}>Part 6 of 35 — Ontology</div>
-        <h1 style={{ fontSize: "clamp(18px, 3vw, 30px)", margin: "0 0 6px 0", color: "#e8d5b0", letterSpacing: "0.5px" }}>The Medieval War Over Universals</h1>
-        <p style={{ fontSize: "14px", color: "#9a8a6e", margin: 0, lineHeight: "1.6" }}>
-          Do concepts like 'horse' name real entities in the world, or are they merely useful words for grouping similar individuals?
         </p>
       </div>
 
@@ -3897,6 +3905,10 @@ function MedievalUniversals() {
             </div>
           </div>
         )}
+      </div>
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a2014", letterSpacing: 1 }}>
+        Part 6 of 35 — Ontology
       </div>
     </div>
   );
@@ -4473,7 +4485,7 @@ function AquinasEssenceExistence() {
 
         {/* Footer */}
         <div style={{ textAlign: "center", marginTop: 36, color: "#2a3a58", fontSize: 12 }}>
-          Part 7 of 35 · Essence & Existence · Aquinas
+          Part 7 of 35 — Ontology
         </div>
       </div>
     </div>
