@@ -2858,7 +2858,7 @@ function CategoriesLogicOfExperience() {
 
         {/* Header */}
         <div style={{ marginBottom: 10, textAlign: "center" }}>
-          <div style={{ fontSize: 12, letterSpacing: 3, color: "#5b8fa8", textTransform: "uppercase", marginBottom: 6 }}>Part 5 of 21 · Kant's Critical Philosophy</div>
+          <div style={{ fontSize: 12, letterSpacing: 3, color: "#5b8fa8", textTransform: "uppercase", marginBottom: 6 }}>Part 5 of 21 — Kant's Critical Philosophy</div>
           <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#e8f4fc", margin: "0 0 8px 0", letterSpacing: 0.5 }}>The Categories and the Logic of Experience</h1>
           <p style={{ fontSize: 15, color: "#7aadcc", margin: 0, fontStyle: "italic" }}>Kant derived twelve pure concepts of understanding from the logical forms of judgment, showing how the mind organizes intuitions into coherent experience of objects.</p>
         </div>
