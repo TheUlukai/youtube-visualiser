@@ -5060,15 +5060,17 @@ function SpinozaOneSubstance() {
       <div style={{ maxWidth: 820, margin: "0 auto" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: 12, opacity: 0.6, fontSize: 13, letterSpacing: 2, textTransform: "uppercase" }}>
-          Part 9 of 35 — Ontology
+        <div style={{ textAlign: "center", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#2C6E49", marginBottom: 8 }}>
+            Part 9 of 35 — Ontology
+          </div>
+          <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#a8d5b5" }}>
+            Spinoza's Radical Answer: One Substance
+          </h1>
+          <p style={{ fontSize: 15, color: "#7aab8a", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+            Spinoza argued that if substance must be self-sufficient, only one substance — God or Nature as a whole — truly qualifies, and mind and body are simply two attributes of that single reality.
+          </p>
         </div>
-        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", margin: "0 0 6px 0", color: "#a8d5b5", letterSpacing: 0.5 }}>
-          Spinoza's Radical Answer: One Substance
-        </h1>
-        <p style={{ fontSize: 15, color: "#7aab8a", margin: "0 0 36px 0", lineHeight: 1.6, maxWidth: 680 }}>
-          Spinoza argued that if substance must be self-sufficient, only one substance — God or Nature as a whole — truly qualifies, and mind and body are simply two attributes of that single reality.
-        </p>
 
         {/* THE PROBLEM PANEL */}
         <div style={{
@@ -5467,8 +5469,9 @@ function SpinozaOneSubstance() {
           )}
         </div>
 
-        <div style={{ marginTop: 28, textAlign: "center", opacity: 0.35, fontSize: 12, letterSpacing: 2, color: "#2C6E49" }}>
-          ◆
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1f14", letterSpacing: 1 }}>
+          Part 9 of 35 — Ontology
         </div>
       </div>
     </div>
@@ -5567,15 +5570,15 @@ function LeibnizMonads() {
       }}
     >
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-      {/* Section header */}
-      <div style={{ padding: '40px 40px 0 40px' }}>
-        <div style={{ marginBottom: 10, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#9B7EC7', opacity: 0.7 }}>
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: 32, padding: '40px 40px 0 40px' }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: '#9B7EC7', marginBottom: 8 }}>
           Part 10 of 35 — Ontology
         </div>
-        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: 'normal', margin: '0 0 8px 0', color: '#C09EE0', letterSpacing: 0.5 }}>
+        <h1 style={{ fontSize: 'clamp(22px, 4vw, 36px)', fontWeight: 'normal', margin: '0 0 8px 0', color: '#C09EE0' }}>
           Leibniz, Monads, and the Seeds of Possible Worlds
         </h1>
-        <p style={{ fontSize: 15, color: '#9080a8', margin: '0 0 32px 0', lineHeight: 1.6, maxWidth: 680 }}>
+        <p style={{ fontSize: 15, color: '#9080a8', margin: 0, lineHeight: 1.6, fontStyle: 'italic' }}>
           Leibniz rebuilt metaphysics from scratch — not one substance, but infinitely many, each sealed within itself, each a universe entire, their harmony pre-established by God before creation.
         </p>
       </div>
@@ -6236,7 +6239,11 @@ function LeibnizMonads() {
             </div>
           )}
         </div>
-      </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#1a1028', letterSpacing: 1 }}>
+          Part 10 of 35 — Ontology
+        </div>
       </div>
     </div>
   );
