@@ -3809,43 +3809,34 @@ function TranscendentalDeductionUnity() {
         </button>
 
         {echoesOpen && (
-          <div style={{ padding: "4px 32px 28px 32px" }}>
-            <div style={{ borderTop: "1px solid #1a2d1e", paddingTop: 20, marginBottom: 20 }}>
-              <p style={{ color: "#4a7a5a", fontSize: 13, lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
-                The Transcendental Deduction's core insight — that the same cognitive act both unifies a subject and constitutes an object — resonates across philosophy of mind, cognitive science, and phenomenology.
-              </p>
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-              <div style={{ padding: "18px 20px", background: "rgba(13,76,46,0.1)", border: "1px solid #1a3d28", borderRadius: 6 }}>
-                <div style={{ fontSize: 12, color: "#4a9e6a", marginBottom: 8, fontWeight: "bold", letterSpacing: 1 }}>
-                  Kant's Own Illustration: Ship vs. House
-                </div>
-                <p style={{ margin: 0, color: "#5a8a6a", fontSize: 13, lineHeight: 1.7 }}>
-                  When I perceive a ship moving downstream, the order of my perceptions (bow first, then stern) is not reversible — I could not have perceived it in the opposite order without a different event. The order of perception is determined by the event's objective causal structure. Contrast this with surveying a house: I freely choose to look at the roof before the basement. Here the order of perception is subjectively determined. The category of causality is what lets me distinguish these cases — constituting one sequence as objectively necessary while allowing the other as freely variable. This is not a post-hoc interpretation but the very act that makes either sequence a coherent experience.
+          <div style={{ padding: "0 32px 28px 32px", borderTop: "1px solid #1a2d1e" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+              <div style={{ borderLeft: "3px solid #0D4C2E", borderRadius: "0 6px 6px 0", background: "rgba(13,76,46,0.07)", padding: "14px 18px" }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: "#4a9a7a", marginBottom: 6 }}>Kant's Own Illustration: Ship vs. House</div>
+                <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                  When I perceive a ship moving downstream, the order of my perceptions is not reversible — I could not have perceived it in the opposite order without a different event. Contrast this with surveying a house: I freely choose to look at the roof before the basement. The category of causality is what lets me distinguish these cases — constituting one sequence as objectively necessary while allowing the other as freely variable.
                 </p>
               </div>
-
-              <div style={{ padding: "18px 20px", background: "rgba(13,76,46,0.08)", border: "1px solid #1a3028", borderRadius: 6 }}>
-                <div style={{ fontSize: 12, color: "#3a8a6a", marginBottom: 8, fontWeight: "bold", letterSpacing: 1 }}>
-                  Contemporary Philosophy of Mind: Constructive Cognition
-                </div>
-                <p style={{ margin: 0, color: "#4a7a60", fontSize: 13, lineHeight: 1.7 }}>
-                  Contemporary cognitive science increasingly echoes the deduction's insight. "Active inference" frameworks (Karl Friston, Andy Clark) hold that perception is not passive reception but predictive construction — the brain generates models of the world that simultaneously constitute what we experience and reflect our generative models' structure. The boundary between "my predictions" and "the perceived object" is not fixed prior to the cognitive act; it is established by it. Kant's point that there is no pre-constituted object waiting to be subsequently categorized finds striking resonance in enactivist and predictive processing accounts of mind.
+              <div style={{ borderLeft: "3px solid #0D4C2E", borderRadius: "0 6px 6px 0", background: "rgba(13,76,46,0.07)", padding: "14px 18px" }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: "#4a9a7a", marginBottom: 6 }}>Contemporary Philosophy of Mind: Constructive Cognition</div>
+                <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                  "Active inference" frameworks (Karl Friston, Andy Clark) hold that perception is not passive reception but predictive construction — the brain generates models of the world that simultaneously constitute what we experience. The boundary between "my predictions" and "the perceived object" is established by the cognitive act itself, not fixed prior to it. Kant's point finds striking resonance in enactivist and predictive processing accounts of mind.
                 </p>
               </div>
-
-              <div style={{ padding: "18px 20px", background: "rgba(13,76,46,0.06)", border: "1px solid #152820", borderRadius: 6 }}>
-                <div style={{ fontSize: 12, color: "#2a7a5a", marginBottom: 8, fontWeight: "bold", letterSpacing: 1 }}>
-                  The Limits of Categorical Extension: Cosmology and Fundamental Physics
-                </div>
-                <p style={{ margin: 0, color: "#3a6a50", fontSize: 13, lineHeight: 1.7 }}>
-                  Physicists and philosophers of science grapple with what happens when our conceptual framework — evolved to handle medium-sized objects in ordinary experience — is pushed to extremes: quantum indeterminacy, the singularity at the Big Bang, the universe "as a whole." These domains resist straightforward application of causality, substance, and temporal ordering. Whether this represents merely practical difficulty or something like Kant's principled limit — that categories constitutively require something like sensible intuition to get traction — remains a live and productive debate in foundations of physics.
+              <div style={{ borderLeft: "3px solid #0D4C2E", borderRadius: "0 6px 6px 0", background: "rgba(13,76,46,0.07)", padding: "14px 18px" }}>
+                <div style={{ fontSize: 13, fontWeight: "bold", color: "#4a9a7a", marginBottom: 6 }}>The Limits of Categorical Extension: Cosmology and Fundamental Physics</div>
+                <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                  Physicists and philosophers of science grapple with what happens when our conceptual framework is pushed to extremes: quantum indeterminacy, the singularity at the Big Bang, the universe "as a whole." These domains resist straightforward application of causality, substance, and temporal ordering — a live debate about whether this represents practical difficulty or something like Kant's principled limit on categorical knowledge.
                 </p>
               </div>
             </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#04160d", letterSpacing: 1, maxWidth: 860, margin: "36px auto 0 auto" }}>
+        Part 6 of 21 — Kant's Critical Philosophy
       </div>
     </div>
   );
