@@ -12260,14 +12260,14 @@ function Fictionalism() {
       <div style={{ maxWidth: "880px", margin: "0 auto" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: "12px" }}>
-          <div style={{ fontSize: "12px", letterSpacing: "2px", color: accentColor, textTransform: "uppercase", marginBottom: "6px" }}>
-            Part 22 of 35 · Ontology
+        <div style={{ textAlign: "center", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: accentColor, marginBottom: 8 }}>
+            Part 22 of 35 — Ontology
           </div>
-          <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "bold", color: "#ece8f0", margin: "0 0 8px 0", lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#ece8f0", margin: "0 0 8px 0", lineHeight: 1.3 }}>
             Fictionalism: Ontology Without Belief
           </h1>
-          <p style={{ fontSize: "15px", color: "#9d93a5", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          <p style={{ fontSize: 15, color: "#9d93a5", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
             Fictionalism proposes that we can use mathematical and other contested discourse correctly — like discourse within a fiction — without being committed to the existence of its objects.
           </p>
         </div>
@@ -12657,6 +12657,11 @@ function Fictionalism() {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1e1a22", letterSpacing: 1 }}>
+          Part 22 of 35 — Ontology
         </div>
 
       </div>
