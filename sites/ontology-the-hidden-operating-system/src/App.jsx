@@ -17244,44 +17244,26 @@ function SocialOntology() {
         </button>
 
         {echosOpen && (
-          <div style={{ padding: "0 24px 24px 24px" }}>
-            <div style={{ borderTop: "1px solid #1a1005", paddingTop: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #1a1005" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
               {[
-                {
-                  icon: "💵",
-                  title: "The Twenty-Dollar Bill",
-                  desc: "A cotton-and-linen paper that functions as a $20 bill: the physical object persists even if the institution collapses, but the social object — the money — vanishes entirely. Weimar Germany's hyperinflation made this literal: wheelbarrows of currency could not buy a loaf of bread."
-                },
-                {
-                  icon: "🗺️",
-                  title: "Borders as Institutional Facts",
-                  desc: "The US-Mexico border is a line collectively accepted as real. It has no physical existence beyond markers and fences, yet it can determine whether someone lives or dies, whether they can work or are deported. The moment collective acceptance shifts — through treaties, conquest, or collapse — the border moves or vanishes."
-                },
-                {
-                  icon: "🏢",
-                  title: "The Corporation",
-                  desc: "A corporation can sign contracts, own property, sue and be sued — institutional powers no physical entity possesses. It exists entirely through a constitutive rule: 'this legal filing counts as the creation of a person in the context of commercial law.' If the legal system dissolved, so would every corporation on Earth, leaving only the buildings and people behind."
-                }
+                { title: "The Twenty-Dollar Bill", desc: "A cotton-and-linen paper that functions as a $20 bill: the physical object persists even if the institution collapses, but the social object — the money — vanishes entirely. Weimar Germany's hyperinflation made this literal: wheelbarrows of currency could not buy a loaf of bread." },
+                { title: "Borders as Institutional Facts", desc: "The US-Mexico border is a line collectively accepted as real. It has no physical existence beyond markers and fences, yet it can determine whether someone lives or dies. The moment collective acceptance shifts — through treaties, conquest, or collapse — the border moves or vanishes." },
+                { title: "The Corporation", desc: "A corporation can sign contracts, own property, sue and be sued — institutional powers no physical entity possesses. It exists entirely through a constitutive rule: this legal filing counts as the creation of a person in commercial law. If the legal system dissolved, so would every corporation on Earth, leaving only buildings and people behind." },
               ].map((item, i) => (
-                <div key={i} style={{
-                  background: "rgba(25, 15, 5, 0.8)",
-                  border: "1px solid #2a1a0a",
-                  borderRadius: "8px",
-                  padding: "16px 18px",
-                  display: "flex",
-                  gap: "14px",
-                  alignItems: "flex-start"
-                }}>
-                  <div style={{ fontSize: "28px", flexShrink: 0 }}>{item.icon}</div>
-                  <div>
-                    <div style={{ fontSize: "13px", fontWeight: "bold", color: accent, marginBottom: "6px" }}>{item.title}</div>
-                    <p style={{ margin: 0, fontSize: "13px", color: "#b49a7a", lineHeight: 1.7 }}>{item.desc}</p>
-                  </div>
+                <div key={i} style={{ borderLeft: `3px solid ${accent}`, borderRadius: "0 6px 6px 0", background: "rgba(244,162,97,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: accent, marginBottom: 6 }}>{item.title}</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a1400", letterSpacing: 1 }}>
+        Part 30 of 35 — Ontology
       </div>
 
     </div>
