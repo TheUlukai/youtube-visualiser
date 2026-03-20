@@ -1044,7 +1044,7 @@ function ParmenidesBeing() {
           <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 10px", color: "#f0e8ef", letterSpacing: 0.5 }}>
             Parmenides and the Shock of Being
           </h1>
-          <p style={{ fontSize: 15, color: "#b89eb6", margin: 0, lineHeight: 1.7 }}>
+          <p style={{ fontSize: "clamp(13px, 2vw, 15px)", color: "#b89eb6", margin: 0, lineHeight: 1.7 }}>
             Using pure logic, Parmenides argued that change is impossible and being is one, eternal, and undivided — a conclusion that contradicts everything we observe.
           </p>
         </div>
@@ -1061,7 +1061,7 @@ function ParmenidesBeing() {
           <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: accentGlow, marginBottom: 12 }}>
             The Problem
           </div>
-          <p style={{ fontSize: 15, lineHeight: 1.85, margin: 0, color: "#d4c4d2" }}>
+          <p style={{ fontSize: "clamp(13px, 2vw, 15px)", lineHeight: 1.85, margin: 0, color: "#d4c4d2" }}>
             The pre-Socratic thinkers — Thales, Anaximenes, Heraclitus — assumed the world changes and sought to identify
             the fundamental stuff from which all change flows. Their project was explanatory: given that change is real,
             what is its substrate? Parmenides does something far more radical. He does not seek to explain change.
@@ -1083,7 +1083,7 @@ function ParmenidesBeing() {
               <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: accentGlow, marginBottom: 6 }}>
                 The Argument in Motion
               </div>
-              <div style={{ fontSize: 13, color: "#9a849a", maxWidth: 420 }}>
+              <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#9a849a", maxWidth: 420 }}>
                 Hover over each moment of change. Toggle between the experiential and logical views.
               </div>
             </div>
@@ -1147,7 +1147,7 @@ function ParmenidesBeing() {
                       }}>
                         {frame.icon}
                       </div>
-                      <div style={{ fontSize: 13, color: "#c8b8c6", textAlign: "center" }}>{frame.stateA}</div>
+                      <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#c8b8c6", textAlign: "center" }}>{frame.stateA}</div>
                       <div style={{ fontSize: 10, color: "#7a6a78", marginTop: 3 }}>Being</div>
                     </div>
 
@@ -1246,7 +1246,7 @@ function ParmenidesBeing() {
                       transition: "opacity 0.4s"
                     }}>
                       <div style={{ fontSize: 32, lineHeight: 1, marginBottom: 6 }}>{frame.iconB}</div>
-                      <div style={{ fontSize: 13, color: "#c8b8c6", textAlign: "center" }}>{frame.stateB}</div>
+                      <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#c8b8c6", textAlign: "center" }}>{frame.stateB}</div>
                       <div style={{ fontSize: 10, color: view === "logical" ? "#4a2a48" : "#7a6a78", marginTop: 3, transition: "color 0.4s" }}>
                         {view === "logical" ? "Unreachable" : "Being"}
                       </div>
@@ -1272,10 +1272,10 @@ function ParmenidesBeing() {
           }}>
             {view === "logical" ? (
               <>
-                <div style={{ fontSize: 14, color: accentGlow, letterSpacing: 1, marginBottom: 8 }}>
+                <div style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: accentGlow, letterSpacing: 1, marginBottom: 8 }}>
                   Parmenides' Conclusion
                 </div>
-                <p style={{ fontSize: 14, color: "#c8a8c4", lineHeight: 1.8, margin: "0 auto", maxWidth: 500 }}>
+                <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: "#c8a8c4", lineHeight: 1.8, margin: "0 auto", maxWidth: 500 }}>
                   Change requires passing through non-being. Non-being cannot be — it has no properties,
                   no causal power, no existence. Therefore, change is strictly impossible. Being is one,
                   eternal, motionless, and complete.
@@ -1283,10 +1283,10 @@ function ParmenidesBeing() {
               </>
             ) : (
               <>
-                <div style={{ fontSize: 14, color: "#7a6a78", letterSpacing: 1, marginBottom: 8 }}>
+                <div style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: "#7a6a78", letterSpacing: 1, marginBottom: 8 }}>
                   What the World Shows Us
                 </div>
-                <p style={{ fontSize: 14, color: "#9a8498", lineHeight: 1.8, margin: "0 auto", maxWidth: 500 }}>
+                <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: "#9a8498", lineHeight: 1.8, margin: "0 auto", maxWidth: 500 }}>
                   Fire consumes wood. Seeds become forests. Ice flows to water. Every moment of experience
                   testifies to a world in constant transformation — a world of becoming, not frozen being.
                 </p>
@@ -1328,10 +1328,10 @@ function ParmenidesBeing() {
               borderRadius: 6,
               padding: "16px 20px",
             }}>
-              <div style={{ fontSize: 13, fontWeight: "bold", color: accentLight, marginBottom: 8 }}>
+              <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: accentLight, marginBottom: 8 }}>
                 {concepts.find(c => c.id === expandedConcept)?.label}
               </div>
-              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+              <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
                 {concepts.find(c => c.id === expandedConcept)?.desc}
               </p>
             </div>
@@ -1350,7 +1350,7 @@ function ParmenidesBeing() {
           <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: accentLight, marginBottom: 12 }}>
             The Difficulty
           </div>
-          <p style={{ fontSize: 15, lineHeight: 1.85, margin: "0 0 14px", color: "#d4c4d2" }}>
+          <p style={{ fontSize: "clamp(13px, 2vw, 15px)", lineHeight: 1.85, margin: "0 0 14px", color: "#d4c4d2" }}>
             Parmenides leaves every subsequent thinker stranded between two unacceptable positions.
             Accept his logic and you must deny the entire observable world — movement, growth, decay,
             everything we experience becomes mere illusion. Reject his conclusion and you must demonstrate,
@@ -1358,7 +1358,7 @@ function ParmenidesBeing() {
             non-being cannot be, therefore nothing can come from nothing, therefore change — as a transition
             between states — is impossible. For centuries, no one could cleanly identify the flaw.
           </p>
-          <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0, color: "#9a7a98", fontStyle: "italic" }}>
+          <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", lineHeight: 1.8, margin: 0, color: "#9a7a98", fontStyle: "italic" }}>
             This pressure forces the next development: Plato, Aristotle, and the atomists each construct
             elaborate ontologies not to explain change, but first to defend the mere possibility that change
             can occur at all — an entirely new kind of philosophical problem.
@@ -1412,10 +1412,10 @@ function ParmenidesBeing() {
                     background: `${accent}0a`,
                     padding: "14px 18px",
                   }}>
-                    <div style={{ fontSize: 13, fontWeight: "bold", color: accentGlow, marginBottom: 6 }}>
+                    <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: accentGlow, marginBottom: 6 }}>
                       {item.title}
                     </div>
-                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", color: "#b8b0a8", lineHeight: 1.7 }}>
                       {item.body}
                     </p>
                   </div>
@@ -1681,7 +1681,7 @@ function HeraclitusFlux() {
         <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", color: "#e8f4f4", margin: "0 0 8px 0", letterSpacing: "1px" }}>
           Heraclitus and the Crisis of Change
         </h1>
-        <p style={{ fontSize: "15px", color: "#8ab8bc", margin: 0, maxWidth: "580px", marginLeft: "auto", marginRight: "auto", lineHeight: "1.6" }}>
+        <p style={{ fontSize: "clamp(13px, 2vw, 15px)", color: "#8ab8bc", margin: 0, maxWidth: "580px", marginLeft: "auto", marginRight: "auto", lineHeight: "1.6" }}>
           Reality is ceaseless flux governed by an underlying rational order — permanence is the illusion.
         </p>
       </div>
@@ -1701,7 +1701,7 @@ function HeraclitusFlux() {
         <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#0D7377", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
           The Problem
         </div>
-        <p style={{ margin: 0, lineHeight: "1.75", fontSize: "15px", color: "#b8d4d8" }}>
+        <p style={{ margin: 0, lineHeight: "1.75", fontSize: "clamp(13px, 2vw, 15px)", color: "#b8d4d8" }}>
           Parmenides wielded pure logic to a devastating conclusion: change is impossible, plurality is illusion, and the world of observation is a grand deception. His proof seemed airtight — and yet the river flows, the seasons turn, you age, fires consume, children are born. Heraclitus confronts this head-on, refusing to discount the evidence of a changing world. If the logic contradicts observation, perhaps it is the logic that has gone wrong. He takes observation as primary and builds an ontology from there — one where change is not the problem to be explained away, but the very fabric of what exists.
         </p>
       </div>
@@ -1720,7 +1720,7 @@ function HeraclitusFlux() {
         <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#0D7377", textTransform: "uppercase", marginBottom: "6px", fontWeight: "bold" }}>
           The River — Panta Rhei
         </div>
-        <p style={{ fontSize: "14px", color: "#7a9ea2", marginBottom: "20px", lineHeight: "1.6", marginTop: 0 }}>
+        <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: "#7a9ea2", marginBottom: "20px", lineHeight: "1.6", marginTop: 0 }}>
           "You cannot step into the same river twice" — Heraclitus. The water molecules constantly flow away and are replaced, yet the river persists as a pattern. Drag the slider to shift what we count as the basis of identity: material substance or structural pattern.
         </p>
 
@@ -1737,10 +1737,10 @@ function HeraclitusFlux() {
         {/* Slider */}
         <div style={{ marginBottom: "24px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-            <span style={{ fontSize: "13px", color: materialWeight > 0.6 ? "#ff6b6b" : "#7a9ea2" }}>
+            <span style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: materialWeight > 0.6 ? "#ff6b6b" : "#7a9ea2" }}>
               Material Substance (Parmenides)
             </span>
-            <span style={{ fontSize: "13px", color: patternWeight > 0.6 ? "#4ECDC4" : "#7a9ea2" }}>
+            <span style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: patternWeight > 0.6 ? "#4ECDC4" : "#7a9ea2" }}>
               Structural Pattern (Heraclitus)
             </span>
           </div>
@@ -1757,7 +1757,7 @@ function HeraclitusFlux() {
               height: "6px",
             }}
           />
-          <div style={{ textAlign: "center", marginTop: "8px", fontSize: "13px", color: "#a0b8bc" }}>
+          <div style={{ textAlign: "center", marginTop: "8px", fontSize: "clamp(12px, 1.6vw, 13px)", color: "#a0b8bc" }}>
             {sliderValue < 20
               ? "Pure pattern — identity is structure alone, matter is irrelevant"
               : sliderValue > 80
@@ -1776,10 +1776,10 @@ function HeraclitusFlux() {
           paddingTop: "18px",
           marginTop: "8px",
         }}>
-          <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "14px", color: "#9ab8bc" }}>
+          <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "clamp(12px, 1.8vw, 14px)", color: "#9ab8bc" }}>
             Heraclitus argues that change is not an illusion but the fundamental nature of reality itself. The river remains a river not because its water is constant but because the pattern of flow persists while the material constantly cycles through. Stable objects — the things we name and rely upon — are abstractions our minds impose on continuous processes.
           </p>
-          <p style={{ margin: 0, lineHeight: "1.75", fontSize: "14px", color: "#9ab8bc" }}>
+          <p style={{ margin: 0, lineHeight: "1.75", fontSize: "clamp(12px, 1.8vw, 14px)", color: "#9ab8bc" }}>
             Yet this flux is not chaos. It is governed by the <em style={{ color: "#4ECDC4" }}>Logos</em>, an underlying rational structure — the law of transformation itself. Opposition and tension are not flaws in reality; they are what drives it forward. The fire burns only by consuming fuel; the river flows only by constantly releasing what it holds. Identity is not a thing but a dynamic equilibrium, a pattern that sustains itself through change.
           </p>
         </div>
@@ -1817,10 +1817,10 @@ function HeraclitusFlux() {
             borderRadius: 6,
             padding: "16px 20px",
           }}>
-            <div style={{ fontSize: 13, fontWeight: "bold", color: "#4ECDC4", marginBottom: 8 }}>
+            <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: "#4ECDC4", marginBottom: 8 }}>
               {concepts.find(c => c.id === hoveredConcept)?.label}
             </div>
-            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+            <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
               {concepts.find(c => c.id === hoveredConcept)?.desc}
             </p>
           </div>
@@ -1842,10 +1842,10 @@ function HeraclitusFlux() {
         <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#0D7377", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
           The Difficulty
         </div>
-        <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "15px", color: "#b8d4d8" }}>
+        <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "clamp(13px, 2vw, 15px)", color: "#b8d4d8" }}>
           Heraclitus succeeds in making change philosophically serious — but in doing so he creates an equally sharp crisis. If being is pure flux, then what grounds stable knowledge? To state that "everything flows" is itself a claim that aspires to be permanently true. Logic and language require fixed meanings; a word cannot mean something and its opposite simultaneously. Even the Logos, posited as the rational order beneath flux, seems to require something unchanging to function as a principle.
         </p>
-        <p style={{ margin: 0, lineHeight: "1.75", fontSize: "15px", color: "#8ab8b8" }}>
+        <p style={{ margin: 0, lineHeight: "1.75", fontSize: "clamp(13px, 2vw, 15px)", color: "#8ab8b8" }}>
           Two extreme positions have now been fully articulated: Parmenides, for whom change is impossible and only the eternal One is real; Heraclitus, for whom flux is all and permanence is illusion. Each is internally coherent, yet each destroys something we cannot afford to lose — reliable knowledge in Heraclitus's case, the evidence of our senses in Parmenides's. This pressure forces the next development: a philosophy that can hold both, finding the structure within change and the change within structure.
         </p>
       </div>
@@ -1895,10 +1895,10 @@ function HeraclitusFlux() {
                 marginBottom: "14px",
                 borderLeft: "3px solid #0D7377",
               }}>
-                <div style={{ fontSize: "13px", color: "#4ECDC4", marginBottom: "6px", fontWeight: "bold" }}>
+                <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#4ECDC4", marginBottom: "6px", fontWeight: "bold" }}>
                   Weather Simulation
                 </div>
-                <p style={{ margin: 0, fontSize: "14px", color: "#9ab8bc", lineHeight: "1.7" }}>
+                <p style={{ margin: 0, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#9ab8bc", lineHeight: "1.7" }}>
                   Engineers building atmospheric models face an immediate Heraclitean choice: do you model weather as a series of snapshots — discrete frozen states — or as a continuous dynamical system of flows and gradients? The snapshot approach is computationally simpler but misses the essential physics. Modern weather and climate models are explicitly process-oriented, tracking how air masses, temperatures, and pressures transform into one another, encoding the Logos as differential equations governing flux.
                 </p>
               </div>
@@ -1908,10 +1908,10 @@ function HeraclitusFlux() {
                 padding: "16px 20px",
                 borderLeft: "3px solid #0D7377",
               }}>
-                <div style={{ fontSize: "13px", color: "#4ECDC4", marginBottom: "6px", fontWeight: "bold" }}>
+                <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#4ECDC4", marginBottom: "6px", fontWeight: "bold" }}>
                   Personal Identity and Cell Replacement
                 </div>
-                <p style={{ margin: 0, fontSize: "14px", color: "#9ab8bc", lineHeight: "1.7" }}>
+                <p style={{ margin: 0, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#9ab8bc", lineHeight: "1.7" }}>
                   The human body replaces the vast majority of its cells over the course of years — bone, skin, muscle, even neurons are continuously recycled. By the Parmenidean criterion (same matter = same thing), you are not the person you were a decade ago. Yet you carry continuous memories, a consistent personality, legal responsibilities for past actions. The law, medicine, and psychology all implicitly adopt a Heraclitean position: you are a persisting pattern of organization, a process rather than a static bundle of matter.
                 </p>
               </div>
@@ -2008,7 +2008,7 @@ function PlatosForms() {
         <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", color: "#e8e0f0", margin: "0 0 8px 0" }}>
           Plato's Forms and the World Behind the World
         </h1>
-        <p style={{ fontSize: 15, color: "#b0a0cc", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+        <p style={{ fontSize: "clamp(13px, 2vw, 15px)", color: "#b0a0cc", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
           Reality splits in two: the eternal, perfect Forms are what truly exists — the physical world is merely their imperfect shadow.
         </p>
       </div>
@@ -2033,7 +2033,7 @@ function PlatosForms() {
         }}>The Problem</div>
         <p style={{
           margin: 0,
-          fontSize: '16px',
+          fontSize: "clamp(14px, 2vw, 16px)",
           lineHeight: '1.7',
           color: '#c8b8e8',
         }}>
@@ -2055,11 +2055,11 @@ function PlatosForms() {
         boxShadow: `0 0 60px rgba(107, 63, 160, 0.2)`,
       }}>
         <div style={{ textAlign: 'center', marginBottom: '6px' }}>
-          <span style={{ fontSize: '22px', color: '#e8d8ff', letterSpacing: '1px' }}>
+          <span style={{ fontSize: "clamp(17px, 2.8vw, 22px)", color: '#e8d8ff', letterSpacing: '1px' }}>
             Plato's Two-Tiered Reality
           </span>
         </div>
-        <div style={{ textAlign: 'center', marginBottom: '20px', color: '#8870b8', fontSize: '14px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '20px', color: '#8870b8', fontSize: "clamp(12px, 1.8vw, 14px)" }}>
           Click a Form or its shadow to explore participation
         </div>
 
@@ -2270,13 +2270,13 @@ function PlatosForms() {
             border: `1px solid ${accentDim}`,
             borderRadius: '8px',
           }}>
-            <span style={{ color: accentLight, fontSize: '14px' }}>
+            <span style={{ color: accentLight, fontSize: "clamp(12px, 1.8vw, 14px)" }}>
               <strong>{forms[selectedForm].label}</strong>
             </span>
-            <span style={{ color: '#9880c0', fontSize: '14px', marginLeft: '8px' }}>
+            <span style={{ color: '#9880c0', fontSize: "clamp(12px, 1.8vw, 14px)", marginLeft: '8px' }}>
               — the perfect, eternal Form
             </span>
-            <p style={{ margin: '8px 0 0', color: '#b0a0d0', fontSize: '14px', lineHeight: '1.6' }}>
+            <p style={{ margin: '8px 0 0', color: '#b0a0d0', fontSize: "clamp(12px, 1.8vw, 14px)", lineHeight: '1.6' }}>
               Every physical {forms[selectedForm].physLabel} <em>participates</em> in the Form of {forms[selectedForm].label}. 
               The physical instance is imperfect, temporary, and changeable. The Form itself never 
               changes — it is what makes the physical thing recognizable as {forms[selectedForm].physLabel} at all.
@@ -2304,19 +2304,19 @@ function PlatosForms() {
               borderRadius: '6px',
               cursor: 'pointer',
               fontFamily: 'Georgia, serif',
-              fontSize: '13px',
+              fontSize: "clamp(12px, 1.6vw, 13px)",
               transition: 'all 0.2s',
             }}
           >
             {thirdManActive ? '↙ Collapse Third Man Regress' : '↑ Trigger Third Man Regress'}
           </button>
           {selectedForm === null && (
-            <span style={{ color: '#6a5090', fontSize: '13px', fontStyle: 'italic' }}>
+            <span style={{ color: '#6a5090', fontSize: "clamp(12px, 1.6vw, 13px)", fontStyle: 'italic' }}>
               (Select a Form above first)
             </span>
           )}
           {thirdManActive && thirdManLevel >= 4 && (
-            <span style={{ color: '#ff7040', fontSize: '13px', fontStyle: 'italic' }}>
+            <span style={{ color: '#ff7040', fontSize: "clamp(12px, 1.6vw, 13px)", fontStyle: 'italic' }}>
               The regress never terminates — the framework collapses.
             </span>
           )}
@@ -2356,10 +2356,10 @@ function PlatosForms() {
             borderRadius: 6,
             padding: '16px 20px',
           }}>
-            <div style={{ fontSize: 13, fontWeight: 'bold', color: '#9B6FD0', marginBottom: 8 }}>
+            <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: 'bold', color: '#9B6FD0', marginBottom: 8 }}>
               {concepts.find(c => c.id === hoveredConcept)?.label}
             </div>
-            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+            <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: '#c8c0b4' }}>
               {concepts.find(c => c.id === hoveredConcept)?.desc}
             </p>
           </div>
@@ -2386,7 +2386,7 @@ function PlatosForms() {
         }}>The Difficulty</div>
         <p style={{
           margin: '0 0 12px',
-          fontSize: '15px',
+          fontSize: "clamp(13px, 2vw, 15px)",
           lineHeight: '1.75',
           color: '#b8a8d8',
         }}>
@@ -2396,7 +2396,7 @@ function PlatosForms() {
         </p>
         <p style={{
           margin: '0 0 12px',
-          fontSize: '15px',
+          fontSize: "clamp(13px, 2vw, 15px)",
           lineHeight: '1.75',
           color: '#b8a8d8',
         }}>
@@ -2408,7 +2408,7 @@ function PlatosForms() {
         </p>
         <p style={{
           margin: 0,
-          fontSize: '14px',
+          fontSize: "clamp(12px, 1.8vw, 14px)",
           lineHeight: '1.7',
           color: '#8060a8',
           fontStyle: 'italic',
@@ -2460,20 +2460,20 @@ function PlatosForms() {
               borderRadius: '6px',
               borderLeft: `3px solid ${accent}`,
             }}>
-              <p style={{ margin: '0 0 14px', color: '#a090c8', fontSize: '15px', lineHeight: '1.7' }}>
+              <p style={{ margin: '0 0 14px', color: '#a090c8', fontSize: "clamp(13px, 2vw, 15px)", lineHeight: '1.7' }}>
                 <strong style={{ color: accentLight }}>Scientific Laws vs. Instances.</strong> The law of 
                 universal gravitation is universal, precise, and unchanging — every calculation of gravity 
                 uses the same formula. No single falling apple perfectly instantiates the law; each one 
                 is subject to air resistance, measurement error, and local variation. The law is a 
                 Platonic Form; the apple is a shadow.
               </p>
-              <p style={{ margin: '0 0 14px', color: '#a090c8', fontSize: '15px', lineHeight: '1.7' }}>
+              <p style={{ margin: '0 0 14px', color: '#a090c8', fontSize: "clamp(13px, 2vw, 15px)", lineHeight: '1.7' }}>
                 <strong style={{ color: accentLight }}>Mathematics.</strong> The number 7 is not a 
                 physical object, yet it exists in some sense — seven apples, seven planets, seven notes 
                 all participate in it. Mathematicians widely debate whether mathematical objects are 
                 discovered (Platonism) or invented, echoing this exact dispute.
               </p>
-              <p style={{ margin: 0, color: '#a090c8', fontSize: '15px', lineHeight: '1.7' }}>
+              <p style={{ margin: 0, color: '#a090c8', fontSize: "clamp(13px, 2vw, 15px)", lineHeight: '1.7' }}>
                 <strong style={{ color: accentLight }}>Software and Instances.</strong> A class definition 
                 in object-oriented programming is like a Form — abstract, unchanging, and instantiated 
                 imperfectly by any particular object at runtime. The class does not "exist" in the physical 
@@ -2665,7 +2665,7 @@ function AristotleSubstance() {
         <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#f0e0c0" }}>
           Aristotle Brings Ontology Down to Earth
         </h1>
-        <p style={{ fontSize: "16px", color: "#b09070", margin: "0 0 32px 0", fontStyle: "italic" }}>
+        <p style={{ fontSize: "clamp(14px, 2vw, 16px)", color: "#b09070", margin: "0 0 32px 0", fontStyle: "italic" }}>
           Aristotle rejected Plato's separate realm of Forms and relocated universal natures inside individual substances, producing the first comprehensive map of being.
         </p>
       </div>
@@ -2683,7 +2683,7 @@ function AristotleSubstance() {
           <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#B5651D", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
             The Problem
           </div>
-          <p style={{ margin: "0", lineHeight: "1.8", fontSize: "15px", color: "#c8b090" }}>
+          <p style={{ margin: "0", lineHeight: "1.8", fontSize: "clamp(13px, 2vw, 15px)", color: "#c8b090" }}>
             Plato's participation relation is a metaphor, and the Third Man regress shows that separating Forms from physical things creates an infinite explanatory chain with no foundation. If a horse participates in the Form of Horse, and they share something in common, we need a third Form to explain that sharing — and then a fourth, and so on, forever. The explanation never lands. The ground keeps retreating.
           </p>
         </div>
@@ -2711,7 +2711,7 @@ function AristotleSubstance() {
                   padding: "8px 18px",
                   color: activeTab === tab ? "#fff" : "#a07050",
                   fontFamily: "Georgia, serif",
-                  fontSize: "13px",
+                  fontSize: "clamp(12px, 1.6vw, 13px)",
                   cursor: "pointer",
                   transition: "all 0.2s",
                   textTransform: "capitalize",
@@ -2726,7 +2726,7 @@ function AristotleSubstance() {
           {activeTab === "statue" && (
             <div>
               <div style={{ textAlign: "center", marginBottom: "16px" }}>
-                <div style={{ fontSize: "13px", color: "#907050", marginBottom: "4px" }}>
+                <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#907050", marginBottom: "4px" }}>
                   Drag left/right to conceptually separate Matter from Form
                 </div>
                 <div style={{ fontSize: "12px", color: "#605040", fontStyle: "italic" }}>
@@ -2846,7 +2846,7 @@ function AristotleSubstance() {
                     border: "1px solid #B5651D",
                     borderRadius: "6px",
                     padding: "10px 20px",
-                    fontSize: "13px",
+                    fontSize: "clamp(12px, 1.6vw, 13px)",
                     color: "#ffcc88",
                     textAlign: "center",
                     maxWidth: "360px",
@@ -2907,7 +2907,7 @@ function AristotleSubstance() {
           {/* TAB: CATEGORIES */}
           {activeTab === "categories" && (
             <div>
-              <div style={{ textAlign: "center", marginBottom: "8px", fontSize: "14px", color: "#907050" }}>
+              <div style={{ textAlign: "center", marginBottom: "8px", fontSize: "clamp(12px, 1.8vw, 14px)", color: "#907050" }}>
                 Aristotle's Categories — click each to explore how the statue's properties fall under them
               </div>
               <div style={{ display: "flex", gap: "24px", alignItems: "flex-start", flexWrap: "wrap" }}>
@@ -3010,7 +3010,7 @@ function AristotleSubstance() {
                       alignItems: "center",
                       justifyContent: "center",
                     }}>
-                      <p style={{ color: "#605040", fontStyle: "italic", textAlign: "center", margin: 0, fontSize: "14px" }}>
+                      <p style={{ color: "#605040", fontStyle: "italic", textAlign: "center", margin: 0, fontSize: "clamp(12px, 1.8vw, 14px)" }}>
                         Click any category node to see how the statue's properties fall under Aristotle's ten categories of being.
                       </p>
                     </div>
@@ -3029,10 +3029,10 @@ function AristotleSubstance() {
                             <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#B5651D", textTransform: "uppercase", marginBottom: "10px" }}>
                               {selectedCategory === "substance" ? "Primary Category" : "Accidental Category"}
                             </div>
-                            <div style={{ fontSize: "20px", color: "#f0d090", marginBottom: "12px", fontStyle: "italic" }}>
+                            <div style={{ fontSize: "clamp(16px, 2.5vw, 20px)", color: "#f0d090", marginBottom: "12px", fontStyle: "italic" }}>
                               {info.label}
                             </div>
-                            <p style={{ fontSize: "14px", color: "#c0a070", lineHeight: "1.7", margin: "0 0 16px 0" }}>
+                            <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: "#c0a070", lineHeight: "1.7", margin: "0 0 16px 0" }}>
                               {info.description}
                             </p>
                             <div style={{
@@ -3044,17 +3044,17 @@ function AristotleSubstance() {
                               <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#907050", textTransform: "uppercase", marginBottom: "6px" }}>
                                 For the bronze statue:
                               </div>
-                              <div style={{ fontSize: "13px", color: "#e0c090", fontStyle: "italic" }}>
+                              <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#e0c090", fontStyle: "italic" }}>
                                 "{info.example}"
                               </div>
                             </div>
                             {selectedCategory !== "substance" && (
-                              <p style={{ fontSize: "13px", color: "#706050", margin: "14px 0 0 0", fontStyle: "italic" }}>
+                              <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#706050", margin: "14px 0 0 0", fontStyle: "italic" }}>
                                 This property is an <strong style={{ color: "#B5651D" }}>accident</strong> — it depends on the substance but does not define what the thing essentially is.
                               </p>
                             )}
                             {selectedCategory === "substance" && (
-                              <p style={{ fontSize: "13px", color: "#706050", margin: "14px 0 0 0", fontStyle: "italic" }}>
+                              <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#706050", margin: "14px 0 0 0", fontStyle: "italic" }}>
                                 Substance is <strong style={{ color: "#B5651D" }}>primary reality</strong> — it exists in its own right and underlies all other properties.
                               </p>
                             )}
@@ -3068,7 +3068,7 @@ function AristotleSubstance() {
                     <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#605040", textTransform: "uppercase", marginBottom: "8px" }}>
                       Key Insight
                     </div>
-                    <p style={{ fontSize: "13px", color: "#907060", lineHeight: "1.7", margin: 0 }}>
+                    <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#907060", lineHeight: "1.7", margin: 0 }}>
                       Only Substance exists independently. All other categories — qualities, quantities, relations — are <em>accidents</em> that inhere in a substance and cannot exist floating free. This is the opposite of Plato: universals don't float in their own realm.
                     </p>
                   </div>
@@ -3081,7 +3081,7 @@ function AristotleSubstance() {
           {activeTab === "hylomorphism" && (
             <div>
               <div style={{ textAlign: "center", marginBottom: "20px" }}>
-                <div style={{ fontSize: "13px", color: "#907050", marginBottom: "4px" }}>
+                <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#907050", marginBottom: "4px" }}>
                   Form + Matter = Substance
                 </div>
                 <div style={{ fontSize: "12px", color: "#605040", fontStyle: "italic" }}>
@@ -3111,12 +3111,12 @@ function AristotleSubstance() {
                       borderRadius: "10px",
                       padding: "20px",
                     }}>
-                      <div style={{ fontSize: "14px", color: col.color, fontWeight: "bold", marginBottom: "12px", fontStyle: "italic" }}>
+                      <div style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: col.color, fontWeight: "bold", marginBottom: "12px", fontStyle: "italic" }}>
                         {col.title}
                       </div>
                       {col.items.map(item => (
                         <div key={item} style={{
-                          fontSize: "13px",
+                          fontSize: "clamp(12px, 1.6vw, 13px)",
                           color: "#907060",
                           padding: "5px 0",
                           borderBottom: "1px solid rgba(181,101,29,0.1)",
@@ -3155,7 +3155,7 @@ function AristotleSubstance() {
                     </svg>
                   </div>
                   <div style={{ flex: 2, minWidth: "160px" }}>
-                    <p style={{ fontSize: "13px", color: "#c0a070", lineHeight: "1.7", margin: 0 }}>
+                    <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#c0a070", lineHeight: "1.7", margin: 0 }}>
                       The same matter (bronze) receives a new form (human figure). Change is not the destruction and creation of substance — it is the reorganization of matter under a new form. The matter persists; the form is replaced. Plato could not explain change; Aristotle makes it central.
                     </p>
                   </div>
@@ -3172,7 +3172,7 @@ function AristotleSubstance() {
                 <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#c07040", textTransform: "uppercase", marginBottom: "8px" }}>
                   The Individuation Question
                 </div>
-                <p style={{ fontSize: "13px", color: "#907050", lineHeight: "1.6", margin: 0 }}>
+                <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#907050", lineHeight: "1.6", margin: 0 }}>
                   Two bronze statues share the same form (human figure) and the same kind of matter (bronze). What makes this statue <em>this one</em> rather than that one? Aristotle's answer — their matter — only pushes the question back. Matter without form has no distinguishing features at all.
                 </p>
               </div>
@@ -3192,10 +3192,10 @@ function AristotleSubstance() {
           <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#B5651D", textTransform: "uppercase", marginBottom: "16px" }}>
             The Argument
           </div>
-          <p style={{ margin: "0 0 16px 0", lineHeight: "1.85", fontSize: "15px", color: "#c8b090" }}>
+          <p style={{ margin: "0 0 16px 0", lineHeight: "1.85", fontSize: "clamp(13px, 2vw, 15px)", color: "#c8b090" }}>
             Aristotle's challenge to Plato begins with a simple question: if the Form of Horse is what explains what horses are, does the Form of Horse itself count as a horse? If not, it cannot contain the full reality of horseness. If yes, then the Form is just another horse, and we need a further Form to explain both — the Third Man regress begins again.
           </p>
-          <p style={{ margin: "0", lineHeight: "1.85", fontSize: "15px", color: "#c8b090" }}>
+          <p style={{ margin: "0", lineHeight: "1.85", fontSize: "clamp(13px, 2vw, 15px)", color: "#c8b090" }}>
             The solution is to bring form down into matter. Every concrete individual thing is a substance: a unity of matter (the stuff it is made of, its potentiality) and form (the organizing principle, its actuality). The form is not a separate object somewhere else — it is what this clump of matter actually is. Properties like color, size, and position are not further substances; they are accidents that inhere in a substance and depend on it for their existence. This produces a single-world ontology with a clear hierarchy: substances first, everything else hanging off them.
           </p>
         </div>
@@ -3234,10 +3234,10 @@ function AristotleSubstance() {
               borderRadius: 6,
               padding: "16px 20px",
             }}>
-              <div style={{ fontSize: 13, fontWeight: "bold", color: "#d4854d", marginBottom: 8 }}>
+              <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: "#d4854d", marginBottom: 8 }}>
                 {concepts.find(c => c.id === hoveredConcept)?.label}
               </div>
-              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+              <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
                 {concepts.find(c => c.id === hoveredConcept)?.desc}
               </p>
             </div>
@@ -3257,10 +3257,10 @@ function AristotleSubstance() {
           <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#B5651D", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 16px 0", lineHeight: "1.8", fontSize: "15px", color: "#c8b090" }}>
+          <p style={{ margin: "0 0 16px 0", lineHeight: "1.8", fontSize: "clamp(13px, 2vw, 15px)", color: "#c8b090" }}>
             If all horses share the same universal form — the essence of horseness — and yet each individual horse is supposed to be a primary, irreducible reality, what makes this horse different from that horse? The answer must lie in their matter: this horse is made of these particular atoms; that horse is made of those. But for Aristotle, matter in itself is pure potentiality — it has no features, no qualities, no characteristics of its own until form shapes it. So individuality ends up being explained by something that has no individual features of its own. The ground of uniqueness is itself featureless.
           </p>
-          <p style={{ margin: "0", lineHeight: "1.8", fontSize: "14px", color: "#907060", fontStyle: "italic" }}>
+          <p style={{ margin: "0", lineHeight: "1.8", fontSize: "clamp(12px, 1.8vw, 14px)", color: "#907060", fontStyle: "italic" }}>
             This pressure forces the next development: medieval philosophers will try to distinguish individual matter from universal matter, or to locate individuation in a haecceity — a "thisness" — that is neither form nor ordinary matter but a primitive individuality. The search for what makes something the particular thing it is will drive ontology forward for a thousand years.
           </p>
         </div>
@@ -3315,8 +3315,8 @@ function AristotleSubstance() {
                     borderRadius: "0 6px 6px 0",
                     padding: "14px 18px",
                   }}>
-                    <div style={{ fontSize: "13px", fontWeight: "bold", color: "#e0c090", marginBottom: "8px" }}>{echo.title}</div>
-                    <p style={{ fontSize: "13px", color: "#907060", lineHeight: "1.75", margin: 0 }}>
+                    <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: "#e0c090", marginBottom: "8px" }}>{echo.title}</div>
+                    <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#907060", lineHeight: "1.75", margin: 0 }}>
                       {echo.body}
                     </p>
                   </div>
@@ -3473,7 +3473,7 @@ function MedievalUniversals() {
         <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", color: "#e8d5b0", margin: "0 0 8px 0" }}>
           The Medieval War Over Universals
         </h1>
-        <p style={{ fontSize: 15, color: "#9a8a6e", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+        <p style={{ fontSize: "clamp(13px, 2vw, 15px)", color: "#9a8a6e", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
           Do concepts like 'horse' name real entities in the world, or are they merely useful words for grouping similar individuals?
         </p>
       </div>
@@ -3494,7 +3494,7 @@ function MedievalUniversals() {
         <div style={{ fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", color: "#8B7355", marginBottom: "10px", fontFamily: "Georgia, serif" }}>
           The Problem
         </div>
-        <p style={{ margin: 0, lineHeight: "1.75", fontSize: "15px", color: "#c9b48a" }}>
+        <p style={{ margin: 0, lineHeight: "1.75", fontSize: "clamp(13px, 2vw, 15px)", color: "#c9b48a" }}>
           Aristotle's hylomorphism placed universal forms inside individual substances — 'horseness' in each horse, not floating in a Platonic heaven. But this left a sharp thorn: if two horses share the very same universal form, <em>what makes them two</em>? What principle of individuation keeps Bucephalus and Rocinante distinct rather than collapsing into a single horse-thing? Medieval philosophers inherited this unresolved pressure and fought over it for centuries.
         </p>
       </div>
@@ -3528,7 +3528,7 @@ function MedievalUniversals() {
                   background: isActive ? pos.color : isHov ? "rgba(139,115,85,0.15)" : "transparent",
                   color: isActive ? "#f0f0f0" : pos.color,
                   fontFamily: "Georgia, serif",
-                  fontSize: "14px",
+                  fontSize: "clamp(12px, 1.8vw, 14px)",
                   cursor: "pointer",
                   fontWeight: isActive ? "bold" : "normal",
                   transition: "all 0.25s",
@@ -3551,7 +3551,7 @@ function MedievalUniversals() {
               background: hoveredBtn === "reset" ? "rgba(60,45,26,0.4)" : "transparent",
               color: "#6a5a3e",
               fontFamily: "Georgia, serif",
-              fontSize: "13px",
+              fontSize: "clamp(12px, 1.6vw, 13px)",
               cursor: "pointer"
             }}
           >
@@ -3724,7 +3724,7 @@ function MedievalUniversals() {
             <div style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: positions[activePosition].color, marginBottom: "8px" }}>
               {positions[activePosition].label} — {positions[activePosition].thinker}
             </div>
-            <p style={{ margin: 0, lineHeight: "1.7", fontSize: "14px", color: "#c9b48a" }}>
+            <p style={{ margin: 0, lineHeight: "1.7", fontSize: "clamp(12px, 1.8vw, 14px)", color: "#c9b48a" }}>
               {positions[activePosition].description}
             </p>
           </div>
@@ -3732,7 +3732,7 @@ function MedievalUniversals() {
 
         {/* Ockham's Razor callout */}
         {activePosition === "nominalism" && (
-          <div style={{ marginTop: "14px", padding: "14px 18px", background: "rgba(139,115,85,0.08)", border: "1px dashed #8B7355", borderRadius: "6px", fontSize: "13px", color: "#9a8a6e", lineHeight: "1.65", fontStyle: "italic" }}>
+          <div style={{ marginTop: "14px", padding: "14px 18px", background: "rgba(139,115,85,0.08)", border: "1px dashed #8B7355", borderRadius: "6px", fontSize: "clamp(12px, 1.6vw, 13px)", color: "#9a8a6e", lineHeight: "1.65", fontStyle: "italic" }}>
             <strong style={{ color: "#8B7355", fontStyle: "normal" }}>Ockham's Razor:</strong> "Entities should not be multiplied beyond necessity." If resemblance among individuals does all the explanatory work, why posit mysterious shared natures? The universal collapses into a word — a flatus vocis.
           </div>
         )}
@@ -3750,7 +3750,7 @@ function MedievalUniversals() {
               background: hoveredBtn === "stakes" ? "rgba(139,115,85,0.2)" : "transparent",
               color: "#8B7355",
               fontFamily: "Georgia, serif",
-              fontSize: "13px",
+              fontSize: "clamp(12px, 1.6vw, 13px)",
               cursor: "pointer"
             }}
           >
@@ -3770,7 +3770,7 @@ function MedievalUniversals() {
             }}
           >
             <div style={{ fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", color: "#7A8B6E", marginBottom: "10px" }}>Real Stakes: Conservation Law</div>
-            <p style={{ margin: "0 0 10px 0", lineHeight: "1.7", fontSize: "14px", color: "#c9b48a" }}>
+            <p style={{ margin: "0 0 10px 0", lineHeight: "1.7", fontSize: "clamp(12px, 1.8vw, 14px)", color: "#c9b48a" }}>
               Whether a population of wolves qualifies as a <em>distinct species</em> — a real natural kind — determines whether it receives legal protection under the Endangered Species Act. The biological answer depends entirely on which ontological position you hold.
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
@@ -3821,10 +3821,10 @@ function MedievalUniversals() {
             borderRadius: 6,
             padding: "16px 20px",
           }}>
-            <div style={{ fontSize: 13, fontWeight: "bold", color: "#b5703a", marginBottom: 8 }}>
+            <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: "#b5703a", marginBottom: 8 }}>
               {concepts.find(c => c.id === hoveredConcept)?.label}
             </div>
-            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+            <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
               {concepts.find(c => c.id === hoveredConcept)?.desc}
             </p>
           </div>
@@ -3844,13 +3844,13 @@ function MedievalUniversals() {
         }}
       >
         <div style={{ fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", color: "#8B7355", marginBottom: "10px" }}>The Difficulty</div>
-        <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "15px", color: "#c9b48a" }}>
+        <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "clamp(13px, 2vw, 15px)", color: "#c9b48a" }}>
           No position resolves all pressures cleanly. Nominalism gains ontological economy — no mysterious shared natures cluttering the world — but faces a devastating counter: what <em>makes</em> two horses resemble each other? If the answer is that they share certain features, we appear to have smuggled universals back in through the side door. Resemblance itself seems to require a common property.
         </p>
-        <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "15px", color: "#c9b48a" }}>
+        <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "clamp(13px, 2vw, 15px)", color: "#c9b48a" }}>
           Realism preserves explanatory power but struggles to explain how a single universal form can be wholly present in many distinct individuals simultaneously — the problem of the <em>one and the many</em>. Conceptualism avoids both horns, but leaves open whether our mental categories are discovered or invented, injecting a permanent ambiguity into every act of classification.
         </p>
-        <p style={{ margin: 0, lineHeight: "1.75", fontSize: "14px", color: "#8B7355", fontStyle: "italic" }}>
+        <p style={{ margin: 0, lineHeight: "1.75", fontSize: "clamp(12px, 1.8vw, 14px)", color: "#8B7355", fontStyle: "italic" }}>
           This pressure forces the next development: the problem cascades forward into every discipline that relies on classification — from biological taxonomy to legal categories to the structure of scientific kinds — demanding that ontology answer whether our best theories describe reality or merely carve it at convenient joints.
         </p>
       </div>
@@ -3892,14 +3892,14 @@ function MedievalUniversals() {
           <div style={{ padding: "24px 28px" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "16px", paddingTop: "4px" }}>
               <div style={{ borderLeft: "3px solid #8B7355", borderRadius: "0 6px 6px 0", background: "rgba(139,115,85,0.08)", padding: "14px 18px" }}>
-                <div style={{ fontSize: "13px", color: "#C9A96E", marginBottom: "8px", fontWeight: "bold" }}>Biological Taxonomy</div>
-                <p style={{ margin: 0, fontSize: "13px", color: "#9a8a6e", lineHeight: "1.7" }}>
+                <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#C9A96E", marginBottom: "8px", fontWeight: "bold" }}>Biological Taxonomy</div>
+                <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", color: "#9a8a6e", lineHeight: "1.7" }}>
                   Whether a 'species' is a real natural kind or a convenient grouping of genetic variation is an active dispute in philosophy of biology. The species problem — with over 20 competing species concepts — is the nominalism debate in modern dress. Realists argue that phylogenetic species are real; nominalists treat taxonomy as a useful fiction imposed on continuous variation.
                 </p>
               </div>
               <div style={{ borderLeft: "3px solid #8B7355", borderRadius: "0 6px 6px 0", background: "rgba(139,115,85,0.08)", padding: "14px 18px" }}>
-                <div style={{ fontSize: "13px", color: "#C9A96E", marginBottom: "8px", fontWeight: "bold" }}>Conservation & Legal Status</div>
-                <p style={{ margin: 0, fontSize: "13px", color: "#9a8a6e", lineHeight: "1.7" }}>
+                <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#C9A96E", marginBottom: "8px", fontWeight: "bold" }}>Conservation & Legal Status</div>
+                <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", color: "#9a8a6e", lineHeight: "1.7" }}>
                   Whether a population counts as a distinct species determines whether it receives legal protection under conservation law. Courts must make ontological decisions: is this group a real kind or an administrative convenience? The answer carries material consequences — funding, habitat protection, criminal penalties for harm.
                 </p>
               </div>
@@ -4082,7 +4082,7 @@ function AquinasEssenceExistence() {
           <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", color: "#e8eef8", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             Aquinas and the Gap Between Essence and Existence
           </h1>
-          <p style={{ fontSize: 15, color: "#8a9ab8", margin: 0, fontStyle: "italic", maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ fontSize: "clamp(13px, 2vw, 15px)", color: "#8a9ab8", margin: 0, fontStyle: "italic", maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
             Knowing what a thing is tells you nothing about whether it exists.
           </p>
         </div>
@@ -4099,7 +4099,7 @@ function AquinasEssenceExistence() {
           <div style={{ fontSize: 10, letterSpacing: 3, color: "#2E5B8A", textTransform: "uppercase", marginBottom: 12 }}>
             The Problem
           </div>
-          <p style={{ margin: 0, lineHeight: 1.8, fontSize: 15, color: "#b8c4d8" }}>
+          <p style={{ margin: 0, lineHeight: 1.8, fontSize: "clamp(13px, 2vw, 15px)", color: "#b8c4d8" }}>
             Aristotle's system explained what things are in rich detail — substance, form, matter, the four causes — yet treated their existence as nearly self-evident. That a thing should simply be present in the world was never pressed as a question. The system was eloquent about essence and silent about existence. This silence became intolerable: if we can fully specify what something is without it existing, the gap between definition and actuality must be faced directly. Why does anything exist at all, rather than nothing?
           </p>
         </div>
@@ -4113,10 +4113,10 @@ function AquinasEssenceExistence() {
           marginBottom: 28
         }}>
           <div style={{ textAlign: "center", marginBottom: 6 }}>
-            <h2 style={{ color: "#c8d8f0", fontSize: 18, fontWeight: "normal", margin: "0 0 6px 0" }}>
+            <h2 style={{ color: "#c8d8f0", fontSize: "clamp(15px, 2.2vw, 18px)", fontWeight: "normal", margin: "0 0 6px 0" }}>
               The Essence / Existence Gap
             </h2>
-            <p style={{ color: "#6a7a98", fontSize: 13, margin: 0, fontStyle: "italic" }}>
+            <p style={{ color: "#6a7a98", fontSize: "clamp(12px, 1.6vw, 13px)", margin: 0, fontStyle: "italic" }}>
               Drag essences toward the World Stage — or click to inspect each one's ontological status
             </p>
           </div>
@@ -4163,9 +4163,9 @@ function AquinasEssenceExistence() {
                       gap: 10
                     }}
                   >
-                    <span style={{ fontSize: 22 }}>{item.symbol}</span>
+                    <span style={{ fontSize: "clamp(17px, 2.8vw, 22px)" }}>{item.symbol}</span>
                     <div>
-                      <div style={{ fontSize: 14, color: item.canExist === "necessary" ? "#d4af37" : "#c0cce0", fontWeight: "bold" }}>
+                      <div style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: item.canExist === "necessary" ? "#d4af37" : "#c0cce0", fontWeight: "bold" }}>
                         {item.name}
                       </div>
                       <div style={{ fontSize: 11, color: "#5a6a88", fontStyle: "italic" }}>
@@ -4226,7 +4226,7 @@ function AquinasEssenceExistence() {
                 </p>
 
                 {existingItems.length === 0 && (
-                  <div style={{ textAlign: "center", color: "#2a4030", fontSize: 13, marginTop: 30, fontStyle: "italic" }}>
+                  <div style={{ textAlign: "center", color: "#2a4030", fontSize: "clamp(12px, 1.6vw, 13px)", marginTop: 30, fontStyle: "italic" }}>
                     Drop essences here to test whether they can exist...
                   </div>
                 )}
@@ -4252,9 +4252,9 @@ function AquinasEssenceExistence() {
                         : "0 0 8px rgba(74,158,107,0.1)"
                     }}
                   >
-                    <span style={{ fontSize: 22 }}>{item.symbol}</span>
+                    <span style={{ fontSize: "clamp(17px, 2.8vw, 22px)" }}>{item.symbol}</span>
                     <div>
-                      <div style={{ fontSize: 13, color: item.canExist === "necessary" ? "#d4af37" : "#7acc98" }}>
+                      <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: item.canExist === "necessary" ? "#d4af37" : "#7acc98" }}>
                         {item.name}
                       </div>
                       <div style={{ fontSize: 10, color: "#4a6a58", fontStyle: "italic" }}>
@@ -4283,7 +4283,7 @@ function AquinasEssenceExistence() {
                         animation: "none"
                       }}>
                         <div style={{ fontSize: 28 }}>{essences.find(e => e.id === animatingItem)?.symbol}</div>
-                        <div style={{ color: "#e87070", fontSize: 13, marginTop: 6 }}>Existence not guaranteed</div>
+                        <div style={{ color: "#e87070", fontSize: "clamp(12px, 1.6vw, 13px)", marginTop: 6 }}>Existence not guaranteed</div>
                         <div style={{ color: "#8a4040", fontSize: 11, marginTop: 4 }}>Essence cannot supply its own being</div>
                       </div>
                     )}
@@ -4295,7 +4295,7 @@ function AquinasEssenceExistence() {
                         padding: "12px 18px"
                       }}>
                         <div style={{ fontSize: 28 }}>{essences.find(e => e.id === animatingItem)?.symbol}</div>
-                        <div style={{ color: animationType === "pass" ? "#d4af37" : "#7acc98", fontSize: 13, marginTop: 6 }}>
+                        <div style={{ color: animationType === "pass" ? "#d4af37" : "#7acc98", fontSize: "clamp(12px, 1.6vw, 13px)", marginTop: 6 }}>
                           {animationType === "pass" ? "Necessarily exists" : "Contingently admitted"}
                         </div>
                       </div>
@@ -4320,7 +4320,7 @@ function AquinasEssenceExistence() {
               <div style={{ fontSize: 10, letterSpacing: 3, color: tooltipColor(tooltip.type), textTransform: "uppercase", marginBottom: 10 }}>
                 Ontological Status
               </div>
-              <p style={{ margin: "0 0 10px 0", lineHeight: 1.75, fontSize: 14, color: "#b0bcd0" }}>
+              <p style={{ margin: "0 0 10px 0", lineHeight: 1.75, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#b0bcd0" }}>
                 {tooltip.text}
               </p>
               <div style={{
@@ -4343,7 +4343,7 @@ function AquinasEssenceExistence() {
                   border: "none",
                   color: "#4a5a78",
                   cursor: "pointer",
-                  fontSize: 16,
+                  fontSize: "clamp(14px, 2vw, 16px)",
                   fontFamily: "Georgia, serif"
                 }}
               >
@@ -4363,7 +4363,7 @@ function AquinasEssenceExistence() {
             <div style={{ fontSize: 10, letterSpacing: 3, color: "#2E5B8A", textTransform: "uppercase", marginBottom: 12 }}>
               The Argument
             </div>
-            <p style={{ margin: 0, lineHeight: 1.8, fontSize: 14, color: "#9aaccc" }}>
+            <p style={{ margin: 0, lineHeight: 1.8, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#9aaccc" }}>
               Aquinas observed that the essence of any created thing — however perfectly specified — carries no guarantee of existence within itself. A unicorn's essence is internally coherent; a triangle's nature is complete and determinate; yet neither brings itself into being. In every created thing, essence and existence are genuinely distinct: the former says <em>what</em>, the latter says <em>that</em>. Since no created thing's essence explains its own existence, something outside it must supply that existence. Following this chain of dependency to its end, there must be a being whose essence just is existence itself — one that cannot fail to exist, because in it, the distinction between essence and existence collapses. Aquinas called this being Ipsum Esse Subsistens: subsistent being itself.
             </p>
           </div>
@@ -4388,10 +4388,10 @@ function AquinasEssenceExistence() {
           </div>
           {hoveredConcept && (
             <div style={{ background: "rgba(46,91,138,0.08)", border: "1px solid rgba(46,91,138,0.3)", borderRadius: 6, padding: "16px 20px" }}>
-              <div style={{ fontSize: 13, fontWeight: "bold", color: "#2E5B8A", marginBottom: 8 }}>
+              <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: "#2E5B8A", marginBottom: 8 }}>
                 {aquinasConcepts.find(c => c.id === hoveredConcept)?.label}
               </div>
-              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+              <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
                 {aquinasConcepts.find(c => c.id === hoveredConcept)?.desc}
               </p>
             </div>
@@ -4410,10 +4410,10 @@ function AquinasEssenceExistence() {
           <div style={{ fontSize: 10, letterSpacing: 3, color: "#2E5B8A", textTransform: "uppercase", marginBottom: 12 }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: 15, color: "#b8b0d0" }}>
+          <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: "clamp(13px, 2vw, 15px)", color: "#b8b0d0" }}>
             Aquinas's framework resolves one abyss but stands on the edge of another. The distinction between essence and existence is argued within the Aristotelian vocabulary of substance, form, and matter — a vocabulary that takes the concept of a knowable, stable substance as given. The question of existence has been asked and answered within this inherited architecture, but the architecture itself has not been questioned. What happens if a radical doubter asks not merely what substances are, but whether the very concept of an independently existing substance is coherent given the unreliability of our senses and the limits of our minds?
           </p>
-          <p style={{ margin: 0, lineHeight: 1.8, fontSize: 14, color: "#8878a8", fontStyle: "italic" }}>
+          <p style={{ margin: 0, lineHeight: 1.8, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#8878a8", fontStyle: "italic" }}>
             This pressure forces the next development: a thinker will find that the bridge between the mind that knows and the world it claims to know has become the most urgent problem in all of philosophy — and the question of essence and existence will be overshadowed by the question of knowledge itself.
           </p>
         </div>
@@ -4460,10 +4460,10 @@ function AquinasEssenceExistence() {
                 padding: "14px 18px",
                 marginBottom: 14,
               }}>
-                <div style={{ fontSize: 13, color: "#7aaad8", marginBottom: 8, fontWeight: "bold" }}>
+                <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#7aaad8", marginBottom: 8, fontWeight: "bold" }}>
                   Mathematics: Russell's Paradox
                 </div>
-                <p style={{ margin: 0, lineHeight: 1.75, fontSize: 14, color: "#8a9ab8" }}>
+                <p style={{ margin: 0, lineHeight: 1.75, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#8a9ab8" }}>
                   The set of all sets that do not contain themselves can be perfectly defined — its essence is precise and coherent — yet it cannot exist without generating a logical contradiction. Here, as in Aquinas, a complete essence carries no guarantee of existence; in this case, existence is actively refused by the structure of logic itself.
                 </p>
               </div>
@@ -4473,10 +4473,10 @@ function AquinasEssenceExistence() {
                 borderRadius: "0 6px 6px 0",
                 padding: "14px 18px",
               }}>
-                <div style={{ fontSize: 13, color: "#7aaad8", marginBottom: 8, fontWeight: "bold" }}>
+                <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: "#7aaad8", marginBottom: 8, fontWeight: "bold" }}>
                   Engineering: Specification vs. Prototype
                 </div>
-                <p style={{ margin: 0, lineHeight: 1.75, fontSize: 14, color: "#8a9ab8" }}>
+                <p style={{ margin: 0, lineHeight: 1.75, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#8a9ab8" }}>
                   A product specification documents exactly what something is — dimensions, tolerances, materials, behavior — without thereby bringing anything into existence. Engineers know intimately that a complete and correct specification does not guarantee a realizable prototype: manufacturing constraints, material unavailability, or thermodynamic limits may prevent the essence from ever being instantiated. The gap between the blueprint and the built object mirrors Aquinas's gap between essence and existence.
                 </p>
               </div>
@@ -4672,7 +4672,7 @@ function DescartesDualism() {
         <h1 style={{ fontSize: 'clamp(22px, 4vw, 36px)', fontWeight: 'normal', margin: '0 0 8px 0', color: '#f0e6e0' }}>
           Descartes Splits Reality in Two
         </h1>
-        <p style={{ fontSize: 15, color: '#b8a8a0', margin: 0, lineHeight: 1.6, fontStyle: 'italic' }}>
+        <p style={{ fontSize: "clamp(13px, 2vw, 15px)", color: '#b8a8a0', margin: 0, lineHeight: 1.6, fontStyle: 'italic' }}>
           Descartes' method of radical doubt led him to posit two utterly distinct substances — thinking mind and extended matter — creating the mind-body problem that haunts philosophy to this day.
         </p>
       </div>
@@ -4691,7 +4691,7 @@ function DescartesDualism() {
         <div style={{ fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: '#C0392B', marginBottom: '12px', fontWeight: 'bold' }}>
           The Problem
         </div>
-        <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#d0c0b8', margin: 0 }}>
+        <p style={{ fontSize: "clamp(13px, 2vw, 15px)", lineHeight: 1.8, color: '#d0c0b8', margin: 0 }}>
           For four centuries, Aristotle's vision of a world animated by forms, purposes, and hierarchies of being had organized European thought. But by the early 1600s, Galileo's telescope and the rise of mathematical physics were dismantling it piece by piece. Aristotelian qualities — heaviness, wetness, heat — seemed too vague to explain planetary orbits or the arc of a cannonball. <strong style={{ color: '#e8c8c0' }}>Descartes saw the entire inherited framework collapsing</strong> and resolved to do something radical: discard everything uncertain and rebuild knowledge from an unshakeable foundation. The pressure was existential — without a new philosophical bedrock, the new sciences had no firm ground to stand on.
         </p>
       </div>
@@ -4798,7 +4798,7 @@ function DescartesDualism() {
               padding: '8px 18px',
               cursor: signalState === 'idle' ? 'pointer' : 'default',
               fontFamily: 'Georgia, serif',
-              fontSize: '13px',
+              fontSize: "clamp(12px, 1.6vw, 13px)",
               transition: 'all 0.2s',
             }}
             onMouseEnter={e => { if (signalState === 'idle') e.target.style.boxShadow = '0 0 12px #9b59b660'; }}
@@ -4817,7 +4817,7 @@ function DescartesDualism() {
               padding: '8px 18px',
               cursor: signalState === 'idle' ? 'pointer' : 'default',
               fontFamily: 'Georgia, serif',
-              fontSize: '13px',
+              fontSize: "clamp(12px, 1.6vw, 13px)",
               transition: 'all 0.2s',
             }}
             onMouseEnter={e => { if (signalState === 'idle') e.target.style.boxShadow = '0 0 12px #27ae6060'; }}
@@ -4830,7 +4830,7 @@ function DescartesDualism() {
         {/* Status message */}
         <div style={{
           textAlign: 'center',
-          fontSize: '13px',
+          fontSize: "clamp(12px, 1.6vw, 13px)",
           fontStyle: 'italic',
           color: signalState === 'blocked' ? '#C0392B' : signalState === 'pineal' ? '#f39c12' : '#888',
           minHeight: '20px',
@@ -4844,7 +4844,7 @@ function DescartesDualism() {
         </div>
 
         {/* Core argument prose */}
-        <p style={{ fontSize: '14px', lineHeight: 1.85, color: '#c8b8b0', marginBottom: '24px', borderTop: '1px solid #2a1a1a', paddingTop: '20px' }}>
+        <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", lineHeight: 1.85, color: '#c8b8b0', marginBottom: '24px', borderTop: '1px solid #2a1a1a', paddingTop: '20px' }}>
           Descartes began by doubting systematically — senses deceive, dreams simulate waking life, perhaps a malicious demon manipulates all perception. Yet one thing resisted doubt: <em>the doubting itself</em>. "Cogito ergo sum" — I think, therefore I am. From this single certainty he rebuilt: mind is known first, before any body, suggesting mind is conceptually independent of matter. He concluded they are not merely different kinds of thing but different <em>substances</em> — entirely distinct categories of being that share no common property. Matter is pure geometry: length, breadth, depth. Mind is pure thought: no location, no size.
         </p>
 
@@ -4868,10 +4868,10 @@ function DescartesDualism() {
         </div>
         {hoveredConcept && (
           <div style={{ background: "rgba(192,57,43,0.08)", border: "1px solid rgba(192,57,43,0.3)", borderRadius: 6, padding: "16px 20px" }}>
-            <div style={{ fontSize: 13, fontWeight: "bold", color: "#C0392B", marginBottom: 8 }}>
+            <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: "#C0392B", marginBottom: 8 }}>
               {concepts.find(c => c.id === hoveredConcept)?.label}
             </div>
-            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+            <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
               {concepts.find(c => c.id === hoveredConcept)?.desc}
             </p>
           </div>
@@ -4891,13 +4891,13 @@ function DescartesDualism() {
         <div style={{ fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase', color: '#C0392B', marginBottom: '12px', fontWeight: 'bold' }}>
           The Difficulty
         </div>
-        <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#c0b8b0', margin: '0 0 16px 0' }}>
+        <p style={{ fontSize: "clamp(13px, 2vw, 15px)", lineHeight: 1.8, color: '#c0b8b0', margin: '0 0 16px 0' }}>
           Cartesian dualism creates a problem more severe than the one it solved. If mind and matter share absolutely nothing — no location, no properties in common — then there is no intelligible mechanism by which they could possibly affect one another. Yet every willed movement of a hand and every pang of physical pain seems to require exactly this impossible traffic. Descartes offered the pineal gland as the meeting point of soul and body, but this merely pushes the mystery one level down: <em>how</em> does an unextended soul interact even with one tiny gland?
         </p>
-        <p style={{ fontSize: '15px', lineHeight: 1.8, color: '#c0b8b0', margin: '0 0 16px 0' }}>
+        <p style={{ fontSize: "clamp(13px, 2vw, 15px)", lineHeight: 1.8, color: '#c0b8b0', margin: '0 0 16px 0' }}>
           His successors tried increasingly desperate solutions: Malebranche proposed that God intervenes on every single occasion (occasionalism); Leibniz suggested mind and body run on parallel tracks, never touching, pre-synchronized by God like two perfect clocks (parallelism). None found traction. The gap Descartes cut into reality became permanent. The entire modern philosophy of mind — from Ryle's "ghost in the machine" critique to contemporary debates about consciousness and physicalism — continues to work in the shadow of this wound.
         </p>
-        <p style={{ fontSize: '14px', lineHeight: 1.75, color: '#907070', fontStyle: 'italic', margin: 0, borderTop: '1px solid #2a1a1a', paddingTop: '14px' }}>
+        <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", lineHeight: 1.75, color: '#907070', fontStyle: 'italic', margin: 0, borderTop: '1px solid #2a1a1a', paddingTop: '14px' }}>
           This pressure forces the next development: if dualism is incoherent, perhaps mind and matter are not two substances but one — leading either to the view that everything is mind (idealism) or everything is matter (materialism), or to Spinoza's radical proposal that both are aspects of a single infinite substance.
         </p>
       </div>
@@ -4957,8 +4957,8 @@ function DescartesDualism() {
                   borderRadius: '0 6px 6px 0',
                   padding: '14px 18px',
                 }}>
-                  <div style={{ fontSize: '13px', fontWeight: 'bold', color: '#C0392B', marginBottom: '8px' }}>{echo.title}</div>
-                  <p style={{ fontSize: '14px', lineHeight: 1.75, color: '#b8a8b0', margin: 0 }}>{echo.body}</p>
+                  <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: 'bold', color: '#C0392B', marginBottom: '8px' }}>{echo.title}</div>
+                  <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", lineHeight: 1.75, color: '#b8a8b0', margin: 0 }}>{echo.body}</p>
                 </div>
               ))}
             </div>
@@ -5068,7 +5068,7 @@ function SpinozaOneSubstance() {
           <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#a8d5b5" }}>
             Spinoza's Radical Answer: One Substance
           </h1>
-          <p style={{ fontSize: 15, color: "#7aab8a", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          <p style={{ fontSize: "clamp(13px, 2vw, 15px)", color: "#7aab8a", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
             Spinoza argued that if substance must be self-sufficient, only one substance — God or Nature as a whole — truly qualifies, and mind and body are simply two attributes of that single reality.
           </p>
         </div>
@@ -5085,7 +5085,7 @@ function SpinozaOneSubstance() {
           <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#2C6E49", marginBottom: 12, fontWeight: "bold" }}>
             The Problem
           </div>
-          <p style={{ margin: 0, lineHeight: 1.85, fontSize: 15, color: "#c8ddd0" }}>
+          <p style={{ margin: 0, lineHeight: 1.85, fontSize: "clamp(13px, 2vw, 15px)", color: "#c8ddd0" }}>
             Descartes left us with a mind made of pure thought and a body made of pure extension — two substances sharing absolutely nothing in common. But this radical division creates an agonizing puzzle: when you decide to raise your hand, how does a weightless, spaceless thought cause a physical limb to move? When a thorn pierces your skin, how does that mechanical event produce felt pain? There is no common currency, no interface, no causal bridge — yet the coordination happens, relentlessly, every moment of conscious life. The interaction problem is not a puzzle at the edges of Cartesian dualism. It is a crack running straight through its foundation.
           </p>
         </div>
@@ -5099,13 +5099,13 @@ function SpinozaOneSubstance() {
           marginBottom: 32,
         }}>
           <div style={{ marginBottom: 24 }}>
-            <div style={{ fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "#2C6E49", marginBottom: 8, fontWeight: "bold" }}>
+            <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", letterSpacing: 2, textTransform: "uppercase", color: "#2C6E49", marginBottom: 8, fontWeight: "bold" }}>
               Main Visualization
             </div>
-            <h2 style={{ fontSize: 19, fontWeight: "normal", margin: "0 0 8px 0", color: "#a8d5b5" }}>
+            <h2 style={{ fontSize: "clamp(16px, 2.4vw, 19px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#a8d5b5" }}>
               One Cylinder, Two Shadows
             </h2>
-            <p style={{ fontSize: 14, color: "#7aab8a", margin: 0, lineHeight: 1.7 }}>
+            <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: "#7aab8a", margin: 0, lineHeight: 1.7 }}>
               Drag the cylinder or click "Fire a Decision" to see how one event produces two simultaneous descriptions — mental and physical — with no signal passing between them.
             </p>
           </div>
@@ -5123,7 +5123,7 @@ function SpinozaOneSubstance() {
                   background: view === v ? "rgba(44,110,73,0.25)" : "rgba(20,35,25,0.5)",
                   color: view === v ? "#a8d5b5" : "#5a7a65",
                   cursor: "pointer",
-                  fontSize: 13,
+                  fontSize: "clamp(12px, 1.6vw, 13px)",
                   letterSpacing: 1,
                   fontFamily: "Georgia, serif",
                   transition: "all 0.3s",
@@ -5323,7 +5323,7 @@ function SpinozaOneSubstance() {
                   background: isAnimating ? "rgba(44,110,73,0.1)" : "rgba(44,110,73,0.22)",
                   color: isAnimating ? "#3a6a4a" : "#a8d5b5",
                   cursor: isAnimating ? "default" : "pointer",
-                  fontSize: 13,
+                  fontSize: "clamp(12px, 1.6vw, 13px)",
                   fontFamily: "Georgia, serif",
                   letterSpacing: 1,
                   transition: "all 0.3s",
@@ -5339,10 +5339,10 @@ function SpinozaOneSubstance() {
             <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#2C6E49", marginBottom: 14, fontWeight: "bold" }}>
               The Argument
             </div>
-            <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: 15, color: "#b8d8c4" }}>
+            <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: "clamp(13px, 2vw, 15px)", color: "#b8d8c4" }}>
               Spinoza accepted Descartes' own definition: a substance is whatever exists in itself and is conceived through itself. Then he pressed the question — do mind and matter actually meet this test? They do not. Both depend on God for their existence, which means neither is truly self-sufficient. Only one thing passes: the whole of existence, which Spinoza identified with God or Nature. Everything else — every thought, every particle, every person — is a mode: a wave-pattern within that single ocean.
             </p>
-            <p style={{ margin: 0, lineHeight: 1.85, fontSize: 15, color: "#b8d8c4" }}>
+            <p style={{ margin: 0, lineHeight: 1.85, fontSize: "clamp(13px, 2vw, 15px)", color: "#b8d8c4" }}>
               Mind and body are not separate substances but two attributes of the one substance — just as a single cylinder casts a circle on one wall and a rectangle on another. The shadows change together not because one causes the other, but because both are projections of the same underlying reality. The interaction problem dissolves entirely: there was never a gap between mind and body because they were never two things.
             </p>
           </div>
@@ -5380,10 +5380,10 @@ function SpinozaOneSubstance() {
               borderRadius: 6,
               padding: "16px 20px",
             }}>
-              <div style={{ fontSize: 13, fontWeight: "bold", color: "#52B788", marginBottom: 8 }}>
+              <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: "bold", color: "#52B788", marginBottom: 8 }}>
                 {concepts.find(c => c.id === hoveredConcept)?.label}
               </div>
-              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: "#c8c0b4" }}>
+              <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: "#c8c0b4" }}>
                 {concepts.find(c => c.id === hoveredConcept)?.desc}
               </p>
             </div>
@@ -5402,13 +5402,13 @@ function SpinozaOneSubstance() {
           <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#2C6E49", marginBottom: 12, fontWeight: "bold" }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: 15, color: "#c8ddd0" }}>
+          <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: "clamp(13px, 2vw, 15px)", color: "#c8ddd0" }}>
             Spinoza's monism eliminates one mystery only to surface another. If individual people, animals, and objects are merely modes — temporary patterns in one infinite substance, like waves briefly cresting on an ocean — then there is no space for genuine free will. Every decision was already determined by the prior state of the one substance unfolding according to its own nature. Spinoza himself acknowledged this: a stone flying through the air, if it were conscious, would imagine it was choosing its path. So do we.
           </p>
-          <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: 15, color: "#c8ddd0" }}>
+          <p style={{ margin: "0 0 14px 0", lineHeight: 1.85, fontSize: "clamp(13px, 2vw, 15px)", color: "#c8ddd0" }}>
             There is also a deeper structural puzzle: if the one substance is infinite, undivided, and self-sufficient, why does it express itself as a structured, intricate world of apparently distinct things rather than an undifferentiated unity? What drives the ocean to form waves at all?
           </p>
-          <p style={{ margin: 0, lineHeight: 1.85, fontSize: 14, color: "#7aab8a", fontStyle: "italic" }}>
+          <p style={{ margin: 0, lineHeight: 1.85, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#7aab8a", fontStyle: "italic" }}>
             This pressure forces the next development — thinkers must either rescue individual existence from the ocean of monism or find a new framework that accommodates both unity and genuine plurality without collapsing back into dualism's fatal gap.
           </p>
         </div>
@@ -5445,24 +5445,24 @@ function SpinozaOneSubstance() {
 
           {echosOpen && (
             <div style={{ padding: "0 28px 24px 28px", borderTop: "1px solid #1a2a1f" }}>
-              <p style={{ marginTop: 20, marginBottom: 16, fontSize: 14, color: "#7aab8a", lineHeight: 1.7, fontStyle: "italic" }}>
+              <p style={{ marginTop: 20, marginBottom: 16, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#7aab8a", lineHeight: 1.7, fontStyle: "italic" }}>
                 Spinoza's framework anticipates several live debates in contemporary science and philosophy of mind:
               </p>
 
               <div style={{ marginBottom: 20 }}>
-                <div style={{ fontSize: 14, color: "#a8d5b5", fontWeight: "bold", marginBottom: 6 }}>
+                <div style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: "#a8d5b5", fontWeight: "bold", marginBottom: 6 }}>
                   Neuroscience and the Readiness Potential
                 </div>
-                <p style={{ margin: 0, fontSize: 14, color: "#8aab98", lineHeight: 1.75 }}>
+                <p style={{ margin: 0, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#8aab98", lineHeight: 1.75 }}>
                   Benjamin Libet's brain-scan studies — and their many successors — showed that neural activity associated with a voluntary movement begins several hundred milliseconds before the subject becomes consciously aware of the intention to move. This is not evidence that the brain "overrides" the mind; it is evidence that the mental event and the neural event are the same event, described simultaneously in two vocabularies. The physical readout precedes the conscious report not because matter causes thought but because both are aspects of one process whose grain is finer than our introspective access to it.
                 </p>
               </div>
 
               <div>
-                <div style={{ fontSize: 14, color: "#a8d5b5", fontWeight: "bold", marginBottom: 6 }}>
+                <div style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: "#a8d5b5", fontWeight: "bold", marginBottom: 6 }}>
                   The Cylinder and Its Shadows
                 </div>
-                <p style={{ margin: 0, fontSize: 14, color: "#8aab98", lineHeight: 1.75 }}>
+                <p style={{ margin: 0, fontSize: "clamp(12px, 1.8vw, 14px)", color: "#8aab98", lineHeight: 1.75 }}>
                   The visualization above is not merely an analogy — it is Spinoza's own image, refined. A cylinder rotates; on one wall appears a circle, on another a rectangle. Neither shadow causes the other. No message passes between the walls. Yet they are perfectly coordinated because both are projections of the same object. This is precisely Spinoza's claim about every thought and its corresponding neural state: not cause and effect, but two readings of one underlying event, just as temperature in Celsius and Fahrenheit describe the same physical reality in different numerical vocabularies.
                 </p>
               </div>
@@ -5579,7 +5579,7 @@ function LeibnizMonads() {
         <h1 style={{ fontSize: 'clamp(22px, 4vw, 36px)', fontWeight: 'normal', margin: '0 0 8px 0', color: '#C09EE0' }}>
           Leibniz, Monads, and the Seeds of Possible Worlds
         </h1>
-        <p style={{ fontSize: 15, color: '#9080a8', margin: 0, lineHeight: 1.6, fontStyle: 'italic' }}>
+        <p style={{ fontSize: "clamp(13px, 2vw, 15px)", color: '#9080a8', margin: 0, lineHeight: 1.6, fontStyle: 'italic' }}>
           Leibniz rebuilt metaphysics from scratch — not one substance, but infinitely many, each sealed within itself, each a universe entire, their harmony pre-established by God before creation.
         </p>
       </div>
@@ -5599,7 +5599,7 @@ function LeibnizMonads() {
         <div style={{ fontSize: '10px', letterSpacing: '3px', textTransform: 'uppercase', color: '#9B7EC7', marginBottom: '12px', fontWeight: 'bold' }}>
           The Problem
         </div>
-        <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#d4c8e8', maxWidth: '800px', margin: 0 }}>
+        <p style={{ fontSize: "clamp(14px, 2vw, 16px)", lineHeight: '1.7', color: '#d4c8e8', maxWidth: '800px', margin: 0 }}>
           Spinoza's monism cannot account for the genuine diversity and structure of the world. If reality is one infinite substance, why does it produce structured individuals rather than undifferentiated mass? The pressure of this question forced Leibniz to rebuild metaphysics from scratch — not one substance, but infinitely many, each sealed within itself, each a universe entire.
         </p>
       </div>
@@ -5607,10 +5607,10 @@ function LeibnizMonads() {
       {/* MAIN VISUALIZATION */}
       <div style={{ padding: '36px 40px' }}>
         <div style={{ marginBottom: '24px' }}>
-          <h2 style={{ fontSize: '22px', color: '#C09EE0', margin: '0 0 8px 0', letterSpacing: '1px' }}>
+          <h2 style={{ fontSize: "clamp(17px, 2.8vw, 22px)", color: '#C09EE0', margin: '0 0 8px 0', letterSpacing: '1px' }}>
             The Monad Universe
           </h2>
-          <p style={{ fontSize: '14px', color: '#9080a8', margin: 0, lineHeight: '1.6' }}>
+          <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: '#9080a8', margin: 0, lineHeight: '1.6' }}>
             Each sphere is a monad — sealed, windowless, unextended. Move the timeline to watch their internal states unfold in perfect harmony. Click a monad to inspect its inner nature. Try to draw a causal arrow between monads to discover why no windows exist.
           </p>
         </div>
@@ -5633,7 +5633,7 @@ function LeibnizMonads() {
                 borderRadius: '6px 6px 0 0',
                 cursor: 'pointer',
                 fontFamily: 'Georgia, serif',
-                fontSize: '13px',
+                fontSize: "clamp(12px, 1.6vw, 13px)",
                 transition: 'all 0.2s',
               }}
             >
@@ -5818,7 +5818,7 @@ function LeibnizMonads() {
                     <div style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: selectedMonad.color, marginBottom: '10px' }}>
                       Monad Inspection
                     </div>
-                    <div style={{ fontSize: '18px', color: '#e0d0f8', marginBottom: '12px', fontWeight: 'bold' }}>
+                    <div style={{ fontSize: "clamp(15px, 2.2vw, 18px)", color: '#e0d0f8', marginBottom: '12px', fontWeight: 'bold' }}>
                       {selectedMonad.label}
                     </div>
                     <div style={{ marginBottom: '16px' }}>
@@ -5844,7 +5844,7 @@ function LeibnizMonads() {
                         );
                       })()}
                     </div>
-                    <p style={{ fontSize: '13px', color: '#c0b0d8', lineHeight: '1.65', margin: '0 0 14px 0' }}>
+                    <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: '#c0b0d8', lineHeight: '1.65', margin: '0 0 14px 0' }}>
                       {selectedMonad.nature}
                     </p>
                     <div style={{
@@ -5866,7 +5866,7 @@ function LeibnizMonads() {
                     borderRadius: '12px',
                     padding: '20px',
                   }}>
-                    <p style={{ fontSize: '13px', color: '#7B5EA7', margin: '0 0 8px 0', lineHeight: '1.6', fontStyle: 'italic' }}>
+                    <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: '#7B5EA7', margin: '0 0 8px 0', lineHeight: '1.6', fontStyle: 'italic' }}>
                       Click any monad to inspect its inner nature and current perceptual state.
                     </p>
                     <p style={{ fontSize: '12px', color: '#5a4870', margin: 0, lineHeight: '1.5' }}>
@@ -5888,8 +5888,8 @@ function LeibnizMonads() {
             padding: '28px',
           }}>
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#C09EE0', margin: '0 0 10px 0', fontSize: '16px' }}>The Clock Analogy</h3>
-              <p style={{ fontSize: '14px', color: '#9080a8', lineHeight: '1.65', margin: 0 }}>
+              <h3 style={{ color: '#C09EE0', margin: '0 0 10px 0', fontSize: "clamp(14px, 2vw, 16px)" }}>The Clock Analogy</h3>
+              <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: '#9080a8', lineHeight: '1.65', margin: 0 }}>
                 Leibniz illustrated pre-established harmony with synchronized clocks. Each clock runs entirely on its own mechanism — they never communicate — yet they always show the same time. God set all monads running at creation; their perfect coordination requires no ongoing intervention and no causal contact between them.
               </p>
             </div>
@@ -5962,13 +5962,13 @@ function LeibnizMonads() {
             <div style={{ marginTop: '20px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               <div style={{ background: '#1a0f2e', border: '1px solid #2a1a3e', borderRadius: '8px', padding: '16px' }}>
                 <div style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: '#9B7EC7', marginBottom: '8px' }}>The Problem It Solves</div>
-                <p style={{ fontSize: '13px', color: '#a090c0', lineHeight: '1.6', margin: 0 }}>
+                <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: '#a090c0', lineHeight: '1.6', margin: 0 }}>
                   How does my mind move my body if mind and matter are utterly different substances? Pre-established harmony dissolves the problem: they do not interact. Each unfolds its own states; God ensured they correspond perfectly.
                 </p>
               </div>
               <div style={{ background: '#1a0f2e', border: '1px solid #2a1a3e', borderRadius: '8px', padding: '16px' }}>
                 <div style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: '#9B7EC7', marginBottom: '8px' }}>The Price Paid</div>
-                <p style={{ fontSize: '13px', color: '#a090c0', lineHeight: '1.6', margin: 0 }}>
+                <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: '#a090c0', lineHeight: '1.6', margin: 0 }}>
                   The solution is ontologically extravagant. It posits infinitely many sealed substances and a God who computes their coordination eternally. Critics asked: if no monad ever truly acts on another, what does causation even mean?
                 </p>
               </div>
@@ -5985,8 +5985,8 @@ function LeibnizMonads() {
             padding: '28px',
           }}>
             <div style={{ marginBottom: '20px' }}>
-              <h3 style={{ color: '#C09EE0', margin: '0 0 10px 0', fontSize: '16px' }}>God's Selection: The Best of All Possible Worlds</h3>
-              <p style={{ fontSize: '14px', color: '#9080a8', lineHeight: '1.65', margin: 0 }}>
+              <h3 style={{ color: '#C09EE0', margin: '0 0 10px 0', fontSize: "clamp(14px, 2vw, 16px)" }}>God's Selection: The Best of All Possible Worlds</h3>
+              <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: '#9080a8', lineHeight: '1.65', margin: 0 }}>
                 Leibniz introduced the concept of possible worlds as the logical space God surveyed before creation. Each world is a set of compossible monads — a complete, internally consistent configuration of all possible substances. From this infinite space of possibilities, God necessarily chose the world with the greatest ratio of perfection to simplicity.
               </p>
             </div>
@@ -6067,10 +6067,10 @@ function LeibnizMonads() {
                       <div style={{ fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: world.isActual ? '#C09EE0' : world.compossible ? '#7B5EA7' : '#aa4040', marginBottom: '10px' }}>
                         {world.isActual ? 'The Actual World' : world.compossible ? 'Possible World' : 'Impossible Configuration'}
                       </div>
-                      <div style={{ fontSize: '18px', color: '#e0d0f8', marginBottom: '12px', fontWeight: 'bold' }}>
+                      <div style={{ fontSize: "clamp(15px, 2.2vw, 18px)", color: '#e0d0f8', marginBottom: '12px', fontWeight: 'bold' }}>
                         {world.label}
                       </div>
-                      <p style={{ fontSize: '13px', color: '#c0b0d8', lineHeight: '1.65', margin: '0 0 16px 0' }}>
+                      <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: '#c0b0d8', lineHeight: '1.65', margin: '0 0 16px 0' }}>
                         {world.desc}
                       </p>
                       {world.isActual && (
@@ -6133,10 +6133,10 @@ function LeibnizMonads() {
             padding: '16px 20px',
             marginBottom: 4,
           }}>
-            <div style={{ fontSize: 13, fontWeight: 'bold', color: '#C09EE0', marginBottom: 8 }}>
+            <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", fontWeight: 'bold', color: '#C09EE0', marginBottom: 8 }}>
               {leibnizConcepts.find(c => c.id === hoveredConcept)?.label}
             </div>
-            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.75, color: '#c8c0b4' }}>
+            <p style={{ margin: 0, fontSize: "clamp(12px, 1.6vw, 13px)", lineHeight: 1.75, color: '#c8c0b4' }}>
               {leibnizConcepts.find(c => c.id === hoveredConcept)?.desc}
             </p>
           </div>
@@ -6160,13 +6160,13 @@ function LeibnizMonads() {
         <div style={{ fontSize: '10px', letterSpacing: '3px', textTransform: 'uppercase', color: '#7B5EA7', marginBottom: '14px', fontWeight: 'bold' }}>
           The Difficulty
         </div>
-        <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#d4c8e8', maxWidth: '800px', margin: '0 0 14px 0' }}>
+        <p style={{ fontSize: "clamp(14px, 2vw, 16px)", lineHeight: '1.7', color: '#d4c8e8', maxWidth: '800px', margin: '0 0 14px 0' }}>
           Pre-established harmony is ontologically extravagant and empirically idle. If no monad ever truly acts on another, the concept of causation is evacuated of meaning — we have the appearance of interaction with none of the substance. The system also depends utterly on God's existence and benevolence: remove God and the entire scaffolding collapses.
         </p>
-        <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#d4c8e8', maxWidth: '800px', margin: '0 0 14px 0' }}>
+        <p style={{ fontSize: "clamp(14px, 2vw, 16px)", lineHeight: '1.7', color: '#d4c8e8', maxWidth: '800px', margin: '0 0 14px 0' }}>
           More fundamentally, Leibniz's entire architecture rests on the concept of substance — independently existing bearers of properties with a complete individual concept. The next generation of thinkers, shaped by Newton's success and Locke's empiricism, will ask a devastating question: can we form any coherent idea of substance at all?
         </p>
-        <p style={{ fontSize: '14px', color: '#9B7EC7', margin: 0, fontStyle: 'italic' }}>
+        <p style={{ fontSize: "clamp(12px, 1.8vw, 14px)", color: '#9B7EC7', margin: 0, fontStyle: 'italic' }}>
           This pressure forces the next development: Hume's radical empiricism will dissolve the very concept of substance and necessary connection, leaving causation itself in need of reconstruction.
         </p>
       </div>
@@ -6204,7 +6204,7 @@ function LeibnizMonads() {
 
           {echosOpen && (
             <div style={{ padding: '0 24px 24px', borderTop: '1px solid #2a1a3e' }}>
-              <p style={{ fontSize: '13px', color: '#6a5880', marginTop: '16px', marginBottom: '20px', lineHeight: '1.6' }}>
+              <p style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: '#6a5880', marginTop: '16px', marginBottom: '20px', lineHeight: '1.6' }}>
                 Leibniz's seemingly arcane metaphysics left deep marks on modern thought, logic, and science.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -6232,7 +6232,7 @@ function LeibnizMonads() {
                     borderRadius: '0 6px 6px 0',
                     padding: '14px 18px',
                   }}>
-                    <div style={{ fontSize: '13px', color: '#C09EE0', marginBottom: '8px', fontWeight: 'bold', lineHeight: '1.4' }}>{echo.title}</div>
+                    <div style={{ fontSize: "clamp(12px, 1.6vw, 13px)", color: '#C09EE0', marginBottom: '8px', fontWeight: 'bold', lineHeight: '1.4' }}>{echo.title}</div>
                     <p style={{ fontSize: '12px', color: '#8070a0', lineHeight: '1.6', margin: 0 }}>{echo.body}</p>
                   </div>
                 ))}
