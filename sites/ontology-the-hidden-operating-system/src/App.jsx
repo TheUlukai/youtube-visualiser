@@ -1398,14 +1398,28 @@ function ParmenidesBeing() {
 
           {echoesOpen && (
             <div style={{ padding: "0 28px 24px", borderTop: `1px solid #1a0a1a` }}>
-              <p style={{ fontSize: 15, lineHeight: 1.85, color: "#c4b0c2", marginTop: 18, marginBottom: 0 }}>
-                The conservation laws of physics carry the deepest echo of Parmenides. Energy cannot be created
-                from nothing, nor can it pass into nothing — it is only ever transformed. Something persists beneath
-                all apparent change, unchanging in total quantity. When physicists write down a conservation equation,
-                they are — unknowingly or not — honoring the Parmenidean intuition that pure non-being has no causal
-                power. What seems to vanish has merely taken another form; what seems to appear was always already
-                there. The universe's ledger never goes to zero.
-              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: "Conservation Laws in Physics",
+                    body: "The conservation laws of physics carry the deepest echo of Parmenides. Energy cannot be created from nothing, nor can it pass into nothing — it is only ever transformed. Something persists beneath all apparent change, unchanging in total quantity. When physicists write down a conservation equation, they are — unknowingly or not — honoring the Parmenidean intuition that pure non-being has no causal power."
+                  }
+                ].map((item, i) => (
+                  <div key={i} style={{
+                    borderLeft: `3px solid ${accentGlow}`,
+                    borderRadius: "0 6px 6px 0",
+                    background: `${accent}0a`,
+                    padding: "14px 18px",
+                  }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: accentGlow, marginBottom: 6 }}>
+                      {item.title}
+                    </div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                      {item.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
