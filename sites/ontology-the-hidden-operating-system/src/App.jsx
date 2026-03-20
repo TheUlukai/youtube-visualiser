@@ -11559,14 +11559,27 @@ function PropertiesUniversalsTropes() {
           </button>
           {echosOpen && (
             <div style={{ padding: "0 28px 24px", borderTop: "1px solid #2a1a2a" }}>
-              <p style={{ fontSize: 14, color: "#c0b0d4", lineHeight: 1.8, marginTop: 18 }}>
-                Machine learning image classifiers offer a vivid contemporary echo of this debate. When a neural network learns to recognize 'cat,' it must handle the fact that thousands of training images share relevant features. Different architectural choices implicitly embody different philosophical assumptions: a network that learns a single shared feature-vector representation resembles realism, positing something like a universal cat-feature present across instances. A network relying on nearest-neighbor resemblance to training examples mirrors nominalism, treating sharing as similarity without a common third entity. And a network that maintains individual learned embeddings for each training image — grouping them by similarity at inference time — echoes trope theory, where each data point has its own particular instance of the property, and classification is resemblance among tropes.
-              </p>
-              <p style={{ fontSize: 13, color: "#9a7ab0", lineHeight: 1.75, fontStyle: "italic", marginTop: 8 }}>
-                The debate is not merely medieval: every system that categorizes the world must implicitly answer whether what is shared is identity, resemblance, or particular instance — and each answer carries a different burden of explanation.
-              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: "3px solid #C0392B", borderRadius: "0 6px 6px 0", background: "rgba(192,57,43,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#e06050", marginBottom: 6 }}>Machine Learning and the Universals Debate</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    When a neural network learns to recognize 'cat,' different architectural choices implicitly embody different philosophical positions. A network that learns a single shared feature-vector resembles realism, positing a universal cat-feature present across instances. One relying on nearest-neighbor resemblance mirrors nominalism. One maintaining individual embeddings grouped at inference time echoes trope theory — each instance has its own particular property, and classification is resemblance among tropes.
+                  </p>
+                </div>
+                <div style={{ borderLeft: "3px solid #C0392B", borderRadius: "0 6px 6px 0", background: "rgba(192,57,43,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#e06050", marginBottom: 6 }}>Legal Categories and Property Kinds</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    Every system that categorizes the world must implicitly answer whether what is shared is identity, resemblance, or particular instance. Law faces the same structure when deciding whether two acts belong to the same legal category — is there a universal offense-type, or only resemblance among particular acts? Each answer carries a different burden of explanation and different consequences for how edge cases are decided.
+                  </p>
+                </div>
+              </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a0a0a", letterSpacing: 1 }}>
+          Part 20 of 35 — Ontology
         </div>
 
       </div>
