@@ -7918,6 +7918,11 @@ function HegelBecoming() {
           )}
         </div>
 
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a0a0a", letterSpacing: 1 }}>
+          Part 13 of 35 — Ontology
+        </div>
+
       </div>
     </div>
   );
