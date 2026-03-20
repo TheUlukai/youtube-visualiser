@@ -134,6 +134,18 @@ The component MUST contain these layers in order:
    No hover effects on cards. No emoji icons. No per-card accent color variation.
    The toggle button uses a plain <button> (width "100%", background transparent, border none).
 
+6. SECTION FOOTER (required, after Real-World Echoes)
+   The very last element inside the inner maxWidth wrapper — a single centred line:
+
+     {{/* Footer */}}
+     <div style={{{{ textAlign: "center", marginTop: 36, fontSize: 12, color: ACCENT_DIM, letterSpacing: 1 }}}}>
+       Part {part_number} of {total_sections} — {series_topic}
+     </div>
+
+   ACCENT_DIM is the section accent at ~30–40% brightness (a very dark tint of the accent, not transparent).
+   The text MUST use the series title exactly as given: "{series_topic}".
+   Never use a section-specific subtitle here — the footer text is the same series name for every section.
+
 === STYLE GUIDELINES ===
 - Background: radial gradient from a dark version of the accent color to near-black (#0a0a0f)
 - All text: Georgia serif
@@ -242,6 +254,11 @@ def validate_jsx(code: str, component_name: str) -> tuple[bool, str]:
     # Look for the pattern near "Real-World Echoes" — rough heuristic
     if 'borderLeft: "3px solid' not in code and "borderLeft: `3px solid" not in code:
         return False, "RWE cards missing borderLeft accent stripe (must use borderLeft: '3px solid ACCENT')"
+
+    # Must have a section footer with "Part N of M" text after the RWE panel
+    # Simple heuristic: "Part " must appear more than once (header + footer at minimum)
+    if code.count("Part ") < 2:
+        return False, "Missing section footer — 'Part N of M' label appears fewer than twice (need header + footer)"
 
     # Check for banned patterns
     if "\\u" in code:

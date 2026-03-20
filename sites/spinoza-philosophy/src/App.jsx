@@ -1717,6 +1717,11 @@ function MakingOfRevolutionaryMind() {
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1e3048", letterSpacing: 1 }}>
+        Part 2 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -2834,6 +2839,11 @@ function ArchitectureOfRealityAttributesModes() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0e3838", letterSpacing: 1 }}>
+        Part 4 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -3522,6 +3532,11 @@ function UnityOfMindAndBody() {
             </div>
           </div>
         )}
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a4a2c", letterSpacing: 1 }}>
+        Part 5 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -4171,6 +4186,11 @@ function LadderOfKnowledge() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#4a2508", letterSpacing: 1 }}>
+        Part 6 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -4687,6 +4707,11 @@ function ConatusEssentialDrive() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#4a2010", letterSpacing: 1 }}>
+        Part 7 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -5299,6 +5324,11 @@ function EmotionalLifePassionToAction() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3d0b20", letterSpacing: 1 }}>
+        Part 8 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -5797,6 +5827,11 @@ function FreedomWithinNecessity() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a3860", letterSpacing: 1 }}>
+        Part 9 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -6359,6 +6394,11 @@ function ArtOfLivingEthicsFlourishing() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#4a3010", letterSpacing: 1 }}>
+        Part 10 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -7008,6 +7048,11 @@ function PoliticalVisionDemocracyLiberation() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a3835", letterSpacing: 1 }}>
+        Part 11 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -7507,6 +7552,11 @@ function CritiqueOfReligionScripture() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#4a3010", letterSpacing: 1 }}>
+        Part 12 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -9121,6 +9171,11 @@ function EducationTransformationSociety() {
             </div>
           </div>
         )}
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a2a58", letterSpacing: 1 }}>
+        Part 15 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -9709,6 +9764,11 @@ function ProblemOfEvilSuffering() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3a1808", letterSpacing: 1 }}>
+        Part 16 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -10475,6 +10535,11 @@ function EternityMindsImmortality() {
             </div>
           )}
         </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a1060", letterSpacing: 1 }}>
+        Part 17 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -11079,6 +11144,11 @@ function GeometricMethodDemonstration() {
             </div>
           </div>
         )}
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a2e38", letterSpacing: 1 }}>
+        Part 18 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div></div>
   );
@@ -12478,6 +12548,11 @@ function ContemporaryRelevanceModernApplications() {
           )}
         </div>
 
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a3826", letterSpacing: 1 }}>
+        Part 20 of 21 — Spinoza’s Philosophical System
+      </div>
       </div>
     </div>
   );
@@ -13121,8 +13196,8 @@ function UnityOfSpinozasSystemFinalIntegration() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 32, color: "#6b21a8", fontSize: 11, letterSpacing: 2 }}>
-          — SPINOZA'S ETHICS · SUB SPECIE AETERNITATIS —
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a1060", letterSpacing: 1 }}>
+          Part 21 of 21 — Spinoza's Philosophical System
         </div>
       </div>
     </div>

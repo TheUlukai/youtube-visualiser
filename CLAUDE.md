@@ -62,7 +62,7 @@ not just a static description of the idea itself.
 
 ### Rules
 - `textAlign: "center"` on the outer wrapper — never left-justified
-- Order is always: **Header → The Problem → Main Visualization → Key Concepts → The Difficulty → Real-World Echoes**
+- Order is always: **Header → The Problem → Main Visualization → Key Concepts → The Difficulty → Real-World Echoes → Footer**
 - The Problem panel must come **after** the header, never before it
 - `h1` uses `fontWeight: "normal"` and `clamp()` font size for mobile scaling
 
@@ -216,6 +216,24 @@ Each section component must have:
 - No grid layouts — always a single column regardless of item count
 - No per-item accent colors — all cards use the same section accent
 
+## Required: Section Footer
+**Every section MUST end with a centred footer line** as the very last element inside the inner `maxWidth` wrapper, after the Real-World Echoes panel. This is non-negotiable.
+
+### Structure
+```jsx
+{/* Footer */}
+<div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: ACCENT_DIM, letterSpacing: 1 }}>
+  Part N of M — Series Title
+</div>
+```
+
+### Rules
+- Text format is always `Part N of M — Series Title` (em dash, not hyphen)
+- `ACCENT_DIM` is a very dark tint of the section's accent colour (approximately 30–40% brightness) — the footer should be subtle, not prominent
+- `marginTop: 36` to separate it clearly from the Real-World Echoes panel
+- Placed INSIDE the inner `maxWidth` wrapper, as the last child — never outside it
+- The footer must use the same series name across all sections of a video (e.g. "Spinoza's Philosophical System"), never a section-specific subtitle
+
 ## File Structure
 ```
 scripts/
@@ -311,6 +329,8 @@ visualization under `sites/`, build it to `docs/`, and update the site index.
 - **Layer sublabels placed at the same y-coordinate as node centres** — if a band of nodes (ellipses, circles) and a sublabel share the same `y` value for their centre / baseline, the sublabel will sit inside the node geometry and be hidden or obscured. Position sublabels either above the layer label (`y = layer.y - N`) or below the node bottom (`y = layer.y + ry + lineHeight`), so they clear the node silhouette entirely.
 
 - **SVG annotation labels colliding with node circles** — stream labels, axis labels, or region labels positioned relative to the start/end point of a curve or line will collide with any node circle anchored at the same point. The label x/y is often set to match the curve's origin (e.g. `x = W * 0.08`) while the first node is also placed at that origin. Fix by moving the label to the canvas edge (`x = 6`) or otherwise offsetting it well clear of the node radius, and adjusting y so it clears the node's year/title text above or below.
+
+- **Missing section footer** — every section must end with a centred `Part N of M — Series Title` footer div as the very last element inside the inner `maxWidth` wrapper. Common failure modes: (1) the footer is absent entirely; (2) the series name varies between sections (e.g. "Spinoza's System" in one and "Spinoza's Philosophical System" in another); (3) the footer is placed outside the inner wrapper, making it full-width and misaligned. Fix by inserting the standard footer div (see "Required: Section Footer") as the last child of the inner wrapper, and ensure the series name is identical across all sections.
 
 - **Missing or misplaced section header** — every section must open with a centred `Part N of M` / `<h1>` / subtitle block placed *before* The Problem panel. Two failure modes to check: (1) the header block is absent entirely — the section jumps straight into The Problem or the main visualization; (2) The Problem panel renders above the `<h1>`, making the heading appear mid-page. Fix by inserting the standard header block (see "Required: Section Header Block") as the very first element inside the section's root div, and moving any misplaced Problem panel to after it.
 
