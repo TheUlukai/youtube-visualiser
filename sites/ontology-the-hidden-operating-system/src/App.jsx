@@ -8617,15 +8617,17 @@ function HeideggerBeingDasein() {
     <div style={containerStyle}>
 
       {/* Header */}
-      <div style={{ marginBottom: '12px', opacity: 0.6, fontSize: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
-        Part 15 of 35 — Ontology Series
+      <div style={{ textAlign: "center", marginBottom: 32 }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#5A4E3A", marginBottom: 8 }}>
+          Part 15 of 35 — Ontology
+        </div>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#e8d5b7", margin: "0 0 8px 0", lineHeight: 1.3 }}>
+          Heidegger and the Forgotten Question
+        </h1>
+        <p style={{ fontSize: 15, color: "#9a8a6a", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          Heidegger argued that philosophy had catalogued beings for 2,500 years while forgetting to ask about Being itself — and that the key to this question lies in Dasein's practical, temporal, embedded existence.
+        </p>
       </div>
-      <h1 style={{ fontSize: 'clamp(20px, 3.5vw, 32px)', fontWeight: 'normal', color: '#e8d5b7', marginBottom: '6px', letterSpacing: '0.5px' }}>
-        Heidegger and the Forgotten Question
-      </h1>
-      <p style={{ fontSize: '15px', color: '#9a8a6a', marginBottom: '32px', fontStyle: 'italic', lineHeight: '1.6' }}>
-        Heidegger argued that philosophy had catalogued beings for 2,500 years while forgetting to ask about Being itself — and that the key to this question lies in Dasein's practical, temporal, embedded existence.
-      </p>
 
       {/* 1. THE PROBLEM PANEL */}
       <div style={{
@@ -9009,6 +9011,11 @@ function HeideggerBeingDasein() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1e1a10", letterSpacing: 1 }}>
+        Part 15 of 35 — Ontology
       </div>
 
     </div>
