@@ -1920,8 +1920,8 @@ function HeraclitusFlux() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: "32px", fontSize: "12px", color: "#3a6a6e", letterSpacing: "1px" }}>
-        Next: The Pluralists — Anaxagoras, Empedocles, and the search for a middle ground between the One and the Many
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a2a2c", letterSpacing: 1 }}>
+        Part 3 of 35 — Ontology
       </div>
     </div>
   );
