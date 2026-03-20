@@ -6245,6 +6245,7 @@ function LeibnizMonads() {
           Part 10 of 35 — Ontology
         </div>
       </div>
+      </div>
     </div>
   );
 }
