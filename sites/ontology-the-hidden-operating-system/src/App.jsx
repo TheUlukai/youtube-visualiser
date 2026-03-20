@@ -7041,15 +7041,17 @@ function KantCopernican() {
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: "10px" }}>
-          <span style={{ fontSize: "11px", color: "#3A6186", letterSpacing: "0.15em", textTransform: "uppercase" }}>Part 12 of 35 · Ontology</span>
+        <div style={{ textAlign: "center", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#3A6186", marginBottom: 8 }}>
+            Part 12 of 35 — Ontology
+          </div>
+          <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#e8f0f8", margin: "0 0 8px 0", lineHeight: 1.3 }}>
+            Kant Turns Ontology Inside Out
+          </h1>
+          <p style={{ fontSize: 15, color: "#8aa4bc", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+            Kant argued that space, time, and causation are not features discovered in the world but structures the mind imposes on raw sensation, making traditional ontology of things-in-themselves impossible.
+          </p>
         </div>
-        <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "normal", color: "#e8f0f8", margin: "0 0 8px 0", lineHeight: "1.3" }}>
-          Kant Turns Ontology Inside Out
-        </h1>
-        <p style={{ fontSize: "14px", color: "#8aa4bc", margin: "0 0 32px 0", fontStyle: "italic", lineHeight: "1.6" }}>
-          Kant argued that space, time, and causation are not features discovered in the world but structures the mind imposes on raw sensation, making traditional ontology of things-in-themselves impossible.
-        </p>
 
         {/* THE PROBLEM PANEL */}
         <div style={{
@@ -7325,6 +7327,11 @@ function KantCopernican() {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a2d3d", letterSpacing: 1 }}>
+          Part 12 of 35 — Ontology
         </div>
 
       </div>
