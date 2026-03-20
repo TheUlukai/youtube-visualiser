@@ -674,7 +674,7 @@ function KantRevolutionaryIntroduction() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#051820", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0c303e", letterSpacing: 1 }}>
           Part 1 of 21 — Kant's Critical Philosophy
         </div>
       </div>
@@ -1252,7 +1252,7 @@ function MakingOfRevolutionaryMind() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a1005", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#29210d", letterSpacing: 1 }}>
           Part 2 of 21 — Kant's Critical Philosophy
         </div>
 
@@ -1858,7 +1858,7 @@ function CriticalTurnFirstCritique() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1a10", letterSpacing: 1, maxWidth: 900, margin: "36px auto 0 auto", padding: "0 40px" }}>
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#143024", letterSpacing: 1, maxWidth: 900, margin: "36px auto 0 auto", padding: "0 40px" }}>
         Part 3 of 21 — Kant's Critical Philosophy
       </div>
     </div>
@@ -2432,7 +2432,7 @@ function SpaceTimeFormsOfIntuition() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#1a0a2e', letterSpacing: 1, maxWidth: '900px', margin: '36px auto 0 auto', padding: '0 40px' }}>
+      <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#372a4b', letterSpacing: 1, maxWidth: '900px', margin: '36px auto 0 auto', padding: '0 40px' }}>
         Part 4 of 21 — Kant's Critical Philosophy
       </div>
     </div>
@@ -3223,7 +3223,7 @@ function CategoriesLogicOfExperience() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#060f18", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0c2433", letterSpacing: 1 }}>
           Part 5 of 21 — Kant's Critical Philosophy
         </div>
       </div>
@@ -3835,7 +3835,7 @@ function TranscendentalDeductionUnity() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#04160d", letterSpacing: 1, maxWidth: 860, margin: "36px auto 0 auto" }}>
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#062215", letterSpacing: 1, maxWidth: 860, margin: "36px auto 0 auto" }}>
         Part 6 of 21 — Kant's Critical Philosophy
       </div>
     </div>
@@ -4376,7 +4376,7 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#180810", letterSpacing: 1, maxWidth: 820, margin: "36px auto 0 auto" }}>
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#210b1e", letterSpacing: 1, maxWidth: 820, margin: "36px auto 0 auto" }}>
         Part 7 of 21 — Kant's Critical Philosophy
       </div>
     </div>
@@ -5196,7 +5196,7 @@ function AntinomiesIllusionsPureReason() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#200505', letterSpacing: 1, maxWidth: 900, margin: '36px auto 0 auto' }}>
+      <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#3f0c0c', letterSpacing: 1, maxWidth: 900, margin: '36px auto 0 auto' }}>
         Part 8 of 21 — Kant's Critical Philosophy
       </div>
     </div>
@@ -5749,7 +5749,7 @@ function TransitionToPracticalPhilosophy() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#2a1005', letterSpacing: 1 }}>
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#512d0d', letterSpacing: 1 }}>
           Part 9 of 21 — Kant's Critical Philosophy
         </div>
 
@@ -6480,7 +6480,7 @@ function CategoricalImperativeFoundationMorality() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#071520", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0d293e", letterSpacing: 1 }}>
           Part 10 of 21 — Kant's Critical Philosophy
         </div>
 
@@ -7102,7 +7102,7 @@ function FreedomAutonomyGoodwill() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0f1a09", letterSpacing: 1 }}>
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1b2915", letterSpacing: 1 }}>
         Part 11 of 21 — Kant's Critical Philosophy
       </div>
       </div>
@@ -7626,7 +7626,7 @@ function CritiquePracticalReasonMoralPsychology() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a0f20", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#141c37", letterSpacing: 1 }}>
           Part 12 of 21 — Kant's Critical Philosophy
         </div>
 
@@ -8266,7 +8266,7 @@ function PostulatesGodFreedomImmortality() {
           )}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a0a30", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#302245", letterSpacing: 1 }}>
           Part 13 of 21 — Kant's Critical Philosophy
         </div>
       </div>
@@ -8782,7 +8782,7 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1e10", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#133824", letterSpacing: 1 }}>
           Part 14 of 21 — Kant's Critical Philosophy
         </div>
 
@@ -9448,7 +9448,7 @@ function AestheticJudgmentBeautiful() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3a2800", letterSpacing: 1, maxWidth: 860, margin: "36px auto 0" }}>
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#5f480a", letterSpacing: 1, maxWidth: 860, margin: "36px auto 0" }}>
         Part 15 of 21 — Kant's Critical Philosophy
       </div>
 
@@ -10148,7 +10148,7 @@ function SublimeLimitsOfImagination() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a0828", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#210e2b", letterSpacing: 1 }}>
           Part 16 of 21 — Kant's Critical Philosophy
         </div>
 
@@ -10682,7 +10682,7 @@ function GeniusArtAestheticIdeas() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#280a08', letterSpacing: 1 }}>
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#561a13', letterSpacing: 1 }}>
           Part 17 of 21 — Kant's Critical Philosophy
         </div>
 
@@ -11565,7 +11565,7 @@ function TeleologyPurposivenessOfNature() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#062a14', letterSpacing: 1 }}>
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#124e2b', letterSpacing: 1 }}>
           Part 18 of 21 — Kant's Critical Philosophy
         </div>
       </div>
@@ -12171,7 +12171,7 @@ function PoliticalPhilosophyPerpetualPeace() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#071520", letterSpacing: 1 }}>
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#123a53", letterSpacing: 1 }}>
         Part 19 of 21 — Kant's Critical Philosophy
       </div>
       </div>
@@ -12686,7 +12686,7 @@ function ReligionWithinBoundariesOfReason() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a0828", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3d2348", letterSpacing: 1 }}>
           Part 20 of 21 — Kant's Critical Philosophy
         </div>
 
@@ -13426,7 +13426,7 @@ function UnityCriticalSystemKantsLegacy() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a1c04", letterSpacing: 1 }}>
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#68480e", letterSpacing: 1 }}>
           Part 21 of 21 — Kant's Critical Philosophy
         </div>
 
