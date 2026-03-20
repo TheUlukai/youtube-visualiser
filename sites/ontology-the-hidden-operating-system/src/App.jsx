@@ -13291,6 +13291,19 @@ function OntologyOfTime() {
       margin: "0 auto",
     }}>
 
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: 32 }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#2D6A4F", marginBottom: 8 }}>
+          Part 24 of 35 — Ontology
+        </div>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#74c69d", margin: "0 0 8px 0", lineHeight: 1.3 }}>
+          The Ontology of Time: Does the Future Exist?
+        </h1>
+        <p style={{ fontSize: 15, color: "#7aab8e", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          Three competing theories of temporal reality — presentism, eternalism, and the growing block — each carry profound consequences for what exists and what it means to lose something to the past.
+        </p>
+      </div>
+
       {/* PROBLEM PANEL */}
       <div style={{
         background: "rgba(10, 20, 14, 0.85)",
@@ -13328,19 +13341,6 @@ function OntologyOfTime() {
         padding: "32px",
         marginBottom: "28px",
       }}>
-        <div style={{ textAlign: "center", marginBottom: "8px" }}>
-          <h2 style={{
-            fontSize: "22px",
-            fontWeight: "normal",
-            color: "#74c69d",
-            margin: "0 0 6px 0",
-            letterSpacing: "0.5px",
-          }}>The Ontology of Time: Does the Future Exist?</h2>
-          <p style={{ color: "#7aab8e", fontSize: "13px", margin: 0, fontStyle: "italic" }}>
-            Three theories of temporal reality — select one to explore
-          </p>
-        </div>
-
         {/* View selector buttons */}
         <div style={{
           display: "flex",
@@ -13790,51 +13790,26 @@ function OntologyOfTime() {
             : <ChevronDown size={18} color="#2D6A4F" />}
         </button>
         {echoesOpen && (
-          <div style={{ padding: "0 28px 24px 28px" }}>
-            <div style={{
-              borderTop: "1px solid #1a3d2a",
-              paddingTop: "20px",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "16px",
-            }}>
+          <div style={{ padding: "0 28px 24px 28px", borderTop: "1px solid #1a3d2a" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
               {[
-                {
-                  title: "Grief and the Reality of the Dead",
-                  text: "When someone we love dies, presentism offers no consolation — they are simply gone from reality. Eternalism reframes grief as the sorrow of distance rather than annihilation: your grandmother still exists at the times of her life, fully real, just unreachable from where you now stand in time."
-                },
-                {
-                  title: "Memory, History, and Permanence",
-                  text: "Eternalism grounds a deep intuition many feel about the past: that it is fixed, immutable, genuinely there. The historian's work is not fiction — it reaches back to something real. Presentism must explain how records and effects constitute genuine access to what no longer exists."
-                },
-                {
-                  title: "Anticipation and the Unborn",
-                  text: "If eternalism is true, future people already exist at their times, with equal ontological weight. This transforms debates about our obligations to future generations — they are not hypothetical beneficiaries but real beings whose lives are already woven into the block universe."
-                },
+                { title: "Grief and the Reality of the Dead", text: "When someone we love dies, presentism offers no consolation — they are simply gone from reality. Eternalism reframes grief as the sorrow of distance rather than annihilation: your grandmother still exists at the times of her life, fully real, just unreachable from where you now stand in time." },
+                { title: "Memory, History, and Permanence", text: "Eternalism grounds a deep intuition many feel about the past: that it is fixed, immutable, genuinely there. The historian's work is not fiction — it reaches back to something real. Presentism must explain how records and effects constitute genuine access to what no longer exists." },
+                { title: "Anticipation and the Unborn", text: "If eternalism is true, future people already exist at their times, with equal ontological weight. This transforms debates about our obligations to future generations — they are not hypothetical beneficiaries but real beings whose lives are already woven into the block universe." },
               ].map((item, i) => (
-                <div key={i} style={{
-                  background: "rgba(13, 35, 24, 0.6)",
-                  border: "1px solid #1a3d2a",
-                  borderRadius: "6px",
-                  padding: "16px 18px",
-                }}>
-                  <div style={{
-                    fontSize: "13px",
-                    color: "#74c69d",
-                    marginBottom: "10px",
-                    fontStyle: "italic",
-                  }}>{item.title}</div>
-                  <p style={{
-                    margin: 0,
-                    fontSize: "13px",
-                    lineHeight: "1.7",
-                    color: "#9abfac",
-                  }}>{item.text}</p>
+                <div key={i} style={{ borderLeft: "3px solid #2D6A4F", borderRadius: "0 6px 6px 0", background: "rgba(45,106,79,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#74c69d", marginBottom: 6 }}>{item.title}</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.text}</p>
                 </div>
               ))}
             </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1e12", letterSpacing: 1 }}>
+        Part 24 of 35 — Ontology
       </div>
 
     </div>
