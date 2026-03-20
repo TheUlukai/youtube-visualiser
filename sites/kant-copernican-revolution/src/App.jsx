@@ -3309,7 +3309,7 @@ function TranscendentalDeductionUnity() {
       {/* HEADER */}
       <div style={{ maxWidth: 860, margin: "0 auto 36px auto", textAlign: "center" }}>
         <div style={{ fontSize: 11, letterSpacing: 3, color: "#0D4C2E", textTransform: "uppercase", marginBottom: 10, opacity: 0.9 }}>
-          Part 6 of 21 · Kant's Critical Philosophy
+          Part 6 of 21 — Kant's Critical Philosophy
         </div>
         <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#d4e8dc", margin: "0 0 10px 0", lineHeight: 1.3 }}>
           The Transcendental Deduction and the Unity of Experience
