@@ -19041,37 +19041,42 @@ function StructuralRealism() {
           </button>
 
           {echosOpen && (
-            <div style={{ padding: '4px 24px 24px 24px', borderTop: '1px solid rgba(0,180,216,0.1)' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 16 }}>
+            <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid rgba(0,180,216,0.1)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
                 <div style={{
+                  borderLeft: '3px solid #00B4D8',
+                  borderRadius: '0 6px 6px 0',
+                  background: 'rgba(0,180,216,0.06)',
                   padding: '14px 18px',
-                  background: 'rgba(0,30,45,0.7)',
-                  borderRadius: 8,
-                  border: '1px solid rgba(0,180,216,0.12)',
                 }}>
-                  <div style={{ fontSize: 13, color: accent, marginBottom: 6, fontWeight: 'bold' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#4dd8f0', marginBottom: 6 }}>
                     Particle Physics: The Electron
                   </div>
-                  <p style={{ margin: 0, fontSize: 13.5, color: '#b0ccd8', lineHeight: 1.75 }}>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>
                     An electron is characterized entirely by mass (9.109 × 10⁻³¹ kg), charge (−1.602 × 10⁻¹⁹ C), and spin (½). These are structural properties — roles in equations and relations to other particles. There appears to be nothing more to an electron than its place in the relational network. No hidden "electron-substance" beneath these structural features has ever been found or postulated coherently.
                   </p>
                 </div>
                 <div style={{
+                  borderLeft: '3px solid #00B4D8',
+                  borderRadius: '0 6px 6px 0',
+                  background: 'rgba(0,180,216,0.06)',
                   padding: '14px 18px',
-                  background: 'rgba(0,30,45,0.7)',
-                  borderRadius: 8,
-                  border: '1px solid rgba(0,180,216,0.12)',
                 }}>
-                  <div style={{ fontSize: 13, color: accent, marginBottom: 6, fontWeight: 'bold' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#4dd8f0', marginBottom: 6 }}>
                     Mathematical Groups: Pure Structure
                   </div>
-                  <p style={{ margin: 0, fontSize: 13.5, color: '#b0ccd8', lineHeight: 1.75 }}>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>
                     Consider the rotation group SO(3). Its elements — rotations in three-dimensional space — have no intrinsic identity separate from how they compose with one another under the group operation. A 90° rotation around the z-axis "is" what it is only in virtue of what happens when it combines with other rotations. This is exactly what structural realism claims about physical particles: their identity is exhausted by their relational roles.
                   </p>
                 </div>
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#003040', letterSpacing: 1 }}>
+          Part 33 of 35 — Ontology
         </div>
 
       </div>
