@@ -420,7 +420,7 @@ function OntologyIntroduction() {
             textTransform: "uppercase",
             marginBottom: 10,
           }}>
-            Ontology — Part 1 of 35
+            Part 1 of 35 — Ontology
           </div>
           <h1 style={{
             fontSize: "clamp(22px, 4vw, 36px)",
@@ -892,6 +892,13 @@ function OntologyIntroduction() {
               ))}
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ marginTop: 40, textAlign: "center" }}>
+          <div style={{ fontSize: 11, color: "#1a2a3a", letterSpacing: 2 }}>
+            Part 1 of 35 — Ontology
+          </div>
         </div>
 
       </div>
