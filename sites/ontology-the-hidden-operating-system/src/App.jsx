@@ -10051,6 +10051,12 @@ function WhiteheadProcess() {
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3a1e00", letterSpacing: 1 }}>
+        Part 17 of 35 — Ontology
+      </div>
+
     </div>
   );
 }
