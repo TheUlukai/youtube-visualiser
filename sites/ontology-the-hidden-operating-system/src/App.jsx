@@ -18478,49 +18478,54 @@ function OntologyBeyondWest() {
 
           {echoesOpen && (
             <div style={{ padding: "0 28px 24px 28px", borderTop: "1px solid rgba(199,125,255,0.1)" }}>
-              <div style={{ paddingTop: 20, display: "flex", flexDirection: "column", gap: 16 }}>
+              <div style={{ paddingTop: 20, display: "flex", flexDirection: "column", gap: 14 }}>
                 <div style={{
-                  background: "rgba(30, 15, 50, 0.6)",
-                  borderLeft: "3px solid #FF9F1C",
+                  background: "rgba(199,125,255,0.06)",
+                  borderLeft: "3px solid #C77DFF",
                   borderRadius: "0 6px 6px 0",
                   padding: "14px 18px"
                 }}>
-                  <div style={{ fontSize: 13, color: "#FF9F1C", marginBottom: 6, letterSpacing: 0.3 }}>
-                    Causation by Omission — From Philosophical Puzzle to Practical Problem
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#d8a8ff", marginBottom: 6 }}>
+                    Causation by Omission
                   </div>
-                  <p style={{ margin: 0, fontSize: 13, color: "#c8bcd8", lineHeight: 1.7 }}>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
                     When a doctor fails to diagnose a condition and the patient suffers, was the doctor a cause? Western ontology struggled with this for centuries because it lacked a positive ontological category for absence. Vaisheshika's abhava (absence) handles this directly: the missing diagnosis is a real, perceivable absence with genuine causal power. Legal systems grapple with this daily in negligence law — the Vaisheshika solution was waiting two and a half millennia before Western philosophy caught up.
                   </p>
                 </div>
                 <div style={{
-                  background: "rgba(30, 15, 50, 0.6)",
-                  borderLeft: "3px solid #4CC9F0",
+                  background: "rgba(199,125,255,0.06)",
+                  borderLeft: "3px solid #C77DFF",
                   borderRadius: "0 6px 6px 0",
                   padding: "14px 18px"
                 }}>
-                  <div style={{ fontSize: 13, color: "#4CC9F0", marginBottom: 6, letterSpacing: 0.3 }}>
-                    Quantum Physics and Emptiness — Independent Convergence
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#d8a8ff", marginBottom: 6 }}>
+                    Quantum Physics and Emptiness
                   </div>
-                  <p style={{ margin: 0, fontSize: 13, color: "#c8bcd8", lineHeight: 1.7 }}>
-                    Structural realists, responding to the dissolution of individual particles in quantum field theory, concluded that only relational structures are real — objects are convenient fictions. Nāgārjuna reached the same conclusion via meditative analysis of interdependence in the 2nd century CE. The convergence has not been lost on physicists: Carlo Rovelli has explicitly noted the resonance between relational quantum mechanics and Buddhist emptiness, suggesting the parallel may illuminate the foundations of physics itself.
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    Structural realists, responding to the dissolution of individual particles in quantum field theory, concluded that only relational structures are real — objects are convenient fictions. Nāgārjuna reached the same conclusion via meditative analysis of interdependence in the 2nd century CE. Carlo Rovelli has explicitly noted the resonance between relational quantum mechanics and Buddhist emptiness, suggesting the parallel may illuminate the foundations of physics itself.
                   </p>
                 </div>
                 <div style={{
-                  background: "rgba(30, 15, 50, 0.6)",
-                  borderLeft: "3px solid #FF6B6B",
+                  background: "rgba(199,125,255,0.06)",
+                  borderLeft: "3px solid #C77DFF",
                   borderRadius: "0 6px 6px 0",
                   padding: "14px 18px"
                 }}>
-                  <div style={{ fontSize: 13, color: "#FF6B6B", marginBottom: 6, letterSpacing: 0.3 }}>
-                    Ubuntu Ethics in Corporate Governance — Relational Ontology in Practice
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#d8a8ff", marginBottom: 6 }}>
+                    Ubuntu Ethics in Corporate Governance
                   </div>
-                  <p style={{ margin: 0, fontSize: 13, color: "#c8bcd8", lineHeight: 1.7 }}>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
                     Ubuntu's ontological claim — that personhood is constitutively relational, not atomic — has entered business ethics and governance frameworks in post-apartheid South Africa. The King Reports on corporate governance incorporate Ubuntu principles precisely because they offer an alternative to the atomistic individual-rights framework that underpins standard Western corporate law. Ontological commitments have political and economic consequences.
                   </p>
                 </div>
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a0a40", letterSpacing: 1 }}>
+          Part 32 of 35 — Ontology
         </div>
 
       </div>
