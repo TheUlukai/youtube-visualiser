@@ -10693,15 +10693,17 @@ function QuineAnalyticOntology() {
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: "12px" }}>
-          <span style={{ fontSize: "11px", letterSpacing: "3px", color: "#2E86AB", textTransform: "uppercase" }}>Part 19 of 35 — Ontology</span>
+        <div style={{ textAlign: "center", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#2E86AB", marginBottom: 8 }}>
+            Part 19 of 35 — Ontology
+          </div>
+          <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", margin: "0 0 8px 0", lineHeight: 1.3, color: "#f0f0e8" }}>
+            Quine and the Analytic Revival of Ontology
+          </h1>
+          <p style={{ fontSize: 15, color: "#a0b8c8", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
+            Quine rescued ontology from positivist dismissal by showing that our best scientific theories carry determinate ontological commitments, and that to be is to be the value of a bound variable.
+          </p>
         </div>
-        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", margin: "0 0 8px 0", lineHeight: 1.3, color: "#f0f0e8" }}>
-          Quine and the Analytic Revival of Ontology
-        </h1>
-        <p style={{ fontSize: "15px", color: "#a0b8c8", margin: "0 0 36px 0", fontStyle: "italic", lineHeight: 1.6 }}>
-          Quine rescued ontology from positivist dismissal by showing that our best scientific theories carry determinate ontological commitments, and that to be is to be the value of a bound variable.
-        </p>
 
         {/* THE PROBLEM PANEL */}
         <div style={{
@@ -10726,28 +10728,6 @@ function QuineAnalyticOntology() {
           padding: "28px",
           marginBottom: "32px",
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#2E86AB", textTransform: "uppercase", marginBottom: "6px" }}>Main Visualization</div>
-          <h2 style={{ fontSize: "18px", fontWeight: "bold", margin: "0 0 6px 0", color: "#f0f0e8" }}>
-            The Ontological Commitment Detector
-          </h2>
-          <p style={{ fontSize: "13px", color: "#8aa8b8", margin: "0 0 20px 0", lineHeight: 1.6 }}>
-            Each node is an entity type that a scientific theory must quantify over. Edges show theoretical dependencies. The theory's predictions depend on the entire web. Click a node to inspect its commitment. Toggle mathematical entities to see the indispensability argument live.
-          </p>
-
-          {/* Key concept pills */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "20px" }}>
-            {["ontological commitment", "to be = value of a variable", "indispensability argument", "naturalized ontology"].map(concept => (
-              <span key={concept} style={{
-                background: "rgba(46,134,171,0.12)",
-                border: "1px solid rgba(46,134,171,0.35)",
-                borderRadius: "20px",
-                padding: "4px 12px",
-                fontSize: "11px",
-                color: "#7ecbe8",
-                letterSpacing: "0.5px",
-              }}>{concept}</span>
-            ))}
-          </div>
 
           {/* Controls */}
           <div style={{ display: "flex", gap: "12px", marginBottom: "20px", flexWrap: "wrap" }}>
@@ -11154,8 +11134,8 @@ function QuineAnalyticOntology() {
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: "40px", fontSize: "12px", color: "rgba(100,140,160,0.5)", letterSpacing: "1px" }}>
-          Part 19 of 35 — Quine and the Analytic Revival of Ontology
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0e2030", letterSpacing: 1 }}>
+          Part 19 of 35 — Ontology
         </div>
       </div>
     </div>
