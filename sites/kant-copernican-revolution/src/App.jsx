@@ -6425,8 +6425,8 @@ function CategoricalImperativeFoundationMorality() {
 
         {/* Real-World Echoes */}
         <div style={{
-          background: "#0e1820",
-          border: "1px solid #1a2a3a",
+          background: "rgba(29,92,138,0.05)",
+          border: "1px solid rgba(29,92,138,0.2)",
           borderRadius: 8,
           overflow: "hidden",
         }}>
@@ -6436,7 +6436,7 @@ function CategoricalImperativeFoundationMorality() {
               width: "100%",
               background: "transparent",
               border: "none",
-              padding: "18px 28px",
+              padding: "18px 24px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -6444,16 +6444,12 @@ function CategoricalImperativeFoundationMorality() {
               fontFamily: "Georgia, serif",
             }}
           >
-            <span style={{ fontSize: 10, letterSpacing: 3, color: "#1D5C8A", textTransform: "uppercase" }}>
-              Real-World Echoes
-            </span>
-            {echosOpen
-              ? <ChevronUp size={16} color="#1D5C8A" />
-              : <ChevronDown size={16} color="#1D5C8A" />}
+            <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#4a8ab0" }}>Real-World Echoes</span>
+            {echosOpen ? <ChevronUp size={16} color="#4a8ab0" /> : <ChevronDown size={16} color="#4a8ab0" />}
           </button>
           {echosOpen && (
-            <div style={{ padding: "0 28px 24px 28px" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14 }}>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(29,92,138,0.2)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
                 {[
                   {
                     title: "The False Promise Test",
@@ -6467,24 +6463,25 @@ function CategoricalImperativeFoundationMorality() {
                     title: "Whistleblowing and Institutional Loyalty",
                     body: "When an employee discovers dangerous wrongdoing, the kingdom of ends test asks: could rational beings legislate a universal duty of institutional silence? No — those harmed by the wrongdoing are also rational beings whose interests must be considered. Their standing as ends in themselves overrides institutional pressure to conceal.",
                   },
-                ].map((echo, i) => (
+                ].map((item, i) => (
                   <div key={i} style={{
-                    background: "#0a1520",
-                    border: "1px solid #1a2a3a",
-                    borderRadius: 6,
-                    padding: "14px 16px",
+                    borderLeft: "3px solid #1D5C8A",
+                    borderRadius: "0 6px 6px 0",
+                    background: "rgba(29,92,138,0.07)",
+                    padding: "14px 18px",
                   }}>
-                    <div style={{ fontSize: 12, color: "#4a8ab0", fontWeight: "bold", marginBottom: 8 }}>
-                      {echo.title}
-                    </div>
-                    <div style={{ fontSize: 12, color: "#8a9aaa", lineHeight: 1.7 }}>
-                      {echo.body}
-                    </div>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#4a8ab0", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
                   </div>
                 ))}
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#071520", letterSpacing: 1 }}>
+          Part 10 of 21 — Kant's Critical Philosophy
         </div>
 
       </div>
