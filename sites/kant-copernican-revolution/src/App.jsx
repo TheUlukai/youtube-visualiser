@@ -422,9 +422,9 @@ function KantRevolutionaryIntroduction() {
       boxSizing: "border-box",
     }}>
       {/* Header */}
-      <div style={{ maxWidth: 860, margin: "0 auto 36px auto" }}>
+      <div style={{ textAlign: "center", maxWidth: 860, margin: "0 auto 36px auto" }}>
         <div style={{ fontSize: 11, letterSpacing: 3, color: "#1A6B8A", textTransform: "uppercase", marginBottom: 10, opacity: 0.9 }}>
-          Part 1 of 21 · Kant's Critical Philosophy
+          Part 1 of 21 — Kant's Critical Philosophy
         </div>
         <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 12px 0", color: "#E8F4F8", lineHeight: 1.3 }}>
           The Copernican Revolution in Philosophy
@@ -671,6 +671,11 @@ function KantRevolutionaryIntroduction() {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#051820", letterSpacing: 1 }}>
+          Part 1 of 21 — Kant's Critical Philosophy
         </div>
       </div>
     </div>
