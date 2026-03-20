@@ -24,9 +24,11 @@ Take a screenshot at the top of the section, then check:
    - Click any interactive node, button, or toggle and verify a visible effect
    - Expand the Real-World Echoes collapsible
 5. **The Problem panel** — confirm it is present (except section 1)
-6. **The Difficulty panel** — confirm it is present
-7. **Content centering** — confirm content is centered on wide viewports, not anchored to the left
-8. **Section footer** — scroll to the bottom of the section and confirm a centred "Part N of M — Series Title" line is visible below the Real-World Echoes panel, with clear space below it. If the footer appears inside the RWE panel or is missing entirely, flag it.
+6. **The Difficulty panel** — confirm it is present; its left border stripe must be the **same colour** as the Problem panel's left border stripe — if the hues look different, flag it
+7. **Colour consistency** — the Problem borderLeft, Key Concepts label and pill borders, Difficulty borderLeft, and RWE label should all share the same hue. Any panel using a noticeably different colour is a cross-section bleed or wrong-accent bug
+8. **RWE label visibility** — expand the Real-World Echoes panel and confirm the "Real-World Echoes" toggle label text is clearly visible (same colour as the chevron icon). If it appears dark/invisible, the span is missing an explicit `color:` property
+9. **Content centering** — confirm content is centered on wide viewports, not anchored to the left
+10. **Section footer** — scroll to the bottom of the section and confirm a centred "Part N of M — Series Title" line is visible below the Real-World Echoes panel, with clear space below it. If the footer appears inside the RWE panel or is missing entirely, flag it.
 
 ### Navigation check
 - **Section 1**: Prev button must be visibly greyed/disabled; Next button must be clearly visible and active

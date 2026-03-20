@@ -65,6 +65,20 @@ grep -rL 'borderLeft.*3px solid' output/components/*.jsx
 ```
 Cross-reference with files that contain "echoes" or "echos" — any match that lacks borderLeft is a finding.
 
+**Check 14 — RWE toggle button label missing explicit colour**
+The `<span>` inside the RWE toggle button must have an explicit `color:` set. Without it the label inherits the button's default colour, which may be invisible on dark backgrounds. Look for "Real-World Echoes" spans that lack a colour property on the same element.
+```
+grep -n "Real-World Echoes" output/components/*.jsx
+```
+For each match, check the surrounding `<span style={{...}}>` — it must contain `color:`. Flag any that don't.
+
+**Check 15 — Difficulty panel borderLeft colour differs from Problem panel**
+Both the Problem and Difficulty panels must use the same accent hex for their `borderLeft`. This is hard to grep precisely, but a rough check is to look for files where the Difficulty section uses a `borderLeft` hex that does not appear near the Problem section's `borderLeft`.
+```
+grep -n 'borderLeft' output/components/*.jsx | grep -v "3px\|RWE\|card\|echo\|Echo"
+```
+Review the results: within each file the Problem and Difficulty `borderLeft` values should be identical hex strings.
+
 **Check 13 — Missing centred maxWidth content wrapper**
 Each component should have both `maxWidth` and `margin` (for `0 auto` centring) in its return JSX.
 ```
@@ -98,6 +112,8 @@ Key fixes reference:
 - **Fixed canvas props**: remove JSX width/height, set via ResizeObserver in useEffect
 - **Bare maxWidth**: wrap as `maxWidth: "min(90vw, Npx)"`
 - **Key Concepts nested**: extract from enclosing card, place as top-level sibling with card wrapper `background: rgba(0,0,0,0.25), border: accent33, borderRadius: 8, padding: clamp(16px,3vw,24px), marginBottom: 16`
+- **RWE label missing colour**: add `color: ACCENT` to the `<span>` inside the RWE toggle button — the same colour used on the ChevronDown/Up icon beside it
+- **Difficulty borderLeft wrong colour**: change to match the Problem panel's `borderLeft` hex exactly — same ACCENT, never a different hue
 - **Missing footer**: add `{/* Footer */}<div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: ACCENT_DIM, letterSpacing: 1 }}>Part N of M — Series Title</div>` as the last element inside the inner maxWidth wrapper
 - **Footer inside RWE panel**: footer must appear AFTER the RWE outer panel's closing `</div>`, not between the `)}` (conditional close) and `</div>` (panel close) — move it out
 - **Missing borderLeft on RWE cards**: add `borderLeft: "3px solid ACCENT", borderRadius: "0 6px 6px 0", background: ACCENT + "0a"` to each card div inside the RWE panel
