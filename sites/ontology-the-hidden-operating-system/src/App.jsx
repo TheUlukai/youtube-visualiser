@@ -1036,14 +1036,14 @@ function ParmenidesBeing() {
       <div style={{ position: "relative", zIndex: 1, maxWidth: 820, margin: "0 auto", padding: "40px 24px 60px" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: 36 }}>
+        <div style={{ marginBottom: 36, textAlign: "center" }}>
           <div style={{ fontSize: 11, letterSpacing: 3, color: accentGlow, textTransform: "uppercase", marginBottom: 8 }}>
             Part 2 of 35 — Ontology
           </div>
           <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", margin: "0 0 10px", color: "#f0e8ef", letterSpacing: 0.5 }}>
             Parmenides and the Shock of Being
           </h1>
-          <p style={{ fontSize: 15, color: "#b89eb6", margin: 0, lineHeight: 1.7, maxWidth: 640 }}>
+          <p style={{ fontSize: 15, color: "#b89eb6", margin: 0, lineHeight: 1.7 }}>
             Using pure logic, Parmenides argued that change is impossible and being is one, eternal, and undivided — a conclusion that contradicts everything we observe.
           </p>
         </div>
