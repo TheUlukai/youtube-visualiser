@@ -6832,6 +6832,11 @@ function EmpiricistDemolition() {
           )}
         </div>
 
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3a2800", letterSpacing: 1 }}>
+          Part 11 of 35 — Ontology
+        </div>
+
       </div>
     </div>
   );
