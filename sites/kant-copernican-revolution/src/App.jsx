@@ -4816,7 +4816,7 @@ function AntinomiesIllusionsPureReason() {
       {/* Header */}
       <div style={{ maxWidth: 900, margin: '0 auto 28px auto' }}>
         <div style={{ fontSize: 11, color: '#8B1A1A', letterSpacing: 3, textTransform: 'uppercase', marginBottom: 8 }}>
-          Part 8 of 21 · Kant's Critical Philosophy
+          Part 8 of 21 — Kant's Critical Philosophy
         </div>
         <h1 style={{ fontSize: 28, fontWeight: 'bold', color: '#f0e0c8', margin: '0 0 8px 0', lineHeight: 1.2 }}>
           The Antinomies and the Illusions of Pure Reason
@@ -5341,7 +5341,7 @@ function TransitionToPracticalPhilosophy() {
 
         {/* Header */}
         <div style={{ marginBottom: '10px' }}>
-          <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#B5651D', textTransform: 'uppercase', marginBottom: '8px' }}>Part 9 of 21 · Kant's Critical Philosophy</div>
+          <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#B5651D', textTransform: 'uppercase', marginBottom: '8px' }}>Part 9 of 21 — Kant's Critical Philosophy</div>
           <h1 style={{ fontSize: '28px', fontWeight: 'normal', color: '#f0ddc8', margin: '0 0 6px', lineHeight: '1.3' }}>The Transition to Practical Philosophy</h1>
           <p style={{ fontSize: '14px', color: '#c4a882', margin: 0, fontStyle: 'italic', lineHeight: '1.6' }}>
             The completion of theoretical philosophy left a profound gap between the natural world and the moral world that only a new investigation of practical reason could fill.
@@ -8410,7 +8410,7 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
 
         {/* Header */}
         <div style={{ marginBottom: 12, textAlign: "center" }}>
-          <div style={{ fontSize: 12, color: "#2A7D4F", letterSpacing: 3, textTransform: "uppercase", marginBottom: 8 }}>Part 14 of 21 · Kant's Critical Philosophy</div>
+          <div style={{ fontSize: 12, color: "#2A7D4F", letterSpacing: 3, textTransform: "uppercase", marginBottom: 8 }}>Part 14 of 21 — Kant's Critical Philosophy</div>
           <h1 style={{ fontSize: 28, fontWeight: "bold", margin: "0 0 8px", color: "#f0ece4", lineHeight: 1.3 }}>The Critique of Judgment: Bridging Nature and Freedom</h1>
           <p style={{ fontSize: 15, color: "#9ab5a0", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
             The third Critique discovered that reflective judgment — operating through the principle of natural purposiveness — mediates between the theoretical and practical domains Kant had established.
@@ -9651,7 +9651,7 @@ function SublimeLimitsOfImagination() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: "#7B5EA7", marginBottom: 8, textTransform: "uppercase" }}>
-            Part 16 of 21 · Aesthetic Theory
+            Part 16 of 21 — Kant's Critical Philosophy
           </div>
           <h1 style={{ fontSize: 28, fontWeight: "normal", color: "#e8d8ff", margin: "0 0 10px 0", lineHeight: 1.3 }}>
             The Sublime and the Limits of Imagination
@@ -10803,7 +10803,7 @@ function TeleologyPurposivenessOfNature() {
       {/* PART INDICATOR */}
       <div style={{ textAlign: 'center', marginBottom: '12px' }}>
         <span style={{ color: '#27AE60', fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase' }}>
-          Part 18 of 21 · Kant's Critical Philosophy
+          Part 18 of 21 — Kant's Critical Philosophy
         </span>
       </div>
 
