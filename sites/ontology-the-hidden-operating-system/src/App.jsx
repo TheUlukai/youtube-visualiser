@@ -20001,6 +20001,19 @@ function OntologyFrontier() {
   return (
     <div style={{ background: "radial-gradient(ellipse at center, #3a1515 0%, #0a0a0f 70%)", minHeight: "100vh", fontFamily: "Georgia, serif", padding: "32px 24px", boxSizing: "border-box" }}>
 
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: 32, maxWidth: "860px", margin: "0 auto 32px auto" }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#FF6B6B", marginBottom: 8 }}>
+          Part 35 of 35 — Ontology
+        </div>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#f8e8e8", margin: "0 0 8px 0", lineHeight: 1.3 }}>
+          Ontology at the Frontier
+        </h1>
+        <p style={{ fontSize: 15, color: "#c0a8a8", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          Where the hidden assumptions of our age are about to be exposed as questions.
+        </p>
+      </div>
+
       {/* PROBLEM PANEL */}
       <div style={{ background: "#12080a", border: "1px solid #3a1515", borderLeft: "4px solid #FF6B6B", borderRadius: "8px", padding: "24px 28px", marginBottom: "28px", maxWidth: "860px", margin: "0 auto 28px auto" }}>
         <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#FF6B6B", textTransform: "uppercase", marginBottom: "10px", fontFamily: "Georgia, serif" }}>The Problem</div>
@@ -20199,25 +20212,27 @@ function OntologyFrontier() {
           {echosOpen ? <ChevronUp size={18} color="#FF6B6B" /> : <ChevronDown size={18} color="#FF6B6B" />}
         </div>
         {echosOpen && (
-          <div style={{ padding: "0 24px 24px 24px" }}>
-            {[
-              { label: "Quantum Field Theory", text: "Particles, fields, and virtual processes resist every traditional ontological category. In QFT, 'a particle' is not a thing but an excitation of a field — and even fields may be derivative of something more fundamental. The question 'what is an electron, really?' has no settled answer." },
-              { label: "Large Language Models", text: "A language model produces contextually appropriate text, reasons across domains, expresses uncertainty, and generates apparent insight. What ontological category does this fall into? Neither tool nor person nor simulation captures it. A new category may be required." },
-              { label: "Tegmark's Mathematical Universe", text: "Every consistent mathematical structure exists as a physical universe. If true, existence is not sparse but maximally abundant — our universe is one node in an infinite web of mathematical possibility. The question shifts from 'why something?' to 'why this?'" },
-              { label: "Race, Gender, and Ontological Error", text: "Race and gender are real in their effects but not natural kinds. Treating them as fixed essences naturalizes oppression; treating them as mere fictions erases real harms. Social ontology must be simultaneously descriptive and normative — and the stakes are not academic." }
-            ].map((item, i) => (
-              <div key={i} style={{ borderTop: i === 0 ? "1px solid #1a1a2a" : "1px solid #1a1a2a", paddingTop: "16px", marginTop: i === 0 ? "0" : "0", paddingBottom: "16px" }}>
-                <div style={{ color: "#FF6B6B", fontSize: "13px", marginBottom: "6px", letterSpacing: "0.5px" }}>{item.label}</div>
-                <p style={{ color: "#9a8a9a", lineHeight: "1.7", margin: 0, fontSize: "13.5px" }}>{item.text}</p>
-              </div>
-            ))}
+          <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #2a1a1a" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+              {[
+                { label: "Quantum Field Theory", text: "Particles, fields, and virtual processes resist every traditional ontological category. In QFT, 'a particle' is not a thing but an excitation of a field — and even fields may be derivative of something more fundamental. The question 'what is an electron, really?' has no settled answer." },
+                { label: "Large Language Models", text: "A language model produces contextually appropriate text, reasons across domains, expresses uncertainty, and generates apparent insight. What ontological category does this fall into? Neither tool nor person nor simulation captures it. A new category may be required." },
+                { label: "Tegmark's Mathematical Universe", text: "Every consistent mathematical structure exists as a physical universe. If true, existence is not sparse but maximally abundant — our universe is one node in an infinite web of mathematical possibility. The question shifts from 'why something?' to 'why this?'" },
+                { label: "Race, Gender, and Ontological Error", text: "Race and gender are real in their effects but not natural kinds. Treating them as fixed essences naturalizes oppression; treating them as mere fictions erases real harms. Social ontology must be simultaneously descriptive and normative — and the stakes are not academic." }
+              ].map((item, i) => (
+                <div key={i} style={{ borderLeft: "3px solid #FF6B6B", borderRadius: "0 6px 6px 0", background: "rgba(255,107,107,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#ff9999", marginBottom: 6 }}>{item.label}</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
 
       {/* Footer */}
-      <div style={{ maxWidth: "860px", margin: "24px auto 0 auto", textAlign: "center" }}>
-        <p style={{ color: "#3a2a3a", fontSize: "12px", fontStyle: "italic" }}>Part 35 of 35 — Ontology is not a problem to be solved but a discipline of permanent inquiry.</p>
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a0808", letterSpacing: 1, maxWidth: "860px", margin: "36px auto 0 auto" }}>
+        Part 35 of 35 — Ontology
       </div>
     </div>
   );
