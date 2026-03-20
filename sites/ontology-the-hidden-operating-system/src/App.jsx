@@ -17396,14 +17396,14 @@ function GroundingArchitecture() {
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ marginBottom: '12px' }}>
-          <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#7F5AF0', textTransform: 'uppercase', marginBottom: '8px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: '#7F5AF0', marginBottom: 8 }}>
             Part 31 of 35 — Ontology
           </div>
-          <h1 style={{ fontSize: 'clamp(20px, 3.5vw, 32px)', fontWeight: 'normal', margin: '0 0 8px 0', color: '#f0ebff', lineHeight: '1.3' }}>
+          <h1 style={{ fontSize: 'clamp(22px,4vw,36px)', fontWeight: 'normal', margin: '0 0 8px 0', color: '#f0ebff', lineHeight: 1.3 }}>
             Grounding and the New Architecture of Reality
           </h1>
-          <p style={{ fontSize: '14px', color: '#a099c8', margin: 0, lineHeight: '1.7' }}>
+          <p style={{ fontSize: 15, color: '#a099c8', margin: 0, lineHeight: 1.6, fontStyle: 'italic' }}>
             Grounding — the relation of one fact holding in virtue of another — provides a framework for understanding why reality is hierarchically layered rather than flat, with some facts being fundamental and others depending on them.
           </p>
         </div>
@@ -17514,7 +17514,7 @@ function GroundingArchitecture() {
               {/* Layer labels */}
               {layers.map(layer => (
                 <g key={layer.id + '-label'}>
-                  <text x={36} y={layer.y - 12} fontSize="11" fill={layer.color} fontFamily="Georgia, serif" letterSpacing="1" fillOpacity={0.9}>
+                  <text x={36} y={layer.y - 26} fontSize="11" fill={layer.color} fontFamily="Georgia, serif" letterSpacing="1" fillOpacity={0.9}>
                     {layer.label.toUpperCase()}
                   </text>
                   <text x={36} y={layer.y + 32} fontSize="10" fill={layer.color} fontFamily="Georgia, serif" fillOpacity={0.55}>
@@ -17842,24 +17842,24 @@ function GroundingArchitecture() {
           </button>
 
           {echoesOpen && (
-            <div style={{ padding: '0 28px 28px 28px' }}>
-              <div style={{
-                borderTop: '1px solid #2a2040',
-                paddingTop: '20px',
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '20px',
-              }}>
-                <div style={{ background: '#0f0d1a', borderRadius: '8px', padding: '20px', border: '1px solid #2a2040' }}>
-                  <div style={{ fontSize: '11px', letterSpacing: '2px', color: '#FF8906', marginBottom: '10px' }}>MEDICAL GROUNDING</div>
-                  <p style={{ fontSize: '13px', color: '#a099c8', margin: 0, lineHeight: '1.7' }}>
-                    When a doctor says "your fever is your body's elevated temperature response," they make a <em>constitutive</em> grounding claim — this is what fever consists in, not what caused it. The causal claim is separate: the infection caused the fever. Grounding theory gives us precision to distinguish these: constitution is not causation, even when they co-occur.
+            <div style={{ padding: '0 28px 28px 28px', borderTop: '1px solid #2a2040' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: '3px solid #7F5AF0', borderRadius: '0 6px 6px 0', background: 'rgba(127,90,240,0.06)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#a888ff', marginBottom: 6 }}>Medical Grounding</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>
+                    When a doctor says "your fever is your body's elevated temperature response," they make a constitutive grounding claim — this is what fever consists in, not what caused it. The causal claim is separate: the infection caused the fever. Grounding theory gives us precision to distinguish these: constitution is not causation, even when they co-occur.
                   </p>
                 </div>
-                <div style={{ background: '#0f0d1a', borderRadius: '8px', padding: '20px', border: '1px solid #2a2040' }}>
-                  <div style={{ fontSize: '11px', letterSpacing: '2px', color: '#E53170', marginBottom: '10px' }}>TRAFFIC LIGHT SEMANTICS</div>
-                  <p style={{ fontSize: '13px', color: '#a099c8', margin: 0, lineHeight: '1.7' }}>
+                <div style={{ borderLeft: '3px solid #7F5AF0', borderRadius: '0 6px 6px 0', background: 'rgba(127,90,240,0.06)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#a888ff', marginBottom: 6 }}>Traffic Light Semantics</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>
                     The social fact "red means stop" is grounded in the conjunction of a physical fact (~700nm wavelength) and a collective practice (we treat it as a stop signal). Change the wavelength and the social fact changes — but not vice versa. This asymmetry is the signature of grounding: direction of explanation flows upward, while counterfactual sensitivity runs downward.
+                  </p>
+                </div>
+                <div style={{ borderLeft: '3px solid #7F5AF0', borderRadius: '0 6px 6px 0', background: 'rgba(127,90,240,0.06)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#a888ff', marginBottom: 6 }}>Software Abstraction Layers</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>
+                    A running program's "crash" is grounded in register states, memory addresses, and CPU instructions — the higher-level description holds in virtue of the lower. Yet programmers reason at the high level without constantly re-deriving from hardware. Grounding theory captures why this layered explanatory practice is legitimate: derivative facts are real, just not fundamental.
                   </p>
                 </div>
               </div>
@@ -17867,11 +17867,9 @@ function GroundingArchitecture() {
           )}
         </div>
 
-        {/* Footer attribution */}
-        <div style={{ marginTop: '24px', textAlign: 'center' }}>
-          <p style={{ fontSize: '11px', color: '#3a3060', fontStyle: 'italic' }}>
-            Key figures: Kit Fine, Jonathan Schaffer — Grounding and the Architecture of Reality
-          </p>
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a0a30", letterSpacing: 1 }}>
+          Part 31 of 35 — Ontology
         </div>
 
       </div>
