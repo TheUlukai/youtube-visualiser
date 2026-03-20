@@ -16088,17 +16088,33 @@ function PowersDispositions() {
           </button>
           {echosOpen && (
             <div style={{ padding: "0 28px 24px 28px", borderTop: "1px solid #1a2e30" }}>
-              <p style={{ margin: "18px 0 14px 0", fontSize: 14, color: "#8a9aac", lineHeight: 1.8 }}>
-                In pharmacology, the debate becomes viscerally practical. A new drug is said to have the power to lower blood pressure. The powers ontologist says: it <em>will</em> work because of what it chemically is — its molecular structure is constitutively a capacity to bind certain receptors. The Humean says: we expect it to work because drugs with this structure have consistently lowered blood pressure before. The difference is not merely verbal — it determines what counts as an explanation and how confident we should be about the drug working in novel circumstances not covered by past regularities.
-              </p>
-              <p style={{ margin: "0 0 14px 0", fontSize: 14, color: "#8a9aac", lineHeight: 1.8 }}>
-                A fragile glass sitting undisturbed on a shelf makes the point most starkly. Its fragility is real — insurance companies, careful movers, and anxious hosts all treat it as genuinely present. The powers ontologist says this is exactly right: the fragility is there whether or not it is ever tested. The Humean must say that 'fragility' tracks a regularity about objects of this kind, not something intrinsic to this glass right now. The philosophical stakes show in the practical question: would the glass's fragility cease to be real if all glass objects were instantly and permanently stored in indestructible foam, never to be struck again?
-              </p>
-              <p style={{ margin: 0, fontSize: 14, color: "#8a9aac", lineHeight: 1.8 }}>
-                In chemistry and biology, the powers framework underlies mechanistic explanation: enzymes have active sites with specific binding capacities; genes have regulatory powers; membranes have selective permeability. The language of mechanism is the language of powers. The Humean reconstruction of all these as mere regularities is philosophically possible but explanatorily costly — it threatens to dissolve the difference between understanding <em>why</em> something happens and merely noting <em>that</em> it happens.
-              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: "3px solid #A8DADC", borderRadius: "0 6px 6px 0", background: "rgba(168,218,220,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#A8DADC", marginBottom: 6 }}>Pharmacology and Drug Powers</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    A new drug is said to have the power to lower blood pressure. The powers ontologist says it will work because of what it chemically is — its molecular structure is constitutively a capacity to bind certain receptors. The Humean says we expect it to work because drugs with this structure have consistently worked before. The difference determines what counts as an explanation and how confident we should be about novel circumstances not covered by past regularities.
+                  </p>
+                </div>
+                <div style={{ borderLeft: "3px solid #A8DADC", borderRadius: "0 6px 6px 0", background: "rgba(168,218,220,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#A8DADC", marginBottom: 6 }}>The Fragile Glass</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    A fragile glass sitting undisturbed on a shelf makes the point starkly. Its fragility is real — insurance companies, careful movers, and anxious hosts all treat it as genuinely present. The powers ontologist says the fragility is there whether or not it is ever tested. The Humean must say 'fragility' tracks a regularity about objects of this kind, not something intrinsic to this glass right now.
+                  </p>
+                </div>
+                <div style={{ borderLeft: "3px solid #A8DADC", borderRadius: "0 6px 6px 0", background: "rgba(168,218,220,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#A8DADC", marginBottom: 6 }}>Mechanistic Explanation in Biology</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    In chemistry and biology, the powers framework underlies mechanistic explanation: enzymes have active sites with specific binding capacities; genes have regulatory powers; membranes have selective permeability. The language of mechanism is the language of powers. The Humean reconstruction of all these as mere regularities threatens to dissolve the difference between understanding why something happens and merely noting that it happens.
+                  </p>
+                </div>
+              </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1e20", letterSpacing: 1 }}>
+          Part 28 of 35 — Ontology
         </div>
 
       </div>
