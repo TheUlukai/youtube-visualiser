@@ -1359,14 +1359,14 @@ function CriticalTurnFirstCritique() {
     }}>
 
       {/* HEADER */}
-      <div style={{ padding: "48px 40px 0 40px", maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ color: "#2D6A4F", fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 10 }}>
-          Part 3 of 21 · Kant's Critical Philosophy
+      <div style={{ textAlign: "center", padding: "48px 40px 0 40px", maxWidth: 900, margin: "0 auto" }}>
+        <div style={{ color: "#2D6A4F", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", marginBottom: 8 }}>
+          Part 3 of 21 — Kant's Critical Philosophy
         </div>
-        <h1 style={{ fontSize: 32, fontWeight: "normal", margin: "0 0 8px 0", color: "#f0ead8", letterSpacing: 0.5 }}>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#f0ead8", lineHeight: 1.3 }}>
           The Critical Turn and the First Critique
         </h1>
-        <p style={{ fontSize: 15, color: "#a0998c", margin: "0 0 0 0", fontStyle: "italic", lineHeight: 1.6 }}>
+        <p style={{ fontSize: 15, color: "#a0998c", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
           The Critique of Pure Reason asked how synthetic a priori knowledge is possible and discovered that the mind imposes its own forms and categories on raw experience.
         </p>
       </div>
@@ -1787,22 +1787,22 @@ function CriticalTurnFirstCritique() {
       {/* THE DIFFICULTY PANEL */}
       <div style={{ maxWidth: 900, margin: "28px auto 0 auto", padding: "0 40px" }}>
         <div style={{
-          background: "#100e1a",
-          border: "1px solid #2d2a40",
-          borderLeft: "4px solid #5a4a8a",
+          background: "#0e1a14",
+          border: "1px solid #1e3d2a",
+          borderLeft: "4px solid #2D6A4F",
           borderRadius: 6,
           padding: "24px 28px",
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#8a7aaa", marginBottom: 12, fontWeight: "bold" }}>
+          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#2D6A4F", marginBottom: 12, fontWeight: "bold" }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: 15, color: "#c8c0d4" }}>
-            Kant's solution carries a sharp price. If the mind imposes the forms of space, time, and causation on all possible experience, then everything we can ever know is <span style={{ color: "#c4a8e8", fontStyle: "italic" }}>already shaped by those mental contributions</span>. We cannot step outside our own cognitive apparatus to compare our structured experience with unstructured reality. The <span style={{ color: "#e8a8c4", fontStyle: "italic" }}>thing-in-itself</span> — what the world is like independently of any mind — becomes permanently inaccessible.
+          <p style={{ margin: "0 0 14px 0", lineHeight: 1.8, fontSize: 15, color: "#c8c0b4" }}>
+            Kant's solution carries a sharp price. If the mind imposes the forms of space, time, and causation on all possible experience, then everything we can ever know is <span style={{ fontStyle: "italic" }}>already shaped by those mental contributions</span>. We cannot step outside our own cognitive apparatus to compare our structured experience with unstructured reality. The <span style={{ fontStyle: "italic" }}>thing-in-itself</span> — what the world is like independently of any mind — becomes permanently inaccessible.
           </p>
-          <p style={{ margin: "0 0 16px 0", lineHeight: 1.8, fontSize: 15, color: "#c8c0d4" }}>
-            This generates the vexing distinction between <span style={{ color: "#c4a8e8" }}>phenomena</span> (knowable appearances) and <span style={{ color: "#e8a8c4" }}>noumena</span> (unknowable things-in-themselves). The question of how these two realms relate — whether the noumenon is even a coherent concept, whether freedom and morality can be grounded in it — became the engine driving all post-Kantian philosophy.
+          <p style={{ margin: "0 0 16px 0", lineHeight: 1.8, fontSize: 15, color: "#c8c0b4" }}>
+            This generates the vexing distinction between phenomena (knowable appearances) and noumena (unknowable things-in-themselves). The question of how these two realms relate — whether the noumenon is even a coherent concept, whether freedom and morality can be grounded in it — became the engine driving all post-Kantian philosophy.
           </p>
-          <p style={{ margin: 0, fontSize: 13, color: "#8a7a9a", fontStyle: "italic", borderTop: "1px solid #2d2a40", paddingTop: 14 }}>
+          <p style={{ margin: 0, fontSize: 13, color: "#5a8a6a", fontStyle: "italic", borderTop: "1px solid #1e3d2a", paddingTop: 14 }}>
             This pressure forces the next development: Fichte, Schelling, and Hegel each attempted to close the gap between phenomena and noumena — culminating in absolute idealism's claim that the distinction itself must be overcome.
           </p>
         </div>
@@ -1837,17 +1837,17 @@ function CriticalTurnFirstCritique() {
           </button>
 
           {echoesOpen && (
-            <div style={{ padding: "0 24px 24px 24px" }}>
-              <div style={{ borderTop: "1px solid #1e2a20", paddingTop: 20, display: "flex", flexDirection: "column", gap: 18 }}>
-                <div style={{ padding: "16px 20px", background: "#080e0a", border: "1px solid #1e3a2a", borderRadius: 6 }}>
-                  <div style={{ fontSize: 13, color: "#f0e8c4", marginBottom: 6 }}>7 + 5 = 12 — Arithmetic as Synthetic A Priori</div>
-                  <p style={{ margin: 0, fontSize: 13, color: "#8a9a8a", lineHeight: 1.7 }}>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #1e2a20" }}>
+              <div style={{ paddingTop: 20, display: "flex", flexDirection: "column", gap: 14 }}>
+                <div style={{ borderLeft: "3px solid #2D6A4F", borderRadius: "0 6px 6px 0", background: "rgba(45,106,79,0.07)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#6aaa8a", marginBottom: 6 }}>7 + 5 = 12 — Arithmetic as Synthetic A Priori</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
                     When we compute 7 + 5, Kant argued, we are not merely unpacking a definition — we are constructing something new by combining the two numbers in intuition (counting along a mental number line). The result 12 is not contained analytically in the meaning of "7+5"; we must perform an act of synthesis. Yet the result is universally and necessarily true for all rational minds, making it a priori. This remains one of the most debated examples in philosophy of mathematics — Frege and Russell later argued arithmetic is purely analytic, but the debate opened by Kant still animates philosophy of mathematics today.
                   </p>
                 </div>
-                <div style={{ padding: "16px 20px", background: "#080e0a", border: "1px solid #1e3a2a", borderRadius: 6 }}>
-                  <div style={{ fontSize: 13, color: "#f0e8c4", marginBottom: 6 }}>"Every Event Has a Cause" — The Causal Principle in Science</div>
-                  <p style={{ margin: 0, fontSize: 13, color: "#8a9a8a", lineHeight: 1.7 }}>
+                <div style={{ borderLeft: "3px solid #2D6A4F", borderRadius: "0 6px 6px 0", background: "rgba(45,106,79,0.07)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#6aaa8a", marginBottom: 6 }}>"Every Event Has a Cause" — The Causal Principle in Science</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
                     Modern science operates on the assumption that every phenomenon has a deterministic or probabilistic explanation — that we should never simply give up and declare an event uncaused. This is not a principle learned from any single experiment; no experiment could establish it for all events everywhere. Yet science could not proceed without it. Kant's insight that this principle is synthetic a priori — contributed by the understanding as a condition for possible experience — anticipates contemporary debates about the status of scientific laws and the "principle of sufficient reason" in physics and cosmology.
                   </p>
                 </div>
@@ -1855,6 +1855,11 @@ function CriticalTurnFirstCritique() {
             </div>
           )}
         </div>
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1a10", letterSpacing: 1, maxWidth: 900, margin: "36px auto 0 auto", padding: "0 40px" }}>
+        Part 3 of 21 — Kant's Critical Philosophy
       </div>
     </div>
   );
