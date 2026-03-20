@@ -1181,21 +1181,21 @@ function MakingOfRevolutionaryMind() {
 
         {/* Difficulty Panel */}
         <div style={{
-          background: "#0d0f12",
-          border: "1px solid #1a2030",
-          borderLeft: "4px solid #2a4060",
+          background: "#12100a",
+          border: "1px solid #2a1f0a",
+          borderLeft: "4px solid #5C4A1E",
           borderRadius: "6px",
           padding: "24px 28px",
           marginBottom: "20px",
           boxShadow: "0 4px 24px #00000080"
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#3A5C7A", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#5C4A1E", textTransform: "uppercase", marginBottom: "12px", fontWeight: "bold" }}>
             The Difficulty
           </div>
-          <p style={{ margin: "0 0 14px 0", lineHeight: "1.8", fontSize: "15px", color: "#9ab0c8" }}>
+          <p style={{ margin: "0 0 14px 0", lineHeight: "1.8", fontSize: "15px", color: "#c8b88a" }}>
             Hume showed that causation, the external world, and personal identity cannot be rationally justified through either pure reason or experience alone. This left science, morality, and common reasoning without a rational foundation. Neither the rationalist's armchair certainties nor the empiricist's accumulated observations could close the gap Hume had opened. Something entirely new was needed — but it was not yet clear what shape that new thing could take.
           </p>
-          <p style={{ margin: 0, lineHeight: "1.7", fontSize: "13px", color: "#5a7a94", fontStyle: "italic" }}>
+          <p style={{ margin: 0, lineHeight: "1.7", fontSize: "13px", color: "#8B7040", fontStyle: "italic" }}>
             This pressure forces the next development: if neither reason alone nor experience alone can ground our knowledge, perhaps knowledge arises from the structure of how the mind itself receives and organizes experience — a structure that is neither given by the world nor invented by pure thought, but constitutive of experience as such.
           </p>
         </div>
@@ -1232,25 +1232,28 @@ function MakingOfRevolutionaryMind() {
           </button>
 
           {echosOpen && (
-            <div style={{ padding: "4px 24px 24px 24px", borderTop: "1px solid #1a1408" }}>
-              <div style={{ marginBottom: "16px" }}>
-                <div style={{ fontSize: "12px", color: "#C4783A", marginBottom: "6px", letterSpacing: "0.5px" }}>
-                  Newton's Physics and Universal Law
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #1a1408" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: "3px solid #5C4A1E", borderRadius: "0 6px 6px 0", background: "rgba(92,74,30,0.07)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#C4783A", marginBottom: 6 }}>Newton's Physics and Universal Law</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    When Newton published his laws of motion and universal gravitation, he revealed that the same mathematical principles govern a falling apple and the orbit of Jupiter. For Kant, this was the central puzzle: if all knowledge comes from experience, how can we ever arrive at truly universal laws? Experience only ever shows us particular cases. The existence of Newtonian physics proved that something beyond mere experience must be at work in human cognition.
+                  </p>
                 </div>
-                <p style={{ margin: 0, lineHeight: "1.75", fontSize: "14px", color: "#9a8060" }}>
-                  When Newton published his laws of motion and universal gravitation, he revealed that the same mathematical principles govern a falling apple and the orbit of Jupiter. For Kant, this was the central puzzle: if all knowledge comes from experience, how can we ever arrive at truly universal laws? Experience only ever shows us particular cases. The existence of Newtonian physics proved that something beyond mere experience must be at work in human cognition.
-                </p>
-              </div>
-              <div>
-                <div style={{ fontSize: "12px", color: "#5C7A3A", marginBottom: "6px", letterSpacing: "0.5px" }}>
-                  Kant's Nebular Hypothesis
+                <div style={{ borderLeft: "3px solid #5C4A1E", borderRadius: "0 6px 6px 0", background: "rgba(92,74,30,0.07)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#C4783A", marginBottom: 6 }}>Kant's Nebular Hypothesis</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    Before the Critique, Kant proposed that the solar system formed from a rotating cloud of gas and dust — a hypothesis later independently developed by Laplace. This early scientific work showed Kant applying Newtonian principles speculatively, and it convinced him of the power of rational inquiry. But it also raised a deeper question: when we reason about the origins of the universe, are we genuinely extending scientific knowledge, or are we overreaching beyond what experience can ever confirm?
+                  </p>
                 </div>
-                <p style={{ margin: 0, lineHeight: "1.75", fontSize: "14px", color: "#9a8060" }}>
-                  Before the Critique, Kant proposed that the solar system formed from a rotating cloud of gas and dust — a hypothesis later independently developed by Laplace. This early scientific work showed Kant applying Newtonian principles speculatively, and it convinced him of the power of rational inquiry. But it also raised a deeper question: when we reason about the origins of the universe, are we genuinely extending scientific knowledge, or are we overreaching beyond what experience can ever confirm?
-                </p>
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a1005", letterSpacing: 1 }}>
+          Part 2 of 21 — Kant's Critical Philosophy
         </div>
 
       </div>
