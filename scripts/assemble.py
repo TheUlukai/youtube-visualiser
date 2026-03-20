@@ -106,8 +106,25 @@ def build_sections_array(sections: list[dict]) -> str:
     return "const SECTIONS = [\n" + ",\n".join(entries) + "\n];"
 
 
+def _perceived_brightness(hex_color: str) -> float:
+    """Return perceived brightness 0–255 for a hex color string."""
+    h = hex_color.lstrip('#')
+    if len(h) != 6:
+        return 128  # unknown, assume ok
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return 0.299 * r + 0.587 * g + 0.114 * b
+
+
 def build_accent_map(sections: list[dict]) -> str:
-    pairs = [f"  {json.dumps(s['id'], ensure_ascii=False)}: {json.dumps(s.get('accent_color', '#334155'), ensure_ascii=False)}" for s in sections]
+    pairs = []
+    for s in sections:
+        color = s.get('accent_color', '#334155')
+        brightness = _perceived_brightness(color)
+        if brightness < 60:
+            print(f"  WARNING: accent_color {color!r} for section '{s['id']}' "
+                  f"is too dark (brightness={brightness:.0f}) — will be invisible in nav. "
+                  f"Consider updating accentMap manually.", flush=True)
+        pairs.append(f"  {json.dumps(s['id'], ensure_ascii=False)}: {json.dumps(color, ensure_ascii=False)}")
     return "const accentMap = {\n" + ",\n".join(pairs) + "\n};"
 
 

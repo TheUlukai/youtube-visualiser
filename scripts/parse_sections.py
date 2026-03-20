@@ -36,7 +36,7 @@ For each section, extract the following fields:
 - problem_created: the new difficulty, tension, or open question that this section's idea generates — the pressure that forces the next development (1-2 sentences)
 - real_world_examples: list of concrete examples or modern parallels mentioned in the transcript for this section (empty list if none)
 - visualization_suggestion: a specific, creative suggestion for how to visualize this section's core idea interactively in React (2-3 sentences describing layout, interactions, and what makes it illuminating)
-- accent_color: a hex color string (e.g., "#7C3AED") — unique per section, chosen to evoke the mood/theme
+- accent_color: a hex color string (e.g., "#7C3AED") — unique per section, chosen to evoke the mood/theme. Must be a MID-RANGE colour with sufficient brightness to be readable as foreground text on a dark background (perceived brightness 80–180 on a 0–255 scale). Do NOT pick near-black colours (e.g. #1A1A2E, #0a0a0f) — those are background colours, not accents. Good examples: "#7C3AED", "#C2410C", "#0E7490", "#B45309", "#9D174D"
 - background_mood: 1-2 words describing the visual atmosphere (e.g., "volcanic tension", "crystalline clarity", "twilight uncertainty")
 
 Return a single JSON object with two keys:
