@@ -3326,7 +3326,7 @@ function AristotleSubstance() {
         </div>
       </div>
       {/* Footer */}
-      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3a1a06", letterSpacing: 1 }}>
+      <div style={{ textAlign: "center", marginTop: 36, marginBottom: 32, fontSize: 12, color: "#3a1a06", letterSpacing: 1 }}>
         Part 5 of 35 — Ontology
       </div>
     </div>
