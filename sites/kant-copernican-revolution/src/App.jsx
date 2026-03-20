@@ -3222,6 +3222,10 @@ function CategoriesLogicOfExperience() {
           )}
         </div>
 
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#060f18", letterSpacing: 1 }}>
+          Part 5 of 21 — Kant's Critical Philosophy
+        </div>
       </div>
     </div>
   );
