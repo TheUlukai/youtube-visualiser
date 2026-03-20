@@ -6851,14 +6851,14 @@ function FreedomAutonomyGoodwill() {
     }}>
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 20px" }}>
       {/* Header */}
-      <div style={{ padding: "40px 0 0 0" }}>
+      <div style={{ textAlign: "center", padding: "40px 0 0 0", marginBottom: 32 }}>
         <div style={{ fontSize: "11px", color: "#3D5A2E", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "8px" }}>
-          Part 11 of 21 — Kant's Moral Philosophy
+          Part 11 of 21 — Kant's Critical Philosophy
         </div>
-        <h1 style={{ fontSize: "28px", fontWeight: "normal", color: "#d0eeaa", margin: "0 0 8px 0", letterSpacing: "0.5px" }}>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#d0eeaa", margin: "0 0 8px 0" }}>
           Freedom, Autonomy, and the Good Will
         </h1>
-        <p style={{ fontSize: "14px", color: "#8aaa70", margin: 0, fontStyle: "italic", maxWidth: "700px" }}>
+        <p style={{ fontSize: "14px", color: "#8aaa70", margin: 0, fontStyle: "italic" }}>
           Kant's moral philosophy grounds human dignity in the capacity for autonomous self-legislation and identifies the good will as the only unconditionally valuable thing.
         </p>
       </div>
@@ -7049,8 +7049,8 @@ function FreedomAutonomyGoodwill() {
       </div>
 
       {/* Difficulty Panel */}
-      <div style={{ margin: "28px 0 0 0", background: "#0f0f0acc", border: "1px solid #1e1a10", borderLeft: "3px solid #7a6a2e", borderRadius: "6px", padding: "24px 28px" }}>
-        <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#7a6a2e", marginBottom: "12px" }}>The Difficulty</div>
+      <div style={{ margin: "28px 0 0 0", background: "#0f0f0acc", border: "1px solid #1a2a10", borderLeft: "3px solid #3D5A2E", borderRadius: "6px", padding: "24px 28px" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#5a7a44", marginBottom: "12px" }}>The Difficulty</div>
         <p style={{ margin: "0 0 12px 0", lineHeight: "1.75", fontSize: "14px", color: "#b0a880" }}>
           Grounding morality in autonomous rational self-legislation raises a deep problem in moral psychology: how does pure reason actually <em>motivate</em> action in finite beings who are also creatures of desire, emotion, and habit? The rational moral law, by its very purity, seems suspended above the sensible world — remote from the appetites and feelings that actually move us to act. A merely rational imperative seems unable to reach beings who hunger, fear, and love.
         </p>
@@ -7060,7 +7060,7 @@ function FreedomAutonomyGoodwill() {
       </div>
 
       {/* Real-World Echoes */}
-      <div style={{ margin: "20px 0 0 0", background: "#0a0f0acc", border: "1px solid #1a1e12", borderRadius: "6px", overflow: "hidden" }}>
+      <div style={{ margin: "20px 0 0 0", background: "rgba(61,90,46,0.05)", border: "1px solid rgba(61,90,46,0.2)", borderRadius: "8px", overflow: "hidden" }}>
         <button
           onClick={() => setEchoesOpen(!echoesOpen)}
           style={{
@@ -7075,22 +7075,35 @@ function FreedomAutonomyGoodwill() {
             fontFamily: "Georgia, serif",
           }}
         >
-          <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#5a7a44" }}>Real-World Echoes</span>
-          {echoesOpen
-            ? <ChevronUp size={16} color="#3D5A2E" />
-            : <ChevronDown size={16} color="#3D5A2E" />
-          }
+          <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#5a7a44" }}>Real-World Echoes</span>
+          {echoesOpen ? <ChevronUp size={16} color="#5a7a44" /> : <ChevronDown size={16} color="#5a7a44" />}
         </button>
         {echoesOpen && (
-          <div style={{ padding: "0 24px 22px 24px", borderTop: "1px solid #1a2a10" }}>
-            <p style={{ fontSize: "13px", color: "#8aaa70", lineHeight: "1.75", marginTop: "16px" }}>
-              In his essay "What Is Enlightenment?", Kant describes the condition of <em>self-imposed tutelage</em> — the state of depending on another's authority to think and decide — as a failure to exercise autonomy. Moral maturity means having the courage to use one's own reason, to step from heteronomy into self-legislation. This maps directly onto contemporary debates about intellectual independence, conformity, and the social pressures that keep individuals from examining inherited beliefs.
-            </p>
-            <p style={{ fontSize: "13px", color: "#8aaa70", lineHeight: "1.75" }}>
-              The phenomenology of moral obligation — the experience of <em>feeling</em> duty as a constraint, as something that demands action against what we might prefer — is itself Kantian evidence for our dual nature. When someone returns a found wallet despite wanting to keep it, and experiences this as genuinely obligatory rather than merely prudent, they are enacting the very structure Kant describes: the noumenal will imposing law on the phenomenal being.
-            </p>
+          <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(61,90,46,0.2)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+              {[
+                {
+                  title: "What Is Enlightenment? — Self-Imposed Tutelage",
+                  body: "In his essay \"What Is Enlightenment?\", Kant describes the condition of self-imposed tutelage — the state of depending on another's authority to think and decide — as a failure to exercise autonomy. Moral maturity means having the courage to use one's own reason, to step from heteronomy into self-legislation. This maps directly onto contemporary debates about intellectual independence, conformity, and the social pressures that keep individuals from examining inherited beliefs.",
+                },
+                {
+                  title: "The Phenomenology of Moral Obligation",
+                  body: "The experience of feeling duty as a constraint — something that demands action against what we might prefer — is itself Kantian evidence for our dual nature. When someone returns a found wallet despite wanting to keep it, and experiences this as genuinely obligatory rather than merely prudent, they are enacting the very structure Kant describes: the noumenal will imposing law on the phenomenal being.",
+                },
+              ].map((item, i) => (
+                <div key={i} style={{ borderLeft: "3px solid #3D5A2E", borderRadius: "0 6px 6px 0", background: "rgba(61,90,46,0.07)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#5a7a44", marginBottom: 6 }}>{item.title}</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0f1a09", letterSpacing: 1 }}>
+        Part 11 of 21 — Kant's Critical Philosophy
       </div>
       </div>
     </div>
@@ -7549,13 +7562,13 @@ function CritiquePracticalReasonMoralPsychology() {
         {/* LAYER 3: THE DIFFICULTY PANEL */}
         <div style={{
           background: "rgba(20, 20, 45, 0.85)",
-          border: "1px solid rgba(60, 40, 100, 0.4)",
-          borderLeft: "4px solid #3A2870",
+          border: "1px solid rgba(44, 62, 122, 0.4)",
+          borderLeft: "4px solid #2C3E7A",
           borderRadius: "8px",
           padding: "28px 32px",
           marginBottom: "24px",
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#5A4090", marginBottom: "14px", fontWeight: "bold" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: "#7080B0", marginBottom: "14px", fontWeight: "bold" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 14px", fontSize: "15px", lineHeight: 1.8, color: "#A8A8D0" }}>
@@ -7568,8 +7581,8 @@ function CritiquePracticalReasonMoralPsychology() {
 
         {/* LAYER 4: REAL-WORLD ECHOES */}
         <div style={{
-          background: "rgba(15, 20, 45, 0.85)",
-          border: "1px solid rgba(44,62,122,0.3)",
+          background: "rgba(44,62,122,0.05)",
+          border: "1px solid rgba(44,62,122,0.2)",
           borderRadius: "8px",
           overflow: "hidden",
         }}>
@@ -7577,54 +7590,44 @@ function CritiquePracticalReasonMoralPsychology() {
             onClick={() => setEchoesOpen(!echoesOpen)}
             style={{
               width: "100%",
-              background: "none",
+              background: "transparent",
               border: "none",
-              padding: "20px 28px",
+              padding: "18px 24px",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
               cursor: "pointer",
-              color: "#7080A0",
               fontFamily: "Georgia, serif",
             }}>
-            <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase" }}>Real-World Echoes</span>
-            {echoesOpen ? <ChevronUp size={16} color="#5060A0" /> : <ChevronDown size={16} color="#5060A0" />}
+            <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#7080B0" }}>Real-World Echoes</span>
+            {echoesOpen ? <ChevronUp size={16} color="#7080B0" /> : <ChevronDown size={16} color="#7080B0" />}
           </button>
           {echoesOpen && (
-            <div style={{ padding: "0 28px 28px" }}>
-              <p style={{ fontSize: "14px", color: "#5A6A8A", lineHeight: 1.7, margin: "0 0 18px", fontStyle: "italic" }}>
-                These Kantian distinctions surface with surprising clarity in everyday moral life.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div style={{
-                  background: "rgba(20,28,60,0.5)",
-                  border: "1px solid rgba(44,62,122,0.3)",
-                  borderRadius: "8px",
-                  padding: "18px 22px",
-                }}>
-                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#A0B0D8", marginBottom: "8px" }}>
-                    Natural Compassion vs. Principled Giving
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(44,62,122,0.2)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: "Natural Compassion vs. Principled Giving",
+                    body: "Consider two donors to a homeless shelter. One gives because the sight of suffering moves them emotionally — their compassion is genuine and the outcome is good. Another gives despite feeling no particular emotion toward strangers, having reasoned that poverty is an injustice they are obligated to address. Kant would say only the second action has moral worth, however admirable the first may appear. The compassionate donor might stop giving should the sight of poverty become familiar, while the duty-bound donor has a stable, universal reason that does not depend on emotional availability.",
+                  },
+                  {
+                    title: "Moral Feeling in Professional Ethics",
+                    body: "Medical and legal professionals face this tension acutely. A doctor who feels deep personal warmth for every patient may provide excellent care, but their motivation is contingent on likability. The professional who treats every patient with equal care because their role carries a moral obligation — regardless of personal feeling — embodies something closer to Kantian virtue. Professional codes of ethics often implicitly encode this insight: obligation, not sentiment, must ground reliable moral practice.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: "3px solid #2C3E7A", borderRadius: "0 6px 6px 0", background: "rgba(44,62,122,0.07)", padding: "14px 18px" }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#7080B0", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
                   </div>
-                  <p style={{ margin: 0, fontSize: "13px", color: "#7080A8", lineHeight: 1.7 }}>
-                    Consider two donors to a homeless shelter. One gives because the sight of suffering moves them emotionally — their compassion is genuine and the outcome is good. Another gives despite feeling no particular emotion toward strangers, having reasoned that poverty is an injustice they are obligated to address. Kant would say only the second action has moral worth, however admirable the first may appear. The compassionate donor might stop giving should the sight of poverty become familiar or should their emotional resources be exhausted, while the duty-bound donor has a stable, universal reason that does not depend on emotional availability.
-                  </p>
-                </div>
-                <div style={{
-                  background: "rgba(20,28,60,0.5)",
-                  border: "1px solid rgba(44,62,122,0.3)",
-                  borderRadius: "8px",
-                  padding: "18px 22px",
-                }}>
-                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#A0B0D8", marginBottom: "8px" }}>
-                    Moral Feeling in Professional Ethics
-                  </div>
-                  <p style={{ margin: 0, fontSize: "13px", color: "#7080A8", lineHeight: 1.7 }}>
-                    Medical and legal professionals face this tension acutely. A doctor who feels deep personal warmth for every patient may provide excellent care, but their motivation is contingent on likability. The professional who treats every patient with equal care because their role carries a moral obligation — regardless of personal feeling — embodies something closer to Kantian virtue. Professional codes of ethics often implicitly encode this insight: obligation, not sentiment, must ground reliable moral practice.
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a0f20", letterSpacing: 1 }}>
+          Part 12 of 21 — Kant's Critical Philosophy
         </div>
 
       </div>
@@ -8217,8 +8220,8 @@ function PostulatesGodFreedomImmortality() {
 
         {/* REAL-WORLD ECHOES */}
         <div style={{
-          background: "#0f0820",
-          border: "1px solid #2a1a3a",
+          background: "rgba(107,76,154,0.05)",
+          border: "1px solid rgba(107,76,154,0.2)",
           borderRadius: "8px",
           overflow: "hidden"
         }}>
@@ -8234,39 +8237,37 @@ function PostulatesGodFreedomImmortality() {
               alignItems: "center",
               justifyContent: "space-between",
               fontFamily: "Georgia, serif",
-              color: "#9B7BC7"
             }}
           >
-            <span style={{ fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase" }}>Real-World Echoes</span>
-            {echosOpen ? <ChevronUp size={16} color="#6B4C9A" /> : <ChevronDown size={16} color="#6B4C9A" />}
+            <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#9B7BC7" }}>Real-World Echoes</span>
+            {echosOpen ? <ChevronUp size={16} color="#9B7BC7" /> : <ChevronDown size={16} color="#9B7BC7" />}
           </button>
 
           {echosOpen && (
-            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #2a1a3a" }}>
-              <div style={{ marginTop: "20px" }}>
-                <div style={{ padding: "18px", background: "#120a1e", border: "1px solid #3a2a5a", borderRadius: "6px", marginBottom: "14px" }}>
-                  <div style={{ fontSize: "13px", color: "#9B7BC7", marginBottom: "8px", fontWeight: "bold" }}>
-                    Liberal Protestant Theology
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(107,76,154,0.2)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: "Liberal Protestant Theology",
+                    body: "Nineteenth-century theologians like Albrecht Ritschl and Adolf von Harnack drew directly on Kantian moral foundations to reconstruct religious faith after the demolition of traditional metaphysical proofs. Instead of arguing for God's existence through cosmological arguments, they grounded faith in the moral experience of humanity — precisely Kant's move. This shaped liberal Protestantism's emphasis on ethics over doctrine and remains influential in religious thought that prioritizes moral commitment over creedal assertion.",
+                  },
+                  {
+                    title: "Human Rights Declarations and Practical Faith",
+                    body: "The Universal Declaration of Human Rights (1948) and subsequent international rights frameworks operate on something structurally similar to Kantian practical postulation. The universality of human dignity and rights cannot be theoretically proved in any strict empirical sense — yet global governance proceeds as if these claims were certain, because moral commitment requires it. The declaration functions as a practical postulate: not theoretical knowledge, but rational necessity for moral and political coherence on a global scale.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: "3px solid #6B4C9A", borderRadius: "0 6px 6px 0", background: "rgba(107,76,154,0.07)", padding: "14px 18px" }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#9B7BC7", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
                   </div>
-                  <p style={{ margin: 0, fontSize: "13px", color: "#b8a8cc", lineHeight: 1.7 }}>
-                    Nineteenth-century theologians like Albrecht Ritschl and Adolf von Harnack drew directly on Kantian moral foundations to reconstruct religious faith after the demolition of traditional metaphysical proofs. Instead of arguing for God's existence through cosmological arguments, they grounded faith in the moral experience of humanity — precisely Kant's move. This shaped liberal Protestantism's emphasis on ethics over doctrine and remains influential in religious thought that prioritizes moral commitment over creedal assertion.
-                  </p>
-                </div>
-                <div style={{ padding: "18px", background: "#120a1e", border: "1px solid #3a2a5a", borderRadius: "6px" }}>
-                  <div style={{ fontSize: "13px", color: "#9B7BC7", marginBottom: "8px", fontWeight: "bold" }}>
-                    Human Rights Declarations and Practical Faith
-                  </div>
-                  <p style={{ margin: 0, fontSize: "13px", color: "#b8a8cc", lineHeight: 1.7 }}>
-                    The Universal Declaration of Human Rights (1948) and subsequent international rights frameworks operate on something structurally similar to Kantian practical postulation. The universality of human dignity and rights cannot be theoretically proved in any strict empirical sense — yet global governance proceeds as if these claims were certain, because moral commitment requires it. The declaration functions as a practical postulate: not theoretical knowledge, but rational necessity for moral and political coherence on a global scale.
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           )}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: "32px", fontSize: "11px", color: "#3a2a5a" }}>
-          Part 13 of 21 — Postulates of Practical Reason
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a0a30", letterSpacing: 1 }}>
+          Part 13 of 21 — Kant's Critical Philosophy
         </div>
       </div>
     </div>
@@ -8717,13 +8718,13 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
         {/* THE DIFFICULTY PANEL */}
         <div style={{
           background: "#0f1520cc",
-          border: "1px solid #1e2a3a",
-          borderLeft: "4px solid #4a7ab0",
+          border: "1px solid #1a3020",
+          borderLeft: "4px solid #2A7D4F",
           borderRadius: 8,
           padding: "24px 28px",
           marginBottom: 28,
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#4a7ab0", marginBottom: 12, fontWeight: "bold" }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#5a9a70", marginBottom: 12, fontWeight: "bold" }}>The Difficulty</div>
           <p style={{ margin: "0 0 12px", lineHeight: 1.8, color: "#c0c4cc", fontSize: 15 }}>
             Introducing purposiveness as a regulative principle immediately raises new and difficult questions. What precisely are aesthetic and teleological judgment? Is beauty merely subjective — a pleasant feeling — or does it carry genuine universal validity? How do organisms differ from machines if both are complex arrangements of parts? And how exactly does the feeling of purposive harmony in beautiful nature connect to moral life and the supersensible?
           </p>
@@ -8734,11 +8735,10 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
 
         {/* REAL-WORLD ECHOES */}
         <div style={{
-          background: "#0c1810cc",
-          border: "1px solid #1a3020",
+          background: "rgba(42,125,79,0.05)",
+          border: "1px solid rgba(42,125,79,0.2)",
           borderRadius: 8,
           overflow: "hidden",
-          marginBottom: 12,
         }}>
           <button
             onClick={() => setEchosOpen(!echosOpen)}
@@ -8751,41 +8751,39 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
               alignItems: "center",
               justifyContent: "space-between",
               cursor: "pointer",
-              color: "#6ab888",
               fontFamily: "Georgia, serif",
             }}
           >
-            <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", fontWeight: "bold" }}>Real-World Echoes</span>
-            {echosOpen ? <ChevronUp size={18} color="#2A7D4F" /> : <ChevronDown size={18} color="#2A7D4F" />}
+            <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#5a9a70" }}>Real-World Echoes</span>
+            {echosOpen ? <ChevronUp size={16} color="#5a9a70" /> : <ChevronDown size={16} color="#5a9a70" />}
           </button>
 
           {echosOpen && (
-            <div style={{ padding: "4px 24px 24px" }}>
-              <div style={{
-                background: "#0a1e10",
-                border: "1px solid #1a3420",
-                borderRadius: 8,
-                padding: "18px 20px",
-                marginBottom: 14,
-              }}>
-                <div style={{ fontSize: 12, color: "#2A7D4F", marginBottom: 8, fontWeight: "bold" }}>Darwin and Teleological Analysis</div>
-                <p style={{ margin: 0, color: "#a8c4b0", fontSize: 14, lineHeight: 1.75 }}>
-                  Darwin acknowledged Kant's teleological analysis of organisms as genuinely relevant to his theory of natural selection. The very problem Kant identified — that organisms seem purposively organized in ways mechanical science alone cannot capture — drove Darwin toward a mechanism that could produce apparent purposiveness without design. The regulative necessity Kant described turned out to point toward a real natural process.
-                </p>
-              </div>
-              <div style={{
-                background: "#0a1e10",
-                border: "1px solid #1a3420",
-                borderRadius: 8,
-                padding: "18px 20px",
-              }}>
-                <div style={{ fontSize: 12, color: "#2A7D4F", marginBottom: 8, fontWeight: "bold" }}>Contemporary Systems Biology</div>
-                <p style={{ margin: 0, color: "#a8c4b0", fontSize: 14, lineHeight: 1.75 }}>
-                  Systems biology employs concepts of circular causality, self-organization, and emergent function that closely parallel Kant's analysis of organisms as natural purposes. When biologists describe how metabolic networks maintain themselves through reciprocal causal relationships — where the whole both produces and is produced by its parts — they are using a framework whose philosophical foundations Kant explored over two centuries earlier.
-                </p>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(42,125,79,0.2)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: "Darwin and Teleological Analysis",
+                    body: "Darwin acknowledged Kant's teleological analysis of organisms as genuinely relevant to his theory of natural selection. The very problem Kant identified — that organisms seem purposively organized in ways mechanical science alone cannot capture — drove Darwin toward a mechanism that could produce apparent purposiveness without design. The regulative necessity Kant described turned out to point toward a real natural process.",
+                  },
+                  {
+                    title: "Contemporary Systems Biology",
+                    body: "Systems biology employs concepts of circular causality, self-organization, and emergent function that closely parallel Kant's analysis of organisms as natural purposes. When biologists describe how metabolic networks maintain themselves through reciprocal causal relationships — where the whole both produces and is produced by its parts — they are using a framework whose philosophical foundations Kant explored over two centuries earlier.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: "3px solid #2A7D4F", borderRadius: "0 6px 6px 0", background: "rgba(42,125,79,0.07)", padding: "14px 18px" }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#5a9a70", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
+                  </div>
+                ))}
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1e10", letterSpacing: 1 }}>
+          Part 14 of 21 — Kant's Critical Philosophy
         </div>
 
       </div>
@@ -9401,9 +9399,9 @@ function AestheticJudgmentBeautiful() {
 
       {/* Real-World Echoes */}
       <div style={{
-        background: "#0d0d15",
-        border: "1px solid #1e1e28",
-        borderRadius: 10,
+        background: "rgba(212,160,23,0.05)",
+        border: "1px solid rgba(212,160,23,0.2)",
+        borderRadius: 8,
         maxWidth: 860,
         margin: "0 auto",
         overflow: "hidden"
@@ -9414,51 +9412,44 @@ function AestheticJudgmentBeautiful() {
             width: "100%",
             background: "none",
             border: "none",
-            padding: "18px 28px",
+            padding: "18px 24px",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            color: "#D4A017"
+            fontFamily: "Georgia, serif",
           }}
         >
-          <span style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontFamily: "Georgia, serif", fontWeight: "bold" }}>
-            Real-World Echoes
-          </span>
-          {echosOpen ? <ChevronUp size={18} color="#D4A017" /> : <ChevronDown size={18} color="#D4A017" />}
+          <span style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: "#c49010" }}>Real-World Echoes</span>
+          {echosOpen ? <ChevronUp size={16} color="#c49010" /> : <ChevronDown size={16} color="#c49010" />}
         </button>
 
         {echosOpen && (
-          <div style={{ padding: "4px 28px 24px 28px" }}>
-            <div style={{
-              background: "#12121a",
-              border: "1px solid #2a2a35",
-              borderRadius: 10,
-              padding: "18px 20px",
-              marginBottom: 14
-            }}>
-              <div style={{ fontSize: 14, color: "#D4A017", fontWeight: "bold", marginBottom: 6 }}>
-                The Wild Flower — Free Beauty in Nature
-              </div>
-              <p style={{ fontSize: 14, color: "#bbb", lineHeight: 1.7, margin: 0 }}>
-                Kant's paradigm case of free beauty is the wildflower, appreciated without reference to its biological function as a reproductive organ or pollinator attractor. When we pause before it purely as form — its color, its symmetry, its delicate structure — we perform a disinterested contemplation that liberates the imagination to play freely with the understanding. The flower becomes a symbol of freedom: something that seems to follow its own inner law rather than any external determination.
-              </p>
-            </div>
-            <div style={{
-              background: "#12121a",
-              border: "1px solid #2a2a35",
-              borderRadius: 10,
-              padding: "18px 20px"
-            }}>
-              <div style={{ fontSize: 14, color: "#D4A017", fontWeight: "bold", marginBottom: 6 }}>
-                Cathedrals and Representational Art — Adherent Beauty
-              </div>
-              <p style={{ fontSize: 14, color: "#bbb", lineHeight: 1.7, margin: 0 }}>
-                Gothic cathedrals and figurative paintings exemplify adherent beauty: their aesthetic judgment is inseparable from what they are for. When we admire a cathedral, we cannot fully set aside its sacred purpose — the soaring vault is beautiful partly because it evokes the reach toward the divine. Similarly, a portrait is judged partly against its concept as a likeness of a person. These are still aesthetic experiences, but they are constrained by conceptual purpose in ways that prevent fully free play — they achieve beauty through, not despite, their function.
-              </p>
+          <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(212,160,23,0.2)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+              {[
+                {
+                  title: "The Wild Flower — Free Beauty in Nature",
+                  body: "Kant's paradigm case of free beauty is the wildflower, appreciated without reference to its biological function as a reproductive organ or pollinator attractor. When we pause before it purely as form — its color, its symmetry, its delicate structure — we perform a disinterested contemplation that liberates the imagination to play freely with the understanding. The flower becomes a symbol of freedom: something that seems to follow its own inner law rather than any external determination.",
+                },
+                {
+                  title: "Cathedrals and Representational Art — Adherent Beauty",
+                  body: "Gothic cathedrals and figurative paintings exemplify adherent beauty: their aesthetic judgment is inseparable from what they are for. When we admire a cathedral, we cannot fully set aside its sacred purpose — the soaring vault is beautiful partly because it evokes the reach toward the divine. Similarly, a portrait is judged partly against its concept as a likeness of a person. These are still aesthetic experiences, but they are constrained by conceptual purpose in ways that prevent fully free play — they achieve beauty through, not despite, their function.",
+                },
+              ].map((item, i) => (
+                <div key={i} style={{ borderLeft: "3px solid #D4A017", borderRadius: "0 6px 6px 0", background: "rgba(212,160,23,0.07)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#c49010", marginBottom: 6 }}>{item.title}</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#3a2800", letterSpacing: 1, maxWidth: 860, margin: "36px auto 0" }}>
+        Part 15 of 21 — Kant's Critical Philosophy
       </div>
 
       <style>{`
@@ -10156,6 +10147,11 @@ function SublimeLimitsOfImagination() {
           )}
         </div>
 
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a0828", letterSpacing: 1 }}>
+          Part 16 of 21 — Kant's Critical Philosophy
+        </div>
+
       </div>
     </div>
   );
@@ -10619,13 +10615,13 @@ function GeniusArtAestheticIdeas() {
         {/* THE DIFFICULTY PANEL */}
         <div style={{
           background: '#0a0c12',
-          border: '1px solid #1a1a2a',
-          borderLeft: '4px solid #8B4513',
+          border: '1px solid #2a1010',
+          borderLeft: '4px solid #C0392B',
           borderRadius: 8,
           padding: '24px 28px',
           marginBottom: 28,
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: '#A0522D', marginBottom: 12 }}>The Difficulty</div>
+          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: '#cc7060', marginBottom: 12 }}>The Difficulty</div>
           <p style={{ margin: '0 0 12px', lineHeight: 1.85, fontSize: 15, color: '#C9B8A8' }}>
             Kant's aesthetic theory has now fully analyzed beauty, the sublime, and artistic genius. But the third Critique also promised a teleological analysis of nature — specifically of living organisms that exhibit internal purposiveness. How do organisms differ from aesthetic objects, and can mechanical science fully explain life? The very concept of natural purposiveness that grounded aesthetic judgment now demands its own investigation in nature's most striking instances: the living body.
           </p>
@@ -10636,53 +10632,58 @@ function GeniusArtAestheticIdeas() {
 
         {/* REAL-WORLD ECHOES */}
         <div style={{
-          background: '#0a0a10',
-          border: '1px solid #1a1a2a',
+          background: 'rgba(192,57,43,0.05)',
+          border: '1px solid rgba(192,57,43,0.2)',
           borderRadius: 8,
           overflow: 'hidden',
         }}>
-          <div
+          <button
             onClick={() => setEchosOpen(!echosOpen)}
             style={{
+              width: '100%',
+              background: 'transparent',
+              border: 'none',
               padding: '18px 24px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               cursor: 'pointer',
-              borderBottom: echosOpen ? '1px solid #1a1a2a' : 'none',
+              fontFamily: 'Georgia, serif',
             }}
           >
-            <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: '#7a6a5a' }}>Real-World Echoes</div>
-            {echosOpen ? <ChevronUp size={16} color="#C0392B" /> : <ChevronDown size={16} color="#C0392B" />}
-          </div>
+            <span style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: '#cc7060' }}>Real-World Echoes</span>
+            {echosOpen ? <ChevronUp size={16} color="#cc7060" /> : <ChevronDown size={16} color="#cc7060" />}
+          </button>
           {echosOpen && (
-            <div style={{ padding: '24px 28px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+            <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid rgba(192,57,43,0.2)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
                 {[
                   {
                     title: 'Bach, Shakespeare, Michelangelo',
-                    text: 'These artists are the canonical exemplars Kant had in mind: works so original they established new standards for entire traditions, yet so complete they resist mere imitation. Every subsequent fugue composer lived in Bach\'s shadow without copying his formula.'
+                    body: 'These artists are the canonical exemplars Kant had in mind: works so original they established new standards for entire traditions, yet so complete they resist mere imitation. Every subsequent fugue composer lived in Bach\'s shadow without copying his formula.',
                   },
                   {
                     title: 'Romantic Theories of Artistic Creation',
-                    text: 'Kant\'s concept of genius directly shaped Romantic aesthetics — Schiller, Schelling, and Coleridge all elaborated the idea of the artist as conduit for something beyond rational control, a force greater than personal intention flowing through the creative act.'
+                    body: 'Kant\'s concept of genius directly shaped Romantic aesthetics — Schiller, Schelling, and Coleridge all elaborated the idea of the artist as conduit for something beyond rational control, a force greater than personal intention flowing through the creative act.',
                   },
                   {
                     title: 'Art as Autonomous — Valuable in Itself',
-                    text: 'The modern conception of fine art as intrinsically valuable, independent of decoration, moral instruction, or entertainment, traces directly to Kant. The separation of \'art for art\'s sake\' from craft and mere pleasure is Kantian at its root.'
-                  }
-                ].map(item => (
-                  <div key={item.title} style={{
-                    paddingLeft: 16,
-                    borderLeft: '2px solid #C0392B44',
-                  }}>
-                    <div style={{ fontSize: 13, color: '#D4A090', marginBottom: 6, fontStyle: 'italic' }}>{item.title}</div>
-                    <p style={{ margin: 0, fontSize: 13, color: '#9a8878', lineHeight: 1.75 }}>{item.text}</p>
+                    body: 'The modern conception of fine art as intrinsically valuable, independent of decoration, moral instruction, or entertainment, traces directly to Kant. The separation of \'art for art\'s sake\' from craft and mere pleasure is Kantian at its root.',
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: '3px solid #C0392B', borderRadius: '0 6px 6px 0', background: 'rgba(192,57,43,0.07)', padding: '14px 18px' }}>
+                    <div style={{ fontSize: 13, fontWeight: 'bold', color: '#cc7060', marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>{item.body}</p>
                   </div>
                 ))}
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#280a08', letterSpacing: 1 }}>
+          Part 17 of 21 — Kant's Critical Philosophy
         </div>
 
       </div>
@@ -11514,69 +11515,58 @@ function TeleologyPurposivenessOfNature() {
       {/* 4. REAL-WORLD ECHOES (collapsible) */}
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         <div style={{
-          background: 'rgba(15,25,20,0.85)',
+          background: 'rgba(39,174,96,0.05)',
           border: '1px solid rgba(39,174,96,0.2)',
-          borderRadius: '10px',
+          borderRadius: 8,
           overflow: 'hidden',
         }}>
           <button
             onClick={() => setEchosOpen(!echosOpen)}
-            onMouseEnter={() => setHoveredButton('echoes')}
-            onMouseLeave={() => setHoveredButton(null)}
             style={{
               width: '100%',
-              background: hoveredButton === 'echoes' ? 'rgba(39,174,96,0.12)' : 'transparent',
+              background: 'transparent',
               border: 'none',
-              padding: '20px 32px',
+              padding: '18px 24px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               cursor: 'pointer',
-              transition: 'background 0.2s',
+              fontFamily: 'Georgia, serif',
             }}>
-            <span style={{ fontSize: '10px', letterSpacing: '3px', textTransform: 'uppercase', color: '#27AE60', fontWeight: 'bold', fontFamily: 'Georgia, serif' }}>
-              Real-World Echoes
-            </span>
-            {echosOpen
-              ? <ChevronUp size={18} color="#27AE60" />
-              : <ChevronDown size={18} color="#27AE60" />
-            }
+            <span style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: '#5aaa70' }}>Real-World Echoes</span>
+            {echosOpen ? <ChevronUp size={16} color="#5aaa70" /> : <ChevronDown size={16} color="#5aaa70" />}
           </button>
 
           {echosOpen && (
-            <div style={{ padding: '0 32px 28px 32px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px' }}>
+            <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid rgba(39,174,96,0.2)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
                 {[
                   {
                     title: 'Darwin and Natural Selection',
-                    icon: '🌱',
-                    text: 'Darwin explicitly engaged with Kant\'s teleological analysis in the Origin of Species. Natural selection provides the mechanical story that Kant said was needed: adaptive organization emerges from blind variation under environmental pressure. Purpose without a purposer — mechanical teleology realized.'
+                    body: 'Darwin explicitly engaged with Kant\'s teleological analysis in the Origin of Species. Natural selection provides the mechanical story that Kant said was needed: adaptive organization emerges from blind variation under environmental pressure. Purpose without a purposer — mechanical teleology realized.',
                   },
                   {
                     title: 'Systems Biology',
-                    icon: '⚙',
-                    text: 'Contemporary systems biology uses exactly the concepts Kant identified: circular causality, feedback networks, self-organization, emergent properties. When biologists model gene regulatory networks as self-sustaining loops, they operationalize Kant\'s natural purpose under a new name.'
+                    body: 'Contemporary systems biology uses exactly the concepts Kant identified: circular causality, feedback networks, self-organization, emergent properties. When biologists model gene regulatory networks as self-sustaining loops, they operationalize Kant\'s natural purpose under a new name.',
                   },
                   {
                     title: 'Ecology and Environmental Science',
-                    icon: '🌍',
-                    text: 'Environmental scientists understand ecosystems as integrated wholes through feedback relationships — nutrient cycles, predator-prey dynamics, climate feedbacks — that resist reduction to independent linear mechanisms. The ecosystem behaves as Kant\'s natural purpose writ large.'
+                    body: 'Environmental scientists understand ecosystems as integrated wholes through feedback relationships — nutrient cycles, predator-prey dynamics, climate feedbacks — that resist reduction to independent linear mechanisms. The ecosystem behaves as Kant\'s natural purpose writ large.',
                   },
-                ].map(item => (
-                  <div key={item.title} style={{
-                    background: 'rgba(39,174,96,0.06)',
-                    border: '1px solid rgba(39,174,96,0.2)',
-                    borderRadius: '8px',
-                    padding: '18px',
-                  }}>
-                    <div style={{ fontSize: '22px', marginBottom: '8px' }}>{item.icon}</div>
-                    <div style={{ color: '#27AE60', fontSize: '13px', fontWeight: 'bold', marginBottom: '8px' }}>{item.title}</div>
-                    <p style={{ color: '#9bcea8', fontSize: '13px', lineHeight: '1.65', margin: 0 }}>{item.text}</p>
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: '3px solid #27AE60', borderRadius: '0 6px 6px 0', background: 'rgba(39,174,96,0.07)', padding: '14px 18px' }}>
+                    <div style={{ fontSize: 13, fontWeight: 'bold', color: '#5aaa70', marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>{item.body}</p>
                   </div>
                 ))}
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#062a14', letterSpacing: 1 }}>
+          Part 18 of 21 — Kant's Critical Philosophy
         </div>
       </div>
     </div>
@@ -11705,11 +11695,11 @@ function PoliticalPhilosophyPerpetualPeace() {
     }}>
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 20px" }}>
       {/* Header */}
-      <div style={{ padding: "40px 0 0 0" }}>
+      <div style={{ textAlign: "center", padding: "40px 0 0 0", marginBottom: 32 }}>
         <div style={{ fontSize: "11px", letterSpacing: "3px", color: "#2980B9", textTransform: "uppercase", marginBottom: "8px" }}>
-          Part 19 of 21 — Political Philosophy
+          Part 19 of 21 — Kant's Critical Philosophy
         </div>
-        <h1 style={{ fontSize: "28px", fontWeight: "normal", margin: "0 0 8px 0", color: "#e8f4fd", lineHeight: 1.3 }}>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#e8f4fd", lineHeight: 1.3 }}>
           Political Philosophy and the Ideal of Perpetual Peace
         </h1>
         <p style={{ fontSize: "15px", color: "#8ab4cc", margin: "0", fontStyle: "italic", lineHeight: 1.6 }}>
@@ -12118,12 +12108,12 @@ function PoliticalPhilosophyPerpetualPeace() {
       <div style={{ margin: "24px 0 0 0" }}>
         <div style={{
           background: "#0f1520",
-          border: "1px solid #1a3050",
-          borderLeft: "4px solid #1a6090",
+          border: "1px solid #1a3a5c",
+          borderLeft: "4px solid #2980B9",
           borderRadius: "6px",
           padding: "24px 28px"
         }}>
-          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#1a90c0", textTransform: "uppercase", marginBottom: "12px" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#6aa3cc", textTransform: "uppercase", marginBottom: "12px" }}>
             The Difficulty
           </div>
           <p style={{ margin: "0 0 16px 0", lineHeight: 1.8, fontSize: "15px", color: "#a8c0d8" }}>
@@ -12138,50 +12128,51 @@ function PoliticalPhilosophyPerpetualPeace() {
       {/* REAL-WORLD ECHOES PANEL */}
       <div style={{ margin: "24px 0 0 0" }}>
         <div style={{
-          background: "#0a1520",
-          border: "1px solid #1a3a5c",
-          borderRadius: "6px",
+          background: "rgba(41,128,185,0.05)",
+          border: "1px solid rgba(41,128,185,0.2)",
+          borderRadius: "8px",
           overflow: "hidden"
         }}>
-          <div
+          <button
             onClick={() => setEchoesOpen(!echoesOpen)}
             style={{
+              width: "100%",
+              background: "transparent",
+              border: "none",
               padding: "18px 24px",
               cursor: "pointer",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              userSelect: "none"
+              fontFamily: "Georgia, serif",
             }}
           >
-            <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#2980B9", textTransform: "uppercase" }}>
-              Real-World Echoes
-            </div>
-            {echoesOpen ? <ChevronUp size={18} color="#2980B9" /> : <ChevronDown size={18} color="#2980B9" />}
-          </div>
+            <span style={{ fontSize: 10, letterSpacing: 3, color: "#6aa3cc", textTransform: "uppercase" }}>Real-World Echoes</span>
+            {echoesOpen ? <ChevronUp size={16} color="#6aa3cc" /> : <ChevronDown size={16} color="#6aa3cc" />}
+          </button>
           {echoesOpen && (
-            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #1a3a5c" }}>
-              <p style={{ fontSize: "13px", color: "#6a96b8", margin: "16px 0", fontStyle: "italic", lineHeight: 1.7 }}>
-                Kant died in 1804, yet his political philosophy keeps re-emerging in the institutions modernity builds when it tries to escape perpetual war:
-              </p>
-              {[
-                { title: "The United Nations (1945)", text: "Its founders — including figures who had read Kant — explicitly drew on the idea of a federation of states resolving disputes through international law rather than force. The Charter's prohibition on aggressive war is directly Kantian in spirit." },
-                { title: "The International Court of Justice", text: "Kant's vision of replacing force with legal arbitration finds its closest institutional expression here: a court where states, like persons, submit their disputes to impartial judgment rather than the sword." },
-                { title: "The European Union", text: "The most successful realization of peaceful federation among formerly hostile nations in history. France and Germany — which fought three catastrophic wars in 70 years — now share currency, laws, and open borders. Kant would have recognized this as his federation made real." },
-                { title: "Human Rights Declarations", text: "The Universal Declaration of Human Rights (1948) reflects Kantian universal moral principles — rights that every person possesses not as a citizen of any state, but as a human being, grounded in dignity rather than granted by governments." }
-              ].map((echo, i) => (
-                <div key={i} style={{
-                  marginBottom: i < 3 ? "16px" : "0",
-                  paddingBottom: i < 3 ? "16px" : "0",
-                  borderBottom: i < 3 ? "1px solid #1a3a5c" : "none"
-                }}>
-                  <div style={{ fontSize: "13px", color: "#4aa3df", marginBottom: "6px", fontWeight: "bold" }}>{echo.title}</div>
-                  <p style={{ margin: 0, fontSize: "13px", color: "#8ab4cc", lineHeight: 1.7 }}>{echo.text}</p>
-                </div>
-              ))}
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(41,128,185,0.2)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {[
+                  { title: "The United Nations (1945)", body: "Its founders — including figures who had read Kant — explicitly drew on the idea of a federation of states resolving disputes through international law rather than force. The Charter's prohibition on aggressive war is directly Kantian in spirit." },
+                  { title: "The International Court of Justice", body: "Kant's vision of replacing force with legal arbitration finds its closest institutional expression here: a court where states, like persons, submit their disputes to impartial judgment rather than the sword." },
+                  { title: "The European Union", body: "The most successful realization of peaceful federation among formerly hostile nations in history. France and Germany — which fought three catastrophic wars in 70 years — now share currency, laws, and open borders. Kant would have recognized this as his federation made real." },
+                  { title: "Human Rights Declarations", body: "The Universal Declaration of Human Rights (1948) reflects Kantian universal moral principles — rights that every person possesses not as a citizen of any state, but as a human being, grounded in dignity rather than granted by governments." },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: "3px solid #2980B9", borderRadius: "0 6px 6px 0", background: "rgba(41,128,185,0.07)", padding: "14px 18px" }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#6aa3cc", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#071520", letterSpacing: 1 }}>
+        Part 19 of 21 — Kant's Critical Philosophy
       </div>
       </div>
     </div>
@@ -12645,8 +12636,8 @@ function ReligionWithinBoundariesOfReason() {
 
         {/* REAL-WORLD ECHOES — Collapsible */}
         <div style={{
-          background: "#0d0820",
-          border: "1px solid #2a1040",
+          background: "rgba(136,78,160,0.05)",
+          border: "1px solid rgba(136,78,160,0.2)",
           borderRadius: 8,
           overflow: "hidden"
         }}>
@@ -12656,58 +12647,47 @@ function ReligionWithinBoundariesOfReason() {
               width: "100%",
               background: "transparent",
               border: "none",
-              padding: "20px 32px",
+              padding: "18px 24px",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
               cursor: "pointer",
-              color: "#c4a8e0",
               fontFamily: "Georgia, serif"
             }}
           >
-            <span style={{ fontSize: 11, letterSpacing: 3, color: "#884EA0", textTransform: "uppercase", fontWeight: "bold" }}>
-              Real-World Echoes
-            </span>
-            {echoesOpen
-              ? <ChevronUp size={18} color="#884EA0" />
-              : <ChevronDown size={18} color="#884EA0" />}
+            <span style={{ fontSize: 10, letterSpacing: 3, color: "#a870c0", textTransform: "uppercase" }}>Real-World Echoes</span>
+            {echoesOpen ? <ChevronUp size={16} color="#a870c0" /> : <ChevronDown size={16} color="#a870c0" />}
           </button>
           {echoesOpen && (
-            <div style={{ padding: "0 32px 28px 32px" }}>
-              <div style={{ borderTop: "1px solid #2a1040", paddingTop: 20 }}>
-                <div style={{ display: "grid", gap: 16 }}>
-                  {[
-                    {
-                      title: "Liberal Protestant Theology",
-                      text: "Theologians from Schleiermacher through Harnack and Tillich drew on Kantian foundations to argue that Christianity's essence lies in its moral and spiritual content, not in doctrinal supernaturalism — making religion compatible with modern science and critical history."
-                    },
-                    {
-                      title: "Kierkegaard's Counter-Response",
-                      text: "Kierkegaard's entire project can be read as a sustained protest against Kant's moralization: the leap of faith, the teleological suspension of the ethical, and the absolute paradox of the Incarnation all insist that authentic religion requires a particularity and passion that rational morality can never capture."
-                    },
-                    {
-                      title: "Interfaith Dialogue",
-                      text: "Contemporary interfaith conversations often draw on the Kantian distinction between historical faith (particular doctrines) and universal moral principles as a way to find common ground across traditions without demanding doctrinal agreement — a practical legacy of Kant's rational religion."
-                    }
-                  ].map((echo, i) => (
-                    <div key={i} style={{
-                      background: "#100820",
-                      border: "1px solid #2a1040",
-                      borderRadius: 8,
-                      padding: "16px 20px"
-                    }}>
-                      <div style={{ fontSize: 13, color: "#884EA0", marginBottom: 8, letterSpacing: 0.5 }}>
-                        {echo.title}
-                      </div>
-                      <p style={{ margin: 0, fontSize: 13, color: "#9a7fb8", lineHeight: 1.7 }}>
-                        {echo.text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(136,78,160,0.2)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: "Liberal Protestant Theology",
+                    body: "Theologians from Schleiermacher through Harnack and Tillich drew on Kantian foundations to argue that Christianity's essence lies in its moral and spiritual content, not in doctrinal supernaturalism — making religion compatible with modern science and critical history.",
+                  },
+                  {
+                    title: "Kierkegaard's Counter-Response",
+                    body: "Kierkegaard's entire project can be read as a sustained protest against Kant's moralization: the leap of faith, the teleological suspension of the ethical, and the absolute paradox of the Incarnation all insist that authentic religion requires a particularity and passion that rational morality can never capture.",
+                  },
+                  {
+                    title: "Interfaith Dialogue",
+                    body: "Contemporary interfaith conversations often draw on the Kantian distinction between historical faith (particular doctrines) and universal moral principles as a way to find common ground across traditions without demanding doctrinal agreement — a practical legacy of Kant's rational religion.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: "3px solid #884EA0", borderRadius: "0 6px 6px 0", background: "rgba(136,78,160,0.07)", padding: "14px 18px" }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#a870c0", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>{item.body}</p>
+                  </div>
+                ))}
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a0828", letterSpacing: 1 }}>
+          Part 20 of 21 — Kant's Critical Philosophy
         </div>
 
       </div>
@@ -13368,13 +13348,13 @@ function UnityCriticalSystemKantsLegacy() {
         {/* THE DIFFICULTY PANEL */}
         <div style={{
           background: "#0d0d15",
-          border: "1px solid #2a2a3a",
-          borderLeft: "4px solid #7a3a90",
+          border: "1px solid #2a2a1a",
+          borderLeft: "4px solid #E8A020",
           borderRadius: 6,
           padding: "24px 28px",
           marginBottom: 28
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, color: "#b070d0", marginBottom: 12, fontWeight: "bold" }}>
+          <div style={{ fontSize: 10, letterSpacing: 3, color: "#c8a040", marginBottom: 12, fontWeight: "bold" }}>
             THE DIFFICULTY
           </div>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: "#c8c0b0", margin: "0 0 14px 0" }}>
@@ -13398,68 +13378,56 @@ function UnityCriticalSystemKantsLegacy() {
 
         {/* REAL-WORLD ECHOES PANEL */}
         <div style={{
-          background: "#0d0d15",
-          border: "1px solid #2a2a3a",
-          borderRadius: 6,
+          background: "rgba(232,160,32,0.05)",
+          border: "1px solid rgba(232,160,32,0.2)",
+          borderRadius: 8,
           overflow: "hidden",
-          marginBottom: 40
         }}>
           <button onClick={() => setEchoesOpen(!echoesOpen)}
             style={{
               width: "100%", background: "transparent",
-              border: "none", padding: "18px 28px",
+              border: "none", padding: "18px 24px",
               cursor: "pointer", fontFamily: "Georgia, serif",
               display: "flex", justifyContent: "space-between", alignItems: "center"
             }}>
-            <span style={{ fontSize: 10, letterSpacing: 3, color: "#E8A020", fontWeight: "bold" }}>
-              REAL-WORLD ECHOES
-            </span>
-            {echoesOpen
-              ? <ChevronUp size={16} color="#E8A020" />
-              : <ChevronDown size={16} color="#E8A020" />}
+            <span style={{ fontSize: 10, letterSpacing: 3, color: "#c8a040", textTransform: "uppercase" }}>Real-World Echoes</span>
+            {echoesOpen ? <ChevronUp size={16} color="#c8a040" /> : <ChevronDown size={16} color="#c8a040" />}
           </button>
 
           {echoesOpen && (
-            <div style={{ padding: "0 28px 24px 28px", borderTop: "1px solid #1a1a2a" }}>
-              <p style={{ fontSize: 13, color: "#888880", fontStyle: "italic", marginBottom: 18, lineHeight: 1.6 }}>
-                Kant's critical philosophy did not remain within academia — it shaped the institutions, declarations, and practices of modernity.
-              </p>
-              {[
-                {
-                  title: "The United Nations & International Court of Justice",
-                  body: "Kant's 1795 essay Perpetual Peace envisioned a federation of republican states bound by international law. The UN, ICJ, and EU represent institutional realizations of precisely this vision — rational cosmopolitanism translated into law and governance."
-                },
-                {
-                  title: "Universal Human Rights Declarations",
-                  body: "The Universal Declaration of Human Rights (1948) grounds rights in the inherent dignity of the human person — a formulation that maps directly onto Kant's second formulation of the categorical imperative: treat humanity always as an end, never merely as a means."
-                },
-                {
-                  title: "Cognitive Science & Constructive Perception",
-                  body: "Contemporary neuroscience and cognitive psychology have confirmed that perception is constructive — the brain actively builds models of reality rather than passively recording it. Kant's transcendental aesthetic anticipated this by two centuries, identifying space and time as forms the mind imposes on experience."
-                },
-                {
-                  title: "Applied Ethics — Medical, Business, Environmental",
-                  body: "Across professional ethics, the categorical imperative provides a practical test: Can the maxim of your action be universalized? Does it treat persons as ends in themselves? Medical informed consent, corporate governance standards, and environmental ethics frameworks all draw on this Kantian scaffolding."
-                }
-              ].map((echo, i) => (
-                <div key={i} style={{
-                  background: "#0a0a12",
-                  border: "1px solid #2a2a3a",
-                  borderLeft: `3px solid #E8A020`,
-                  borderRadius: 4,
-                  padding: "14px 18px",
-                  marginBottom: 12
-                }}>
-                  <div style={{ fontSize: 12, color: "#E8A020", fontWeight: "bold", marginBottom: 6, letterSpacing: 0.5 }}>
-                    {echo.title}
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid rgba(232,160,32,0.2)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                {[
+                  {
+                    title: "The United Nations & International Court of Justice",
+                    body: "Kant's 1795 essay Perpetual Peace envisioned a federation of republican states bound by international law. The UN, ICJ, and EU represent institutional realizations of precisely this vision — rational cosmopolitanism translated into law and governance.",
+                  },
+                  {
+                    title: "Universal Human Rights Declarations",
+                    body: "The Universal Declaration of Human Rights (1948) grounds rights in the inherent dignity of the human person — a formulation that maps directly onto Kant's second formulation of the categorical imperative: treat humanity always as an end, never merely as a means.",
+                  },
+                  {
+                    title: "Cognitive Science & Constructive Perception",
+                    body: "Contemporary neuroscience and cognitive psychology have confirmed that perception is constructive — the brain actively builds models of reality rather than passively recording it. Kant's transcendental aesthetic anticipated this by two centuries, identifying space and time as forms the mind imposes on experience.",
+                  },
+                  {
+                    title: "Applied Ethics — Medical, Business, Environmental",
+                    body: "Across professional ethics, the categorical imperative provides a practical test: Can the maxim of your action be universalized? Does it treat persons as ends in themselves? Medical informed consent, corporate governance standards, and environmental ethics frameworks all draw on this Kantian scaffolding.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderLeft: "3px solid #E8A020", borderRadius: "0 6px 6px 0", background: "rgba(232,160,32,0.07)", padding: "14px 18px" }}>
+                    <div style={{ fontSize: 13, fontWeight: "bold", color: "#c8a040", marginBottom: 6 }}>{item.title}</div>
+                    <p style={{ fontSize: 13, color: "#b8b0a8", lineHeight: 1.7, margin: 0 }}>{item.body}</p>
                   </div>
-                  <p style={{ fontSize: 13, color: "#b0a898", lineHeight: 1.7, margin: 0 }}>
-                    {echo.body}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a1c04", letterSpacing: 1 }}>
+          Part 21 of 21 — Kant's Critical Philosophy
         </div>
 
       </div>
