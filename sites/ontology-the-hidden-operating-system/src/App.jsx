@@ -10154,6 +10154,15 @@ function MeinongNonexistent() {
       color: "#e8e0f0",
     }}>
 
+      {/* Header */}
+      <div style={{ maxWidth: "860px", margin: "0 auto 32px auto", textAlign: "center" }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#9b6bb5", marginBottom: 8 }}>Part 18 of 35 — Ontology</div>
+        <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", margin: "0 0 8px 0", color: "#e8d8f8" }}>Meinong and the Things That Do Not Exist</h1>
+        <p style={{ fontSize: 15, color: "#a08abf", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          Meinong argued that thought can be directed at objects that do not exist — like golden mountains or round squares — forcing the domain of objects to be far wider than the domain of existing things.
+        </p>
+      </div>
+
       {/* Problem Panel */}
       <div style={{
         background: "#12071a",
@@ -10161,7 +10170,6 @@ function MeinongNonexistent() {
         borderLeft: "4px solid #7D3C98",
         borderRadius: "8px",
         padding: "28px 32px",
-        marginBottom: "32px",
         maxWidth: "860px",
         margin: "0 auto 32px auto",
       }}>
@@ -10170,15 +10178,6 @@ function MeinongNonexistent() {
         </div>
         <p style={{ margin: 0, lineHeight: "1.8", color: "#c8b8d8", fontSize: "15px" }}>
           Every previous ontology assumed that ontology is a study of things that <em>exist</em>. But language and thought routinely engage with non-existents — we grieve for fictional characters, we reason about what might have been, we speak meaningfully of impossible things. This cannot be dismissed as mere error or confusion. A theory of what there is must somehow account for what there <em>isn't</em>, and yet is still, unmistakably, <em>something</em>.
-        </p>
-      </div>
-
-      {/* Title Block */}
-      <div style={{ maxWidth: "860px", margin: "0 auto 32px auto", textAlign: "center" }}>
-        <div style={{ fontSize: "11px", color: "#9b6bb5", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "8px" }}>Part 18 of 35 — Ontology</div>
-        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", margin: "0 0 8px 0", color: "#e8d8f8" }}>Meinong and the Things That Do Not Exist</h1>
-        <p style={{ fontSize: "14px", color: "#a08abf", margin: 0, lineHeight: "1.6" }}>
-          Meinong argued that thought can be directed at objects that do not exist — like golden mountains or round squares — forcing the domain of objects to be far wider than the domain of existing things.
         </p>
       </div>
 
@@ -10580,6 +10579,11 @@ function MeinongNonexistent() {
             </p>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1e0a28", letterSpacing: 1 }}>
+        Part 18 of 35 — Ontology
       </div>
 
     </div>
