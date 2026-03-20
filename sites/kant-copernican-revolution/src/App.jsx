@@ -4814,14 +4814,14 @@ function AntinomiesIllusionsPureReason() {
       boxSizing: 'border-box',
     }}>
       {/* Header */}
-      <div style={{ maxWidth: 900, margin: '0 auto 28px auto' }}>
+      <div style={{ textAlign: 'center', maxWidth: 900, margin: '0 auto 28px auto' }}>
         <div style={{ fontSize: 11, color: '#8B1A1A', letterSpacing: 3, textTransform: 'uppercase', marginBottom: 8 }}>
           Part 8 of 21 — Kant's Critical Philosophy
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: 'bold', color: '#f0e0c8', margin: '0 0 8px 0', lineHeight: 1.2 }}>
+        <h1 style={{ fontSize: 'clamp(22px,4vw,36px)', fontWeight: 'normal', color: '#f0e0c8', margin: '0 0 8px 0', lineHeight: 1.3 }}>
           The Antinomies and the Illusions of Pure Reason
         </h1>
-        <p style={{ fontSize: 15, color: '#b0998a', margin: 0, lineHeight: 1.6 }}>
+        <p style={{ fontSize: 15, color: '#b0998a', margin: 0, lineHeight: 1.6, fontStyle: 'italic' }}>
           When reason attempts to answer questions about the world as a whole, it inevitably produces contradictions — revealing both the power and the necessary limits of rational thought.
         </p>
       </div>
@@ -5123,13 +5123,13 @@ function AntinomiesIllusionsPureReason() {
       {/* Difficulty Panel */}
       <div style={{ maxWidth: 900, margin: '0 auto 28px auto' }}>
         <div style={{
-          background: '#0a0c10ee',
-          border: '1px solid #101820',
-          borderLeft: '4px solid #4455aa',
+          background: '#0f0608ee',
+          border: '1px solid #1a0808',
+          borderLeft: '4px solid #8B1A1A',
           borderRadius: 6,
           padding: '20px 24px',
         }}>
-          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: '#4455aa', marginBottom: 10, fontWeight: 'bold' }}>
+          <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: '#8B1A1A', marginBottom: 10, fontWeight: 'bold' }}>
             The Difficulty
           </div>
           <p style={{ margin: '0 0 12px 0', lineHeight: 1.75, fontSize: 14, color: '#c8b5a5' }}>
@@ -5175,26 +5175,29 @@ function AntinomiesIllusionsPureReason() {
             }
           </button>
           {echosOpen && (
-            <div style={{ padding: '20px 24px' }}>
-              <div style={{ marginBottom: 20 }}>
-                <div style={{ fontSize: 12, color: '#8B1A1A', fontWeight: 'bold', marginBottom: 8, letterSpacing: 1 }}>
-                  The Origin of the Universe
+            <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid #181818' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: '3px solid #8B1A1A', borderRadius: '0 6px 6px 0', background: 'rgba(139,26,26,0.07)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#c86060', marginBottom: 6 }}>The Origin of the Universe</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>
+                    Contemporary cosmology debates whether the universe had a temporal beginning — the Big Bang — or whether time itself extends infinitely through eternal inflation or cyclical models. This is almost precisely the First Antinomy in scientific dress. Kant's analysis suggests that asking about the temporal boundary of the universe-as-a-whole may exceed what any possible observation could settle — not because science is weak, but because the question reaches beyond what can be given in experience.
+                  </p>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: '#c8b5a5', lineHeight: 1.75 }}>
-                  Contemporary cosmology debates whether the universe had a temporal beginning — the Big Bang — or whether time itself extends infinitely in some form, perhaps through eternal inflation or cyclical models. This is almost precisely the First Antinomy in scientific dress. Kant's analysis suggests that asking about the temporal boundary of the universe-as-a-whole may exceed what any possible observation could settle, not because science is weak, but because the question reaches beyond what can be given in experience.
-                </p>
-              </div>
-              <div>
-                <div style={{ fontSize: 12, color: '#C47B2B', fontWeight: 'bold', marginBottom: 8, letterSpacing: 1 }}>
-                  Neuroscience and Moral Responsibility
+                <div style={{ borderLeft: '3px solid #8B1A1A', borderRadius: '0 6px 6px 0', background: 'rgba(139,26,26,0.07)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#c86060', marginBottom: 6 }}>Neuroscience and Moral Responsibility</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>
+                    The most urgent contemporary instance of the Third Antinomy appears in debates between neuroscience and moral philosophy. Neuroscience increasingly maps every decision to deterministic or probabilistic neural processes — threatening to eliminate moral responsibility. Yet courts and ordinary life cannot function without presupposing that agents are genuinely responsible. Kant's resolution: natural necessity governs the brain entirely as phenomenon; freedom may be real at the noumenal level — not a gap in the causal chain, but a different kind of fact about rational agency.
+                  </p>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: '#c8b5a5', lineHeight: 1.75 }}>
-                  The most urgent contemporary instance of the Third Antinomy appears in debates between neuroscience and moral philosophy. Neuroscience increasingly maps every decision, impulse, and value judgment to deterministic or probabilistic neural processes — threatening to eliminate the very concept of moral responsibility. Yet courts, ethics, and ordinary life cannot function without presupposing that agents are genuinely responsible for their actions. Kant's resolution: natural necessity governs the brain entirely as phenomenon; freedom may be real at a different level of description — not a gap in the causal chain, but a different kind of fact about rational agency.
-                </p>
               </div>
             </div>
           )}
         </div>
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#200505', letterSpacing: 1, maxWidth: 900, margin: '36px auto 0 auto' }}>
+        Part 8 of 21 — Kant's Critical Philosophy
       </div>
     </div>
   );
