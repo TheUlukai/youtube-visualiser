@@ -9072,15 +9072,17 @@ function SartreExistenceEssence() {
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
         {/* Header */}
-        <div style={{ marginBottom: '12px', opacity: 0.5, fontSize: '12px', letterSpacing: '2px', textTransform: 'uppercase' }}>
-          Part 16 of 35 — Ontology
+        <div style={{ textAlign: "center", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#5a4fcf", marginBottom: 8 }}>
+            Part 16 of 35 — Ontology
+          </div>
+          <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#e8e4f5", margin: "0 0 8px 0", lineHeight: 1.3 }}>
+            Existence Before Essence: Sartre's Ontological Reversal
+          </h1>
+          <p style={{ fontSize: 15, color: "#9992b8", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+            Sartre argued that human beings have no pre-given nature — existence precedes essence — making radical freedom not a gift but an inescapable burden built into the structure of consciousness.
+          </p>
         </div>
-        <h1 style={{ fontSize: 'clamp(18px, 3vw, 30px)', fontWeight: 'normal', color: '#e8e4f5', marginBottom: '8px', lineHeight: '1.3' }}>
-          Existence Before Essence: Sartre's Ontological Reversal
-        </h1>
-        <p style={{ fontSize: '14px', color: '#9992b8', marginBottom: '36px', lineHeight: '1.7', maxWidth: '720px' }}>
-          Sartre argued that human beings have no pre-given nature — existence precedes essence — making radical freedom not a gift but an inescapable burden built into the structure of consciousness.
-        </p>
 
         {/* 1. THE PROBLEM PANEL */}
         <div style={{
@@ -9497,7 +9499,7 @@ function SartreExistenceEssence() {
 
           {echoesOpen && (
             <div style={{ padding: '8px 28px 28px' }}>
-              <div style={{ marginBottom: '18px', padding: '16px 20px', background: 'rgba(28,28,46,0.5)', borderLeft: '3px solid #5a4fcf', borderRadius: '0 6px 6px 0', border: '1px solid rgba(90,79,207,0.15)' }}>
+              <div style={{ marginBottom: '18px', padding: '16px 20px', background: 'rgba(28,28,46,0.5)', border: '1px solid rgba(90,79,207,0.15)', borderLeft: '3px solid #5a4fcf', borderRadius: '0 6px 6px 0' }}>
                 <div style={{ fontSize: '13px', color: '#9090dd', marginBottom: '8px', fontWeight: 'bold' }}>
                   The Search for a "True Self"
                 </div>
@@ -9505,7 +9507,7 @@ function SartreExistenceEssence() {
                   When someone retreats to find out "who they really are" — through therapy, travel, meditation — Sartre's analysis offers an uncomfortable correction. There is no hidden essential self to excavate. There is only the self you are in the process of making, through each choice, each commitment, each refusal. The search itself is a choice, and what you find is what you project.
                 </p>
               </div>
-              <div style={{ padding: '16px 20px', background: 'rgba(28,28,46,0.5)', borderLeft: '3px solid #5a4fcf', borderRadius: '0 6px 6px 0', border: '1px solid rgba(90,79,207,0.15)' }}>
+              <div style={{ padding: '16px 20px', background: 'rgba(28,28,46,0.5)', border: '1px solid rgba(90,79,207,0.15)', borderLeft: '3px solid #5a4fcf', borderRadius: '0 6px 6px 0' }}>
                 <div style={{ fontSize: '13px', color: '#9090dd', marginBottom: '8px', fontWeight: 'bold' }}>
                   The Professional Role
                 </div>
@@ -9515,6 +9517,11 @@ function SartreExistenceEssence() {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1a1830", letterSpacing: 1 }}>
+          Part 16 of 35 — Ontology
         </div>
 
       </div>
