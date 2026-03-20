@@ -1384,7 +1384,7 @@ function MakingOfRevolutionaryMind() {
       color: "#d4c9b8",
       padding: "0"
     }}>
-      <div style={{ maxWidth: "min(90vw, 860px)", margin: '0 auto' }}>
+      <div style={{ maxWidth: "min(90vw, 860px)", margin: '0 auto', paddingBottom: 40 }}>
       {/* Title Block */}
       <div style={{ padding: "36px 40px 10px 40px", textAlign: "center" }}>
         <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#2D4A6E", marginBottom: "8px", textTransform: "uppercase" }}>Part 2 of 21 — Spinoza's Philosophical System</div>
@@ -3532,11 +3532,11 @@ function UnityOfMindAndBody() {
             </div>
           </div>
         )}
+      </div>
 
       {/* Footer */}
       <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a4a2c", letterSpacing: 1 }}>
         Part 5 of 21 — Spinoza’s Philosophical System
-      </div>
       </div>
     </div>
   );
@@ -11144,13 +11144,14 @@ function GeometricMethodDemonstration() {
             </div>
           </div>
         )}
+      </div>
 
       {/* Footer */}
       <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a2e38", letterSpacing: 1 }}>
         Part 18 of 21 — Spinoza’s Philosophical System
       </div>
-      </div>
-    </div></div>
+    </div>
+  </div>
   );
 }
 
