@@ -13188,6 +13188,11 @@ function PossibleWorlds() {
           )}
         </div>
 
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#0a1828", letterSpacing: 1 }}>
+          Part 23 of 35 — Ontology
+        </div>
+
       </div>
     </div>
   );
