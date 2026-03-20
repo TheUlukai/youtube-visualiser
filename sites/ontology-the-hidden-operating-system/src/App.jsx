@@ -4664,15 +4664,17 @@ function DescartesDualism() {
       margin: '0 auto',
     }}>
       {/* Header */}
-      <div style={{ marginBottom: '8px', opacity: 0.6, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: '#C0392B' }}>
-        Part 8 of 35 — Ontology
+      <div style={{ textAlign: 'center', marginBottom: 32 }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: 'uppercase', color: '#C0392B', marginBottom: 8 }}>
+          Part 8 of 35 — Ontology
+        </div>
+        <h1 style={{ fontSize: 'clamp(22px, 4vw, 36px)', fontWeight: 'normal', margin: '0 0 8px 0', color: '#f0e6e0' }}>
+          Descartes Splits Reality in Two
+        </h1>
+        <p style={{ fontSize: 15, color: '#b8a8a0', margin: 0, lineHeight: 1.6, fontStyle: 'italic' }}>
+          Descartes' method of radical doubt led him to posit two utterly distinct substances — thinking mind and extended matter — creating the mind-body problem that haunts philosophy to this day.
+        </p>
       </div>
-      <h1 style={{ fontSize: 'clamp(20px, 3.5vw, 32px)', fontWeight: 'bold', marginBottom: '6px', color: '#f0e6e0', lineHeight: 1.2 }}>
-        Descartes Splits Reality in Two
-      </h1>
-      <p style={{ fontSize: '15px', color: '#b8a8a0', marginBottom: '32px', fontStyle: 'italic' }}>
-        Descartes' method of radical doubt led him to posit two utterly distinct substances — thinking mind and extended matter — creating the mind-body problem that haunts philosophy to this day.
-      </p>
 
       {/* 1. THE PROBLEM PANEL */}
       <div style={{
@@ -4961,6 +4963,11 @@ function DescartesDualism() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#3a0a08', letterSpacing: 1 }}>
+        Part 8 of 35 — Ontology
       </div>
 
     </div>
