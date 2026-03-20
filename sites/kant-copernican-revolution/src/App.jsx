@@ -2120,11 +2120,11 @@ function SpaceTimeFormsOfIntuition() {
       padding: '0 0 60px 0',
     }}>
       {/* Header */}
-      <div style={{ padding: '40px 40px 0 40px', maxWidth: '900px', margin: '0 auto' }}>
+      <div style={{ textAlign: 'center', padding: '40px 40px 0 40px', maxWidth: '900px', margin: '0 auto' }}>
         <div style={{ fontSize: '11px', letterSpacing: '3px', color: '#7B5EA7', marginBottom: '8px', textTransform: 'uppercase' }}>
-          Part 4 of 21 · Kant's Critical Philosophy
+          Part 4 of 21 — Kant's Critical Philosophy
         </div>
-        <h1 style={{ fontSize: '28px', fontWeight: 'normal', margin: '0 0 10px 0', lineHeight: '1.3', color: '#f0eaff' }}>
+        <h1 style={{ fontSize: 'clamp(22px,4vw,36px)', fontWeight: 'normal', margin: '0 0 10px 0', lineHeight: '1.3', color: '#f0eaff' }}>
           Space and Time as Forms of Intuition
         </h1>
         <p style={{ fontSize: '15px', color: '#b8a8cc', margin: '0 0 32px 0', lineHeight: '1.7', fontStyle: 'italic' }}>
@@ -2360,19 +2360,19 @@ function SpaceTimeFormsOfIntuition() {
       {/* THE DIFFICULTY PANEL */}
       <div style={{ padding: '0 40px', maxWidth: '900px', margin: '0 auto 24px auto' }}>
         <div style={{
-          background: '#1a0f1ecc',
-          border: '1px solid #3d1f3a',
-          borderLeft: '4px solid #a05080',
+          background: '#1a1025cc',
+          border: '1px solid #2e1f4a',
+          borderLeft: '4px solid #7B5EA7',
           borderRadius: '6px',
           padding: '24px 28px',
         }}>
-          <div style={{ fontSize: '10px', letterSpacing: '3px', color: '#a05080', marginBottom: '12px', textTransform: 'uppercase' }}>
+          <div style={{ fontSize: '10px', letterSpacing: '3px', color: '#7B5EA7', marginBottom: '12px', textTransform: 'uppercase' }}>
             The Difficulty
           </div>
           <p style={{ margin: '0 0 14px 0', fontSize: '14px', lineHeight: '1.8', color: '#d4c8e8' }}>
             If all experienced objects exist only within mind-contributed space and time, then things as they exist independently of minds must be neither spatial nor temporal. But if things-in-themselves are non-spatial and non-temporal, how can they causally affect our senses to produce the sensory content that our minds then organize? A cause acting on a sensory faculty seems to require spatial contact or at minimum temporal sequence — yet those are precisely the forms the mind supposedly contributes. This is Kant's notorious problem of affection: the very machinery required to explain why we receive sensation seems to demand the spatial and temporal relations that the theory places on the mind's side of the divide.
           </p>
-          <p style={{ margin: 0, fontSize: '13px', color: '#c8a0b8', fontStyle: 'italic' }}>
+          <p style={{ margin: 0, fontSize: '13px', color: '#9a7acc', fontStyle: 'italic' }}>
             This pressure forces the next development: if the forms of sensible intuition organize raw sensation into spatial and temporal experience, what further structures does the understanding contribute when it applies concepts and categories to the already-formed sensory manifold?
           </p>
         </div>
@@ -2407,28 +2407,33 @@ function SpaceTimeFormsOfIntuition() {
             {echosOpen ? <ChevronUp size={16} color="#7B5EA7" /> : <ChevronDown size={16} color="#7B5EA7" />}
           </button>
           {echosOpen && (
-            <div style={{ padding: '0 24px 24px 24px' }}>
-              <div style={{ borderTop: '1px solid #2e1f4a', paddingTop: '20px' }}>
-                <EchoItem
-                  title="The chair you sit on"
-                  body="The chair exists as a spatial object — with dimensions, position, and orientation — only because your mind organizes the incoming sensory signals through the form of space. The wood and upholstery produce sensory effects; your mind contributes the spatial framework that turns those effects into a coherent three-dimensional object. Without the form of space, there would be no 'here' or 'there,' no shape, no location."
-                />
-                <EchoItem
-                  title="Geometric necessity"
-                  body="The Pythagorean theorem holds with absolute necessity not because it describes some Platonic realm of abstract triangles, but because it describes the structure of the spatial form through which every outer object must be represented. It is impossible for us to experience a triangle that violates it — not because nature is constrained, but because our mode of representing spatial objects guarantees the theorem in advance."
-                />
-                <EchoItem
-                  title="Neuroscience and perceptual construction"
-                  body="Contemporary neuroscience confirms that the brain actively constructs spatial and temporal representations rather than passively recording them. The 'spatial present' is a neural construction; temporal order is imposed on sensory signals that arrive with varying delays. Kant anticipated this constructivist picture two centuries before brain imaging, though his version is transcendental rather than empirical."
-                />
-                <EchoItem
-                  title="Einstein's relativity — a challenge?"
-                  body="Einstein showed that space and time are relative to reference frames and intertwined as spacetime. Some argue this refutes Kant's claim that Euclidean space is a necessary form. Others reply that Kant's deeper point survives: whatever the structure of our perceptual space turns out to be, it is still a form contributed by the subject, not read off from things-in-themselves."
-                />
+            <div style={{ padding: '0 24px 24px 24px', borderTop: '1px solid #2e1f4a' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: '3px solid #7B5EA7', borderRadius: '0 6px 6px 0', background: 'rgba(123,94,167,0.07)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#a880cc', marginBottom: 6 }}>The Chair You Sit On</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>The chair exists as a spatial object — with dimensions, position, and orientation — only because your mind organizes incoming sensory signals through the form of space. The wood and upholstery produce sensory effects; your mind contributes the spatial framework that turns those effects into a coherent three-dimensional object. Without the form of space, there would be no 'here' or 'there,' no shape, no location.</p>
+                </div>
+                <div style={{ borderLeft: '3px solid #7B5EA7', borderRadius: '0 6px 6px 0', background: 'rgba(123,94,167,0.07)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#a880cc', marginBottom: 6 }}>Geometric Necessity</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>The Pythagorean theorem holds with absolute necessity not because it describes some Platonic realm of abstract triangles, but because it describes the structure of the spatial form through which every outer object must be represented. It is impossible for us to experience a triangle that violates it — not because nature is constrained, but because our mode of representing spatial objects guarantees the theorem in advance.</p>
+                </div>
+                <div style={{ borderLeft: '3px solid #7B5EA7', borderRadius: '0 6px 6px 0', background: 'rgba(123,94,167,0.07)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#a880cc', marginBottom: 6 }}>Neuroscience and Perceptual Construction</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>Contemporary neuroscience confirms that the brain actively constructs spatial and temporal representations rather than passively recording them. The 'spatial present' is a neural construction; temporal order is imposed on sensory signals that arrive with varying delays. Kant anticipated this constructivist picture two centuries before brain imaging, though his version is transcendental rather than empirical.</p>
+                </div>
+                <div style={{ borderLeft: '3px solid #7B5EA7', borderRadius: '0 6px 6px 0', background: 'rgba(123,94,167,0.07)', padding: '14px 18px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 'bold', color: '#a880cc', marginBottom: 6 }}>Einstein's Relativity — A Challenge?</div>
+                  <p style={{ margin: 0, fontSize: 13, color: '#b8b0a8', lineHeight: 1.7 }}>Einstein showed that space and time are relative to reference frames and intertwined as spacetime. Some argue this refutes Kant's claim that Euclidean space is a necessary form. Others reply that Kant's deeper point survives: whatever the structure of our perceptual space turns out to be, it is still a form contributed by the subject, not read off from things-in-themselves.</p>
+                </div>
               </div>
             </div>
           )}
         </div>
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: 'center', marginTop: 36, fontSize: 12, color: '#1a0a2e', letterSpacing: 1, maxWidth: '900px', margin: '36px auto 0 auto', padding: '0 40px' }}>
+        Part 4 of 21 — Kant's Critical Philosophy
       </div>
     </div>
   );
