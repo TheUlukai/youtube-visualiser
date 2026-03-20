@@ -26,11 +26,14 @@ Take a screenshot at the top of the section, then check:
 5. **The Problem panel** — confirm it is present (except section 1)
 6. **The Difficulty panel** — confirm it is present
 7. **Content centering** — confirm content is centered on wide viewports, not anchored to the left
+8. **Section footer** — scroll to the bottom of the section and confirm a centred "Part N of M — Series Title" line is visible below the Real-World Echoes panel, with clear space below it. If the footer appears inside the RWE panel or is missing entirely, flag it.
 
 ### Navigation check
+- **Section 1**: Prev button must be visibly greyed/disabled; Next button must be clearly visible and active
+- **Last section**: Next button must be visibly greyed/disabled; Prev button must be clearly visible and active
+- **All sections**: Prev and Next button text must be legible against the nav bar background — if either appears invisible or near-black, the section's `accentMap` entry is likely set to a background colour rather than the real accent
 - Verify Prev/Next buttons step through sections correctly
 - Verify the tab bar scrolls to keep the active section tab visible
-- Verify the Last section's Next button is inactive (or absent)
 
 ### Final static checks (run once via JS on any section)
 ```js

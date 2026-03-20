@@ -52,6 +52,26 @@ Flag values greater than 340 that lack the `min(90vw, ...)` wrapper.
 **Check 10 — Key Concepts nested inside main viz card (not a top-level sibling)**
 For any file containing `hoveredConcept`, check whether the Key Concepts block is inside another card container rather than being a top-level sibling before The Difficulty panel.
 
+**Check 11 — Missing section footer**
+Each component file must contain "Part " at least twice (once in the header label, once in the footer). Files with only one occurrence are missing a footer.
+```
+for f in output/components/*.jsx; do count=$(grep -c "Part " "$f" 2>/dev/null || echo 0); [ "$count" -lt 2 ] && echo "$f: only $count 'Part ' occurrence(s)"; done
+```
+
+**Check 12 — RWE cards missing borderLeft accent stripe**
+Each component with a Real-World Echoes panel must have `borderLeft` on the cards inside it.
+```
+grep -rL 'borderLeft.*3px solid' output/components/*.jsx
+```
+Cross-reference with files that contain "echoes" or "echos" — any match that lacks borderLeft is a finding.
+
+**Check 13 — Missing centred maxWidth content wrapper**
+Each component should have both `maxWidth` and `margin` (for `0 auto` centring) in its return JSX.
+```
+grep -L "maxWidth" output/components/*.jsx
+```
+Any file missing `maxWidth` likely has content anchored to the left edge on wide viewports.
+
 ---
 
 ## Phase 2 — Triage
@@ -78,6 +98,10 @@ Key fixes reference:
 - **Fixed canvas props**: remove JSX width/height, set via ResizeObserver in useEffect
 - **Bare maxWidth**: wrap as `maxWidth: "min(90vw, Npx)"`
 - **Key Concepts nested**: extract from enclosing card, place as top-level sibling with card wrapper `background: rgba(0,0,0,0.25), border: accent33, borderRadius: 8, padding: clamp(16px,3vw,24px), marginBottom: 16`
+- **Missing footer**: add `{/* Footer */}<div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: ACCENT_DIM, letterSpacing: 1 }}>Part N of M — Series Title</div>` as the last element inside the inner maxWidth wrapper
+- **Footer inside RWE panel**: footer must appear AFTER the RWE outer panel's closing `</div>`, not between the `)}` (conditional close) and `</div>` (panel close) — move it out
+- **Missing borderLeft on RWE cards**: add `borderLeft: "3px solid ACCENT", borderRadius: "0 6px 6px 0", background: ACCENT + "0a"` to each card div inside the RWE panel
+- **Missing maxWidth wrapper**: wrap return JSX content in `<div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto" }}>`
 
 ---
 
