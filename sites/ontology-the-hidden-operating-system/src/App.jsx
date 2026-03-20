@@ -1999,6 +1999,19 @@ function PlatosForms() {
       margin: '0 auto',
     }}>
 
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: 32 }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: accentLight, marginBottom: 8 }}>
+          Part 4 of 35 — Ontology
+        </div>
+        <h1 style={{ fontSize: "clamp(22px, 4vw, 36px)", fontWeight: "normal", color: "#e8e0f0", margin: "0 0 8px 0" }}>
+          Plato's Forms and the World Behind the World
+        </h1>
+        <p style={{ fontSize: 15, color: "#b0a0cc", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+          Reality splits in two: the eternal, perfect Forms are what truly exists — the physical world is merely their imperfect shadow.
+        </p>
+      </div>
+
       {/* PROBLEM PANEL */}
       <div style={{
         background: 'rgba(20, 10, 40, 0.85)',
@@ -2468,6 +2481,11 @@ function PlatosForms() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#1e0e3a", letterSpacing: 1 }}>
+        Part 4 of 35 — Ontology
       </div>
 
     </div>
