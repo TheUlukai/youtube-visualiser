@@ -19663,23 +19663,34 @@ function Metaontology() {
           </button>
 
           {echosOpen && (
-            <div style={{ padding: "0 24px 22px" }}>
-              <p style={{ margin: "0 0 16px 0", lineHeight: 1.75, fontSize: 13, color: "#b0ada5" }}>
-                When a journalist reports that "philosophers deny the existence of tables," ordinary readers react with incredulity — and rightly so. From the outside, the claim seems obviously absurd, not a contribution to knowledge. This reaction embodies Hirsch's intuition: surely the philosopher cannot mean what they seem to mean, and the whole dispute must be verbal. The philosopher speaks a dialect in which 'exists' carries theoretical weight that everyday speech does not assign it.
-              </p>
-              <p style={{ margin: "0 0 16px 0", lineHeight: 1.75, fontSize: 13, color: "#b0ada5" }}>
-                But a realist physicist looking at the same philosopher's claim reacts differently: the claim is simply wrong about the world, and the physicist wants to know whether the theory that underwrites it — that only simples exist — actually matches the structure of physical reality. This reaction embodies Sider's intuition: the question is substantive, and the empirical world has a bearing on its answer.
-              </p>
-              <p style={{ margin: 0, lineHeight: 1.75, fontSize: 13, color: "#b0ada5" }}>
-                The meta-ontological stakes are not merely academic. They determine whether the history of philosophy from Aristotle through Quine has been a sustained investigation into how things really are, or an extended exercise in linguistic clarification that could in principle have been completed in a weekend's careful analysis of ordinary usage. The answer changes what philosophy is for.
-              </p>
+            <div style={{ padding: "0 24px 24px 24px", borderTop: "1px solid #2a2840" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: "3px solid #3D405B", borderRadius: "0 6px 6px 0", background: "rgba(61,64,91,0.08)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#7a7daa", marginBottom: 6 }}>The Table Paradox</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    When a journalist reports that "philosophers deny the existence of tables," ordinary readers react with incredulity — and rightly so. From the outside, the claim seems obviously absurd. This reaction embodies Hirsch's intuition: the philosopher speaks a dialect in which 'exists' carries theoretical weight that everyday speech does not assign it, making the dispute merely verbal.
+                  </p>
+                </div>
+                <div style={{ borderLeft: "3px solid #3D405B", borderRadius: "0 6px 6px 0", background: "rgba(61,64,91,0.08)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#7a7daa", marginBottom: 6 }}>The Physicist's Realism</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    A realist physicist looking at the same philosopher's claim reacts differently: the claim is simply wrong about the world, and the physicist wants to know whether the theory that underwrites it — that only simples exist — actually matches the structure of physical reality. This embodies Sider's intuition: the question is substantive, and the empirical world has a bearing on its answer.
+                  </p>
+                </div>
+                <div style={{ borderLeft: "3px solid #3D405B", borderRadius: "0 6px 6px 0", background: "rgba(61,64,91,0.08)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: "#7a7daa", marginBottom: 6 }}>What Philosophy Is For</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    The meta-ontological stakes are not merely academic. They determine whether the history of philosophy from Aristotle through Quine has been a sustained investigation into how things really are, or an extended exercise in linguistic clarification. The answer changes what philosophy is for.
+                  </p>
+                </div>
+              </div>
             </div>
           )}
         </div>
 
         {/* Footer */}
-        <div style={{ textAlign: "center", marginTop: 28, fontSize: 11, color: "#333040", letterSpacing: 1 }}>
-          Part 34 of 35 — Ontology Series
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#14141e", letterSpacing: 1 }}>
+          Part 34 of 35 — Ontology
         </div>
 
       </div>
