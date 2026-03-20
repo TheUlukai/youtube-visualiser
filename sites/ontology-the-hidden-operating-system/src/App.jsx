@@ -14640,9 +14640,17 @@ function EventsFacts() {
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
 
         {/* Header */}
-        <div style={{ marginBottom: 12, opacity: 0.6, fontSize: 13, letterSpacing: 2, textTransform: "uppercase" }}>Part 26 of 35 — Ontology</div>
-        <h1 style={{ fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: "bold", color: "#fff", margin: "0 0 8px 0", lineHeight: 1.2 }}>Events, Facts, and States of Affairs</h1>
-        <p style={{ fontSize: 15, color: "#c4a8aa", marginBottom: 32, lineHeight: 1.6 }}>Events are not reducible to objects or properties but are irreducible particulars with their own identity conditions — a distinction with direct consequences for how we understand causation and legal responsibility.</p>
+        <div style={{ textAlign: "center", marginBottom: 32 }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: ACCENT, marginBottom: 8 }}>
+            Part 26 of 35 — Ontology
+          </div>
+          <h1 style={{ fontSize: "clamp(22px,4vw,36px)", fontWeight: "normal", color: "#fff", margin: "0 0 8px 0", lineHeight: 1.3 }}>
+            Events, Facts, and States of Affairs
+          </h1>
+          <p style={{ fontSize: 15, color: "#c4a8aa", margin: 0, lineHeight: 1.6, fontStyle: "italic" }}>
+            Events are not reducible to objects or properties but are irreducible particulars with their own identity conditions — a distinction with direct consequences for how we understand causation and legal responsibility.
+          </p>
+        </div>
 
         {/* THE PROBLEM PANEL */}
         <div style={{
@@ -15011,27 +15019,34 @@ function EventsFacts() {
             {echosOpen ? <ChevronUp size={18} color={ACCENT} /> : <ChevronDown size={18} color={ACCENT} />}
           </div>
           {echosOpen && (
-            <div style={{ padding: "20px 24px" }}>
-              <div style={{ marginBottom: 18, paddingBottom: 18, borderBottom: "1px solid rgba(232,72,85,0.1)" }}>
-                <div style={{ fontSize: 13, color: ACCENT, fontWeight: "bold", marginBottom: 6 }}>Court Case: Causal Chain Individuation</div>
-                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#ccc" }}>
-                  In product liability litigation, courts must individuate the defect event, the injury-causing event, and the harm event as separate occurrences connected by causation. If they collapse into one, there is no causal claim to adjudicate — the entire legal framework for negligence depends on there being distinct events that stand in causal relations, each with its own temporal location and causal history.
-                </p>
-              </div>
-              <div style={{ marginBottom: 18, paddingBottom: 18, borderBottom: "1px solid rgba(232,72,85,0.1)" }}>
-                <div style={{ fontSize: 13, color: ACCENT, fontWeight: "bold", marginBottom: 6 }}>Anomalous Monism: Mental = Physical Events</div>
-                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#ccc" }}>
-                  Davidson's anomalous monism holds that every mental event token is identical to a physical event token — the pain and the C-fiber firing are one event under two descriptions — while no strict psychophysical laws govern which mental types correspond to which physical types. This allows mental causation (my desire caused my action) to be physical causation (the neural event caused the movement) without reducing psychology to physics.
-                </p>
-              </div>
-              <div>
-                <div style={{ fontSize: 13, color: ACCENT, fontWeight: "bold", marginBottom: 6 }}>Terrorism and Event Individuation: The Insurance Dispute</div>
-                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#ccc" }}>
-                  After September 11, 2001, a genuine legal dispute turned on whether the two tower collapses were one insured event or two separate events — a question of event individuation worth roughly $3.5 billion in insurance payouts. The ontology of events was not an academic question; it was a question with a dollar figure attached. How we individuate events in the world encodes normative choices about responsibility, coverage, and causation.
-                </p>
+            <div style={{ padding: "0 24px 24px", borderTop: "1px solid rgba(232,72,85,0.15)" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14, paddingTop: 20 }}>
+                <div style={{ borderLeft: `3px solid ${ACCENT}`, borderRadius: "0 6px 6px 0", background: "rgba(232,72,85,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: ACCENT, marginBottom: 6 }}>Court Case: Causal Chain Individuation</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    In product liability litigation, courts must individuate the defect event, the injury-causing event, and the harm event as separate occurrences connected by causation. If they collapse into one, there is no causal claim to adjudicate — the entire legal framework for negligence depends on there being distinct events that stand in causal relations, each with its own temporal location and causal history.
+                  </p>
+                </div>
+                <div style={{ borderLeft: `3px solid ${ACCENT}`, borderRadius: "0 6px 6px 0", background: "rgba(232,72,85,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: ACCENT, marginBottom: 6 }}>Anomalous Monism: Mental = Physical Events</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    Davidson's anomalous monism holds that every mental event token is identical to a physical event token — the pain and the C-fiber firing are one event under two descriptions — while no strict psychophysical laws govern which mental types correspond to which physical types. This allows mental causation (my desire caused my action) to be physical causation (the neural event caused the movement) without reducing psychology to physics.
+                  </p>
+                </div>
+                <div style={{ borderLeft: `3px solid ${ACCENT}`, borderRadius: "0 6px 6px 0", background: "rgba(232,72,85,0.06)", padding: "14px 18px" }}>
+                  <div style={{ fontSize: 13, fontWeight: "bold", color: ACCENT, marginBottom: 6 }}>Terrorism and the Insurance Dispute</div>
+                  <p style={{ margin: 0, fontSize: 13, color: "#b8b0a8", lineHeight: 1.7 }}>
+                    After September 11, 2001, a genuine legal dispute turned on whether the two tower collapses were one insured event or two separate events — a question of event individuation worth roughly $3.5 billion in insurance payouts. The ontology of events was not an academic question; it was a question with a dollar figure attached. How we individuate events encodes normative choices about responsibility, coverage, and causation.
+                  </p>
+                </div>
               </div>
             </div>
           )}
+        </div>
+
+        {/* Footer */}
+        <div style={{ textAlign: "center", marginTop: 36, fontSize: 12, color: "#2a0a0c", letterSpacing: 1 }}>
+          Part 26 of 35 — Ontology
         </div>
 
       </div>
