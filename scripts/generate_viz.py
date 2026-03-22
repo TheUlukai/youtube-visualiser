@@ -89,8 +89,8 @@ the same visual width via a single inner wrapper:
          One-sentence framing of what this section is about.
        </p>
      </div>
-   Rules: textAlign "center" on outer wrapper. Order is always Header → Problem → Main Viz →
-   Key Concepts → Difficulty → Real-World Echoes → Footer. h1 uses fontWeight "normal".
+   Rules: textAlign "center" on outer wrapper. Order is always Header → Problem → Core Idea →
+   Main Viz → Key Concepts → Difficulty → Real-World Echoes → Footer. h1 uses fontWeight "normal".
 
 1. THE PROBLEM PANEL (immediately after the header)
    Show the problem_inherited from the section data — the tension this section is responding to.
@@ -98,14 +98,28 @@ the same visual width via a single inner wrapper:
    Style: dark card with a subtle left border in the section's accent color. Label "The Problem"
    in small caps. Text should convey urgency — this is the pressure that forced the idea into existence.
 
-2. MAIN VISUALIZATION (center, largest section)
+2. THE CORE IDEA PANEL (after The Problem / Header, before the main visualization)
+   Source: the CORE_ARGUMENT constant (core_argument from section data), hardcoded at the top of the component.
+   Guard: if CORE_ARGUMENT is falsy, omit the entire panel.
+   Split CORE_ARGUMENT into lead and body:
+     const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+     const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+     const coreIdBody = splitMatch ? splitMatch[2] : "";
+   Style: border `1px solid ${ACCENT}25` (full border, NOT left-border), background rgba(0,0,0,0.3),
+   borderRadius 8, padding "16px 20px", marginBottom 16.
+   Label "The Core Idea": fontSize 11, letterSpacing 2, uppercase, color ACCENT, marginBottom 10.
+   Lead: fontSize 15, color "#e8e0d4", lineHeight 1.6, margin "0 0 8px" (or 0 if no body).
+   Body: fontSize 13, color "#a09898", lineHeight 1.75. Only render if coreIdBody is non-empty.
+   For the FIRST section (no Problem panel): place Core Idea immediately after the Header block.
+
+3. MAIN VISUALIZATION (center, largest section)
    Implement the visualization_suggestion faithfully. Make it genuinely interactive: clickable
    elements, hover states, expandable details, toggles, animated transitions.
    Use SVG for diagrams. Use Canvas (useRef + useEffect + ResizeObserver) for animations.
    Use recharts for data that benefits from charts. The visualization must illuminate the
    core_argument — not just decorate it.
 
-3. KEY CONCEPTS PANEL (below main viz, above The Difficulty)
+4. KEY CONCEPTS PANEL (below main viz, above The Difficulty)
    MANDATORY — always present, no exceptions.
    PLACEMENT: top-level sibling element at the same JSX level as the main viz card and
    The Difficulty card. Never nest it inside the main visualization card.
@@ -123,13 +137,13 @@ the same visual width via a single inner wrapper:
    IMPORTANT: every color in this panel — label, pill borders, active pill background, popup
    border — must derive from the section's accent color. Never use a color from another section.
 
-4. THE DIFFICULTY PANEL (below Key Concepts)
+5. THE DIFFICULTY PANEL (below Key Concepts)
    Show problem_created — the new tension this idea generates.
    Style: dark card with borderLeft: "4px solid ACCENT" — the SAME accent color as The Problem
    panel and Key Concepts panel. Never use a different hue here. Label "The Difficulty" in
    small caps using the accent color. End with "This pressure forces the next development..."
 
-5. REAL-WORLD ECHOES PANEL (collapsible, bottom)
+6. REAL-WORLD ECHOES PANEL (collapsible, bottom)
    A collapsible section using ChevronDown/ChevronUp from lucide-react. Collapsed by default.
    Label "Real-World Echoes" in small caps (fontSize 10, letterSpacing 3, textTransform uppercase).
    Shows real_world_examples as 3–4 titled cards. Each card MUST have a bold title and a body paragraph.
@@ -148,7 +162,7 @@ the same visual width via a single inner wrapper:
    The "Real-World Echoes" <span> inside the button must have an explicit color set to
    the section's accent color — never rely on inheritance.
 
-6. SECTION FOOTER (required, after Real-World Echoes)
+7. SECTION FOOTER (required, after Real-World Echoes)
    The very last element inside the inner maxWidth wrapper:
      <div style={{ textAlign: "center", marginTop: 36, fontSize: 12,
                    color: ACCENT_DIM, letterSpacing: 1 }}>
@@ -279,6 +293,10 @@ def validate_jsx(code: str, component_name: str) -> tuple[bool, str]:
         return False, "Missing centred section header (no textAlign: 'center' found)"
     if "Part " not in code:
         return False, "Missing section header — no 'Part N of M' label found"
+
+    # Must have a Core Idea panel
+    if "The Core Idea" not in code:
+        return False, "Missing Core Idea panel ('The Core Idea' label not found)"
 
     # Must have Real-World Echoes panel with collapsible state
     if "echoes" not in code.lower() and "echos" not in code.lower():
