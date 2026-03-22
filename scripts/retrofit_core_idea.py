@@ -65,7 +65,7 @@ def escape_backtick_template(text: str) -> str:
 
 CORE_IDEA_CONST_BLOCK = """\
   const CORE_ARGUMENT = `{escaped}`;
-  const splitMatch = CORE_ARGUMENT.match(/^(.{{30,}}?[.!?])\\s+([A-Z][\\s\\S]*)$/);
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\\s+([A-Z][\\s\\S]*)$/);
   const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
   const coreIdBody = splitMatch ? splitMatch[2] : "";
 """
