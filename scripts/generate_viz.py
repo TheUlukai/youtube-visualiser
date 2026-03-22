@@ -217,7 +217,14 @@ def build_prompt(section: dict, total_sections: int, series_topic: str) -> tuple
         )
 
     key_concepts = ", ".join(section.get("key_concepts") or [])
-    real_world = "; ".join(section.get("real_world_examples") or []) or "None provided"
+    rwe_raw = section.get("real_world_examples") or []
+    rwe_parts = []
+    for item in rwe_raw:
+        if isinstance(item, dict):
+            rwe_parts.append(f"{item.get('title', '')}: {item.get('explanation', '')}")
+        else:
+            rwe_parts.append(str(item))
+    real_world = "; ".join(rwe_parts) or "None provided"
 
     # Convert id to PascalCase component name
     words = re.split(r"[_\-\s]+", section["id"])
