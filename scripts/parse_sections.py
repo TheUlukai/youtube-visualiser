@@ -47,7 +47,7 @@ For each section, extract the following fields:
 - title: concise section title
 - subtitle: one sentence expanding on the title
 - key_concepts: list of 3-6 core concepts or terms introduced
-- core_argument: 3-5 sentences. State the central argument and what makes it novel — how it departs from or builds on predecessors or earlier sections in the video. Include at least one concrete example or analogy from the transcript that makes the idea tangible.
+- core_argument: 3-5 sentences. State the central argument and what makes it novel — how it departs from or builds on predecessors or earlier sections in the video. Include at least one concrete example or analogy from the transcript that makes the idea tangible. IMPORTANT: do not reference other parts by number (e.g. "Part 3", "the previous section") — the core_argument must be fully self-contained and readable without knowledge of any other section.
 - problem_inherited: the specific problem or tension from a previous section that this one is responding to (null for the first section)
 - solution: how this section's key idea resolves or addresses the inherited problem (1-2 sentences)
 - problem_created: the new difficulty, tension, or open question this section's idea generates. Explicitly name what the NEXT section must address — use a forward-linking phrase like "This raises the question of…" or "This now requires an account of…" to make the narrative handoff clear. (2-3 sentences)
