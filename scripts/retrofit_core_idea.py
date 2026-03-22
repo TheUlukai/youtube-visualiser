@@ -75,32 +75,53 @@ CORE_IDEA_CONST_BLOCK = """\
   const coreIdBody = splitMatch ? splitMatch[2] : "";
 """
 
-CORE_IDEA_PANEL_JSX = """\
-        {/* The Core Idea */}
-        {CORE_ARGUMENT && (
-          <div style={{
+CORE_IDEA_PANEL_JSX_TEMPLATE = """\
+        {{/* The Core Idea */}}
+        {{CORE_ARGUMENT && (
+          <div style={{{{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${{{accent_var}}}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
-          }}>
-            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+          }}}}>
+            <div style={{{{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: {accent_var}, marginBottom: 10 }}}}>
               The Core Idea
             </div>
-            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
-                        margin: coreIdBody ? "0 0 8px" : 0 }}>
-              {coreIdLead}
+            <p style={{{{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}}}>
+              {{coreIdLead}}
             </p>
-            {coreIdBody && (
-              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
-                {coreIdBody}
+            {{coreIdBody && (
+              <p style={{{{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}}}>
+                {{coreIdBody}}
               </p>
-            )}
+            )}}
           </div>
-        )}
+        )}}
 """
+
+
+def make_panel_jsx(accent_var: str) -> str:
+    """Return the Core Idea panel JSX with the correct accent variable name."""
+    return CORE_IDEA_PANEL_JSX_TEMPLATE.format(accent_var=accent_var)
+
+
+def detect_accent_var(code: str) -> str:
+    """
+    Detect whether the component uses 'accent' or 'ACCENT' as its accent
+    variable. Falls back to 'ACCENT' if neither is found.
+    """
+    # Look for 'const accent = ' or 'const ACCENT = ' (skip accentMap)
+    m_lower = re.search(r'\bconst\s+accent\s*=\s*["\']#', code)
+    m_upper = re.search(r'\bconst\s+ACCENT\s*=\s*["\']#', code)
+    if m_lower and m_upper:
+        # Whichever appears first in the file wins
+        return "accent" if m_lower.start() < m_upper.start() else "ACCENT"
+    if m_lower:
+        return "accent"
+    return "ACCENT"
 
 
 def insert_constant_block(code: str, escaped_core_arg: str) -> str:
@@ -118,7 +139,7 @@ def insert_constant_block(code: str, escaped_core_arg: str) -> str:
     return code[:insert_pos] + '\n' + const_block + code[insert_pos:]
 
 
-def insert_panel_after_problem(code: str) -> tuple[str, bool]:
+def insert_panel_after_problem(code: str, panel_jsx: str) -> tuple[str, bool]:
     """
     For non-first sections: insert the Core Idea panel immediately after
     The Problem panel's closing </div>.
@@ -159,11 +180,11 @@ def insert_panel_after_problem(code: str) -> tuple[str, bool]:
     if closing_pos is None:
         return code, False
 
-    new_code = code[:closing_pos] + '\n' + CORE_IDEA_PANEL_JSX + code[closing_pos:]
+    new_code = code[:closing_pos] + '\n' + panel_jsx + code[closing_pos:]
     return new_code, True
 
 
-def insert_panel_before_main_viz(code: str) -> tuple[str, bool]:
+def insert_panel_before_main_viz(code: str, panel_jsx: str) -> tuple[str, bool]:
     """
     For first sections (no Problem panel): insert the Core Idea panel before
     the main visualization.
@@ -179,7 +200,7 @@ def insert_panel_before_main_viz(code: str) -> tuple[str, bool]:
     )
     if viz_comment:
         insert_pos = viz_comment.start()
-        new_code = code[:insert_pos] + CORE_IDEA_PANEL_JSX + '\n        ' + code[insert_pos:]
+        new_code = code[:insert_pos] + panel_jsx + '\n        ' + code[insert_pos:]
         return new_code, True
 
     # Fall back: first <svg or <canvas inside the return statement
@@ -192,7 +213,7 @@ def insert_panel_before_main_viz(code: str) -> tuple[str, bool]:
         return code, False
 
     abs_pos = return_match.start() + svg_or_canvas.start()
-    new_code = code[:abs_pos] + CORE_IDEA_PANEL_JSX + '\n        ' + code[abs_pos:]
+    new_code = code[:abs_pos] + panel_jsx + '\n        ' + code[abs_pos:]
     return new_code, True
 
 
@@ -202,15 +223,17 @@ def retrofit_component(code: str, core_argument: str, is_first_section: bool) ->
     Returns (modified_code, success).
     """
     escaped = escape_backtick_template(core_argument)
+    accent_var = detect_accent_var(code)
+    panel_jsx = make_panel_jsx(accent_var)
 
     # 1. Insert constant block
     code = insert_constant_block(code, escaped)
 
     # 2. Insert panel JSX
     if is_first_section:
-        code, ok = insert_panel_before_main_viz(code)
+        code, ok = insert_panel_before_main_viz(code, panel_jsx)
     else:
-        code, ok = insert_panel_after_problem(code)
+        code, ok = insert_panel_after_problem(code, panel_jsx)
 
     return code, ok
 
