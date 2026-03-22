@@ -1,4 +1,9 @@
 function DialecticalMethod() {
+  const CORE_ARGUMENT = `Traditional logic treats contradiction as a fatal error to be eliminated, but Hegel argues that contradictions are the very force that moves thinking and reality to higher unities. Every concept contains within itself its own opposition, and the resolution of that tension — which simultaneously cancels, preserves, and elevates — is what Hegel calls Aufhebung. This process is not imposed from outside but flows from the inner nature of the content itself, giving the system a sense of logical necessity. Truth, therefore, is not found in isolated propositions but only in the complete, self-developing totality.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredCircle, setHoveredCircle] = useState(null);
   const [activeCircle, setActiveCircle] = useState(null);
   const [animatingArc, setAnimatingArc] = useState(null);
@@ -198,6 +203,31 @@ function DialecticalMethod() {
             lineHeight: 1.5
           }}>Hegel's dialectic reframes contradiction not as a logical failure but as the engine driving both thought and reality forward.</p>
         </div>
+
+                {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* MAIN VISUALIZATION */}
         <div style={{

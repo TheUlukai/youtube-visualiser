@@ -1,4 +1,9 @@
 function ArchitectureOfTheAbsolute() {
+  const CORE_ARGUMENT = `Hegel's system begins with the most abstract possible starting point — pure Being — and derives, through purely internal conceptual development, increasingly concrete categories culminating in the Absolute Idea. This Idea must then externalize itself as Nature (logic in spatial-temporal form) and return to itself as Spirit (self-conscious freedom). The three spheres — Logic, Nature, Spirit — are not separate subjects but three aspects of a single self-developing reality, making the system genuinely circular: each part presupposes and completes every other. The Absolute is not a static finished entity but an eternal process of self-differentiation and self-recovery.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedRing, setSelectedRing] = useState(null);
   const [hoveredRing, setHoveredRing] = useState(null);
   const [animPhase, setAnimPhase] = useState(0);
@@ -208,6 +213,31 @@ function ArchitectureOfTheAbsolute() {
             The master-slave dialectic revealed that individual self-consciousness collapses under scrutiny — each self requires another self to be recognized, and that recognition is always fraught, unequal, incomplete. But this raises an urgent, vertiginous question: <em>what is the ultimate framework</em> — the total structure of reality — within which all these developments of consciousness, nature, and social life actually fit together? Without such a framework, philosophy has no ground beneath it, only an endless series of partial perspectives colliding without resolution.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{

@@ -1,4 +1,9 @@
 function KantCritique() {
+  const CORE_ARGUMENT = `Kant's Copernican revolution — that objects must conform to our cognition rather than vice versa — correctly identifies the active role of cognitive structures in constituting experience and grounds the possibility of scientific knowledge. But Kant's solution creates a fatal dualism: things-in-themselves are posited as existing beyond all possible knowledge, yet are said to affect us — a claim that violates Kant's own critical principles. Hegel's solution is to eliminate the thing-in-itself entirely and recognize that reality is thoroughly conceptual, with thought and being as aspects of a single self-developing process. Similarly, Kant's moral philosophy correctly identifies the formal structure of duty but lacks determinate content and creates an artificial opposition between duty and inclination that genuine ethical life must overcome.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeWall, setActiveWall] = useState(null);
   const [activeMerge, setActiveMerge] = useState(null);
   const [hoveredWall, setHoveredWall] = useState(false);
@@ -196,6 +201,31 @@ function KantCritique() {
             The drive for recognition requires intersubjective institutions, but the philosophical framework for understanding how thought relates to reality needs to be clarified — Kant attempted this, but did he succeed? At the cusp of modernity, we need to know whether the categories through which we grasp the world are our own subjective impositions or whether they genuinely disclose what is real. Without an answer, every claim to knowledge — scientific, moral, political — trembles on uncertain ground.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{

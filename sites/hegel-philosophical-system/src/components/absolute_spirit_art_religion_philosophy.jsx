@@ -1,4 +1,9 @@
 function AbsoluteSpiritArtReligionPhilosophy() {
+  const CORE_ARGUMENT = `Absolute Spirit is the realm where humanity transcends finite limitations and grasps its own essential nature and relationship to the infinite. Art achieves this first by making spiritual truth sensorially present as beauty — progressing from symbolic (Egyptian, form inadequate to content) through classical (Greek, perfect unity of form and content) to romantic art (Christian, content exceeds all finite form). Religion grasps the same truth but through representational narrative and feeling, achieving its highest form in Christianity's recognition of the finite-infinite unity through incarnation. Philosophy supersedes both by expressing this truth in pure conceptual thinking requiring no external support — but this supersession also implies that art has been 'ended' as the primary vehicle of cultural truth in the modern world.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [luminosity, setLuminosity] = useState(1);
   const [activePanel, setActivePanel] = useState(null);
   const [activeStage, setActiveStage] = useState(null);
@@ -241,6 +246,31 @@ function AbsoluteSpiritArtReligionPhilosophy() {
             Political history reaches its limit in the rational state — the institutional embodiment of freedom. Yet the state, however rational, remains a finite arrangement of laws and customs. What lies beyond finite political institutions as the ultimate form in which Spirit knows itself? The organism of civic life still operates through external necessity, through force of habit and law. But Spirit's deepest need is not merely to be enacted — it must be <em>known</em>, fully and transparently, as the infinite expressing itself through and as finite existence. The urgency is this: a civilization that has achieved the rational state but lacks the capacity for absolute self-understanding remains, in the deepest sense, incomplete.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{

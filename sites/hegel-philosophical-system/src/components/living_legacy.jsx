@@ -1,4 +1,9 @@
 function LivingLegacy() {
+  const CORE_ARGUMENT = `Hegel's remarkable influence across two centuries reflects his systematic engagement with perennial human concerns — freedom, recognition, alienation, the individual and community — rather than merely historical curiosity. Direct transmission runs through Marx's revolutionary theory, Kierkegaard's and Sartre's existentialism, Lacan's psychoanalysis, and feminist and postcolonial theory (Fanon, de Beauvoir, Bhabha). Even analytic philosophy has undergone a Hegelian revival through McDowell, Brandom, and Pinkard. Contemporary neuroscience independently confirms Hegelian insights about the intersubjective origins of self-consciousness. The most productive relationship to this legacy involves critical appropriation — preserving dialectical insights while rejecting Eurocentric assumptions about historical progress, and remaining open to reinterpretation rather than dogmatic repetition.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedNode, setSelectedNode] = useState(null);
   const [criticalMode, setCriticalMode] = useState(false);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -292,6 +297,31 @@ function LivingLegacy() {
             The speculative method achieves systematic self-knowledge — but does this represent a final philosophical achievement, or does each generation need to rethink these problems in light of contemporary conditions and challenges? If Spirit truly comprehends itself in Hegel's system, why do thinkers keep returning to it, transforming it, arguing with it? The very vitality of the Hegelian inheritance suggests either that the system was never final, or that its generative tensions cannot be closed.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{

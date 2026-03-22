@@ -1,4 +1,9 @@
 function HegelianAesthetics() {
+  const CORE_ARGUMENT = `Hegel's aesthetics is grounded in the conviction that genuine art achieves truth revelation — not mere decoration or entertainment — by making universal spiritual content present through particular sensuous forms. Architecture is the most material art, capable of expressing humanity's relationship to environment and eternity but limited to spatial arrangement. Sculpture achieves representation of living beings, reaching its peak in Greek idealized human form. Painting transcends sculpture by representing inner psychological life through color and light. Music surpasses spatial arts by existing in time, directly expressing the movement of inner experience without representational content. Poetry, using language, achieves the highest synthesis — determinate conceptual content in a temporal, sensuous medium — but in doing so approaches philosophy, pointing beyond purely aesthetic experience.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedArt, setSelectedArt] = useState(null);
   const [hoveredArt, setHoveredArt] = useState(null);
   const [echoesOpen, setEchoesOpen] = useState(false);
@@ -259,6 +264,31 @@ function HegelianAesthetics() {
             music, and poetry remain philosophically unaccounted for.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div

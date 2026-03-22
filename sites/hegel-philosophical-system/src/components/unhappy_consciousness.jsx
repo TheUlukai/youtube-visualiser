@@ -1,4 +1,9 @@
 function UnhappyConsciousness() {
+  const CORE_ARGUMENT = `The unhappy consciousness emerges when social institutions no longer provide adequate recognition and individuals seek validation from an infinite transcendent source. It experiences itself as divided between its finite, changing, sinful existence and an infinite, perfect, unchanging divine reality — a division that generates endless self-denial, ascetic practice, and frustrated aspiration. Every attempt to transcend finitude reinforces the separation it seeks to overcome: spiritual pride replaces genuine transcendence. The deeper error is treating the infinite as completely external to finite existence rather than recognizing that finite consciousness's very capacity for infinite aspiration reveals the presence of infinity within it. Overcoming unhappy consciousness requires recognizing that the infinite is realized through finite institutions and relationships, not by escaping them.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [asceticLevel, setAsceticLevel] = useState(0);
   const [resolved, setResolved] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
@@ -424,6 +429,31 @@ function UnhappyConsciousness() {
             If reality is rational and recognition is the very structure of self-consciousness, why does consciousness so frequently experience itself as <em>irreconcilably divided</em> — torn from its own essence, straining toward a perfection it can never inhabit? Why does the very capacity for self-reflection so often become a source of anguish rather than freedom? Something essential in the architecture of spirit seems to generate alienation not as accident but as necessity.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{

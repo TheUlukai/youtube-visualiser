@@ -1,4 +1,9 @@
 function PhilosophyOfHistory() {
+  const CORE_ARGUMENT = `Hegel argues that history exhibits a comprehensible rational development: the motor is the human need for recognition, whose inevitable conflicts generate dialectical change as societies develop new institutions to overcome existing contradictions. He divides world history into four epochs — Oriental (one is free: the despot), Greek (some are free: the citizen), Roman (legal universality without ethical community), Germanic (all are in principle free through the Christian-Protestant-Enlightenment inheritance) — each representing a higher stage of freedom's self-consciousness. Historical change occurs through the 'cunning of reason': particular passions and interests serve as unwitting instruments of rational development they did not intend. The French Revolution exemplifies both the achievement of universal freedom and the terror of applying abstract principles without mediating institutions.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedEpoch, setSelectedEpoch] = useState(null);
   const [hoveredEpoch, setHoveredEpoch] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -310,6 +315,31 @@ function PhilosophyOfHistory() {
             If the rational state is the highest form of objective spirit — the institutional embodiment of freedom — then history confronts philosophy with an urgent question. How did humanity arrive at it? Surveying the vast pageant of empires, conquests, and civilizations that preceded the modern world, one finds not steady progress but apparent chaos: dynasties rising and falling, wars obliterating cultures, passions and accidents shaping outcomes. Is there a rational pattern underlying the seemingly chaotic succession of historical empires and cultures, or is the idea of the rational state merely our present flattering itself?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{ ...cardStyle, background: "#08050290", border: "1px solid #854D0E30" }}>

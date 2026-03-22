@@ -1,4 +1,9 @@
 function CivilSociety() {
+  const CORE_ARGUMENT = `Civil society emerges when individuals leave the natural unity of the family and pursue their particular interests through relationships with strangers. Through the division of labor and voluntary exchange, it enables unprecedented individual development and social cooperation — respecting freedom by allowing people to choose occupations, associations, and consumption. But market relationships treat people primarily as means for satisfying needs rather than as ends deserving recognition, and generate self-reinforcing inequalities, cyclical crises, and social fragmentation. Hegel identifies three mechanisms for managing these tensions: the administration of justice (legal framework), the police (public economic regulation and welfare), and the corporation (professional associations providing social identity and mutual support between the family and the state).`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedDistrict, setSelectedDistrict] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredDistrict, setHoveredDistrict] = useState(null);
@@ -286,6 +291,31 @@ function CivilSociety() {
             The movement beyond unhappy consciousness and toward reason requires concrete institutions — but what is the character of the intermediate social realm between the family and the state where individuals first encounter each other as strangers? The family offers warmth and unity, but it cannot recognize the universal person. Pure abstract right is too thin to sustain a life. Something must stand between the intimacy of the home and the grandeur of the state: a world of strangers exchanging goods and labor, seeking recognition not through love but through work, need, and mutual dependence.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

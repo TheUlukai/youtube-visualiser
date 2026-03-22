@@ -1,4 +1,9 @@
 function PhilosophyOfSpirit() {
+  const CORE_ARGUMENT = `Spirit is not a supernatural entity but the realm of human consciousness, society, and culture — the point where logical categories become explicitly self-conscious and freely self-determining. The philosophy of Spirit is structured triadically: Subjective Spirit covers individual consciousness from sensation to theoretical and practical reason; Objective Spirit covers the social and political institutions (abstract right, morality, ethical life) through which individuals achieve collective freedom; Absolute Spirit covers art, religion, and philosophy as the highest forms of human self-understanding. Each level represents a more adequate realization of freedom, culminating in the recognition that rational thinking itself is the ultimate structure of reality.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedRing, setSelectedRing] = useState(null);
   const [hoveredRing, setHoveredRing] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -215,6 +220,31 @@ function PhilosophyOfSpirit() {
             Nature reaches its limit in organic life — the plant that responds to light, the animal that feels and strives. Yet no organism can step back and ask <em>what it is</em>, nor reshape the world according to a freely chosen rational purpose. Life alone cannot become aware of itself as life. The pressure accumulates into an unavoidable question: <strong style={{ color: "#93C5FD" }}>how does the transition to genuine self-consciousness and freedom occur?</strong> Something must rupture from within nature's necessity and discover that it is not merely a thing among things but a subject — a being for whom the world exists.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{

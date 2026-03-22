@@ -1,4 +1,9 @@
 function RecognitionStructure() {
+  const CORE_ARGUMENT = `Recognition is not a psychological desire for approval but the fundamental structure of human self-consciousness: the self cannot validate its own claims about its nature and worth without acknowledgment from others who are themselves free and rational. This creates a fundamental paradox — we need acknowledgment from others to validate our freedom, but that acknowledgment is only valuable if it comes from others who are equally free. The dialectic moves from the failed recognition of master-slave through stoic and skeptical withdrawals (which achieve negative independence but cannot provide positive content) to the intersubjective forms of ethical and cultural life that embody mutual acknowledgment in shared institutions. Genuine selfhood is therefore a social achievement, not a solitary one.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(0);
   const [hoveredStage, setHoveredStage] = useState(null);
   const [expandedEchoes, setExpandedEchoes] = useState(false);
@@ -419,6 +424,31 @@ function RecognitionStructure() {
             The Absolute System and its culmination in philosophy reveal that truth is systematic and intersubjective — but what is the underlying human need that drives all these developments from individual consciousness through social institutions to absolute spirit? Philosophy has mapped the territory, yet the engine remains unnamed. What compels the self to leave its solitude and enter the dangerous, necessary world of other selves?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

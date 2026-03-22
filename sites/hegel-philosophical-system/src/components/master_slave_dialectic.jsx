@@ -1,4 +1,9 @@
 function MasterSlaveDialectic() {
+  const CORE_ARGUMENT = `When two self-consciousnesses meet, each claiming universal validity, a struggle for recognition ensues in which one risks death and becomes master while the other submits and becomes slave. The master's victory is Pyrrhic: recognition from a coerced inferior is worthless, and the master becomes dependent on the slave for all material needs. Meanwhile, through disciplined labor the slave develops genuine competence, encounters the resistance of the material world, and sees himself reflected in his products — achieving a more substantive self-consciousness than the master's abstract domination. The dialectical reversal is complete when the slave's growing autonomy makes the master's power unsustainable.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderDependence, setSliderDependence] = useState(0);
   const [sliderCompetence, setSliderCompetence] = useState(0);
   const [selectedArrow, setSelectedArrow] = useState(null);
@@ -240,6 +245,31 @@ function MasterSlaveDialectic() {
             Self-consciousness demands to be recognized — but what happens when two self-conscious beings meet for the first time, each treating <em>itself</em> as the sole measure of reality? Neither can simply grant recognition to the other without undermining its own claim to supremacy. The raw encounter between two selves is not a negotiation — it is a collision. Something must give way, and the question is whether what gives way is a body or a freedom.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Forge embers canvas */}
         <canvas ref={canvasRef} style={{ width: "100%", display: "block", borderRadius: "6px 6px 0 0", marginBottom: "0" }} />

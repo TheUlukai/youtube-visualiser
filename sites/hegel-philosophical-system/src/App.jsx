@@ -186,6 +186,11 @@ const bgMap = {
 
 // ─── Part 1: The Revolutionary Method ───
 function DialecticalMethod() {
+  const CORE_ARGUMENT = `Traditional logic treats contradiction as a fatal error to be eliminated, but Hegel argues that contradictions are the very force that moves thinking and reality to higher unities. Every concept contains within itself its own opposition, and the resolution of that tension — which simultaneously cancels, preserves, and elevates — is what Hegel calls Aufhebung. This process is not imposed from outside but flows from the inner nature of the content itself, giving the system a sense of logical necessity. Truth, therefore, is not found in isolated propositions but only in the complete, self-developing totality.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredCircle, setHoveredCircle] = useState(null);
   const [activeCircle, setActiveCircle] = useState(null);
   const [animatingArc, setAnimatingArc] = useState(null);
@@ -385,6 +390,31 @@ function DialecticalMethod() {
             lineHeight: 1.5
           }}>Hegel's dialectic reframes contradiction not as a logical failure but as the engine driving both thought and reality forward.</p>
         </div>
+
+                {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -839,6 +869,11 @@ function DialecticalMethod() {
 
 // ─── Part 2: The Journey of Consciousness ───
 function JourneyOfConsciousness() {
+  const CORE_ARGUMENT = `Hegel shows that even the most immediate form of knowledge — pointing at 'this, here, now' — already depends on universal concepts, undermining the idea of pure sensory given. Each stage of consciousness (sense certainty, perception, understanding) collapses under its own internal contradictions and forces a transition to a richer stage. The decisive turning point is the emergence of self-consciousness, where mind recognizes that it has been present and active in every stage of knowing. But self-consciousness cannot validate itself in isolation; it requires acknowledgment from other self-conscious beings, making knowledge inherently intersubjective.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeStep, setActiveStep] = useState(null);
   const [sublated, setSublated] = useState([]);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -1014,6 +1049,31 @@ function JourneyOfConsciousness() {
             If all thinking develops dialectically through contradiction, what does this mean for the development of the individual mind? Can consciousness ever achieve genuine, non-arbitrary knowledge — or is every claim to knowing just one more moment in an endless, groundless oscillation? The pressure is urgent: without an answer, philosophy itself collapses into relativism.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{ ...cardBase, background: "#08122899", position: "relative", overflow: "hidden", padding: 0 }}>
@@ -1435,6 +1495,11 @@ function ContradictionViz({ step }) {
 
 // ─── Part 3: The Life and Death Struggle ───
 function MasterSlaveDialectic() {
+  const CORE_ARGUMENT = `When two self-consciousnesses meet, each claiming universal validity, a struggle for recognition ensues in which one risks death and becomes master while the other submits and becomes slave. The master's victory is Pyrrhic: recognition from a coerced inferior is worthless, and the master becomes dependent on the slave for all material needs. Meanwhile, through disciplined labor the slave develops genuine competence, encounters the resistance of the material world, and sees himself reflected in his products — achieving a more substantive self-consciousness than the master's abstract domination. The dialectical reversal is complete when the slave's growing autonomy makes the master's power unsustainable.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderDependence, setSliderDependence] = useState(0);
   const [sliderCompetence, setSliderCompetence] = useState(0);
   const [selectedArrow, setSelectedArrow] = useState(null);
@@ -1676,6 +1741,31 @@ function MasterSlaveDialectic() {
             Self-consciousness demands to be recognized — but what happens when two self-conscious beings meet for the first time, each treating <em>itself</em> as the sole measure of reality? Neither can simply grant recognition to the other without undermining its own claim to supremacy. The raw encounter between two selves is not a negotiation — it is a collision. Something must give way, and the question is whether what gives way is a body or a freedom.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Forge embers canvas */}
         <canvas ref={canvasRef} style={{ width: "100%", display: "block", borderRadius: "6px 6px 0 0", marginBottom: "0" }} />
@@ -2208,6 +2298,11 @@ function MasterSlaveDialectic() {
 
 // ─── Part 4: The Architecture of the Absolute ───
 function ArchitectureOfTheAbsolute() {
+  const CORE_ARGUMENT = `Hegel's system begins with the most abstract possible starting point — pure Being — and derives, through purely internal conceptual development, increasingly concrete categories culminating in the Absolute Idea. This Idea must then externalize itself as Nature (logic in spatial-temporal form) and return to itself as Spirit (self-conscious freedom). The three spheres — Logic, Nature, Spirit — are not separate subjects but three aspects of a single self-developing reality, making the system genuinely circular: each part presupposes and completes every other. The Absolute is not a static finished entity but an eternal process of self-differentiation and self-recovery.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedRing, setSelectedRing] = useState(null);
   const [hoveredRing, setHoveredRing] = useState(null);
   const [animPhase, setAnimPhase] = useState(0);
@@ -2417,6 +2512,31 @@ function ArchitectureOfTheAbsolute() {
             The master-slave dialectic revealed that individual self-consciousness collapses under scrutiny — each self requires another self to be recognized, and that recognition is always fraught, unequal, incomplete. But this raises an urgent, vertiginous question: <em>what is the ultimate framework</em> — the total structure of reality — within which all these developments of consciousness, nature, and social life actually fit together? Without such a framework, philosophy has no ground beneath it, only an endless series of partial perspectives colliding without resolution.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{
@@ -2952,6 +3072,11 @@ function ArchitectureOfTheAbsolute() {
 
 // ─── Part 5: The Logic of Pure Thought ───
 function ScienceOfLogic() {
+  const CORE_ARGUMENT = `The Logic begins with pure Being — the most presuppositionless starting point — which immediately proves indistinguishable from pure Nothing, generating the first dialectical movement: Becoming. From this humble origin Hegel derives increasingly complex and concrete categories through purely internal necessity, passing through the logic of Being (quality, quantity, measure), the logic of Essence (identity, difference, cause and effect), and the logic of the Concept (universality, particularity, individuality). Each category is generated by the contradictions inherent in the previous one, so the entire system develops without external input. The Logic concludes with the Absolute Idea — the complete self-contained system of all logical categories — which must then externalize itself as Nature.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredNode, setHoveredNode] = useState(null);
   const [selectedNode, setSelectedNode] = useState(null);
   const [expandedNodes, setExpandedNodes] = useState(new Set(["becoming"]));
@@ -3219,6 +3344,31 @@ function ScienceOfLogic() {
             If the Absolute is the systematic whole of Logic-Nature-Spirit, we need to see exactly how the logical dimension develops: <em>how does pure thought generate its own content without arbitrary assumptions?</em> Any starting point we choose seems to smuggle in presuppositions from outside — yet philosophy demands a truly presuppositionless beginning. The system's claim to necessity hangs entirely on whether this is possible.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{
@@ -3799,6 +3949,11 @@ function ScienceOfLogic() {
 
 // ─── Part 6: Nature as Idea in Otherness ───
 function PhilosophyOfNature() {
+  const CORE_ARGUMENT = `Nature is not an independent realm separate from thought but the Absolute Idea in the form of otherness — logical structure realized in space, time, and matter. Unlike pure logical development, natural forms are characterized by contingency and external determination, which Hegel calls the 'impotence of nature.' Nevertheless, nature exhibits a rational progression from the most abstract forms (space, time, matter, motion) through physics (magnetism, electricity, chemistry) to organic life — each level showing greater internal unity and self-determination. Organic life achieves genuine individuality and self-maintenance but remains trapped in biological cycles and cannot take itself as its own object.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeTier, setActiveTier] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredTier, setHoveredTier] = useState(null);
@@ -4122,6 +4277,31 @@ function PhilosophyOfNature() {
             The Absolute Idea has achieved its fullest logical articulation — yet it remains purely conceptual, abstract, enclosed within thought's own movement. If the Idea is truly absolute, it cannot remain sealed within itself. It must externalize, must become other to itself. <em>But how do purely logical categories appear in the contingent, resisting materiality of the actual world?</em> How does necessity become nature — blind, spatial, temporal, shot through with accident?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -4553,6 +4733,11 @@ function PhilosophyOfNature() {
 
 // ─── Part 7: The Realm of Human Spirit ───
 function PhilosophyOfSpirit() {
+  const CORE_ARGUMENT = `Spirit is not a supernatural entity but the realm of human consciousness, society, and culture — the point where logical categories become explicitly self-conscious and freely self-determining. The philosophy of Spirit is structured triadically: Subjective Spirit covers individual consciousness from sensation to theoretical and practical reason; Objective Spirit covers the social and political institutions (abstract right, morality, ethical life) through which individuals achieve collective freedom; Absolute Spirit covers art, religion, and philosophy as the highest forms of human self-understanding. Each level represents a more adequate realization of freedom, culminating in the recognition that rational thinking itself is the ultimate structure of reality.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedRing, setSelectedRing] = useState(null);
   const [hoveredRing, setHoveredRing] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -4769,6 +4954,31 @@ function PhilosophyOfSpirit() {
             Nature reaches its limit in organic life — the plant that responds to light, the animal that feels and strives. Yet no organism can step back and ask <em>what it is</em>, nor reshape the world according to a freely chosen rational purpose. Life alone cannot become aware of itself as life. The pressure accumulates into an unavoidable question: <strong style={{ color: "#93C5FD" }}>how does the transition to genuine self-consciousness and freedom occur?</strong> Something must rupture from within nature's necessity and discover that it is not merely a thing among things but a subject — a being for whom the world exists.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{
@@ -5197,6 +5407,11 @@ function PhilosophyOfSpirit() {
 
 // ─── Part 8: The Science of Freedom ───
 function ScienceOfFreedom() {
+  const CORE_ARGUMENT = `Hegel rejects the liberal identification of freedom with absence of external constraint, calling it bondage to arbitrary desire. Genuine freedom is positive self-determination according to rational principles, and this cannot be achieved in isolation. The Philosophy of Right traces freedom's development through abstract right (property and contract), morality (individual conviction, Kantian duty), and ethical life (Sittlichkeit) — the highest stage where individual moral conviction and objective social institutions achieve unity. Ethical life is realized through the family (immediate love-based unity), civil society (market and voluntary associations), and the rational state (the synthesis of particular and universal freedom). Political participation thereby becomes a form of self-realization rather than self-sacrifice.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredStep, setHoveredStep] = useState(null);
   const [selectedStep, setSelectedStep] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -5362,6 +5577,31 @@ function ScienceOfFreedom() {
             Spirit has achieved self-consciousness — but consciousness alone is not enough. Freedom must become actual, must walk in the world. Yet here the crisis deepens: <span style={{ color: "#7dd3fc", fontStyle: "italic" }}>Spirit requires objective social institutions to fully realize freedom</span>, but what specific institutional architecture makes genuine collective freedom possible without crushing individual autonomy? Provide too little structure and freedom atomizes into chaos; provide too much and the living subject is swallowed by the machine of the state. The problem inherited from Kant and the French Revolution alike is this unbearable tension — and Hegel insists it must be resolved not by choosing one side but by thinking through both at once.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -6097,6 +6337,11 @@ function ScienceOfFreedom() {
 
 // ─── Part 9: The Cunning of Reason ───
 function PhilosophyOfHistory() {
+  const CORE_ARGUMENT = `Hegel argues that history exhibits a comprehensible rational development: the motor is the human need for recognition, whose inevitable conflicts generate dialectical change as societies develop new institutions to overcome existing contradictions. He divides world history into four epochs — Oriental (one is free: the despot), Greek (some are free: the citizen), Roman (legal universality without ethical community), Germanic (all are in principle free through the Christian-Protestant-Enlightenment inheritance) — each representing a higher stage of freedom's self-consciousness. Historical change occurs through the 'cunning of reason': particular passions and interests serve as unwitting instruments of rational development they did not intend. The French Revolution exemplifies both the achievement of universal freedom and the terror of applying abstract principles without mediating institutions.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedEpoch, setSelectedEpoch] = useState(null);
   const [hoveredEpoch, setHoveredEpoch] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -6408,6 +6653,31 @@ function PhilosophyOfHistory() {
             If the rational state is the highest form of objective spirit — the institutional embodiment of freedom — then history confronts philosophy with an urgent question. How did humanity arrive at it? Surveying the vast pageant of empires, conquests, and civilizations that preceded the modern world, one finds not steady progress but apparent chaos: dynasties rising and falling, wars obliterating cultures, passions and accidents shaping outcomes. Is there a rational pattern underlying the seemingly chaotic succession of historical empires and cultures, or is the idea of the rational state merely our present flattering itself?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{ ...cardStyle, background: "#08050290", border: "1px solid #854D0E30" }}>
@@ -6701,6 +6971,11 @@ function PhilosophyOfHistory() {
 
 // ─── Part 10: The Beautiful, the Holy, and the True ───
 function AbsoluteSpiritArtReligionPhilosophy() {
+  const CORE_ARGUMENT = `Absolute Spirit is the realm where humanity transcends finite limitations and grasps its own essential nature and relationship to the infinite. Art achieves this first by making spiritual truth sensorially present as beauty — progressing from symbolic (Egyptian, form inadequate to content) through classical (Greek, perfect unity of form and content) to romantic art (Christian, content exceeds all finite form). Religion grasps the same truth but through representational narrative and feeling, achieving its highest form in Christianity's recognition of the finite-infinite unity through incarnation. Philosophy supersedes both by expressing this truth in pure conceptual thinking requiring no external support — but this supersession also implies that art has been 'ended' as the primary vehicle of cultural truth in the modern world.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [luminosity, setLuminosity] = useState(1);
   const [activePanel, setActivePanel] = useState(null);
   const [activeStage, setActiveStage] = useState(null);
@@ -6943,6 +7218,31 @@ function AbsoluteSpiritArtReligionPhilosophy() {
             Political history reaches its limit in the rational state — the institutional embodiment of freedom. Yet the state, however rational, remains a finite arrangement of laws and customs. What lies beyond finite political institutions as the ultimate form in which Spirit knows itself? The organism of civic life still operates through external necessity, through force of habit and law. But Spirit's deepest need is not merely to be enacted — it must be <em>known</em>, fully and transparently, as the infinite expressing itself through and as finite existence. The urgency is this: a civilization that has achieved the rational state but lacks the capacity for absolute self-understanding remains, in the deepest sense, incomplete.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{
@@ -7315,6 +7615,11 @@ function AbsoluteSpiritArtReligionPhilosophy() {
 
 // ─── Part 11: The Drama of Recognition ───
 function RecognitionStructure() {
+  const CORE_ARGUMENT = `Recognition is not a psychological desire for approval but the fundamental structure of human self-consciousness: the self cannot validate its own claims about its nature and worth without acknowledgment from others who are themselves free and rational. This creates a fundamental paradox — we need acknowledgment from others to validate our freedom, but that acknowledgment is only valuable if it comes from others who are equally free. The dialectic moves from the failed recognition of master-slave through stoic and skeptical withdrawals (which achieve negative independence but cannot provide positive content) to the intersubjective forms of ethical and cultural life that embody mutual acknowledgment in shared institutions. Genuine selfhood is therefore a social achievement, not a solitary one.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(0);
   const [hoveredStage, setHoveredStage] = useState(null);
   const [expandedEchoes, setExpandedEchoes] = useState(false);
@@ -7735,6 +8040,31 @@ function RecognitionStructure() {
             The Absolute System and its culmination in philosophy reveal that truth is systematic and intersubjective — but what is the underlying human need that drives all these developments from individual consciousness through social institutions to absolute spirit? Philosophy has mapped the territory, yet the engine remains unnamed. What compels the self to leave its solitude and enter the dangerous, necessary world of other selves?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -8052,6 +8382,11 @@ function RecognitionStructure() {
 
 // ─── Part 12: The Kantian Revolution and Its Limits ───
 function KantCritique() {
+  const CORE_ARGUMENT = `Kant's Copernican revolution — that objects must conform to our cognition rather than vice versa — correctly identifies the active role of cognitive structures in constituting experience and grounds the possibility of scientific knowledge. But Kant's solution creates a fatal dualism: things-in-themselves are posited as existing beyond all possible knowledge, yet are said to affect us — a claim that violates Kant's own critical principles. Hegel's solution is to eliminate the thing-in-itself entirely and recognize that reality is thoroughly conceptual, with thought and being as aspects of a single self-developing process. Similarly, Kant's moral philosophy correctly identifies the formal structure of duty but lacks determinate content and creates an artificial opposition between duty and inclination that genuine ethical life must overcome.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeWall, setActiveWall] = useState(null);
   const [activeMerge, setActiveMerge] = useState(null);
   const [hoveredWall, setHoveredWall] = useState(false);
@@ -8249,6 +8584,31 @@ function KantCritique() {
             The drive for recognition requires intersubjective institutions, but the philosophical framework for understanding how thought relates to reality needs to be clarified — Kant attempted this, but did he succeed? At the cusp of modernity, we need to know whether the categories through which we grasp the world are our own subjective impositions or whether they genuinely disclose what is real. Without an answer, every claim to knowledge — scientific, moral, political — trembles on uncertain ground.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -8631,6 +8991,11 @@ function KantCritique() {
 
 // ─── Part 13: The Agony of Division ───
 function UnhappyConsciousness() {
+  const CORE_ARGUMENT = `The unhappy consciousness emerges when social institutions no longer provide adequate recognition and individuals seek validation from an infinite transcendent source. It experiences itself as divided between its finite, changing, sinful existence and an infinite, perfect, unchanging divine reality — a division that generates endless self-denial, ascetic practice, and frustrated aspiration. Every attempt to transcend finitude reinforces the separation it seeks to overcome: spiritual pride replaces genuine transcendence. The deeper error is treating the infinite as completely external to finite existence rather than recognizing that finite consciousness's very capacity for infinite aspiration reveals the presence of infinity within it. Overcoming unhappy consciousness requires recognizing that the infinite is realized through finite institutions and relationships, not by escaping them.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [asceticLevel, setAsceticLevel] = useState(0);
   const [resolved, setResolved] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
@@ -9056,6 +9421,31 @@ function UnhappyConsciousness() {
             If reality is rational and recognition is the very structure of self-consciousness, why does consciousness so frequently experience itself as <em>irreconcilably divided</em> — torn from its own essence, straining toward a perfection it can never inhabit? Why does the very capacity for self-reflection so often become a source of anguish rather than freedom? Something essential in the architecture of spirit seems to generate alienation not as accident but as necessity.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{
@@ -9403,6 +9793,11 @@ function UnhappyConsciousness() {
 
 // ─── Part 14: The World of Needs and Work ───
 function CivilSociety() {
+  const CORE_ARGUMENT = `Civil society emerges when individuals leave the natural unity of the family and pursue their particular interests through relationships with strangers. Through the division of labor and voluntary exchange, it enables unprecedented individual development and social cooperation — respecting freedom by allowing people to choose occupations, associations, and consumption. But market relationships treat people primarily as means for satisfying needs rather than as ends deserving recognition, and generate self-reinforcing inequalities, cyclical crises, and social fragmentation. Hegel identifies three mechanisms for managing these tensions: the administration of justice (legal framework), the police (public economic regulation and welfare), and the corporation (professional associations providing social identity and mutual support between the family and the state).`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedDistrict, setSelectedDistrict] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredDistrict, setHoveredDistrict] = useState(null);
@@ -9690,6 +10085,31 @@ function CivilSociety() {
             The movement beyond unhappy consciousness and toward reason requires concrete institutions — but what is the character of the intermediate social realm between the family and the state where individuals first encounter each other as strangers? The family offers warmth and unity, but it cannot recognize the universal person. Pure abstract right is too thin to sustain a life. Something must stand between the intimacy of the home and the grandeur of the state: a world of strangers exchanging goods and labor, seeking recognition not through love but through work, need, and mutual dependence.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -10127,6 +10547,11 @@ function CivilSociety() {
 
 // ─── Part 15: The Spectre of Materialism ───
 function HegelAndMarx() {
+  const CORE_ARGUMENT = `Marx accepts Hegel's insight that human beings realize themselves through creative activity but argues that Hegel remains trapped in abstract philosophical speculation, failing to analyze the concrete material conditions that determine human life. Marx's alienated labor directly parallels the master-slave dialectic but locates alienation in capitalist property relations rather than pure consciousness: workers are separated from their products, their productive activity, their human essence, and each other. The dialectical development of capitalism — concentrating workers, generating crises, reducing the rate of profit — will produce the conditions for its own revolutionary overthrow. But Marx's critique is also that Hegelian philosophy is ideologically conservative, reconciling people to unjust conditions by presenting them as rational necessity rather than spurring practical transformation.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [isFlipped, setIsFlipped] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
   const [isEchoesOpen, setIsEchoesOpen] = useState(false);
@@ -10367,6 +10792,31 @@ function HegelAndMarx() {
             Hegel's civil society analysis reveals deep tensions between market freedom and social solidarity — but does a purely philosophical-conceptual account of these tensions adequately grasp their material roots, or does it ideologically mystify them? When philosophy declares the actual to be rational, does it illuminate reality or provide intellectual cover for its injustices? The pressure of this question is nothing less than a demand to judge whether thinking can change the world, or only ever reconcile us to it.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -10806,6 +11256,11 @@ function HegelAndMarx() {
 
 // ─── Part 16: The Twilight of Beauty ───
 function EndOfArt() {
+  const CORE_ARGUMENT = `Hegel argues that genuine art serves as truth revelation — making spiritual content sensorially present — but this function is historically conditioned. Symbolic art (Egyptian) could not adequately contain its spiritual content; classical art (Greek) achieved perfect unity of form and content but restricted spiritual depth to what beauty could embody; romantic art (Christian and modern) recognized the inadequacy of all finite form and achieved greater spiritual depth at the cost of sensuous beauty. The developmental logic of romantic art leads to art's own dissolution: modern art becomes increasingly self-reflective and conceptual, pointing beyond aesthetic experience toward philosophical understanding. Art in its 'highest vocation' is therefore a thing of the past — not dead, but no longer the primary cultural authority for truth.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredRoom, setHoveredRoom] = useState(null);
   const [hoveredArtwork, setHoveredArtwork] = useState(null);
   const [mirrorClicked, setMirrorClicked] = useState(false);
@@ -10992,6 +11447,31 @@ function EndOfArt() {
             The Hegelian-Marxist tension raises the question of whether purely aesthetic experience can achieve genuine truth — and more broadly, <em>what is the status of art in the development of absolute spirit?</em> If thought unfolds historically toward greater self-knowledge, where does sensuous beauty fit in a system that ends in pure conceptual comprehension? Can the image ever do what the concept does — and if so, at what cost to both?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -11667,6 +12147,11 @@ function EndOfArt() {
 
 // ─── Part 17: The Realm of Sensuous Knowing ───
 function HegelianAesthetics() {
+  const CORE_ARGUMENT = `Hegel's aesthetics is grounded in the conviction that genuine art achieves truth revelation — not mere decoration or entertainment — by making universal spiritual content present through particular sensuous forms. Architecture is the most material art, capable of expressing humanity's relationship to environment and eternity but limited to spatial arrangement. Sculpture achieves representation of living beings, reaching its peak in Greek idealized human form. Painting transcends sculpture by representing inner psychological life through color and light. Music surpasses spatial arts by existing in time, directly expressing the movement of inner experience without representational content. Poetry, using language, achieves the highest synthesis — determinate conceptual content in a temporal, sensuous medium — but in doing so approaches philosophy, pointing beyond purely aesthetic experience.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedArt, setSelectedArt] = useState(null);
   const [hoveredArt, setHoveredArt] = useState(null);
   const [echoesOpen, setEchoesOpen] = useState(false);
@@ -11927,6 +12412,31 @@ function HegelianAesthetics() {
             music, and poetry remain philosophically unaccounted for.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div
@@ -12663,6 +13173,11 @@ function HegelianAesthetics() {
 
 // ─── Part 18: The Experience of Estrangement ───
 function Alienation() {
+  const CORE_ARGUMENT = `Alienation occurs whenever consciousness encounters its own products or expressions as foreign powers that appear to control it — in relationship to nature, social institutions, cultural achievements, religious projections, and philosophical abstractions. All forms of alienation share the structure of externality: something that actually expresses human activity appears as an independent force opposing human purposes. But alienation also serves crucial positive functions: it forces consciousness to confront the inadequacy of immediate relationships, develops critical distance from tradition, and motivates social reform. The goal is not to eliminate alienation by returning to pre-alienated immediacy, but to achieve 'mediated immediacy' — forms of relationship that preserve the gains of reflection while enabling genuine recognition within concrete institutions.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedSphere, setSelectedSphere] = useState(null);
   const [alienationStates, setAlienationStates] = useState({
     nature: 1,
@@ -12907,6 +13422,31 @@ function Alienation() {
             its producers, and no domain of life seems immune to this reversal.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div
@@ -13601,6 +14141,11 @@ function Alienation() {
 
 // ─── Part 19: The Method of Philosophy ───
 function SpeculativeMethod() {
+  const CORE_ARGUMENT = `Unlike approaches that impose external methods on philosophical subject matter, Hegel argues that genuine philosophical thinking must allow its method to emerge from the content itself — the method is inseparable from the results. Traditional empiricism and rationalism both assume a separation between knowing subject and known object; Kantian critical philosophy limits this to phenomena. Hegel's speculative method transcends these dualisms by recognizing that thinking and being are aspects of a single self-differentiating process. The key operational principle is determinate negation: every false view contains partial truth that must be preserved while its limitations are overcome, generating developmental progress rather than mere rejection. The system is holistic — no concept has meaning in isolation — and genuinely circular, returning enriched to its starting points.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [echosOpen, setEchosOpen] = useState(false);
   const [mode, setMode] = useState(null); // null | 'abstract' | 'determinate'
   const [chainStep, setChainStep] = useState(0);
@@ -13763,6 +14308,31 @@ function SpeculativeMethod() {
             The analysis of alienation and its overcoming requires a philosophical method adequate to the dynamic, self-developing character of reality — but what is that method, and how does it differ from both empiricist and rationalist alternatives? Empiricism imports an external observer; rationalism imposes pre-formed categories. Neither can let content speak for itself. Something more radical is needed: a method that does not stand apart from its subject matter but emerges from within it, a method that <em>moves</em> as reality itself moves.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -14253,6 +14823,11 @@ function ConceptCard({ term, desc }) {
 
 // ─── Part 20: The Living Legacy ───
 function LivingLegacy() {
+  const CORE_ARGUMENT = `Hegel's remarkable influence across two centuries reflects his systematic engagement with perennial human concerns — freedom, recognition, alienation, the individual and community — rather than merely historical curiosity. Direct transmission runs through Marx's revolutionary theory, Kierkegaard's and Sartre's existentialism, Lacan's psychoanalysis, and feminist and postcolonial theory (Fanon, de Beauvoir, Bhabha). Even analytic philosophy has undergone a Hegelian revival through McDowell, Brandom, and Pinkard. Contemporary neuroscience independently confirms Hegelian insights about the intersubjective origins of self-consciousness. The most productive relationship to this legacy involves critical appropriation — preserving dialectical insights while rejecting Eurocentric assumptions about historical progress, and remaining open to reinterpretation rather than dogmatic repetition.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedNode, setSelectedNode] = useState(null);
   const [criticalMode, setCriticalMode] = useState(false);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -14546,6 +15121,31 @@ function LivingLegacy() {
             The speculative method achieves systematic self-knowledge — but does this represent a final philosophical achievement, or does each generation need to rethink these problems in light of contemporary conditions and challenges? If Spirit truly comprehends itself in Hegel's system, why do thinkers keep returning to it, transforming it, arguing with it? The very vitality of the Hegelian inheritance suggests either that the system was never final, or that its generative tensions cannot be closed.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{

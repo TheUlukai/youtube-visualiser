@@ -1,4 +1,9 @@
 function SpeculativeMethod() {
+  const CORE_ARGUMENT = `Unlike approaches that impose external methods on philosophical subject matter, Hegel argues that genuine philosophical thinking must allow its method to emerge from the content itself — the method is inseparable from the results. Traditional empiricism and rationalism both assume a separation between knowing subject and known object; Kantian critical philosophy limits this to phenomena. Hegel's speculative method transcends these dualisms by recognizing that thinking and being are aspects of a single self-differentiating process. The key operational principle is determinate negation: every false view contains partial truth that must be preserved while its limitations are overcome, generating developmental progress rather than mere rejection. The system is holistic — no concept has meaning in isolation — and genuinely circular, returning enriched to its starting points.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [echosOpen, setEchosOpen] = useState(false);
   const [mode, setMode] = useState(null); // null | 'abstract' | 'determinate'
   const [chainStep, setChainStep] = useState(0);
@@ -161,6 +166,31 @@ function SpeculativeMethod() {
             The analysis of alienation and its overcoming requires a philosophical method adequate to the dynamic, self-developing character of reality — but what is that method, and how does it differ from both empiricist and rationalist alternatives? Empiricism imports an external observer; rationalism imposes pre-formed categories. Neither can let content speak for itself. Something more radical is needed: a method that does not stand apart from its subject matter but emerges from within it, a method that <em>moves</em> as reality itself moves.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{

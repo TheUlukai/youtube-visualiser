@@ -1,4 +1,9 @@
 function JourneyOfConsciousness() {
+  const CORE_ARGUMENT = `Hegel shows that even the most immediate form of knowledge — pointing at 'this, here, now' — already depends on universal concepts, undermining the idea of pure sensory given. Each stage of consciousness (sense certainty, perception, understanding) collapses under its own internal contradictions and forces a transition to a richer stage. The decisive turning point is the emergence of self-consciousness, where mind recognizes that it has been present and active in every stage of knowing. But self-consciousness cannot validate itself in isolation; it requires acknowledgment from other self-conscious beings, making knowledge inherently intersubjective.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeStep, setActiveStep] = useState(null);
   const [sublated, setSublated] = useState([]);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -174,6 +179,31 @@ function JourneyOfConsciousness() {
             If all thinking develops dialectically through contradiction, what does this mean for the development of the individual mind? Can consciousness ever achieve genuine, non-arbitrary knowledge — or is every claim to knowing just one more moment in an endless, groundless oscillation? The pressure is urgent: without an answer, philosophy itself collapses into relativism.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{ ...cardBase, background: "#08122899", position: "relative", overflow: "hidden", padding: 0 }}>

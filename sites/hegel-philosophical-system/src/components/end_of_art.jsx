@@ -1,4 +1,9 @@
 function EndOfArt() {
+  const CORE_ARGUMENT = `Hegel argues that genuine art serves as truth revelation — making spiritual content sensorially present — but this function is historically conditioned. Symbolic art (Egyptian) could not adequately contain its spiritual content; classical art (Greek) achieved perfect unity of form and content but restricted spiritual depth to what beauty could embody; romantic art (Christian and modern) recognized the inadequacy of all finite form and achieved greater spiritual depth at the cost of sensuous beauty. The developmental logic of romantic art leads to art's own dissolution: modern art becomes increasingly self-reflective and conceptual, pointing beyond aesthetic experience toward philosophical understanding. Art in its 'highest vocation' is therefore a thing of the past — not dead, but no longer the primary cultural authority for truth.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredRoom, setHoveredRoom] = useState(null);
   const [hoveredArtwork, setHoveredArtwork] = useState(null);
   const [mirrorClicked, setMirrorClicked] = useState(false);
@@ -185,6 +190,31 @@ function EndOfArt() {
             The Hegelian-Marxist tension raises the question of whether purely aesthetic experience can achieve genuine truth — and more broadly, <em>what is the status of art in the development of absolute spirit?</em> If thought unfolds historically toward greater self-knowledge, where does sensuous beauty fit in a system that ends in pure conceptual comprehension? Can the image ever do what the concept does — and if so, at what cost to both?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

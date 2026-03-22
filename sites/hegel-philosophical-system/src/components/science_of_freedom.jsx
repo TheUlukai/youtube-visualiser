@@ -1,4 +1,9 @@
 function ScienceOfFreedom() {
+  const CORE_ARGUMENT = `Hegel rejects the liberal identification of freedom with absence of external constraint, calling it bondage to arbitrary desire. Genuine freedom is positive self-determination according to rational principles, and this cannot be achieved in isolation. The Philosophy of Right traces freedom's development through abstract right (property and contract), morality (individual conviction, Kantian duty), and ethical life (Sittlichkeit) — the highest stage where individual moral conviction and objective social institutions achieve unity. Ethical life is realized through the family (immediate love-based unity), civil society (market and voluntary associations), and the rational state (the synthesis of particular and universal freedom). Political participation thereby becomes a form of self-realization rather than self-sacrifice.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredStep, setHoveredStep] = useState(null);
   const [selectedStep, setSelectedStep] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -164,6 +169,31 @@ function ScienceOfFreedom() {
             Spirit has achieved self-consciousness — but consciousness alone is not enough. Freedom must become actual, must walk in the world. Yet here the crisis deepens: <span style={{ color: "#7dd3fc", fontStyle: "italic" }}>Spirit requires objective social institutions to fully realize freedom</span>, but what specific institutional architecture makes genuine collective freedom possible without crushing individual autonomy? Provide too little structure and freedom atomizes into chaos; provide too much and the living subject is swallowed by the machine of the state. The problem inherited from Kant and the French Revolution alike is this unbearable tension — and Hegel insists it must be resolved not by choosing one side but by thinking through both at once.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

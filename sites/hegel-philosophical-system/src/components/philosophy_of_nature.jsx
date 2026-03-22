@@ -1,4 +1,9 @@
 function PhilosophyOfNature() {
+  const CORE_ARGUMENT = `Nature is not an independent realm separate from thought but the Absolute Idea in the form of otherness — logical structure realized in space, time, and matter. Unlike pure logical development, natural forms are characterized by contingency and external determination, which Hegel calls the 'impotence of nature.' Nevertheless, nature exhibits a rational progression from the most abstract forms (space, time, matter, motion) through physics (magnetism, electricity, chemistry) to organic life — each level showing greater internal unity and self-determination. Organic life achieves genuine individuality and self-maintenance but remains trapped in biological cycles and cannot take itself as its own object.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeTier, setActiveTier] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredTier, setHoveredTier] = useState(null);
@@ -322,6 +327,31 @@ function PhilosophyOfNature() {
             The Absolute Idea has achieved its fullest logical articulation — yet it remains purely conceptual, abstract, enclosed within thought's own movement. If the Idea is truly absolute, it cannot remain sealed within itself. It must externalize, must become other to itself. <em>But how do purely logical categories appear in the contingent, resisting materiality of the actual world?</em> How does necessity become nature — blind, spatial, temporal, shot through with accident?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

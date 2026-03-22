@@ -1,4 +1,9 @@
 function HegelAndMarx() {
+  const CORE_ARGUMENT = `Marx accepts Hegel's insight that human beings realize themselves through creative activity but argues that Hegel remains trapped in abstract philosophical speculation, failing to analyze the concrete material conditions that determine human life. Marx's alienated labor directly parallels the master-slave dialectic but locates alienation in capitalist property relations rather than pure consciousness: workers are separated from their products, their productive activity, their human essence, and each other. The dialectical development of capitalism — concentrating workers, generating crises, reducing the rate of profit — will produce the conditions for its own revolutionary overthrow. But Marx's critique is also that Hegelian philosophy is ideologically conservative, reconciling people to unjust conditions by presenting them as rational necessity rather than spurring practical transformation.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [isFlipped, setIsFlipped] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
   const [isEchoesOpen, setIsEchoesOpen] = useState(false);
@@ -239,6 +244,31 @@ function HegelAndMarx() {
             Hegel's civil society analysis reveals deep tensions between market freedom and social solidarity — but does a purely philosophical-conceptual account of these tensions adequately grasp their material roots, or does it ideologically mystify them? When philosophy declares the actual to be rational, does it illuminate reality or provide intellectual cover for its injustices? The pressure of this question is nothing less than a demand to judge whether thinking can change the world, or only ever reconcile us to it.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

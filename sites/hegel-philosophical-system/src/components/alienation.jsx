@@ -1,4 +1,9 @@
 function Alienation() {
+  const CORE_ARGUMENT = `Alienation occurs whenever consciousness encounters its own products or expressions as foreign powers that appear to control it — in relationship to nature, social institutions, cultural achievements, religious projections, and philosophical abstractions. All forms of alienation share the structure of externality: something that actually expresses human activity appears as an independent force opposing human purposes. But alienation also serves crucial positive functions: it forces consciousness to confront the inadequacy of immediate relationships, develops critical distance from tradition, and motivates social reform. The goal is not to eliminate alienation by returning to pre-alienated immediacy, but to achieve 'mediated immediacy' — forms of relationship that preserve the gains of reflection while enabling genuine recognition within concrete institutions.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedSphere, setSelectedSphere] = useState(null);
   const [alienationStates, setAlienationStates] = useState({
     nature: 1,
@@ -243,6 +248,31 @@ function Alienation() {
             its producers, and no domain of life seems immune to this reversal.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div
