@@ -38,9 +38,6 @@ def find_closing_div(code: str, start_pos: int) -> int | None:
     """
     Find the position immediately after the </div> that closes the outermost
     <div> opened at or after start_pos.
-
-    The caller should pass start_pos pointing to (or just before) the opening
-    <div> so that the first open-match increments depth from 0 → 1.
     """
     depth = 0
     pos = start_pos
@@ -75,6 +72,7 @@ CORE_IDEA_CONST_BLOCK = """\
   const coreIdBody = splitMatch ? splitMatch[2] : "";
 """
 
+# {accent_var} and {margin_style} are filled by make_panel_jsx()
 CORE_IDEA_PANEL_JSX_TEMPLATE = """\
         {{/* The Core Idea */}}
         {{CORE_ARGUMENT && (
@@ -83,7 +81,7 @@ CORE_IDEA_PANEL_JSX_TEMPLATE = """\
             border: `1px solid ${{{accent_var}}}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            {margin_style},
           }}}}>
             <div style={{{{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: {accent_var}, marginBottom: 10 }}}}>
@@ -103,9 +101,12 @@ CORE_IDEA_PANEL_JSX_TEMPLATE = """\
 """
 
 
-def make_panel_jsx(accent_var: str) -> str:
-    """Return the Core Idea panel JSX with the correct accent variable name."""
-    return CORE_IDEA_PANEL_JSX_TEMPLATE.format(accent_var=accent_var)
+def make_panel_jsx(accent_var: str, margin_style: str = 'marginBottom: 16') -> str:
+    """Return the Core Idea panel JSX with the correct accent variable and margin."""
+    return CORE_IDEA_PANEL_JSX_TEMPLATE.format(
+        accent_var=accent_var,
+        margin_style=margin_style,
+    )
 
 
 def detect_accent_var(code: str) -> str:
@@ -113,20 +114,134 @@ def detect_accent_var(code: str) -> str:
     Detect whether the component uses 'accent' or 'ACCENT' as its accent
     variable. Falls back to 'ACCENT' if neither is found.
     """
-    # Look for 'const accent = ' or 'const ACCENT = ' (skip accentMap)
     m_lower = re.search(r'\bconst\s+accent\s*=\s*["\']#', code)
     m_upper = re.search(r'\bconst\s+ACCENT\s*=\s*["\']#', code)
     if m_lower and m_upper:
-        # Whichever appears first in the file wins
         return "accent" if m_lower.start() < m_upper.start() else "ACCENT"
     if m_lower:
         return "accent"
     return "ACCENT"
 
 
+def detect_problem_margin(component_code: str) -> str:
+    """
+    Examine the Problem panel's opening <div style={{...}}> and return a CSS
+    fragment to use as the Core Idea panel's margin/maxWidth style, so both
+    panels share the same horizontal width.
+
+    Returns a JSX style property string like:
+      'maxWidth: "min(90vw, 860px)", margin: "0 auto 16px auto"'
+      'margin: "0 40px 16px 40px"'
+      'marginBottom: 16'   (fallback — outer container constrains width)
+    """
+    # Locate "The Problem" text
+    problem_m = (
+        re.search(r'>\s*The Problem\s*<', component_code)
+        or re.search(r'The Problem\s*\*/', component_code)
+    )
+    if not problem_m:
+        return 'marginBottom: 16'
+
+    # Look back up to 800 chars for the nearest opening <div style={{
+    window_start = max(0, problem_m.start() - 800)
+    window = component_code[window_start:problem_m.start()]
+    div_matches = list(re.finditer(r'<div\s+style=\{\{', window))
+    if not div_matches:
+        return 'marginBottom: 16'
+
+    # The last <div style={{ before the problem label is the Problem card's div
+    div_style_start = window_start + div_matches[-1].end()
+    div_style_text = component_code[div_style_start:div_style_start + 600]
+
+    maxwidth_m = re.search(r'maxWidth:\s*"([^"]+)"', div_style_text)
+    margin_m   = re.search(r'\bmargin:\s*"([^"]+)"', div_style_text)
+
+    if maxwidth_m:
+        maxwidth = maxwidth_m.group(1)
+        if margin_m:
+            # Adapt: keep horizontal values, set top=0, bottom=16px
+            parts = margin_m.group(1).split()
+            if len(parts) == 4:
+                new_margin = f'0 {parts[1]} 16px {parts[3]}'
+            elif len(parts) == 2:
+                new_margin = f'0 {parts[1]} 16px {parts[1]}'
+            else:
+                new_margin = '0 auto 16px auto'
+        else:
+            new_margin = '0 auto 16px auto'
+        return f'maxWidth: "{maxwidth}", margin: "{new_margin}"'
+
+    if margin_m:
+        parts = margin_m.group(1).split()
+        if len(parts) == 2:
+            # "16px 40px" → "0 40px 16px 40px"
+            return f'margin: "0 {parts[1]} 16px {parts[1]}"'
+        if len(parts) == 4:
+            return f'margin: "0 {parts[1]} 16px {parts[3]}"'
+
+    return 'marginBottom: 16'
+
+
+def ensure_accent_const(
+    component_code: str,
+    func_name: str,
+    accent_map: dict,
+) -> str:
+    """
+    After the Core Idea panel has been inserted, ensure the component has a
+    const ACCENT = "#hex" declaration.  If one already exists (upper or lower
+    case), return code unchanged.  Otherwise inject it using accent_map.
+    """
+    if re.search(r'\bconst ACCENT\s*=\s*["\']#', component_code):
+        return component_code
+    if re.search(r'\bconst accent\s*=\s*["\']#', component_code):
+        return component_code
+
+    # Convert CamelCase function name to snake_case for lookup
+    tokens = re.findall(r'[A-Z][a-z]+|[A-Z]+(?=[A-Z]|$)|[a-z]+', func_name)
+    section_id = '_'.join(t.lower() for t in tokens)
+
+    hex_color = accent_map.get(section_id)
+    if not hex_color:
+        # Try partial key match
+        for k, v in accent_map.items():
+            if k in section_id or section_id in k:
+                hex_color = v
+                break
+
+    if not hex_color:
+        # Last resort: first prominent #xxxxxx in the component that looks
+        # like an accent (not a very dark or very light colour)
+        for m in re.finditer(r'#([0-9A-Fa-f]{6})', component_code):
+            r = int(m.group(1)[0:2], 16)
+            g = int(m.group(1)[2:4], 16)
+            b = int(m.group(1)[4:6], 16)
+            brightness = (r * 299 + g * 587 + b * 114) / 1000
+            if 40 < brightness < 220:
+                hex_color = m.group(0)
+                break
+
+    if not hex_color:
+        return component_code  # Can't determine — leave as-is
+
+    func_m = re.search(r'^function\s+\w+\s*\([^)]*\)\s*\{', component_code, re.MULTILINE)
+    if not func_m:
+        return component_code
+
+    insert_pos = func_m.end()
+    return (
+        component_code[:insert_pos]
+        + f'\n  const ACCENT = "{hex_color}";'
+        + component_code[insert_pos:]
+    )
+
+
+# ---------------------------------------------------------------------------
+# Core retrofit logic
+# ---------------------------------------------------------------------------
+
 def insert_constant_block(code: str, escaped_core_arg: str) -> str:
     """Insert the CORE_ARGUMENT constant + split logic at the top of the component body."""
-    # Find component function opening brace
     match = re.search(
         r'(function\s+\w+\s*\([^)]*\)\s*\{|const\s+\w+\s*=\s*\([^)]*\)\s*=>\s*\{)',
         code,
@@ -140,17 +255,9 @@ def insert_constant_block(code: str, escaped_core_arg: str) -> str:
 
 
 def insert_panel_after_problem(code: str, panel_jsx: str) -> tuple[str, bool]:
-    """
-    For non-first sections: insert the Core Idea panel immediately after
-    The Problem panel's closing </div>.
-
-    Returns (modified_code, success).
-    """
-    # Find {/* The Problem */} or inline "The Problem" label inside JSX
-    # We look for the comment marker first, then fall back to the text node
+    """Insert the Core Idea panel immediately after The Problem panel's closing </div>."""
     problem_comment = re.search(r'\{/\*\s*The Problem\s*\*/\}', code)
     if not problem_comment:
-        # Try to find the text label used as a div child
         problem_text = re.search(r'>\s*The Problem\s*<', code)
         if not problem_text:
             return code, False
@@ -158,24 +265,13 @@ def insert_panel_after_problem(code: str, panel_jsx: str) -> tuple[str, bool]:
     else:
         search_start = problem_comment.start()
 
-    # From the search start, find the wrapping <div that opens The Problem card.
-    # Walk backwards to find the last <div before the marker, or walk forward
-    # to find the first <div after the marker.  The card div is typically
-    # BEFORE the comment/text node, so look backwards for the most recent <div>.
-    # Simpler: scan from a safe point before the marker.
-    # We'll look for the opening <div of the Problem card in a window before
-    # the marker. The card is at most ~10 lines above the comment.
     window_start = max(0, search_start - 600)
     window = code[window_start:search_start]
-    # Find the last <div (opening) in that window
     open_divs = list(re.finditer(r'<div[\s>]', window))
     if not open_divs:
         return code, False
 
-    # The last <div in the window is the opening of The Problem card.
-    last_open = open_divs[-1]
-    card_div_abs = window_start + last_open.start()
-
+    card_div_abs = window_start + open_divs[-1].start()
     closing_pos = find_closing_div(code, card_div_abs)
     if closing_pos is None:
         return code, False
@@ -185,15 +281,7 @@ def insert_panel_after_problem(code: str, panel_jsx: str) -> tuple[str, bool]:
 
 
 def insert_panel_before_main_viz(code: str, panel_jsx: str) -> tuple[str, bool]:
-    """
-    For first sections (no Problem panel): insert the Core Idea panel before
-    the main visualization.
-
-    Strategy: look for {/* Main ...*/} or {/* Visualization ...*/} comment,
-    or fall back to the first <svg or <canvas in the return JSX.
-    Returns (modified_code, success).
-    """
-    # Try comment markers
+    """For first sections: insert the Core Idea panel before the main visualization."""
     viz_comment = re.search(
         r'\{/\*\s*(Main|Visualization|MAIN|VIZ)[^\*]*\*\/',
         code,
@@ -203,7 +291,6 @@ def insert_panel_before_main_viz(code: str, panel_jsx: str) -> tuple[str, bool]:
         new_code = code[:insert_pos] + panel_jsx + '\n        ' + code[insert_pos:]
         return new_code, True
 
-    # Fall back: first <svg or <canvas inside the return statement
     return_match = re.search(r'\breturn\s*\(', code)
     if not return_match:
         return code, False
@@ -217,14 +304,21 @@ def insert_panel_before_main_viz(code: str, panel_jsx: str) -> tuple[str, bool]:
     return new_code, True
 
 
-def retrofit_component(code: str, core_argument: str, is_first_section: bool) -> tuple[str, bool]:
+def retrofit_component(
+    code: str,
+    core_argument: str,
+    is_first_section: bool,
+    func_name: str = '',
+    accent_map: dict | None = None,
+) -> tuple[str, bool]:
     """
-    Full retrofit: insert constants block and panel JSX.
-    Returns (modified_code, success).
+    Full retrofit: insert constants block and panel JSX, then ensure the
+    component has an accent constant.  Returns (modified_code, success).
     """
     escaped = escape_backtick_template(core_argument)
     accent_var = detect_accent_var(code)
-    panel_jsx = make_panel_jsx(accent_var)
+    margin_style = detect_problem_margin(code) if not is_first_section else 'marginBottom: 16'
+    panel_jsx = make_panel_jsx(accent_var, margin_style)
 
     # 1. Insert constant block
     code = insert_constant_block(code, escaped)
@@ -235,7 +329,84 @@ def retrofit_component(code: str, core_argument: str, is_first_section: bool) ->
     else:
         code, ok = insert_panel_after_problem(code, panel_jsx)
 
-    return code, ok
+    if not ok:
+        return code, False
+
+    # 3. Ensure accent const exists (guard against missing variable)
+    if accent_map is not None and func_name:
+        code = ensure_accent_const(code, func_name, accent_map)
+
+    return code, True
+
+
+# ---------------------------------------------------------------------------
+# Semantic section matching
+# ---------------------------------------------------------------------------
+
+def _name_tokens(name: str) -> set[str]:
+    """
+    Convert a CamelCase function name or snake_case section ID to a set of
+    lowercase tokens, filtering out noise words.
+    """
+    NOISE = {'of', 'the', 'and', 'or', 'a', 'an', 'in', 'to', 'for', 'with'}
+    raw = re.findall(r'[A-Z][a-z]+|[A-Z]+(?=[A-Z]|$)|[a-z]+', name.replace('_', ' '))
+    return {t.lower() for t in raw} - NOISE
+
+
+def build_semantic_assignment(
+    func_infos: list[tuple[int, str]],   # [(part_number, func_name), ...]
+    sections: list[dict],
+) -> dict[int, dict]:
+    """
+    Return a mapping {app_part_number: section_dict} that assigns each
+    App.jsx component the best-matching section from sections.json.
+
+    Strategy:
+    1. Exact part-number match gets priority (score = 1000 + token overlap).
+    2. If the re-parse count differs, remaining unmatched components are
+       assigned by greedy best token-overlap.
+    3. Each section is used at most once (except when there are more App.jsx
+       parts than re-parse sections — last section is reused for remainders).
+    """
+    assignment: dict[int, dict] = {}
+    used_ids: set[str] = set()
+
+    # Score all (app_part, section) pairs
+    scored = []
+    for app_part, func_name in func_infos:
+        func_tok = _name_tokens(func_name)
+        for s in sections:
+            id_tok = _name_tokens(s['id'])
+            overlap = len(func_tok & id_tok)
+            # Exact part-number match gets a large bonus
+            exact_bonus = 1000 if s['part_number'] == app_part else 0
+            scored.append((exact_bonus + overlap, app_part, func_name, s))
+
+    # Sort descending by score; assign greedily
+    scored.sort(key=lambda x: -x[0])
+    assigned_app_parts: set[int] = set()
+
+    for score, app_part, func_name, section in scored:
+        if app_part in assigned_app_parts:
+            continue
+        if section['id'] in used_ids:
+            continue
+        assignment[app_part] = section
+        assigned_app_parts.add(app_part)
+        used_ids.add(section['id'])
+
+    # Any app parts still unassigned (more parts than re-parse sections):
+    # fall back to the last section
+    last_section = sections[-1]
+    for app_part, func_name in func_infos:
+        if app_part not in assignment:
+            assignment[app_part] = last_section
+            print(
+                f'  NOTE: Part {app_part} ({func_name}) has no unique match '
+                f'— using last section "{last_section["id"]}"'
+            )
+
+    return assignment
 
 
 # ---------------------------------------------------------------------------
@@ -245,8 +416,7 @@ def retrofit_component(code: str, core_argument: str, is_first_section: bool) ->
 def find_function_end(code: str, body_start: int) -> int:
     """
     Given the position immediately after a function's opening '{', return the
-    position immediately after its matching closing '}'.  Uses simple brace
-    counting — relies on well-formed (balanced) JSX source.
+    position immediately after its matching closing '}'.
     """
     depth = 1
     pos = body_start
@@ -257,16 +427,33 @@ def find_function_end(code: str, body_start: int) -> int:
         elif ch == '}':
             depth -= 1
         pos += 1
-    return pos  # points to char after the closing '}'
+    return pos
+
+
+def extract_accent_map(code: str) -> dict:
+    """Extract the accentMap object from the App.jsx if present."""
+    m = re.search(r'const accentMap\s*=\s*\{([^}]+)\}', code, re.DOTALL)
+    if not m:
+        return {}
+    result = {}
+    for entry in re.finditer(r'"([^"]+)"\s*:\s*"(#[0-9A-Fa-f]{3,6})"', m.group(1)):
+        result[entry.group(1)] = entry.group(2)
+    return result
 
 
 def retrofit_legacy_app(app_jsx_path: Path, sections_file: Path, dry_run: bool) -> int:
     """
-    Retrofit a monolithic App.jsx that contains all section components inline.
+    Retrofit a monolithic App.jsx.
 
-    Matching strategy: each section component contains a 'Part N of M' label in
-    its header block.  We extract that N and look it up in sections.json by
-    part_number to get the core_argument value.
+    Improvements over the original numeric-only approach:
+      1. Semantic matching — each App.jsx component is matched to the
+         re-parse section whose ID has the greatest token overlap with the
+         component's function name (with a large bonus for exact part-number
+         match).  This survives re-parse count mismatches gracefully.
+      2. Width matching — the Core Idea panel inherits the Problem panel's
+         maxWidth/margin so it always aligns visually.
+      3. Accent guard — if a component has no const ACCENT/accent, one is
+         injected from the accentMap before the file is written.
     """
     if not app_jsx_path.exists():
         print(f'ERROR: App.jsx not found: {app_jsx_path}', file=sys.stderr)
@@ -282,41 +469,73 @@ def retrofit_legacy_app(app_jsx_path: Path, sections_file: Path, dry_run: bool) 
         print('ERROR: sections.json contains no sections.', file=sys.stderr)
         return 1
 
-    part_map = {s['part_number']: s for s in sections}
-    total_parts = len(sections)
-
     code = app_jsx_path.read_text(encoding='utf-8')
 
-    # Collect all top-level function definitions with their ranges
+    # Extract accentMap for the accent guard
+    accent_map = extract_accent_map(code)
+    if accent_map:
+        print(f'Found accentMap with {len(accent_map)} entries.')
+
+    # Collect all top-level section function definitions with their ranges
     func_pattern = re.compile(r'^function\s+(\w+)\s*\([^)]*\)\s*\{', re.MULTILINE)
     func_ranges = []
     for m in func_pattern.finditer(code):
         func_start = m.start()
         func_end = find_function_end(code, m.end())
-        func_ranges.append((func_start, func_end, m.group(1)))
+        func_name = m.group(1)
+        component_code = code[func_start:func_end]
+        part_match = re.search(r'Part\s+(\d+)\s+of\s+\d+', component_code)
+        if not part_match:
+            continue  # helper / App shell — skip
+        part_number = int(part_match.group(1))
+        func_ranges.append((func_start, func_end, func_name, part_number))
 
+    total_app_parts = len(func_ranges)
+    total_reparse = len(sections)
+    print(f'App.jsx has {total_app_parts} section components; '
+          f'sections.json has {total_reparse} sections.')
+    if total_app_parts != total_reparse:
+        print(f'  Count mismatch — using semantic matching to assign core_arguments.')
+
+    # Build semantic assignment
+    func_infos = [(part_num, fname) for _, _, fname, part_num in func_ranges]
+    assignment = build_semantic_assignment(func_infos, sections)
+
+    # Print the full assignment plan before modifying anything
+    print('\nAssignment plan:')
+    for _, _, fname, part_num in sorted(func_ranges, key=lambda x: x[3]):
+        s = assignment.get(part_num)
+        if s:
+            match_type = 'exact' if s['part_number'] == part_num else 'semantic'
+            print(f'  Part {part_num:>2} ({fname}) → reparse Part {s["part_number"]} '
+                  f'[{s["id"]}]  ({match_type})')
+
+    if dry_run:
+        eligible = sum(
+            1 for fs, fe, _fname, _pn in func_ranges
+            if 'The Core Idea' not in code[fs:fe]
+        )
+        print(f'\nDry run complete. Would modify up to {eligible} components.')
+        return 0
+
+    print()
     modified_count = 0
     skipped_count = 0
     warning_count = 0
 
     # Process in reverse order so insertions don't shift earlier positions
-    for func_start, func_end, func_name in reversed(func_ranges):
+    for func_start, func_end, func_name, part_number in reversed(
+        sorted(func_ranges, key=lambda x: x[3])
+    ):
         component_code = code[func_start:func_end]
 
-        # Skip if already retrofitted
         if 'The Core Idea' in component_code or 'CORE_ARGUMENT' in component_code:
             skipped_count += 1
             continue
 
-        # Only process section components — they all have "Part N of M"
-        part_match = re.search(r'Part\s+(\d+)\s+of\s+\d+', component_code)
-        if not part_match:
-            continue  # App/Nav/helper function — skip silently
-
-        part_number = int(part_match.group(1))
-        section = part_map.get(part_number)
+        section = assignment.get(part_number)
         if not section:
-            print(f'WARNING: Part {part_number} ({func_name}) not found in sections.json')
+            print(f'WARNING: Part {part_number} ({func_name}) — no section assigned')
             warning_count += 1
             continue
 
@@ -326,39 +545,35 @@ def retrofit_legacy_app(app_jsx_path: Path, sections_file: Path, dry_run: bool) 
             warning_count += 1
             continue
 
-        has_problem_panel = (
-            re.search(r'\{/\*\s*The Problem\s*\*/\}', component_code) is not None
-            or re.search(r'>\s*The Problem\s*<', component_code) is not None
+        has_problem_panel = bool(
+            re.search(r'\{/\*\s*The Problem\s*\*/\}', component_code)
+            or re.search(r'>\s*The Problem\s*<', component_code)
         )
         is_first_section = not has_problem_panel
 
-        new_component_code, ok = retrofit_component(component_code, core_argument, is_first_section)
+        new_component_code, ok = retrofit_component(
+            component_code,
+            core_argument,
+            is_first_section,
+            func_name=func_name,
+            accent_map=accent_map,
+        )
 
         if not ok:
             print(f'WARNING: Part {part_number:>2}: {func_name} — could not find insertion point')
             warning_count += 1
             continue
 
-        print(f'Part {part_number:>2} of {total_parts}: {func_name}')
+        reparse_id = section['id']
+        match_note = '' if section['part_number'] == part_number else f' [semantic ← reparse Part {section["part_number"]}]'
+        print(f'Part {part_number:>2} of {total_app_parts}: {func_name}  [{reparse_id}]{match_note}')
+        code = code[:func_start] + new_component_code + code[func_end:]
+        modified_count += 1
 
-        if not dry_run:
-            code = code[:func_start] + new_component_code + code[func_end:]
-            modified_count += 1
-
-    print()
-    if dry_run:
-        n = sum(
-            1 for (fs, fe, fn) in func_ranges
-            if re.search(r'Part\s+\d+\s+of\s+\d+', code[fs:fe])
-            and 'The Core Idea' not in code[fs:fe]
-            and 'CORE_ARGUMENT' not in code[fs:fe]
-        )
-        print(f'Dry run complete. Would modify up to {n} components.')
-    else:
-        print(f'Modified {modified_count} component(s). Skipped {skipped_count}. Warnings: {warning_count}.')
-        if modified_count > 0:
-            app_jsx_path.write_text(code, encoding='utf-8')
-            print(f'\nUpdated: {app_jsx_path}')
+    print(f'\nModified {modified_count} component(s). Skipped {skipped_count}. Warnings: {warning_count}.')
+    if modified_count > 0:
+        app_jsx_path.write_text(code, encoding='utf-8')
+        print(f'Updated: {app_jsx_path}')
 
     return 0
 
@@ -404,7 +619,6 @@ def main() -> int:
     elif args.components_dir and args.sections_file:
         components_dir = Path(args.components_dir)
         sections_file = Path(args.sections_file)
-        # For output/ mode the assembled file is output/visualizations.jsx
         output_file = components_dir.parent / 'visualizations.jsx'
         is_site_mode = False
     else:
@@ -429,6 +643,8 @@ def main() -> int:
         print('ERROR: sections.json contains no sections.', file=sys.stderr)
         return 1
 
+    accent_map: dict = {}  # per-file accent maps not available in component mode
+
     modified_count = 0
     skipped_count = 0
     warning_count = 0
@@ -446,30 +662,29 @@ def main() -> int:
 
         code = component_file.read_text(encoding='utf-8')
 
-        # Skip if already retrofitted
         if 'The Core Idea' in code or 'CORE_ARGUMENT' in code:
             print(f'Part {part_number:>2}: {section_id}  [skip — already has Core Idea]')
             skipped_count += 1
             continue
 
         if not core_argument:
-            print(f'WARNING: Part {part_number:>2}: {section_id}  — no core_argument in sections.json, skipping')
+            print(f'WARNING: Part {part_number:>2}: {section_id}  — no core_argument, skipping')
             warning_count += 1
             continue
 
-        # Determine if this is a "first section" (no Problem panel)
-        # Use problem_inherited null OR part_number == 1 as the signal,
-        # but also check whether The Problem text actually appears in the file.
-        has_problem_panel = (
-            re.search(r'\{/\*\s*The Problem\s*\*/\}', code) is not None
-            or re.search(r'>\s*The Problem\s*<', code) is not None
+        has_problem_panel = bool(
+            re.search(r'\{/\*\s*The Problem\s*\*/\}', code)
+            or re.search(r'>\s*The Problem\s*<', code)
         )
         is_first_section = not has_problem_panel
 
-        new_code, ok = retrofit_component(code, core_argument, is_first_section)
+        new_code, ok = retrofit_component(
+            code, core_argument, is_first_section,
+            func_name=section_id, accent_map=accent_map,
+        )
 
         if not ok:
-            print(f'WARNING: Part {part_number:>2}: {section_id}  — could not find insertion point, skipping')
+            print(f'WARNING: Part {part_number:>2}: {section_id}  — could not find insertion point')
             warning_count += 1
             continue
 
@@ -481,10 +696,9 @@ def main() -> int:
             component_file.write_text(new_code, encoding='utf-8')
             modified_count += 1
 
-    # Summary
     print()
     if args.dry_run:
-        print(f'Dry run complete. Would modify {modified_count + (len(sections) - skipped_count - warning_count)} components.')
+        print('Dry run complete.')
     else:
         print(f'Modified {modified_count} component(s). Skipped {skipped_count}. Warnings: {warning_count}.')
 
