@@ -30,12 +30,12 @@ For each section, extract the following fields:
 - title: concise section title
 - subtitle: one sentence expanding on the title
 - key_concepts: list of 3-6 core concepts or terms introduced
-- core_argument: 2-4 sentences describing the central argument or claim of this section
+- core_argument: 3-5 sentences. State the central argument and what makes it novel — how it departs from or builds on predecessors or earlier sections in the video. Include at least one concrete example or analogy from the transcript that makes the idea tangible.
 - problem_inherited: the specific problem or tension from a previous section that this one is responding to (null for the first section)
 - solution: how this section's key idea resolves or addresses the inherited problem (1-2 sentences)
-- problem_created: the new difficulty, tension, or open question that this section's idea generates — the pressure that forces the next development (1-2 sentences)
-- real_world_examples: list of concrete examples or modern parallels mentioned in the transcript for this section (empty list if none)
-- visualization_suggestion: a specific, creative suggestion for how to visualize this section's core idea interactively in React (2-3 sentences describing layout, interactions, and what makes it illuminating)
+- problem_created: the new difficulty, tension, or open question this section's idea generates. Explicitly name what the NEXT section must address — use a forward-linking phrase like "This raises the question of…" or "This now requires an account of…" to make the narrative handoff clear. (2-3 sentences)
+- real_world_examples: list of objects with "title" and "explanation" keys — each a specific, named example or modern parallel drawn from the transcript, with 1-2 sentences explaining why it illuminates, extends, or challenges this section's idea. Aim for 3-5 examples. Prefer named scholars, experiments, organisms, or institutions over generic references. Empty list only if the transcript genuinely contains none.
+- visualization_suggestion: 3-5 sentences. Begin by naming the specific conceptual difficulty the visualization must solve (e.g., "The hard part is showing why X is not simply Y…"). Then describe the layout, the interactive elements (slider, click states, hover), and precisely how user interaction reveals the concept rather than merely decorating it.
 - accent_color: a hex color string (e.g., "#7C3AED") — unique per section, chosen to evoke the mood/theme. Must be a MID-RANGE colour with sufficient brightness to be readable as foreground text on a dark background (perceived brightness 80–180 on a 0–255 scale). Do NOT pick near-black colours (e.g. #1A1A2E, #0a0a0f) — those are background colours, not accents. Good examples: "#7C3AED", "#C2410C", "#0E7490", "#B45309", "#9D174D"
 - background_mood: 1-2 words describing the visual atmosphere (e.g., "volcanic tension", "crystalline clarity", "twilight uncertainty")
 
