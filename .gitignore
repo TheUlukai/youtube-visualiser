@@ -20,5 +20,8 @@ venv/
 .claude/*
 !.claude/commands/
 
+# Superpowers brainstorm session files (visual companion mockups, not source)
+.superpowers/
+
 # OS
 .DS_Store

@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3, React (inline styles), JSX, CLAUDE.md spec enforcement
 
-**Spec:** `docs/superpowers/specs/2026-03-22-core-idea-panel-design.md`
+**Spec:** `planning/specs/2026-03-22-core-idea-panel-design.md`
 
 ---
 
