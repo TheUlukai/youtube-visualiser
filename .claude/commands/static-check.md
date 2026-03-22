@@ -79,6 +79,12 @@ grep -n 'borderLeft' output/components/*.jsx | grep -v "3px\|RWE\|card\|echo\|Ec
 ```
 Review the results: within each file the Problem and Difficulty `borderLeft` values should be identical hex strings.
 
+**Check 16 — Missing Core Idea panel**
+Each component file must contain "The Core Idea" label string. Files that lack it are missing the required Core Idea panel.
+```
+grep -rL "The Core Idea" output/components/*.jsx
+```
+
 **Check 13 — Missing centred maxWidth content wrapper**
 Each component should have both `maxWidth` and `margin` (for `0 auto` centring) in its return JSX.
 ```
