@@ -4,7 +4,7 @@
 
 **Goal:** Add a "The Core Idea" panel (always-expanded, expository) between The Problem and the Main Visualization in every section component, surfacing the `core_argument` field from `sections.json`.
 
-**Architecture:** Three phases — (1) update generation tooling so all future runs produce the panel automatically, (2) verify it works, (3) retrofit the five existing packaged sites. Modern sites (hegel, aristotle) have per-section component files and can be patched programmatically. Legacy sites (ontology, kant, spinoza) have only a monolithic `App.jsx` and require direct editing.
+**Architecture:** Four phases — (1) update generation tooling so all future runs produce the panel automatically, (2) verify it works, (3) retrofit the current `output/` working directory before packaging, (4) retrofit the five existing packaged sites. Modern sites (hegel, aristotle) have per-section component files and can be patched programmatically. Legacy sites (ontology, kant, spinoza) have only a monolithic `App.jsx` and require direct editing.
 
 **Tech Stack:** Python 3, React (inline styles), JSX, CLAUDE.md spec enforcement
 
@@ -286,10 +286,14 @@ Modern sites (hegel, aristotle) have per-section component files. Rather than ed
 Retrofits the Core Idea panel into existing per-section component files.
 
 Usage:
+  # Packaged site (slug shorthand):
   python scripts/retrofit_core_idea.py --site <slug>
 
-Reads:  sites/<slug>/src/sections.json
-Edits:  sites/<slug>/src/components/<id>.jsx  (one per section)
+  # Arbitrary paths (e.g. output/ working directory):
+  python scripts/retrofit_core_idea.py \
+    --components-dir output/components \
+    --sections-file  output/sections.json
+
 Skips:  components that already contain "The Core Idea"
 """
 import argparse
@@ -432,13 +436,22 @@ def process_component(component_path: str, section: dict) -> bool:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--site", required=True, help="Site slug (e.g. hegel-philosophical-system)")
+    parser.add_argument("--site", help="Site slug shorthand (e.g. hegel-philosophical-system)")
+    parser.add_argument("--components-dir", help="Direct path to components directory")
+    parser.add_argument("--sections-file", help="Direct path to sections.json")
     parser.add_argument("--dry-run", action="store_true", help="Print what would be done without modifying files")
     args = parser.parse_args()
 
-    base = os.path.join("sites", args.site)
-    sections_path = os.path.join(base, "src", "sections.json")
-    components_dir = os.path.join(base, "src", "components")
+    if args.site:
+        base = os.path.join("sites", args.site)
+        sections_path = os.path.join(base, "src", "sections.json")
+        components_dir = os.path.join(base, "src", "components")
+    elif args.components_dir and args.sections_file:
+        sections_path = args.sections_file
+        components_dir = args.components_dir
+    else:
+        print("ERROR: provide either --site or both --components-dir and --sections-file", file=sys.stderr)
+        sys.exit(1)
 
     if not os.path.exists(sections_path):
         print(f"ERROR: {sections_path} not found — is this a modern site?", file=sys.stderr)
@@ -467,12 +480,17 @@ def main():
 
     print(f"\nDone. {modified} components modified.")
     if modified > 0:
-        print(f"\nNext step: reassemble and build:")
-        print(f"  python scripts/assemble.py \\")
-        print(f"    --components-dir sites/{args.site}/src/components \\")
-        print(f"    --sections-file  sites/{args.site}/src/sections.json \\")
-        print(f"    --output         sites/{args.site}/src/App.jsx")
-        print(f"  cd sites/{args.site} && npm run build")
+        if args.site:
+            print(f"\nNext step: reassemble and build:")
+            print(f"  python scripts/assemble.py \\")
+            print(f"    --components-dir sites/{args.site}/src/components \\")
+            print(f"    --sections-file  sites/{args.site}/src/sections.json \\")
+            print(f"    --output         sites/{args.site}/src/App.jsx")
+            print(f"  cd sites/{args.site} && npm run build")
+        else:
+            print(f"\nNext step: reassemble:")
+            print(f"  python scripts/assemble.py")
+            print(f"Then run /package to archive the site.")
 
 
 if __name__ == "__main__":
@@ -488,7 +506,52 @@ git commit -m "Add retrofit_core_idea.py helper script for modern sites"
 
 ---
 
-## Task 6: Retrofit `hegel-philosophical-system` (modern, 20 sections)
+## Task 6: Retrofit current `output/` working directory
+
+The Schopenhauer site currently in `output/` was generated before the Core Idea panel was added. Retrofit it before packaging so it gets the panel without a full (costly) regeneration.
+
+**Files:**
+- Modify: `output/components/*.jsx` (20 files)
+- Regenerate: `output/visualizations.jsx`
+
+- [ ] **Step 1: Run retrofit script against output/**
+
+```bash
+python scripts/retrofit_core_idea.py \
+  --components-dir output/components \
+  --sections-file  output/sections.json
+```
+Expected: 20 components modified, none skipped.
+
+- [ ] **Step 2: Spot-check one component**
+
+```bash
+SAMPLE=$(ls output/components/*.jsx | head -1)
+grep -c "CORE_ARGUMENT\|coreIdLead\|coreIdBody\|The Core Idea" "$SAMPLE"
+```
+Expected: `4`
+
+- [ ] **Step 3: Reassemble**
+
+```bash
+python scripts/assemble.py
+```
+
+- [ ] **Step 4: Verify in devserver**
+
+Start or restart the devserver and confirm the Core Idea panel appears between The Problem and the main visualization in at least two sections:
+```bash
+cd devserver && npm run dev
+```
+Open http://localhost:5173 and check Part 1 and one middle section.
+
+- [ ] **Step 5: Package when satisfied**
+
+Run `/package` to archive the Schopenhauer site under `sites/`, build to `docs/`, and update the site index.
+
+---
+
+## Task 7: Retrofit `hegel-philosophical-system` (modern, 20 sections)
 
 **Files:**
 - Modify: `sites/hegel-philosophical-system/src/components/*.jsx` (20 files)
@@ -542,9 +605,9 @@ git commit -m "Retrofit Core Idea panel — hegel-philosophical-system"
 
 ---
 
-## Task 7: Retrofit `aristotle-philosophy-science-legacy` (modern, 15 sections)
+## Task 8: Retrofit `aristotle-philosophy-science-legacy` (modern, 15 sections)
 
-Same process as Task 6.
+Same process as Task 7.
 
 **Files:**
 - Modify: `sites/aristotle-philosophy-science-legacy/src/components/*.jsx` (15 files)
@@ -588,7 +651,7 @@ git commit -m "Retrofit Core Idea panel — aristotle-philosophy-science-legacy"
 
 ---
 
-## Task 8: Retrofit legacy sites (ontology, kant, spinoza)
+## Task 9: Retrofit legacy sites (ontology, kant, spinoza)
 
 Legacy sites have no `src/components/` or `src/sections.json` — only `src/App.jsx`. The retrofit script cannot be used. These sites need the `core_argument` values re-sourced.
 
@@ -665,7 +728,7 @@ git commit -m "Retrofit Core Idea panel — spinoza-philosophy"
 
 ---
 
-## Task 9: Push and update docs index
+## Task 10: Push and update docs index
 
 - [ ] **Step 1: Push all commits**
 
