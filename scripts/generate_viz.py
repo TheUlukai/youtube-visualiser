@@ -102,7 +102,7 @@ the same visual width via a single inner wrapper:
    Source: the CORE_ARGUMENT constant (core_argument from section data), hardcoded at the top of the component.
    Guard: if CORE_ARGUMENT is falsy, omit the entire panel.
    Split CORE_ARGUMENT into lead and body:
-     const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+     const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\\s+([A-Z][\\s\\S]*)$/);
      const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
      const coreIdBody = splitMatch ? splitMatch[2] : "";
    Style: border `1px solid ${ACCENT}25` (full border, NOT left-border), background rgba(0,0,0,0.3),
