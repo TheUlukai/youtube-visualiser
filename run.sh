@@ -1,7 +1,16 @@
 #!/bin/bash
 set -e
 
-URL="${1:?Usage: ./run.sh YOUTUBE_URL}"
+RESUME=false
+POSITIONAL=()
+for arg in "$@"; do
+  case "$arg" in
+    --resume) RESUME=true ;;
+    *) POSITIONAL+=("$arg") ;;
+  esac
+done
+
+URL="${POSITIONAL[0]:?Usage: ./run.sh [--resume] YOUTUBE_URL}"
 
 echo "=== Fetching transcript ==="
 python scripts/fetch_transcript.py "$URL"
@@ -9,8 +18,12 @@ python scripts/fetch_transcript.py "$URL"
 echo "=== Parsing sections ==="
 python scripts/parse_sections.py
 
-echo "=== Clearing previous components ==="
-rm -rf output/components/
+if [ "$RESUME" = false ]; then
+  echo "=== Clearing previous components ==="
+  rm -rf output/components/
+else
+  echo "=== Resuming — keeping existing components ==="
+fi
 
 echo "=== Generating visualizations ==="
 python scripts/generate_viz.py
