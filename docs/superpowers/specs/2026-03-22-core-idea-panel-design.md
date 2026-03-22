@@ -124,8 +124,8 @@ Add panel **2. THE CORE IDEA** to the required component structure, between The 
 2. THE CORE IDEA PANEL (after The Problem / Header, before the main visualization)
    Source: the CORE_ARGUMENT constant (core_argument from section data), hardcoded at the top of the component.
    Guard: if CORE_ARGUMENT is falsy, omit the entire panel.
-   Split CORE_ARGUMENT into lead and body using a sentence-boundary regex:
-     const splitMatch = CORE_ARGUMENT.match(/^(.+?[.!?])\s+([A-Z][\s\S]*)$/);
+   Split CORE_ARGUMENT into lead and body using a sentence-boundary regex with a 30-char minimum:
+     const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
      const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
      const coreIdBody = splitMatch ? splitMatch[2] : "";
    Style: border `1px solid ${ACCENT}25` (full border, not left-border), background rgba(0,0,0,0.3),
@@ -152,8 +152,7 @@ No changes needed. `core_argument` is already extracted and passed through.
 
 Five sites need the Core Idea panel retrofitted. They fall into two categories:
 
-**Modern sites** (packaged after 2026-03-18 — have `src/components/` and `src/sections.json`):
-- `ontology-the-hidden-operating-system`
+**Modern sites** (have `src/components/` and `src/sections.json`):
 - `hegel-philosophical-system`
 - `aristotle-philosophy-science-legacy`
 
@@ -171,7 +170,8 @@ python scripts/assemble.py \
 cd sites/<slug> && npm run build
 ```
 
-**Legacy sites** (packaged before 2026-03-18 — have only `src/App.jsx`, no `src/components/` or `src/sections.json`):
+**Legacy sites** (have only `src/App.jsx`, no `src/components/` or `src/sections.json`):
+- `ontology-the-hidden-operating-system`
 - `kant-copernican-revolution`
 - `spinoza-philosophy`
 
