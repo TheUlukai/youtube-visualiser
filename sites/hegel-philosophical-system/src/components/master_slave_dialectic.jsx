@@ -249,13 +249,13 @@ function MasterSlaveDialectic() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,

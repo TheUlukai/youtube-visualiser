@@ -395,13 +395,13 @@ function DialecticalMethod() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -1053,13 +1053,13 @@ function JourneyOfConsciousness() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -1745,13 +1745,13 @@ function MasterSlaveDialectic() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -2516,13 +2516,13 @@ function ArchitectureOfTheAbsolute() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -3348,13 +3348,13 @@ function ScienceOfLogic() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -4281,13 +4281,13 @@ function PhilosophyOfNature() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -4958,13 +4958,13 @@ function PhilosophyOfSpirit() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -5581,13 +5581,13 @@ function ScienceOfFreedom() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -6657,13 +6657,13 @@ function PhilosophyOfHistory() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -7222,13 +7222,13 @@ function AbsoluteSpiritArtReligionPhilosophy() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -8044,13 +8044,13 @@ function RecognitionStructure() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -8588,13 +8588,13 @@ function KantCritique() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -9425,13 +9425,13 @@ function UnhappyConsciousness() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -10089,13 +10089,13 @@ function CivilSociety() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -10796,13 +10796,13 @@ function HegelAndMarx() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -11451,13 +11451,13 @@ function EndOfArt() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -12416,13 +12416,13 @@ function HegelianAesthetics() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -13426,13 +13426,13 @@ function Alienation() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -14312,13 +14312,13 @@ function SpeculativeMethod() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -15125,13 +15125,13 @@ function LivingLegacy() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${ACCENT}25`,
+            border: `1px solid ${accent}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: ACCENT, marginBottom: 10 }}>
+                          color: accent, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
