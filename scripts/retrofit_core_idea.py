@@ -4,13 +4,18 @@ retrofit_core_idea.py — Inserts the Core Idea panel into existing per-section 
 component files that were generated before this panel existed.
 
 Usage:
-  # Packaged site (slug shorthand):
+  # Packaged site with per-section component files (modern):
   python scripts/retrofit_core_idea.py --site <slug>
 
   # Arbitrary paths (e.g. output/ working directory):
   python scripts/retrofit_core_idea.py \\
     --components-dir output/components \\
     --sections-file  output/sections.json
+
+  # Legacy site with a single monolithic App.jsx:
+  python scripts/retrofit_core_idea.py \\
+    --legacy-app sites/<slug>/src/App.jsx \\
+    --sections-file output/sections.json
 
   # Preview without modifying:
   python scripts/retrofit_core_idea.py --site <slug> --dry-run
@@ -211,6 +216,131 @@ def retrofit_component(code: str, core_argument: str, is_first_section: bool) ->
 
 
 # ---------------------------------------------------------------------------
+# Legacy mode — monolithic App.jsx
+# ---------------------------------------------------------------------------
+
+def find_function_end(code: str, body_start: int) -> int:
+    """
+    Given the position immediately after a function's opening '{', return the
+    position immediately after its matching closing '}'.  Uses simple brace
+    counting — relies on well-formed (balanced) JSX source.
+    """
+    depth = 1
+    pos = body_start
+    while pos < len(code) and depth > 0:
+        ch = code[pos]
+        if ch == '{':
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+        pos += 1
+    return pos  # points to char after the closing '}'
+
+
+def retrofit_legacy_app(app_jsx_path: Path, sections_file: Path, dry_run: bool) -> int:
+    """
+    Retrofit a monolithic App.jsx that contains all section components inline.
+
+    Matching strategy: each section component contains a 'Part N of M' label in
+    its header block.  We extract that N and look it up in sections.json by
+    part_number to get the core_argument value.
+    """
+    if not app_jsx_path.exists():
+        print(f'ERROR: App.jsx not found: {app_jsx_path}', file=sys.stderr)
+        return 1
+    if not sections_file.exists():
+        print(f'ERROR: sections file not found: {sections_file}', file=sys.stderr)
+        return 1
+
+    with open(sections_file) as f:
+        data = json.load(f)
+    sections = data.get('sections', [])
+    if not sections:
+        print('ERROR: sections.json contains no sections.', file=sys.stderr)
+        return 1
+
+    part_map = {s['part_number']: s for s in sections}
+    total_parts = len(sections)
+
+    code = app_jsx_path.read_text(encoding='utf-8')
+
+    # Collect all top-level function definitions with their ranges
+    func_pattern = re.compile(r'^function\s+(\w+)\s*\([^)]*\)\s*\{', re.MULTILINE)
+    func_ranges = []
+    for m in func_pattern.finditer(code):
+        func_start = m.start()
+        func_end = find_function_end(code, m.end())
+        func_ranges.append((func_start, func_end, m.group(1)))
+
+    modified_count = 0
+    skipped_count = 0
+    warning_count = 0
+
+    # Process in reverse order so insertions don't shift earlier positions
+    for func_start, func_end, func_name in reversed(func_ranges):
+        component_code = code[func_start:func_end]
+
+        # Skip if already retrofitted
+        if 'The Core Idea' in component_code or 'CORE_ARGUMENT' in component_code:
+            skipped_count += 1
+            continue
+
+        # Only process section components — they all have "Part N of M"
+        part_match = re.search(r'Part\s+(\d+)\s+of\s+\d+', component_code)
+        if not part_match:
+            continue  # App/Nav/helper function — skip silently
+
+        part_number = int(part_match.group(1))
+        section = part_map.get(part_number)
+        if not section:
+            print(f'WARNING: Part {part_number} ({func_name}) not found in sections.json')
+            warning_count += 1
+            continue
+
+        core_argument = section.get('core_argument', '').strip()
+        if not core_argument:
+            print(f'WARNING: Part {part_number:>2}: {func_name} — no core_argument, skipping')
+            warning_count += 1
+            continue
+
+        has_problem_panel = (
+            re.search(r'\{/\*\s*The Problem\s*\*/\}', component_code) is not None
+            or re.search(r'>\s*The Problem\s*<', component_code) is not None
+        )
+        is_first_section = not has_problem_panel
+
+        new_component_code, ok = retrofit_component(component_code, core_argument, is_first_section)
+
+        if not ok:
+            print(f'WARNING: Part {part_number:>2}: {func_name} — could not find insertion point')
+            warning_count += 1
+            continue
+
+        print(f'Part {part_number:>2} of {total_parts}: {func_name}')
+
+        if not dry_run:
+            code = code[:func_start] + new_component_code + code[func_end:]
+            modified_count += 1
+
+    print()
+    if dry_run:
+        n = sum(
+            1 for (fs, fe, fn) in func_ranges
+            if re.search(r'Part\s+\d+\s+of\s+\d+', code[fs:fe])
+            and 'The Core Idea' not in code[fs:fe]
+            and 'CORE_ARGUMENT' not in code[fs:fe]
+        )
+        print(f'Dry run complete. Would modify up to {n} components.')
+    else:
+        print(f'Modified {modified_count} component(s). Skipped {skipped_count}. Warnings: {warning_count}.')
+        if modified_count > 0:
+            app_jsx_path.write_text(code, encoding='utf-8')
+            print(f'\nUpdated: {app_jsx_path}')
+
+    return 0
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -224,9 +354,22 @@ def main() -> int:
                         help='Directory containing per-section .jsx files')
     parser.add_argument('--sections-file', metavar='FILE',
                         help='Path to sections.json')
+    parser.add_argument('--legacy-app', metavar='FILE',
+                        help='Path to a monolithic App.jsx (legacy site mode); requires --sections-file')
     parser.add_argument('--dry-run', action='store_true',
                         help='Print what would be changed without modifying files')
     args = parser.parse_args()
+
+    # Legacy monolithic App.jsx mode
+    if args.legacy_app:
+        if not args.sections_file:
+            print('ERROR: --legacy-app requires --sections-file', file=sys.stderr)
+            return 1
+        return retrofit_legacy_app(
+            Path(args.legacy_app),
+            Path(args.sections_file),
+            args.dry_run,
+        )
 
     # Resolve paths
     if args.site:

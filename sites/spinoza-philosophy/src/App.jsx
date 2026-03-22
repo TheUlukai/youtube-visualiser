@@ -194,6 +194,11 @@ const bgMap = {
 
 // ─── Part 1: The Most Dangerous Philosopher in Europe ───
 function SpinozaIntroduction() {
+  const CORE_ARGUMENT = `Spinoza's radicalism was not a rejection of rigor but the product of applying rigorous intellectual honesty to a collision between two worlds: the tradition-bound Talmudic scholarship of Amsterdam's Portuguese Jewish community and the mechanistic, mathematical revolution sweeping European thought. Educated to become a guardian of religious tradition, Spinoza instead encountered Descartes, Hobbes, and the new textual critics, who suggested that natural phenomena obeyed universal laws without divine intervention and that the Hebrew Bible was a human document shaped by editorial history. For a mind trained in logical analysis, accepting both simultaneously became impossible, and his 1656 excommunication — delivered in language of extraordinary severity — became the liberation rather than the punishment. What makes Spinoza uniquely significant is not any single bold claim but the systematic interdependence of every element of his thought: his metaphysics grounds his psychology, his psychology grounds his ethics, and his ethics grounds his politics, so that to understand any part one must grasp the whole.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedPillar, setSelectedPillar] = useState(null);
   const [hoveredPillar, setHoveredPillar] = useState(null);
   const [echoesOpen, setEchoesOpen] = useState(false);
@@ -435,6 +440,31 @@ function SpinozaIntroduction() {
             of European civilization about God, nature, freedom, and authority.
           </p>
         </div>
+
+                {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Main Visualization */}
         <div
@@ -1024,6 +1054,11 @@ function SpinozaIntroduction() {
 
 // ─── Part 2: The Making of a Revolutionary Mind ───
 function MakingOfRevolutionaryMind() {
+  const CORE_ARGUMENT = `Spinoza begins with what appears to be a neutral technical definition: a substance is that which exists in itself and is conceived through itself, depending on nothing else for its existence or intelligibility. From this definition alone, a devastating logical chain follows — two substances cannot share an essential attribute, and without shared attributes there can be no causal interaction between them, making a world of multiple substances unable to account for the interconnections we observe everywhere in nature. The only coherent solution is that there is exactly one infinite substance, which religious tradition calls God but which philosophical analysis shows to be identical with nature itself. This identity — captured in the Latin phrase Deus sive Natura — means God is not a craftsman who freely chose to create a world separate from himself, but rather the infinite creative power whose very nature necessarily expresses itself as everything that exists. Just as a triangle cannot have interior angles summing to anything other than 180 degrees, reality cannot contain anything other than what actually exists: everything is necessary, nothing is contingent, and what we call divine providence or miracle simply refers to natural processes whose causes we have not yet understood.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredEvent, setHoveredEvent] = useState(null);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -1423,6 +1458,31 @@ function MakingOfRevolutionaryMind() {
           The introduction established that Spinoza's system is radically unified — but how did a single person come to develop such a sweeping challenge to all received wisdom? What confluence of forces produced a thinker willing to dismantle the entire framework of Western theology and replace it with something no one had yet imagined?
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* Main Visualization */}
       <div style={{ padding: "24px 40px 16px 40px" }}>
@@ -1729,6 +1789,11 @@ function MakingOfRevolutionaryMind() {
 
 // ─── Part 3: God or Nature: Substance Monism ───
 function RevolutionaryMetaphysicsGodOrNature() {
+  const CORE_ARGUMENT = `Having established that only one substance exists, Spinoza needs to explain how the dazzling variety of finite things arises from absolute unity without secretly reintroducing plurality at a deeper level. His solution introduces two conceptual layers: attributes and modes. Attributes are the fundamental ways in which the single substance can be conceived and exist; while substance possesses infinitely many attributes, human cognition has access to only two — Extension (all spatial, temporal, and mechanical properties) and Thought (all cognitive and rational properties). Crucially, these are not separate substances but different languages describing the same reality. Within each attribute, substance expresses itself through a hierarchy of modes, from eternal infinite modes such as the universal laws of motion, down to finite modes — every rock, plant, animal, sensation, and idea that makes up experienced nature. Spinoza offers a clarifying analogy: just as a complex text can be translated into English, French, or German without the meaning becoming reducible to any single language, the same substantial reality expresses itself through Extension, Thought, and infinitely more without being exhausted by any single attributive expression.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(0);
   const [hoveredPoint, setHoveredPoint] = useState(null);
   const [clickedPoint, setClickedPoint] = useState(null);
@@ -1859,6 +1924,31 @@ function RevolutionaryMetaphysicsGodOrNature() {
             For over a thousand years, European thought had divided reality into two irreconcilable realms: an infinite, perfect, transcendent God on one side, and a finite, contingent, created world on the other. God made nature; nature depended on God; and between them ran an unbridgeable ontological gap. Descartes had reinforced this architecture with his own dualisms — mind versus body, God versus extension. Spinoza saw that this framework was not merely philosophically unsatisfying. It was <em>logically incoherent</em>. A foundation for rational philosophy could not be built on a crack between two worlds that had no way of meeting.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -2225,6 +2315,11 @@ function RevolutionaryMetaphysicsGodOrNature() {
 
 // ─── Part 4: Attributes and Modes: The Architecture of Reality ───
 function ArchitectureOfRealityAttributesModes() {
+  const CORE_ARGUMENT = `Descartes had argued that mind and body are substances of entirely different natures — mind being unextended thinking substance, body being unthinking extended substance — which seemed to honor both their evident differences and the Christian requirement for an immortal soul. But this dualism generated the seemingly insoluble question of how two things with nothing in common could causally interact: how does an immaterial mind move a material hand, and how does a material sensation produce an immaterial thought? Spinoza's response is not to explain the interaction but to eliminate the premise that requires one. Every individual thing is simultaneously a mode of Extension and a mode of Thought — a physical body and a mental idea — not because two separate entities are mysteriously combined, but because there is only one modal reality being described in two attributive vocabularies. Spinoza captures this in his most famous proposition: the order and connection of ideas is the same as the order and connection of things. When one physical event causes another, the idea of the first logically implies the idea of the second — not because one causes the other across the attribute divide, but because they are the same causal-logical relationship described twice. A practical consequence follows: since the human mind just is the idea of the human body, a more complex and well-organized body necessarily corresponds to a more capable mind, making mental and physical cultivation inseparable aspects of the same developmental process.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedNode, setSelectedNode] = useState(null);
   const [hoveredNode, setHoveredNode] = useState(null);
   const [parallelHighlight, setParallelHighlight] = useState(null);
@@ -2465,6 +2560,31 @@ function ArchitectureOfRealityAttributesModes() {
             Substance monism established one infinite substance — but this hard-won unity immediately generates a new crisis. If everything is one substance, what happens to difference? What happens to the particular — this rock, this thought, this person? The danger is collapse: an undifferentiated unity that swallows all diversity into a featureless whole, leaving us unable to account for the obvious fact that things are genuinely different from one another. How can finite, diverse, particular things exist within a single infinite substance without being dissolved into nothing?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -2851,6 +2971,11 @@ function ArchitectureOfRealityAttributesModes() {
 
 // ─── Part 5: Solving the Cartesian Problem: The Unity of Mind and Body ───
 function UnityOfMindAndBody() {
+  const CORE_ARGUMENT = `Rather than treating knowledge as simply present or absent, Spinoza identifies three qualitatively different modes of cognition that represent ascending degrees of adequacy and power. The first kind, imagination, encompasses all beliefs formed through sensory experience, hearsay, and casual observation — it is not worthless but is partial, circumstance-dependent, and the primary source of superstition and false causal attribution. The second kind, reason, proceeds through systematic analysis of universal principles and necessary relationships; when we understand geometric theorems or scientific laws, we grasp truths valid for all people at all times rather than recording superficial appearances. The third and highest kind, intuition, does not reason discursively from premises to conclusions but grasps immediately how universal principles express themselves in particular individuals — it sees this specific person, this specific thing, not merely the abstract category they instantiate. Crucially, each level generates its own characteristic emotional life: imagination produces hope and fear that fluctuate with external circumstances, reason produces stable satisfaction through understanding, and intuition produces what Spinoza calls the intellectual love of God — a joy that is both intensely personal and completely impersonal, focused on individuals but not dependent on their temporal duration. The progression across levels is therefore not merely intellectual accumulation but a total transformation of consciousness and emotional life.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeEvent, setActiveEvent] = useState(null);
   const [unifiedView, setUnifiedView] = useState(false);
   const [hoveredEvent, setHoveredEvent] = useState(null);
@@ -3080,6 +3205,31 @@ function UnityOfMindAndBody() {
           of interaction is malformed — that it rests on a fundamental misunderstanding of what mind and body are.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{
@@ -3590,6 +3740,11 @@ function EchoItem({ title, text, accent }) {
 
 // ─── Part 6: The Ladder of Knowledge: From Imagination to Intuition ───
 function LadderOfKnowledge() {
+  const CORE_ARGUMENT = `At the heart of Spinoza's account of individual things lies one of his most consequential insights: that the essence of every finite mode is not a static set of properties but a dynamic striving — conatus — to maintain and enhance the complex relationships that constitute its identity. This is not a teleological principle pointing toward external purposes or cosmic goals; Spinoza's naturalism replaces final causes entirely with efficient causes, so a stone's conatus is simply its structural tendency to resist dissolution, a plant's is its tendency to grow and adapt, and a human being's is the complex striving to understand, create, and form meaningful relationships that expresses our distinctive rational and social nature. Crucially, conatus is not something a thing possesses in addition to its nature — it is precisely what its nature consists in. In human beings, conatus can operate through either adequate or inadequate ideas, generating two completely different patterns of emotional and practical life. When guided by adequate understanding, conatus produces active affects — emotions like joy and love that flow from the exercise of our own essential capacities and create positive feedback loops of increasing empowerment and insight. When distorted by inadequate ideas, it generates passive affects — emotions like fear, envy, and despair that reflect external constraints rather than our own powers and create negative feedback loops of diminishment and frustration.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeRung, setActiveRung] = useState(1);
   const [hoveredRung, setHoveredRung] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -3897,6 +4052,31 @@ function LadderOfKnowledge() {
             If mind is the idea of the body and knowledge depends on embodied engagement, what distinguishes adequate from inadequate knowledge, and how can human beings progressively develop toward truth?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -4198,6 +4378,11 @@ function LadderOfKnowledge() {
 
 // ─── Part 7: Conatus: The Essential Drive of All Things ───
 function ConatusEssentialDrive() {
+  const CORE_ARGUMENT = `Spinoza's most original contribution to the philosophy of mind may be his systematic theory of emotion, which refuses to treat feelings as mysterious intrusions from an inner realm separate from rational thought. Instead, emotions are specific kinds of thoughts — ideas accompanied by awareness of changes in the body's power of acting. Joy is what we experience when something increases our capacity for complex and harmonious activity; sadness is what we experience when something decreases it; love and hatred arise as species of joy and sadness when we identify external objects as sources of these changes; hope and fear arise when we anticipate such changes under uncertainty. All the intricate variety of human emotional life — envy, shame, pride, compassion, gratitude — can be understood as combinations and modifications of these basic patterns. The crucial distinction is between passive affects, which arise when our power changes primarily due to external circumstances we do not understand or control, and active affects, which arise when our power changes primarily due to our own understanding and creative activity. A person who becomes angry because events failed to match their expectations is experiencing a passive affect; a person who experiences joy through successfully exercising their capacity for understanding is experiencing an active affect. The transformation from passive to active is not achievable through willpower alone but requires the gradual development of more adequate ideas — and this transformation is simultaneously individual and social, since our emotional life is shaped by our relationships and social environments.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(50);
   const [hoveredConcept, setHoveredConcept] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -4510,6 +4695,31 @@ function ConatusEssentialDrive() {
             The epistemological ladder revealed that our levels of knowledge correspond to different emotional states — but this leaves a pressing question unanswered. <span style={{ color: "#ffffff", fontStyle: "italic" }}>What is the underlying motivational force that ties cognition, emotion, and action together into a single dynamic?</span> Without such a unifying principle, the correspondence between knowing and feeling remains a mysterious coincidence rather than a necessary connection. Something must be driving the whole system.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div
@@ -4719,6 +4929,11 @@ function ConatusEssentialDrive() {
 
 // ─── Part 8: From Passion to Action: The Emotional Life ───
 function EmotionalLifePassionToAction() {
+  const CORE_ARGUMENT = `Spinoza's uncompromising determinism — the view that every event follows necessarily from prior causes according to universal natural law — appears at first to eliminate human freedom and moral responsibility entirely. If human beings are finite modes of one infinite substance and everything follows necessarily from the divine nature, our actions seem as determined as planetary motion, and the felt sense of free choice seems like an illusion generated by ignorance of actual causes. But Spinoza refuses to conclude that ethics becomes meaningless. His solution distinguishes between two fundamentally different kinds of causal determination. When our actions flow from external causes that constrain or distort our essential nature — when we conform to social expectations that conflict with our authentic interests, pursue goals implanted by advertising or peer pressure, or act from passive emotions generated by inadequate understanding — we experience alien necessity, a form of determination that constitutes bondage even in the absence of physical chains. When our actions flow from internal causes that express and develop our essential nature — when we act from active affects generated by adequate understanding, pursue goals arising from genuine reflection, and form relationships based on mutual recognition — we experience self-determination, a form of necessity that enhances rather than diminishes our power and autonomy. The practical consequence is a shift in how ethics thinks about accountability: instead of asking whether someone deserves blame for actions already performed under the assumption they could have chosen otherwise, we should ask what experiences and influences will help them develop the wisdom that leads to self-determining action in the future.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [adequacy, setAdequacy] = useState(30);
   const [selectedEmotion, setSelectedEmotion] = useState(null);
   const [hoveredEmotion, setHoveredEmotion] = useState(null);
@@ -4915,6 +5130,31 @@ function EmotionalLifePassionToAction() {
             Conatus established the universal striving at the heart of human nature and showed it can take active or passive forms — but <em>what is the detailed mechanics of how emotions arise, function, and can be changed?</em> We know the engine, but not the gears. Without a systematic account of emotional causation, we are left with moral exhortations to "be less reactive" that have no purchase on the actual structure of feeling.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -5336,6 +5576,11 @@ function EmotionalLifePassionToAction() {
 
 // ─── Part 9: Freedom Within Necessity: Determinism and Human Agency ───
 function FreedomWithinNecessity() {
+  const CORE_ARGUMENT = `Traditional ethics asks what God, society, or reason commands us to do — it begins with obligation and asks how individuals can be made to comply. Spinoza inverts this entirely: he asks what kinds of lives, characters, and relationships actually produce human flourishing, treating ethics as an empirical investigation into human nature rather than a deduction from external authority. The foundational move is to deny any inherent conflict between self-interest and morality. A person who maximizes their own well-being at others' expense inevitably destroys the social conditions that make their own flourishing possible; a person who contributes to conditions supporting everyone's flourishing creates the best environment for their own development. Enlightened self-interest and genuine morality are the same thing — but this convergence is visible only to those with adequate understanding. The central virtues — courage, temperance, generosity, justice, and wisdom — are not constraints on desire but the fullest expressions of human nature when guided by adequate understanding rather than confused passive emotion. The highest form of human flourishing is the intellectual love of God: the joy arising from adequate understanding of one's essential unity with the totality of existence. This is not withdrawal from finite concerns but engagement with them informed by awareness of their eternal significance. Because human flourishing depends on social cooperation, the ethical person cannot be indifferent to education, economic distribution, and political arrangements — personal virtue and social justice are complementary enterprises.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [showEchoes, setShowEchoes] = useState(false);
   const [showCausalChains, setShowCausalChains] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
@@ -5438,6 +5683,31 @@ function FreedomWithinNecessity() {
             The analysis of passive and active emotions raised a pressing tension at the heart of Spinoza's system: the same framework that reveals how emotions enslave us also seems to leave no room for escape. If every mental state and every action follows necessarily from prior causes — if the person consumed by envy could not have been otherwise given their history and circumstances — then what could it mean to say that liberation is genuinely possible? Can human beings truly choose their path toward active affects, or is such language merely consoling fiction layered atop iron determinism?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -5839,6 +6109,11 @@ function FreedomWithinNecessity() {
 
 // ─── Part 10: The Art of Living: Ethics and Human Flourishing ───
 function ArtOfLivingEthicsFlourishing() {
+  const CORE_ARGUMENT = `Where Hobbes begins with fear and Locke begins with natural rights, Spinoza begins with an empirical question: which kinds of political arrangements actually increase the collective capacity of their members to achieve their essential goals? This naturalistic starting point leads to a preference for democracy that is unusual for his era and unusually well-grounded even by contemporary standards. Unlike ancient critics who feared mob rule, Spinoza argues that large deliberative bodies make better decisions than small elites precisely because they aggregate more diverse perspectives and create incentives to appeal to shared rather than purely personal interests. More originally, he argues that democratic participation is not merely instrumentally valuable for producing good decisions but is itself a process that transforms participants — developing their capacities for rational analysis, practical judgment, and identification with the common good. Governments that maintain themselves through censorship and propaganda are therefore self-defeating: they destroy the rational conviction that constitutes the only durable basis for voluntary political allegiance. True political stability requires cultivating conditions in which dissent can be expressed and evaluated, making freedom of thought and expression not a luxury but a practical necessity. Religious institutions should be tolerated so long as they support social cooperation but should have no special political authority — and governments can regulate religious behavior but cannot control belief.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
   const nodesRef = useRef([]);
@@ -6188,6 +6463,31 @@ function ArtOfLivingEthicsFlourishing() {
             The analysis of freedom and self-determination showed that authentic living requires expressing one's essential nature — but a troubling gap remained. What <em>concretely</em> constitutes human flourishing? And more urgently: does living well for oneself necessarily conflict with living well with others? Every moral tradition before Spinoza had answered this by appeal to authority — divine command, social convention, legal sanction. But if authentic freedom means self-determination rather than external obedience, those answers collapse. The question becomes inescapable: can self-interest and genuine morality ever truly converge, or are we permanently torn between them?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -6439,6 +6739,11 @@ function EchoItem2({ title, body, accent, last }) {
 
 // ─── Part 11: Democracy and Human Liberation: The Political Vision ───
 function PoliticalVisionDemocracyLiberation() {
+  const CORE_ARGUMENT = `Writing when questioning religious doctrine could mean death, Spinoza applied the same rigorous analytical methods to sacred texts that he applied to natural phenomena — treating this not as anti-religious prejudice but as intellectual consistency required by his naturalistic worldview. Through careful analysis of linguistic evidence, historical references, and internal contradictions in the Hebrew scriptures, he demonstrates that texts attributed to Moses, David, and other ancient figures were compiled by later editors who combined multiple sources according to their own theological and political agendas. This does not destroy the spiritual or moral value of these texts but does eliminate their claim to supernatural authority. The Hebrew prophets were not superhuman recipients of divine communication but individuals with exceptional moral sensitivity and imaginative power who expressed insights about justice and compassion through dramatic symbolic language — and their authority derived from the wisdom and courage they showed in challenging political and religious establishments, not from claimed supernatural connections. The practical implication is transformative: throughout European history, religious institutions had claimed the right to determine not only theology but politics, economics, and science. By demonstrating that religious texts are human products subject to rational evaluation, Spinoza opens space for autonomous rational inquiry in every domain. Religion at its best — transmitting wisdom about justice, compassion, and the common good — should be preserved; religion at its worst — serving as a vehicle for superstition, intolerance, and political manipulation — should be subjected to rational criticism.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [echosOpen, setEchosOpen] = useState(false);
   const [crisisTriggered, setCrisisTriggered] = useState(false);
   const [phase, setPhase] = useState('idle'); // idle, deliberating, resolved
@@ -6652,6 +6957,31 @@ function PoliticalVisionDemocracyLiberation() {
             The convergence of individual and collective flourishing in ethics raised a sharp practical question — one that could not be answered by philosophy alone. If human beings genuinely thrive through rational engagement and creative cooperation, then the conditions for that flourishing cannot be treated as incidental. <em>Which political institutions actually produce those conditions?</em> What arrangement of power, deliberation, and authority would not merely permit rational life but actively cultivate it across an entire society? The philosophical argument demanded a political answer.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -7060,6 +7390,11 @@ function PoliticalVisionDemocracyLiberation() {
 
 // ─── Part 12: Critique of Religion and Scripture ───
 function CritiqueOfReligionScripture() {
+  const CORE_ARGUMENT = `The logical foundation of Spinoza's rejection of miracles flows directly from his metaphysics: if natural laws express the necessary and immutable nature of God or nature itself, then a violation of natural law would require God to act against the divine nature — which is logically impossible. A God capable of performing miracles would be a finite being subject to arbitrary will and changeable purposes rather than the infinite substance whose nature is expressed through eternal and universal principles. True understanding of divine power therefore reveals it not in exceptional violations of natural order but in the magnificent complexity and systematic unity of the natural processes through which infinite creativity expresses itself in finite forms. Unusual natural phenomena — eclipses, earthquakes, military victories — became occasions for supernatural interpretation not because of their genuinely miraculous character but because of the limited scientific understanding available to ancient peoples and their psychological need for meaning and reassurance in the face of threatening experiences. Modern investigation can often identify the natural causes of events that earlier generations interpreted as miraculous. Prophecy follows the same logic: the Hebrew prophets were not recipients of supernatural dictation but individuals with unusually developed capacities for perceiving social injustice and expressing their insights through powerful symbolic language that could move audiences toward reform. Understanding prophecy as a natural human capacity rather than a supernatural gift makes it possible for contemporary people to develop similar moral insight without claiming divine authorization.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(0);
   const [hoveredLayer, setHoveredLayer] = useState(null);
   const [hoveredConcept, setHoveredConcept] = useState(null);
@@ -7185,6 +7520,31 @@ function CritiqueOfReligionScripture() {
             The political vision required the subordination of traditional religious authority to rational criticism — but what justifies this subordination, and what happens to the genuine spiritual and moral insights religion carries? If you unmask the Bible as a human document, do you destroy everything of value within it, leaving only rubble where a cathedral stood?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -7564,6 +7924,11 @@ function CritiqueOfReligionScripture() {
 
 // ─── Part 13: Miracles, Prophecy, and Natural Order ───
 function MiraclesProphecyNaturalOrder() {
+  const CORE_ARGUMENT = `Spinoza's political theory departs sharply from both Hobbes and Locke by identifying natural right not with abstract moral entitlements but with actual power — each individual has the right to do whatever they have the power to do and no right to do what lies beyond their power. This naturalistic identification makes rights empirical facts about power relationships rather than abstract moral claims that may or may not be enforceable. In the state of nature, conflicts arise whenever individuals have incompatible goals given limited resources and individual capacities, and these conflicts can be resolved either through the victory of the stronger or through the development of cooperative arrangements that enhance everyone's power by enabling them to combine their efforts. Political society emerges when individuals recognize that their goals can be better achieved through cooperation than through competition, and the legitimacy of political authority derives not from consent to abstract principles but from demonstrated success in actually enhancing the collective power of members to achieve their essential goals. Citizens have obligations to obey a government not because they agreed to but because supporting it serves their own rational interests in maintaining conditions that make their flourishing possible. This leads Spinoza to identify systematic problems with monarchy (concentrated power serving personal interest), aristocracy (class interest diverging from common good), and to prefer democracy — while recognizing that democratic systems require cultivation of the civic virtues that prevent majoritarian tyranny.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeView, setActiveView] = useState('ancient');
   const [showHistorical, setShowHistorical] = useState(false);
   const [showSpinoza, setShowSpinoza] = useState(false);
@@ -7729,6 +8094,31 @@ function MiraclesProphecyNaturalOrder() {
           The critique of scripture had established that religious texts are human documents — shaped by historical circumstance, political pressure, and the imaginative faculty of their authors. But this left a gap at the center of the argument. If miracles and prophecy are the primary evidence for divine intervention in history, their status needed systematic grounding — not merely in textual criticism, but in the metaphysics of natural law itself. What exactly makes a miracle impossible, and why does prophetic vision, however vivid, not constitute privileged access to divine intention? These questions demanded an answer that reached deeper than philology.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{
@@ -8152,6 +8542,11 @@ function MiraclesProphecyNaturalOrder() {
 
 // ─── Part 14: Natural Right and Social Contract: The Political Foundation ───
 function SocialContractNaturalRight() {
+  const CORE_ARGUMENT = `Although Spinoza never wrote a systematic treatise on education, his philosophical framework implies one of the most radical and comprehensive educational visions in the history of philosophy. Education, properly understood, is not the transmission of information from knowledgeable authorities to ignorant students but the fundamental transformation of consciousness — guiding people from passive dependence on imagination and external authorities toward active participation in the creation of knowledge and value. Children begin with minds dominated by sensory impressions, emotional associations, and social conditioning; education's task is to guide them through developing systematic rational analysis and ultimately toward intuitive knowledge that grasps essential natures in their concrete singularity. This progression requires not accumulating more information but reorganizing consciousness according to more adequate principles of unity and integration. Teachers must therefore serve not as repositories of fixed knowledge but as facilitators of learning processes that enable students to discover principles for themselves through guided investigation — developing intellectual independence and moral courage alongside content knowledge. Learning communities function best when diverse backgrounds and perspectives contribute different insights to shared investigations, developing skills of constructive dialogue alongside individual understanding. Crucially, educational and social reform are inseparable enterprises: schools embedded in societies characterized by economic inequality and political oppression will reproduce those conditions regardless of individual teachers' good intentions, making the creation of broad opportunities for economic participation and civic engagement as important as formal schooling.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [simRunning, setSimRunning] = useState(false);
   const [simStep, setSimStep] = useState(0);
   const [selectedRegime, setSelectedRegime] = useState("Democracy");
@@ -8385,6 +8780,31 @@ function SocialContractNaturalRight() {
             Eliminating supernatural political sanction demanded a purely naturalistic account of how and why political authority is legitimate. Once God no longer underwrites kingship and divine right no longer explains obedience, a vacuum appears at the heart of political philosophy: <em style={{ color: "#f0ede4" }}>on what basis can one person or institution claim authority over others?</em> This is not merely an academic puzzle — without an answer, every government is simply organized force, and every rebel has as much right as any king.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -8696,6 +9116,11 @@ function SocialContractNaturalRight() {
 
 // ─── Part 15: Education and the Transformation of Society ───
 function EducationTransformationSociety() {
+  const CORE_ARGUMENT = `The problem of evil presents every comprehensive philosophical system with its most severe test: if reality is as your system describes it, why does it contain so much suffering and injustice? Spinoza's naturalistic response begins by rejecting the category of absolute evil in favor of relational concepts: nothing is evil in itself, but only in relation to beings whose nature it contradicts or whose development it impedes. What we call evil consists in the collision between different finite beings each striving to preserve and enhance their existence without adequate understanding of how their striving affects others. A predator killing prey, a disease attacking a healthy organism, or a person pursuing selfish goals at others' expense — all represent natural expressions of conatus that become problematic only from the perspective of beings whose interests are harmed. Human suffering arises primarily from the gap between desires and the power to satisfy them, combined with attachment to external objects beyond our control — and the path toward reducing it involves developing more adequate understanding of our nature and capacities rather than suppressing desire or withdrawing from the world. Social evil receives particular emphasis: inadequate institutions that organize societies around competition for scarce resources rather than cooperation in creating abundance generate unnecessary conflicts and prevent development of capacities that could reduce harmful interactions. The solution requires structural reform that creates incentives for cooperative behavior — not moral exhortation directed at individuals who are already doing what their circumstances and understanding determine them to do.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [socialDials, setSocialDials] = useState({
     economicEquality: 40,
     politicalParticipation: 35,
@@ -8784,6 +9209,31 @@ function EducationTransformationSociety() {
           The analysis of democratic participation established that citizens need rational and moral capacities for effective governance — but how are these capacities developed, and what institutional forms support their cultivation? The democratic ideal presses urgently against this gap: we can articulate what citizens must become, but the mechanism of that becoming remains unspecified.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{ maxWidth: "min(90vw, 860px)", margin: "0 auto 28px auto" }}>
@@ -9183,6 +9633,11 @@ function EducationTransformationSociety() {
 
 // ─── Part 16: Evil, Suffering, and the Limits of Finite Existence ───
 function ProblemOfEvilSuffering() {
+  const CORE_ARGUMENT = `Among the most controversial aspects of Spinoza's naturalism is his teaching about the eternity of the mind — which appears to promise a form of immortality while remaining thoroughly naturalistic. The key lies in his distinction between duration and eternity. Most of our experience involves duration: the temporal sequence of states through which finite modes pass, our bodies growing and decaying, our desires arising and being satisfied or frustrated. But when we understand ourselves and other things through reason and intuitive knowledge, we grasp not only their temporal characteristics but also their eternal characteristics — the timeless relationships and necessary structures that define their essential natures independently of their particular temporal manifestations. The mind achieves eternity not by escaping finite embodied existence but by developing its capacity to understand finite things under the aspect of eternity. When we grasp mathematical truths, their validity does not depend on when or where they are thought — we are thinking thoughts that are eternal in the sense of reflecting timeless structures of reality. When we develop the intellectual love of God, we participate in the eternal activity through which infinite substance knows itself through its finite modes. What survives the death of the body is not the individual personality with its particular memories and relationships, but the eternal aspect of the mind consisting in its capacity for adequate knowledge of eternal truths — making immortality something that must be achieved through cultivation of wisdom during temporal existence rather than something guaranteed to all by virtue of possessing a soul. This is neither personal immortality nor materialist annihilation but a form of impersonal participation in eternal processes.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
   const particlesRef = useRef([]);
@@ -9532,6 +9987,31 @@ function ProblemOfEvilSuffering() {
             The analysis of education and social conditions raised the question of whether, even with ideal institutions and education, the reality of suffering and harm can be adequately addressed within a naturalistic framework. Can a philosophy that denies a transcendent moral order — that sees no cosmic arbiter distinguishing good from evil — still take suffering seriously, and offer something more than resignation in the face of it? The urgency is real: if nature is indifferent and evil is everywhere, does philosophy merely teach us to endure?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -9776,6 +10256,11 @@ function ProblemOfEvilSuffering() {
 
 // ─── Part 17: Eternity and the Mind's Immortality ───
 function EternityMindsImmortality() {
+  const CORE_ARGUMENT = `The most immediately striking feature of Spinoza's mature philosophy is its presentation: instead of essays, dialogues, or treatises, the Ethics unfolds through definitions, axioms, propositions, and demonstrations in the style of Euclid's Elements. This methodological choice reflects fundamental convictions, not stylistic preference. Mathematical demonstrations proceed from self-evidently true definitions and axioms to conclusions that follow necessarily, achieving the kind of universal agreement among rational investigators that philosophy had failed to achieve through rhetoric and persuasion. Spinoza believed that philosophical knowledge could achieve similar certainty if organized according to the same logical principles — beginning from the fundamental concepts and principles that serve as definitions and axioms of metaphysics, then deriving their implications through rigorous analysis. The geometric format also serves a protective function: by presenting only the logical structure of arguments without narrative, emotional appeals, or appeals to authority, it forces readers to evaluate each reasoning step on its merits rather than being influenced by the author's personality, the elegance of the prose, or the conformity of conclusions to prior expectations. The significant cost is accessibility: the dense logical structure of the Ethics demands sustained attention from readers unaccustomed to formal reasoning, and the elimination of illustrative examples and explicit connections to practical life can make the work seem abstract and disconnected. Some interpreters argue that the method actually impedes communication by making important ideas inaccessible to all but the most technically sophisticated. Despite these challenges, the geometric method embodies Spinoza's deepest conviction that philosophical truth is accessible to human reason and that apparent disagreements about fundamental questions can be resolved through patient rational inquiry.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [isEchoesOpen, setIsEchoesOpen] = useState(false);
   const [animationPhase, setAnimationPhase] = useState('living'); // 'living', 'death', 'afterdeath'
   const [hoveredNode, setHoveredNode] = useState(null);
@@ -9956,6 +10441,31 @@ function EternityMindsImmortality() {
             The account of evil and finite suffering raised the question of whether something in human beings can transcend temporal dissolution — particularly for those who have cultivated the highest forms of knowledge. Can minds that have glimpsed eternal truth simply vanish into nothing? The problem presses with urgency: if everything finite perishes, does understanding itself perish with it?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
       </div>
 
       {/* Main Visualization */}
@@ -10547,6 +11057,11 @@ function EternityMindsImmortality() {
 
 // ─── Part 18: The Geometric Method and Philosophical Demonstration ───
 function GeometricMethodDemonstration() {
+  const CORE_ARGUMENT = `Spinoza's initial reception was almost entirely negative — his books were banned, his name synonymous with atheism, and his work excluded from university curricula across Europe. Yet the systematic rigor and intellectual boldness of his approach ensured that even his harshest critics could not ignore it, and his ideas gradually entered mainstream philosophical discussion through thinkers influenced by his insights even when rejecting his conclusions. The German Idealists of the late 18th and early 19th centuries found in his substance monism a powerful alternative to Cartesian dualism: Schelling and Hegel drew directly on his vision of reality as fundamentally unified while developing dynamic accounts of negativity, temporality, and historical development that they believed his more static geometric approach could not accommodate. Hegel praised Spinoza as the first philosopher to achieve genuinely systematic understanding of the absolute while criticizing him for failing to account for historical development — a creative appropriation that transformed rather than merely adopted his insights. The 19th and 20th centuries saw materialist thinkers like Feuerbach and Marx find in Spinoza resources for critiquing idealist philosophy and religious ideology. Nietzsche praised him as a precursor to naturalistic ethics. Freud acknowledged his anticipation of insights about unconscious determination of conscious experience. Contemporary philosophy of mind has found his parallelism anticipating property dualism and emergence theories, his conatus framework influencing affective neuroscience, and his processual account of individual identity contributing to debates about personal identity and the self.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedNode, setSelectedNode] = useState(null);
   const [hoveredNode, setHoveredNode] = useState(null);
   const [mode, setMode] = useState('geometric');
@@ -10701,6 +11216,31 @@ function GeometricMethodDemonstration() {
           The doctrine of mental eternity proposed that adequate knowledge participates in eternal truths — but this raises the question of what methodological form is appropriate for a philosophy that aspires to such certainty. If the mind can grasp necessary truths sub specie aeternitatis, what kind of writing could faithfully carry those truths to another mind without distorting them?
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* Main Visualization */}
       <div style={{
@@ -11157,6 +11697,11 @@ function GeometricMethodDemonstration() {
 
 // ─── Part 19: Spinoza's Influence on Later Philosophy ───
 function SpinozaInfluenceLaterPhilosophy() {
+  const CORE_ARGUMENT = `Spinoza's philosophical system continues to offer genuinely useful analytical frameworks for contemporary challenges that he could not have anticipated, suggesting that his naturalistic approach captures something structurally true about human nature rather than merely reflecting 17th-century intellectual fashion. Contemporary neuroscience has confirmed many of his claims about embodied consciousness: his parallelism between mental and physical attributes anticipated modern theories of mindbrain identity and emergence; his analysis of emotions as involving both cognitive and bodily components has been confirmed by research on emotional appraisal and physiological arousal; his emphasis on conatus anticipated research on intrinsic motivation and self-determination. Environmental philosophers have found in his vision of human beings as finite modes of infinite nature an alternative to both anthropocentric exploitation and romantic withdrawal from the natural world — grounding ecological responsibility in enlightened understanding of human interests rather than external moral commands. Political theorists working on deliberative democracy have found in his analysis of collective intelligence and the transformative potential of participation theoretical frameworks for understanding innovations like participatory budgeting and citizens' assemblies. Perhaps most urgently, his analysis of passive emotions generated by inadequate understanding provides frameworks for understanding contemporary social pathologies — addiction, depression, political polarization, environmental destruction — as arising from forms of life that systematically frustrate the development of human essential capacities, pointing toward transformation of consciousness and social structure rather than technological fixes or regulatory constraints alone.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedNode, setSelectedNode] = useState(null);
   const [hoveredNode, setHoveredNode] = useState(null);
   const [hoveredEdge, setHoveredEdge] = useState(null);
@@ -11571,6 +12116,31 @@ function SpinozaInfluenceLaterPhilosophy() {
             Having established the geometric method and the systematic unity of Spinoza's system, the question becomes pressing: has this systematic vision actually influenced subsequent intellectual history, and if so, how? The Ethics was condemned as atheistic, Spinoza himself placed under herem — complete social excommunication — at twenty-three. A system so thoroughly rejected by its own moment seems an unlikely candidate for lasting philosophical legacy. And yet the history of European thought from Leibniz forward cannot be written without reckoning with his ghost.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div
@@ -12035,6 +12605,11 @@ function ConceptCard({ concept, desc, isActive, onClick }) {
 
 // ─── Part 20: Contemporary Relevance: Spinoza for the Modern World ───
 function ContemporaryRelevanceModernApplications() {
+  const CORE_ARGUMENT = `The most distinctive feature of Spinoza's achievement is not any particular claim but the systematic integration of every element into a coherent architecture in which each part supports and illuminates every other. Substance monism eliminates the traditional dualisms (God/world, mind/body, freedom/necessity, individual/universal) that had generated intractable problems for his predecessors, and does so not through arbitrary stipulation but through rigorous logical demonstration. This metaphysical foundation enables a thoroughly naturalistic account of human beings as finite expressions of infinite creativity rather than mysterious exceptions to natural law, while preserving genuine significance for human life as necessary manifestations of the divine nature. The epistemological analysis of the three kinds of knowledge shows how consciousness can progressively develop from confused dependency toward active participation in eternal truths — a development that is simultaneously intellectual, emotional, and social, since adequate ideas generate active affects which create positive conditions for further development in both the individual and their community. The psychological analysis of conatus and the emotions reveals how the same fundamental striving can express itself in forms that increase dependency or in forms that increase genuine freedom, making ethics not a matter of overcoming nature but of developing it more fully and authentically. Ethics and political philosophy are revealed as complementary aspects of the same project: creating conditions in which individual flourishing and social justice mutually reinforce each other in ongoing spirals of expanding empowerment. The enduring significance of this achievement lies in demonstrating that systematic philosophical thinking can provide both intellectual understanding and practical wisdom that remain relevant across centuries — and in embodying the conviction that individual fulfillment and social justice are interdependent rather than competing goals, offering hope that personal development and political progress can support each other in the ongoing human project of creating more adequate forms of life.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [expandedPanel, setExpandedPanel] = useState(null);
   const [hoveredPanel, setHoveredPanel] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -12204,6 +12779,31 @@ function ContemporaryRelevanceModernApplications() {
             The survey of Spinoza's historical influence established the depth and breadth of his impact — but the question remains whether his 17th century system offers genuinely live resources for specifically contemporary intellectual and practical challenges. Can a philosopher who wrote in Latin, cited Euclid, and lived before Newton's Principia truly speak to neural networks, climate collapse, and algorithmic polarization? The urgency is not merely academic: if systematic philosophy cannot engage real problems, it becomes museum philosophy — admirable but inert.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{ position: "relative", marginBottom: "36px" }}>
@@ -12561,6 +13161,11 @@ function ContemporaryRelevanceModernApplications() {
 
 // ─── Part 21: The Unity of Spinoza's System: Final Integration ───
 function UnityOfSpinozasSystemFinalIntegration() {
+  const CORE_ARGUMENT = `The most distinctive feature of Spinoza's achievement is not any particular claim but the systematic integration of every element into a coherent architecture in which each part supports and illuminates every other. Substance monism eliminates the traditional dualisms (God/world, mind/body, freedom/necessity, individual/universal) that had generated intractable problems for his predecessors, and does so not through arbitrary stipulation but through rigorous logical demonstration. This metaphysical foundation enables a thoroughly naturalistic account of human beings as finite expressions of infinite creativity rather than mysterious exceptions to natural law, while preserving genuine significance for human life as necessary manifestations of the divine nature. The epistemological analysis of the three kinds of knowledge shows how consciousness can progressively develop from confused dependency toward active participation in eternal truths — a development that is simultaneously intellectual, emotional, and social, since adequate ideas generate active affects which create positive conditions for further development in both the individual and their community. The psychological analysis of conatus and the emotions reveals how the same fundamental striving can express itself in forms that increase dependency or in forms that increase genuine freedom, making ethics not a matter of overcoming nature but of developing it more fully and authentically. Ethics and political philosophy are revealed as complementary aspects of the same project: creating conditions in which individual flourishing and social justice mutually reinforce each other in ongoing spirals of expanding empowerment. The enduring significance of this achievement lies in demonstrating that systematic philosophical thinking can provide both intellectual understanding and practical wisdom that remain relevant across centuries — and in embodying the conviction that individual fulfillment and social justice are interdependent rather than competing goals, offering hope that personal development and political progress can support each other in the ongoing human project of creating more adequate forms of life.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
   const [selectedConcept, setSelectedConcept] = useState(null);
@@ -12916,6 +13521,31 @@ function UnityOfSpinozasSystemFinalIntegration() {
             The survey of contemporary relevance raised the question of whether Spinoza's system truly coheres as a unified whole — and what is the ultimate significance of his philosophical achievement across four centuries. Does the edifice hold together, or does systematic ambition mask irresolvable fractures between its parts?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
