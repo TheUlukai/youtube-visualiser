@@ -1467,7 +1467,7 @@ function MakingOfRevolutionaryMind() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            margin: "0 40px 16px 40px",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -3213,13 +3213,13 @@ function UnityOfMindAndBody() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -4061,13 +4061,13 @@ function LadderOfKnowledge() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -4705,13 +4705,13 @@ function ConatusEssentialDrive() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -5141,13 +5141,13 @@ function EmotionalLifePassionToAction() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -5695,13 +5695,13 @@ function FreedomWithinNecessity() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -6476,13 +6476,13 @@ function ArtOfLivingEthicsFlourishing() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -7534,13 +7534,13 @@ function CritiqueOfReligionScripture() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -8109,13 +8109,13 @@ function MiraclesProphecyNaturalOrder() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
@@ -13177,6 +13177,7 @@ function ContemporaryRelevanceModernApplications() {
 
 // ─── Part 21: The Unity of Spinoza's System: Final Integration ───
 function UnityOfSpinozasSystemFinalIntegration() {
+  const ACCENT = "#6D28D9";
   const CORE_ARGUMENT = `The most distinctive feature of Spinoza's achievement is not any particular claim but the systematic integration of every element into a coherent architecture in which each part supports and illuminates every other. Substance monism eliminates the traditional dualisms (God/world, mind/body, freedom/necessity, individual/universal) that had generated intractable problems for his predecessors, and does so not through arbitrary stipulation but through rigorous logical demonstration. This metaphysical foundation enables a thoroughly naturalistic account of human beings as finite expressions of infinite creativity rather than mysterious exceptions to natural law, while preserving genuine significance for human life as necessary manifestations of the divine nature. The epistemological analysis of the three kinds of knowledge shows how consciousness can progressively develop from confused dependency toward active participation in eternal truths — a development that is simultaneously intellectual, emotional, and social, since adequate ideas generate active affects which create positive conditions for further development in both the individual and their community. The psychological analysis of conatus and the emotions reveals how the same fundamental striving can express itself in forms that increase dependency or in forms that increase genuine freedom, making ethics not a matter of overcoming nature but of developing it more fully and authentically. Ethics and political philosophy are revealed as complementary aspects of the same project: creating conditions in which individual flourishing and social justice mutually reinforce each other in ongoing spirals of expanding empowerment. The enduring significance of this achievement lies in demonstrating that systematic philosophical thinking can provide both intellectual understanding and practical wisdom that remain relevant across centuries — and in embodying the conviction that individual fulfillment and social justice are interdependent rather than competing goals, offering hope that personal development and political progress can support each other in the ongoing human project of creating more adequate forms of life.`;
   const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
   const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
@@ -13541,13 +13542,13 @@ function UnityOfSpinozasSystemFinalIntegration() {
         {CORE_ARGUMENT && (
           <div style={{
             background: "rgba(0,0,0,0.3)",
-            border: `1px solid ${accent}25`,
+            border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
             marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
-                          color: accent, marginBottom: 10 }}>
+                          color: ACCENT, marginBottom: 10 }}>
               The Core Idea
             </div>
             <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
