@@ -9228,7 +9228,7 @@ function EducationTransformationSociety() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            maxWidth: "min(90vw, 860px)", margin: "0 auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
