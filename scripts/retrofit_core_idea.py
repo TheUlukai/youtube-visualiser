@@ -263,9 +263,6 @@ def main() -> int:
         print('ERROR: sections.json contains no sections.', file=sys.stderr)
         return 1
 
-    # Build lookup: section_id → section metadata
-    section_by_id = {s['id']: s for s in sections}
-
     modified_count = 0
     skipped_count = 0
     warning_count = 0
