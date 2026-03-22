@@ -4,6 +4,7 @@ output/
 # Node
 node_modules/
 devserver/dist/
+sites/*/package-lock.json
 
 # Python
 __pycache__/
