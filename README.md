@@ -15,8 +15,7 @@ The pipeline fetches the video transcript, uses Claude (Sonnet 4.6) to parse it 
 - **Python 3.10+**
 - **Node.js 18+**
 - **An Anthropic API key** — set as `ANTHROPIC_API_KEY` environment variable
-- **youtube-transcript-api** — `pip install youtube-transcript-api`
-- **Anthropic Python SDK** — `pip install anthropic`
+- **Python dependencies** — `pip install -r requirements.txt`
 
 ## Quick Start
 
@@ -123,7 +122,14 @@ The style and structure are controlled by `CLAUDE.md`. Edit it to change:
 
 ## Cost
 
-- Transcript fetching: free (no API key needed)
-- Section parsing: ~1 API call (~$0.01–0.05)
-- Visualization generation: ~1 API call per section (~$0.01–0.02 each)
-- Total for a typical 30-section video: **under $1**
+All costs are for Claude Sonnet 4.6 at March 2026 rates ($3/MTok input, $15/MTok output). Generation uses prompt caching to reduce repeated system-prompt charges.
+
+| Step | Cost |
+|------|------|
+| Transcript fetching | Free |
+| Section parsing | ~$0.30–0.50 (scales with transcript length) |
+| Visualization generation | ~$0.15–0.20 per section |
+| **15-section video** | **~$2.50–3.50 total** |
+| **30-section video** | **~$5.00–6.50 total** |
+
+The output tokens dominate — each generated React component is typically 8,000–12,000 tokens. Both `parse_sections.py` and `generate_viz.py` print an estimated cost summary at the end of each run.
