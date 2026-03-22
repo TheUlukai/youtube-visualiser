@@ -148,6 +148,18 @@ Then open http://localhost:5173.
 ```bash
 npm run build
 ```
+
+## Reassemble
+
+After editing individual section components in `src/components/`, regenerate `src/App.jsx` and rebuild:
+
+```bash
+python scripts/assemble.py \
+  --components-dir sites/<slug>/src/components \
+  --sections-file  sites/<slug>/src/sections.json \
+  --output         sites/<slug>/src/App.jsx
+cd sites/<slug> && npm run build
+```
 ```
 
 ---
