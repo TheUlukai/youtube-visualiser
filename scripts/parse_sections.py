@@ -17,6 +17,23 @@ TRANSCRIPT_PATH = os.path.join(os.path.dirname(__file__), "..", "output", "trans
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "output", "sections.json")
 MODEL = "claude-sonnet-4-6"
 
+# Pricing per million tokens (claude-sonnet-4-6, as of 2026-03)
+PRICE_INPUT       = 3.00   # $/MTok
+PRICE_OUTPUT      = 15.00  # $/MTok
+PRICE_CACHE_WRITE = 3.75   # $/MTok
+PRICE_CACHE_READ  = 0.30   # $/MTok
+
+
+def tokens_to_cost(input: int, output: int,
+                   cache_write: int = 0, cache_read: int = 0) -> float:
+    return (
+        input        * PRICE_INPUT        / 1_000_000
+        + output     * PRICE_OUTPUT       / 1_000_000
+        + cache_write * PRICE_CACHE_WRITE / 1_000_000
+        + cache_read  * PRICE_CACHE_READ  / 1_000_000
+    )
+
+
 SYSTEM_PROMPT = """You are an expert at analyzing educational lecture transcripts and extracting structured information.
 Your task is to parse a transcript into logical sections and extract detailed metadata for each.
 You must return ONLY valid JSON — no markdown, no code fences, no commentary. Just the raw JSON object."""
@@ -87,8 +104,14 @@ def call_claude(client: anthropic.Anthropic, transcript: str, attempt: int) -> s
 
         final = stream.get_final_message()
 
+    u = final.usage
+    inp   = getattr(u, "input_tokens", 0) or 0
+    out   = getattr(u, "output_tokens", 0) or 0
+    cw    = getattr(u, "cache_creation_input_tokens", 0) or 0
+    cr    = getattr(u, "cache_read_input_tokens", 0) or 0
+    cost  = tokens_to_cost(inp, out, cw, cr)
     print(f"  Done. {len(full_text):,} chars. "
-          f"Tokens: {final.usage.input_tokens} in / {final.usage.output_tokens} out.")
+          f"Tokens: {inp:,} in / {out:,} out  —  estimated cost: ${cost:.4f}")
 
     if final.stop_reason == "max_tokens":
         print("Warning: response was truncated (hit max_tokens). "
