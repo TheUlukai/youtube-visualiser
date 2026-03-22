@@ -1,4 +1,9 @@
 function AristotleIntroduction() {
+  const CORE_ARGUMENT = `Aristotle was so comprehensive and authoritative that disagreeing with him was considered heresy for nearly two millennia. His dominance spanned physics, biology, ethics, politics, art criticism, and logic simultaneously. Even where he was spectacularly wrong — fewer teeth in women, heavier objects falling faster, the brain as a cooling organ — his errors reveal a mind trying to make sense of reality through observation and reason rather than myth. His correct insights were so profound that their frameworks persist into contemporary philosophy, law, science, and ethics.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#C2410C";
   const ACCENT_LIGHT = "#f97316";
   const ACCENT_DIM = "#3a1205";
@@ -210,6 +215,31 @@ function AristotleIntroduction() {
             Understanding Aristotle's extraordinary reach across disciplines and why even his errors reveal a systematic genius.
           </p>
         </div>
+
+                {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* MAIN VISUALIZATION */}
         <div

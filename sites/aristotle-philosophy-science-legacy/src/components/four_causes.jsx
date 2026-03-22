@@ -1,4 +1,9 @@
 function FourCauses() {
+  const CORE_ARGUMENT = `Modern science explains by tracing effects back to prior physical events, but Aristotle insisted this is incomplete. Full explanation requires four causes: what something is made of (material), its structure or pattern (formal), the agent that brings it into being (efficient), and the purpose or goal it serves (final). For a bronze statue: bronze is the material cause, the shape is the formal cause, the sculptor is the efficient cause, and honoring Athena is the final cause. Aristotle applied this framework not only to artifacts but to natural objects, arguing that nature acts for ends — acorns grow into oaks because that is their natural telos — and this teleological biology dominated Western science until the scientific revolution systematically eliminated formal and final causes from physics.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#16A34A";
   const ACCENT_LIGHT = "#4ade80";
   const ACCENT_DIM = "#0a2e18";
@@ -199,6 +204,31 @@ function FourCauses() {
             Aristotle's substance metaphysics established that things have essences, but it did not explain how things change, develop, or produce other things — a purely static picture of substances with properties cannot account for growth, generation, or causation.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{ background: "rgba(0,0,0,0.4)", border: `1px solid ${ACCENT}44`, borderRadius: 10, padding: "clamp(16px,3vw,28px)", marginBottom: 16 }}>

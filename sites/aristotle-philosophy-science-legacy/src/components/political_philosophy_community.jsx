@@ -1,4 +1,9 @@
 function PoliticalPhilosophyCommunity() {
+  const CORE_ARGUMENT = `For Aristotle, humans are by nature political animals who can only achieve eudaimonia within a political community — the polis is not a social contract or necessary evil but the natural completion of human sociality. He empirically studied 158 constitutions and classified governments into three good forms (monarchy, aristocracy, polity) and three corrupt deviations (tyranny, oligarchy, democracy), arguing that polity — a mixed constitution with a large middle class balancing democratic and oligarchic elements — is the most stable and practically achievable. Politics is the master science because it organizes all other pursuits toward human flourishing, and education is essential to producing virtuous citizens capable of self-governance. His exclusion of women, slaves, and foreigners from citizenship is morally indefensible and systematic, not incidental.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#0369A1";
   const ACCENT_LIGHT = "#38BDF8";
   const ACCENT_DIM = "#0c2a3a";
@@ -186,6 +191,31 @@ function PoliticalPhilosophyCommunity() {
             Aristotle's ethics established that human flourishing is the goal, and that virtue requires habituation in a community — but what kind of community best enables virtue, and what political arrangements promote rather than corrupt it?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

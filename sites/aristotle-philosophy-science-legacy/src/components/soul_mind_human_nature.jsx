@@ -1,4 +1,9 @@
 function SoulMindHumanNature() {
+  const CORE_ARGUMENT = `For Aristotle, psyche (soul) is not a separate spiritual substance but the principle of life — the form or organization that makes a living body alive. All living things have nutritive soul; animals add sensitive soul (perception, desire, locomotion); humans add rational soul. Soul is inseparable from body as shape is inseparable from wax, making personal immortality generally impossible — except for the obscure 'active intellect,' described as separable, immortal, and eternal, generating centuries of conflicting interpretations. This hylemorphic psychology anticipates modern functionalism: mental states are defined by their functional roles (what they do causally) rather than their physical substrate, and could in principle be realized in different matter — while still failing to explain why functional organization produces subjective conscious experience.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#6366F1";
   const ACCENT_LIGHT = "#a5b4fc";
   const ACCENT_DIM = "#1e1f3a";
@@ -141,6 +146,31 @@ function SoulMindHumanNature() {
             Aristotle's biology successfully explained the functions of organs and organisms, but living things think, perceive, desire, and feel — requiring an account of mind that connects to, but is not reducible to, mere biological organization.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

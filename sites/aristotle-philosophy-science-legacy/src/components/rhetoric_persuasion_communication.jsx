@@ -1,4 +1,9 @@
 function RhetoricPersuasionCommunication() {
+  const CORE_ARGUMENT = `Aristotle defined rhetoric as the art of discovering available means of persuasion in any given situation — not mere manipulation but a systematic discipline applicable wherever communication aims to change minds. He identified three modes of persuasion: ethos (speaker credibility), pathos (appropriate emotional engagement), and logos (rational argument), insisting all three are necessary because humans are neither purely rational nor purely emotional. He classified rhetorical situations (legal, political, ceremonial), analyzed emotions systematically as psychological states with characteristic objects and causes, and identified the enthymeme — an argument with audience-supplied premises — as rhetoric's core unit. The ethical status of rhetoric remains contested: the same framework that enables democratic deliberation enables propaganda.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#DC2626";
   const ACCENT_LIGHT = "#ef4444";
   const ACCENT_DIM = "#3a0a0a";
@@ -142,6 +147,31 @@ function RhetoricPersuasionCommunication() {
             Aristotle's logic and ethics established standards for valid reasoning and virtuous action, but real political and legal life requires persuading actual audiences who are not purely rational — a gap between philosophical ideal and practical necessity.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

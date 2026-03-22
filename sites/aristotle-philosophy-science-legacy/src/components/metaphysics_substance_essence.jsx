@@ -1,4 +1,9 @@
 function MetaphysicsSubstanceEssence() {
+  const CORE_ARGUMENT = `Aristotle's metaphysics begins with the claim that substances — individual things like horses, trees, and persons — are the primary realities on which everything else depends. Properties, quantities, and relations exist only because substances exist to have them. Every substance has an essence (what makes it the kind of thing it is) and accidental features (what it merely happens to have). This essentialism underwrites both science — discovering essences is the goal of investigation — and ethics — living well means fulfilling one's essential human nature. Yet Aristotle could never fully resolve the tension between primary substances (individuals) and secondary substances (species), generating centuries of debate about whether universals are real.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#B45309";
   const ACCENT_LIGHT = "#D97706";
   const ACCENT_DIM = "#3a1a02";
@@ -149,6 +154,31 @@ function MetaphysicsSubstanceEssence() {
             Aristotle's empirical method needed conceptual frameworks to organize observations, but what are those frameworks tracking? Are the categories and kinds we observe — horse, tree, human — genuinely real features of the world, or human impositions?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

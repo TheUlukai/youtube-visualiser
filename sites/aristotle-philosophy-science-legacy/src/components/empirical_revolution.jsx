@@ -1,4 +1,9 @@
 function EmpiricalRevolution() {
+  const CORE_ARGUMENT = `Against Plato's claim that true knowledge requires turning away from the physical world toward eternal Forms, Aristotle proposed a radical alternative: start with what you can observe, collect data, identify patterns, and only then construct theories — which must be tested and corrected against further observation. This empirical method produced the first systematic biology in human history, including accurate identifications of mammalian characteristics in dolphins and the difference between vertebrates and invertebrates. Yet Aristotle knew observation alone was insufficient; he paired it with conceptual categories (substance, quantity, quality, relation, place, time, position, state, action, affection) to organize what was observed.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#0E7490";
   const ACCENT_LIGHT = "#38BDF8";
   const ACCENT_DIM = "#0a3040";
@@ -118,6 +123,31 @@ function EmpiricalRevolution() {
             Plato's philosophy demanded turning away from the changing physical world toward eternal abstract Forms, making theory completely disconnected from actual tables, actual human beings, and actual moral struggles. Philosophy had become an escape from reality rather than an explanation of it.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

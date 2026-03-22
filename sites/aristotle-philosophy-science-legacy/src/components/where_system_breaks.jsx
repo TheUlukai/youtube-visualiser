@@ -1,4 +1,9 @@
 function WhereSystemBreaks() {
+  const CORE_ARGUMENT = `Aristotle's system breaks at multiple foundational points: modern physics eliminated natural places, inertia refuted continuous movers, and quantum mechanics violates substance metaphysics at the fundamental level. Evolutionary biology eliminated fixed species with real essences. The hard problem of consciousness — why does functional organization produce subjective experience? — remains unanswered by hylemorphism. The is-ought gap challenges his naturalistic ethics. Feminist critics show that his exclusions of women and slaves are not incidental but built into his core metaphysical categories (matter as passive-feminine, form as active-masculine). Internal tensions — between particular and universal substances, between hylemorphism and the immortal active intellect — were never resolved. Yet the 20th century revival shows that even after all these failures, something valuable remains: his questions, his balanced approach between observation and theory, and specific domains like ethics, rhetoric, and narrative theory where his insights still outperform alternatives.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#BE185D";
   const ACCENT_LIGHT = "#f472b6";
   const ACCENT_DIM = "#4a0a24";
@@ -234,6 +239,31 @@ function WhereSystemBreaks() {
             Aristotle's system claimed comprehensive systematic unity — his physics, metaphysics, biology, psychology, ethics, and politics were all connected through shared principles. But if those foundational principles (natural teleology, fixed essences, geocentric cosmos) are false, the entire structure is undermined. The question is not whether any part survives, but which parts — and whether what survives is still genuinely Aristotelian.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

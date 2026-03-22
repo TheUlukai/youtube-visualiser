@@ -1,4 +1,9 @@
 function AristotleLegacyHistory() {
+  const CORE_ARGUMENT = `After Aristotle's death his lecture notes nearly vanished — hidden in a cellar, damaged by moisture, and only edited into the surviving corpus by Andronicus of Rhodes in the first century BCE. Islamic philosophers preserved and extended his work when the West knew only fragments of his logic, with Averroes' commentaries becoming so authoritative he was simply called 'the Commentator.' Aquinas achieved the greatest synthesis of Aristotle and Christianity, making Aristotle the official philosopher of the Catholic Church. Medieval universities organized their entire curricula around his works. The scientific revolution defined itself through rejecting his physics and cosmology, yet Aristotle never completely disappeared: his logic, ethics, rhetoric, and biology retained influence, and the 20th century saw remarkable revivals in virtue ethics, philosophy of mind, metaphysics, and political philosophy — showing that his questions outlast his answers.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#A16207";
   const ACCENT_LIGHT = "#D4A017";
   const ACCENT_DIM = "#3a2402";
@@ -159,6 +164,31 @@ function AristotleLegacyHistory() {
             Aristotle's comprehensive system needed transmission across time, cultural translation across radically different civilizations, and integration with religious worldviews that his pagan philosophy never anticipated — and his errors needed eventual overthrow without losing his genuine insights.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

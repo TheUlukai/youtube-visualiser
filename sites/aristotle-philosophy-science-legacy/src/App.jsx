@@ -146,6 +146,11 @@ const bgMap = {
 
 // ─── Part 1: The Most Influential Mind in History ───
 function AristotleIntroduction() {
+  const CORE_ARGUMENT = `Aristotle was so comprehensive and authoritative that disagreeing with him was considered heresy for nearly two millennia. His dominance spanned physics, biology, ethics, politics, art criticism, and logic simultaneously. Even where he was spectacularly wrong — fewer teeth in women, heavier objects falling faster, the brain as a cooling organ — his errors reveal a mind trying to make sense of reality through observation and reason rather than myth. His correct insights were so profound that their frameworks persist into contemporary philosophy, law, science, and ethics.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#C2410C";
   const ACCENT_LIGHT = "#f97316";
   const ACCENT_DIM = "#3a1205";
@@ -357,6 +362,31 @@ function AristotleIntroduction() {
             Understanding Aristotle's extraordinary reach across disciplines and why even his errors reveal a systematic genius.
           </p>
         </div>
+
+                {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* MAIN VISUALIZATION */}
         <div
@@ -879,6 +909,11 @@ function AristotleIntroduction() {
 
 // ─── Part 2: The Empirical Revolution ───
 function EmpiricalRevolution() {
+  const CORE_ARGUMENT = `Against Plato's claim that true knowledge requires turning away from the physical world toward eternal Forms, Aristotle proposed a radical alternative: start with what you can observe, collect data, identify patterns, and only then construct theories — which must be tested and corrected against further observation. This empirical method produced the first systematic biology in human history, including accurate identifications of mammalian characteristics in dolphins and the difference between vertebrates and invertebrates. Yet Aristotle knew observation alone was insufficient; he paired it with conceptual categories (substance, quantity, quality, relation, place, time, position, state, action, affection) to organize what was observed.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#0E7490";
   const ACCENT_LIGHT = "#38BDF8";
   const ACCENT_DIM = "#0a3040";
@@ -998,6 +1033,31 @@ function EmpiricalRevolution() {
             Plato's philosophy demanded turning away from the changing physical world toward eternal abstract Forms, making theory completely disconnected from actual tables, actual human beings, and actual moral struggles. Philosophy had become an escape from reality rather than an explanation of it.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -1380,6 +1440,11 @@ function EmpiricalRevolution() {
 
 // ─── Part 3: Logic and the Architecture of Thought ───
 function LogicArchitectureOfThought() {
+  const CORE_ARGUMENT = `Before Aristotle, people reasoned and argued but no one had systematically identified the rules that make arguments valid rather than fallacious. Aristotle's invention of the syllogism — two premises yielding a conclusion by formal necessity — was revolutionary because validity depended on structure, not content. He mapped every valid syllogistic form, distinguished universal from particular statements, identified the principle of non-contradiction as an unprovable but indispensable foundation, and recognized that different contexts (demonstrative, dialectical, rhetorical) require different standards of proof. His logic is not merely a tool but a description of how rational thinking actually works.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#7C3AED";
   const ACCENT_LIGHT = "#a78bfa";
   const ACCENT_DIM = "#2d1a5e";
@@ -1607,6 +1672,31 @@ function LogicArchitectureOfThought() {
             Even Aristotle's empirical method required reasoning from observations to theories, but there were no systematic rules for distinguishing valid inferences from fallacious ones — anyone could argue anything without a formal check.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -2136,6 +2226,11 @@ function LogicArchitectureOfThought() {
 
 // ─── Part 4: Metaphysics: Substance, Essence, and What Really Exists ───
 function MetaphysicsSubstanceEssence() {
+  const CORE_ARGUMENT = `Aristotle's metaphysics begins with the claim that substances — individual things like horses, trees, and persons — are the primary realities on which everything else depends. Properties, quantities, and relations exist only because substances exist to have them. Every substance has an essence (what makes it the kind of thing it is) and accidental features (what it merely happens to have). This essentialism underwrites both science — discovering essences is the goal of investigation — and ethics — living well means fulfilling one's essential human nature. Yet Aristotle could never fully resolve the tension between primary substances (individuals) and secondary substances (species), generating centuries of debate about whether universals are real.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#B45309";
   const ACCENT_LIGHT = "#D97706";
   const ACCENT_DIM = "#3a1a02";
@@ -2286,6 +2381,31 @@ function MetaphysicsSubstanceEssence() {
             Aristotle's empirical method needed conceptual frameworks to organize observations, but what are those frameworks tracking? Are the categories and kinds we observe — horse, tree, human — genuinely real features of the world, or human impositions?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -2669,6 +2789,11 @@ function MetaphysicsSubstanceEssence() {
 
 // ─── Part 5: The Four Causes and How Explanation Works ───
 function FourCauses() {
+  const CORE_ARGUMENT = `Modern science explains by tracing effects back to prior physical events, but Aristotle insisted this is incomplete. Full explanation requires four causes: what something is made of (material), its structure or pattern (formal), the agent that brings it into being (efficient), and the purpose or goal it serves (final). For a bronze statue: bronze is the material cause, the shape is the formal cause, the sculptor is the efficient cause, and honoring Athena is the final cause. Aristotle applied this framework not only to artifacts but to natural objects, arguing that nature acts for ends — acorns grow into oaks because that is their natural telos — and this teleological biology dominated Western science until the scientific revolution systematically eliminated formal and final causes from physics.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#16A34A";
   const ACCENT_LIGHT = "#4ade80";
   const ACCENT_DIM = "#0a2e18";
@@ -2869,6 +2994,31 @@ function FourCauses() {
             Aristotle's substance metaphysics established that things have essences, but it did not explain how things change, develop, or produce other things — a purely static picture of substances with properties cannot account for growth, generation, or causation.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{ background: "rgba(0,0,0,0.4)", border: `1px solid ${ACCENT}44`, borderRadius: 10, padding: "clamp(16px,3vw,28px)", marginBottom: 16 }}>
@@ -3032,6 +3182,11 @@ function FourCauses() {
 
 // ─── Part 6: Form and Matter, Potentiality and Actuality ───
 function FormMatterPotentialityActuality() {
+  const CORE_ARGUMENT = `Everything physical is a compound of form (organizing structure) and matter (underlying stuff), and change happens when matter loses one form and takes on another while persisting through the transition. This hylomorphism resolves Parmenides' paradox (change would require something from nothing) by showing that change moves from potential being to actual being — not from non-being. The seed is potentially a tree without being actually a tree; change actualizes that potential. Nothing, however, can move from potentiality to actuality on its own: actuality is metaphysically prior, and every chain of actualization must terminate in something that is pure actuality with no unrealized potential — Aristotle's Unmoved Mover.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#9D174D";
   const ACCENT_LIGHT = "#e05a8a";
   const ACCENT_DIM = "#3a0820";
@@ -3139,6 +3294,31 @@ function FormMatterPotentialityActuality() {
             Substance metaphysics described what things are in their stable state, but pre-Socratic philosophy had shown that change and persistence seemed logically incompatible: if something changes it becomes different, so how is it still the same thing?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -3558,6 +3738,11 @@ function FormMatterPotentialityActuality() {
 
 // ─── Part 7: Physics, Motion, and Cosmology ───
 function AristotelianPhysicsCosmology() {
+  const CORE_ARGUMENT = `Aristotle defined motion broadly as any change — of place, quality, quantity, or substance — and distinguished natural motion (toward a thing's natural place, requiring no external force) from violent motion (contrary to nature, requiring continuous external contact with a mover). Earthy objects fall because their nature seeks the center; fire rises because its nature seeks the periphery; the heavens made of quintessence move in perfect eternal circles. This system matches phenomenological experience but is wrong at the level of fundamental physics: there is no inertia, no concept of forces as causing acceleration rather than motion, and the cosmos is not geocentric, finite, or divided into sublunary and celestial realms with different laws. Galileo, Kepler, and Newton demolished every major claim.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#D97706";
   const ACCENT_LIGHT = "#F59E0B";
   const ACCENT_DIM = "#3a2a08";
@@ -3815,6 +4000,31 @@ function AristotelianPhysicsCosmology() {
             Aristotle's form-matter and potentiality-actuality framework needed a physical theory to explain how actual movers actualize potentials in the material world — a metaphysics of change required a corresponding physics of motion. The grand categories of hylomorphism demanded to know: what actually moves what, by what mechanism, according to what laws? Without a physics, metaphysics floated free of the world it claimed to explain.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -4072,6 +4282,11 @@ function AristotelianPhysicsCosmology() {
 
 // ─── Part 8: Biology and the Science of Life ───
 function AristotleBiology() {
+  const CORE_ARGUMENT = `While Aristotle's physics was his greatest failure, his biology was his greatest success. He personally dissected hundreds of species and accurately described dolphin and whale mammalian characteristics, shark placenta, ruminant stomachs, and chick embryonic development — achievements not surpassed for centuries. His theoretical framework organized life forms into a scala naturae (nutritive, sensitive, and rational soul levels), developed the first natural taxonomy based on multiple anatomical criteria, and explained biological features teleologically through the functions they serve. His concept of epigenesis — that organisms develop progressively from undifferentiated matter rather than growing from miniature preformed versions — was correct. Darwin eliminated fixed species and conscious teleology, but functional explanation and the focus on organizational form persist in contemporary biology.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#059669";
   const ACCENT_LIGHT = "#34d399";
   const ACCENT_DIM = "#052e1c";
@@ -4289,6 +4504,31 @@ function AristotleBiology() {
             The four-causes framework promised that final causes — purposes and functions — were essential to complete explanation, but it needed empirical grounding. What are the actual functions of actual biological structures in actual organisms? Without concrete observation, teleology remained abstract metaphysics rather than science.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -4677,6 +4917,11 @@ function AristotleBiology() {
 
 // ─── Part 9: The Soul, Mind, and Human Nature ───
 function SoulMindHumanNature() {
+  const CORE_ARGUMENT = `For Aristotle, psyche (soul) is not a separate spiritual substance but the principle of life — the form or organization that makes a living body alive. All living things have nutritive soul; animals add sensitive soul (perception, desire, locomotion); humans add rational soul. Soul is inseparable from body as shape is inseparable from wax, making personal immortality generally impossible — except for the obscure 'active intellect,' described as separable, immortal, and eternal, generating centuries of conflicting interpretations. This hylemorphic psychology anticipates modern functionalism: mental states are defined by their functional roles (what they do causally) rather than their physical substrate, and could in principle be realized in different matter — while still failing to explain why functional organization produces subjective conscious experience.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#6366F1";
   const ACCENT_LIGHT = "#a5b4fc";
   const ACCENT_DIM = "#1e1f3a";
@@ -4819,6 +5064,31 @@ function SoulMindHumanNature() {
             Aristotle's biology successfully explained the functions of organs and organisms, but living things think, perceive, desire, and feel — requiring an account of mind that connects to, but is not reducible to, mere biological organization.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -5157,6 +5427,11 @@ function SoulMindHumanNature() {
 
 // ─── Part 10: Ethics, Virtue, Character, and the Good Life ───
 function EthicsVirtueGoodLife() {
+  const CORE_ARGUMENT = `Aristotle's ethics begins from the question of what constitutes genuine human flourishing (eudaimonia) — not a feeling but a way of living excellently according to reason. Using his biological framework, he argued that humans have a characteristic function (rational activity) and that living well means performing that function excellently. Virtues are stable character dispositions — means between extremes of excess and deficiency — developed through repeated practice until they become second nature, guided by practical wisdom (phronesis) that judges what reason demands in each particular situation. Complete eudaimonia combines virtuous practical activity with theoretical contemplation, and requires deep friendship and adequate external goods. This agent-centered ethics has experienced major revival after decades of dominance by rule-based and consequentialist theories.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#EA580C";
   const ACCENT_LIGHT = "#FB923C";
   const ACCENT_DIM = "#3a1a06";
@@ -5432,6 +5707,31 @@ function EthicsVirtueGoodLife() {
             Aristotle's metaphysics established that things have natural functions whose fulfillment constitutes their excellence, and his psychology showed that humans are rational animals — but what does excellent rational activity as a human actually look like in practice, and how do we cultivate it?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div
@@ -5972,6 +6272,11 @@ function EthicsVirtueGoodLife() {
 
 // ─── Part 11: Political Philosophy and the Science of Community ───
 function PoliticalPhilosophyCommunity() {
+  const CORE_ARGUMENT = `For Aristotle, humans are by nature political animals who can only achieve eudaimonia within a political community — the polis is not a social contract or necessary evil but the natural completion of human sociality. He empirically studied 158 constitutions and classified governments into three good forms (monarchy, aristocracy, polity) and three corrupt deviations (tyranny, oligarchy, democracy), arguing that polity — a mixed constitution with a large middle class balancing democratic and oligarchic elements — is the most stable and practically achievable. Politics is the master science because it organizes all other pursuits toward human flourishing, and education is essential to producing virtuous citizens capable of self-governance. His exclusion of women, slaves, and foreigners from citizenship is morally indefensible and systematic, not incidental.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#0369A1";
   const ACCENT_LIGHT = "#38BDF8";
   const ACCENT_DIM = "#0c2a3a";
@@ -6159,6 +6464,31 @@ function PoliticalPhilosophyCommunity() {
             Aristotle's ethics established that human flourishing is the goal, and that virtue requires habituation in a community — but what kind of community best enables virtue, and what political arrangements promote rather than corrupt it?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -6523,6 +6853,11 @@ function PoliticalPhilosophyCommunity() {
 
 // ─── Part 12: Rhetoric, Persuasion, and Communication ───
 function RhetoricPersuasionCommunication() {
+  const CORE_ARGUMENT = `Aristotle defined rhetoric as the art of discovering available means of persuasion in any given situation — not mere manipulation but a systematic discipline applicable wherever communication aims to change minds. He identified three modes of persuasion: ethos (speaker credibility), pathos (appropriate emotional engagement), and logos (rational argument), insisting all three are necessary because humans are neither purely rational nor purely emotional. He classified rhetorical situations (legal, political, ceremonial), analyzed emotions systematically as psychological states with characteristic objects and causes, and identified the enthymeme — an argument with audience-supplied premises — as rhetoric's core unit. The ethical status of rhetoric remains contested: the same framework that enables democratic deliberation enables propaganda.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#DC2626";
   const ACCENT_LIGHT = "#ef4444";
   const ACCENT_DIM = "#3a0a0a";
@@ -6666,6 +7001,31 @@ function RhetoricPersuasionCommunication() {
             Aristotle's logic and ethics established standards for valid reasoning and virtuous action, but real political and legal life requires persuading actual audiences who are not purely rational — a gap between philosophical ideal and practical necessity.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -7101,6 +7461,11 @@ function RhetoricPersuasionCommunication() {
 
 // ─── Part 13: Poetics, Tragedy, and the Nature of Art ───
 function PoeticsTragedyArt() {
+  const CORE_ARGUMENT = `Aristotle defined poetry as mimesis — not photographic copying but representation that reveals patterns and possibilities, making poetry more philosophical than history because it deals with what might happen according to probability or necessity rather than what did happen. Tragedy, the highest form, imitates serious complete action through dramatic enactment to arouse pity and fear and produce catharsis of these emotions — though the meaning of catharsis (purification, purgation, or clarification) remains one of the most debated questions in literary theory. Plot is most important (above character, thought, diction, melody, and spectacle), and the ideal tragic plot combines reversal and recognition, featuring a hero who is neither wholly virtuous nor wholly vicious but falls through hamartia. These principles became the foundation of Western literary theory and still shape screenwriting, game narrative design, and narrative cognition research.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#7E22CE";
   const ACCENT_LIGHT = "#a855f7";
   const ACCENT_DIM = "#2d1254";
@@ -7291,6 +7656,31 @@ function PoeticsTragedyArt() {
             Aristotle's ethics argued that developing emotional capacities — especially appropriate pity and fear — is essential to virtue and flourishing, but it needed an account of how art engages and educates those emotions rather than merely indulging or corrupting them.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -7738,6 +8128,11 @@ function PoeticsTragedyArt() {
 
 // ─── Part 14: Aristotle's Legacy and His Influence Through History ───
 function AristotleLegacyHistory() {
+  const CORE_ARGUMENT = `After Aristotle's death his lecture notes nearly vanished — hidden in a cellar, damaged by moisture, and only edited into the surviving corpus by Andronicus of Rhodes in the first century BCE. Islamic philosophers preserved and extended his work when the West knew only fragments of his logic, with Averroes' commentaries becoming so authoritative he was simply called 'the Commentator.' Aquinas achieved the greatest synthesis of Aristotle and Christianity, making Aristotle the official philosopher of the Catholic Church. Medieval universities organized their entire curricula around his works. The scientific revolution defined itself through rejecting his physics and cosmology, yet Aristotle never completely disappeared: his logic, ethics, rhetoric, and biology retained influence, and the 20th century saw remarkable revivals in virtue ethics, philosophy of mind, metaphysics, and political philosophy — showing that his questions outlast his answers.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#A16207";
   const ACCENT_LIGHT = "#D4A017";
   const ACCENT_DIM = "#3a2402";
@@ -7898,6 +8293,31 @@ function AristotleLegacyHistory() {
             Aristotle's comprehensive system needed transmission across time, cultural translation across radically different civilizations, and integration with religious worldviews that his pagan philosophy never anticipated — and his errors needed eventual overthrow without losing his genuine insights.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -8231,6 +8651,11 @@ function AristotleLegacyHistory() {
 
 // ─── Part 15: Where the System Breaks: Modern Critiques and Unresolved Problems ───
 function WhereSystemBreaks() {
+  const CORE_ARGUMENT = `Aristotle's system breaks at multiple foundational points: modern physics eliminated natural places, inertia refuted continuous movers, and quantum mechanics violates substance metaphysics at the fundamental level. Evolutionary biology eliminated fixed species with real essences. The hard problem of consciousness — why does functional organization produce subjective experience? — remains unanswered by hylemorphism. The is-ought gap challenges his naturalistic ethics. Feminist critics show that his exclusions of women and slaves are not incidental but built into his core metaphysical categories (matter as passive-feminine, form as active-masculine). Internal tensions — between particular and universal substances, between hylemorphism and the immortal active intellect — were never resolved. Yet the 20th century revival shows that even after all these failures, something valuable remains: his questions, his balanced approach between observation and theory, and specific domains like ethics, rhetoric, and narrative theory where his insights still outperform alternatives.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#BE185D";
   const ACCENT_LIGHT = "#f472b6";
   const ACCENT_DIM = "#4a0a24";
@@ -8466,6 +8891,31 @@ function WhereSystemBreaks() {
             Aristotle's system claimed comprehensive systematic unity — his physics, metaphysics, biology, psychology, ethics, and politics were all connected through shared principles. But if those foundational principles (natural teleology, fixed essences, geocentric cosmos) are false, the entire structure is undermined. The question is not whether any part survives, but which parts — and whether what survives is still genuinely Aristotelian.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

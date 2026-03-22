@@ -1,4 +1,9 @@
 function FormMatterPotentialityActuality() {
+  const CORE_ARGUMENT = `Everything physical is a compound of form (organizing structure) and matter (underlying stuff), and change happens when matter loses one form and takes on another while persisting through the transition. This hylomorphism resolves Parmenides' paradox (change would require something from nothing) by showing that change moves from potential being to actual being — not from non-being. The seed is potentially a tree without being actually a tree; change actualizes that potential. Nothing, however, can move from potentiality to actuality on its own: actuality is metaphysically prior, and every chain of actualization must terminate in something that is pure actuality with no unrealized potential — Aristotle's Unmoved Mover.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#9D174D";
   const ACCENT_LIGHT = "#e05a8a";
   const ACCENT_DIM = "#3a0820";
@@ -106,6 +111,31 @@ function FormMatterPotentialityActuality() {
             Substance metaphysics described what things are in their stable state, but pre-Socratic philosophy had shown that change and persistence seemed logically incompatible: if something changes it becomes different, so how is it still the same thing?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

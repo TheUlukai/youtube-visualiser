@@ -1,4 +1,9 @@
 function LogicArchitectureOfThought() {
+  const CORE_ARGUMENT = `Before Aristotle, people reasoned and argued but no one had systematically identified the rules that make arguments valid rather than fallacious. Aristotle's invention of the syllogism — two premises yielding a conclusion by formal necessity — was revolutionary because validity depended on structure, not content. He mapped every valid syllogistic form, distinguished universal from particular statements, identified the principle of non-contradiction as an unprovable but indispensable foundation, and recognized that different contexts (demonstrative, dialectical, rhetorical) require different standards of proof. His logic is not merely a tool but a description of how rational thinking actually works.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#7C3AED";
   const ACCENT_LIGHT = "#a78bfa";
   const ACCENT_DIM = "#2d1a5e";
@@ -226,6 +231,31 @@ function LogicArchitectureOfThought() {
             Even Aristotle's empirical method required reasoning from observations to theories, but there were no systematic rules for distinguishing valid inferences from fallacious ones — anyone could argue anything without a formal check.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

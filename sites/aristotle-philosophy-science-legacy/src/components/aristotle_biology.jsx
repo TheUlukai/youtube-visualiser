@@ -1,4 +1,9 @@
 function AristotleBiology() {
+  const CORE_ARGUMENT = `While Aristotle's physics was his greatest failure, his biology was his greatest success. He personally dissected hundreds of species and accurately described dolphin and whale mammalian characteristics, shark placenta, ruminant stomachs, and chick embryonic development — achievements not surpassed for centuries. His theoretical framework organized life forms into a scala naturae (nutritive, sensitive, and rational soul levels), developed the first natural taxonomy based on multiple anatomical criteria, and explained biological features teleologically through the functions they serve. His concept of epigenesis — that organisms develop progressively from undifferentiated matter rather than growing from miniature preformed versions — was correct. Darwin eliminated fixed species and conscious teleology, but functional explanation and the focus on organizational form persist in contemporary biology.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#059669";
   const ACCENT_LIGHT = "#34d399";
   const ACCENT_DIM = "#052e1c";
@@ -216,6 +221,31 @@ function AristotleBiology() {
             The four-causes framework promised that final causes — purposes and functions — were essential to complete explanation, but it needed empirical grounding. What are the actual functions of actual biological structures in actual organisms? Without concrete observation, teleology remained abstract metaphysics rather than science.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

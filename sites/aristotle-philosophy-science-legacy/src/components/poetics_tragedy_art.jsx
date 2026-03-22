@@ -1,4 +1,9 @@
 function PoeticsTragedyArt() {
+  const CORE_ARGUMENT = `Aristotle defined poetry as mimesis — not photographic copying but representation that reveals patterns and possibilities, making poetry more philosophical than history because it deals with what might happen according to probability or necessity rather than what did happen. Tragedy, the highest form, imitates serious complete action through dramatic enactment to arouse pity and fear and produce catharsis of these emotions — though the meaning of catharsis (purification, purgation, or clarification) remains one of the most debated questions in literary theory. Plot is most important (above character, thought, diction, melody, and spectacle), and the ideal tragic plot combines reversal and recognition, featuring a hero who is neither wholly virtuous nor wholly vicious but falls through hamartia. These principles became the foundation of Western literary theory and still shape screenwriting, game narrative design, and narrative cognition research.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#7E22CE";
   const ACCENT_LIGHT = "#a855f7";
   const ACCENT_DIM = "#2d1254";
@@ -189,6 +194,31 @@ function PoeticsTragedyArt() {
             Aristotle's ethics argued that developing emotional capacities — especially appropriate pity and fear — is essential to virtue and flourishing, but it needed an account of how art engages and educates those emotions rather than merely indulging or corrupting them.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{

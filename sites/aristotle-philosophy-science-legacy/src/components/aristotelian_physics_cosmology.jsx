@@ -1,4 +1,9 @@
 function AristotelianPhysicsCosmology() {
+  const CORE_ARGUMENT = `Aristotle defined motion broadly as any change — of place, quality, quantity, or substance — and distinguished natural motion (toward a thing's natural place, requiring no external force) from violent motion (contrary to nature, requiring continuous external contact with a mover). Earthy objects fall because their nature seeks the center; fire rises because its nature seeks the periphery; the heavens made of quintessence move in perfect eternal circles. This system matches phenomenological experience but is wrong at the level of fundamental physics: there is no inertia, no concept of forces as causing acceleration rather than motion, and the cosmos is not geocentric, finite, or divided into sublunary and celestial realms with different laws. Galileo, Kepler, and Newton demolished every major claim.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const ACCENT = "#D97706";
   const ACCENT_LIGHT = "#F59E0B";
   const ACCENT_DIM = "#3a2a08";
@@ -256,6 +261,31 @@ function AristotelianPhysicsCosmology() {
             Aristotle's form-matter and potentiality-actuality framework needed a physical theory to explain how actual movers actualize potentials in the material world — a metaphysics of change required a corresponding physics of motion. The grand categories of hylomorphism demanded to know: what actually moves what, by what mechanism, according to what laws? Without a physics, metaphysics floated free of the world it claimed to explain.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
