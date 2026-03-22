@@ -194,6 +194,12 @@ const bgMap = {
 
 // ─── Part 1: The Copernican Revolution in Philosophy ───
 function KantRevolutionaryIntroduction() {
+  const ACCENT = "#1A6B8A";
+  const CORE_ARGUMENT = `For over two thousand years, philosophers debated whether we can know reality as it truly exists, whether God can be proved by reason, and whether beauty is objective or subjective — but Kant argued these questions were built on a false premise. The assumption was that the mind passively mirrors an independent reality; Kant showed instead that the mind actively constructs experience, shaping every aspect of what we perceive and know. Just as Copernicus replaced the assumption that the sun moves around the earth with the insight that the earth moves around the sun, Kant replaced the assumption that knowledge conforms to objects with the insight that objects conform to the structure of our cognition. This single reorientation dissolved ancient puzzles rather than solving them within their own terms. Beyond theory, Kant also argued that humans exist in two worlds simultaneously — as natural objects subject to physical laws and as moral agents capable of self-given rational principles — giving human life both profound dignity and genuine responsibility.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeView, setActiveView] = useState("old");
   const [hoveredConcept, setHoveredConcept] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -434,7 +440,32 @@ function KantRevolutionaryIntroduction() {
         </p>
       </div>
 
-      {/* MAIN VISUALIZATION */}
+              {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* MAIN VISUALIZATION */}
       <div style={{ maxWidth: 860, margin: "0 auto 32px auto" }}>
         <div style={{
           background: "rgba(10, 28, 40, 0.75)",
@@ -684,6 +715,12 @@ function KantRevolutionaryIntroduction() {
 
 // ─── Part 2: The Making of a Revolutionary Mind ───
 function MakingOfRevolutionaryMind() {
+  const ACCENT = "#5C4A1E";
+  const CORE_ARGUMENT = `Kant's mature philosophy was not a sudden invention but emerged from a decades-long negotiation between two rival traditions he had absorbed from his teachers: the rationalism of Leibniz and Wolff, which claimed all knowledge could be derived from pure reason, and the empiricism associated with Newton and Hume, which anchored knowledge in sensory experience. The event that crystallized Kant's break from both was his encounter with Hume's devastating argument that causation — the backbone of science — can never be rationally justified from experience alone. Rather than choosing sides, Kant recognized a false dilemma: knowledge requires neither pure reason alone nor pure experience alone, but an active synthesis of both. As a private tutor isolated from academic pressure, Kant had the time to develop this synthetic instinct, first visible in his very first published work which tried to reconcile Newton and Leibniz on the measurement of force rather than simply picking a winner. The Pietist emphasis on moral seriousness over doctrinal formalism also planted the seed of his later conviction that practical reason — not theoretical speculation — is the deepest expression of rationality.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeInfluence, setActiveInfluence] = useState(null);
   const [hoveredMoment, setHoveredMoment] = useState(false);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -870,6 +907,31 @@ function MakingOfRevolutionaryMind() {
             If the mind constructs experience, we need to understand where this constructive capacity came from and what philosophical tradition could possibly support such a radical claim. A mind that actively shapes reality rather than merely receives it — where does this idea come from? What pressures of thought forced it into existence?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{
@@ -1263,6 +1325,12 @@ function MakingOfRevolutionaryMind() {
 
 // ─── Part 3: The Critical Turn and the First Critique ───
 function CriticalTurnFirstCritique() {
+  const ACCENT = "#2D6A4F";
+  const CORE_ARGUMENT = `The central question of the Critique of Pure Reason sounds dry but conceals a revolution: how can we have knowledge that is both informative (synthetic) and universally necessary without being derived from experience (a priori)? Previous philosophers assumed these two properties were incompatible — necessary truths were always merely definitional, and genuinely new information always came from experience. Kant showed this assumption was wrong by pointing to mathematics: the judgment that 7 + 5 = 12 adds real information (12 is not contained in the separate concepts of 7 and 5) yet holds with absolute necessity for all possible experience. Similarly, the principle that every event has a cause is not a definition of 'event' but applies universally and necessarily to all experience. The only explanation, Kant argued, is that the mind actively imposes mathematical and causal structure on the raw material of sensation — these are contributions of the mind, not properties of things independently of minds. The result, which Kant called transcendental idealism, limited genuine knowledge to objects of possible experience while simultaneously securing that knowledge on an unshakeable foundation, replacing dogmatic metaphysics with critical self-examination of reason's own capacities.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [dragging, setDragging] = useState(null);
   const [placements, setPlacements] = useState({});
   const [feedback, setFeedback] = useState({});
@@ -1387,6 +1455,31 @@ function CriticalTurnFirstCritique() {
             Hume's skepticism had <span style={{ color: "#e8845a", fontStyle: "italic" }}>destroyed the rational foundations of causation and scientific knowledge</span> — we never observe causation itself, only constant conjunction of events. If we cannot justify our belief in cause and effect, the entire edifice of natural science collapses into mere habit. Neither pure reason (the rationalist hope) nor sensory experience (the empiricist hope) could provide a solid ground. Philosophy stood at an impasse: either accept radical skepticism, or find something neither camp had yet considered.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
       </div>
 
       {/* MAIN VISUALIZATION */}
@@ -1926,6 +2019,12 @@ function PlacedJudgment({ j, fb }) {
 
 // ─── Part 4: Space and Time as Forms of Intuition ───
 function SpaceTimeFormsOfIntuition() {
+  const ACCENT = "#7B5EA7";
+  const CORE_ARGUMENT = `Kant's Transcendental Aesthetic makes one of his most counterintuitive claims: space and time are not properties that things possess independently of any mind, but rather the forms through which our sensibility must represent any object whatsoever. Every object we perceive — the chair, the room, our own body — appears in space and time because our sensory faculty is structured to organize raw impressions spatially and temporally, not because space and time are 'out there' independently of us. The argument from mathematics is especially powerful: geometry works by constructing figures in space, not by analyzing abstract concepts; if space were just an empirical concept abstracted from experience, geometry could not have the universal and necessary validity it clearly possesses. This doctrine has a startling implication for physics — natural science gives us genuine knowledge, but only of how things must appear to beings with our kind of sensibility, not of what reality is like in itself. The most puzzling residue of this view is the 'problem of affection': if things in themselves are neither spatial nor temporal, how can they causally affect our senses to provide the sensory content that our minds then organize — since causation itself seems to be a temporal relation?`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
   const [spaceOn, setSpaceOn] = useState(true);
@@ -2148,6 +2247,31 @@ function SpaceTimeFormsOfIntuition() {
             If the mind structures experience through contributed forms, we need to know precisely what those forms are and how they operate — which requires analyzing the most basic structure of sensible experience before any conceptual thinking occurs. What is the architecture of raw sensibility itself, prior to thought? Unless we can answer this, the claim that the mind actively shapes experience remains abstract and ungrounded.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
       </div>
 
       {/* MAIN VISUALIZATION */}
@@ -2589,6 +2713,12 @@ function EchoItem({ title, body }) {
 
 // ─── Part 5: The Categories and the Logic of Experience ───
 function CategoriesLogicOfExperience() {
+  const ACCENT = "#1B4F72";
+  const CORE_ARGUMENT = `Having shown that space and time organize raw sensation into a structured manifold, Kant faces the deeper question of how that manifold becomes experience of objects — things that persist, cause effects, and have unified properties. His answer is the twelve categories: pure concepts of understanding derived from the twelve logical forms of judgment that traditional logic had identified. The derivation is ingenious: every act of judging brings representations under concepts according to logical forms (universal/particular, affirmative/negative, categorical/hypothetical, and so on), and Kant argued that corresponding to each logical form there must be a pure concept that enables the mind to apply that form to intuitions in experience. Causality, for instance, corresponds to the hypothetical form of judgment ('if...then...') and enables us to connect events in necessary succession rather than merely observing them in temporal sequence. The most famous principle derived from the categories is the Second Analogy: all alterations occur according to the law of cause and effect — not a truth discovered in experience, but a necessary condition for the very possibility of distinguishing objective temporal order (the ship moves downstream in a fixed sequence) from merely subjective association (I can scan a house's parts in any order).`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredRow, setHoveredRow] = useState(null);
   const [selectedRow, setSelectedRow] = useState(null);
   const [substanceEnabled, setSubstanceEnabled] = useState(true);
@@ -2878,6 +3008,31 @@ function CategoriesLogicOfExperience() {
             Establishing that space and time are forms of intuition still leaves open the question of how the spatial-temporal manifold is organized into coherent experience of distinct, enduring, causally-connected objects rather than remaining a chaotic stream of impressions. The senses deliver raw material; but what binds floating qualities into a ship, and what makes its downstream movement a necessary succession rather than a reversible dream?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -3233,6 +3388,12 @@ function CategoriesLogicOfExperience() {
 
 // ─── Part 6: The Transcendental Deduction and the Unity of Experience ───
 function TranscendentalDeductionUnity() {
+  const ACCENT = "#0D4C2E";
+  const CORE_ARGUMENT = `The Transcendental Deduction tackles an unprecedented philosophical problem: how can we prove that purely intellectual concepts — the categories — necessarily apply to objects given through sensibility? Kant's strategy turns on the insight that experience is not a passive reception of ready-made objects but an active synthesis performed by understanding according to a priori rules. The key move is connecting self-consciousness and objectivity: for any manifold of representations to count as mine at all, they must be capable of being united in a single consciousness — what Kant calls the transcendental unity of apperception, expressed in the formula 'I think' that must be able to accompany all my representations. But this unity is not given; it must be actively produced through synthesis. Crucially, the very same synthesis that produces the subjective unity of consciousness also produces objective reference to objects — when I experience a house, the act of connecting diverse representations as 'mine' is the same act that constitutes them as representations of an object. Objects of experience are therefore not independent things we subsequently think about through categories; they are constituted as objects through categorical synthesis, which is why categories must apply to any possible object of experience. The deduction also establishes a strict limit: categories apply only within the bounds of possible experience, not to things as they exist independently.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [rotationAngle, setRotationAngle] = useState(0);
@@ -3341,6 +3502,31 @@ function TranscendentalDeductionUnity() {
           Even granting that the mind possesses twelve categories, we face the <em>deduction problem</em>: without proof that these categories necessarily apply to experience, they could be mere <strong style={{ color: "#e8f5ee" }}>subjective habits of thought</strong> — psychological tendencies we happen to have, with no guaranteed relationship to the objective world. A skeptic could grant that we <em>always</em> think in terms of cause and effect, yet deny that causality is truly in nature. The categories would float free of reality, leaving knowledge without its foundation. This was Kant's self-described "most difficult" problem, the crisis that the Transcendental Deduction had to resolve.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{
@@ -3844,6 +4030,12 @@ function TranscendentalDeductionUnity() {
 
 // ─── Part 7: Phenomena, Noumena, and the Limits of Knowledge ───
 function PhenomenaNoumenaLimitsOfKnowledge() {
+  const ACCENT = "#4A1942";
+  const CORE_ARGUMENT = `The phenomena-noumena distinction is the most contested and consequential boundary in Kant's philosophy. Phenomena are not illusions but genuine objects of empirical knowledge — the tree you perceive is perfectly real as an object of experience — but they exist as spatial, temporal, causally-connected objects only within the framework of human cognition. Noumena, or things in themselves, designate whatever exists independently of all relations to finite minds; Kant insisted we must think this concept even though we can know nothing positive about it, because without it we might absolutize our own cognitive framework as the whole of reality. The distinction serves crucial functions: it explains why knowledge is genuine but limited, it preserves a realm in which freedom is possible (we are determined as phenomena but may be free as noumena), and it prevents science from overstepping into metaphysics. Two major interpretations have divided scholars: the 'two-aspect' view holds that phenomena and noumena are the same objects considered from different standpoints (myself as natural object vs. moral agent), while the 'two-object' view holds they are genuinely distinct entities. Each faces serious difficulties — most sharply the problem of affection: if things in themselves are non-temporal and non-causal, how can they causally affect our senses to provide the raw content of experience, since causation is itself a temporal category that applies only within the phenomenal realm?`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [probeY, setProbeY] = useState(60);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartY, setDragStartY] = useState(0);
@@ -3985,6 +4177,31 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
             The transcendental deduction proved that the categories of the understanding apply necessarily to all possible experience — but this very success creates a crisis. If the categories are conditions of <em>experience</em>, they cannot reach beyond experience to things-in-themselves. The machinery that makes knowledge possible is simultaneously the wall that confines it. A sharp, apparently uncrossable boundary opens between knowable appearances and an unknowable reality-in-itself, and philosophy must reckon honestly with what lies on each side.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
       </div>
 
       {/* Main Visualization */}
@@ -4385,6 +4602,12 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
 
 // ─── Part 8: The Antinomies and the Illusions of Pure Reason ───
 function AntinomiesIllusionsPureReason() {
+  const ACCENT = "#8B1A1A";
+  const CORE_ARGUMENT = `In the Transcendental Dialectic, Kant demonstrated that reason — unlike understanding — is not content with piecemeal empirical knowledge but drives relentlessly toward absolute totality and unconditional first principles. When reason attempts to satisfy this drive by going beyond all possible experience, it falls into the antinomies: four pairs of arguments where both a thesis and an antithesis seem to follow from rational principles yet flatly contradict each other. The first antinomy asks whether the world had a beginning in time; both 'yes' and 'no' seem provable. The third — philosophically the most momentous — asks whether natural causation is sufficient to explain everything or whether free causation is also necessary: the thesis needs freedom to explain the beginning of causal chains; the antithesis needs universal natural causation to preserve science. Kant's resolution differs for the two types: the 'mathematical' antinomies (first two) are resolved by showing that neither thesis nor antithesis is true, because the 'world as a whole' is not an object of possible experience and the question has no determinate answer. The 'dynamical' antinomies (third and fourth) allow both sides to be true simultaneously — natural determinism governs phenomena while freedom may hold in the noumenal realm — opening the philosophical space required for moral responsibility without violating scientific law. These antinomies are not accidental errors but necessary illusions arising from the very nature of reason, analogous to unavoidable perceptual illusions in sensibility.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeAntinomy, setActiveAntinomy] = useState(0);
   const [runState, setRunState] = useState('idle'); // idle, running, collided, resolved
   const [echosOpen, setEchosOpen] = useState(false);
@@ -4842,6 +5065,31 @@ function AntinomiesIllusionsPureReason() {
             Having established the limits of legitimate theoretical knowledge — phenomena only — a deeper question presses forward with urgency: what actually happens when reason ignores those limits and pursues the absolute totality it naturally and insatiably demands? The critical philosophy has drawn its boundaries, but boundaries demand testing. Reason does not rest content with conditioned experience; it drives toward the unconditioned, the total, the complete. This relentless drive is not an accident or a flaw — it is reason's very nature. And so we must witness what occurs when that nature overreaches, not to shame reason, but to demonstrate that the critical limits are necessary and not merely contingent restrictions.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
       </div>
 
       {/* Main Visualization */}
@@ -5205,6 +5453,12 @@ function AntinomiesIllusionsPureReason() {
 
 // ─── Part 9: The Transition to Practical Philosophy ───
 function TransitionToPracticalPhilosophy() {
+  const ACCENT = "#B5651D";
+  const CORE_ARGUMENT = `The Critique of Pure Reason ended by limiting theoretical knowledge — but this limitation was not a defeat; it was a strategic clearing of the ground. By showing that freedom cannot be disproved by theoretical reason (because causation applies only to phenomena), Kant opened a philosophical space in which practical reason could establish freedom as a practical reality. The parallel between theoretical and practical philosophy runs deeper than it might appear: just as understanding actively synthesizes the manifold of intuition to constitute objects of experience, practical reason actively determines the will according to principles it gives to itself — in both cases reason is not passive but productive, not discovering pre-existing truths but creating the very objects it thinks about. Kant had already sketched this vision in his shorter essay 'What Is Enlightenment?', defining enlightenment as humanity's emergence from self-imposed immaturity through the courage to use one's own understanding — a practical as much as a theoretical ideal. The crucial difference between the two employments of reason is that in the practical sphere, reason becomes constitutive rather than merely regulative: it does not just guide inquiry but actually determines what the will should do, giving moral agents access to their own noumenal nature in a way theoretical philosophy could only point at from the outside.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [echosOpen, setEchosOpen] = useState(false);
   const [phase, setPhase] = useState(0); // 0=initial, 1=failedBridges, 2=newBridge
   const [hoveredConcept, setHoveredConcept] = useState(null);
@@ -5366,6 +5620,31 @@ function TransitionToPracticalPhilosophy() {
             The critique of pure reason showed that freedom cannot be theoretically proven — it is merely <em>possible</em> as a noumenal concept. But morality requires that freedom be actually <em>real</em>, not just logically possible. Theoretical philosophy mapped the laws of nature, the limits of knowledge, the structure of experience — and in doing so, exhausted itself. It could not tell us what we ought to do, nor what we may hope for. A different kind of investigation is needed: one that turns inward, toward the legislative power of reason itself.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* ── 2. MAIN VISUALIZATION ── */}
         <div style={{
@@ -5760,6 +6039,12 @@ function TransitionToPracticalPhilosophy() {
 
 // ─── Part 10: The Categorical Imperative and the Foundation of Morality ───
 function CategoricalImperativeFoundationMorality() {
+  const ACCENT = "#1D5C8A";
+  const CORE_ARGUMENT = `The categorical imperative is Kant's attempt to articulate the single supreme principle that underlies all moral obligation — one that commands unconditionally rather than conditionally ('do X if you want Y'). He arrived at it by observing that ordinary moral consciousness already implicitly claims universal validity: if lying is wrong, it is not wrong just for me but for anyone in relevantly similar circumstances. The first formulation — act only on maxims you could will to become universal laws — makes this universalizability explicit. The false-promise example shows the test in action: if everyone promised falsely when in financial difficulty, the institution of promising would collapse and the very maxim that licensed the false promise would undermine itself. The second formulation — treat humanity, whether in your own person or in that of another, always as an end and never merely as a means — captures what the first formulation might miss: the wrongness of lying, manipulation, and coercion lies in treating persons as obstacles or tools rather than as rational agents capable of their own decisions, violating their dignity regardless of whether the maxim universalizes. Kant insisted these formulations are ultimately equivalent, two expressions of the same underlying principle: autonomous rational agency is both the source of moral law and the object of moral respect. Crucially, moral worth depends entirely on the principle from which an action is performed, not its consequences — an action performed from duty has moral worth even if it produces unfortunate results.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedExample, setSelectedExample] = useState(0);
   const [activePanel, setActivePanel] = useState(0);
   const [universalizeState, setUniversalizeState] = useState("idle");
@@ -6020,6 +6305,31 @@ function CategoricalImperativeFoundationMorality() {
             Practical reason must provide a moral principle that is universal and necessary for all rational beings regardless of desires or circumstances. Every previous attempt had stumbled: grounding morality in happiness collapses when the virtuous suffer; grounding it in social convention makes it contingent and parochial; grounding it in human nature makes it descriptive, not prescriptive. <strong style={{ color: "#e0d4c0" }}>How can we derive a principle that binds all rational beings unconditionally, without appealing to any empirical fact about what beings happen to want?</strong> This is not merely an academic puzzle — it is the question of whether morality is real or merely a useful fiction.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* Main Visualization */}
         <div style={{
@@ -6491,6 +6801,12 @@ function CategoricalImperativeFoundationMorality() {
 
 // ─── Part 11: Freedom, Autonomy, and the Good Will ───
 function FreedomAutonomyGoodwill() {
+  const ACCENT = "#3D5A2E";
+  const CORE_ARGUMENT = `Freedom is the absolute foundation of Kant's moral philosophy, but establishing it requires solving one of philosophy's hardest problems: how can human beings be free when every event in the natural world follows universal causal laws? Kant's solution draws directly on transcendental idealism: as phenomenal beings, human actions are indeed subject to causal determination — empirical psychology can in principle predict and explain behavior like any other natural phenomenon. But as noumenal beings — things in themselves — we exist outside the causal-temporal framework and possess transcendental freedom: not the ability to act randomly, but the capacity to act according to self-given rational principles. This dual standpoint is not a logical contradiction but a reflection of our genuine existence in two worlds simultaneously. The doctrine of autonomy expresses the positive side of this freedom: moral agents are not obeying commands from God, society, or nature, but legislating universal laws through their own rational nature. When I act according to the categorical imperative I am not following an external authority but following the law my own reason recognizes as universally valid. This self-legislation is the source of human dignity — a worth that cannot be traded for any price. The only thing unconditionally good is a good will: not one that always succeeds, but one that consistently chooses to act from recognition of duty rather than from inclination, social pressure, or expected consequences.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(50);
   const [heteronomyMode, setHeteronomyMode] = useState(false);
   const [choiceMade, setChoiceMade] = useState(null);
@@ -6870,6 +7186,31 @@ function FreedomAutonomyGoodwill() {
           The categorical imperative demands free rational agency — but human beings are also phenomenal creatures embedded in natural causality, subject to the same deterministic laws that govern falling stones. Kant's theoretical philosophy demonstrated only that freedom is <em>possible</em>, that it does not contradict natural science — not that it is <em>actual</em>. The pressure is acute: how can we affirm genuine moral freedom, the very foundation of moral responsibility, without contradicting the scientific account of a deterministic nature that leaves no room for uncaused causes?
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* Main Visualization */}
       <div style={{ margin: "32px 0 0 0" }}>
@@ -7112,6 +7453,12 @@ function FreedomAutonomyGoodwill() {
 
 // ─── Part 12: The Critique of Practical Reason and Moral Psychology ───
 function CritiquePracticalReasonMoralPsychology() {
+  const ACCENT = "#2C3E7A";
+  const CORE_ARGUMENT = `The Critique of Practical Reason does not merely expand the Groundwork but reworks it by addressing a problem the earlier text left open: how does pure practical reason actually motivate finite beings who have sensible as well as rational natures? Kant introduced respect as the unique moral feeling — unlike empirical feelings such as fear or desire, respect is produced a priori by reason itself when it recognizes the moral law, and it provides the emotional motive power needed to move finite rational beings to act against their inclinations. This solved a genuine puzzle: how can pure reason, which by itself produces only thoughts, produce action? Kant's answer is that it works through sensibility by generating its own distinctive feeling — not bypassing emotion but recruiting it. Kant distinguished three types of action: those contrary to duty, those in accord with duty but from inclination, and those from duty. Only the last possess moral worth — not because emotions and inclinations are evil, but because they cannot provide the universality and necessity morality requires. Kant did not demand that we act without feeling, only that moral motivation must be grounded in recognition of duty rather than in the contingent satisfaction of inclination. The work concluded with Kant's famous reflection on the starry heavens and the moral law within — two sources of wonder that together capture our dual nature as both natural creatures dwarfed by the cosmos and moral agents whose inner law elevates them above it.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedScenario, setSelectedScenario] = useState(0);
   const [choiceMade, setChoiceMade] = useState(null);
   const [showResult, setShowResult] = useState(false);
@@ -7286,6 +7633,31 @@ function CritiquePracticalReasonMoralPsychology() {
             Establishing that autonomy grounds morality still leaves the question of how pure reason can actually motivate a finite being who also has sensible inclinations. If duty requires suppressing all feeling, moral philosophy seems psychologically unrealistic — a cold, inhuman demand that no actual person could be moved by. The rational architecture of the moral law stands complete, yet the motivational bridge between abstract obligation and lived action remains unbuilt.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* LAYER 2: MAIN VISUALIZATION */}
         <div style={{
@@ -7637,6 +8009,12 @@ function CritiquePracticalReasonMoralPsychology() {
 
 // ─── Part 13: The Postulates of Practical Reason: God, Freedom, and Immortality ───
 function PostulatesGodFreedomImmortality() {
+  const ACCENT = "#6B4C9A";
+  const CORE_ARGUMENT = `Having established that morality demands we strive for the highest good — the perfect combination of virtue and proportionate happiness — Kant faced a devastating problem: this good seems impossible. Perfect virtue is beyond finite human capacity, and the natural world distributes happiness without regard for moral merit; the virtuous often suffer while the wicked prosper. If the highest good is both morally required and practically impossible, moral action becomes irrational. Kant's solution was the postulates of practical reason: not theoretical knowledge, not mere opinion, but a third form of rational assent — practical faith — grounded in moral obligation itself. Freedom must be postulated because without it moral obligation would be meaningless. Immortality must be postulated because perfect virtue requires unlimited time for moral progress — each person can always become more virtuous, and death cannot cut this progress short. God must be postulated as a moral world-ruler who possesses the power, knowledge, and justice to ensure that virtue is ultimately proportioned to happiness, since the natural order cannot guarantee this. These postulates do not extend theoretical knowledge — we do not thereby know that God exists the way we know that triangles have three sides — but they provide a practical certainty that is rationally required by our unconditional moral commitments. This approach transformed natural theology: instead of proving God through abstract metaphysical argument (which Kant had shown was impossible), religious belief is grounded in moral experience and practical necessity.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [mode, setMode] = useState("theoretical");
   const [activeDoor, setActivedoor] = useState(null);
   const [hoveredDoor, setHoveredDoor] = useState(null);
@@ -7894,6 +8272,31 @@ function PostulatesGodFreedomImmortality() {
             Moral psychology established that <em>respect</em> motivates moral action — but morality now faces an existential threat. If perfect virtue is impossible for finite beings, and the natural world never rewards virtue with happiness, then striving to be moral appears ultimately irrational. The highest good is commanded yet seemingly unachievable: we are bound by an obligation that points toward an impossible destination.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -8276,6 +8679,12 @@ function PostulatesGodFreedomImmortality() {
 
 // ─── Part 14: The Critique of Judgment: Bridging Nature and Freedom ───
 function CritiqueOfJudgmentBridgingNatureFreedom() {
+  const ACCENT = "#2A7D4F";
+  const CORE_ARGUMENT = `After establishing the domains of theoretical and practical philosophy, Kant recognized an enormous gap remaining between them: nature operates under causal laws while freedom operates under moral laws, and it is unclear how free moral action can occur within the causal natural world, or how the two domains form any unified picture of human existence. The Critique of Judgment bridges this gap by discovering a third faculty — reflective judgment — operating according to its own a priori principle: the purposiveness of nature. Unlike determinant judgment, which subsumes particulars under given universal concepts, reflective judgment seeks universal principles for given particulars, approaching objects as if they were designed for purposes even when no definite purpose can be specified. This faculty is essential for both aesthetic experience, where we encounter objects that seem perfectly organized without any assignable purpose (beautiful flowers), and for biological understanding, where organisms exhibit internal organization that seems to require purposive explanation beyond mechanical causation. The feeling of pleasure that arises in successful reflective judgment — the harmonious play of imagination and understanding — is not a mere subjective sensation but a signal that our cognitive faculties are operating in harmony with the object encountered. This purposiveness of nature suggests that nature is somehow adapted to human ways of thinking and feeling, providing a 'fortunate chance' that allows us to feel at home in the natural world despite our dual nature as both natural and moral beings.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [islandRisen, setIslandRisen] = useState(false);
   const [bridgesExtended, setBridgesExtended] = useState(false);
   const [hoveredBridge, setHoveredBridge] = useState(null);
@@ -8444,6 +8853,31 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
             The first two critiques established nature and freedom as separate realms governed by different principles — but free moral action must occur within nature. How can the free moral agent actually act in and on a natural world that operates by purely mechanical laws? How do the two realms connect? After completing his accounts of natural knowledge and moral reason, Kant faced an abyss: a rational being who is also a natural creature seemed to inhabit two entirely incompatible worlds simultaneously — a crisis demanding resolution.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -8793,6 +9227,12 @@ function CritiqueOfJudgmentBridgingNatureFreedom() {
 
 // ─── Part 15: Aesthetic Judgment and the Beautiful ───
 function AestheticJudgmentBeautiful() {
+  const ACCENT = "#D4A017";
+  const CORE_ARGUMENT = `Kant's analysis of aesthetic judgment resolves what he called the antinomy of taste: judgments of beauty seem to be both personal (since we make claims about our own response) and universal (since we expect others to agree and consider them mistaken if they don't). Previous theories dissolved this tension by choosing one side — either beauty is objective (a property of things) or subjective (a matter of preference) — but Kant showed that aesthetic judgment is genuinely both. The four moments reveal its distinctive logic: aesthetic satisfaction is disinterested (it abstracts from whether the object exists or serves any purpose), universally communicable (not based on concepts but on an assumption of shared cognitive structure), formally purposive without purpose (the object seems perfectly organized without any assignable end, as when a flower seems to display perfect form without 'doing' anything), and exemplarily necessary (beautiful objects serve as models that guide judgment without determining responses mechanically). The resolution of the antinomy is that aesthetic universality is not logical universality based on concepts and proofs, but is grounded in the assumption that all humans share the same basic cognitive structure — when our faculties of imagination and understanding harmonize in the presence of a beautiful object, we assume others' faculties would harmonize similarly. This makes taste both genuinely non-provable and genuinely universal, not a mere expression of private preference.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedObject, setSelectedObject] = useState(0);
   const [beautyMode, setBeautyMode] = useState("free");
   const [comparisonMode, setComparisonMode] = useState(false);
@@ -9027,6 +9467,31 @@ function AestheticJudgmentBeautiful() {
           The third Critique promised a mediating principle between nature and freedom — but what precisely is the feeling of purposive harmony in aesthetic experience, and how can it be both subjectively felt and validly claimed for all rational beings without reducing to either mere personal preference or objective property? This is no academic puzzle: it cuts to the heart of whether beauty is something we share as rational beings or merely something each mind privately enjoys.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* Main Visualization */}
       <div style={{
@@ -9464,6 +9929,12 @@ function AestheticJudgmentBeautiful() {
 
 // ─── Part 16: The Sublime and the Limits of Imagination ───
 function SublimeLimitsOfImagination() {
+  const ACCENT = "#4A2060";
+  const CORE_ARGUMENT = `Unlike beauty, which involves harmony between our cognitive faculties and the object encountered, the sublime involves a productive failure: standing before a vast mountain range or a violent storm, our imagination fails to comprehend the magnitude or power encountered — and this failure is initially painful. But the pain swiftly transforms into a higher satisfaction when we realize that what overwhelms imagination reveals the presence of reason's capacity to think infinities and absolutes that imagination cannot sensibly represent. In the mathematical sublime, the failure to grasp a vast quantity as a perceptual whole discloses reason's concept of infinity — the starry sky cannot be sensibly unified, but we can think the concept of infinite space with perfect clarity. In the dynamical sublime, the physical might of nature that dwarfs our bodies reveals our moral might: we discover that we can maintain dignity and duty in the face of overwhelming physical force, demonstrating that we are greater than nature in our capacity for moral self-determination even though we are smaller in physical terms. The sublime therefore provides a kind of aesthetic confirmation of the very claims about noumenal human nature that theoretical philosophy could only show to be possible: we directly experience our capacity to transcend natural limitations through reason and morality. The sublime object serves as a 'negative presentation' of the super-sensible — it points beyond itself toward what cannot be sensibly exhibited but can be rationally thought.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedScene, setSelectedScene] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [phase, setPhase] = useState('idle'); // idle, expanding, failing, rising
@@ -9680,6 +10151,31 @@ function SublimeLimitsOfImagination() {
             Beauty reveals harmonious purposiveness, but some of the most profound aesthetic experiences involve not harmony but overwhelming magnitude and power. An account of aesthetic experience limited to beauty seems incomplete — what is the experience of confronting something that exceeds all human scale and overwhelms our faculties?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -10159,6 +10655,12 @@ function SublimeLimitsOfImagination() {
 
 // ─── Part 17: Genius, Art, and Aesthetic Ideas ───
 function GeniusArtAestheticIdeas() {
+  const ACCENT = "#C0392B";
+  const CORE_ARGUMENT = `Natural beauty presents us with objects that seem perfectly organized without any human intention behind them — but artworks are obviously made by people with purposes. How can art achieve the appearance of natural purposiveness that aesthetic judgment requires? Kant's answer is genius: an innate mental disposition through which nature gives the rule to art, enabling artists to create works that seem to follow their own internal laws rather than external intentions or learned techniques. Genius is defined by four features: it is original (no pre-existing rules determine its products), exemplary (its works become models for others without being merely copied), unable to explain its own processes scientifically, and limited to fine art (science follows logical rules, not aesthetic ones). The most original theoretical contribution here is the concept of aesthetic ideas: representations of imagination that give much to think about without any concept being adequate to them. When a poet depicts an eagle, the aesthetic attributes — associations with power, freedom, nobility — expand meaning beyond the mere logical concept of eagle in ways that resist conceptual formulation. A Bach fugue creates temporal experiences that seem meaningful without being translatable into words. This capacity to communicate more than literal content is what gives art its distinctive power to engage both emotional and intellectual responses simultaneously. Kant also argued that art and aesthetic experience cultivate moral capacities indirectly: by developing disinterested appreciation and imaginative understanding of human possibilities, aesthetic education prepares us for moral judgment without directly teaching moral lessons.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeLayer, setActiveLayer] = useState({ intention: true, skill: true, aesthetic: true });
   const [hoveredLayer, setHoveredLayer] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -10435,6 +10937,31 @@ function GeniusArtAestheticIdeas() {
             If natural beauty reveals purposiveness without purpose, artworks pose a problem: they are obviously created by humans with intentions and purposes. How can human-made objects achieve the appearance of natural purposiveness that aesthetic judgment requires? And how does artistic communication convey meanings beyond literal content?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -10693,6 +11220,12 @@ function GeniusArtAestheticIdeas() {
 
 // ─── Part 18: Teleology and the Purposiveness of Nature ───
 function TeleologyPurposivenessOfNature() {
+  const ACCENT = "#27AE60";
+  const CORE_ARGUMENT = `The second half of the Critique of Judgment addresses a problem that troubled 18th-century science: living organisms seem to exhibit purposive organization that cannot be fully captured by the mechanical models successful in physics and chemistry. Kant defined a natural purpose as a being that is both cause and effect of itself: in a tree, leaves enable photosynthesis, which nourishes roots, which support the trunk, which produces more leaves — a circular causality where each part exists for the sake of the other parts and the whole, and the whole for the parts. This self-organizing circularity is absent from mechanical systems, where causes straightforwardly precede and produce effects. Kant's solution was to make teleological judgment regulative rather than constitutive: we cannot determine objectively that organisms really are natural purposes (this would require knowledge of things in themselves), but we must judge them as if they were in order to investigate and understand their distinctive properties. This regulative teleology supplements mechanical explanation without replacing it — scientists should pursue mechanical accounts as far as possible, but when mechanical models prove inadequate, teleological concepts guide further investigation. The antinomy of teleological judgment encapsulates the tension: both 'everything can be explained mechanically' (required for scientific methodology) and 'some things cannot be explained mechanically alone' (required for understanding organisms) seem necessary; the resolution is that these are different levels of judgment serving different functions, not competing claims about the same domain.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedClockPart, setSelectedClockPart] = useState(null);
   const [selectedTreePart, setSelectedTreePart] = useState(null);
   const [mechanismOn, setMechanismOn] = useState(true);
@@ -10840,6 +11373,31 @@ function TeleologyPurposivenessOfNature() {
             The aesthetic analysis showed beauty and genius in human experience, but the third Critique must also explain how we understand living organisms — which exhibit organization, self-reproduction, and adaptive behavior that seem to resist purely mechanical explanation yet cannot invoke supernatural forces without violating scientific methodology. A clock yields its secrets to physics alone. A tree that repairs its own bark, grows toward light, and reproduces its form does not. Something is missing from the mechanical picture, and filling that gap without abandoning rigorous science is the urgent philosophical demand this section must answer.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
       </div>
 
       {/* 2. MAIN VISUALIZATION */}
@@ -11575,6 +12133,12 @@ function TeleologyPurposivenessOfNature() {
 
 // ─── Part 19: Political Philosophy and the Ideal of Perpetual Peace ───
 function PoliticalPhilosophyPerpetualPeace() {
+  const ACCENT = "#2980B9";
+  const CORE_ARGUMENT = `Kant's political philosophy applies the categorical imperative and the concept of human dignity to the organization of states and their relations. The foundation is an innate right to freedom: every human being possesses by nature independence from the constraining will of others, insofar as this independence can coexist with the freedom of everyone else according to a universal law — a political application of the formula of universal law directly. From this, Kant derived that the republican constitution is the only form of government consistent with human dignity: it requires freedom for all members as human beings, equality before the law, and citizen participation in legislation. The most forward-looking application is 'Toward Perpetual Peace': nations in a state of nature with respect to each other are in a condition of inevitable conflict, just as individuals without civil law. Just as individuals have a duty to enter civil society, nations have a duty to form a federation of free states that resolves disputes through law rather than war. Three powerful forces support progress toward this federation: republican constitutions make war less likely because citizens who bear its costs must approve it; commercial interdependence makes war economically costly for all parties; and the spread of enlightenment increases mutual understanding. Kant insisted this is not a pious hope but a practical possibility with identifiable causal drivers. Cosmopolitan right supplements this by protecting individuals' rights to travel and peaceful commerce across national boundaries, prohibiting colonial exploitation while stopping short of requiring open borders.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeArticles, setActiveArticles] = useState({
     republican: false,
     federation: false,
@@ -11723,6 +12287,31 @@ function PoliticalPhilosophyPerpetualPeace() {
             Having established that human beings are autonomous moral agents with unconditional dignity, we need to determine what political institutions and international arrangements are consistent with this dignity — and how moral principles can be realized in the actual historical world of competing states and powers. The moral law commands universally, but states wage war, dominate one another, and treat foreign persons as threats. The gap between the moral ideal and political reality demands an answer that is both principled and practical.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
       </div>
 
       {/* MAIN VISUALIZATION */}
@@ -12181,6 +12770,12 @@ function PoliticalPhilosophyPerpetualPeace() {
 
 // ─── Part 20: Religion Within the Boundaries of Reason ───
 function ReligionWithinBoundariesOfReason() {
+  const ACCENT = "#884EA0";
+  const CORE_ARGUMENT = `Kant's philosophy of religion does not dismiss religious belief but radically regrounds it. Having shown in the first Critique that theoretical arguments for God's existence fail, and having established in the second Critique that God's existence is a postulate of practical reason, Kant now asks how traditional religious doctrines and institutions relate to this morally grounded faith. The central problem is radical evil: all finite rational beings have a propensity to subordinate moral duty to self-love when they conflict — not as inherited guilt but as a universal tendency to rationalize selfish behavior. Overcoming this requires not gradual reform but a revolution in moral disposition, a complete reorientation of the fundamental maxim governing one's choices. Religion addresses this through hope for divine grace that supplements but cannot replace human moral effort. Traditional Christian doctrines are interpreted as moral symbols rather than historical facts: the incarnation represents the ideal of moral perfection as an archetype for human development; the atonement symbolizes the possibility that past failures can be overcome through genuine moral conversion; the resurrection represents hope that moral goodness ultimately triumphs over corruption. The test for any religious belief is practical: does it promote genuine virtue, respect for human dignity, and moral progress? Or does it undermine moral motivation, justify oppression, or encourage despair? This criterion makes religious truth universally accessible through moral experience rather than contingent on particular historical revelations, pointing toward what Kant called the invisible moral church — a community of all persons committed to virtue regardless of their specific religious affiliations.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(50);
   const [selectedDoctrine, setSelectedDoctrine] = useState(null);
   const [invisibleChurch, setInvisibleChurch] = useState(false);
@@ -12276,6 +12871,31 @@ function ReligionWithinBoundariesOfReason() {
             The postulates of practical reason established that moral action requires faith in freedom, immortality, and God — but how does this connect to actual religious traditions and their historical revelation claims? Can traditional religious faith be preserved in a critical philosophy that has ruled out theoretical metaphysics? The gap between abstract moral postulates and the lived richness of concrete religion — its stories, rituals, communities, and particular saviors — demanded a new kind of philosophical translation.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -12697,6 +13317,12 @@ function ReligionWithinBoundariesOfReason() {
 
 // ─── Part 21: The Unity of the Critical System and Kant's Legacy ───
 function UnityCriticalSystemKantsLegacy() {
+  const ACCENT = "#E8A020";
+  const CORE_ARGUMENT = `The three Critiques are not three separate works but a single unified investigation of human reason in its three employments — theoretical, practical, and aesthetic/teleological — each addressing what reason can achieve and where it must recognize its limits. The systematic unity reflects Kant's deeper conviction that reason itself is fundamentally unified: whether we are seeking knowledge, making moral choices, or appreciating beauty, we employ the same basic capacity for autonomous self-legislation — bringing the manifold under unity through principles we give ourselves rather than receive passively from outside. The four questions that organize the system — What can I know? What ought I to do? What may I hope? What is the human being? — are not merely academic questions but the fundamental questions of any examined human life, and Kant's answers to each are internally connected: the limits of knowledge make room for moral faith; moral faith requires practical postulates; reflective judgment mediates between the natural and moral domains. Perhaps Kant's most enduring contribution is the conception of human dignity grounded in rational autonomy — the capacity for self-legislation that makes every rational being an end in itself — which has become foundational for human rights law, democratic theory, medical ethics, and international governance. The critical method itself remains a philosophical paradigm: instead of beginning with assumptions about reality and deriving knowledge, begin with analysis of the actual capacities and limits of the faculty you are employing. This combination of rational confidence in reason's genuine achievements and intellectual humility about its necessary limits provides a model for approaching complex problems that demand both rigor and recognition of uncertainty.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedWing, setSelectedWing] = useState(null);
   const [hoveredWing, setHoveredWing] = useState(null);
   const [hoveredFigure, setHoveredFigure] = useState(null);
@@ -13087,6 +13713,31 @@ function UnityCriticalSystemKantsLegacy() {
             or has history rendered it a museum exhibit, impressive but inert?
           </p>
         </div>
+
+                {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* MAIN VISUALIZATION */}
         <div style={{
