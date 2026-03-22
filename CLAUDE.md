@@ -62,12 +62,65 @@ not just a static description of the idea itself.
 
 ### Rules
 - `textAlign: "center"` on the outer wrapper — never left-justified
-- Order is always: **Header → The Problem → Main Visualization → Key Concepts → The Difficulty → Real-World Echoes → Footer**
+- Order is always: **Header → The Problem → The Core Idea → Main Visualization → Key Concepts → The Difficulty → Real-World Echoes → Footer**
 - The Problem panel must come **after** the header, never before it
 - `h1` uses `fontWeight: "normal"` and `clamp()` font size for mobile scaling
 
+## Required: Core Idea Panel
+**Every section MUST include a "The Core Idea" panel** immediately after The Problem panel (or immediately after the Header for the first section where The Problem is omitted). This is non-negotiable.
+
+### Content
+Source: the `core_argument` value from `sections.json`, hardcoded as a `CORE_ARGUMENT` constant at the top of the component. If `core_argument` is falsy, omit the entire panel.
+
+Split into lead sentence and body using a sentence-boundary regex with a 30-character minimum lead length to avoid misfiring on abbreviations:
+
+```js
+const CORE_ARGUMENT = "...";
+const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+const coreIdBody = splitMatch ? splitMatch[2] : "";
+```
+
+### Implementation pattern
+```jsx
+{/* The Core Idea */}
+{CORE_ARGUMENT && (
+  <div style={{
+    background: "rgba(0,0,0,0.3)",
+    border: `1px solid ${ACCENT}25`,
+    borderRadius: 8,
+    padding: "16px 20px",
+    marginBottom: 16,
+  }}>
+    <div style={{
+      fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+      color: ACCENT, marginBottom: 10,
+    }}>
+      The Core Idea
+    </div>
+    <p style={{
+      fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+      margin: coreIdBody ? "0 0 8px" : 0,
+    }}>
+      {coreIdLead}
+    </p>
+    {coreIdBody && (
+      <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+        {coreIdBody}
+      </p>
+    )}
+  </div>
+)}
+```
+
+### Rules
+- Full border (`border: 1px solid ${ACCENT}25`) — NOT a left-border like Problem/Difficulty; this is expository, not a narrative tension panel
+- Lead sentence in `#e8e0d4`, body in `#a09898`
+- `CORE_ARGUMENT` constant declared alongside the section's other string constants at the top of the component
+- For the first section (no Problem panel): Core Idea appears immediately after the Header block
+
 ## Required: Consistent Panel Width
-**Every panel in a section must appear the same visual width.** The Problem, Main Visualization, Key Concepts, The Difficulty, and Real-World Echoes panels must all line up at the same left and right edges.
+**Every panel in a section must appear the same visual width.** The Problem, The Core Idea, Main Visualization, Key Concepts, The Difficulty, and Real-World Echoes panels must all line up at the same left and right edges.
 
 ### Pattern
 The standard approach is a single inner wrapper around the entire section content:
@@ -75,6 +128,7 @@ The standard approach is a single inner wrapper around the entire section conten
 <div style={{ maxWidth: 860, margin: "0 auto" }}>
   {/* Header */}
   {/* The Problem */}
+  {/* The Core Idea */}
   {/* Main Visualization */}
   {/* Key Concepts */}
   {/* The Difficulty */}
@@ -333,6 +387,8 @@ visualization under `sites/`, build it to `docs/`, and update the site index.
 - **Missing section footer** — every section must end with a centred `Part N of M — Series Title` footer div as the very last element inside the inner `maxWidth` wrapper. Common failure modes: (1) the footer is absent entirely; (2) the series name varies between sections (e.g. "Spinoza's System" in one and "Spinoza's Philosophical System" in another); (3) the footer is placed outside the inner wrapper, making it full-width and misaligned. Fix by inserting the standard footer div (see "Required: Section Footer") as the last child of the inner wrapper, and ensure the series name is identical across all sections.
 
 - **Missing or misplaced section header** — every section must open with a centred `Part N of M` / `<h1>` / subtitle block placed *before* The Problem panel. Two failure modes to check: (1) the header block is absent entirely — the section jumps straight into The Problem or the main visualization; (2) The Problem panel renders above the `<h1>`, making the heading appear mid-page. Fix by inserting the standard header block (see "Required: Section Header Block") as the very first element inside the section's root div, and moving any misplaced Problem panel to after it.
+
+- **Missing or misplaced Core Idea panel** — every section must include a "The Core Idea" panel immediately after The Problem panel (or after the Header for the first section). Common failure modes: (1) panel absent entirely; (2) panel placed after the Main Visualization instead of before it; (3) `CORE_ARGUMENT` constant present but empty string, causing the guard to hide the panel. Fix by adding the standard Core Idea panel (see "Required: Core Idea Panel") with the `core_argument` value from `sections.json`.
 
 - **Left-justified section header** — a header block exists but its outer `<div>` lacks `textAlign: "center"`, so the Part label, `<h1>`, and subtitle all anchor to the left edge of the content area. On wide viewports this is immediately visible as misalignment compared to centred sections. Fix by wrapping the three header elements in `<div style={{ textAlign: "center", marginBottom: 32 }}>`.
 
