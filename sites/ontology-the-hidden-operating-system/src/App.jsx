@@ -306,6 +306,12 @@ const bgMap = {
 
 // ─── Part 1: The Hidden Operating System ───
 function OntologyIntroduction() {
+  const ACCENT = "#4a9fd4";
+  const CORE_ARGUMENT = `Ontology asks questions so basic they sound almost childish—whether objects exist independently of experience, whether shared properties are real things, whether the past persists—yet every scientific theory, legal system, and piece of software quietly depends on answers to them. A physicist modeling particles already assumes something about what a particle is; a database architect decides what counts as an entity versus a relation; a court ruling on corporate liability assumes whether a group can act. The 2010 Deepwater Horizon disaster made this visceral: courts had to decide whether BP, the corporation, could cause an event—not whether specific engineers made errors, but whether the company itself was the kind of thing that does things—and whatever answer the court gave rippled through liability law for decades. The most abstract question in philosophy had become a practical emergency. Ontology is the hidden operating system underneath every other discipline.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activePanel, setActivePanel] = useState(null);
   const [hoveredFoundation, setHoveredFoundation] = useState(false);
   const [echoesOpen, setEchoesOpen] = useState(false);
@@ -441,6 +447,31 @@ function OntologyIntroduction() {
             Ontology is the foundational discipline underlying every science, legal system, and technology — asking what it means for anything to exist at all.
           </p>
         </div>
+
+                {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -909,6 +940,11 @@ function OntologyIntroduction() {
 
 // ─── Part 2: Parmenides and the Shock of Being ───
 function ParmenidesBeing() {
+  const CORE_ARGUMENT = `Before Parmenides, Greek thinkers debated what the universe was made of—water, air, fire—sharing the assumption that change was real and needed explaining. Parmenides attacked this assumption with pure logic: for anything to come into existence it must come from non-existence, but nothing has no properties and no capacity to produce anything, so nothing cannot give rise to something. Run the logic the other direction and destruction is equally impossible, since nothing can arrive at a destination that is not there. The conclusion is that what exists has always existed, change is an illusion, and reality is one, unchanging, and eternal. When a person tosses a log on a campfire and watches it turn to ash, Parmenides says that apparent transformation is a trick of the senses. This same structural pattern appears in modern conservation laws—energy cannot be created or destroyed, only transformed—suggesting that underneath all apparent flux, something fundamental persists.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [view, setView] = useState("experiential");
   const [hoveredFrame, setHoveredFrame] = useState(null);
   const [expandedConcept, setExpandedConcept] = useState(null);
@@ -1069,6 +1105,31 @@ function ParmenidesBeing() {
             The ground shifts beneath philosophy's feet.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${accent}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: accent, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -1438,6 +1499,12 @@ function ParmenidesBeing() {
 
 // ─── Part 3: Heraclitus and the Crisis of Change ───
 function HeraclitusFlux() {
+  const ACCENT = "#0D7377";
+  const CORE_ARGUMENT = `While Parmenides argued nothing ever changes, Heraclitus working at almost the same time argued the opposite: change is not an illusion but the fundamental nature of reality, and permanence is the illusion. His river image makes the point precisely—the water flowing past your ankles is not the water that was there a moment ago, yet we call it the same river; the river is not a thing but a pattern of continuous flow. Extended to the human body, which replaces nearly all its cells over years, the implication is that you are not a stable persisting object but a process, a pattern maintaining its shape while its material cycles through. Heraclitus did not claim this flux was chaos: underlying it was the logos, a rational pattern of ordered change that fire exemplified—always burning, always transforming, yet maintaining recognizable structure. Modern weather simulation faces exactly this choice: does the model capture the state at an instant, or does it treat the dynamics as primary and derive states from them? These are two fundamentally different design choices with different predictive consequences.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
   const [sliderValue, setSliderValue] = useState(50);
@@ -1705,6 +1772,31 @@ function HeraclitusFlux() {
           Parmenides wielded pure logic to a devastating conclusion: change is impossible, plurality is illusion, and the world of observation is a grand deception. His proof seemed airtight — and yet the river flows, the seasons turn, you age, fires consume, children are born. Heraclitus confronts this head-on, refusing to discount the evidence of a changing world. If the logic contradicts observation, perhaps it is the logic that has gone wrong. He takes observation as primary and builds an ontology from there — one where change is not the problem to be explained away, but the very fabric of what exists.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* Main Visualization */}
       <div style={{
@@ -1931,6 +2023,11 @@ function HeraclitusFlux() {
 
 // ─── Part 4: Plato's Forms and the World Behind the World ───
 function PlatosForms() {
+  const CORE_ARGUMENT = `Plato refused to choose between Parmenides and Heraclitus, arguing both were right but about different things. His entry point was a puzzle from geometry: a geometer drawing a circle on papyrus knows what a perfect circle is, yet the drawn circle is imperfect—the knowledge cannot derive from the drawing, so it must come from acquaintance with a perfect circle itself existing in a separate, eternal realm he called a Form. The physical drawing participates in or imitates the Form of the circle, which is unchanging and fully real in Parmenides' sense; the drawing is imperfect and changing in Heraclitus' sense. This two-tier structure extended to every general quality: when two different sunsets are both beautiful, what they share is not merely a word but the Form of beauty that both imperfectly reflect. A modern analogy is the law of gravity: the law is the same everywhere and at all times, like a Platonic Form, while every particular falling apple is a variable, imperfect embodiment of it. However, the word 'participation' is a metaphor, not an explanation, and the third man problem shows that positing a Form to explain shared qualities generates an infinite regress of further Forms rather than a foundation.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredForm, setHoveredForm] = useState(null);
   const [selectedForm, setSelectedForm] = useState(null);
   const [thirdManActive, setThirdManActive] = useState(false);
@@ -2044,6 +2141,31 @@ function PlatosForms() {
           evidence of change.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${accent}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: accent, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{
@@ -2496,6 +2618,12 @@ function PlatosForms() {
 
 // ─── Part 5: Aristotle Brings Ontology Down to Earth ───
 function AristotleSubstance() {
+  const ACCENT = "#B5651D";
+  const CORE_ARGUMENT = `Aristotle's decisive objection to Plato was that if the Form of horse is what makes each horse a horse, the Form must contain everything essential to being a horse, yet the Form of horse does not eat, breathe, or gallop. Something that lacks all the activities of a horse cannot explain horses; the explanatory entity must be in the horse, not floating in a separate realm. This led Aristotle to substance: a concrete individual thing—this particular oak tree, this particular person—that exists in its own right and is the primary reality. A red apple on a counter illustrates the point: the redness does not float freely but exists as the redness of this apple; remove the apple and the redness has nowhere to be. Each substance has two inseparable aspects, matter (the bronze of a statue) and form (the shape organizing it), which are two aspects of one single reality distinguishable in thought but not in fact. This framework explains change: when a seed becomes a tree, the matter persists while the form changes, satisfying both Heraclitus (real change occurs) and Parmenides (something continuous persists). Aristotle's ten categories—substance as primary, then quantity, quality, relation, and others—formed the first comprehensive map of being. Relational databases instantiate this framework directly: the customer record is the substance, and name, age, and address are accidents attached to it.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [splitAmount, setSplitAmount] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState(null);
@@ -2687,6 +2815,31 @@ function AristotleSubstance() {
             Plato's participation relation is a metaphor, and the Third Man regress shows that separating Forms from physical things creates an infinite explanatory chain with no foundation. If a horse participates in the Form of Horse, and they share something in common, we need a third Form to explain that sharing — and then a fourth, and so on, forever. The explanation never lands. The ground keeps retreating.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
       </div>
 
       {/* MAIN VISUALIZATION */}
@@ -3336,6 +3489,12 @@ function AristotleSubstance() {
 
 // ─── Part 6: The Medieval War Over Universals ───
 function MedievalUniversals() {
+  const ACCENT = "#8B7355";
+  const CORE_ARGUMENT = `Aristotle's tension between universal form and individual substance became, in medieval Europe, the single most divisive debate in philosophy: when two horses are both horses, does the universal 'horse' exist as a real thing in the world, or is it merely a word, or perhaps a mental concept? The answer is not a matter of linguistic preference—it determines the fundamental structure of reality. William of Ockham, a 14th-century English friar, provided nominalism's most forceful defense: only individuals exist, and 'horse' is a term we apply because the individuals resemble each other; no single shared nature sits inside each horse, and invoking one multiplies entities beyond what the phenomena require—Ockham's razor cuts it away. Peter Abelard's conceptualism tried a middle path: universals exist as mental acts of grouping grounded in real resemblance, neither floating in the world nor mere arbitrary words. The debate replays itself today in biology: is a species a real natural kind that organisms belong to regardless of whether anyone studies it, or a convenient grouping imposed on continuous genetic variation? This is not academic, because conservation laws protect species, and whether a population counts as a distinct species can determine whether it lives or dies.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activePosition, setActivePosition] = useState(null);
   const [hoveredHorse, setHoveredHorse] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -3498,6 +3657,31 @@ function MedievalUniversals() {
           Aristotle's hylomorphism placed universal forms inside individual substances — 'horseness' in each horse, not floating in a Platonic heaven. But this left a sharp thorn: if two horses share the very same universal form, <em>what makes them two</em>? What principle of individuation keeps Bucephalus and Rocinante distinct rather than collapsing into a single horse-thing? Medieval philosophers inherited this unresolved pressure and fought over it for centuries.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div
@@ -3917,6 +4101,12 @@ function MedievalUniversals() {
 
 // ─── Part 7: Aquinas and the Gap Between Essence and Existence ───
 function AquinasEssenceExistence() {
+  const ACCENT = "#2E5B8A";
+  const CORE_ARGUMENT = `Aristotle's ontology was a system of what things are—classifying substances, mapping properties into categories—but it treated the existence of things as almost self-evident. Aquinas identified a profound gap: knowing what something is does not tell you whether it exists. The case of the unicorn makes this vivid: you can describe a unicorn in perfect detail, specify its essence completely, and yet that specification does not make one appear in the stable. Essence and existence are two entirely separate matters; you can have the first without the second. Aquinas argued this was not merely a feature of mythical creatures: in every created thing, what it is and the fact that it is are two real components combined. A horse's essence does not contain its own existence the way a triangle's essence contains having three sides; a horse could perfectly well not exist. If no thing's essence explains its own existence, something outside must supply that existence, pointing toward a being in which essence and existence are identical—God. This distinction appeared independently in 20th-century logic: Bertrand Russell's paradox showed that some perfectly coherent definitions describe things that cannot exist, confirming that the gap between what something would be and whether it is is central to the foundations of mathematics. In product design the same gap separates specification from prototype: many specifications that look coherent on paper turn out to be unrealizable.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
   const [draggedItem, setDraggedItem] = useState(null);
@@ -4103,6 +4293,31 @@ function AquinasEssenceExistence() {
             Aristotle's system explained what things are in rich detail — substance, form, matter, the four causes — yet treated their existence as nearly self-evident. That a thing should simply be present in the world was never pressed as a question. The system was eloquent about essence and silent about existence. This silence became intolerable: if we can fully specify what something is without it existing, the gap between definition and actuality must be faced directly. Why does anything exist at all, rather than nothing?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -4495,6 +4710,12 @@ function AquinasEssenceExistence() {
 
 // ─── Part 8: Descartes Splits Reality in Two ───
 function DescartesDualism() {
+  const ACCENT = "#C0392B";
+  const CORE_ARGUMENT = `Descartes resolved to doubt everything that could possibly be doubted—the evidence of his senses, the existence of the physical world, even the reliability of reasoning—and found one thing that survived: the very act of doubting proved that something was doing the doubting. 'I think, therefore I am' certified the existence of a thinking thing, a mind, while the body remained under doubt. This conceptual separability—asserting one while doubting the other—reflected, Descartes argued, a real ontological division: reality consists of two utterly different kinds of substance, thinking substance (mind, consciousness, thought with no spatial extension) and extended substance (matter, bodies that occupy space but do not think). The dualism solved real problems: it gave Newtonian mechanics a clean domain—the physical world as pure extension describable by geometry—and preserved space for the soul and free will. It also matches a common intuition: the experience of seeing red feels like a fundamentally different kind of thing from the light waves that cause it. But it created a devastating new problem: if mind and matter share nothing in common, how do they interact? When a decision to raise one's arm causes the arm to move, or when stepping on a thorn causes felt pain, causation seems to require some shared medium—which dualism has eliminated. Descartes' own suggestion that interaction occurred in the pineal gland merely relocated the mystery.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [signalState, setSignalState] = useState('idle'); // idle, traveling, blocked, pineal
   const [hoveredConcept, setHoveredConcept] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -4695,6 +4916,31 @@ function DescartesDualism() {
           For four centuries, Aristotle's vision of a world animated by forms, purposes, and hierarchies of being had organized European thought. But by the early 1600s, Galileo's telescope and the rise of mathematical physics were dismantling it piece by piece. Aristotelian qualities — heaviness, wetness, heat — seemed too vague to explain planetary orbits or the arc of a cannonball. <strong style={{ color: '#e8c8c0' }}>Descartes saw the entire inherited framework collapsing</strong> and resolved to do something radical: discard everything uncertain and rebuild knowledge from an unshakeable foundation. The pressure was existential — without a new philosophical bedrock, the new sciences had no firm ground to stand on.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* 2. MAIN VISUALIZATION */}
       <div style={{
@@ -4977,6 +5223,12 @@ function DescartesDualism() {
 
 // ─── Part 9: Spinoza's Radical Answer: One Substance ───
 function SpinozaOneSubstance() {
+  const ACCENT = "#2C6E49";
+  const CORE_ARGUMENT = `Spinoza accepted Descartes' definition of substance—something that exists in itself and is conceived through itself—but then showed it defeated Cartesian dualism: if mind and matter each depend on God for their existence, they fail by that very definition to be self-sufficient substances. The only thing that genuinely depends on nothing else is God or, equivalently, nature as a whole. There is only one substance, and everything that exists is a mode—a particular way of being—of that single substance. Mind and body are not two things interacting across a gap; they are two attributes of one event seen from different angles. The cylinder-shadow analogy captures this: a cylinder casting shadows on two walls at right angles produces a circle on one wall and a rectangle on the other; if you saw only the shadows you might think two different objects were coordinating, but there is one object in two projections. A decision and the arm movement are one event, described mentally as a decision and physically as a movement; no causal bridge is needed because there was never a gap. This dissolves the mind–body problem completely—but at an enormous cost: if everything is one substance, individual free will becomes impossible. Modern neuroscience research showing that brain activity precedes conscious awareness of a decision operates in this same territory: what we experience as free choice and what a brain scan shows as neural activity may be one event in two vocabularies.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [view, setView] = useState("spinoza");
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
@@ -5089,6 +5341,31 @@ function SpinozaOneSubstance() {
             Descartes left us with a mind made of pure thought and a body made of pure extension — two substances sharing absolutely nothing in common. But this radical division creates an agonizing puzzle: when you decide to raise your hand, how does a weightless, spaceless thought cause a physical limb to move? When a thorn pierces your skin, how does that mechanical event produce felt pain? There is no common currency, no interface, no causal bridge — yet the coordination happens, relentlessly, every moment of conscious life. The interaction problem is not a puzzle at the edges of Cartesian dualism. It is a crack running straight through its foundation.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -5481,6 +5758,12 @@ function SpinozaOneSubstance() {
 
 // ─── Part 10: Leibniz, Monads, and the Seeds of Possible Worlds ───
 function LeibnizMonads() {
+  const ACCENT = "#7B5EA7";
+  const CORE_ARGUMENT = `Where Spinoza collapsed all of reality into one substance, Leibniz moved in the opposite direction, driven by a problem with matter itself: extended stuff is infinitely divisible, so you never reach genuine building blocks. A pile of sand is not a true unity; each grain is not either; if you keep dividing and never reach something that is a genuine unity, the whole lacks ontological grounding. Leibniz posited monads: simple, indivisible, metaphysical points of unity that have no spatial extension and no windows—nothing enters or leaves from outside. Each monad contains within itself the complete basis for everything that will ever happen to it, unfolding from its inner nature like a mathematical function. The apparent interaction between things is explained by pre-established harmony: God set each monad's inner program so that all unfold in perfect coordination without ever truly acting on one another—like synchronized clocks wound at the same time. This kept the distinction between individual perspectives that Spinoza dissolved, while explaining coordination without direct causal contact. Leibniz also introduced possible worlds: before creating, God surveyed all logically possible configurations of monads and chose the best combination of variety and order. This theological framework became a precision tool in 20th-century logic—necessity is truth in all possible worlds, possibility is truth in at least one—now standard in linguistics, logic, and computer science.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [timeStep, setTimeStep] = useState(0);
   const [selectedMonad, setSelectedMonad] = useState(null);
   const [arrowAttempt, setArrowAttempt] = useState(null);
@@ -5603,6 +5886,31 @@ function LeibnizMonads() {
           Spinoza's monism cannot account for the genuine diversity and structure of the world. If reality is one infinite substance, why does it produce structured individuals rather than undifferentiated mass? The pressure of this question forced Leibniz to rebuild metaphysics from scratch — not one substance, but infinitely many, each sealed within itself, each a universe entire.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            maxWidth: "800px", margin: "16px auto 16px auto",
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{ padding: '36px 40px' }}>
@@ -6253,6 +6561,12 @@ function LeibnizMonads() {
 
 // ─── Part 11: The Empiricist Demolition of Substance ───
 function EmpiricistDemolition() {
+  const ACCENT = "#D4A017";
+  const CORE_ARGUMENT = `Three British and Irish philosophers turned ontology around by asking not what substances are but whether we have any reason to believe in them. Locke noticed that when we perceive an apple we perceive redness, roundness, sweetness, and firmness—qualities—but the substance that holds these together is never directly experienced; he called it 'something I know not what.' Berkeley pushed further: strip away all perceived qualities and what remains is literally nothing; the supposed material substratum behind them is a mental invention. For Berkeley, to exist is to be perceived, and the apple exists as a collection of sensory ideas in a mind. Hume completed the demolition with a single test: from what actual sensory impression does a given idea derive? Substance fails completely—when you look at a billiard ball you see whiteness, roundness, and smoothness, never the substance. He extended this critique to the self: when you look inward you find a rushing stream of perceptions, never the self that supposedly owns them. Most devastatingly, Hume attacked causation: when one billiard ball strikes another, we observe sequence and contact but never the causal power itself; causation is a habit of expectation, not a feature of reality we directly observe. Modern software user profiles instantiate Hume's bundle theory by default: a user profile is nothing but a bundle of attributes—delete all fields and there is no residual entity left over.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [removedQualities, setRemovedQualities] = useState([]);
   const [humeMode, setHumeMode] = useState(false);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -6400,6 +6714,31 @@ function EmpiricistDemolition() {
             Leibniz's ontology rested on substance as the foundational concept — the irreducible monadic cores of reality from which all else derived. But the empiricists turned to face the evidence and asked a devastating question: do we actually perceive any such thing? Every time we examine an object, we find colors, shapes, textures, tastes. We never encounter the supposed <em style={{ color: "#D4A017" }}>underlying substance</em> itself. This gap between what we claim and what we can show forced the most radical audit of ontology yet attempted.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -6844,6 +7183,12 @@ function EmpiricistDemolition() {
 
 // ─── Part 12: Kant Turns Ontology Inside Out ───
 function KantCopernican() {
+  const ACCENT = "#3A6186";
+  const CORE_ARGUMENT = `Kant saw that Hume's skepticism could not explain why Newton's physics worked with such precision: if causation were merely a psychological habit with no grounding in reality, scientific success would be a miracle. But Kant did not return to the rationalist claim that pure reason reaches the deep structure of the world. Instead, he reversed the direction of the entire enterprise: instead of asking what the world is like and how the mind comes to know it, he asked what the mind must contribute to experience for experience to be possible at all. A coffee cup on a desk is experienced as an object occupying space, persisting through time, capable of causing effects—but for that perception to be coherent rather than a chaotic spray of data, the mind must already be organizing it using structures of space, time, and causation. Kant argued these are not features discovered in the world but structures that the mind imposes on raw sensory input. Modern color vision research confirms the basic architecture: colors do not exist as such in the physical world—light has wavelengths—but the experience of redness is constructed by the visual system; different species with different visual systems literally see different color worlds. Kant generalized this from color to all of experience. The consequence is that traditional ontology, which claimed to describe reality as it is in itself, is impossible: every act of knowing applies the very structures that separate us from things in themselves.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [thingInItselfMode, setThingInItselfMode] = useState(false);
   const [spaceStrength, setSpaceStrength] = useState(0.7);
   const [timeStrength, setTimeStrength] = useState(0.7);
@@ -7067,6 +7412,31 @@ function KantCopernican() {
             Hume's empiricism left ontology in ruins. Substance, causation, and the self were exposed as possibly fictional — nothing more than habits of expectation dressed in philosophical costume. And yet science clearly works. Bridges hold. Planets move on schedule. The challenge facing Kant was acute: how can knowledge be both certain and grounded, if the foundations Hume attacked were never real to begin with?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -7341,6 +7711,12 @@ function KantCopernican() {
 
 // ─── Part 13: Hegel and the Ontology of Becoming ───
 function HegelBecoming() {
+  const ACCENT = "#8B1A1A";
+  const CORE_ARGUMENT = `Kant drew a hard line between the knowable world of appearances and the unknowable things in themselves, but Hegel argued this line was incoherent: to draw a boundary you must be able to see both sides of it, so claiming we cannot know reality as it is already presupposes some grasp of what that reality would be like. This led Hegel to dismantle the Kantian framework from within and rebuild ontology on a startling premise: the structure of thought and the structure of reality are not separate but the same structure developing through the same process. He demonstrated this by starting with the most basic ontological concept: pure being. Think of being stripped of every quality and determination—it turns out to be indistinguishable from pure nothing, which in turn, the moment you try to think it, flips back toward being. Neither concept can be held in isolation; each passes over into its opposite, and what emerges from this unstable oscillation is a third concept—becoming—the movement between being and nothing. The first ontological category is not a thing or a substance but a process. This dialectical pattern, where a concept generates its opposite and both resolve into a richer synthesis, applies to everything: Newton's mechanics works for everyday objects but generates contradictions at high speeds; those contradictions are not errors to be patched but internal tensions that force thought forward to relativity, which preserves what was true in Newton while resolving the contradiction at a higher level. Hegel called this total process of self-development through contradiction Geist, and history is its unfolding.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [phase, setPhase] = useState(0); // 0=oscillating, 1=slowing, 2=becoming
   const [animSpeed, setAnimSpeed] = useState(1);
   const [showBecoming, setShowBecoming] = useState(false);
@@ -7577,6 +7953,31 @@ function HegelBecoming() {
             Kant drew a hard line: the human mind can know appearances, never things-in-themselves. But Hegel saw a fatal wound in this. To declare a limit on knowledge, you must already be standing on both sides of it — you must know something of what lies beyond. Worse, Kant used the concept of <em>causation</em> to posit the thing-in-itself as the cause of our representations, yet causation was supposed to be a purely mental category, inapplicable beyond experience. The Kantian framework collapses under its own weight. Something more radical is required: a philosophy that does not posit a forbidden beyond, but shows how thought and reality are one self-moving whole.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -7930,6 +8331,12 @@ function HegelBecoming() {
 
 // ─── Part 14: Husserl and the Structures of What Appears ───
 function HusserlPhenomenology() {
+  const ACCENT = "#4E8B8B";
+  const CORE_ARGUMENT = `Husserl wanted to return philosophy to something more rigorous than Hegel's speculation: a precise description of experience exactly as it presents itself. His key observation was that empiricists and scientists mischaracterized experience by treating it as a series of raw sensory inputs assembled into objects. But that is not what experience is actually like: when you see a coffee cup you do not first see a brown patch, then a curved shape, then construct 'cup' from these pieces—you see a cup immediately as a whole already loaded with meaning. This already-meaningful directedness—intentionality—is not something added to consciousness; it is what consciousness is. Every conscious experience is an experience of something, always aimed at an object. By performing the phenomenological reduction (setting aside all questions about physical causes, brain states, or things in themselves and focusing exclusively on the structure of what appears), Husserl could study the essential structures of experience with precision. He found that objects appear laden with horizons: when you see the front of a building, you co-intend the unseen back—if someone sliced the building and removed the back, your experience of the front would collapse. Modern interface design instantiates this: a well-designed button implies an action, a grayed-out field implies a condition, a loading bar implies a process with a beginning and end; designers structure experience so that users' intentionality is guided toward meaning without explicit instruction—they are doing phenomenology whether they use the word or not.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredSegment, setHoveredSegment] = useState(null);
   const [selectedSegment, setSelectedSegment] = useState(null);
   const [hoveredLaw, setHoveredLaw] = useState(null);
@@ -8090,6 +8497,31 @@ function HusserlPhenomenology() {
             The empiricists tried to correct this by returning to experience — but they misdescribed it fatally. Reducing experience to bundles of raw sensory data (patches of color, sounds, pressures) misses the most obvious fact: we never encounter raw data. We encounter <em>things</em> — meaningful, structured, ready-to-hand objects already loaded with significance before any theory intervenes.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            margin: "16px 0 16px 0",
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -8505,6 +8937,12 @@ function HusserlPhenomenology() {
 
 // ─── Part 15: Heidegger and the Forgotten Question ───
 function HeideggerBeingDasein() {
+  const ACCENT = "#5A4E3A";
+  const CORE_ARGUMENT = `Husserl still began from consciousness, a subject directing attention toward objects—but Heidegger argued that this subject-object structure was not a starting point but itself something requiring explanation. More fundamentally, he claimed the entire western tradition from Parmenides through Husserl had asked about beings—particular things that exist—while forgetting to ask about being itself: the condition that makes it possible for there to be any beings at all. A marine biologist who catalogs every organism on the ocean floor has not captured one thing: the ocean itself, the medium in which all the items appear and whose existence makes the entire list possible. Philosophy had been cataloging fish for 2,000 years while ignoring the ocean. To access being, Heidegger turned to the one being for whom being is an issue: the human being, or Dasein. Dasein is not a mind inside a body looking out at a world but its practical involvement with the world—when you reach for a doorknob you do not perceive a brass-colored cylinder, infer it is a handle, and decide to turn it; you simply open the door. The doorknob is encountered as ready-to-hand, transparent in use, embedded in a network of purposes. The detached theoretical stance of a subject observing objects is not the fundamental mode but a derivative one that shows up only when something breaks down: when the doorknob jams, it suddenly becomes a present-at-hand object you stare at and analyze. Every frustrating moment with malfunctioning technology reproduces this ontological transition.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(0);
   const [brokenTool, setBrokenTool] = useState(null);
   const [usedTools, setUsedTools] = useState([]);
@@ -8645,6 +9083,31 @@ function HeideggerBeingDasein() {
           Husserl's phenomenology offered a rigorous return to experience — yet it still begins from a <em>conscious subject</em> directed at <em>objects</em>, presupposing the very subject-object structure that itself demands explanation. The framework that was meant to ground philosophy simply inherited the most fundamental assumption of the tradition without questioning it. Something deeper needed to be uncovered: not the structure of consciousness, but the structure of <em>Being itself</em>.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* 2. MAIN VISUALIZATION */}
       <div style={{
@@ -9024,6 +9487,12 @@ function HeideggerBeingDasein() {
 
 // ─── Part 16: Existence Before Essence: Sartre's Ontological Reversal ───
 function SartreExistenceEssence() {
+  const ACCENT = "#5a4fcf";
+  const CORE_ARGUMENT = `Every ontology up to this point had assumed that what a thing is comes before the fact that it is—a horse has its nature, and then individual horses exist as instances. Sartre reversed this priority for human beings: existence comes before essence. The contrast between a paper knife and a person makes this vivid. A paper knife is conceived with its purpose—cutting paper—before any particular knife exists; its essence precedes its existence. But if there is no God and no prior designer for human beings, then no blueprint exists in advance. You exist first, thrown into the world, and make yourself into something through your choices; there is no human nature preceding your decisions. Sartre grounded this in a precise ontological distinction: being-in-itself (rocks, tables, paper knives) is solid and self-identical, completely what it is with no inner distance from itself; being-for-itself (consciousness) is always at a distance from itself because it is both the experience and the thing observing the experience. A nothingness at the heart of the conscious being—this gap—is the source of freedom: because you are never fully identical with any role, feeling, or situation, you can always step back and choose otherwise. A waiter performing the motions of being a waiter is not a waiter the way a rock is a rock; he is playing at being a waiter, and to pretend the role defines him completely is bad faith—a lie about one's own freedom. The upshot is that the full weight of every decision falls entirely on you, making freedom not a gift but a burden: you are condemned to be free.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedRole, setSelectedRole] = useState(null);
   const [mode, setMode] = useState('authentic'); // 'authentic' or 'badfaith'
   const [hoveredRole, setHoveredRole] = useState(null);
@@ -9100,6 +9569,31 @@ function SartreExistenceEssence() {
             Heidegger analyzed the structures of Dasein as if they were given in advance — thrownness, care, being-toward-death — structural features that seem to define what it means to be human. But this raises a disquieting question: if Dasein has such structures, is there a human essence after all, just dressed in phenomenological language? Sartre wants to push further. For human beings specifically, <em>no essence precedes existence</em>. We are not made with a blueprint. We arrive first, and only then, through our choices and actions, do we manufacture whatever nature we appear to have.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -9531,6 +10025,12 @@ function SartreExistenceEssence() {
 
 // ─── Part 17: Whitehead and the Ontology of Process ───
 function WhiteheadProcess() {
+  const ACCENT = "#E87D0D";
+  const CORE_ARGUMENT = `Every ontology from Aristotle onward had taken things—substances, objects, entities that persist and have properties—as the basic furniture of reality. Whitehead, driven by 20th-century physics rather than armchair speculation, argued this was backwards: the fundamental units of reality are events. Quantum mechanics described particles that had no definite position until measured, that came into being and vanished in interactions; relativity described a universe where space and time were fused into a curved fabric. This was not a world of things sitting in space but a world of happenings. Whitehead proposed that reality consists of actual occasions—brief, self-contained events of experience that come into being, achieve a definite character by integrating influences from prior occasions, and then perish. The word 'experience' here does not mean human consciousness: every actual occasion, down to the most elementary physical interaction, involves a kind of receptivity—taking in data from the environment and producing a creative synthesis. What we call enduring objects are societies of actual occasions, sequences of events that repeat a common pattern with enough stability to give the appearance of persistence, as a candle flame looks like a single enduring thing but is actually a continuous series of combustion events. This framework naturally addresses the mind-body problem: consciousness does not emerge mysteriously from dead matter because the basic units of reality already involve something experiential—consciousness is an intensification of something present at every level.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const canvasRef = useRef(null);
   const animFrameRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -9786,6 +10286,31 @@ function WhiteheadProcess() {
           Substance ontology assumes enduring things as foundational — that beneath change lies something permanent that persists through time. But quantum mechanics dissolves particles into probability waves, and relativity fuses space and time into dynamic curvature. The ancient picture of solid, self-subsistent substances collapses under the weight of modern physics. <span style={{ color: "#F4A235", fontStyle: "italic" }}>A new ontology must be adequate to the physics.</span>
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{
@@ -10063,6 +10588,12 @@ function WhiteheadProcess() {
 
 // ─── Part 18: Meinong and the Things That Do Not Exist ───
 function MeinongNonexistent() {
+  const ACCENT = "#7D3C98";
+  const CORE_ARGUMENT = `Every ontology so far assumed that ontology studies things that exist. Meinong challenged this by noticing a simple feature of thought: you can think about things that do not exist and your thoughts still seem to be about something. When you think about Sherlock Holmes you can say true things about him—he lives on Baker Street, he plays the violin—and false things—he is a real estate agent—and the distinction between true and false presupposes that there is something your claims are about, even though Holmes does not exist. Pressed further, consider a round square: you understand the phrase, know what properties it would have to combine, yet a round square not only does not exist but cannot exist. Still it appears to be an object of thought with properties—roundness and squareness—even though it is impossible. Meinong concluded that the domain of objects is wider than the domain of existing things: some objects exist (this table), some subsist without existing in space and time (numbers), and some have no being at all but are still objects in the sense that thought can be directed at them (the round square). Bertrand Russell objected that this produces contradictions—the round square is both round and not round—and proposed an alternative: sentences apparently referring to non-existent things are really claims about the world containing nothing matching a certain description, not references to mysterious non-existent entities. The Meinong-Russell debate surfaces in modern legal counterfactuals (what would have happened if the defendant had not acted negligently?) and engineering stress tests (simulating failure conditions that never occur).`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [hoveredEntity, setHoveredEntity] = useState(null);
   const [selectedEntity, setSelectedEntity] = useState(null);
   const [russellMode, setRussellMode] = useState(false);
@@ -10180,6 +10711,31 @@ function MeinongNonexistent() {
           Every previous ontology assumed that ontology is a study of things that <em>exist</em>. But language and thought routinely engage with non-existents — we grieve for fictional characters, we reason about what might have been, we speak meaningfully of impossible things. This cannot be dismissed as mere error or confusion. A theory of what there is must somehow account for what there <em>isn't</em>, and yet is still, unmistakably, <em>something</em>.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* Main Visualization */}
       <div style={{
@@ -10592,6 +11148,12 @@ function MeinongNonexistent() {
 
 // ─── Part 19: Quine and the Analytic Revival of Ontology ───
 function QuineAnalyticOntology() {
+  const ACCENT = "#2E86AB";
+  const CORE_ARGUMENT = `By the mid-20th century, logical positivists had declared traditional metaphysical questions meaningless—asking 'what is being' was like asking what color Tuesday is. Quine rescued ontology but on strict terms: he showed that a perfectly precise version of the ontological question could be posed using modern logic. Every scientific theory, translated into formal logic, contains existential quantifiers—statements of the form 'there is an X such that.' The entities a theory is committed to are exactly what its variables range over when the theory comes out true. To be is to be the value of a variable. This transforms ontological disputes from cloudy debates about the nature of being into precise disagreements about what our best theories commit us to. Quine also demolished Carnap's distinction between 'internal' questions (meaningful, asked within a framework) and 'external' questions (mere decisions about language). Quine argued there is no sharp line between choosing a language and making claims about reality: when you adopt a theory that quantifies over numbers, you are committing to their existence, period. Every theoretical choice is an ontological commitment. A weather prediction system that quantifies over pressure fronts and wind vectors is ontologically committed to those entities; if the model works, you have pragmatic reason to accept them. Quine treated all of science as a vast web of interconnected claims where ontological commitments are determined by what the web as a whole needs to be true—but this means ontology is revisable and fallible, tied entirely to current best theories rather than bedrock truths.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [mathNodesVisible, setMathNodesVisible] = useState(true);
   const [carnapPanelVisible, setCarnapPanelVisible] = useState(false);
   const [carnapDissolved, setCarnapDissolved] = useState(false);
@@ -10719,6 +11281,31 @@ function QuineAnalyticOntology() {
             The logical positivists dismissed ontological questions as meaningless pseudo-problems. To ask "Do numbers really exist?" or "Are electrons real?" was, to Carnap and Schlick, to utter nonsense dressed in philosophical clothing. Ontology needed to be rescued on terms the positivists would accept — rigorous, testable, connected to science. The tradition that had asked about the furniture of reality seemed exiled from respectable intellectual life.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -11144,6 +11731,12 @@ function QuineAnalyticOntology() {
 
 // ─── Part 20: Properties, Universals, and Tropes ───
 function PropertiesUniversalsTropes() {
+  const ACCENT = "#C0392B";
+  const CORE_ARGUMENT = `The medieval debate over universals never ended but migrated into 20th-century analytic philosophy with greater technical precision. The central question remained: when this rose and that fire truck are both red, what accounts for the sharing? David Armstrong defended realism most forcefully: universals are real, mind-independent entities fully present wherever they are instantiated. The redness of the rose and the redness of the fire truck are literally the same entity—one universal redness present in both locations simultaneously. Armstrong grounded this in science: when physics discovers all electrons have the same charge, this reflects a real shared nature; without real universals, the regularities science discovers are cosmic accidents. Nominalism denies this: only particular things exist; when two roses are both red the explanation is resemblance between the two particulars, not a third entity redness itself sitting in both. The advantage is ontological economy; the disadvantage is that resemblance itself may be a universal smuggled back in. Trope theory splits the difference: a trope is an individual particular instance of a property, numerically unique to this rose. The redness of this rose and the redness of the fire truck are different tropes—qualitatively similar but numerically distinct—and we group them because they resemble each other. In machine learning, these positions correspond to different architectural assumptions: a classifier learning to recognize cats must decide whether it learns a universal 'catness' each image instantiates, resemblance relations between particular images, or clustered individual trope-like data points—and these assumptions affect how well the system generalizes.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeView, setActiveView] = useState("realism");
   const [pressureActive, setPressureActive] = useState(false);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -11356,6 +11949,31 @@ function PropertiesUniversalsTropes() {
             The medieval universals debate — whether abstract properties like redness or humanity exist independently of the individual things that have them — was never resolved. It migrated into analytic philosophy with greater technical precision but the same fundamental tension. When two things share a property, what exactly is shared? Is it a single entity in multiple places, a mere similarity, or something else entirely? The pressure of this unresolved question forces the modern proliferation of positions.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* 2. MAIN VISUALIZATION */}
         <div style={{
@@ -11590,6 +12208,12 @@ function PropertiesUniversalsTropes() {
 
 // ─── Part 21: Do Numbers Exist? The Problem of Abstract Objects ───
 function AbstractObjects() {
+  const ACCENT = "#1A535C";
+  const CORE_ARGUMENT = `Mathematicians make claims about numbers that seem objectively true or false regardless of what anyone thinks: the statement that there are infinitely many prime numbers appears to be true in a way completely independent of human minds. But numbers cannot be tripped over, photographed, weighed, or put in a jar. Mathematical Platonism holds that numbers and sets exist in a non-physical, non-temporal realm, fully objective; when a mathematician proves a theorem she is discovering a fact about this realm, not inventing one, the way a mountain is independent of its climbers. Kurt Gödel defended this by arguing that mathematicians have something analogous to perception—a mathematical intuition giving direct access to abstract objects, just as eyes give access to physical ones. But Paul Benacerraf sharpened the decisive objection in 1973: abstract objects by definition are causally inert—they do not emit anything, reflect anything, or interact with anything physical. If they make no difference to your brain, how can you have knowledge of them? Any adequate account of mathematics must simultaneously explain why mathematical statements are objectively true and how humans come to know those truths; Platonism does well on the first but fails on the second. Hartry Field's response was to argue that mathematics is useful fiction—its objects do not need to be real because mathematics is dispensable in principle from physical theories. When you use money to buy a coffee, you treat numbers as real; when you think philosophically, you may treat them as tools. Whether one of these attitudes is correct and the other confused is the live question.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [view, setView] = useState("platonist");
   const [hoveredPrime, setHoveredPrime] = useState(null);
   const [inspecting, setInspecting] = useState(null);
@@ -11760,6 +12384,31 @@ function AbstractObjects() {
           The universals debate raises the question of abstract entities more sharply: if even properties are contentious, what about mathematical objects that are entirely outside space and time? At least universals like <em>redness</em> seem tied to physical instances. Numbers float free of any such anchor — yet mathematicians treat them as if they were more real, more certain, than anything physical.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{
@@ -12189,6 +12838,12 @@ function AbstractObjects() {
 
 // ─── Part 22: Fictionalism: Ontology Without Belief ───
 function Fictionalism() {
+  const ACCENT = "#6D6875";
+  const CORE_ARGUMENT = `The debate over abstract objects seemed to force a choice between accepting non-physical entities you cannot causally access or explaining away the overwhelming success of mathematics. Fictionalism offers a third path by drawing on a simple analogy: when you say that Holmes lives on Baker Street, you make a claim correct within a fiction without corresponding to any actual person or address. Fictionalism proposes the same structure for mathematics—when a mathematician says there exist infinitely many primes, this is correct within the fiction of mathematics without corresponding to entities in the real world. Hartry Field developed this with rigor: mathematical theories are useful fictions, internally consistent systems that track patterns in the physical world without those claims needing to be literally true. A map can be useful without being the territory; mathematics can be useful without its objects being real. Field even attempted to show that Newtonian physics could be restated without any reference to numbers, making mathematics dispensable in principle. The most pressing objection is Quine's indispensability argument: you cannot accept the physics but reject the math that makes it work—to call the math fiction while calling the physics fact is like trusting a building while denying the existence of its foundations. Fictionalism has spread beyond mathematics: there are fictionalist accounts of possible worlds, moral properties, theoretical entities in science, and social constructs. In everyday speech, the economist saying 'the market wants lower interest rates' deploys a fiction almost impossible to replace with a literal paraphrase that is equally informative.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [sliderValue, setSliderValue] = useState(0);
   const [hoveredStatement, setHoveredStatement] = useState(null);
   const [hoveredEquation, setHoveredEquation] = useState(null);
@@ -12291,6 +12946,31 @@ function Fictionalism() {
             Fictionalism offers an exit from this bind: use the language without believing in the objects. Speak of numbers the way a novelist speaks of characters — rigorously, consistently, usefully — but without asserting they populate some separate metaphysical realm.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            margin: "16px 0 16px 0",
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -12671,6 +13351,12 @@ function Fictionalism() {
 
 // ─── Part 23: Possible Worlds and the Cost of Taking Them Seriously ───
 function PossibleWorlds() {
+  const ACCENT = "#4FC3F7";
+  const CORE_ARGUMENT = `When we say things could have gone differently, we appear to be making true claims—but what makes them true? The actual world contains only what actually happened; alternative possibilities did not occur. David Lewis gave the most audacious answer: possible worlds are not abstractions or useful fictions but real, concrete, physically existing universes as fully real as our own. There is a possible world where you chose a different career, and in that world a concrete flesh-and-blood version of someone very like you is living that life right now. Our world is not ontologically special; calling it 'actual' is indexical, like calling our location 'here.' Lewis defended this extravagant claim on grounds of theoretical utility: possible worlds provide the best available framework for analyzing necessity (truth in all possible worlds), possibility (truth in at least one), counterfactual conditionals, properties, and propositions—all unified under one framework. A proposition is a set of possible worlds where it is true; necessity means truth in all of them. Lewis argued the ontological cost of admitting infinitely many concrete universes is worth paying because no rival theory achieves the same explanatory power without hidden technical costs of its own. The most immediate objection is sheer implausibility; Lewis accepted this and argued that intuitive plausibility is not a good guide to metaphysical truth. A more pressing objection concerns ethics: if every possible outcome is actual somewhere, why work to prevent suffering? Lewis responded that we care about our world the way we care about our city, even though other cities exist.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedWorld, setSelectedWorld] = useState(null);
   const [hoveredWorld, setHoveredWorld] = useState(null);
   const [similarityFilter, setSimilarityFilter] = useState(5);
@@ -12802,6 +13488,31 @@ function PossibleWorlds() {
             When we say "Napoleon could have won at Waterloo," we seem to be saying something true or false about the world. But what makes it true? For Leibniz, possible worlds were ideas held in the mind of God — a theological backstop that secular philosophy cannot use. Without a divine mind to host them, possible worlds seem to dissolve into mere fictions or useful pretenses. And yet modal claims — about necessity, possibility, counterfactuals — are deeply embedded in science, law, ethics, and everyday reasoning. <span style={{ color: "#4FC3F7", fontStyle: "italic" }}>A secular framework urgently needs truth-makers for possibility claims.</span>
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -13200,6 +13911,12 @@ function PossibleWorlds() {
 
 // ─── Part 24: The Ontology of Time: Does the Future Exist? ───
 function OntologyOfTime() {
+  const ACCENT = "#2D6A4F";
+  const CORE_ARGUMENT = `The temporal analogue of the modal debate over possible worlds is the question of which times exist: only the present (presentism), all times equally (eternalism), or past and present but not future (growing block theory). Presentism holds that there are no dinosaurs in the deep ontological sense—not just that none walk around now, but that they are no longer part of reality; the past is truly gone and the future has not arrived. Eternalism holds that the Battle of Hastings and the first human settlement on Mars are both equally real events differing only in their temporal location, just as distant cities are equally real differing only in spatial location; the block universe is a four-dimensional structure where nothing genuinely comes into being or passes away and the flow of time is a feature of our perspective, not of reality. The growing block preserves the past as real while leaving the future genuinely open. The strongest argument for eternalism comes from Einstein's relativity: simultaneity is relative—two observers moving at different speeds can disagree about whether two events happen at the same time. If there is no absolute fact about what is 'now' across the universe, there is no absolute present, and without an absolute present the distinction between what presently exists and what does not collapses. The stakes are vivid at the level of death: if presentism is true, a dead person is gone in the strongest possible sense; if eternalism is true, they still exist at the times of their life, making loss more like a long-distance relationship than an absolute subtraction.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeView, setActiveView] = useState("presentism");
   const [hoveredBtn, setHoveredBtn] = useState(null);
   const [showRelativity, setShowRelativity] = useState(false);
@@ -13332,6 +14049,31 @@ function OntologyOfTime() {
           After establishing that possible worlds involve concrete alternative realities, the natural question arises: are different <em>times</em> analogously real? When we say "Caesar crossed the Rubicon," are we referring to something that still exists somewhere — or has it been utterly annihilated, leaving only a present trace in memory and stone?
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{
@@ -13852,6 +14594,11 @@ function ConceptCard({ term, def, accent }) {
 
 // ─── Part 25: Persistence and Identity Through Time ───
 function PersistenceIdentity() {
+  const CORE_ARGUMENT = `A photograph of you as an infant and one today show strikingly different physical forms with nearly every cell replaced, yet everyone says it is the same person. What makes this true? Endurantism holds that an enduring object is wholly present at every moment of its existence—you, all of you, exist at every time you are alive, moving through time while maintaining your identity; change is real alteration of a persisting thing. Perdurantism holds that objects are extended through time the way a road extends through space: you are a four-dimensional entity, a spacetime worm, and what exists at any given moment is a temporal part—a time slice. The infant in the photo and the adult today are different temporal parts of the same four-dimensional whole, the way two sections of a highway are different spatial parts of the same road. The choice has direct legal consequences: if a 20-year-old commits a crime and is sentenced at 60, the endurantist says the same person is being punished; the perdurantist says the stage being punished is a different temporal part of the same four-dimensional entity connected to the criminal stage but not identical with it. The stage view, defended by Theodore Sider, takes the austerity further: strictly no object persists at all; what we call persistence is a chain of related but numerically distinct momentary entities connected by temporal counterpart relations. Medical contexts reproduce this debate whenever a patient with severe brain damage can no longer remember signing a medical directive—whether that directive is binding depends on which ontological picture of personal identity the institution implicitly adopts.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeView, setActiveView] = useState("endurantism");
   const [activeCase, setActiveCase] = useState("criminal");
   const [sliderVal, setSliderVal] = useState(50);
@@ -14193,6 +14940,31 @@ function PersistenceIdentity() {
             The ontology of time raises the question of what makes an entity the same entity across different times. Once we settle whether times are equally real, we must settle what <em>persistence</em> across them amounts to. An object exists now — but was it the very same object that existed yesterday? What holds it together across the gap? Without an answer, identity collapses and with it law, responsibility, memory, and the self.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${accent}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: accent, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* LAYER 2: Main Visualization */}
         <div style={{
@@ -14551,6 +15323,11 @@ function PersistenceIdentity() {
 
 // ─── Part 26: Events, Facts, and States of Affairs ───
 function EventsFacts() {
+  const CORE_ARGUMENT = `Ontology is usually presented as a study of things, but much of what matters in science, law, and everyday life is about what happens—events. Donald Davidson argued in the 1960s that events are irreducible particulars: when a short circuit causes a fire, there are two distinct entities—the short-circuit event and the fire event—connected by causation; these cannot be reduced to objects or to properties. His argument turned on a logical point: if a single act of stabbing causes a death, the stabbing is the killing—one event under two descriptions, structurally identical to how the Morning Star and the Evening Star turned out to be one object (Venus) under two descriptions. If events can be identical under different descriptions, they must be genuine entities existing independently of how we describe them. An alternative approach treats events not as bare particulars but as states of affairs—combinations of objects and properties like 'the cat being on the mat.' The distinction matters in law: whether a short circuit and the resulting fire are the same event redescribed or distinct events determines whether the causal claim is trivial or substantive, and how you slice reality into events determines what causal claims are even possible. Davidson also used the event ontology to resolve the mind-body problem without reductive physicalism: every mental event is identical to some physical event, but mental descriptions cannot be translated into physical descriptions—mental causation is real without mental properties being reducible.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeView, setActiveView] = useState("davidson");
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [individuationPoints, setIndividuationPoints] = useState([]);
@@ -14667,6 +15444,31 @@ function EventsFacts() {
             After establishing the ontology of objects and their persistence, we need an account of what <em>happens</em> — the changings, causings, and occurrings that constitute the dynamic world. Objects persist, but they also <em>do things</em> and <em>undergo things</em>. Without a principled ontology of events, we cannot properly analyze causation, explain how mental events relate to physical ones, or determine who bears legal responsibility for a chain of occurrences. The static inventory of things is not enough.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -15056,6 +15858,12 @@ function EventsFacts() {
 
 // ─── Part 27: Parts, Wholes, and the Puzzle of Composition ───
 function CompositionMereology() {
+  const ACCENT = "#5C6BC0";
+  const CORE_ARGUMENT = `When a chair, table, and lamp are in a room, is there a fourth object—the chair-table-lamp composite? The question sounds trivial until mereological universalism makes it vivid: if any collection of things automatically forms a further composite, then your left shoe and the Eiffel Tower together compose an object, as does every possible grouping no matter how arbitrary. David Lewis accepted this consequence because the alternative—restricting composition—requires a principled criterion for when composition occurs, and no proposed criterion has survived scrutiny. Peter van Inwagen's answer was the most rigorous attempt at restriction: composition occurs only when the parts participate in a life, an ongoing self-organizing biological process. On this view organisms are genuine composite objects, but tables and chairs are not; there is no table in the room, only particles arranged tablewise. Van Inwagen embraced this against common sense because every other proposed criterion—physical contact, causal integration, spatial proximity—dissolves under examination: a stack of papers makes contact but is not usually one object; the boundary between causally integrated and non-integrated is vague and ontology should not depend on vague thresholds. Mereological nihilism takes the austerity to the extreme: composition never occurs; there are only fundamental simples arranged in patterns; what you call a chair is a description of how certain particles are organized, not a reference to a further entity. The debate reproduces itself whenever we ask whether a team is more than its players, a corporation more than its employees, or a nation more than its citizens—and the answer has direct consequences for how corporate and national responsibility are assigned.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [mode, setMode] = useState("universalism");
   const [hoveredComposite, setHoveredComposite] = useState(null);
   const [echosOpen, setEchosOpen] = useState(false);
@@ -15219,6 +16027,31 @@ function CompositionMereology() {
           After establishing that objects persist through time, a deeper puzzle immediately opens: what makes something a <em>single unified object</em> at a given moment? We assemble a chair from wood and screws — at what point do those parts stop being merely arranged and start composing something new? The question is sharper than it looks. No obvious criterion survives scrutiny, and our ordinary conviction that tables and organisms alike are genuine <em>things</em> may rest on nothing more solid than habit.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* Main Visualization */}
       <div style={{
@@ -15575,6 +16408,12 @@ function CompositionMereology() {
 
 // ─── Part 28: Powers, Dispositions, and What Things Can Do ───
 function PowersDispositions() {
+  const ACCENT = "#A8DADC";
+  const CORE_ARGUMENT = `A fragile glass sitting undisturbed looks identical to a hypothetically indestructible glass—nothing in its observable state displays the fragility. Yet fragility seems to be a real property present even when no one is striking the glass. The ontological question is whether dispositions are genuine intrinsic properties of objects or merely shorthand for predictions about what would happen under specific conditions without corresponding to any current feature. The powers ontology—developed by C.B. Martin, George Molnar, and Stephen Mumford—argues that the fundamental properties of nature are not inert qualities but active powers: capacities to produce effects that objects possess even when not manifesting them. An electron's negative charge is not merely a label attached to observed behavior; it is a real power, a capacity to repel other negative charges that the electron has even when interacting with nothing. This has a deep consequence for laws of nature: on the Humean view associated with David Lewis, laws are descriptions of regularities in what actually happens—patterns in the cosmic mosaic of events, with no explanation of why the pattern holds. On the powers view, the regularity exists because of the powers: electrons repel each other because repulsion is part of what it is to be an electron; nature does not obey laws the way citizens obey legislation, but things behave as they do because of what they are. In pharmacology the contrast is immediate: a drug has the power to lower blood pressure (powers ontologist) versus the drug has a molecular structure and has been followed by lowered blood pressure in all observed cases (Humean)—same prediction, fundamentally different ontology.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [view, setView] = useState("powers"); // "powers" or "humean"
   const [hammerActive, setHammerActive] = useState(false);
   const [broken, setBroken] = useState(false);
@@ -15669,6 +16508,31 @@ function PowersDispositions() {
             We have established that properties are genuinely real — universals or tropes that go beyond mere naming. But now a harder question forces itself forward: <em>what kind</em> of reality do properties have? Is fragility merely a label we apply after watching glass break, or is it a real force lurking in the glass right now, even when the shelf is perfectly still and nothing threatens it? Are properties inert qualities — passive marks on the world that merely coexist — or active capacities that reach out toward their effects, straining against unmet conditions? This is not a question about whether properties exist; it is a question about their nature, and the answer determines whether the universe is fundamentally passive or fundamentally alive with tendency.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -16124,6 +16988,11 @@ function PowersDispositions() {
 
 // ─── Part 29: Natural Kinds: Are the Categories in Nature or in Us? ───
 function NaturalKinds() {
+  const CORE_ARGUMENT = `Water is made of two hydrogen atoms bonded to one oxygen atom—not something we decided or negotiated. This suggests that some ways of classifying things are objectively better than others because they correspond to real divisions in the world: natural kinds carved into nature itself, waiting to be discovered rather than invented. Saul Kripke and Hilary Putnam argued in the 1970s that natural kind terms function as rigid designators: they refer to whatever has the underlying nature of our original samples, regardless of surface appearances. If scientists found a liquid on another planet that looked, tasted, and behaved exactly like water but had a different molecular structure, it would not be water—the kind is determined by deep structure, not superficial similarity. Putnam's Twin Earth thought experiment makes this vivid: on a planet identical to ours in every way except that its clear drinkable liquid has a completely different molecular structure, their 'water' is not our water even though it is functionally identical. Meaning depends on what is actually in the world, not just on what is in the speaker's head. But biology challenges this picture severely: species boundaries are fuzzy; organisms shade into each other along continua of genetic variation; horizontal gene transfer in microorganisms blurs lines between supposedly distinct kinds. Many biologists argue that species are not natural kinds but historical individuals or conventional groupings serving pragmatic purposes. This has direct practical consequences: conservation laws protect species, so whether a population counts as a distinct species determines whether it lives or dies—making the classification question a matter of life and death.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeTab, setActiveTab] = useState('twin-earth');
   const [showMolecules, setShowMolecules] = useState(false);
   const [hoveredWorld, setHoveredWorld] = useState(null);
@@ -16200,6 +17069,31 @@ function NaturalKinds() {
             Powers ontology showed that things have intrinsic natures — iron is disposed to rust, water to freeze, electrons to repel. But this raises a harder question: if things genuinely have natures, do those natures also group them into objective kinds? Does reality come pre-sorted into categories waiting to be discovered, or do we impose our own divisions on a continuous world? The stakes are enormous. If there are real natural kinds, science discovers them. If there aren't, science merely imposes useful fictions.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${accent}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: accent, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -16752,6 +17646,11 @@ function NaturalKinds() {
 
 // ─── Part 30: Social Ontology: What Makes Money Real? ───
 function SocialOntology() {
+  const CORE_ARGUMENT = `A piece of paper with green ink has almost no intrinsic value, yet it functions as money with the power to command goods, settle debts, and measure value. If everyone simultaneously stopped believing it had value, it would cease to be money instantly—the physical object would persist but the social object would vanish. John Searle argued that social objects like money, the presidency, and borders are created by constitutive rules of the form 'X counts as Y in context C': a piece of paper counts as money in the context of a functioning economic system; a person counts as the president in the context of a constitutional government. These rules do not describe pre-existing realities—they create new ones. Searle called these institutional facts, distinguishing them from brute facts: it is a brute fact that this object weighs one gram regardless of what anyone thinks; it is an institutional fact that it is a $20 bill because enough people collectively accept the rule. The collective acceptance is implicit and unreflective—you do not consciously think 'I accept the money rule' every time you buy coffee. Social ontology's deepest controversy is the relationship between social entities and the individuals who compose them: methodological individualists hold that all social facts reduce to facts about individuals and interactions, while holists argue that social entities have properties—a traffic jam's length, duration, propagation speed—that no individual driver possesses and that cannot be reconstructed from individual-level descriptions. When a country declares war, no single individual is the country, yet resources are mobilized and lives are ended.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [acceptanceLevel, setAcceptanceLevel] = useState(75);
   const [echosOpen, setEchosOpen] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
@@ -16884,6 +17783,31 @@ function SocialOntology() {
           Natural kinds are either discovered or pragmatically constructed. But social kinds — money, corporations, borders, nations — are <em>clearly</em> constructed. They don't exist in some natural classification waiting to be found. Yet saying they are "merely constructed" seems wrong: borders can determine whether someone lives or dies; money can be seized or destroyed. If constructed things can have such enormous causal force, what exactly does construction mean? And does it imply unreality?
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${accent}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: accent, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* 2. MAIN VISUALIZATION */}
       <div style={{
@@ -17272,6 +18196,12 @@ function SocialOntology() {
 
 // ─── Part 31: Grounding and the New Architecture of Reality ───
 function GroundingArchitecture() {
+  const ACCENT = "#7F5AF0";
+  const CORE_ARGUMENT = `Traditional ontology asked the flat question 'what exists?' and produced lists. But this misses something crucial: not everything that exists is equally fundamental. A traffic light turning red involves a physical fact (wavelengths of light being emitted) and a social fact (the light means stop), and both facts are real, but they are not on the same level—the social fact depends on the physical fact in a way the physical fact does not depend on the social. Contemporary metaphysics captures this layered structure through grounding: one fact is grounded in another when the first holds in virtue of the second. Philosophers Kit Fine and Jonathan Schaffer have developed grounding as a rigorous tool since the early 2000s, arguing that the fundamental question of ontology is not just what exists but what is fundamental and what grounds what. Grounding is distinct from causation: when you say the physical structure of the brain grounds the mental state of seeing red, you are not saying the brain causes the seeing in a temporal sense, but that the seeing consists in or is constituted by the brain state—the relation is constitutive and simultaneous, not temporal. This framework allows realism about higher-level phenomena—minds, social institutions, moral facts—without treating them as mysteriously floating free of the physical world; they are real but their reality is grounded in something more fundamental, and they are neither identical to their grounds nor independent of them. A doctor saying a patient's fever just is the body's elevated temperature response is making a grounding claim—what the fever consists in—distinct from the causal story about how the bacteria produced it.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedFact, setSelectedFact] = useState(null);
   const [hoveredArrow, setHoveredArrow] = useState(null);
   const [arrowMode, setArrowMode] = useState('grounding');
@@ -17424,6 +18354,31 @@ function GroundingArchitecture() {
             Social ontology showed that some entities depend on others for their existence while still being genuinely real. We need a formal framework for understanding this layered dependence across <em>all</em> of reality. Traditional ontology asked only "what exists?" — but now we must also ask: among all the things that exist, which ones are <em>fundamental</em>, and which hold only in virtue of others? Without this, we cannot explain why higher-level sciences are legitimate, why mental facts are real yet physical, or why social institutions exist yet depend on practices. The pressure demands a new vocabulary.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -17879,6 +18834,12 @@ function GroundingArchitecture() {
 
 // ─── Part 32: Ontology Beyond the West ───
 function OntologyBeyondWest() {
+  const ACCENT = "#C77DFF";
+  const CORE_ARGUMENT = `The western tradition from Parmenides through grounding theory is not the only rigorous ontological tradition—it is the one that happens to have developed the vocabulary dominating professional philosophy today. The Indian Vaiśeṣika school (c. 2nd century BCE) proposed a category system—substance, quality, action, universal, particularity, inherence, and absence—that parallels Aristotle in striking ways but includes absence as a real perceivable feature of the world in its own right, not a mere mental notation of something missing. Western ontology overwhelmingly treated absences as lacking being; Vaiśeṣika treated the absence of a pot from a table as a real entity, which provides a readymade framework for causation by omission that western thought took millennia to approach. Nāgārjuna's Buddhist philosophy (c. 2nd century CE) pushed further: the doctrine of emptiness holds that all things are empty of intrinsic self-standing nature—nothing exists as we ordinarily assume, as a self-sufficient independently real entity; everything is relational all the way down. This convergences with structural realism in contemporary western metaphysics. Classical Chinese philosophy, particularly in the Daoist tradition, treated change and transformation as fundamental from the beginning rather than as problems to be explained in terms of something static—closer to Heraclitus's logos but more radical, with the Dao as a dynamic pattern of generation rather than a substance or entity. African philosophical traditions in the Bantu lineage studied by philosophers like Alexis Kagame and Muyingi Muntu ground ontology in vital force rather than static substance: entities are ranked not by what they are but by the intensity of their dynamic power, producing a hierarchy organized by degrees of life rather than logical classification.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedTradition, setSelectedTradition] = useState(null);
   const [comparisonMode, setComparisonMode] = useState(false);
   const [hoveredConcept, setHoveredConcept] = useState(null);
@@ -18100,6 +19061,31 @@ function OntologyBeyondWest() {
             The Western tradition has pursued ontology along a specific line from Greece through analytic philosophy — substance, predication, individuals bearing properties. These assumptions feel so natural that they can seem like logic itself. But they are not logic. They are one tradition's answers to one tradition's questions. Recognizing those assumptions requires confronting traditions that proceeded differently, that asked different questions and arrived, by independent routes, at conclusions that are sometimes convergent and sometimes radically alien.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -18535,6 +19521,11 @@ function OntologyBeyondWest() {
 
 // ─── Part 33: Structural Realism: When Physics Dissolves Objects ───
 function StructuralRealism() {
+  const CORE_ARGUMENT = `For most of ontology's history, the physical world was assumed to contain objects whose properties belong to them intrinsically and whose existence is independent of each other. 20th-century physics undermined this systematically. In classical physics two particles are always distinguishable in principle; in quantum mechanics, identical particles of the same type—two electrons—are fundamentally indistinguishable: the physics itself provides no fact of the matter about which electron is which. If a particle's very identity is not a fact about the world, the concept of an individual object starts to erode. The erosion deepens with quantum entanglement: two entangled particles have a joint quantum state that cannot be decomposed into separate states for each particle; the properties of the whole are not built from the properties of the parts but the parts get their properties from the whole—inverting the foundational assumption of substance ontology. Ontic structural realism, championed by James Ladyman and Don Ross, responds by arguing that there are no nodes underlying the relations: structure is all there is, and objects are stable patterns within a relational network. The analogy is to a mathematical group in group theory: elements are defined entirely by their relations under the group operation; take away the relations and there are no elements; elements have no identity outside the structure. A particle like the electron is characterized entirely by structural properties—mass, charge, spin—describing its role in quantum field theory; ask what the electron is apart from its theoretical role and the question seems to have no answer. Ontic structural realism and Nāgārjuna's emptiness doctrine converge on the same conclusion through completely independent routes.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [mode, setMode] = useState('object');
   const [removedNode, setRemovedNode] = useState(null);
   const [hoveredNode, setHoveredNode] = useState(null);
@@ -18669,6 +19660,31 @@ function StructuralRealism() {
             Non-Western traditions and process philosophy have long challenged the primacy of individual, discrete objects as the fundamental furniture of reality. But philosophy alone cannot compel physicists. Now, quantum mechanics and relativity provide independent, empirical pressure toward the same conclusion — the objects we assumed were bedrock may be derivative artifacts of a deeper relational order we are only beginning to see.
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${accent}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: accent, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -19086,6 +20102,12 @@ function StructuralRealism() {
 
 // ─── Part 34: Metaontology: Can These Questions Even Be Answered? ───
 function Metaontology() {
+  const ACCENT = "#3D405B";
+  const CORE_ARGUMENT = `Throughout this entire series, ontology has been conducted as genuine inquiry into the structure of reality. Metaontology steps back and asks whether these questions are real. Eli Hirsch argued that many ontological disputes are merely verbal: when the universalist says a composite of a shoe and the Eiffel Tower exists and the nihilist denies it, they may simply be using the word 'exists' differently—the universalist ranges over mereological sums, the nihilist does not; neither is wrong about the world, they are speaking different ontological dialects. If Hirsch is right, a significant portion of analytic ontology has been an elaborate misunderstanding. Theodore Sider's response is that not all quantifiers are equally good: some languages carve the world at its joints better than others, and the existential quantifier of our most fundamental physical theory tracks genuine structure in the world. Ontological questions asked in terms of joint-carving quantifiers have objective answers; the dispute is not verbal but about which quantifier carves at the joints. Amy Thomasson's 'easy ontology' deflates from the opposite direction: ontological questions are answered by examining whether the application conditions of our concepts are satisfied, not by investigating mind-independent structure. If our mathematical practices license 'there are numbers,' then numbers exist; no further investigation is needed. Critics respond that this abandons what ontology was supposed to be—genuine inquiry into reality, not a study of how we happen to use words. The honest position is that we do not yet know which camp is right, and the question of whether we can know is itself one of the hardest open problems in philosophy.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [activeMode, setActiveMode] = useState("hirsch");
   const [hoveredPhilosopher, setHoveredPhilosopher] = useState(null);
   const [showObject, setShowObject] = useState(true);
@@ -19238,6 +20260,31 @@ function Metaontology() {
             After surveying the full sweep of ontological history — debates over universals, abstract objects, composition, persistence, modality — a vertiginous question surfaces at the meta-level. We have been assuming all along that these disputes <em>mean something</em>, that philosophers arguing about whether tables exist are genuinely disagreeing about the fabric of reality. But what if they are not? What if the entire enterprise rests on an unexamined assumption — that ontological vocabulary is precise enough to carve truth from falsehood — and the accumulated centuries of argument dissolve into a sophisticated but ultimately verbal confusion?
           </p>
         </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
         {/* MAIN VISUALIZATION */}
         <div style={{
@@ -19700,6 +20747,12 @@ function Metaontology() {
 
 // ─── Part 35: Ontology at the Frontier ───
 function OntologyFrontier() {
+  const ACCENT = "#FF6B6B";
+  const CORE_ARGUMENT = `25 centuries after Parmenides declared that being is one and unchanging, the question he forced open is still not settled, but the terrain has been mapped with a precision unimaginable to the ancients. Quantum field theory—the most successful physical theory ever constructed—does not straightforwardly describe a world of objects; fields, particles, vacuum fluctuations, and virtual processes resist traditional ontological categories, and a quantum theory of gravity may require abandoning spacetime as fundamental. A growing number of physicists and philosophers propose that information is ontologically fundamental—that the basic layer of reality is not material stuff but informational structure—suggesting ontology may move from substance to process to structure to information, each step more abstract. The hard problem of consciousness (why subjective experience exists at all, articulated by David Chalmers) remains unsolved, with panpsychism, dualism, and illusionism each carrying starkly different ontological commitments about what the universe fundamentally contains. When a large language model produces contextually appropriate text, whether it instantiates genuine mental properties depends on unresolved questions in the philosophy of mind, the ontology of information, and the nature of representation. Max Tegmark's mathematical universe hypothesis proposes that physical reality is a mathematical structure—existence and mathematical consistency are the same thing, making this modal realism rebuilt as theorems. And social ontology's most urgent frontier is explaining how categories like race, gender, and disability are real in organizing human life and distributing power while neither naturalizing nor dismissing them—getting the ontology wrong has direct consequences for justice. The one lesson spanning every period and tradition: the question of what exists is a network of interlocking questions that reconfigure themselves every time one is answered, deepening every time it seems to close.`;
+  const splitMatch = CORE_ARGUMENT.match(/^(.{30,}?[.!?])\s+([A-Z][\s\S]*)$/);
+  const coreIdLead = splitMatch ? splitMatch[1] : CORE_ARGUMENT;
+  const coreIdBody = splitMatch ? splitMatch[2] : "";
+
   const [selectedFrontier, setSelectedFrontier] = useState(null);
   const [hoveredFrontier, setHoveredFrontier] = useState(null);
   const [dialAngle, setDialAngle] = useState(0);
@@ -20021,6 +21074,31 @@ function OntologyFrontier() {
           Metaontology leaves open whether ontological questions are genuine; the history of ontology shows that each answer reveals new invisible assumptions. The frontier is where current assumptions are about to be exposed — where the next generation will discover that what we took for granted was itself a question.
         </p>
       </div>
+        {/* The Core Idea */}
+        {CORE_ARGUMENT && (
+          <div style={{
+            background: "rgba(0,0,0,0.3)",
+            border: `1px solid ${ACCENT}25`,
+            borderRadius: 8,
+            padding: "16px 20px",
+            marginTop: 16, marginBottom: 16,
+          }}>
+            <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
+                          color: ACCENT, marginBottom: 10 }}>
+              The Core Idea
+            </div>
+            <p style={{ fontSize: 15, color: "#e8e0d4", lineHeight: 1.6,
+                        margin: coreIdBody ? "0 0 8px" : 0 }}>
+              {coreIdLead}
+            </p>
+            {coreIdBody && (
+              <p style={{ fontSize: 13, color: "#a09898", lineHeight: 1.75, margin: 0 }}>
+                {coreIdBody}
+              </p>
+            )}
+          </div>
+        )}
+
 
       {/* MAIN VISUALIZATION */}
       <div style={{ maxWidth: "860px", margin: "0 auto 28px auto", background: "#0d0d14", border: "1px solid #2a1a2a", borderRadius: "12px", padding: "28px", boxSizing: "border-box" }}>
