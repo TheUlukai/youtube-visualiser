@@ -92,9 +92,10 @@ def call_claude(client: anthropic.Anthropic, transcript: str, attempt: int) -> s
     full_text = ""
     with client.messages.stream(
         model=MODEL,
-        max_tokens=32000,
+        max_tokens=64000,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": prompt}],
+        extra_headers={"anthropic-beta": "output-128k-2025-02-19"},
     ) as stream:
         for text_chunk in stream.text_stream:
             full_text += text_chunk

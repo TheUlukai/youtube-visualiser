@@ -127,12 +127,16 @@ def detect_problem_margin(component_code: str) -> str:
     """
     Examine the Problem panel's opening <div style={{...}}> and return a CSS
     fragment to use as the Core Idea panel's margin/maxWidth style, so both
-    panels share the same horizontal width.
+    panels share the same horizontal width and have a consistent top gap.
 
     Returns a JSX style property string like:
-      'maxWidth: "min(90vw, 860px)", margin: "0 auto 16px auto"'
-      'margin: "0 40px 16px 40px"'
-      'marginBottom: 16'   (fallback — outer container constrains width)
+      'maxWidth: 860, margin: "16px auto 16px auto"'
+      'maxWidth: "min(90vw, 860px)", margin: "16px auto 16px auto"'
+      'margin: "16px 40px 16px 40px"'
+      'marginTop: 16, marginBottom: 16'   (fallback — outer container constrains width)
+
+    marginTop is always 16px so the Core Idea panel has a consistent gap after
+    the Problem panel regardless of whether the Problem panel itself has marginBottom.
     """
     # Locate "The Problem" text
     problem_m = (
@@ -140,46 +144,55 @@ def detect_problem_margin(component_code: str) -> str:
         or re.search(r'The Problem\s*\*/', component_code)
     )
     if not problem_m:
-        return 'marginBottom: 16'
+        return 'marginTop: 16, marginBottom: 16'
 
     # Look back up to 800 chars for the nearest opening <div style={{
     window_start = max(0, problem_m.start() - 800)
     window = component_code[window_start:problem_m.start()]
     div_matches = list(re.finditer(r'<div\s+style=\{\{', window))
     if not div_matches:
-        return 'marginBottom: 16'
+        return 'marginTop: 16, marginBottom: 16'
 
     # The last <div style={{ before the problem label is the Problem card's div
     div_style_start = window_start + div_matches[-1].end()
     div_style_text = component_code[div_style_start:div_style_start + 600]
 
-    maxwidth_m = re.search(r'maxWidth:\s*"([^"]+)"', div_style_text)
-    margin_m   = re.search(r'\bmargin:\s*"([^"]+)"', div_style_text)
+    # Match maxWidth as quoted string, single-quoted string, or bare integer
+    maxwidth_m = re.search(
+        r"maxWidth:\s*(?:\"([^\"]+)\"|'([^']+)'|(\d+))",
+        div_style_text,
+    )
+    margin_m = re.search(r'\bmargin:\s*"([^"]+)"', div_style_text)
 
     if maxwidth_m:
-        maxwidth = maxwidth_m.group(1)
+        # Preserve the original JSX format: bare integer or quoted string
+        if maxwidth_m.group(3):          # bare integer, e.g. 860
+            maxwidth_jsx = maxwidth_m.group(3)
+        else:
+            raw = maxwidth_m.group(1) or maxwidth_m.group(2)
+            maxwidth_jsx = f'"{raw}"'
+
         if margin_m:
-            # Adapt: keep horizontal values, set top=0, bottom=16px
+            # Adapt: keep horizontal values, set top=16px, bottom=16px
             parts = margin_m.group(1).split()
             if len(parts) == 4:
-                new_margin = f'0 {parts[1]} 16px {parts[3]}'
+                new_margin = f'16px {parts[1]} 16px {parts[3]}'
             elif len(parts) == 2:
-                new_margin = f'0 {parts[1]} 16px {parts[1]}'
+                new_margin = f'16px {parts[1]} 16px {parts[1]}'
             else:
-                new_margin = '0 auto 16px auto'
+                new_margin = '16px auto 16px auto'
         else:
-            new_margin = '0 auto 16px auto'
-        return f'maxWidth: "{maxwidth}", margin: "{new_margin}"'
+            new_margin = '16px auto 16px auto'
+        return f'maxWidth: {maxwidth_jsx}, margin: "{new_margin}"'
 
     if margin_m:
         parts = margin_m.group(1).split()
         if len(parts) == 2:
-            # "16px 40px" → "0 40px 16px 40px"
-            return f'margin: "0 {parts[1]} 16px {parts[1]}"'
+            return f'margin: "16px {parts[1]} 16px {parts[1]}"'
         if len(parts) == 4:
-            return f'margin: "0 {parts[1]} 16px {parts[3]}"'
+            return f'margin: "16px {parts[1]} 16px {parts[3]}"'
 
-    return 'marginBottom: 16'
+    return 'marginTop: 16, marginBottom: 16'
 
 
 def ensure_accent_const(
