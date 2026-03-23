@@ -447,7 +447,8 @@ function KantRevolutionaryIntroduction() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            maxWidth: 860,
+            margin: "0 auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -1462,7 +1463,7 @@ function CriticalTurnFirstCritique() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            marginTop: 16, marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -2254,7 +2255,7 @@ function SpaceTimeFormsOfIntuition() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            marginTop: 16, marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -3509,7 +3510,8 @@ function TranscendentalDeductionUnity() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            maxWidth: 860,
+            margin: "0 auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -4184,7 +4186,7 @@ function PhenomenaNoumenaLimitsOfKnowledge() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            marginTop: 16, marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -5072,7 +5074,7 @@ function AntinomiesIllusionsPureReason() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            marginTop: 16, marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -7193,7 +7195,7 @@ function FreedomAutonomyGoodwill() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            marginTop: 16, marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -9474,7 +9476,8 @@ function AestheticJudgmentBeautiful() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            maxWidth: 860,
+            margin: "0 auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -12294,7 +12297,7 @@ function PoliticalPhilosophyPerpetualPeace() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginBottom: 16,
+            marginTop: 16, marginBottom: 16,
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>

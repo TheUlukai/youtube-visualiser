@@ -1779,7 +1779,7 @@ function HeraclitusFlux() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginTop: 16, marginBottom: 16,
+            maxWidth: "820px", margin: "16px auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -3664,7 +3664,7 @@ function MedievalUniversals() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginTop: 16, marginBottom: 16,
+            maxWidth: "860px", margin: "16px auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -10718,7 +10718,7 @@ function MeinongNonexistent() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginTop: 16, marginBottom: 16,
+            maxWidth: "860px", margin: "16px auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -16034,7 +16034,7 @@ function CompositionMereology() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginTop: 16, marginBottom: 16,
+            maxWidth: 860, margin: "16px auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
@@ -21081,7 +21081,7 @@ function OntologyFrontier() {
             border: `1px solid ${ACCENT}25`,
             borderRadius: 8,
             padding: "16px 20px",
-            marginTop: 16, marginBottom: 16,
+            maxWidth: "860px", margin: "16px auto 16px auto",
           }}>
             <div style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase",
                           color: ACCENT, marginBottom: 10 }}>
